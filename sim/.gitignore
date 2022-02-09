@@ -1,0 +1,13 @@
+/*.log
+/*.pb
+/xsim.dir/*/*.*
+/xsim.dir/*.*
+/xsim.dir/*
+*.jou
+/*.wdb
+/out/
+results/*/*
+results/*
+/history.yaml
+/results.html
+/results.xml
