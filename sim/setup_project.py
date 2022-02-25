@@ -43,8 +43,16 @@ tools_imports_path = tools_path + "/.imports"
 def main():
     print("Fetching project dependencies ...")
     clone_mio_cli()
-    clone_repo_dv_to_imports   ("https://github.com/Datum-Technology-Corporation/uvm.git" , "main", "uvm" )
-    clone_repo_dv_to_imports   ("https://github.com/Datum-Technology-Corporation/uvml.git", "main", "uvml")
+    clone_repo_dv_to_imports   ("https://github.com/Datum-Technology-Corporation/uvm.git"       , "main", "uvm"       )
+    clone_repo_dv_to_imports   ("https://github.com/Datum-Technology-Corporation/uvml.git"      , "main", "uvml"      )
+    clone_repo_dv_to_imports   ("https://github.com/Datum-Technology-Corporation/uvml_logs.git" , "main", "uvml_logs" )
+    clone_repo_dv_to_imports   ("https://github.com/Datum-Technology-Corporation/uvml_ral.git"  , "main", "uvml_ral"  )
+    clone_repo_dv_to_imports   ("https://github.com/Datum-Technology-Corporation/uvml_mem.git"  , "main", "uvml_mem"  )
+    clone_repo_dv_to_imports   ("https://github.com/Datum-Technology-Corporation/uvml_sb.git"   , "main", "uvml_sb"   )
+    clone_repo_dv_to_imports   ("https://github.com/Datum-Technology-Corporation/uvma_clk.git"  , "main", "uvma_clk"  )
+    clone_repo_dv_to_imports   ("https://github.com/Datum-Technology-Corporation/uvma_reset.git", "main", "uvma_reset")
+    clone_repo_dv_to_imports   ("https://github.com/Datum-Technology-Corporation/uvma_obi.git"  , "main", "uvma_obi"  )
+    clone_repo_dv_to_imports   ("https://github.com/Datum-Technology-Corporation/uvma_apb.git"  , "main", "uvma_apb"  )
 
 
 ########################################################################################################################

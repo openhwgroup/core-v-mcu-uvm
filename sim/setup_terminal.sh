@@ -39,12 +39,21 @@ alias vwaves="${VIVADO}/xsim -gui"
 
 ### DV ###
 # Local
-#export DV_UVMT_PROJECT_NAME_ST_SRC_PATH=${PROJECT_DV_DIR}/uvmt_PROJECT_NAME_st/src
+export DV_UVME_CVMCU_SRC_PATH=${PROJECT_DV_DIR}/uvme_cvmcu/src
+export DV_UVMT_CVMCU_SRC_PATH=${PROJECT_DV_DIR}/uvmt_cvmcu/src
 
 # Imports
 export UVM_HOME=${PROJECT_DV_IMPORTS_DIR}/uvm/src
 export DV_UVM_SRC_PATH=${PROJECT_DV_IMPORTS_DIR}/uvm/src
 export DV_UVML_SRC_PATH=${PROJECT_DV_IMPORTS_DIR}/uvml/src
+export DV_UVML_LOGS_SRC_PATH=${PROJECT_DV_IMPORTS_DIR}/uvml_logs/src
+export DV_UVML_RAL_SRC_PATH=${PROJECT_DV_IMPORTS_DIR}/uvml_ral/src
+export DV_UVML_MEM_SRC_PATH=${PROJECT_DV_IMPORTS_DIR}/uvml_mem/src
+export DV_UVML_SB_SRC_PATH=${PROJECT_DV_IMPORTS_DIR}/uvml_sb/src
+export DV_UVMA_CLK_SRC_PATH=${PROJECT_DV_IMPORTS_DIR}/uvma_clk/src
+export DV_UVMA_RESET_SRC_PATH=${PROJECT_DV_IMPORTS_DIR}/uvma_reset/src
+export DV_UVMA_OBI_SRC_PATH=${PROJECT_DV_IMPORTS_DIR}/uvma_obi/src
+export DV_UVMA_APB_SRC_PATH=${PROJECT_DV_IMPORTS_DIR}/uvma_apb/src
 
 # PATH
 export PATH=${PATH}:${MIO_HOME}/src

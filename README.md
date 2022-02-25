@@ -4,6 +4,8 @@ TODO Describe project
 
 ## IP
 * DV
+> * uvme_cvmcu
+> * uvmt_cvmcu
 * RTL
 * Tools
 
@@ -45,5 +47,5 @@ mio --help
 > To run test 'all_access' with seed '1' and wave capture enabled:
 
 ```
-clear && mio all uvmt_PROJECT_NAME_st -t all_access -s 1 -w
+clear && mio all uvmt_cvmcu_st -t all_access -s 1 -w
 ```
