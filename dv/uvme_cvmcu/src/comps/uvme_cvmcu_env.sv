@@ -283,9 +283,9 @@ endfunction: create_cov_model
 
 function void uvme_cvmcu_env_c::connect_predictor();
    
-   sys_clk_agent.mon_ap.connect(predictor.sys_clk_export);
-   sys_reset_agent.mon_ap.connect(predictor.sys_reset_export);
-   obi_master_agent.mon_ap.connect(predictor.obi_master_export);
+   sys_clk_agent   .mon_ap    .connect(predictor.sys_clk_export   );
+   sys_reset_agent .mon_ap    .connect(predictor.sys_reset_export );
+   obi_master_agent.mon_trn_ap.connect(predictor.obi_master_export);
    // TODO Connect agents monitor analysis ports to predictor
    
 endfunction: connect_predictor
@@ -306,7 +306,7 @@ function void uvme_cvmcu_env_c::connect_reg_block();
    
    reg_block.cntxt = cntxt;
    reg_block.connect();
-   reg_block.default_map.set_sequencer(obi_master_agent.sequencer, reg_adapter);
+   reg_block.default_map.set_sequencer(obi_master_agent.vsequencer, reg_adapter);
    reg_block.default_map.set_auto_predict(1);
    
 endfunction: connect_reg_block
@@ -322,9 +322,9 @@ endfunction: connect_coverage_model
 
 function void uvme_cvmcu_env_c::assemble_vsequencer();
    
-   vsequencer.sys_clk_sequencer = sys_clk_agent.sequencer;
-   vsequencer.sys_reset_sequencer = sys_reset_agent.sequencer;
-   vsequencer.obi_master_sequencer = obi_master_agent.sequencer;
+   vsequencer.sys_clk_sequencer    = sys_clk_agent   .sequencer ;
+   vsequencer.sys_reset_sequencer  = sys_reset_agent .sequencer ;
+   vsequencer.obi_master_sequencer = obi_master_agent.vsequencer;
    // TODO Assemble virtual sequencer from agent sequencers
    
 endfunction: assemble_vsequencer

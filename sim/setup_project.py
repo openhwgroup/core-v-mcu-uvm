@@ -34,7 +34,7 @@ pwd                = os.getcwd()
 project_dir        = pwd + "/.."
 temp_path          = project_dir + "/temp"
 rtl_path           = project_dir + "/rtl"
-rtl_libs_path      = rtl_path + "/.imports"
+rtl_imports_path   = rtl_path + "/.imports"
 dv_path            = project_dir + "/dv"
 dv_imports_path    = dv_path + "/.imports"
 tools_path         = project_dir + "/tools"
@@ -43,16 +43,25 @@ tools_imports_path = tools_path + "/.imports"
 def main():
     print("Fetching project dependencies ...")
     clone_mio_cli()
-    clone_repo_dv_to_imports   ("https://github.com/Datum-Technology-Corporation/uvm.git"       , "main", "uvm"       )
-    clone_repo_dv_to_imports   ("https://github.com/Datum-Technology-Corporation/uvml.git"      , "main", "uvml"      )
-    clone_repo_dv_to_imports   ("https://github.com/Datum-Technology-Corporation/uvml_logs.git" , "main", "uvml_logs" )
-    clone_repo_dv_to_imports   ("https://github.com/Datum-Technology-Corporation/uvml_ral.git"  , "main", "uvml_ral"  )
-    clone_repo_dv_to_imports   ("https://github.com/Datum-Technology-Corporation/uvml_mem.git"  , "main", "uvml_mem"  )
-    clone_repo_dv_to_imports   ("https://github.com/Datum-Technology-Corporation/uvml_sb.git"   , "main", "uvml_sb"   )
-    clone_repo_dv_to_imports   ("https://github.com/Datum-Technology-Corporation/uvma_clk.git"  , "main", "uvma_clk"  )
-    clone_repo_dv_to_imports   ("https://github.com/Datum-Technology-Corporation/uvma_reset.git", "main", "uvma_reset")
-    clone_repo_dv_to_imports   ("https://github.com/Datum-Technology-Corporation/uvma_obi.git"  , "main", "uvma_obi"  )
-    clone_repo_dv_to_imports   ("https://github.com/Datum-Technology-Corporation/uvma_apb.git"  , "main", "uvma_apb"  )
+    
+    clone_repo_rtl_to_imports("https://github.com/openhwgroup/core-v-mcu", "master", "rtl", "core-v-mcu")
+    
+    clone_repo_dv_to_imports("https://github.com/Datum-Technology-Corporation/uvm.git"       , "main", "uvm"       )
+    clone_repo_dv_to_imports("https://github.com/Datum-Technology-Corporation/uvml.git"      , "main", "uvml"      )
+    clone_repo_dv_to_imports("https://github.com/Datum-Technology-Corporation/uvml_logs.git" , "main", "uvml_logs" )
+    clone_repo_dv_to_imports("https://github.com/Datum-Technology-Corporation/uvml_ral.git"  , "main", "uvml_ral"  )
+    clone_repo_dv_to_imports("https://github.com/Datum-Technology-Corporation/uvml_mem.git"  , "main", "uvml_mem"  )
+    clone_repo_dv_to_imports("https://github.com/Datum-Technology-Corporation/uvml_sb.git"   , "main", "uvml_sb"   )
+    clone_repo_dv_to_imports("https://github.com/Datum-Technology-Corporation/uvma_clk.git"  , "main", "uvma_clk"  )
+    clone_repo_dv_to_imports("https://github.com/Datum-Technology-Corporation/uvma_reset.git", "main", "uvma_reset")
+    clone_repo_dv_to_imports("https://github.com/Datum-Technology-Corporation/uvma_obi.git"  , "main", "uvma_obi"  )
+    clone_repo_dv_to_imports("https://github.com/Datum-Technology-Corporation/uvma_apb.git"  , "main", "uvma_apb"  )
+    #clone_repo_dv_to_imports("https://github.com/Datum-Technology-Corporation/uvma_jtag.git" , "main", "uvma_jtag" )
+    #clone_repo_dv_to_imports("https://github.com/Datum-Technology-Corporation/uvma_sdio.git" , "main", "uvma_sdio" )
+    #clone_repo_dv_to_imports("https://github.com/Datum-Technology-Corporation/uvma_cpi.git"  , "main", "uvma_cpi"  )
+    #clone_repo_dv_to_imports("https://github.com/Datum-Technology-Corporation/uvma_spi.git"  , "main", "uvma_spi"  )
+    #clone_repo_dv_to_imports("https://github.com/Datum-Technology-Corporation/uvma_i2c.git"  , "main", "uvma_i2c"  )
+    #clone_repo_dv_to_imports("https://github.com/Datum-Technology-Corporation/uvma_uart.git" , "main", "uvma_uart" )
 
 
 ########################################################################################################################
@@ -96,6 +105,20 @@ def clone_repo_tools_to_imports(uri, branch, tools_ip_name):
     os.mkdir(dst_path)
     subprocess.call("git clone -q --branch " + branch + " " + uri + " " + temp_path, shell=True)
     copy_tree(temp_path + "/tools/" + tools_ip_name, dst_path)
+    shutil.rmtree(temp_path)
+
+def clone_repo_rtl_to_imports(uri, branch, path, rtl_ip_name):
+    dst_path = rtl_imports_path + "/" + rtl_ip_name
+    
+    if not os.path.exists(rtl_imports_path):
+        os.mkdir(rtl_imports_path)
+    if os.path.exists(temp_path):
+        shutil.rmtree(temp_path)
+    if os.path.exists(dst_path):
+        shutil.rmtree(dst_path)
+    os.mkdir(dst_path)
+    subprocess.call("git clone -q --branch " + branch + " " + uri + " " + temp_path, shell=True)
+    copy_tree(temp_path + "/" + path, dst_path)
     shutil.rmtree(temp_path)
 
 def clone_repo_dv_to_imports(uri, branch, dv_ip_name):

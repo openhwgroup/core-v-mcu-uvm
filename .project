@@ -24,7 +24,7 @@
 		<link>
 			<name>External SV Files</name>
 			<type>2</type>
-			<locationURI>svext://PROJECT_NAME</locationURI>
+			<locationURI>svext://core-v-mcu-uvm</locationURI>
 		</link>
 	</linkedResources>
 </projectDescription>

@@ -24,12 +24,12 @@ class uvme_cvmcu_prd_c extends uvm_component;
    uvme_cvmcu_cntxt_c  cntxt;
    
    // Input TLM
-   uvm_analysis_export  #(uvma_clk_mon_trn_c)  sys_clk_export;
-   uvm_tlm_analysis_fifo#(uvma_clk_mon_trn_c)  sys_clk_fifo;
-   uvm_analysis_export  #(uvma_reset_mon_trn_c)  sys_reset_export;
-   uvm_tlm_analysis_fifo#(uvma_reset_mon_trn_c)  sys_reset_fifo;
-   uvm_analysis_export  #(uvma_obi_mon_trn_c)  obi_master_export;
-   uvm_tlm_analysis_fifo#(uvma_obi_mon_trn_c)  obi_master_fifo;
+   uvm_analysis_export  #(uvma_clk_mon_trn_c  )  sys_clk_export   ;
+   uvm_tlm_analysis_fifo#(uvma_clk_mon_trn_c  )  sys_clk_fifo     ;
+   uvm_analysis_export  #(uvma_reset_mon_trn_c)  sys_reset_export ;
+   uvm_tlm_analysis_fifo#(uvma_reset_mon_trn_c)  sys_reset_fifo   ;
+   uvm_analysis_export  #(uvma_obi_mon_trn_c  )  obi_master_export;
+   uvm_tlm_analysis_fifo#(uvma_obi_mon_trn_c  )  obi_master_fifo  ;
    
    // Output TLM
    // TODO Add TLM outputs to uvme_cvmcu_prd_c
@@ -121,9 +121,9 @@ function void uvme_cvmcu_prd_c::connect_phase(uvm_phase phase);
    super.connect_phase(phase);
    
    // Connect TLM objects
-   sys_clk_export.connect(sys_clk_fifo.analysis_export);
-   sys_reset_export.connect(sys_reset_fifo.analysis_export);
-   obi_export.connect(obi_fifo.analysis_export);
+   sys_clk_export   .connect(sys_clk_fifo   .analysis_export);
+   sys_reset_export .connect(sys_reset_fifo .analysis_export);
+   obi_master_export.connect(obi_master_fifo.analysis_export);
    
 endfunction: connect_phase
 
@@ -133,8 +133,8 @@ task uvme_cvmcu_prd_c::run_phase(uvm_phase phase);
    super.run_phase(phase);
    
    fork
-      process_sys_clk();
-      process_sys_reset();
+      process_sys_clk   ();
+      process_sys_reset ();
       process_obi_master();
    join_none
    
@@ -167,17 +167,17 @@ task uvme_cvmcu_prd_c::process_sys_reset();
 endtask : process_sys_reset
 
 
-task uvme_cvmcu_prd_c::process_obi();
+task uvme_cvmcu_prd_c::process_obi_master();
    
    uvma_obi_mon_trn_c  obi_trn;
    
    forever begin
-      obi_fifo.get(obi_trn);
+      obi_master_fifo.get(obi_trn);
       
-      // TODO Implement uvme_cvmcu_prd_c::process_obi()
+      // TODO Implement uvme_cvmcu_prd_c::process_obi_master()
    end
    
-endtask : process_obi
+endtask : process_obi_master
 
 
 `endif // __UVME_CVMCU_PRD_SV__

@@ -31,9 +31,9 @@ class uvme_cvmcu_vsqr_c extends uvm_sequencer #(
    //       Ex: uvme_sub_env_vsqr_c  sub_env_vsequencer;
    
    // Sequencer handles
-   uvma_clk_sqr_c  sys_clk_sequencer;
+   uvma_clk_sqr_c    sys_clk_sequencer;
    uvma_reset_sqr_c  sys_reset_sequencer;
-   uvma_obi_sqr_c  obi_master_sequencer;
+   uvma_obi_vsqr_c   obi_master_sequencer;
    // TODO Add sequencer handles
    
    

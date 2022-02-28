@@ -37,9 +37,9 @@ package uvme_cvmcu_pkg;
    import uvml_pkg      ::*;
    import uvml_sb_pkg   ::*;
    import uvml_ral_pkg  ::*;
-   import uvma_clk_pkg::*;
+   import uvma_clk_pkg  ::*;
    import uvma_reset_pkg::*;
-   import uvma_obi_pkg::*;
+   import uvma_obi_pkg  ::*;
    
    // Constants / Structs / Enums
    `include "uvme_cvmcu_tdefs.sv"
@@ -69,7 +69,7 @@ endpackage : uvme_cvmcu_pkg
 
 // Module(s) / Checker(s)
 `ifdef UVME_CVMCU_INC_CHKR
-`include "uvma_cvmcu_chkr.sv"
+`include "uvme_cvmcu_chkr.sv"
 `endif
 
 

@@ -1,6 +1,6 @@
 # About
-## [Home Page](PROJECT_URL)
-TODO Describe project
+## No Home Page Yet
+This project aims to build a UVM test bench and environment for the CORE-V MCU.
 
 ## IP
 * DV
@@ -44,8 +44,8 @@ All jobs for simulation are performed via `mio`.
 mio --help
 ```
 
-> To run test 'all_access' with seed '1' and wave capture enabled:
+> To run compilation and elaboration:
 
 ```
-clear && mio all uvmt_cvmcu_st -t all_access -s 1 -w
+clear && mio cpel uvmt_cvmcu
 ```
