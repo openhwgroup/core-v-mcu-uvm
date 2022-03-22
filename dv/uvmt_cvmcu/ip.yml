@@ -38,10 +38,6 @@ dependencies:
   - { type: "DV", name: "uvma_apb"  , repo-uri: "https://github.com/Datum-Technology-Corporation/uvma_apb.git"  , repo-branch: "main", repo-path: "dv/uvma_apb"   }
 
 hdl-src:
-  top-constructs: ["uvmt_cvmcu_tb", "uvml_logs_summary"]
-  directories: [".", "tb", "tests"]
-  test-paths: ["tests"]
-  test-name-template: "uvmt_cvmcu_{{ name }}_test_c"
   flists:
     metrics : [ "src/uvmt_cvmcu_pkg.flist"      ]
     riviera : [ "src/uvmt_cvmcu_pkg.flist"      ]
@@ -49,4 +45,15 @@ hdl-src:
     vcs     : [ "src/uvmt_cvmcu_pkg.flist"      ]
     vivado  : [ "src/uvmt_cvmcu_pkg.flist.xsim" ]
     xcelium : [ "src/uvmt_cvmcu_pkg.flist"      ]
+  directories: [".", "tb", "tests"]
+  files: ["uvmt_cvmcu_pkg.sv"]
+  top-constructs: ["uvmt_cvmcu_tb", "uvml_logs_summary"]
+  test-paths: ["tests"]
+  test-name-template: "uvmt_cvmcu_{{ name }}_test_c"
 
+
+dut:
+  ip-type: fsoc
+  name: "core-v-mcu"
+  full-name: "openhwgroup.org:systems:core-v-mcu"
+  target: "sim"

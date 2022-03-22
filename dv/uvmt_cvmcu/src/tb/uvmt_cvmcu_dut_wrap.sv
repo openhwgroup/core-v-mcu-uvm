@@ -24,16 +24,21 @@ module uvmt_cvmcu_dut_wrap(
    
    // \/ CODE BELOW IS RESPONSABILITY OF DESIGNERS \/
    
-   // TODO Instantiate Device Under Test (DUT) and connect it to the interfaces signals
-   //      Ex: cvmcu_top  dut(
-   //             .clk    (obi_if.clk),
-   //             .reset_n(obi_if.reset_n),
-   //             .obi_data(obi_if.data),
-   //             ...
-   //          );
-   
-   // TODO Connect probe interface signals to design
-   //      Ex: assign probe_if.abc = dut.abc;
+   core_v_mcu #() dut (
+     /*.jtag_tck_i(jtag_tck_i),
+     .jtag_tdi_i(jtag_tdi_i),
+     .jtag_tdo_o(jtag_tdo_o),
+     .jtag_tms_i(jtag_tms_i),
+     .jtag_trst_i(jtag_trst_i),
+     .ref_clk_i(ref_clk),
+     .rstn_i(rstn_i),
+     .bootsel_i(bootsel_i),
+     .stm_i(1'b0),
+     .io_in_i(io_in_i),
+     .io_out_o(io_out_o),
+     .pad_cfg_o(pad_cfg_o),
+     .io_oe_o(io_oe_o)*/
+   );
    
    // /\ CODE ABOVE IS RESPONSABILITY OF DESIGNERS /\
    

@@ -55,6 +55,7 @@ package uvmt_cvmcu_pkg;
    `include "uvmt_cvmcu_reg_base_test.sv"
    
    // Functional tests
+   `include "uvmt_cvmcu_smoke_test.sv"
    `include "uvmt_cvmcu_reg_hw_reset_test.sv"
    `include "uvmt_cvmcu_reg_bit_bash_test.sv"
    

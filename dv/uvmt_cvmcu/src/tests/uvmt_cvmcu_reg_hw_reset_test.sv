@@ -47,7 +47,6 @@ endclass : uvmt_cvmcu_reg_hw_reset_test_c
 function uvmt_cvmcu_reg_hw_reset_test_c::new(string name="uvmt_cvmcu_reg_hw_reset_test", uvm_component parent=null);
    
    super.new(name, parent);
-   
    hw_reset_vseq = uvme_cvmcu_reg_hw_reset_vseq_c::type_id::create("hw_reset_vseq");
    
 endfunction : new

@@ -42,9 +42,9 @@ tools_imports_path = tools_path + "/.imports"
 
 def main():
     print("Fetching project dependencies ...")
-    clone_mio_cli()
+    #clone_mio_cli()
     
-    clone_repo_rtl_to_imports("https://github.com/openhwgroup/core-v-mcu", "master", "rtl", "core-v-mcu")
+    clone_repo_rtl_to_imports("https://github.com/openhwgroup/core-v-mcu", "master", "", "core-v-mcu")
     
     clone_repo_dv_to_imports("https://github.com/Datum-Technology-Corporation/uvm.git"       , "main", "uvm"       )
     clone_repo_dv_to_imports("https://github.com/Datum-Technology-Corporation/uvml.git"      , "main", "uvml"      )
@@ -79,8 +79,8 @@ def copy_tree(src, dst, symlinks=False, ignore=None):
 def clone_mio_cli():
     tools_ip_name = "mio"
     dst_path = tools_imports_path + "/" + tools_ip_name
-    branch = "main"
-    uri = "https://github.com/Datum-Technology-Corporation/mio_cli.git"
+    branch = "old_cli"
+    uri = "https://github.com/Datum-Technology-Corporation/mio_client.git"
     
     if not os.path.exists(tools_imports_path):
         os.mkdir(tools_imports_path)
@@ -110,8 +110,8 @@ def clone_repo_tools_to_imports(uri, branch, tools_ip_name):
 def clone_repo_rtl_to_imports(uri, branch, path, rtl_ip_name):
     dst_path = rtl_imports_path + "/" + rtl_ip_name
     
-    if not os.path.exists(rtl_imports_path):
-        os.mkdir(rtl_imports_path)
+    shutil.rmtree(rtl_imports_path)
+    os.mkdir(rtl_imports_path)
     if os.path.exists(temp_path):
         shutil.rmtree(temp_path)
     if os.path.exists(dst_path):
