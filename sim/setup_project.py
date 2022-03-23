@@ -44,7 +44,7 @@ def main():
     print("Fetching project dependencies ...")
     #clone_mio_cli()
     
-    clone_repo_rtl_to_imports("https://github.com/openhwgroup/core-v-mcu", "master", "", "core-v-mcu")
+    clone_repo_rtl_to_imports("https://github.com/Datum-Technology-Corporation/core-v-mcu.git", "shelled_core", "", "core-v-mcu")
     
     clone_repo_dv_to_imports("https://github.com/Datum-Technology-Corporation/uvm.git"       , "main", "uvm"       )
     clone_repo_dv_to_imports("https://github.com/Datum-Technology-Corporation/uvml.git"      , "main", "uvml"      )
