@@ -27,8 +27,7 @@ export PROJECT_TOOLS_IMPORT_DIR=${PROJECT_TOOLS_DIR}/.imports
 ### Tools ###
 # Local
 # Imports
-#export MIO_HOME=${PROJECT_TOOLS_DIR}/.imports/mio
-export MIO_HOME=/homes/dpoulin/git/mio_cli
+export MIO_HOME=${PROJECT_TOOLS_DIR}/.imports/mio
 alias mio="python3 ${MIO_HOME}/src/__main__.py"
 alias vwaves="${VIVADO}/xsim -gui"
 

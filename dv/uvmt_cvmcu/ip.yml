@@ -47,7 +47,7 @@ hdl-src:
     xcelium : [ "src/uvmt_cvmcu_pkg.flist"      ]
   directories: [".", "tb", "tests"]
   files: ["uvmt_cvmcu_pkg.sv"]
-  top-constructs: ["uvmt_cvmcu_tb", "uvml_logs_summary"]
+  top-constructs: ["uvmt_cvmcu_tb", "uvml_logs_sim_summary"]
   test-paths: ["tests"]
   test-name-template: "uvmt_cvmcu_{{ name }}_test_c"
 

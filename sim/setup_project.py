@@ -42,7 +42,7 @@ tools_imports_path = tools_path + "/.imports"
 
 def main():
     print("Fetching project dependencies ...")
-    #clone_mio_cli()
+    clone_mio_cli()
     
     clone_repo_rtl_to_imports("https://github.com/Datum-Technology-Corporation/core-v-mcu.git", "shelled_core", "", "core-v-mcu")
     
@@ -110,8 +110,8 @@ def clone_repo_tools_to_imports(uri, branch, tools_ip_name):
 def clone_repo_rtl_to_imports(uri, branch, path, rtl_ip_name):
     dst_path = rtl_imports_path + "/" + rtl_ip_name
     
-    shutil.rmtree(rtl_imports_path)
-    os.mkdir(rtl_imports_path)
+    if not os.path.exists(rtl_imports_path):
+        os.mkdir(rtl_imports_path)
     if os.path.exists(temp_path):
         shutil.rmtree(temp_path)
     if os.path.exists(dst_path):

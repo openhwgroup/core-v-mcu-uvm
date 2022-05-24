@@ -48,7 +48,7 @@ export PATH=${PATH}:${MIO_HOME}/src
 
 
 # RUN
-${VIVADO_HOME}/bin/xvlog --incr --relax -sv -f ${RTL_COREV_MCU}/core-v-mcu.flist --log ./dut_cmp.log --work core-v-mcu=./out/core-v-mcu
+${VIVADO_HOME}/bin/xvlog  --define VERILATOR --define XSIM --incr --relax -sv -f ${RTL_COREV_MCU}/core-v-mcu.flist --log ./dut_cmp.log --work core-v-mcu=./out/core-v-mcu
 ${VIVADO_HOME}/bin/xvlog --incr -sv -f ${DV_UVMT_CVMCU_SRC_PATH}/uvmt_cvmcu_pkg.flist.xsim -L uvm --work uvmt_cvmcu=./out/uvmt_cvmcu --log ./tb_cmp.log
 ${VIVADO_HOME}/bin/xelab --define VERILATOR --define XSIM --incr -dup_entity_as_module -relax --O0 -v 0 -timescale 1ns/1ps -L uvmt_cvmcu=./out/uvmt_cvmcu -L core-v-mcu=./out/core-v-mcu --snapshot uvmt_cvmcu_tb uvmt_cvmcu.uvmt_cvmcu_tb --log ./tb_elab.log
 ${VIVADO_HOME}/bin/xsim uvmt_cvmcu_tb -ignore_coverage  --runall --onerror quit -testplusarg "UVM_TESTNAME=uvmt_cvmcu_smoke_test_c" --stats --log ./sim.log
