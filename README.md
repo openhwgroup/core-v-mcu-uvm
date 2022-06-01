@@ -44,8 +44,8 @@ All jobs for simulation are performed via `mio`.
 mio --help
 ```
 
-> To run compilation and elaboration:
+> To run compilation, elaboration and simulation for test "smoke" and seed "1":
 
 ```
-clear && mio cpel uvmt_cvmcu
+clear && mio all uvmt_cvmcu -t smoke -s 1
 ```
