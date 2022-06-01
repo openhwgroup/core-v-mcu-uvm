@@ -47,5 +47,5 @@ mio --help
 > To run compilation and elaboration:
 
 ```
-clear && mio cpel uvmt_cvmcu
+clear && mio all uvmt_cvmcu -t smoke -s 1
 ```
