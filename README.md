@@ -10,6 +10,11 @@ This project aims to build a UVM test bench and environment for the CORE-V MCU.
 * Tools
 
 
+## Python Packages Needed
+* fusesoc 1.12.0
+* jinja2
+
+
 # Simulation
 **1. Change directory to 'sim'**
 
