@@ -42,7 +42,7 @@ tools_imports_path = tools_path + "/.imports"
 
 def main():
     print("Fetching project dependencies ...")
-    #clone_mio_cli()
+    clone_mio_cli()
     
     clone_repo_rtl_to_imports("https://github.com/Datum-Technology-Corporation/core-v-mcu.git", "shelled_core", "", "core-v-mcu")
     
