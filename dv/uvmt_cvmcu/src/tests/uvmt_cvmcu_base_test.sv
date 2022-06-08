@@ -1,5 +1,4 @@
 // Copyright 2022 Datum Technology Corporation
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -46,7 +45,6 @@ class uvmt_cvmcu_base_test_c extends uvm_test;
       env_cfg.is_active             == UVM_ACTIVE;
       env_cfg.scoreboarding_enabled == 1;
       env_cfg.trn_log_enabled       == 1;
-      env_cfg.cov_model_enabled     == 1;
    }
    
    

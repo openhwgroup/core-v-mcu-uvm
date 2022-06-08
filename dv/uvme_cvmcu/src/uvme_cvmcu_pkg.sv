@@ -16,13 +16,13 @@
 
 // Pre-processor macros
 `include "uvm_macros.svh"
-`include "uvml_macros.sv"
-`include "uvml_sb_macros.sv"
-`include "uvml_ral_macros.sv"
-`include "uvma_clk_macros.sv"
-`include "uvma_reset_macros.sv"
-`include "uvma_obi_macros.sv"
-`include "uvme_cvmcu_macros.sv"
+`include "uvml_macros.svh"
+`include "uvml_sb_macros.svh"
+`include "uvml_ral_macros.svh"
+`include "uvma_clk_macros.svh"
+`include "uvma_reset_macros.svh"
+`include "uvma_obi_macros.svh"
+`include "uvme_cvmcu_macros.svh"
 
 // Interface(s)
 

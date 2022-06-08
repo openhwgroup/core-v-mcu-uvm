@@ -3,12 +3,6 @@
 ## Copyright 2022 Datum Technology Corporation
 ########################################################################################################################
 ## SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
-## Licensed under the Solderpad Hardware License v 2.1 (the "License"); you may not use this file except in compliance
-## with the License, or, at your option, the Apache License version 2.0.  You may obtain a copy of the License at
-##                                        https://solderpad.org/licenses/SHL-2.1/
-## Unless required by applicable law or agreed to in writing, any work distributed under the License is distributed on
-## an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  See the License for the
-## specific language governing permissions and limitations under the License.
 ########################################################################################################################
 
 
@@ -24,17 +18,10 @@ export PROJECT_TOOLS_DIR=${PROJECT_ROOT_DIR}/tools
 export PROJECT_TOOLS_IMPORT_DIR=${PROJECT_TOOLS_DIR}/.imports
 
 
-### Tools ###
-# Local
-# Imports
-export MIO_HOME=${PROJECT_TOOLS_DIR}/.imports/mio
-alias mio="python3 ${MIO_HOME}/src/__main__.py"
-alias vwaves="${VIVADO}/xsim -gui"
-
-
 ### RTL ###
 # Local
 # Imports
+export RTL_COREV_MCU=${PROJECT_RTL_DIR}
 
 
 ### DV ###
@@ -57,3 +44,12 @@ export DV_UVMA_APB_SRC_PATH=${PROJECT_DV_IMPORTS_DIR}/uvma_apb/src
 
 # PATH
 export PATH=${PATH}:${MIO_HOME}/src
+
+
+
+# RUN
+${VIVADO_HOME}/bin/xvlog  --define VERILATOR --define XSIM --incr --relax -sv -f ${RTL_COREV_MCU}/core-v-mcu.flist --log ./dut_cmp.log --work core-v-mcu=./out/core-v-mcu
+${VIVADO_HOME}/bin/xvlog --incr -sv -f ${DV_UVMT_CVMCU_SRC_PATH}/uvmt_cvmcu_pkg.flist.xsim -L uvm --work uvmt_cvmcu=./out/uvmt_cvmcu --log ./tb_cmp.log
+${VIVADO_HOME}/bin/xelab --define VERILATOR --define XSIM --incr -dup_entity_as_module -relax --O0 -v 0 -timescale 1ns/1ps -L uvmt_cvmcu=./out/uvmt_cvmcu -L core-v-mcu=./out/core-v-mcu --snapshot uvmt_cvmcu_tb uvmt_cvmcu.uvmt_cvmcu_tb --log ./tb_elab.log
+${VIVADO_HOME}/bin/xsim uvmt_cvmcu_tb -ignore_coverage  --runall --onerror quit -testplusarg "UVM_TESTNAME=uvmt_cvmcu_smoke_test_c" --stats --log ./sim.log
+
