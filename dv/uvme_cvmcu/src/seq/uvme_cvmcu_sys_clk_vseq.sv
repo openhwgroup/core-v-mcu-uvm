@@ -48,4 +48,4 @@ task uvme_cvmcu_sys_clk_vseq_c::body();
 endtask : body
 
 
-`endif // __UVME_CVMCU_${sys_clk_agent_name_uppercase}_VSEQ_SV__
+`endif // __UVME_CVMCU_SYS_CLK_VSEQ_SV__
