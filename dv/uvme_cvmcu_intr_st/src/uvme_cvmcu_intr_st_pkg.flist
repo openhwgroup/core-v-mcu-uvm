@@ -1,0 +1,13 @@
+// Copyright 2022 Datum Technology Corporation
+// SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// Directories
++incdir+${DV_UVME_CVMCU_INTR_ST_SRC_PATH}
++incdir+${DV_UVME_CVMCU_INTR_ST_SRC_PATH}/comps
++incdir+${DV_UVME_CVMCU_INTR_ST_SRC_PATH}/obj
++incdir+${DV_UVME_CVMCU_INTR_ST_SRC_PATH}/seq
+
+// Files
+${DV_UVME_CVMCU_INTR_ST_SRC_PATH}/uvme_cvmcu_intr_st_pkg.sv

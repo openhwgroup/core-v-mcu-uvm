@@ -1,0 +1,49 @@
+# Copyright 2022 Datum Technology Corporation
+# SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
+########################################################################################################################
+
+
+ip:
+  name: "uvme_cvmcu_intr_st"
+  version: "1.0.0"
+  full-name: "Datum Technology Corporation CORE-V MCU Interrupt UVM Agent Self-Test Environment"
+  type: "DV"
+  sub-type: "UVM Environment"
+  sub-sub-type: "Agent Self-Testing"
+  description: >
+    TODO Describe CORE-V MCU Interrupt
+  home-page: ""
+  repo-uri: ""
+  bugs: ""
+  aliases: []
+  logo: ""
+  block-diagram: "/docs/env_block_diagram.svg"
+  languages: ["sv"]
+  simulators-supported:
+    - { name: "vivado", version: "2021.1" }
+  tags: []
+  copyright-holders: ["Datum Technology Corporation"]
+  licenses: ["${license_id}"]
+
+structure:
+   scripts-paths : [ "bin"      ]
+   docs-paths    : [ "docs"     ]
+   examples-paths: [ "examples" ]
+   src-paths     : [ "src"      ]
+
+dependencies:
+  - { type: "DV", name: "uvm"      , repo-uri: "https://github.com/Datum-Technology-Corporation/uvm.git"      , repo-branch: "main", repo-path: "dv/uvm"       }
+  - { type: "DV", name: "uvml"     , repo-uri: "https://github.com/Datum-Technology-Corporation/uvml.git"     , repo-branch: "main", repo-path: "dv/uvml"      }
+  - { type: "DV", name: "uvml_logs", repo-uri: "https://github.com/Datum-Technology-Corporation/uvml_logs.git", repo-branch: "main", repo-path: "dv/uvml_logs" }
+  - { type: "DV", name: "uvml_sb"  , repo-uri: "https://github.com/Datum-Technology-Corporation/uvml_sb.git"  , repo-branch: "main", repo-path: "dv/uvml_sb"   }
+  - { type: "DV", name: "uvma_cvmcu_intr", repo-uri: "https://github.com/Datum Technology Corporation/uvma_cvmcu_intr.git"  , repo-branch: "main", repo-path: "dv/uvma_cvmcu_intr" }
+
+hdl-src:
+  directories: ["comps", "obj", "seq"]
+  flists:
+    metrics : [ "src/uvme_cvmcu_intr_st_pkg.flist"      ]
+    riviera : [ "src/uvme_cvmcu_intr_st_pkg.flist"      ]
+    questa  : [ "src/uvme_cvmcu_intr_st_pkg.flist"      ]
+    vcs     : [ "src/uvme_cvmcu_intr_st_pkg.flist"      ]
+    vivado  : [ "src/uvme_cvmcu_intr_st_pkg.flist.xsim" ]
+    xcelium : [ "src/uvme_cvmcu_intr_st_pkg.flist"      ]
