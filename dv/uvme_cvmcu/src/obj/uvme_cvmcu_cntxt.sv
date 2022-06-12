@@ -13,11 +13,11 @@
 class uvme_cvmcu_cntxt_c extends uvm_object;
 
    // Agent context handles
-   uvma_clk_cntxt_c    sys_clk_cntxt;
-   uvma_reset_cntxt_c  sys_reset_cntxt;
-   uvma_obi_cntxt_c    obi_instr_cntxt;
-   uvma_obi_cntxt_c    obi_data_cntxt;
-   uvma_cvmcu_intr_c   intr_cntxt;
+   uvma_clk_cntxt_c         sys_clk_cntxt;
+   uvma_reset_cntxt_c       sys_reset_cntxt;
+   uvma_obi_cntxt_c         obi_instr_cntxt;
+   uvma_obi_cntxt_c         obi_data_cntxt;
+   uvma_cvmcu_intr_cntxt_c  intr_cntxt;
 
    // Scoreboard context handles
    uvml_sb_simplex_cntxt_c  dma_sb_cntxt;

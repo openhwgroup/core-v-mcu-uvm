@@ -264,7 +264,7 @@ function void uvme_cvmcu_env_c::connect_predictor();
    sys_reset_agent.mon_ap       .connect(predictor.sys_reset_export);
    obi_instr_agent.mon_trn_ap   .connect(predictor.obi_instr_export);
    obi_data_agent .mon_trn_ap   .connect(predictor.obi_data_export );
-   intr_agent     .mon_trn_ap   .connect(predictor.intr_export     );
+   intr_agent     .mon_ap       .connect(predictor.intr_export     );
    vsequencer     .dma_egress_ap.connect(predictor.dma_in_export   );
 
 endfunction: connect_predictor
@@ -285,7 +285,7 @@ function void uvme_cvmcu_env_c::connect_reg_block();
 
    reg_block.cntxt = cntxt;
    reg_block.connect();
-   reg_block.default_map.set_sequencer(obi_master_agent.vsequencer, reg_adapter);
+   reg_block.default_map.set_sequencer(obi_data_agent.vsequencer, reg_adapter);
    reg_block.default_map.set_auto_predict(1);
 
 endfunction: connect_reg_block
@@ -305,7 +305,7 @@ function void uvme_cvmcu_env_c::assemble_vsequencer();
    vsequencer.sys_reset_sequencer = sys_reset_agent.sequencer ;
    vsequencer.obi_instr_sequencer = obi_instr_agent.vsequencer;
    vsequencer.obi_data_sequencer  = obi_data_agent .vsequencer;
-   vsequencer.intr_sequencer      = intr_agent     .vsequencer;
+   vsequencer.intr_sequencer      = intr_agent     .sequencer ;
 
 endfunction: assemble_vsequencer
 

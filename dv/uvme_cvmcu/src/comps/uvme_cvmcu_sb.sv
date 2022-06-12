@@ -17,7 +17,7 @@ class uvme_cvmcu_sb_c extends uvm_scoreboard;
    uvme_cvmcu_cntxt_c  cntxt;
 
    // Components
-   uvml_sb_simplex_c  dma_sb;
+   uvme_cvmcu_dma_sb_c  dma_sb;
 
 
    `uvm_component_utils_begin(uvme_cvmcu_sb_c)
@@ -101,7 +101,7 @@ endfunction : assign_cntxt
 
 function void uvme_cvmcu_sb_c::create_sbs();
 
-   dma_sb = uvml_sb_simplex_c::type_id::create("dma_sb", this);
+   dma_sb = uvme_cvmcu_dma_sb_c::type_id::create("dma_sb", this);
 
 endfunction : create_sbs
 

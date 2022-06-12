@@ -7,15 +7,13 @@
 `define __UVME_CVMCU_TDEFS_SV__
 
 
-// TODO Add scoreboard specializations
-//      Ex: typedef uvml_sb_cntxt_c#(
-//             .T_TRN(uvma_cvmcu_mon_trn_c)
-//          ) uvme_cvmcu_sb_cntxt_c;
-//
-//          typedef uvml_sb_simplex_c#(
-//             .T_CNTXT(uvme_cvmcu_sb_cntxt_c),
-//             .T_TRN  (uvma_cvmcu_mon_trn_c )
-//          ) uvme_cvmcu_sb_simplex_c;
+/**
+ * Scoreboard specializations
+ */
+typedef class uvme_cvmcu_dma_seq_item_c;
+typedef uvml_sb_simplex_c#(
+   .T_ACT_TRN(uvme_cvmcu_dma_seq_item_c)
+) uvme_cvmcu_dma_sb_c;
 
 /**
  *

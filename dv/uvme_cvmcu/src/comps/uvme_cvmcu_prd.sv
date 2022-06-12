@@ -235,7 +235,7 @@ task uvme_cvmcu_prd_c::process_dma();
    uvme_cvmcu_dma_seq_item_c  dma_trn;
 
    forever begin
-      dma_fifo.get(dma_trn);
+      dma_in_fifo.get(dma_trn);
 
       // TODO Implement uvme_cvmcu_prd_c::process_dma()
 

@@ -73,8 +73,6 @@ class uvme_cvmcu_cfg_c extends uvm_object;
          obi_instr_cfg.enabled == 1;
          obi_data_cfg .enabled == 1;
          intr_cfg     .enabled == 1;
-
-         sys_clk_cfg.period == sys_clk_period;
       }
       else {
          sys_clk_cfg  .enabled == 0;

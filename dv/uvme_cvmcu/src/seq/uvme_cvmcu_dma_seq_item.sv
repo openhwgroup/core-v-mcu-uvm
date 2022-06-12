@@ -10,7 +10,7 @@
 /**
  * Object created by CORE-V MCU DMA sequences running on uvme_cvmcu_dma_sqr_c.
  */
-class uvme_cvmcu_dma_seq_item_c extends uvml_seq_item_c;
+class uvme_cvmcu_dma_seq_item_c extends uvml_mon_trn_c;
 
    /// @defgroup Data
    /// @{
@@ -22,7 +22,7 @@ class uvme_cvmcu_dma_seq_item_c extends uvml_seq_item_c;
 
    /// @defgroup Metadata
    /// @{
-   uvme_cvmcu_dma_cfg_c  cfg; ///< Environment configuration handle
+   uvme_cvmcu_cfg_c  cfg; ///< Environment configuration handle
    /// @}
 
 
