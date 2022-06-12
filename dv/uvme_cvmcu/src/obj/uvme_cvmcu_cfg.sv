@@ -32,7 +32,7 @@ class uvme_cvmcu_cfg_c extends uvm_object;
 
    // Objects
    rand uvme_cvmcu_reg_block_c  cvmcu_reg_block;
-   rand uvml_sb_cfg_c           sb_dma_cfg;
+   rand uvml_sb_simplex_cfg_c   dma_sb_cfg;
 
 
    `uvm_object_utils_begin(uvme_cvmcu_cfg_c)
@@ -52,7 +52,7 @@ class uvme_cvmcu_cfg_c extends uvm_object;
       `uvm_field_object(intr_cfg     , UVM_DEFAULT)
 
       `uvm_field_object(cvmcu_reg_block, UVM_DEFAULT)
-      `uvm_field_object(sb_dma_cfg, UVM_DEFAULT)
+      `uvm_field_object(dma_sb_cfg     , UVM_DEFAULT)
    `uvm_object_utils_end
 
 
@@ -147,7 +147,7 @@ function uvme_cvmcu_cfg_c::new(string name="uvme_cvmcu_cfg");
    cvmcu_reg_block.build();
 
    // Create scoreboard cfg objects
-   sb_dma_cfg = uvml_sb_cfg_c::type_id::create("sb_dma_cfg");
+   dma_sb_cfg = uvml_sb_simplex_cfg_c::type_id::create("dma_sb_cfg");
 
 endfunction : new
 

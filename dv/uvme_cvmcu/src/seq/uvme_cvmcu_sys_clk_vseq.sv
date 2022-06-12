@@ -40,7 +40,7 @@ task uvme_cvmcu_sys_clk_vseq_c::body();
 
    uvma_clk_seq_item_c  req;
 
-   `uvm_do_with(req, p_sequencer.sys_clk_sequencer, {
+   `uvm_do_on_with(req, p_sequencer.sys_clk_sequencer, {
       action == UVMA_CLK_SEQ_ITEM_ACTION_START;
       new_frequency == cfg.sys_clk_period;
    })

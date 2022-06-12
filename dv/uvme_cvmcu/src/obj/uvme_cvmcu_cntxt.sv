@@ -20,7 +20,7 @@ class uvme_cvmcu_cntxt_c extends uvm_object;
    uvma_cvmcu_intr_c   intr_cntxt;
 
    // Scoreboard context handles
-   uvml_sb_cntxt_c  sb_dma_cntxt;
+   uvml_sb_simplex_cntxt_c  dma_sb_cntxt;
 
    // Events
    uvm_event  sample_cfg_e;
@@ -34,7 +34,7 @@ class uvme_cvmcu_cntxt_c extends uvm_object;
       `uvm_field_object(obi_data_cntxt , UVM_DEFAULT)
       `uvm_field_object(intr_cntxt     , UVM_DEFAULT)
 
-      `uvm_field_object(sb_dma_cntxt , UVM_DEFAULT)
+      `uvm_field_object(dma_sb_cntxt, UVM_DEFAULT)
 
       `uvm_field_event(sample_cfg_e  , UVM_DEFAULT)
       `uvm_field_event(sample_cntxt_e, UVM_DEFAULT)
@@ -59,14 +59,14 @@ function uvme_cvmcu_cntxt_c::new(string name="uvme_cvmcu_cntxt");
 
    super.new(name);
 
-   sys_clk_cntxt   = uvma_reset_cntxt_c::type_id::create("sys_clk_cntxt");
-   sys_reset_cntxt = uvma_reset_cntxt_c::type_id::create("sys_reset_cntxt");
-   obi_instr_cntxt = uvma_obi_cntxt_c  ::type_id::create("obi_instr_cntxt");
-   obi_data_cntxt  = uvma_obi_cntxt_c  ::type_id::create("obi_data_cntxt");
-   intr_cntxt      = uvma_cvmcu_intr_cntxt_c ::type_id::create("intr_cntxt");
+   sys_clk_cntxt   = uvma_reset_cntxt_c     ::type_id::create("sys_clk_cntxt"  );
+   sys_reset_cntxt = uvma_reset_cntxt_c     ::type_id::create("sys_reset_cntxt");
+   obi_instr_cntxt = uvma_obi_cntxt_c       ::type_id::create("obi_instr_cntxt");
+   obi_data_cntxt  = uvma_obi_cntxt_c       ::type_id::create("obi_data_cntxt" );
+   intr_cntxt      = uvma_cvmcu_intr_cntxt_c::type_id::create("intr_cntxt"     );
 
    // Create uvme_cvmcu_cntxt_c scoreboard context objects
-   sb_dma_cntxt = uvml_sb_cntxt_c::type_id::create("sb_dma_cntxt");
+   dma_sb_cntxt = uvml_sb_simplex_cntxt_c::type_id::create("dma_sb_cntxt");
 
    sample_cfg_e   = new("sample_cfg_e"  );
    sample_cntxt_e = new("sample_cntxt_e");

@@ -87,14 +87,14 @@ endfunction : build_phase
 
 function void uvme_cvmcu_sb_c::assign_cfg();
 
-   uvm_config_db#(uvml_sb_cfg_c)::set(this, "dma_sb", "cfg", cfg.sb_dma_cfg);
+   uvm_config_db#(uvml_sb_simplex_cfg_c)::set(this, "dma_sb", "cfg", cfg.dma_sb_cfg);
 
 endfunction : assign_cfg
 
 
 function void uvme_cvmcu_sb_c::assign_cntxt();
 
-   uvm_config_db#(uvml_sb_cntxt_c)::set(this, "dma_sb", "cntxt", cntxt.sb_dma_cntxt );
+   uvm_config_db#(uvml_sb_simplex_cntxt_c)::set(this, "dma_sb", "cntxt", cntxt.dma_sb_cntxt );
 
 endfunction : assign_cntxt
 

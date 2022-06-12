@@ -28,7 +28,7 @@ module uvmt_cvmcu_tb;
       .clk(sys_clk_if.clk),
       .reset_n(sys_reset_if.reset_n)
    );
-   uvma_instr_if  instr_if(
+   uvma_cvmcu_intr_if  intr_if(
       .clk(sys_clk_if.clk),
       .reset_n(sys_reset_if.reset_n)
    );
@@ -53,12 +53,12 @@ module uvmt_cvmcu_tb;
       );
 
       // Add interfaces to uvm_config_db
-      uvm_config_db#(virtual uvma_clk_if)::set(null, "*.env.sys_clk_agent", "vif", sys_clk_if);
-      uvm_config_db#(virtual uvma_reset_if)::set(null, "*.env.sys_reset_agent", "vif", sys_reset_if);
-      uvm_config_db#(virtual uvma_obi_if)::set(null, "*.env.obi_instr_agent", "vif", obi_instr_if);
-      uvm_config_db#(virtual uvma_obi_if)::set(null, "*.env.obi_data_agent", "vif", obi_data_if);
-      uvm_config_db#(virtual uvma_cvmcu_intr_if)::set(null, "*.env.intr_agent", "vif", intr_if);
-      uvm_config_db#(virtual uvmt_cvmcu_probe_if)::set(null, "*", "probe_vif", probe_if);
+      uvm_config_db#(virtual uvma_clk_if        )::set(null, "*.env.sys_clk_agent"  , "vif"      , sys_clk_if  );
+      uvm_config_db#(virtual uvma_reset_if      )::set(null, "*.env.sys_reset_agent", "vif"      , sys_reset_if);
+      uvm_config_db#(virtual uvma_obi_if        )::set(null, "*.env.obi_instr_agent", "vif"      , obi_instr_if);
+      uvm_config_db#(virtual uvma_obi_if        )::set(null, "*.env.obi_data_agent" , "vif"      , obi_data_if );
+      uvm_config_db#(virtual uvma_cvmcu_intr_if )::set(null, "*.env.intr_agent"     , "vif"      , intr_if     );
+      uvm_config_db#(virtual uvmt_cvmcu_probe_if)::set(null, "*"                    , "probe_vif", probe_if    );
 
       // Run test
       uvm_top.enable_print_topology = 0;

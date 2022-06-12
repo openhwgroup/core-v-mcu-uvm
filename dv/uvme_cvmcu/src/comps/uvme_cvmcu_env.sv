@@ -193,12 +193,12 @@ endfunction: connect_phase
 
 function void uvme_cvmcu_env_c::assign_cfg();
 
-   uvm_config_db#(uvme_cvmcu_cfg_c)::set(this, "*"              , "cfg", cfg              );
-   uvm_config_db#(uvma_clk_cfg_c  )::set(this, "sys_clk_agent"  , "cfg", cfg.sys_clk_cfg  );
-   uvm_config_db#(uvma_reset_cfg_c)::set(this, "sys_reset_agent", "cfg", cfg.sys_reset_cfg);
-   uvm_config_db#(uvma_obi_cfg_c  )::set(this, "obi_instr_agent", "cfg", cfg.obi_instr_cfg);
-   uvm_config_db#(uvma_obi_cfg_c  )::set(this, "obi_data_agent" , "cfg", cfg.obi_data_cfg );
-   uvm_config_db#(uvma_cvmcu_intr_cfg_c )::set(this, "intr_agent"     , "cfg", cfg.intr_cfg     );
+   uvm_config_db#(uvme_cvmcu_cfg_c     )::set(this, "*"              , "cfg", cfg              );
+   uvm_config_db#(uvma_clk_cfg_c       )::set(this, "sys_clk_agent"  , "cfg", cfg.sys_clk_cfg  );
+   uvm_config_db#(uvma_reset_cfg_c     )::set(this, "sys_reset_agent", "cfg", cfg.sys_reset_cfg);
+   uvm_config_db#(uvma_obi_cfg_c       )::set(this, "obi_instr_agent", "cfg", cfg.obi_instr_cfg);
+   uvm_config_db#(uvma_obi_cfg_c       )::set(this, "obi_data_agent" , "cfg", cfg.obi_data_cfg );
+   uvm_config_db#(uvma_cvmcu_intr_cfg_c)::set(this, "intr_agent"     , "cfg", cfg.intr_cfg     );
 
 endfunction: assign_cfg
 

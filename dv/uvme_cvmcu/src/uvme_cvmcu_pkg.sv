@@ -47,12 +47,16 @@ package uvme_cvmcu_pkg;
    `include "uvme_cvmcu_cfg.sv"
    `include "uvme_cvmcu_cntxt.sv"
 
+   // Sequence items
+   `include "uvme_cvmcu_dma_seq_item.sv"
+
    // Predictor
    `include "uvme_cvmcu_prd.sv"
 
    // Environment components
    `include "uvme_cvmcu_cov_model.sv"
    `include "uvme_cvmcu_sb.sv"
+   `include "uvme_cvmcu_dma_sqr.sv"
    `include "uvme_cvmcu_vsqr.sv"
    `include "uvme_cvmcu_env.sv"
 
