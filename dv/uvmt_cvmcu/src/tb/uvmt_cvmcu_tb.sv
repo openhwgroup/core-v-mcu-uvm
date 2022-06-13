@@ -12,26 +12,17 @@
  */
 module uvmt_cvmcu_tb;
 
-   import uvm_pkg::*;
+   import uvm_pkg       ::*;
    import uvmt_cvmcu_pkg::*;
 
-   // Agent interfaces
-   uvma_clk_if  sys_clk_if();
-   uvma_reset_if  sys_reset_if(
-      .clk(sys_clk_if.clk)
-   );
-   uvma_obi_if  obi_instr_if(
-      .clk(sys_clk_if.clk),
-      .reset_n(sys_reset_if.reset_n)
-   );
-   uvma_obi_if  obi_data_if(
-      .clk(sys_clk_if.clk),
-      .reset_n(sys_reset_if.reset_n)
-   );
-   uvma_cvmcu_intr_if  intr_if(
-      .clk(sys_clk_if.clk),
-      .reset_n(sys_reset_if.reset_n)
-   );
+   // Support agent interfaces
+   uvma_clk_if    sys_clk_if();
+   uvma_reset_if  sys_reset_if(.clk(sys_clk_if.clk));
+
+   // Core agent interfaces
+   uvma_obi_if         obi_instr_if(.clk(sys_clk_if.clk), .reset_n(sys_reset_if.reset_n));
+   uvma_obi_if         obi_data_if (.clk(sys_clk_if.clk), .reset_n(sys_reset_if.reset_n));
+   uvma_cvmcu_intr_if  intr_if     (.clk(sys_clk_if.clk), .reset_n(sys_reset_if.reset_n));
 
    // Misc. interfaces
    uvmt_cvmcu_probe_if  probe_if();

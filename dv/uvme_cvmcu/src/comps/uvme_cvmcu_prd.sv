@@ -13,22 +13,22 @@
 class uvme_cvmcu_prd_c extends uvm_component;
 
    // Objects
-   uvme_cvmcu_cfg_c    cfg;
-   uvme_cvmcu_cntxt_c  cntxt;
+   uvme_cvmcu_cfg_c    cfg  ; ///<
+   uvme_cvmcu_cntxt_c  cntxt; ///<
 
    // Input TLM
-   uvm_analysis_export   #(uvma_clk_mon_trn_c       )  sys_clk_export  ;
-   uvm_tlm_analysis_fifo #(uvma_clk_mon_trn_c       )  sys_clk_fifo    ;
-   uvm_analysis_export   #(uvma_reset_mon_trn_c     )  sys_reset_export;
-   uvm_tlm_analysis_fifo #(uvma_reset_mon_trn_c     )  sys_reset_fifo  ;
-   uvm_analysis_export   #(uvma_obi_mon_trn_c       )  obi_instr_export;
-   uvm_tlm_analysis_fifo #(uvma_obi_mon_trn_c       )  obi_instr_fifo  ;
-   uvm_analysis_export   #(uvma_obi_mon_trn_c       )  obi_data_export ;
-   uvm_tlm_analysis_fifo #(uvma_obi_mon_trn_c       )  obi_data_fifo   ;
-   uvm_analysis_export   #(uvma_cvmcu_intr_mon_trn_c)  intr_export     ;
-   uvm_tlm_analysis_fifo #(uvma_cvmcu_intr_mon_trn_c)  intr_fifo       ;
-   uvm_analysis_export   #(uvme_cvmcu_dma_seq_item_c)  dma_in_export   ;
-   uvm_tlm_analysis_fifo #(uvme_cvmcu_dma_seq_item_c)  dma_in_fifo     ;
+   uvm_analysis_export   #(uvma_clk_mon_trn_c       )  sys_clk_export  ; ///<
+   uvm_tlm_analysis_fifo #(uvma_clk_mon_trn_c       )  sys_clk_fifo    ; ///<
+   uvm_analysis_export   #(uvma_reset_mon_trn_c     )  sys_reset_export; ///<
+   uvm_tlm_analysis_fifo #(uvma_reset_mon_trn_c     )  sys_reset_fifo  ; ///<
+   uvm_analysis_export   #(uvma_obi_mon_trn_c       )  obi_instr_export; ///<
+   uvm_tlm_analysis_fifo #(uvma_obi_mon_trn_c       )  obi_instr_fifo  ; ///<
+   uvm_analysis_export   #(uvma_obi_mon_trn_c       )  obi_data_export ; ///<
+   uvm_tlm_analysis_fifo #(uvma_obi_mon_trn_c       )  obi_data_fifo   ; ///<
+   uvm_analysis_export   #(uvma_cvmcu_intr_mon_trn_c)  intr_export     ; ///<
+   uvm_tlm_analysis_fifo #(uvma_cvmcu_intr_mon_trn_c)  intr_fifo       ; ///<
+   uvm_analysis_export   #(uvme_cvmcu_dma_seq_item_c)  dma_in_export   ; ///<
+   uvm_tlm_analysis_fifo #(uvme_cvmcu_dma_seq_item_c)  dma_in_fifo     ; ///<
 
    // Output TLM
    uvm_analysis_port #(uvme_cvmcu_dma_seq_item_c)  dma_out_ap;

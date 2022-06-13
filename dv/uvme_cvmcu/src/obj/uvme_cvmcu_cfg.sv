@@ -13,26 +13,26 @@
 class uvme_cvmcu_cfg_c extends uvm_object;
 
    // Generic options
-   rand bit                      enabled;
-   rand uvm_active_passive_enum  is_active;
-   rand bit                      scoreboarding_enabled;
-   rand bit                      cov_model_enabled;
-   rand bit                      trn_log_enabled;
+   rand bit                      enabled              ; ///<
+   rand uvm_active_passive_enum  is_active            ; ///<
+   rand bit                      scoreboarding_enabled; ///<
+   rand bit                      cov_model_enabled    ; ///<
+   rand bit                      trn_log_enabled      ; ///<
 
    // Sub-system parameters
-   rand longint unsigned  reg_block_base_address;
-   rand int unsigned      sys_clk_period;
+   rand longint unsigned  reg_block_base_address; ///<
+   rand int unsigned      sys_clk_period        ; ///<
 
    // Agent cfg handles
-   rand uvma_clk_cfg_c         sys_clk_cfg;
-   rand uvma_reset_cfg_c       sys_reset_cfg;
-   rand uvma_obi_cfg_c         obi_instr_cfg;
-   rand uvma_obi_cfg_c         obi_data_cfg;
-   rand uvma_cvmcu_intr_cfg_c  intr_cfg;
+   rand uvma_clk_cfg_c         sys_clk_cfg  ; ///<
+   rand uvma_reset_cfg_c       sys_reset_cfg; ///<
+   rand uvma_obi_cfg_c         obi_instr_cfg; ///<
+   rand uvma_obi_cfg_c         obi_data_cfg ; ///<
+   rand uvma_cvmcu_intr_cfg_c  intr_cfg     ; ///<
 
    // Objects
-   rand uvme_cvmcu_reg_block_c  cvmcu_reg_block;
-   rand uvml_sb_simplex_cfg_c   dma_sb_cfg;
+   rand uvme_cvmcu_reg_block_c  cvmcu_reg_block; ///<
+   rand uvml_sb_simplex_cfg_c   dma_sb_cfg     ; ///<
 
 
    `uvm_object_utils_begin(uvme_cvmcu_cfg_c)
@@ -66,7 +66,7 @@ class uvme_cvmcu_cfg_c extends uvm_object;
            sys_clk_period           == uvme_cvmcu_default_sys_clk_period;
    }
 
-   constraint agent_cfg_cons {
+   constraint agents_cfg_cons {
       if (enabled) {
          sys_clk_cfg  .enabled == 1;
          sys_reset_cfg.enabled == 1;
@@ -89,6 +89,15 @@ class uvme_cvmcu_cfg_c extends uvm_object;
          obi_data_cfg .is_active == UVM_ACTIVE;
       }
       intr_cfg.is_active == UVM_PASSIVE;
+      sys_clk_cfg.mon_enabled == 0;
+      obi_instr_cfg.drv_mode == UVMA_OBI_DRV_MODE_MSTR;
+      obi_data_cfg .drv_mode == UVMA_OBI_DRV_MODE_MSTR;
+
+      sys_reset_cfg.polarity   == UVMA_RESET_POLARITY_ACTIVE_LOW;
+      sys_reset_cfg.reset_type == UVML_RESET_TYPE_SYNCHRONOUS;
+      obi_instr_cfg.reset_type == UVML_RESET_TYPE_SYNCHRONOUS;
+      obi_data_cfg .reset_type == UVML_RESET_TYPE_SYNCHRONOUS;
+      intr_cfg     .reset_type == UVML_RESET_TYPE_SYNCHRONOUS;
 
       if (trn_log_enabled) {
          sys_clk_cfg  .trn_log_enabled == 1;
@@ -118,6 +127,22 @@ class uvme_cvmcu_cfg_c extends uvm_object;
          obi_instr_cfg.cov_model_enabled == 0;
          obi_data_cfg .cov_model_enabled == 0;
          intr_cfg     .cov_model_enabled == 0;
+      }
+   }
+
+   /**
+    * Configures scoreboards
+    */
+   constraint sb_cons {
+      if (scoreboarding_enabled && enabled) {
+         dma_sb_cfg.enabled             == 1;
+         dma_sb_cfg.mode                == UVML_SB_MODE_IN_ORDER;
+         dma_sb_cfg.ignore_first_n_act  == 0;
+         dma_sb_cfg.ignore_first_n_exp  == 0;
+         dma_sb_cfg.sync_loss_threshold == 1;
+      }
+      else {
+         dma_sb_cfg.enabled == 0;
       }
    }
 
