@@ -66,7 +66,7 @@ class uvme_cvmcu_cfg_c extends uvm_object;
            sys_clk_period           == uvme_cvmcu_default_sys_clk_period;
    }
 
-   constraint agents_cfg_cons {
+   constraint enabled_cfg_cons {
       if (enabled) {
          sys_clk_cfg  .enabled == 1;
          sys_reset_cfg.enabled == 1;
@@ -81,7 +81,9 @@ class uvme_cvmcu_cfg_c extends uvm_object;
          obi_data_cfg .enabled == 0;
          intr_cfg     .enabled == 0;
       }
+   }
 
+   constraint active_cfg_cons {
       if (is_active == UVM_ACTIVE) {
          sys_clk_cfg  .is_active == UVM_ACTIVE;
          sys_reset_cfg.is_active == UVM_ACTIVE;
@@ -89,16 +91,54 @@ class uvme_cvmcu_cfg_c extends uvm_object;
          obi_data_cfg .is_active == UVM_ACTIVE;
       }
       intr_cfg.is_active == UVM_PASSIVE;
-      sys_clk_cfg.mon_enabled == 0;
-      obi_instr_cfg.drv_mode == UVMA_OBI_DRV_MODE_MSTR;
-      obi_data_cfg .drv_mode == UVMA_OBI_DRV_MODE_MSTR;
+   }
 
-      sys_reset_cfg.polarity   == UVMA_RESET_POLARITY_ACTIVE_LOW;
+   constraint sys_reset_cfg_cons {
+      sys_reset_cfg.polarity   == UVML_RESET_ACTIVE_LOW;
       sys_reset_cfg.reset_type == UVML_RESET_TYPE_SYNCHRONOUS;
-      obi_instr_cfg.reset_type == UVML_RESET_TYPE_SYNCHRONOUS;
-      obi_data_cfg .reset_type == UVML_RESET_TYPE_SYNCHRONOUS;
-      intr_cfg     .reset_type == UVML_RESET_TYPE_SYNCHRONOUS;
+   }
 
+   constraint sys_clk_cfg_cons {
+      sys_clk_cfg.mon_enabled == 0;
+   }
+
+   constraint obi_instr_cfg_cons {
+      obi_instr_cfg.bypass_mode == 0;
+      obi_instr_cfg.drv_mode    == UVMA_OBI_DRV_MODE_MSTR;
+      obi_instr_cfg.reset_type  == UVML_RESET_TYPE_SYNCHRONOUS;
+      obi_instr_cfg.version     == UVMA_OBI_VERSION_1P2;
+      obi_instr_cfg.drv_idle    == UVMA_OBI_DRV_IDLE_ZEROS;
+      obi_instr_cfg.addr_width  == 32;
+      obi_instr_cfg.data_width  == 32;
+      obi_instr_cfg.auser_width == 0;
+      obi_instr_cfg.wuser_width == 0;
+      obi_instr_cfg.ruser_width == 0;
+      obi_instr_cfg.achk_width  == 0;
+      obi_instr_cfg.rchk_width  == 0;
+      obi_instr_cfg.id_width    == 0;
+   }
+
+   constraint obi_data_cfg_cons {
+      obi_data_cfg.bypass_mode == 0;
+      obi_data_cfg.drv_mode    == UVMA_OBI_DRV_MODE_MSTR;
+      obi_data_cfg.reset_type  == UVML_RESET_TYPE_SYNCHRONOUS;
+      obi_data_cfg.version     == UVMA_OBI_VERSION_1P2;
+      obi_data_cfg.drv_idle    == UVMA_OBI_DRV_IDLE_ZEROS;
+      obi_data_cfg.addr_width  == 32;
+      obi_data_cfg.data_width  == 32;
+      obi_data_cfg.auser_width == 0;
+      obi_data_cfg.wuser_width == 0;
+      obi_data_cfg.ruser_width == 0;
+      obi_data_cfg.achk_width  == 0;
+      obi_data_cfg.rchk_width  == 0;
+      obi_data_cfg.id_width    == 0;
+   }
+
+   constraint intr_cfg_cons {
+      intr_cfg.reset_type == UVML_RESET_TYPE_SYNCHRONOUS;
+   }
+
+   constraint trn_log_enabled_cons {
       if (trn_log_enabled) {
          sys_clk_cfg  .trn_log_enabled == 1;
          sys_reset_cfg.trn_log_enabled == 1;
@@ -113,7 +153,9 @@ class uvme_cvmcu_cfg_c extends uvm_object;
          obi_data_cfg .trn_log_enabled == 0;
          intr_cfg     .trn_log_enabled == 0;
       }
+   }
 
+   constraint cov_model_enabled_cons {
       if (cov_model_enabled) {
          sys_clk_cfg  .cov_model_enabled == 1;
          sys_reset_cfg.cov_model_enabled == 1;
@@ -159,11 +201,11 @@ function uvme_cvmcu_cfg_c::new(string name="uvme_cvmcu_cfg");
 
    super.new(name);
 
-   sys_clk_cfg   = uvma_clk_cfg_c       ::type_id::create("sys_clk_cfg");
+   sys_clk_cfg   = uvma_clk_cfg_c       ::type_id::create("sys_clk_cfg"  );
    sys_reset_cfg = uvma_reset_cfg_c     ::type_id::create("sys_reset_cfg");
    obi_instr_cfg = uvma_obi_cfg_c       ::type_id::create("obi_instr_cfg");
-   obi_data_cfg  = uvma_obi_cfg_c       ::type_id::create("obi_data_cfg");
-   intr_cfg      = uvma_cvmcu_intr_cfg_c::type_id::create("intr_cfg");
+   obi_data_cfg  = uvma_obi_cfg_c       ::type_id::create("obi_data_cfg" );
+   intr_cfg      = uvma_cvmcu_intr_cfg_c::type_id::create("intr_cfg"     );
 
    cvmcu_reg_block = uvme_cvmcu_reg_block_c::type_id::create("cvmcu_reg_block");
    cvmcu_reg_block.cfg = this;

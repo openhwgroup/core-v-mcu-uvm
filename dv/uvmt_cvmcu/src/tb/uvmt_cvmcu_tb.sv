@@ -52,7 +52,7 @@ module uvmt_cvmcu_tb;
       uvm_config_db#(virtual uvmt_cvmcu_probe_if)::set(null, "*"                    , "probe_vif", probe_if    );
 
       // Run test
-      uvm_top.enable_print_topology = 0;
+      uvm_top.enable_print_topology = 1;
       uvm_top.finish_on_completion  = 1;
       uvm_top.run_test();
    end
