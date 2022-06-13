@@ -21,7 +21,7 @@ class uvme_cvmcu_cfg_c extends uvm_object;
 
    // Sub-system parameters
    rand longint unsigned  reg_block_base_address; ///<
-   rand int unsigned      sys_clk_period        ; ///<
+   rand int unsigned      sys_clk_frequency     ; ///<
 
    // Agent cfg handles
    rand uvma_clk_cfg_c         sys_clk_cfg  ; ///<
@@ -43,7 +43,7 @@ class uvme_cvmcu_cfg_c extends uvm_object;
       `uvm_field_int (                         trn_log_enabled      , UVM_DEFAULT)
 
       `uvm_field_int(reg_block_base_address, UVM_DEFAULT)
-      `uvm_field_int(sys_clk_period, UVM_DEFAULT + UVM_DEC)
+      `uvm_field_int(sys_clk_frequency, UVM_DEFAULT + UVM_DEC)
 
       `uvm_field_object(sys_clk_cfg  , UVM_DEFAULT)
       `uvm_field_object(sys_reset_cfg, UVM_DEFAULT)
@@ -63,7 +63,7 @@ class uvme_cvmcu_cfg_c extends uvm_object;
       soft cov_model_enabled        == 0;
       soft trn_log_enabled          == 1;
            reg_block_base_address   == uvme_cvmcu_default_reg_block_base_address;
-           sys_clk_period           == uvme_cvmcu_default_sys_clk_period;
+           sys_clk_frequency        == uvme_cvmcu_default_sys_clk_frequency;
    }
 
    constraint enabled_cfg_cons {
@@ -72,7 +72,7 @@ class uvme_cvmcu_cfg_c extends uvm_object;
          sys_reset_cfg.enabled == 1;
          obi_instr_cfg.enabled == 1;
          obi_data_cfg .enabled == 1;
-         intr_cfg     .enabled == 1;
+         intr_cfg     .enabled == 0;
       }
       else {
          sys_clk_cfg  .enabled == 0;

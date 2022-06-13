@@ -9,7 +9,8 @@
 
 // This file should be empty by the end of the project
 constraint disable_cov_cons {
-   env_cfg.cov_model_enabled == 0;
+   env_cfg.cov_model_enabled     == 0;
+   env_cfg.scoreboarding_enabled == 0;
 }
 
 
