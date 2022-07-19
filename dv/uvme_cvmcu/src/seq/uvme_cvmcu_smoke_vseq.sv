@@ -38,22 +38,18 @@ endfunction : new
 task uvme_cvmcu_smoke_vseq_c::body();
 
    uvma_obi_seq_item_c  req;
-
-   /*
    // Write
    `uvm_do_on_with(req, p_sequencer.obi_data_sequencer, {
       access_type == UVMA_OBI_ACCESS_WRITE;
-      address     == 32'h0000_0000;
+      address     == 32'h1A10_B000;
       data        == 32'h9876_ABCD;
    })
-
    // Read
    `uvm_do_on_with(req, p_sequencer.obi_data_sequencer, {
       access_type == UVMA_OBI_ACCESS_READ;
-      address     == 32'h0000_0000;
+      address     == 32'h1A10_B000;
    })
    `uvm_info("SMOKE_VSEQ", $sformatf("Data read back from location 'x%h is x%h", req.address, req.data), UVM_LOW)
-   */
 
 endtask : body
 
