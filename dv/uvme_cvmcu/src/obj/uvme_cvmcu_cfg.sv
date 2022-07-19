@@ -87,8 +87,8 @@ class uvme_cvmcu_cfg_c extends uvm_object;
       if (is_active == UVM_ACTIVE) {
          sys_clk_cfg  .is_active == UVM_ACTIVE;
          sys_reset_cfg.is_active == UVM_ACTIVE;
-         obi_instr_cfg.is_active == UVM_ACTIVE;
-         obi_data_cfg .is_active == UVM_ACTIVE;
+         obi_instr_cfg.is_active == UVM_PASSIVE;//UVM_ACTIVE;
+         obi_data_cfg .is_active == UVM_PASSIVE;//UVM_ACTIVE;
       }
       intr_cfg.is_active == UVM_PASSIVE;
    }

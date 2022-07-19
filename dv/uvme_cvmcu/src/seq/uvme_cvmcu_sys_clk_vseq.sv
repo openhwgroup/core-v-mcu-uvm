@@ -40,11 +40,16 @@ task uvme_cvmcu_sys_clk_vseq_c::body();
 
    uvma_clk_seq_item_c  req;
 
-   `uvm_do_on_with(req, p_sequencer.sys_clk_sequencer, {
-      action == UVMA_CLK_SEQ_ITEM_ACTION_START;
-      new_frequency == cfg.sys_clk_frequency;
-      new_duty_cycle == 50;
-   })
+   //`uvm_do_on_with(req, p_sequencer.sys_clk_sequencer, {
+   //   action == UVMA_CLK_SEQ_ITEM_ACTION_START;
+   //   new_frequency == cfg.sys_clk_frequency;
+   //   new_duty_cycle == 50;
+   //})
+   `uvm_create_on(req, p_sequencer.sys_clk_sequencer)
+   req.action = UVMA_CLK_SEQ_ITEM_ACTION_START;
+   req.new_frequency = cfg.sys_clk_frequency;
+   req.new_duty_cycle = 50;
+   `uvm_send(req)
 
 endtask : body
 
