@@ -33,6 +33,8 @@ alias vwaves="${VIVADO}/xsim -gui"
 ### DV ###
 # Local
 export DV_UVMA_CVMCU_INTR_SRC_PATH=${PROJECT_DV_DIR}/uvma_cvmcu_intr/src
+export DV_UVME_APB_TIMER_SRC_PATH=${PROJECT_DV_DIR}/uvme_apb_timer/src
+export DV_UVMT_APB_TIMER_SRC_PATH=${PROJECT_DV_DIR}/uvmt_apb_timer/src
 export DV_UVME_CVMCU_SRC_PATH=${PROJECT_DV_DIR}/uvme_cvmcu/src
 export DV_UVMT_CVMCU_SRC_PATH=${PROJECT_DV_DIR}/uvmt_cvmcu/src
 

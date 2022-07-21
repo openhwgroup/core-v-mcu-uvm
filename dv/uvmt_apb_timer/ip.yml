@@ -1,0 +1,58 @@
+ip:
+  name: "uvmt_apb_timer"
+  version: "1.0.0"
+  full-name: "Datum Technology Corporation APB Timer Sub-System UVM Test Bench"
+  type: "DV"
+  sub-type: "UVM Test Bench"
+  sub-sub-type: "Sub-System"
+  description: >
+    TODO Describe APB Timer
+  home-page: ""
+  repo-uri: ""
+  bugs: ""
+  aliases: []
+  logo: ""
+  block-diagram: ""
+  languages: ["sv"]
+  simulators-supported:
+    - { name: "vivado", version: "2021.1" }
+  tags: []
+  copyright-holders: ["Datum Technology Corporation"]
+  licenses: ["SHL-2.1"]
+
+structure:
+   scripts-paths : [ "/bin"      ]
+   docs-paths    : [ "/docs"     ]
+   examples-paths: [ "/examples" ]
+   src-paths     : [ "/src"      ]
+
+dependencies:
+  - { name: "uvm"       , version:  "1.2" }
+  - { name: "uvml"      , version: "~1.0" }
+  - { name: "uvml_logs" , version: "~1.0" }
+  - { name: "uvml_ral"  , version: "~1.0" }
+  - { name: "uvml_sb"   , version: "~1.0" }
+  - { name: "uvma_clk"  , version: "~1.0" }
+  - { name: "uvma_reset", version: "~1.0" }
+  - { name: "uvma_apb"  , version: "~1.0" }
+#  - { name: "uvme_apb_timer", version: "^" }
+
+hdl-src:
+  top-constructs: ["uvmt_apb_timer_tb", "uvml_logs_sim_summary"]
+  directories: [".", "tb", "tests"]
+  top-files: [ "uvmt_apb_timer_pkg.sv" ]
+  test-paths: ["tests"]
+  test-name-template: "uvmt_apb_timer_{{ name }}_test_c"
+  flists:
+    metrics : [ "src/uvmt_apb_timer_pkg.flist"      ]
+    riviera : [ "src/uvmt_apb_timer_pkg.flist"      ]
+    questa  : [ "src/uvmt_apb_timer_pkg.flist"      ]
+    vcs     : [ "src/uvmt_apb_timer_pkg.flist"      ]
+    vivado  : [ "src/uvmt_apb_timer_pkg.flist.xsim" ]
+    xcelium : [ "src/uvmt_apb_timer_pkg.flist"      ]
+
+dut:
+  ip-type: fsoc
+  name: "core-v-mcu"
+  full-name: "openhwgroup.org:systems:core-v-mcu"
+  target: "sim"
