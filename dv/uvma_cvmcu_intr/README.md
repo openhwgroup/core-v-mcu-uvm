@@ -1,8 +1,8 @@
-# Datum Technology Corporation CORE-V MCU Interrupt UVM Agent
+# CORE-V MCU Interrupt UVM Agent
 
 
 # About
-This package contains the Datum Technology Corporation CORE-V MCU Interrupt UVM Agent.
+This package contains the CORE-V MCU Interrupt UVM Agent.
 TODO Describe CORE-V MCU Interrupt
 
 

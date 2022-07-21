@@ -1,8 +1,8 @@
-# Datum Technology Corporation CORE-V MCU Sub-System UVM Environment
+# CORE-V MCU Sub-System UVM Environment
 
 
 # About
-This package contains the Datum Technology Corporation CORE-V MCU Sub-System UVM Environment.
+This package contains the CORE-V MCU Sub-System UVM Environment.
 
 TODO Describe CORE-V MCU
 

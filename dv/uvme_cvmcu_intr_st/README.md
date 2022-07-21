@@ -1,8 +1,8 @@
-# Datum Technology Corporation CORE-V MCU Interrupt Agent Self-Test UVM Environment
+# CORE-V MCU Interrupt Agent Self-Test UVM Environment
 
 
 # About
-This IP contains the Datum Technology Corporation CORE-V MCU Interrupt Agent Self-Test UVM Environment.
+This IP contains the CORE-V MCU Interrupt Agent Self-Test UVM Environment.
 Its main purpose is to test the CORE-V MCU Interrupt UVM Agent (`uvma_cvmcu_intr_pkg`) in isolation.
 
 

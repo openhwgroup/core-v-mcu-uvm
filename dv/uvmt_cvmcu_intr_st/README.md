@@ -1,4 +1,4 @@
-# Datum Technology Corporation CORE-V MCU Interrupt Self-Test Bench and UVM Test Library
+# CORE-V MCU Interrupt Self-Test Bench and UVM Test Library
 
 
 # About

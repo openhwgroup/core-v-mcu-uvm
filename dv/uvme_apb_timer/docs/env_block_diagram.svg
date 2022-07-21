@@ -126,8 +126,8 @@
 				<title>Sheet.426</title>
 				<desc>&#60;uvma_reset_agent_c&#62; sys_reset_agent</desc>
 				<rect x="0" y="346.461" width="144.481" height="36.3657" class="st13"/>
-				<text x="34.06" y="361.04" class="st4">&#60;uvma_reset_agent_c&#62; <tspan x="12.98" dy="1.14em" class="st5">${</tspan><tspan
-							class="st5">reset_agent_name</tspan><tspan class="st5">}_agent</tspan></text>			</g>
+				<text x="34.06" y="361.04" class="st4">&#60;uvma_reset_agent_c&#62; <tspan x="12.98" dy="1.14em" class="st5">sys_reset_agent</tspan><tspan
+							class="st5"></tspan><tspan class="st5"></tspan></text>			</g>
 			<g id="shape427-76" transform="translate(519.969,357.282) rotate(90)">
 				<title>Diamond.427</title>
 				<path d="M7.36 382.83 L14.72 375.46 L7.36 368.1 L0 375.46 L7.36 382.83 Z" class="st8"/>
@@ -139,8 +139,8 @@
 				<title>Sheet.114</title>
 				<desc>&#60;uvma_clk_agent_c&#62; sys_clk_agent</desc>
 				<rect x="0" y="346.461" width="144.481" height="36.3657" class="st13"/>
-				<text x="37.91" y="361.04" class="st4">&#60;uvma_clk_agent_c&#62; <tspan x="17.8" dy="1.14em" class="st5">${</tspan><tspan
-							class="st5">clk_agent_name</tspan><tspan class="st5">}_agent</tspan></text>			</g>
+				<text x="37.91" y="361.04" class="st4">&#60;uvma_clk_agent_c&#62; <tspan x="17.8" dy="1.14em" class="st5">sys_clk_agent</tspan><tspan
+							class="st5"></tspan><tspan class="st5"></tspan></text>			</g>
 			<g id="shape115-85" transform="translate(519.969,357.282) rotate(90)">
 				<title>Diamond.115</title>
 				<path d="M7.36 382.83 L14.72 375.46 L7.36 368.1 L0 375.46 L7.36 382.83 Z" class="st8"/>

@@ -1,8 +1,8 @@
-# Datum Technology Corporation CORE-V MCU Sub-System UVM Test Bench
+# CORE-V MCU Sub-System UVM Test Bench
 
 
 # About
-This package contains the Datum Technology Corporation CORE-V MCU Sub-System UVM Test Bench.
+This package contains the CORE-V MCU Sub-System UVM Test Bench.
 
 TODO Describe CORE-V MCU
 
@@ -12,7 +12,7 @@ TODO Describe CORE-V MCU
 
 # Directory Structure
 * `bin` - Scripts, metadata and other miscellaneous files
-* `docs` - Documents describing the Datum Technology Corporation CORE-V MCU Sub-System UVM Test Bench
+* `docs` - Documents describing the CORE-V MCU Sub-System UVM Test Bench
 * `examples` - Samples for users
 * `src` - Source code for this package
 

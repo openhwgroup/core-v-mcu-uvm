@@ -1,8 +1,8 @@
-# Datum Technology Corporation APB Advanced Timer Sub-System UVM Test Bench
+# APB Advanced Timer Sub-System UVM Test Bench
 
 
 # About
-This IP contains the Datum Technology Corporation APB Advanced Timer Sub-System UVM Test Bench.
+This IP contains the APB Advanced Timer Sub-System UVM Test Bench.
 
 TODO Describe APB Advanced Timer
 

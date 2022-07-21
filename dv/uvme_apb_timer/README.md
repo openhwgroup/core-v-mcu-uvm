@@ -1,8 +1,8 @@
-# Datum Technology Corporation APB Timer Sub-System UVM Environment
+# APB Timer Sub-System UVM Environment
 
 
 # About
-This IP contains the Datum Technology Corporation APB Timer Sub-System UVM Environment.
+This IP contains the APB Timer Sub-System UVM Environment.
 
 TODO Describe APB Timer
 
