@@ -1,0 +1,15 @@
+// Copyright 2022 Datum Technology Corporation
+// Copyright 2022 Low Power Futures
+// SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// Directories
+-i ${DV_UVME_APB_ADV_TIMER_SRC_PATH}
+-i ${DV_UVME_APB_ADV_TIMER_SRC_PATH}/comps
+-i ${DV_UVME_APB_ADV_TIMER_SRC_PATH}/obj
+-i ${DV_UVME_APB_ADV_TIMER_SRC_PATH}/reg
+-i ${DV_UVME_APB_ADV_TIMER_SRC_PATH}/seq
+
+// Files
+${DV_UVME_APB_ADV_TIMER_SRC_PATH}/uvme_apb_adv_timer_pkg.sv
