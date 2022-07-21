@@ -21,8 +21,8 @@ class uvme_apb_timer_env_c extends uvml_env_c;
 
    /// @defgroup Register Abstraction Layer (RAL)
    /// @{
-   uvme_apb_timer_reg_block_c  reg_block; ///< Top-level register block for {name_normal_case} Sub-System.
-   uvma_apb_reg_adapter_c  reg_adapter; ///< Converts apb sequence items to/from register operations.
+   uvme_apb_timer_reg_block_c  reg_block  ; ///< Top-level register block for {name_normal_case} Sub-System.
+   uvma_apb_reg_adapter_c      reg_adapter; ///< Converts apb sequence items to/from register operations.
    /// @}
 
    /// @defgroup Components
@@ -43,7 +43,7 @@ class uvme_apb_timer_env_c extends uvml_env_c;
    /// @{
    uvma_clk_agent_c    sys_clk_agent  ; ///< Clocking agent
    uvma_reset_agent_c  sys_reset_agent; ///< Reset agent
-   uvma_apb_agent_c  apb_agent; ///< Register access agent
+   uvma_apb_agent_c    apb_agent      ; ///< Register access agent
    /// @}
 
 
