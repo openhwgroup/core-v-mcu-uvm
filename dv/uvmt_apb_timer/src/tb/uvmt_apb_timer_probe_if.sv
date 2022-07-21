@@ -1,4 +1,5 @@
 // Copyright 2022 Datum Technology Corporation
+// Copyright 2022 Low Power Futures
 // SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -14,12 +15,12 @@ interface uvmt_apb_timer_probe_if;
 
    import uvme_apb_timer_pkg::*;
 
-   logic stoptimer_i;
-   logic event_lo_i ;
-   logic event_hi_i ;
-   logic irq_lo_o   ;
-   logic irq_hi_o   ;
-   logic busy_o     ;
+   logic stoptimer_i = 0;
+   logic event_lo_i  = 0;
+   logic event_hi_i  = 0;
+   logic irq_lo_o       ;
+   logic irq_hi_o       ;
+   logic busy_o         ;
 
 endinterface : uvmt_apb_timer_probe_if
 
