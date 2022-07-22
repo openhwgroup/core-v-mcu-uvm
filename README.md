@@ -3,52 +3,36 @@ This project aims to build a UVM test bench and environment for the CORE-V MCU.
 
 ## IP
 * DV
+> * uvma_cvmcu_intr
 > * uvme_apb_timer
 > * uvme_apb_adv_timer
 > * uvme_cvmcu
+> * uvma_cvmcu_intr_st
 > * uvmt_apb_timer
 > * uvmt_apb_adv_timer
 > * uvmt_cvmcu
+> * uvma_cvmcu_intr_st
 * RTL
 * Tools
 
 
+# Installing Toolchain
+1. Download and install the latest version of [Xilinx Vivado WebPack]()
+1. `export VIVADO_HOME=/path/to/vivado/bin`
+1. `pipx install mio-client`
+
+
 # Simulation
-**1. Change directory to 'sim'**
+1. Change directory to 'sim'
 
 This is from where all jobs will be launched.
 ```
-cd ./sim
+cd sim
 ```
 
-**2. Project Setup**
 
-Only needs to be done once, or when libraries must be updated. This will pull in dependencies from the web.
-```
-./setup_project.py
-```
-
-**3. Terminal Setup**
-
-This must be done per terminal. The script included in this project is for bash:
+2. To run compilation, elaboration and simulation for test "smoke" and seed "1":
 
 ```
-export VIVADO=/path/to/vivado/bin # Set locaton of Vivado installation
-source ./setup_terminal.sh
-```
-
-**4. Launch**
-
-All jobs for simulation are performed via `mio`.
-
-> At any time, you can invoke its built-in documentation:
-
-```
-mio --help
-```
-
-> To run compilation, elaboration and simulation for test "smoke" and seed "1":
-
-```
-clear && mio all uvmt_cvmcu -t smoke -s 1
+mio sim uvmt_cvmcu -t smoke -s 1
 ```
