@@ -13,9 +13,7 @@
 
 class uvme_apb_adv_timer_cg_reg_c extends uvml_ral_reg_c;
    
-   rand uvml_ral_reg_field_c  ena; ///< ADV_TIMER clock gating configuration bitfield. 
-- ENA[i]=0: clock gate ADV_TIMERi.
-- ENA[i]=1: enable ADV_TIMERi.
+   rand uvml_ral_reg_field_c  ena; ///< ADV_TIMER clock gating configuration bitfield.  - ENA[i]=0: clock gate ADV_TIMERi. - ENA[i]=1: enable ADV_TIMERi.
    
    
    `uvm_object_utils_begin(uvme_apb_adv_timer_cg_reg_c)

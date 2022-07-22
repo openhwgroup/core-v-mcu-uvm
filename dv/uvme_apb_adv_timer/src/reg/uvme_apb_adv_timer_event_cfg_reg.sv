@@ -13,74 +13,10 @@
 
 class uvme_apb_adv_timer_event_cfg_reg_c extends uvml_ral_reg_c;
    
-   rand uvml_ral_reg_field_c  sel0; ///< ADV_TIMER output event 0 source configuration bitfiled:
-- 4'h0: ADV_TIMER0 channel 0.
-- 4'h1: ADV_TIMER0 channel 1.
-- 4'h2: ADV_TIMER0 channel 2.
-- 4'h3: ADV_TIMER0 channel 3.
-- 4'h4: ADV_TIMER1 channel 0.
-- 4'h5: ADV_TIMER1 channel 1.
-- 4'h6: ADV_TIMER1 channel 2.
-- 4'h7: ADV_TIMER1 channel 3.
-- 4'h8: ADV_TIMER2 channel 0.
-- 4'h9: ADV_TIMER2 channel 1.
-- 4'hA: ADV_TIMER2 channel 2.
-- 4'hB: ADV_TIMER2 channel 3.
-- 4'hC: ADV_TIMER3 channel 0.
-- 4'hD: ADV_TIMER3 channel 1.
-- 4'hE: ADV_TIMER3 channel 2.
-- 4'hF: ADV_TIMER3 channel 3.
-   rand uvml_ral_reg_field_c  sel1; ///< ADV_TIMER output event 1 source configuration bitfiled:
-- 4'h0: ADV_TIMER0 channel 0.
-- 4'h1: ADV_TIMER0 channel 1.
-- 4'h2: ADV_TIMER0 channel 2.
-- 4'h3: ADV_TIMER0 channel 3.
-- 4'h4: ADV_TIMER1 channel 0.
-- 4'h5: ADV_TIMER1 channel 1.
-- 4'h6: ADV_TIMER1 channel 2.
-- 4'h7: ADV_TIMER1 channel 3.
-- 4'h8: ADV_TIMER2 channel 0.
-- 4'h9: ADV_TIMER2 channel 1.
-- 4'hA: ADV_TIMER2 channel 2.
-- 4'hB: ADV_TIMER2 channel 3.
-- 4'hC: ADV_TIMER3 channel 0.
-- 4'hD: ADV_TIMER3 channel 1.
-- 4'hE: ADV_TIMER3 channel 2.
-- 4'hF: ADV_TIMER3 channel 3.
-   rand uvml_ral_reg_field_c  sel2; ///< ADV_TIMER output event 2 source configuration bitfiled:
-- 4'h0: ADV_TIMER0 channel 0.
-- 4'h1: ADV_TIMER0 channel 1.
-- 4'h2: ADV_TIMER0 channel 2.
-- 4'h3: ADV_TIMER0 channel 3.
-- 4'h4: ADV_TIMER1 channel 0.
-- 4'h5: ADV_TIMER1 channel 1.
-- 4'h6: ADV_TIMER1 channel 2.
-- 4'h7: ADV_TIMER1 channel 3.
-- 4'h8: ADV_TIMER2 channel 0.
-- 4'h9: ADV_TIMER2 channel 1.
-- 4'hA: ADV_TIMER2 channel 2.
-- 4'hB: ADV_TIMER2 channel 3.
-- 4'hC: ADV_TIMER3 channel 0.
-- 4'hD: ADV_TIMER3 channel 1.
-- 4'hE: ADV_TIMER3 channel 2.
-- 4'hF: ADV_TIMER3 channel 3.
-   rand uvml_ral_reg_field_c  sel3; ///< ADV_TIMER output event 3 source configuration bitfiled:
-- 4'h0: ADV_TIMER0 channel 0.
-- 4'h1: ADV_TIMER0 channel 1.
-- 4'h2: ADV_TIMER0 channel 2.
-- 4'h3: ADV_TIMER0 channel 3.
-- 4'h4: ADV_TIMER1 channel 0.
-- 4'h5: ADV_TIMER1 channel 1.
-- 4'h6: ADV_TIMER1 channel 2.
-- 4'h7: ADV_TIMER1 channel 3.
-- 4'h8: ADV_TIMER2 channel 0.
-- 4'h9: ADV_TIMER2 channel 1.
-- 4'hA: ADV_TIMER2 channel 2.
-- 4'hB: ADV_TIMER2 channel 3.
-- 4'hC: ADV_TIMER3 channel 0.
-- 4'hD: ADV_TIMER3 channel 1.
-- 4'hE: ADV_TIMER3 channel 2.
-- 4'hF: ADV_TIMER3 channel 3.
+   rand uvml_ral_reg_field_c  sel0; ///< ADV_TIMER output event 0 source configuration bitfiled: - 4'h0: ADV_TIMER0 channel 0. - 4'h1: ADV_TIMER0 channel 1. - 4'h2: ADV_TIMER0 channel 2. - 4'h3: ADV_TIMER0 channel 3. - 4'h4: ADV_TIMER1 channel 0. - 4'h5: ADV_TIMER1 channel 1. - 4'h6: ADV_TIMER1 channel 2. - 4'h7: ADV_TIMER1 channel 3. - 4'h8: ADV_TIMER2 channel 0. - 4'h9: ADV_TIMER2 channel 1. - 4'hA: ADV_TIMER2 channel 2. - 4'hB: ADV_TIMER2 channel 3. - 4'hC: ADV_TIMER3 channel 0. - 4'hD: ADV_TIMER3 channel 1. - 4'hE: ADV_TIMER3 channel 2. - 4'hF: ADV_TIMER3 channel 3.
+   rand uvml_ral_reg_field_c  sel1; ///< ADV_TIMER output event 1 source configuration bitfiled: - 4'h0: ADV_TIMER0 channel 0. - 4'h1: ADV_TIMER0 channel 1. - 4'h2: ADV_TIMER0 channel 2. - 4'h3: ADV_TIMER0 channel 3. - 4'h4: ADV_TIMER1 channel 0. - 4'h5: ADV_TIMER1 channel 1. - 4'h6: ADV_TIMER1 channel 2. - 4'h7: ADV_TIMER1 channel 3. - 4'h8: ADV_TIMER2 channel 0. - 4'h9: ADV_TIMER2 channel 1. - 4'hA: ADV_TIMER2 channel 2. - 4'hB: ADV_TIMER2 channel 3. - 4'hC: ADV_TIMER3 channel 0. - 4'hD: ADV_TIMER3 channel 1. - 4'hE: ADV_TIMER3 channel 2. - 4'hF: ADV_TIMER3 channel 3.
+   rand uvml_ral_reg_field_c  sel2; ///< ADV_TIMER output event 2 source configuration bitfiled: - 4'h0: ADV_TIMER0 channel 0. - 4'h1: ADV_TIMER0 channel 1. - 4'h2: ADV_TIMER0 channel 2. - 4'h3: ADV_TIMER0 channel 3. - 4'h4: ADV_TIMER1 channel 0. - 4'h5: ADV_TIMER1 channel 1. - 4'h6: ADV_TIMER1 channel 2. - 4'h7: ADV_TIMER1 channel 3. - 4'h8: ADV_TIMER2 channel 0. - 4'h9: ADV_TIMER2 channel 1. - 4'hA: ADV_TIMER2 channel 2. - 4'hB: ADV_TIMER2 channel 3. - 4'hC: ADV_TIMER3 channel 0. - 4'hD: ADV_TIMER3 channel 1. - 4'hE: ADV_TIMER3 channel 2. - 4'hF: ADV_TIMER3 channel 3.
+   rand uvml_ral_reg_field_c  sel3; ///< ADV_TIMER output event 3 source configuration bitfiled: - 4'h0: ADV_TIMER0 channel 0. - 4'h1: ADV_TIMER0 channel 1. - 4'h2: ADV_TIMER0 channel 2. - 4'h3: ADV_TIMER0 channel 3. - 4'h4: ADV_TIMER1 channel 0. - 4'h5: ADV_TIMER1 channel 1. - 4'h6: ADV_TIMER1 channel 2. - 4'h7: ADV_TIMER1 channel 3. - 4'h8: ADV_TIMER2 channel 0. - 4'h9: ADV_TIMER2 channel 1. - 4'hA: ADV_TIMER2 channel 2. - 4'hB: ADV_TIMER2 channel 3. - 4'hC: ADV_TIMER3 channel 0. - 4'hD: ADV_TIMER3 channel 1. - 4'hE: ADV_TIMER3 channel 2. - 4'hF: ADV_TIMER3 channel 3.
    rand uvml_ral_reg_field_c  ena; ///< ADV_TIMER output event enable configuration bitfield. ENA[i]=1 enables output event i generation.
    
    

@@ -13,27 +13,10 @@
 
 class uvme_apb_adv_timer_t2_config_reg_c extends uvml_ral_reg_c;
    
-   rand uvml_ral_reg_field_c  insel; ///< ADV_TIMER0 input source configuration bitfield:
-- 0-31: GPIO[0] to GPIO[31]
-- 32-35: Channel 0 to 3 of ADV_TIMER0
-- 36-39: Channel 0 to 3 of ADV_TIMER1
-- 40-43: Channel 0 to 3 of ADV_TIMER2
-- 44-47: Channel 0 to 3 of ADV_TIMER3
-   rand uvml_ral_reg_field_c  mode; ///< ADV_TIMER0 trigger mode configuration bitfield:
-- 3'h0: trigger event at each clock cycle.
-- 3'h1: trigger event if input source is 0
-- 3'h2: trigger event if input source is 1
-- 3'h3: trigger event on input source rising edge
-- 3'h4: trigger event on input source falling edge
-- 3'h5: trigger event on input source falling or rising edge
-- 3'h6: trigger event on input source rising edge when armed
-- 3'h7: trigger event on input source falling edge when armed
-   rand uvml_ral_reg_field_c  clksel; ///< ADV_TIMER0 clock source configuration bitfield:
-- 1'b0: FLL
-- 1'b1: reference clock at 32kHz
-   rand uvml_ral_reg_field_c  updownsel; ///< ADV_TIMER0 center-aligned mode configuration bitfield:
-- 1'b0: The counter counts up and down alternatively.
-- 1'b1: The counter counts up and resets to 0 when reach threshold.
+   rand uvml_ral_reg_field_c  insel; ///< ADV_TIMER0 input source configuration bitfield: - 0-31: GPIO[0] to GPIO[31] - 32-35: Channel 0 to 3 of ADV_TIMER0 - 36-39: Channel 0 to 3 of ADV_TIMER1 - 40-43: Channel 0 to 3 of ADV_TIMER2 - 44-47: Channel 0 to 3 of ADV_TIMER3
+   rand uvml_ral_reg_field_c  mode; ///< ADV_TIMER0 trigger mode configuration bitfield: - 3'h0: trigger event at each clock cycle. - 3'h1: trigger event if input source is 0 - 3'h2: trigger event if input source is 1 - 3'h3: trigger event on input source rising edge - 3'h4: trigger event on input source falling edge - 3'h5: trigger event on input source falling or rising edge - 3'h6: trigger event on input source rising edge when armed - 3'h7: trigger event on input source falling edge when armed
+   rand uvml_ral_reg_field_c  clksel; ///< ADV_TIMER0 clock source configuration bitfield: - 1'b0: FLL - 1'b1: reference clock at 32kHz
+   rand uvml_ral_reg_field_c  updownsel; ///< ADV_TIMER0 center-aligned mode configuration bitfield: - 1'b0: The counter counts up and down alternatively. - 1'b1: The counter counts up and resets to 0 when reach threshold.
    rand uvml_ral_reg_field_c  presc; ///< ADV_TIMER0 prescaler value configuration bitfield.
    
    
