@@ -11,13 +11,13 @@ This project aims to build a UVM test bench and environment for the CORE-V MCU.
 > * uvmt_apb_timer
 > * uvmt_apb_adv_timer
 > * uvmt_cvmcu
-> * uvma_cvmcu_intr_st
+> * uvmt_cvmcu_intr_st
 * RTL
 * Tools
 
 
 # Installing Toolchain
-1. Download and install the latest version of [Xilinx Vivado WebPack]()
+1. Download and install the latest version of [Xilinx Vivado WebPack](https://www.xilinx.com/support/download.html)
 1. `export VIVADO_HOME=/path/to/vivado/bin`
 1. `pipx install mio-client`
 
