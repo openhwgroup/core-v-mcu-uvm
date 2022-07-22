@@ -177,10 +177,10 @@
 				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
 				<v:textRect cx="72.2407" cy="364.644" width="144.49" height="36.3657"/>
 				<rect x="0" y="346.461" width="144.481" height="36.3657" class="st15"/>
-				<text x="9.06" y="361.04" class="st5" v:langID="4105"><v:paragraph v:horizAlign="1"/><v:tabList/>&#60;uvma_${<tspan
-							class="st3" v:langID="1033">reset_agent_type</tspan>}_agent_c&#62;<v:newlineChar/><tspan x="12.98"
-							dy="1.14em" class="st6">${</tspan><tspan class="st6" v:langID="1033">reset_agent_name</tspan><tspan
-							class="st6">}_agent</tspan></text>			</g>
+				<text x="9.06" y="361.04" class="st5" v:langID="4105"><v:paragraph v:horizAlign="1"/><v:tabList/>&#60;uvma_<tspan
+							class="st3" v:langID="1033">reset</tspan>_agent_c&#62;<v:newlineChar/><tspan x="12.98"
+							dy="1.14em" class="st6"></tspan><tspan class="st6" v:langID="1033">sys_reset</tspan><tspan
+							class="st6">_agent</tspan></text>			</g>
 			<g id="shape427-80" v:mID="427" v:groupContext="shape" transform="translate(519.969,357.282) rotate(90)">
 				<title>Diamond.427</title>
 				<v:userDefs>
@@ -197,10 +197,10 @@
 				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
 				<v:textRect cx="72.2407" cy="364.644" width="144.49" height="36.3657"/>
 				<rect x="0" y="346.461" width="144.481" height="36.3657" class="st15"/>
-				<text x="12.91" y="361.04" class="st5" v:langID="4105"><v:paragraph v:horizAlign="1"/><v:tabList/>&#60;uvma_${<tspan
-							class="st3" v:langID="1033">clk_agent_type</tspan>}_agent_c&#62;<v:newlineChar/><tspan x="17.8"
-							dy="1.14em" class="st6">${</tspan><tspan class="st6" v:langID="1033">clk_agent_name</tspan><tspan
-							class="st6">}_agent</tspan></text>			</g>
+				<text x="12.91" y="361.04" class="st5" v:langID="4105"><v:paragraph v:horizAlign="1"/><v:tabList/>&#60;uvma_<tspan
+							class="st3" v:langID="1033">clk</tspan>_agent_c&#62;<v:newlineChar/><tspan x="17.8"
+							dy="1.14em" class="st6"></tspan><tspan class="st6" v:langID="1033">sys_clk</tspan><tspan
+							class="st6">_agent</tspan></text>			</g>
 			<g id="shape115-90" v:mID="115" v:groupContext="shape" transform="translate(519.969,357.282) rotate(90)">
 				<title>Diamond.115</title>
 				<v:userDefs>
