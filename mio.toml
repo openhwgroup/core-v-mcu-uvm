@@ -4,8 +4,8 @@
 
 
 [project]
-name        = "mio_cli"
-full-name   = "Moore.io CLI Client"
+name        = "core-v-mcu-uvm"
+full-name   = "CORE-V MCU UVM"
 description = ""
 
 [simulation]
