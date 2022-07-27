@@ -48,8 +48,8 @@ function void uvme_apb_adv_timer_t0_threshold_reg_c::build();
    th_lo = uvml_ral_reg_field_c::type_id::create("th_lo");
    th_lo.configure(
       .parent                 (this),
-      .size                   (   0),
-      .lsb_pos                (   16),
+      .size                   (   16),
+      .lsb_pos                (   0),
       .access                 ("RW"),
       .volatile               (   0),
       .reset                  (   0),

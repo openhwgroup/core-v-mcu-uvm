@@ -46,8 +46,8 @@ function void uvme_apb_adv_timer_t3_counter_reg_c::build();
    counter = uvml_ral_reg_field_c::type_id::create("counter");
    counter.configure(
       .parent                 (this),
-      .size                   (   0),
-      .lsb_pos                (   16),
+      .size                   (   16),
+      .lsb_pos                (   0),
       .access                 ("WO"),
       .volatile               (   0),
       .reset                  (   0),

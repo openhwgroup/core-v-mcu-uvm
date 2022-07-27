@@ -14,7 +14,7 @@
 class uvme_apb_adv_timer_t3_th_channel1_reg_c extends uvml_ral_reg_c;
    
    rand uvml_ral_reg_field_c  th; ///< ADV_TIMER0 channel 0 threshold configuration bitfield.
-   rand uvml_ral_reg_field_c  mode; ///< ADV_TIMER0 channel 0 threshold match action on channel output signal configuration bitfield: - 3'h0: set. - 3'h1: toggle then next threshold match action is clear. - 3'h2: set then next threshold match action is clear. - 3'h3: toggle. - 3'h4: clear. - 3'h5: toggle then next threshold match action is set. - 3'h6: clear then next threshold match action is set.
+   rand uvml_ral_reg_field_c  mode; ///< ADV_TIMER0 channel 0 threshold match action on channel output signal configuration bitfield:
    
    
    `uvm_object_utils_begin(uvme_apb_adv_timer_t3_th_channel1_reg_c)
@@ -48,8 +48,8 @@ function void uvme_apb_adv_timer_t3_th_channel1_reg_c::build();
    th = uvml_ral_reg_field_c::type_id::create("th");
    th.configure(
       .parent                 (this),
-      .size                   (   0),
-      .lsb_pos                (   16),
+      .size                   (   16),
+      .lsb_pos                (   0),
       .access                 ("RW"),
       .volatile               (   0),
       .reset                  (   0),
