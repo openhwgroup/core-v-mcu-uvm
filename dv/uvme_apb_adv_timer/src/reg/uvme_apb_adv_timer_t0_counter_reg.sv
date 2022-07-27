@@ -48,7 +48,7 @@ function void uvme_apb_adv_timer_t0_counter_reg_c::build();
       .parent                 (this),
       .size                   (   16),
       .lsb_pos                (   0),
-      .access                 (""),
+      .access                 ("WO"),
       .volatile               (   0),
       .reset                  (   0),
       .has_reset              (   1),

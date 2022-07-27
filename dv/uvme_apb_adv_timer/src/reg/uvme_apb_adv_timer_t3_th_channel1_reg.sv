@@ -60,8 +60,8 @@ function void uvme_apb_adv_timer_t3_th_channel1_reg_c::build();
    mode = uvml_ral_reg_field_c::type_id::create("mode");
    mode.configure(
       .parent                 (this),
-      .size                   (   16),
-      .lsb_pos                (   3),
+      .size                   (   3),
+      .lsb_pos                (   16),
       .access                 ("RW"),
       .volatile               (   0),
       .reset                  (   0),

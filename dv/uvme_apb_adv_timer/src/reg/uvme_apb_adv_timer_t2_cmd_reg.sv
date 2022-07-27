@@ -118,7 +118,7 @@ function void uvme_apb_adv_timer_t2_cmd_reg_c::build();
       .parent                 (this),
       .size                   (   27),
       .lsb_pos                (   5),
-      .access                 (""),
+      .access                 ("WO"),
       .volatile               (   0),
       .reset                  (   0),
       .has_reset              (   1),
