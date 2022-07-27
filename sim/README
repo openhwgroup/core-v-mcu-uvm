@@ -1,2 +1,0 @@
-1. Set VIVADO_HOME (ex: `export VIVADO_HOME=/tools/vivado/2021.1/Vivado`)
-2. Execute run.sh bash script
