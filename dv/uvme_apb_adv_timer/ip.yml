@@ -21,10 +21,10 @@ ip:
   licenses: ["SHL-2.1"]
 
 structure:
-   scripts-paths : [ "/bin"      ]
-   docs-paths    : [ "/docs"     ]
-   examples-paths: [ "/examples" ]
-   src-paths     : [ "/src"      ]
+   scripts-path : "bin"
+   docs-path    : "docs"
+   examples-path: "examples"
+   src-path     : "src"
 
 dependencies:
   - { name: "uvm"       , version:  "1.2" }
@@ -39,11 +39,11 @@ dependencies:
 hdl-src:
   directories: [".", "comps", "obj", "reg", "seq"]
   top-files: [ "uvme_apb_adv_timer_pkg.sv" ]
-  flists:
-    metrics : [ "src/uvme_apb_adv_timer_pkg.flist"      ]
-    riviera : [ "src/uvme_apb_adv_timer_pkg.flist"      ]
-    questa  : [ "src/uvme_apb_adv_timer_pkg.flist"      ]
-    vcs     : [ "src/uvme_apb_adv_timer_pkg.flist"      ]
-    vivado  : [ "src/uvme_apb_adv_timer_pkg.flist.xsim" ]
-    xcelium : [ "src/uvme_apb_adv_timer_pkg.flist"      ]
+  flist:
+    metrics : "uvme_apb_adv_timer_pkg.flist"
+    riviera : "uvme_apb_adv_timer_pkg.flist"
+    questa  : "uvme_apb_adv_timer_pkg.flist"
+    vcs     : "uvme_apb_adv_timer_pkg.flist"
+    vivado  : "uvme_apb_adv_timer_pkg.flist.xsim"
+    xcelium : "uvme_apb_adv_timer_pkg.flist"
 

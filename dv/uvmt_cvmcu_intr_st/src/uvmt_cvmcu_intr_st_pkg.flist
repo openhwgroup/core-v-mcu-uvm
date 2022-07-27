@@ -4,22 +4,22 @@
 
 
 // Libraries
--f ${DV_UVM_SRC_PATH}/uvm_pkg.flist
--f ${DV_UVML_SRC_PATH}/uvml_pkg.flist
--f ${DV_UVML_LOGS_SRC_PATH}/uvml_logs_pkg.flist
--f ${DV_UVML_SB_SRC_PATH}/uvml_sb_pkg.flist
+-f ${UVM_SRC_PATH}/uvm_pkg.flist
+-f ${UVML_SRC_PATH}/uvml_pkg.flist
+-f ${UVML_LOGS_SRC_PATH}/uvml_logs_pkg.flist
+-f ${UVML_SB_SRC_PATH}/uvml_sb_pkg.flist
 
 // Agents
--f ${DV_UVMA_CVMCU_INTR_SRC_PATH}/uvma_cvmcu_intr_pkg.flist
+-f ${UVMA_CVMCU_INTR_SRC_PATH}/uvma_cvmcu_intr_pkg.flist
 
 // Environments
--f ${DV_UVME_CVMCU_INTR_ST_SRC_PATH}/uvme_cvmcu_intr_st_pkg.flist
+-f ${UVME_CVMCU_INTR_ST_SRC_PATH}/uvme_cvmcu_intr_st_pkg.flist
 
 // Test bench directories
-+incdir+${DV_UVMT_CVMCU_INTR_ST_SRC_PATH}
-+incdir+${DV_UVMT_CVMCU_INTR_ST_SRC_PATH}/seq
-+incdir+${DV_UVMT_CVMCU_INTR_ST_SRC_PATH}/tb
-+incdir+${DV_UVMT_CVMCU_INTR_ST_SRC_PATH}/tests
++incdir+${UVMT_CVMCU_INTR_ST_SRC_PATH}
++incdir+${UVMT_CVMCU_INTR_ST_SRC_PATH}/seq
++incdir+${UVMT_CVMCU_INTR_ST_SRC_PATH}/tb
++incdir+${UVMT_CVMCU_INTR_ST_SRC_PATH}/tests
 
 // Test bench package and modules/interfaces
-${DV_UVMT_CVMCU_INTR_ST_SRC_PATH}/uvmt_cvmcu_intr_st_pkg.sv
+${UVMT_CVMCU_INTR_ST_SRC_PATH}/uvmt_cvmcu_intr_st_pkg.sv

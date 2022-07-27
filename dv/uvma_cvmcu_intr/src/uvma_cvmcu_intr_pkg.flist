@@ -4,10 +4,10 @@
 
 
 // Directories
-+incdir+${DV_UVMA_CVMCU_INTR_SRC_PATH}
-+incdir+${DV_UVMA_CVMCU_INTR_SRC_PATH}/comps
-+incdir+${DV_UVMA_CVMCU_INTR_SRC_PATH}/obj
-+incdir+${DV_UVMA_CVMCU_INTR_SRC_PATH}/seq
++incdir+${UVMA_CVMCU_INTR_SRC_PATH}
++incdir+${UVMA_CVMCU_INTR_SRC_PATH}/comps
++incdir+${UVMA_CVMCU_INTR_SRC_PATH}/obj
++incdir+${UVMA_CVMCU_INTR_SRC_PATH}/seq
 
 // Files
-${DV_UVMA_CVMCU_INTR_SRC_PATH}/uvma_cvmcu_intr_pkg.sv
+${UVMA_CVMCU_INTR_SRC_PATH}/uvma_cvmcu_intr_pkg.sv

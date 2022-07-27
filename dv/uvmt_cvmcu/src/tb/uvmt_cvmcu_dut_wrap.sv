@@ -31,7 +31,7 @@ module uvmt_cvmcu_dut_wrap (
    reg  [287:0]  pad_cfg_o      ;
    reg  [ 47:0]  io_oe_o        ;
 
-   core_v_mcu #(.USE_CORES(0)) dut (
+   core_v_mcu #(.USE_CORES(1)) dut (
      .jtag_tck_i (jtag_tck_i),
      .jtag_tdi_i (jtag_tdi_i),
      .jtag_tdo_o (jtag_tdo_o),
@@ -48,21 +48,21 @@ module uvmt_cvmcu_dut_wrap (
    );
 
    // Instruction OBI Interface
-   assign obi_instr_if.addr = dut.i_soc_domain.fc_subsystem_i.core_instr_addr;
-   assign obi_instr_if.req  = dut.i_soc_domain.fc_subsystem_i.core_instr_req ;
-   assign dut.i_soc_domain.fc_subsystem_i.core_instr_rdata  = obi_instr_if.rdata ;
-   assign dut.i_soc_domain.fc_subsystem_i.core_instr_gnt    = obi_instr_if.gnt   ;
-   assign dut.i_soc_domain.fc_subsystem_i.core_instr_rvalid = obi_instr_if.rvalid;
+   //assign obi_instr_if.addr = dut.i_soc_domain.fc_subsystem_i.core_instr_addr;
+   //assign obi_instr_if.req  = dut.i_soc_domain.fc_subsystem_i.core_instr_req ;
+   //assign dut.i_soc_domain.fc_subsystem_i.core_instr_rdata  = obi_instr_if.rdata ;
+   //assign dut.i_soc_domain.fc_subsystem_i.core_instr_gnt    = obi_instr_if.gnt   ;
+   //assign dut.i_soc_domain.fc_subsystem_i.core_instr_rvalid = obi_instr_if.rvalid;
 
    // Data OBI Interface
-   assign obi_data_if.addr  = dut.i_soc_domain.fc_subsystem_i.core_data_addr ;
-   assign obi_data_if.req   = dut.i_soc_domain.fc_subsystem_i.core_data_req  ;
-   assign obi_data_if.be    = dut.i_soc_domain.fc_subsystem_i.core_data_be   ;
-   assign obi_data_if.we    = dut.i_soc_domain.fc_subsystem_i.core_data_we   ;
-   assign obi_data_if.wdata = dut.i_soc_domain.fc_subsystem_i.core_data_wdata;
-   assign dut.i_soc_domain.fc_subsystem_i.core_data_rdata  = obi_data_if.rdata ;
-   assign dut.i_soc_domain.fc_subsystem_i.core_data_gnt    = obi_data_if.gnt   ;
-   assign dut.i_soc_domain.fc_subsystem_i.core_data_rvalid = obi_data_if.rvalid;
+   //assign obi_data_if.addr  = dut.i_soc_domain.fc_subsystem_i.core_data_addr ;
+   //assign obi_data_if.req   = dut.i_soc_domain.fc_subsystem_i.core_data_req  ;
+   //assign obi_data_if.be    = dut.i_soc_domain.fc_subsystem_i.core_data_be   ;
+   //assign obi_data_if.we    = dut.i_soc_domain.fc_subsystem_i.core_data_we   ;
+   //assign obi_data_if.wdata = dut.i_soc_domain.fc_subsystem_i.core_data_wdata;
+   //assign dut.i_soc_domain.fc_subsystem_i.core_data_rdata  = obi_data_if.rdata ;
+   //assign dut.i_soc_domain.fc_subsystem_i.core_data_gnt    = obi_data_if.gnt   ;
+   //assign dut.i_soc_domain.fc_subsystem_i.core_data_rvalid = obi_data_if.rvalid;
 
    // /\ CODE ABOVE IS RESPONSABILITY OF DESIGNERS /\
 

@@ -41,7 +41,7 @@ class uvmt_cvmcu_base_test_c extends uvm_test;
 
 
    constraint env_cfg_cons {
-      env_cfg.enabled         == 1;
+      env_cfg.enabled         == 0;//1;
       env_cfg.is_active       == UVM_ACTIVE;
       env_cfg.trn_log_enabled == 1;
    }
@@ -200,9 +200,9 @@ task uvmt_cvmcu_base_test_c::pre_reset_phase(uvm_phase phase);
 
    super.pre_reset_phase(phase);
 
-   `uvm_info("TEST", $sformatf("Starting sys_clk virtual sequence:\n%s", sys_clk_vseq.sprint()), UVM_NONE)
-   sys_clk_vseq.start(vsequencer);
-   `uvm_info("TEST", "Finished sys_clk virtual sequence", UVM_NONE)
+   //`uvm_info("TEST", $sformatf("Starting sys_clk virtual sequence:\n%s", sys_clk_vseq.sprint()), UVM_NONE)
+   //sys_clk_vseq.start(vsequencer);
+   //`uvm_info("TEST", "Finished sys_clk virtual sequence", UVM_NONE)
 
 endtask : pre_reset_phase
 
@@ -211,9 +211,9 @@ task uvmt_cvmcu_base_test_c::reset_phase(uvm_phase phase);
 
    super.reset_phase(phase);
 
-   `uvm_info("TEST", $sformatf("Starting sys_reset virtual sequence:\n%s", sys_reset_vseq.sprint()), UVM_NONE)
-   sys_reset_vseq.start(vsequencer);
-   `uvm_info("TEST", "Finished sys_reset virtual sequence", UVM_NONE)
+   //`uvm_info("TEST", $sformatf("Starting sys_reset virtual sequence:\n%s", sys_reset_vseq.sprint()), UVM_NONE)
+   //sys_reset_vseq.start(vsequencer);
+   //`uvm_info("TEST", "Finished sys_reset virtual sequence", UVM_NONE)
 
 endtask : reset_phase
 

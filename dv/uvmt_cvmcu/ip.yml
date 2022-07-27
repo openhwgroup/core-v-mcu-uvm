@@ -21,33 +21,32 @@ ip:
   licenses: ["SHL-2.1"]
 
 structure:
-   scripts-paths : [ "/bin"      ]
-   docs-paths    : [ "/docs"     ]
-   examples-paths: [ "/examples" ]
-   src-paths     : [ "/src"      ]
+   scripts-path : "bin"
+   docs-path    : "docs"
+   examples-path: "examples"
+   src-path     : "src"
 
 dependencies:
-  - { type: "DV", name: "uvm"       , repo-uri: "https://github.com/Datum-Technology-Corporation/uvm.git"       , repo-branch: "main", repo-path: "dv/uvm"        }
-  - { type: "DV", name: "uvml"      , repo-uri: "https://github.com/Datum-Technology-Corporation/uvml.git"      , repo-branch: "main", repo-path: "dv/uvml"       }
-  - { type: "DV", name: "uvml_logs" , repo-uri: "https://github.com/Datum-Technology-Corporation/uvml_logs.git" , repo-branch: "main", repo-path: "dv/uvml_logs"  }
-  - { type: "DV", name: "uvml_logs" , repo-uri: "https://github.com/Datum-Technology-Corporation/uvml_ral.git"  , repo-branch: "main", repo-path: "dv/uvml_ral"   }
-  - { type: "DV", name: "uvml_sb"   , repo-uri: "https://github.com/Datum-Technology-Corporation/uvml_sb.git"   , repo-branch: "main", repo-path: "dv/uvml_sb"    }
-  - { type: "DV", name: "uvma_clk"  , repo-uri: "https://github.com/Datum-Technology-Corporation/uvma_clk.git"  , repo-branch: "main", repo-path: "dv/uvma_clk"   }
-  - { type: "DV", name: "uvma_reset", repo-uri: "https://github.com/Datum-Technology-Corporation/uvma_reset.git", repo-branch: "main", repo-path: "dv/uvma_reset" }
-  - { type: "DV", name: "uvma_obi"  , repo-uri: "https://github.com/Datum-Technology-Corporation/uvma_obi.git"  , repo-branch: "main", repo-path: "dv/uvma_obi"   }
-  - { type: "DV", name: "uvma_apb"  , repo-uri: "https://github.com/Datum-Technology-Corporation/uvma_apb.git"  , repo-branch: "main", repo-path: "dv/uvma_apb"   }
+  - { name: "uvm"       , version:  "1.2" }
+  - { name: "uvml"      , version: "~1.0" }
+  - { name: "uvml_logs" , version: "~1.0" }
+  - { name: "uvml_sb"   , version: "~1.0" }
+  - { name: "uvma_clk"  , version: "~1.0" }
+  - { name: "uvma_reset", version: "~1.0" }
+  - { name: "uvma_apb"  , version: "~1.0" }
+  - { name: "uvma_obi"  , version: "~1.0" }
 
 hdl-src:
-  flists:
-    metrics : [ "src/uvmt_cvmcu_pkg.flist"      ]
-    riviera : [ "src/uvmt_cvmcu_pkg.flist"      ]
-    questa  : [ "src/uvmt_cvmcu_pkg.flist"      ]
-    vcs     : [ "src/uvmt_cvmcu_pkg.flist"      ]
-    vivado  : [ "src/uvmt_cvmcu_pkg.flist.xsim" ]
-    xcelium : [ "src/uvmt_cvmcu_pkg.flist"      ]
+  flist:
+    metrics : "uvmt_cvmcu_pkg.flist"
+    riviera : "uvmt_cvmcu_pkg.flist"
+    questa  : "uvmt_cvmcu_pkg.flist"
+    vcs     : "uvmt_cvmcu_pkg.flist"
+    vivado  : "uvmt_cvmcu_pkg.flist.xsim"
+    xcelium : "uvmt_cvmcu_pkg.flist"
   directories: [".", "tb", "tests"]
   files: ["uvmt_cvmcu_pkg.sv"]
-  top-constructs: ["uvmt_cvmcu_tb", "uvml_logs_sim_summary"]
+  top-constructs: ["uvmt_cvmcu_tb", "uvml_sim_summary"]
   test-paths: ["tests"]
   test-name-template: "uvmt_cvmcu_{{ name }}_test_c"
 

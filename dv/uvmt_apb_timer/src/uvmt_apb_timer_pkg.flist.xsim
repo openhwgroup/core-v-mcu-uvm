@@ -5,25 +5,25 @@
 
 
 // Libraries
-//-f ${DV_UVM_SRC_PATH}/uvm_pkg.flist.xsim
--f ${DV_UVML_SRC_PATH}/uvml_pkg.flist.xsim
--f ${DV_UVML_LOGS_SRC_PATH}/uvml_logs_pkg.flist.xsim
--f ${DV_UVML_SB_SRC_PATH}/uvml_sb_pkg.flist.xsim
--f ${DV_UVML_RAL_SRC_PATH}/uvml_ral_pkg.flist.xsim
+//-f ${UVM_SRC_PATH}/uvm_pkg.flist.xsim
+-f ${UVML_SRC_PATH}/uvml_pkg.flist.xsim
+-f ${UVML_LOGS_SRC_PATH}/uvml_logs_pkg.flist.xsim
+-f ${UVML_SB_SRC_PATH}/uvml_sb_pkg.flist.xsim
+-f ${UVML_RAL_SRC_PATH}/uvml_ral_pkg.flist.xsim
 
 // Agents
--f ${DV_UVMA_CLK_SRC_PATH}/uvma_clk_pkg.flist.xsim
--f ${DV_UVMA_RESET_SRC_PATH}/uvma_reset_pkg.flist.xsim
--f ${DV_UVMA_APB_SRC_PATH}/uvma_apb_pkg.flist.xsim
+-f ${UVMA_CLK_SRC_PATH}/uvma_clk_pkg.flist.xsim
+-f ${UVMA_RESET_SRC_PATH}/uvma_reset_pkg.flist.xsim
+-f ${UVMA_APB_SRC_PATH}/uvma_apb_pkg.flist.xsim
 
 // Environments
--f ${DV_UVME_APB_TIMER_SRC_PATH}/uvme_apb_timer_pkg.flist.xsim
+-f ${UVME_APB_TIMER_SRC_PATH}/uvme_apb_timer_pkg.flist.xsim
 
 // Directories
--i ${DV_UVMT_APB_TIMER_SRC_PATH}
--i ${DV_UVMT_APB_TIMER_SRC_PATH}/seq
--i ${DV_UVMT_APB_TIMER_SRC_PATH}/tb
--i ${DV_UVMT_APB_TIMER_SRC_PATH}/tests
+-i ${UVMT_APB_TIMER_SRC_PATH}
+-i ${UVMT_APB_TIMER_SRC_PATH}/seq
+-i ${UVMT_APB_TIMER_SRC_PATH}/tb
+-i ${UVMT_APB_TIMER_SRC_PATH}/tests
 
 // Files
-${DV_UVMT_APB_TIMER_SRC_PATH}/uvmt_apb_timer_pkg.sv
+${UVMT_APB_TIMER_SRC_PATH}/uvmt_apb_timer_pkg.sv

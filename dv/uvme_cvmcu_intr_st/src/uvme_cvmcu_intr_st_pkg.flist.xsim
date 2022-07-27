@@ -4,10 +4,10 @@
 
 
 // Directories
--i ${DV_UVME_CVMCU_INTR_ST_SRC_PATH}
--i ${DV_UVME_CVMCU_INTR_ST_SRC_PATH}/comps
--i ${DV_UVME_CVMCU_INTR_ST_SRC_PATH}/obj
--i ${DV_UVME_CVMCU_INTR_ST_SRC_PATH}/seq
+-i ${UVME_CVMCU_INTR_ST_SRC_PATH}
+-i ${UVME_CVMCU_INTR_ST_SRC_PATH}/comps
+-i ${UVME_CVMCU_INTR_ST_SRC_PATH}/obj
+-i ${UVME_CVMCU_INTR_ST_SRC_PATH}/seq
 
 // Files
-${DV_UVME_CVMCU_INTR_ST_SRC_PATH}/uvme_cvmcu_intr_st_pkg.sv
+${UVME_CVMCU_INTR_ST_SRC_PATH}/uvme_cvmcu_intr_st_pkg.sv

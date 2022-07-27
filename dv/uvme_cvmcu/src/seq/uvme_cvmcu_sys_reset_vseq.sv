@@ -48,7 +48,6 @@ endfunction : new
 
 task uvme_cvmcu_sys_reset_vseq_c::body();
 
-   $finish();
    `uvm_do_on(pulse_seq, p_sequencer.sys_reset_sequencer)
 
 endtask : body

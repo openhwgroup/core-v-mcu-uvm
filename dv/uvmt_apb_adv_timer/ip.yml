@@ -15,16 +15,16 @@ ip:
   block-diagram: ""
   languages: ["sv"]
   simulators-supported:
-    - { name: "vivado", version: "2021.1" }
+    - { name: "vivado", version: "2022.1" }
   tags: []
   copyright-holders: ["Datum Technology Corporation"]
   licenses: ["SHL-2.1"]
 
 structure:
-   scripts-paths : [ "/bin"      ]
-   docs-paths    : [ "/docs"     ]
-   examples-paths: [ "/examples" ]
-   src-paths     : [ "/src"      ]
+   scripts-path : "bin"
+   docs-path    : "docs"
+   examples-path: "examples"
+   src-path     : "src"
 
 dependencies:
   - { name: "uvm"       , version:  "1.2" }
@@ -38,18 +38,18 @@ dependencies:
 #  - { name: "uvme_apb_adv_timer", version: "^" }
 
 hdl-src:
-  top-constructs: ["uvmt_apb_adv_timer_tb", "uvml_logs_sim_summary"]
+  top-constructs: ["uvmt_apb_adv_timer_tb", "uvml_sim_summary"]
   directories: [".", "tb", "tests"]
   top-files: [ "uvmt_apb_adv_timer_pkg.sv" ]
   test-paths: ["tests"]
   test-name-template: "uvmt_apb_adv_timer_{{ name }}_test_c"
-  flists:
-    metrics : [ "src/uvmt_apb_adv_timer_pkg.flist"      ]
-    riviera : [ "src/uvmt_apb_adv_timer_pkg.flist"      ]
-    questa  : [ "src/uvmt_apb_adv_timer_pkg.flist"      ]
-    vcs     : [ "src/uvmt_apb_adv_timer_pkg.flist"      ]
-    vivado  : [ "src/uvmt_apb_adv_timer_pkg.flist.xsim" ]
-    xcelium : [ "src/uvmt_apb_adv_timer_pkg.flist"      ]
+  flist:
+    metrics : "uvmt_apb_adv_timer_pkg.flist"
+    riviera : "uvmt_apb_adv_timer_pkg.flist"
+    questa  : "uvmt_apb_adv_timer_pkg.flist"
+    vcs     : "uvmt_apb_adv_timer_pkg.flist"
+    vivado  : "uvmt_apb_adv_timer_pkg.flist.xsim"
+    xcelium : "uvmt_apb_adv_timer_pkg.flist"
 
 dut:
   ip-type: fsoc

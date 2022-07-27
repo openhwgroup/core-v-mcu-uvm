@@ -12,16 +12,29 @@
  */
 module uvmt_cvmcu_tb;
 
+   timeunit       1ns;
+   timeprecision  1ps;
+
    import uvm_pkg       ::*;
    import uvmt_cvmcu_pkg::*;
 
    logic clk = 0;
+   logic reset_n = 1;
 
    initial begin
       forever begin
-         #100ns;
+         #10ns;
          clk = !clk;
       end
+   end
+
+   initial begin
+      #1000ns;
+      reset_n = 0;
+      #100ns;
+      $finish();
+      reset_n = 1;
+      #100ns;
    end
 
    // Support agent interfaces
@@ -29,9 +42,9 @@ module uvmt_cvmcu_tb;
    uvma_reset_if  sys_reset_if(.clk(clk)/*.clk(sys_clk_if.clk)*/);
 
    // Core agent interfaces
-   uvma_obi_if         obi_instr_if(.clk(clk)/*.clk(sys_clk_if.clk)*/, .reset_n(sys_reset_if.reset_n));
-   uvma_obi_if         obi_data_if (.clk(clk)/*.clk(sys_clk_if.clk)*/, .reset_n(sys_reset_if.reset_n));
-   uvma_cvmcu_intr_if  intr_if     (.clk(clk)/*.clk(sys_clk_if.clk)*/, .reset_n(sys_reset_if.reset_n));
+   uvma_obi_if         obi_instr_if(.clk(clk)/*.clk(sys_clk_if.clk)*/, .reset_n(/*sys_reset_if.*/reset_n));
+   uvma_obi_if         obi_data_if (.clk(clk)/*.clk(sys_clk_if.clk)*/, .reset_n(/*sys_reset_if.*/reset_n));
+   uvma_cvmcu_intr_if  intr_if     (.clk(clk)/*.clk(sys_clk_if.clk)*/, .reset_n(/*sys_reset_if.*/reset_n));
 
    // Misc. interfaces
    uvmt_cvmcu_probe_if  probe_if();
