@@ -5,11 +5,11 @@
 
 
 // Directories
-+incdir+${UVME_APB_ATIMER_SRC_PATH}
-+incdir+${UVME_APB_ATIMER_SRC_PATH}/comps
-+incdir+${UVME_APB_ATIMER_SRC_PATH}/obj
-+incdir+${UVME_APB_ATIMER_SRC_PATH}/reg
-+incdir+${UVME_APB_ATIMER_SRC_PATH}/seq
++incdir+${UVME_APB_ADV_TIMER_SRC_PATH}
++incdir+${UVME_APB_ADV_TIMER_SRC_PATH}/comps
++incdir+${UVME_APB_ADV_TIMER_SRC_PATH}/obj
++incdir+${UVME_APB_ADV_TIMER_SRC_PATH}/reg
++incdir+${UVME_APB_ADV_TIMER_SRC_PATH}/seq
 
 // Files
-${UVME_APB_ATIMER_SRC_PATH}/uvme_apb_atimer_pkg.sv
+${UVME_APB_ADV_TIMER_SRC_PATH}/uvme_apb_adv_timer_pkg.sv
