@@ -22,7 +22,7 @@ use `grep -nr TODO .` for a full list of recommendations.
 
 ## Have fun!
 Make sure to check out the other IP generated along with this environment:
-* `uvmt_{{name }}`
+* `uvmt_apb_adv_timer`
 
 
 

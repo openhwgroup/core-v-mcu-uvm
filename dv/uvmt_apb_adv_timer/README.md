@@ -21,7 +21,7 @@ What follows is a short guide for developers of this new UVM Test Bench.  You ma
 
 ## Have fun!
 Make sure to check out the other IP generated along with this test bench:
-* `uvme_{{name }}`
+* `uvme_apb_adv_timer`
 
 
 
