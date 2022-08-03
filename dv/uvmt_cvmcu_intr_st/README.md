@@ -20,7 +20,7 @@ Make sure to check out the other IP generated along with this test bench:
 
 
 
-# Datum Technology Corporation CORE-V MCU Interrupt Self-Test Bench and UVM Test Library
+# CORE-V MCU Interrupt Self-Test Bench and UVM Test Library
 
 
 # About
