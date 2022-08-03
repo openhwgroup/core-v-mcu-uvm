@@ -27,11 +27,11 @@ Make sure to check out the other IP generated along with this environment:
 
 
 
-# Datum Technology Corporation CORE-V MCU APB Timer Sub-System UVM Environment
+# CORE-V MCU APB Timer Sub-System UVM Environment
 
 
 # About
-This IP contains the Datum Technology Corporation CORE-V MCU APB Timer Sub-System UVM Environment.
+This IP contains the CORE-V MCU APB Timer Sub-System UVM Environment.
 
 TODO Describe CORE-V MCU APB Timer
 
