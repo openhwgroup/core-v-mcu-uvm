@@ -26,11 +26,11 @@ Make sure to check out the other IP generated along with this test bench:
 
 
 
-# Datum Technology Corporation CORE-V MCU APB Timer Sub-System UVM Test Bench
+# CORE-V MCU APB Timer Sub-System UVM Test Bench
 
 
 # About
-This IP contains the Datum Technology Corporation CORE-V MCU APB Timer Sub-System UVM Test Bench.
+This IP contains the CORE-V MCU APB Timer Sub-System UVM Test Bench.
 
 TODO Describe CORE-V MCU APB Timer
 
