@@ -7,6 +7,18 @@
 `define __UVMA_CVMCU_INTR_PKG_SV__
 
 
+// Doxygen Groups
+/**
+ * @defgroup uvma_cvmcu_intr_pkg CORE-V MCU Interrupt UVM Agent
+ * @{
+ * @defgroup uvma_cvmcu_intr_comps Components
+ * @defgroup uvma_cvmcu_intr_misc  Miscellaneous
+ * @defgroup uvma_cvmcu_intr_obj   Objects
+ * @defgroup uvma_cvmcu_intr_seq   Sequences & Sequence Items
+ * @}
+ */
+
+
 // Pre-processor macros
 `include "uvm_macros.svh"
 `include "uvml_macros.svh"
@@ -21,6 +33,7 @@
 
 /**
  * Encapsulates all the types needed for a UVM agent capable of driving and monitoring a CORE-V MCU Interrupt interface.
+ * @ingroup uvma_cvmcu_intr_pkg
  */
 package uvma_cvmcu_intr_pkg;
 

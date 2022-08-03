@@ -9,6 +9,7 @@
 
 /**
  * Component encapsulating CORE-V MCU Interrupt UVM Agent Self-Test functional coverage model.
+ * @ingroup uvma_cvmcu_intr_st_comps
  */
 class uvme_cvmcu_intr_st_cov_model_c extends uvma_cvmcu_intr_cov_model_c;
 

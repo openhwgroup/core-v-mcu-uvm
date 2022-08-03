@@ -10,6 +10,7 @@
 /**
  * Abstract object from which all other CORE-V MCU Interrupt agent sequences must extend.
  * Subclasses must be run on CORE-V MCU Interrupt sequencer (uvma_cvmcu_intr_sqr_c) instance.
+ * @ingroup uvma_cvmcu_intr_seq
  */
 class uvma_cvmcu_intr_base_seq_c extends uvml_seq_c #(
    .REQ(uvma_cvmcu_intr_seq_item_c),

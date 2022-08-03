@@ -9,6 +9,7 @@
 
 /**
  * Component driving a CORE-V MCU Interrupt virtual interface (uvma_cvmcu_intr_if) with contents from uvma_cvmcu_intr_seq_item_c requests.
+ * @ingroup uvma_cvmcu_intr_comps
  */
 class uvma_cvmcu_intr_drv_c extends uvml_drv_c #(
    .REQ(uvma_cvmcu_intr_seq_item_c),
@@ -56,6 +57,26 @@ class uvma_cvmcu_intr_drv_c extends uvml_drv_c #(
    extern virtual task run_phase(uvm_phase phase);
 
    /**
+    * Uses uvm_config_db to retrieve cfg.
+    */
+   extern function void get_cfg();
+
+   /**
+    * Uses uvm_config_db to retrieve cntxt.
+    */
+   extern function void get_cntxt();
+
+   /**
+    * Creates #ap.
+    */
+   extern function void create_tlm_ports();
+
+   /**
+    * Retrieves #mp from #cntxt.
+    */
+   extern function void retrieve_modports();
+
+   /**
     * Called by run_phase() while agent is in pre-reset state.
     */
    extern virtual task drv_pre_reset();
@@ -93,21 +114,10 @@ endfunction : new
 function void uvma_cvmcu_intr_drv_c::build_phase(uvm_phase phase);
 
    super.build_phase(phase);
-
-   void'(uvm_config_db#(uvma_cvmcu_intr_cfg_c)::get(this, "", "cfg", cfg));
-   if (!cfg) begin
-      `uvm_fatal("CVMCU_INTR_DRV", "Configuration handle is null")
-   end
-   uvm_config_db#(uvma_cvmcu_intr_cfg_c)::set(this, "*", "cfg", cfg);
-
-   void'(uvm_config_db#(uvma_cvmcu_intr_cntxt_c)::get(this, "", "cntxt", cntxt));
-   if (!cntxt) begin
-      `uvm_fatal("CVMCU_INTR_DRV", "Context handle is null")
-   end
-   uvm_config_db#(uvma_cvmcu_intr_cntxt_c)::set(this, "*", "cntxt", cntxt);
-
-   ap = new("ap", this);
-   mp = cntxt.vif.drv_mp;
+   get_cfg          ();
+   get_cntxt        ();
+   create_tlm_ports ();
+   retrieve_modports();
 
 endfunction : build_phase
 
@@ -115,7 +125,6 @@ endfunction : build_phase
 task uvma_cvmcu_intr_drv_c::run_phase(uvm_phase phase);
 
    super.run_phase(phase);
-
    if (cfg.enabled && cfg.is_active) begin
       forever begin
          case (cntxt.reset_state)
@@ -127,6 +136,40 @@ task uvma_cvmcu_intr_drv_c::run_phase(uvm_phase phase);
    end
 
 endtask : run_phase
+
+
+function void uvma_cvmcu_intr_drv_c::get_cfg();
+
+   void'(uvm_config_db#(uvma_cvmcu_intr_cfg_c)::get(this, "", "cfg", cfg));
+   if (!cfg) begin
+      `uvm_fatal("CVMCU_INTR_DRV", "Configuration handle is null")
+   end
+
+endfunction : get_cfg
+
+
+function void uvma_cvmcu_intr_drv_c::get_cntxt();
+
+   void'(uvm_config_db#(uvma_cvmcu_intr_cntxt_c)::get(this, "", "cntxt", cntxt));
+   if (!cntxt) begin
+      `uvm_fatal("CVMCU_INTR_DRV", "Context handle is null")
+   end
+
+endfunction : get_cntxt
+
+
+function void uvma_cvmcu_intr_drv_c::create_tlm_ports();
+
+   ap = new("ap", this);
+
+endfunction : create_tlm_ports
+
+
+function void uvma_cvmcu_intr_drv_c::retrieve_modports();
+
+   mp = cntxt.vif.drv_mp;
+
+endfunction : retrieve_modports
 
 
 task uvma_cvmcu_intr_drv_c::drv_pre_reset();

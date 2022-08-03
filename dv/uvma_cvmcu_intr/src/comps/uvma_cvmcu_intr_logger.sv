@@ -9,6 +9,7 @@
 
 /**
  * Component which logs to disk information of the transactions generated and monitored by uvma_cvmcu_intr_agent_c.
+ * @ingroup uvma_cvmcu_intr_comps
  */
 class uvma_cvmcu_intr_logger_c extends uvm_component;
 
@@ -54,6 +55,31 @@ class uvma_cvmcu_intr_logger_c extends uvm_component;
     */
    extern virtual function void connect_phase(uvm_phase phase);
 
+   /**
+    * Uses uvm_config_db to retrieve cfg.
+    */
+   extern function void get_cfg();
+
+   /**
+    * Uses uvm_config_db to retrieve cntxt.
+    */
+   extern function void get_cntxt();
+
+   /**
+    * Creates logger components.
+    */
+   extern function void create_components();
+
+   /**
+    * Sets filenames for logger components.
+    */
+   extern function void configure_loggers();
+
+   /**
+    * Connects TLM ports to logger components.
+    */
+   extern function void connect_loggers();
+
 endclass : uvma_cvmcu_intr_logger_c
 
 
@@ -67,20 +93,9 @@ endfunction : new
 function void uvma_cvmcu_intr_logger_c::build_phase(uvm_phase phase);
 
    super.build_phase(phase);
-
-   void'(uvm_config_db#(uvma_cvmcu_intr_cfg_c)::get(this, "", "cfg", cfg));
-   if (cfg == null) begin
-      `uvm_fatal("CVMCU_INTR_LOGGER", "Configuration handle is null")
-   end
-
-   void'(uvm_config_db#(uvma_cvmcu_intr_cntxt_c)::get(this, "", "cntxt", cntxt));
-   if (cntxt == null) begin
-      `uvm_fatal("CVMCU_INTR_LOGGER", "Context handle is null")
-   end
-
-   // Create components
-   seq_item_logger = uvml_logs_metadata_logger_c #(uvma_cvmcu_intr_seq_item_c)::type_id::create("seq_item_logger", this);
-   mon_trn_logger  = uvml_logs_metadata_logger_c #(uvma_cvmcu_intr_mon_trn_c )::type_id::create("mon_trn_logger" , this);
+   get_cfg  ();
+   get_cntxt();
+   create_components();
 
 endfunction : build_phase
 
@@ -88,14 +103,54 @@ endfunction : build_phase
 function void uvma_cvmcu_intr_logger_c::connect_phase(uvm_phase phase);
 
    super.connect_phase(phase);
+   configure_loggers();
+   connect_loggers  ();
+
+endfunction : connect_phase
+
+
+function void uvma_cvmcu_intr_logger_c::get_cfg();
+
+   void'(uvm_config_db#(uvma_cvmcu_intr_cfg_c)::get(this, "", "cfg", cfg));
+   if (cfg == null) begin
+      `uvm_fatal("CVMCU_INTR_LOGGER", "Configuration handle is null")
+   end
+
+endfunction : get_cfg
+
+
+function void uvma_cvmcu_intr_logger_c::get_cntxt();
+
+   void'(uvm_config_db#(uvma_cvmcu_intr_cntxt_c)::get(this, "", "cntxt", cntxt));
+   if (cntxt == null) begin
+      `uvm_fatal("CVMCU_INTR_LOGGER", "Context handle is null")
+   end
+
+endfunction : get_cntxt
+
+
+function void uvma_cvmcu_intr_logger_c::create_components();
+
+   seq_item_logger = uvml_logs_metadata_logger_c #(uvma_cvmcu_intr_seq_item_c)::type_id::create("seq_item_logger", this);
+   mon_trn_logger  = uvml_logs_metadata_logger_c #(uvma_cvmcu_intr_mon_trn_c )::type_id::create("mon_trn_logger" , this);
+
+endfunction : create_components
+
+
+function void uvma_cvmcu_intr_logger_c::configure_loggers();
 
    seq_item_logger.set_file_name({get_parent().get_full_name(), ".seq_item"});
    mon_trn_logger .set_file_name({get_parent().get_full_name(), ".mon_trn" });
 
+endfunction : configure_loggers
+
+
+function void uvma_cvmcu_intr_logger_c::connect_loggers();
+
    seq_item_export = seq_item_logger.analysis_export;
    mon_trn_export  = mon_trn_logger .analysis_export;
 
-endfunction : connect_phase
+endfunction : connect_loggers
 
 
 `endif // __UVMA_CVMCU_INTR_LOGGER_SV__

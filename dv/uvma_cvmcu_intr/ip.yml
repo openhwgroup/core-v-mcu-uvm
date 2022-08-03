@@ -20,10 +20,10 @@ ip:
   block-diagram: "src/docs/agent_block_diagram.svg"
   languages: ["sv"]
   simulators-supported:
-    - { name: "vivado", version: "2021.1" }
+    - { name: "vivado", version: "2022.1" }
   tags: []
   copyright-holders: ["Datum Technology Corporation"]
-  licenses: ["SHL-2.1"]
+  licenses: ["${license_id}"]
 
 structure:
    scripts-path : "bin"
@@ -32,13 +32,13 @@ structure:
    src-path     : "src"
 
 dependencies:
-  - { name: "uvm"       , version:  "1.2" }
-  - { name: "uvml"      , version: "~1.0" }
-  - { name: "uvml_logs" , version: "~1.0" }
+  - { name: "uvm"      , version:  "1.2" }
+  - { name: "uvml"     , version: "~1.0" }
+  - { name: "uvml_logs", version: "~1.0" }
 
 hdl-src:
   directories: ["comps", "obj", "seq"]
-  tests-name-template: ""
+  top-files: [ "uvma_cvmcu_intr_pkg.sv" ]
   flist:
     metrics : "uvma_cvmcu_intr_pkg.flist"
     riviera : "uvma_cvmcu_intr_pkg.flist"

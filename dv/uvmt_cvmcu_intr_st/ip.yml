@@ -1,3 +1,8 @@
+# Copyright 2022 Datum Technology Corporation
+# SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
+########################################################################################################################
+
+
 ip:
   name: "uvmt_cvmcu_intr_st"
   version: "1.0.0 Beta 0"
@@ -15,7 +20,7 @@ ip:
   block-diagram: ""
   languages: ["sv"]
   simulators-supported:
-    - { name: "vivado", version: "2021.1" }
+    - { name: "vivado", version: "2022.1" }
   tags: []
   copyright-holders: ["Datum Technology Corporation"]
   licenses: ["SHL-2.1"]
@@ -27,14 +32,17 @@ structure:
    src-path     : "src"
 
 dependencies:
-  - { name: "uvm"       , version:  "1.2" }
-  - { name: "uvml"      , version: "~1.0" }
-  - { name: "uvml_logs" , version: "~1.0" }
-  - { name: "uvml_sb"   , version: "~1.0" }
+  - { name: "uvm"      , version:  "1.2" }
+  - { name: "uvml"     , version: "~1.0" }
+  - { name: "uvml_logs", version: "~1.0" }
+  - { name: "uvml_sb"  , version: "~1.0" }
+ # - { name: "uvma_cvmcu_intr"   , version: "^" }
+ # - { name: "uvme_cvmcu_intr_st", version: "^" }
 
 hdl-src:
-  top-constructs: ["uvmt_cvmcu_intr_st_tb", "uvml_logs_summary"]
+  top-constructs: ["uvmt_cvmcu_intr_st_tb", "uvml_sim_summary"]
   directories: [".", "tb", "tests"]
+  top-files: [ "uvmt_cvmcu_intr_st_pkg.sv" ]
   test-paths: ["tests"]
   test-name-template: "uvmt_cvmcu_intr_st_{{ name }}_test_c"
   flist:

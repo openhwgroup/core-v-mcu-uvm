@@ -9,7 +9,8 @@
 
 
 /**
- * Component encapsulating APB Advanced Timer Sub-Sytem's functional coverage model.
+ * Component encapsulating CORE-V MCU APB Advanced Timer Sub-Sytem's functional coverage model.
+ * @ingroup uvme_apb_adv_timer_comps
  */
 class uvme_apb_adv_timer_cov_model_c extends uvm_component;
 
@@ -83,6 +84,26 @@ class uvme_apb_adv_timer_cov_model_c extends uvm_component;
    extern virtual task run_phase(uvm_phase phase);
 
    /**
+    * Uses uvm_config_db to retrieve cfg.
+    */
+   extern function void get_cfg();
+
+   /**
+    * Uses uvm_config_db to retrieve cntxt.
+    */
+   extern function void get_cntxt();
+
+   /**
+    * Creates TLM FIFOs and Analysis Ports.
+    */
+   extern function void create_tlm_objects();
+
+   /**
+    * Connects Exports to FIFOs.
+    */
+   extern function void connect_ports();
+
+   /**
     * Samples #apb_adv_timer_cfg_cg
     */
    extern function void sample_cfg();
@@ -104,7 +125,6 @@ endclass : uvme_apb_adv_timer_cov_model_c
 function uvme_apb_adv_timer_cov_model_c::new(string name="uvme_apb_adv_timer_cov_model", uvm_component parent=null);
 
    super.new(name, parent);
-
    apb_adv_timer_cfg_cg   = new();
    apb_adv_timer_cntxt_cg = new();
    // TODO Create coverage groups for uvme_apb_adv_timer_cov_model_c
@@ -116,19 +136,9 @@ endfunction : new
 function void uvme_apb_adv_timer_cov_model_c::build_phase(uvm_phase phase);
 
    super.build_phase(phase);
-
-   void'(uvm_config_db#(uvme_apb_adv_timer_cfg_c)::get(this, "", "cfg", cfg));
-   if (!cfg) begin
-      `uvm_fatal("APB_ADV_TIMER_COV_MODEL", "Configuration handle is null")
-   end
-
-   void'(uvm_config_db#(uvme_apb_adv_timer_cntxt_c)::get(this, "", "cntxt", cntxt));
-   if (!cntxt) begin
-      `uvm_fatal("APB_ADV_TIMER_COV_MODEL", "Context handle is null")
-   end
-
-   // TODO Build Input TLM
-   //      Ex: pkt_fifo = new("pkt_fifo", this);
+   get_cfg           ();
+   get_cntxt         ();
+   create_tlm_objects();
 
 endfunction : build_phase
 
@@ -136,9 +146,7 @@ endfunction : build_phase
 function void uvme_apb_adv_timer_cov_model_c::connect_phase(uvm_phase phase);
 
    super.connect_phase(phase);
-
-   // TODO Connect Input TLM
-   //      Ex: pkt_export = pkt_trn_fifo.analysis_export;
+   connect_ports();
 
 endfunction : connect_phase
 
@@ -146,20 +154,17 @@ endfunction : connect_phase
 task uvme_apb_adv_timer_cov_model_c::run_phase(uvm_phase phase);
 
    super.run_phase(phase);
-
    fork
       // Configuration
       forever begin
          cntxt.sample_cfg_e.wait_trigger();
          sample_cfg();
       end
-
       // Context
       forever begin
          cntxt.sample_cntxt_e.wait_trigger();
          sample_cntxt();
       end
-
       // TODO Implement uvme_apb_adv_timer_cov_model_c::run_phase()
       //      Ex: forever begin
       //             pkt_fifo.get(pkt_trn);
@@ -168,6 +173,42 @@ task uvme_apb_adv_timer_cov_model_c::run_phase(uvm_phase phase);
    join_none
 
 endtask : run_phase
+
+
+function void uvme_apb_adv_timer_cov_model_c::get_cfg();
+
+   void'(uvm_config_db#(uvme_apb_adv_timer_cfg_c)::get(this, "", "cfg", cfg));
+   if (!cfg) begin
+      `uvm_fatal("APB_ADV_TIMER_COV_MODEL", "Configuration handle is null")
+   end
+
+endfunction : get_cfg
+
+
+function void uvme_apb_adv_timer_cov_model_c::get_cntxt();
+
+   void'(uvm_config_db#(uvme_apb_adv_timer_cntxt_c)::get(this, "", "cntxt", cntxt));
+   if (!cntxt) begin
+      `uvm_fatal("APB_ADV_TIMER_COV_MODEL", "Context handle is null")
+   end
+
+endfunction : get_cntxt
+
+
+function void uvme_apb_adv_timer_cov_model_c::create_tlm_objects();
+
+   // TODO Build Input TLM
+   //      Ex: pkt_fifo = new("pkt_fifo", this);
+
+endfunction : create_tlm_objects
+
+
+function void uvme_apb_adv_timer_cov_model_c::connect_ports();
+
+   // TODO Connect Input TLM
+   //      Ex: pkt_export = pkt_trn_fifo.analysis_export;
+
+endfunction : connect_ports
 
 
 function void uvme_apb_adv_timer_cov_model_c::sample_cfg();

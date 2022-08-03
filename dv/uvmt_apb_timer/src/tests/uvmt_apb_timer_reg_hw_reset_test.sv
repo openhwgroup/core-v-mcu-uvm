@@ -9,7 +9,8 @@
 
 
 /**
- * Test ensuring that the reset values specified for registers in the RAL matches what is in the APB Timer Sub-System DUT.
+ * Test ensuring that the reset values specified for registers in the RAL matches what is in the CORE-V MCU APB Timer Sub-System DUT.
+ * @ingroup uvmt_apb_timer_tests
  */
 class uvmt_apb_timer_reg_hw_reset_test_c extends uvmt_apb_timer_reg_base_test_c;
 

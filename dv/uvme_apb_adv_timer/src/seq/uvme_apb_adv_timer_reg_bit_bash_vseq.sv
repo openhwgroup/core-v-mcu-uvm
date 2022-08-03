@@ -9,7 +9,8 @@
 
 
 /**
- * Virtual sequence checking that the every bit in a register block is accessible from the APB Advanced Timer Sub-System DUT.
+ * Virtual sequence checking that the every bit in a register block is accessible from the CORE-V MCU APB Advanced Timer Sub-System DUT.
+ * @ingroup uvme_apb_adv_timer_seq
  */
 class uvme_apb_adv_timer_reg_bit_bash_vseq_c extends uvme_apb_adv_timer_reg_base_vseq_c;
 

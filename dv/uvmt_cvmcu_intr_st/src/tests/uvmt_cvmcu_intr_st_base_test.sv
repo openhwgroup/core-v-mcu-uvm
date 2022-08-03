@@ -10,6 +10,7 @@
 /**
  * Component from which all other CORE-V MCU Interrupt UVM Agent Self-Tests must extend.
  * Subclasses must run sequences on the virtual sequencer by implementing UVM runtime phases.
+ * @ingroup uvmt_cvmcu_intr_st_tests
  */
 class uvmt_cvmcu_intr_st_base_test_c extends uvml_test_c;
 
@@ -58,13 +59,13 @@ class uvmt_cvmcu_intr_st_base_test_c extends uvml_test_c;
    extern function new(string name="uvmt_cvmcu_intr_st_base_test", uvm_component parent=null);
 
    /**
-    * 1. Builds test_cfg & env_cfg via create_cfg()
-    * 2. Randomizes entire test class via randomize_test()
-    * 3. Passes env_cfg to env via uvm_config_db via assign_cfg()
-    * 4. Builds env_cntxt via create_cntxt()
-    * 5. Passes env_cntxt to env using UVM Configuration Database via assign_cntxt()
-    * 6. Builds env via create_env()
-    * 7. Builds the rest of the components/objects via create_components()
+    * 1. Builds test_cfg & env_cfg
+    * 2. Randomizes entire test class
+    * 3. Passes env_cfg to env
+    * 4. Builds env_cntxt
+    * 5. Passes env_cntxt to env using uvm_config_db
+    * 6. Builds env
+    * 7. Builds the rest of the components/objects
     */
    extern virtual function void build_phase(uvm_phase phase);
 
@@ -75,17 +76,17 @@ class uvmt_cvmcu_intr_st_base_test_c extends uvml_test_c;
    extern virtual function void connect_phase(uvm_phase phase);
 
    /**
-    * Triggers the start of clock generation via start_clk()
+    * Triggers the start of clock generation.
     */
    extern virtual task run_phase(uvm_phase phase);
 
    /**
-    * Asserts & de-asserts reset via clknrst_vif.
+    * Asserts & de-asserts reset by using #clknrst_vif.
     */
    extern virtual task reset_phase(uvm_phase phase);
 
    /**
-    * Retrieves clknrst_gen_vif from UVM configuration database.
+    * Retrieves #clknrst_gen_vif from uvm_config_db.
     */
    extern function void retrieve_clknrst_gen_vif();
 
@@ -106,8 +107,7 @@ class uvmt_cvmcu_intr_st_base_test_c extends uvml_test_c;
    extern function void cfg_hrtbt_monitor();
 
    /**
-    * Assigns environment configuration (env_cfg) handle to environment (env)
-    * using UVM Configuration Database.
+    * Assigns environment configuration (env_cfg) handle to environment (env) using uvm_config_db.
     */
    extern function void assign_cfg();
 
@@ -117,8 +117,7 @@ class uvmt_cvmcu_intr_st_base_test_c extends uvml_test_c;
    extern function void create_cntxt();
 
    /**
-    * Assigns environment context (env_cntxt) handle to environment (env) using
-    * UVM Configuration Database.
+    * Assigns environment context (env_cntxt) handle to environment (env) using uvm_config_db.
     */
    extern function void assign_cntxt();
 
@@ -152,7 +151,6 @@ endfunction : new
 function void uvmt_cvmcu_intr_st_base_test_c::build_phase(uvm_phase phase);
 
    super.build_phase(phase);
-
    retrieve_clknrst_gen_vif();
    create_cfg              ();
    randomize_test          ();
@@ -185,7 +183,6 @@ endtask : run_phase
 task uvmt_cvmcu_intr_st_base_test_c::reset_phase(uvm_phase phase);
 
    super.reset_phase(phase);
-
    `uvm_info("TEST", $sformatf("Asserting reset for %0t", (test_cfg.reset_period * 1ns)), UVM_NONE)
    clknrst_gen_vif.assert_reset();
    `uvml_hrtbt()
@@ -220,6 +217,7 @@ endfunction : create_cfg
 function void uvmt_cvmcu_intr_st_base_test_c::randomize_test();
 
    test_cfg.process_cli_args();
+   `uvm_info("TEST", "Randomizing test ...", UVM_NONE)
    if (!this.randomize()) begin
       `uvm_fatal("TEST", "Failed to randomize test");
    end

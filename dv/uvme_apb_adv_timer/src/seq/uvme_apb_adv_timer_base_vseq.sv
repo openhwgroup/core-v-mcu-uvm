@@ -9,9 +9,10 @@
 
 
 /**
- * Abstract virtual sequence from which all other APB Advanced Timer Sub-System environment virtual sequences extend.
+ * Abstract virtual sequence from which all other CORE-V MCU APB Advanced Timer Sub-System environment virtual sequences extend.
  * Subclasses must be run on uvme_apb_adv_timer_vsqr_c.
  * @note Does not generate any sequence items of its own.
+ * @ingroup uvme_apb_adv_timer_seq
  */
 class uvme_apb_adv_timer_base_vseq_c extends uvml_vseq_c #(
    .REQ(uvm_sequence_item),

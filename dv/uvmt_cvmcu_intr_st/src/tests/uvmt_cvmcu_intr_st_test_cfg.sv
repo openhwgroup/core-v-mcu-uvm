@@ -9,6 +9,7 @@
 
 /**
  * Object encapsulating common configuration parameters for CORE-V MCU Interrupt UVM Agent Self-Tests.
+ * @ingroup uvmt_cvmcu_intr_st_tests
  */
 class uvmt_cvmcu_intr_st_test_cfg_c extends uvml_test_cfg_c;
 
@@ -75,7 +76,6 @@ endfunction : new
 function void uvmt_cvmcu_intr_st_test_cfg_c::process_cli_args();
 
    string  cli_num_items_parsed_str  = "";
-
    if ($value$plusargs("NUM_ITEMS=", cli_num_items_parsed_str)) begin
       if (cli_num_items_parsed_str != "") begin
          cli_num_items_override = 1;

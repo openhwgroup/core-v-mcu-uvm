@@ -9,7 +9,8 @@
 
 
 /**
- * Virtual sequence responsible for starting clock(s) for the APB Timer Sub-System environment.
+ * Virtual sequence responsible for starting clock(s) for the CORE-V MCU APB Timer Sub-System environment.
+ * @ingroup uvme_apb_timer_seq
  */
 class uvme_apb_timer_sys_clk_vseq_c extends uvme_apb_timer_base_vseq_c;
 
@@ -38,7 +39,6 @@ endfunction : new
 task uvme_apb_timer_sys_clk_vseq_c::body();
 
    uvma_clk_seq_item_c  clk_req;
-
    `uvm_do_on_with(clk_req, p_sequencer.sys_clk_sequencer, {
       action         == UVMA_CLK_SEQ_ITEM_ACTION_START;
       new_frequency  == cfg.sys_clk_frequency;

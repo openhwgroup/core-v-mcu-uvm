@@ -9,7 +9,8 @@
 
 
 /**
- * Module encapsulating the APB Timer Sub-System DUT wrapper, agents and clock generating interfaces.
+ * Module encapsulating the CORE-V MCU APB Timer Sub-System DUT wrapper, agents and clock generating interfaces.
+ * @ingroup uvmt_apb_timer_tb
  */
 module uvmt_apb_timer_tb;
 
@@ -19,7 +20,7 @@ module uvmt_apb_timer_tb;
    uvma_clk_if  sys_clk_if(); ///< Clock generating interface
    uvma_reset_if  sys_reset_if(.clk(sys_clk_if.clk)); ///< Reset assertion interface
    uvma_apb_if  apb_if(.clk(sys_clk_if.clk), .reset_n(sys_reset_if.reset_n)); ///< apb interface
-   uvmt_apb_timer_probe_if  probe_if(); ///< Misc. signals interface
+   uvme_apb_timer_probe_if  probe_if(); ///< Misc. signals interface
    uvmt_apb_timer_dut_wrap  dut_wrap(.*); ///< DUT instance with interface ports
 
 
@@ -39,7 +40,7 @@ module uvmt_apb_timer_tb;
       uvm_config_db#(virtual uvma_clk_if)::set(null, "*.env.sys_clk_agent", "vif", sys_clk_if);
       uvm_config_db#(virtual uvma_reset_if)::set(null, "*.env.sys_reset_agent", "vif", sys_reset_if);
       uvm_config_db#(virtual uvma_apb_if)::set(null, "*.env.apb_agent", "vif", apb_if);
-      uvm_config_db#(virtual uvmt_apb_timer_probe_if)::set(null, "*", "vif", probe_if);
+      uvm_config_db#(virtual uvme_apb_timer_probe_if)::set(null, "*", "vif", probe_if);
 
       // Run test
       uvm_top.enable_print_topology = 0;

@@ -9,6 +9,7 @@
 
 /**
  * Object created by CORE-V MCU Interrupt agent sequences running on uvma_cvmcu_intr_sqr_c and used by uvma_cvmcu_intr_drv_c.
+ * @ingroup uvma_cvmcu_intr_seq
  */
 class uvma_cvmcu_intr_seq_item_c extends uvml_seq_item_c;
 
@@ -65,7 +66,7 @@ function uvml_metadata_t uvma_cvmcu_intr_seq_item_c::get_metadata();
    //      Ex: string  abc_str = $sformatf("%h", abc);
    //          get_metadata.push_back('{
    //             index     : 0,
-   //             value     : abc_str
+   //             value     : abc_str,
    //             col_name  : "abc",
    //             col_width : abc_str.len(),
    //             col_align : UVML_TEXT_ALIGN_RIGHT,

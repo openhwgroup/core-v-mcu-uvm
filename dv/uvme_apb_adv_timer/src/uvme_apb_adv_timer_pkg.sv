@@ -8,6 +8,19 @@
 `define __UVME_APB_ADV_TIMER_PKG_SV__
 
 
+// Doxygen Groups
+/**
+ * @defgroup uvme_apb_adv_timer_pkg CORE-V MCU APB Advanced Timer Sub-System UVM Environment
+ * @{
+ * @defgroup uvme_apb_adv_timer_comps Components
+ * @defgroup uvme_apb_adv_timer_misc  Miscellaneous
+ * @defgroup uvme_apb_adv_timer_obj   Objects
+ * @defgroup uvme_apb_adv_timer_reg   Register Model
+ * @defgroup uvme_apb_adv_timer_seq   Sequences & Sequence Items
+ * @}
+ */
+
+
 // Pre-processor macros
 `include "uvm_macros.svh"
 `include "uvml_macros.svh"
@@ -18,11 +31,10 @@
 `include "uvma_apb_macros.svh"
 `include "uvme_apb_adv_timer_macros.svh"
 
-// Interface(s)
 
-
- /**
- * Encapsulates all the types of the APB Advanced Timer Sub-System UVM environment.
+/**
+ * Encapsulates all the types of the CORE-V MCU APB Advanced Timer Sub-System UVM environment.
+ * @ingroup uvme_apb_adv_timer_pkg
  */
 package uvme_apb_adv_timer_pkg;
 
@@ -59,6 +71,7 @@ endpackage : uvme_apb_adv_timer_pkg
 
 
 // Module(s) / Checker(s)
+`include "uvme_apb_adv_timer_probe_if.sv"
 `ifdef UVME_APB_ADV_TIMER_INC_CHKR
 `include "uvme_apb_adv_timer_chkr.sv"
 `endif

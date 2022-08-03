@@ -12,6 +12,7 @@
 
 /**
  * Object cataloging the CORE-V MCU Interrupt UVM Agent sequences.
+ * @ingroup uvma_cvmcu_intr_seq
  */
 class uvma_cvmcu_intr_seq_lib_c extends uvml_seq_lib_c #(
    .REQ(uvm_sequence_item),

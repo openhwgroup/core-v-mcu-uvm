@@ -1,12 +1,18 @@
+# Copyright 2022 Datum Technology Corporation
+# Copyright 2022 Low Power Futures
+# SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
+########################################################################################################################
+
+
 ip:
   name: "uvmt_apb_adv_timer"
   version: "1.0.0"
-  full-name: "Datum Technology Corporation APB Advanced Timer Sub-System UVM Test Bench"
+  full-name: "Datum Technology Corporation CORE-V MCU APB Advanced Timer Sub-System UVM Test Bench"
   type: "DV"
   sub-type: "UVM Test Bench"
   sub-sub-type: "Sub-System"
   description: >
-    TODO Describe APB Advanced Timer
+    TODO Describe CORE-V MCU APB Advanced Timer
   home-page: ""
   repo-uri: ""
   bugs: ""
@@ -34,7 +40,7 @@ dependencies:
   - { name: "uvml_sb"   , version: "~1.0" }
   - { name: "uvma_clk"  , version: "~1.0" }
   - { name: "uvma_reset", version: "~1.0" }
-  - { name: "uvma_apb"  , version: "~1.0" }
+  - { name: "uvma_apb", version: "~1.0" }
 #  - { name: "uvme_apb_adv_timer", version: "^" }
 
 hdl-src:
@@ -56,4 +62,3 @@ dut:
   name: "core-v-mcu"
   full-name: "openhwgroup.org:systems:core-v-mcu"
   target: "sim"
-

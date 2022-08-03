@@ -8,7 +8,7 @@
 
 
 // Add temporary configuration constraints here (this file should be empty by the end of the project).
-// Ex: constraint no_sb_cons { env_cfg.scoreboarding_enabled == 0; }
+constraint no_sb_cons { env_cfg.scoreboarding_enabled == 0; }
 
 
 `endif // __UVMT_CVMCU_INTR_ST_BASE_TEST_WORKAROUNDS_SV__

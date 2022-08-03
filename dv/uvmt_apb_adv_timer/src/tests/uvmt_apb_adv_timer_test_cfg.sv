@@ -9,7 +9,8 @@
 
 
 /**
- * Object encapsulating common configuration parameters for APB Advanced Timer Sub-System tests.
+ * Object encapsulating common configuration parameters for CORE-V MCU APB Advanced Timer Sub-System tests.
+ * @ingroup uvmt_apb_adv_timer_tests
  */
 class uvmt_apb_adv_timer_test_cfg_c extends uvml_test_cfg_c;
 

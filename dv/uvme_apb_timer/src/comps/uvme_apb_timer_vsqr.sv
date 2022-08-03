@@ -9,7 +9,8 @@
 
 
 /**
- * Component on which all APB Timer Sub-System environment (uvme_apb_timer_env_c) virtual sequences are run.
+ * Component on which all CORE-V MCU APB Timer Sub-System environment (uvme_apb_timer_env_c) virtual sequences are run.
+ * @ingroup uvme_apb_timer_comps
  */
 class uvme_apb_timer_vsqr_c extends uvml_vsqr_c #(
    .REQ(uvm_sequence_item),
@@ -28,7 +29,7 @@ class uvme_apb_timer_vsqr_c extends uvml_vsqr_c #(
    uvma_reset_sqr_c  sys_reset_sequencer; ///< Reset agent sequener
    uvma_apb_sqr_c  apb_sequencer; ///< Register access agent sequencer
    // TODO: Add sub-environments (virtual) sequencer handles
-   //       Ex: uvme_sub_env_vsqr_c  sub_env_vsequencer; ///< Describe me!
+   //       Ex: uvme_sub_vsqr_c  sub_vsequencer; ///< Describe me!
    /// @}
 
 
@@ -48,6 +49,16 @@ class uvme_apb_timer_vsqr_c extends uvml_vsqr_c #(
     */
    extern virtual function void build_phase(uvm_phase phase);
 
+   /**
+    * Uses uvm_config_db to retrieve cfg.
+    */
+   extern function void get_cfg();
+
+   /**
+    * Uses uvm_config_db to retrieve cntxt.
+    */
+   extern function void get_cntxt();
+
 endclass : uvme_apb_timer_vsqr_c
 
 
@@ -61,18 +72,30 @@ endfunction : new
 function void uvme_apb_timer_vsqr_c::build_phase(uvm_phase phase);
 
    super.build_phase(phase);
+   get_cfg  ();
+   get_cntxt();
+
+endfunction : build_phase
+
+
+function void uvme_apb_timer_vsqr_c::get_cfg();
 
    void'(uvm_config_db#(uvme_apb_timer_cfg_c)::get(this, "", "cfg", cfg));
-   if (!cfg) begin
+   if (cfg == null) begin
       `uvm_fatal("APB_TIMER_VSQR", "Configuration handle is null")
    end
 
+endfunction : get_cfg
+
+
+function void uvme_apb_timer_vsqr_c::get_cntxt();
+
    void'(uvm_config_db#(uvme_apb_timer_cntxt_c)::get(this, "", "cntxt", cntxt));
-   if (!cntxt) begin
+   if (cntxt == null) begin
       `uvm_fatal("APB_TIMER_VSQR", "Context handle is null")
    end
 
-endfunction : build_phase
+endfunction : get_cntxt
 
 
 `endif // __UVME_APB_TIMER_VSQR_SV__

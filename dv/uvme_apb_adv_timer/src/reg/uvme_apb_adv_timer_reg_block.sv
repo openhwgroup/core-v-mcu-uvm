@@ -1,10 +1,10 @@
-// 
-// Copyright 2021 Low Power Futures Inc.
-// 
+// Copyright 2022 Datum Technology Corporation
+// SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-// WARNING: THE FOLLOWING IS AUTO-GENERATED CODE.
-// ANY CHANGES MADE HERE WILL BE ERASED UPON THE NEXT RELEASE OF THIS RAL.
+// WARNING: THE FOLLOWING IS GENERATED CODE.
+// ANY CHANGES MADE WILL BE ERASED UPON THE NEXT RELEASE.
 
 
 `ifndef __UVME_APB_ADV_TIMER_REG_BLOCK_SV__
@@ -47,13 +47,19 @@
 `include "uvme_apb_adv_timer_cg_reg.sv"
 
 
+/**
+ * Top-Level Register Block for apb_adv_timer.
+ */
 class uvme_apb_adv_timer_reg_block_c extends uvml_ral_reg_block_c;
-   
-   // Objects
-   uvme_apb_adv_timer_cfg_c    cfg;
-   uvme_apb_adv_timer_cntxt_c  cntxt;
-   
-   // Registers
+
+   /// @defgroup Objects
+   /// @{
+   uvme_apb_adv_timer_cfg_c    cfg  ; ///< Environment configuration handle
+   uvme_apb_adv_timer_cntxt_c  cntxt; ///< Environment context handle
+   /// @}
+
+   /// @defgroup Registers
+   /// @{
   rand uvme_apb_adv_timer_t0_cmd_reg_c  t0_cmd;
   rand uvme_apb_adv_timer_t0_config_reg_c  t0_config;
   rand uvme_apb_adv_timer_t0_threshold_reg_c  t0_threshold;
@@ -88,8 +94,8 @@ class uvme_apb_adv_timer_reg_block_c extends uvml_ral_reg_block_c;
   rand uvme_apb_adv_timer_t3_counter_reg_c  t3_counter;
   rand uvme_apb_adv_timer_event_cfg_reg_c  event_cfg;
   rand uvme_apb_adv_timer_cg_reg_c  cg;
-   
-   
+   /// @}
+
    `uvm_object_utils_begin(uvme_apb_adv_timer_reg_block_c)
       `uvm_field_object(t0_cmd, UVM_DEFAULT)
       `uvm_field_object(t0_config, UVM_DEFAULT)
@@ -126,40 +132,40 @@ class uvme_apb_adv_timer_reg_block_c extends uvml_ral_reg_block_c;
       `uvm_field_object(event_cfg, UVM_DEFAULT)
       `uvm_field_object(cg, UVM_DEFAULT)
    `uvm_object_utils_end
-   
-   
+
+
    /**
     * Default constructor.
     */
-   extern function new(string name="uvme_apb_adv_timer_reg_block");
-   
+   extern function new(string name="uvme_apb_adv_timer_reg_block", int has_coverage=UVM_NO_COVERAGE);
+
    /**
     * Creates register(s).
     */
    extern virtual function void create_regs();
-   
+
    /**
     * Creates default register map.
     */
    extern virtual function void create_reg_map();
-   
+
    /**
     * Adds register(s) to register map.
     */
    extern virtual function void add_regs_to_map();
-   
+
 endclass : uvme_apb_adv_timer_reg_block_c
 
 
-function uvme_apb_adv_timer_reg_block_c::new(string name="uvme_apb_adv_timer_reg_block");
-   
-   super.new(name, UVM_NO_COVERAGE);
-   
+function uvme_apb_adv_timer_reg_block_c::new(string name="uvme_apb_adv_timer_reg_block", int has_coverage=UVM_NO_COVERAGE);
+
+   super.new(name, has_coverage);
+
 endfunction : new
 
 
 function void uvme_apb_adv_timer_reg_block_c::create_regs();
-   
+
    t0_cmd = uvme_apb_adv_timer_t0_cmd_reg_c::type_id::create("t0_cmd");
    t0_cmd.configure(this);
    t0_cmd.build();
@@ -300,20 +306,20 @@ endfunction : create_regs
 
 
 function void uvme_apb_adv_timer_reg_block_c::create_reg_map();
-   
+
    // Create default register map (default_map)
    default_map = create_map(
       .name     ("default_map"),
-      .base_addr(32'h1A10_5000),
+      .base_addr(32'h1a10_b000),
       .n_bytes  (4),
       .endian   (UVM_LITTLE_ENDIAN)
    );
-   
+
 endfunction : create_reg_map
 
 
 function void uvme_apb_adv_timer_reg_block_c::add_regs_to_map();
-   
+
    default_map.add_reg(
       .rg    (t0_cmd),
       .offset(32'h0),
@@ -484,7 +490,7 @@ function void uvme_apb_adv_timer_reg_block_c::add_regs_to_map();
       .offset(32'h104),
       .rights("RW")
    );
-   
+
 endfunction : add_regs_to_map
 
 

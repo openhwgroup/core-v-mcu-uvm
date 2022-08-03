@@ -23,22 +23,21 @@ timeunit       1ns;
 timeprecision  1ps;
 
 // Interface(s)
-`include "uvmt_apb_timer_probe_if.sv"
 
 
 /**
- * Encapsulates all the types of the APB Timer Sub-System UVM Test Bench.
+ * Encapsulates all the types of the CORE-V MCU APB Timer Sub-System UVM Test Bench.
  */
 package uvmt_apb_timer_pkg;
 
-   import uvm_pkg       ::*;
-   import uvml_pkg      ::*;
-   import uvml_logs_pkg ::*;
-   import uvml_sb_pkg   ::*;
-   import uvml_ral_pkg  ::*;
-   import uvma_clk_pkg  ::*;
-   import uvma_reset_pkg::*;
-   import uvma_apb_pkg::*;
+   import uvm_pkg           ::*;
+   import uvml_pkg          ::*;
+   import uvml_logs_pkg     ::*;
+   import uvml_sb_pkg       ::*;
+   import uvml_ral_pkg      ::*;
+   import uvma_clk_pkg      ::*;
+   import uvma_reset_pkg    ::*;
+   import uvma_apb_pkg      ::*;
    import uvme_apb_timer_pkg::*;
 
    // Constants / Structs / Enums
@@ -51,9 +50,9 @@ package uvmt_apb_timer_pkg;
    `include "uvmt_apb_timer_reg_base_test.sv"
 
    // Functional tests
-   `include "uvmt_apb_timer_smoke_test.sv"
    `include "uvmt_apb_timer_reg_hw_reset_test.sv"
    `include "uvmt_apb_timer_reg_bit_bash_test.sv"
+   `include "uvmt_apb_timer_smoke_test.sv"
 
 endpackage : uvmt_apb_timer_pkg
 

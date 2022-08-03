@@ -9,15 +9,15 @@
 
 
 /**
- * Module wrapper for APB Advanced Timer Sub-System DUT.  All ports are SV interfaces.
+ * Module wrapper for CORE-V MCU APB Advanced Timer Sub-System DUT.  All ports are SV interfaces.
+ * @ingroup uvmt_apb_adv_timer_tb
  */
 module uvmt_apb_adv_timer_dut_wrap (
    uvma_apb_if                  apb_if  , ///< Register access interface
-   uvmt_apb_adv_timer_probe_if  probe_if  ///< Misc. signals
+   uvme_apb_adv_timer_probe_if  probe_if  ///< Misc. signals
 );
 
    // \/ CODE BELOW IS RESPONSABILITY OF DESIGNERS \/
-
    apb_adv_timer  dut (
       .HCLK            (apb_if.clk              ),
       .HRESETn         (apb_if.reset_n          ),
@@ -38,7 +38,6 @@ module uvmt_apb_adv_timer_dut_wrap (
       .ch_2_o          (probe_if.ch_2_o         ),
       .ch_3_o          (probe_if.ch_3_o         )
    );
-
    // /\ CODE ABOVE IS RESPONSABILITY OF DESIGNERS /\
 
 endmodule : uvmt_apb_adv_timer_dut_wrap

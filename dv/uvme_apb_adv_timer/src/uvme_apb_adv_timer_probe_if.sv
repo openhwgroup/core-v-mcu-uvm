@@ -4,14 +4,15 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-`ifndef __UVMT_APB_ADV_TIMER_PROBE_IF_SV__
-`define __UVMT_APB_ADV_TIMER_PROBE_IF_SV__
+`ifndef __UVME_APB_ADV_TIMER_PROBE_IF_SV__
+`define __UVME_APB_ADV_TIMER_PROBE_IF_SV__
 
 
 /**
- * Interface encapsulating all extra signals to/from APB Advanced Timer Sub-System design hierarchy.
+ * Interface encapsulating all extra signals to/from CORE-V MCU APB Advanced Timer Sub-System design hierarchy.
+ * @ingroup uvme_apb_adv_timer_misc
  */
-interface uvmt_apb_adv_timer_probe_if;
+interface uvme_apb_adv_timer_probe_if;
 
    import uvme_apb_adv_timer_pkg::*;
 
@@ -23,7 +24,7 @@ interface uvmt_apb_adv_timer_probe_if;
    logic [ 3:0]  ch_2_o             ;
    logic [ 3:0]  ch_3_o             ;
 
-endinterface : uvmt_apb_adv_timer_probe_if
+endinterface : uvme_apb_adv_timer_probe_if
 
 
-`endif // __UVMT_APB_ADV_TIMER_PROBE_IF_SV__
+`endif // __UVME_APB_ADV_TIMER_PROBE_IF_SV__

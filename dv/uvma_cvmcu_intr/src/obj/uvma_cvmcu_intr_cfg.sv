@@ -9,6 +9,7 @@
 
 /**
  * Object encapsulating all parameters for creating, connecting and running all CORE-V MCU Interrupt agent (uvma_cvmcu_intr_agent_c) components.
+ * @ingroup uvma_cvmcu_intr_obj
  */
 class uvma_cvmcu_intr_cfg_c extends uvml_cfg_c;
 

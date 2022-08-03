@@ -9,6 +9,7 @@
 
 /**
  * Object rebuilt by monitor (uvma_cvmcu_intr_mon_c).  Analog of uvma_cvmcu_intr_seq_item_c.
+ * @ingroup uvma_cvmcu_intr_obj
  */
 class uvma_cvmcu_intr_mon_trn_c extends uvml_mon_trn_c;
 

@@ -9,6 +9,7 @@
 
 /**
  * Object encapsulating all state variables for all CORE-V MCU Interrupt agent (uvma_cvmcu_intr_agent_c) components.
+ * @ingroup uvma_cvmcu_intr_obj
  */
 class uvma_cvmcu_intr_cntxt_c extends uvml_cntxt_c;
 
@@ -28,7 +29,6 @@ class uvma_cvmcu_intr_cntxt_c extends uvml_cntxt_c;
 
    `uvm_object_utils_begin(uvma_cvmcu_intr_cntxt_c)
       `uvm_field_enum(uvml_reset_state_enum, reset_state, UVM_DEFAULT)
-
       `uvm_field_event(sample_cfg_e  , UVM_DEFAULT)
       `uvm_field_event(sample_cntxt_e, UVM_DEFAULT)
    `uvm_object_utils_end
@@ -51,7 +51,6 @@ endclass : uvma_cvmcu_intr_cntxt_c
 function uvma_cvmcu_intr_cntxt_c::new(string name="uvma_cvmcu_intr_cntxt");
 
    super.new(name);
-
    sample_cfg_e   = new("sample_cfg_e"  );
    sample_cntxt_e = new("sample_cntxt_e");
 

@@ -10,6 +10,7 @@
 /**
  * Interface providing clock and reset signals to all other interfaces used by the CORE-V MCU Interrupt UVM Agent
  * Self-Test Bench (uvmt_cvmcu_intr_st_tb).  Managed by test cases.
+ * @ingroup uvmt_cvmcu_intr_st_tb
  */
 interface uvmt_cvmcu_intr_st_clknrst_gen_if;
 

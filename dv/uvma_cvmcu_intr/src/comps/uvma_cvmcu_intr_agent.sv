@@ -9,7 +9,8 @@
 
 /**
  * Top-level component that encapsulates, builds and connects all others to implement the CORE-V MCU Interrupt UVM Agent.
- * Capable of driving/monitoring CORE-V MCU Interrupt virtual interface.
+ * Capable of driving/monitoring the CORE-V MCU Interrupt virtual interface.
+ * @ingroup uvma_cvmcu_intr_comps
  */
 class uvma_cvmcu_intr_agent_c extends uvml_agent_c;
 
@@ -111,7 +112,6 @@ endfunction : new
 function void uvma_cvmcu_intr_agent_c::build_phase(uvm_phase phase);
 
    super.build_phase(phase);
-
    get_and_set_cfg  ();
    get_and_set_cntxt();
    retrieve_vif     ();
@@ -123,10 +123,8 @@ endfunction : build_phase
 function void uvma_cvmcu_intr_agent_c::connect_phase(uvm_phase phase);
 
    super.connect_phase(phase);
-
    connect_sequencer_and_driver();
    connect_analysis_ports      ();
-
    if (cfg.cov_model_enabled) begin
       connect_cov_model();
    end

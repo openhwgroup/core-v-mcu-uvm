@@ -9,6 +9,7 @@
 
 /**
  * Module implementing buffer connecting active and passive CORE-V MCU Interrupt UVM Agent interfaces.
+ * @ingroup uvmt_cvmcu_intr_st_tb
  */
 module uvmt_cvmcu_intr_st_dut_wrap (
    uvma_cvmcu_intr_if  active_if , ///< Active agent interface

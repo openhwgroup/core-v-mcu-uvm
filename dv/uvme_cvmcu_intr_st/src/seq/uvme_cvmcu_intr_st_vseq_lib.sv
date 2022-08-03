@@ -13,6 +13,7 @@
 
 /**
  * Object cataloging the CORE-V MCU Interrupt UVM Agent self-test environment's virtual sequences.
+ * @ingroup uvma_cvmcu_intr_st_seq
  */
 class uvme_cvmcu_intr_st_vseq_lib_c extends uvml_vseq_lib_c #(
    .REQ(uvm_sequence_item),
@@ -35,7 +36,6 @@ function uvme_cvmcu_intr_st_vseq_lib_c::new(string name="uvme_cvmcu_intr_st_vseq
 
    super.new(name);
    init_sequence_library();
-
    add_sequence(uvme_cvmcu_intr_st_rand_stim_vseq_c::get_type());
 
 endfunction : new

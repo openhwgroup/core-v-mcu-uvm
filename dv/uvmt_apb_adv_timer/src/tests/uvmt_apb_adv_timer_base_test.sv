@@ -9,12 +9,11 @@
 
 
 /**
- * Component from which all other APB Advanced Timer Sub-System tests must extend.
+ * Component from which all other CORE-V MCU APB Advanced Timer Sub-System tests must extend.
  * Subclasses must provide stimulus via the virtual sequencer by implementing UVM runtime phases.
+ * @ingroup uvmt_apb_adv_timer_tests
  */
 class uvmt_apb_adv_timer_base_test_c extends uvml_test_c;
-
-   virtual uvmt_apb_adv_timer_probe_if  probe_vif; ///< Handle to DUT probe interface
 
    /// @defgroup Objects
    /// @{
@@ -68,13 +67,13 @@ class uvmt_apb_adv_timer_base_test_c extends uvml_test_c;
    extern function new(string name="uvmt_apb_adv_timer_base_test", uvm_component parent=null);
 
    /**
-    * 1. Builds test_cfg & env_cfg via create_cfg()
-    * 2. Randomizes entire test class via randomize_test()
-    * 3. Passes env_cfg to env via uvm_config_db via assign_cfg()
-    * 4. Builds env_cntxt via create_cntxt()
-    * 5. Passes env_cntxt to env using UVM Configuration Database via assign_cntxt()
-    * 6. Builds env via create_env()
-    * 7. Builds the rest of the components/objects via create_components()
+    * 1. Builds test_cfg & env_cfg
+    * 2. Randomizes entire test class
+    * 3. Passes env_cfg to env
+    * 4. Builds env_cntxt
+    * 5. Passes env_cntxt
+    * 6. Builds env
+    * 7. Builds the rest of the components/objects
     */
    extern virtual function void build_phase(uvm_phase phase);
 
@@ -98,11 +97,6 @@ class uvmt_apb_adv_timer_base_test_c extends uvml_test_c;
     * Writes contents of RAL to the DUT.
     */
    extern virtual task configure_phase(uvm_phase phase);
-
-   /**
-    * Retrieves probe_vif from UVM configuration database.
-    */
-   extern function void retrieve_probe_vif();
 
    /**
     * Creates test_cfg and env_cfg. Assigns reg_block handle to env_cfg's.
@@ -153,7 +147,6 @@ endclass : uvmt_apb_adv_timer_base_test_c
 function uvmt_apb_adv_timer_base_test_c::new(string name="uvmt_apb_adv_timer_base_test", uvm_component parent=null);
 
    super.new(name, parent);
-
    rs = new("rs");
    uvm_report_server::set_server(rs);
    sys_clk_vseq = uvme_apb_adv_timer_sys_clk_vseq_c::type_id::create("sys_clk_vseq");
@@ -165,8 +158,6 @@ endfunction : new
 function void uvmt_apb_adv_timer_base_test_c::build_phase(uvm_phase phase);
 
    super.build_phase(phase);
-
-   retrieve_probe_vif();
    create_cfg        ();
    randomize_test    ();
    cfg_hrtbt_monitor ();
@@ -182,7 +173,6 @@ endfunction : build_phase
 function void uvmt_apb_adv_timer_base_test_c::connect_phase(uvm_phase phase);
 
    super.connect_phase(phase);
-
    vsequencer = env.vsequencer;
    reg_block  = env.reg_block;
    uvm_reg_cb::add(null, reg_cbs);
@@ -193,7 +183,6 @@ endfunction : connect_phase
 task uvmt_apb_adv_timer_base_test_c::pre_reset_phase(uvm_phase phase);
 
    super.pre_reset_phase(phase);
-
    `uvm_info("TEST", $sformatf("Starting sys_clk virtual sequence:\n%s", sys_clk_vseq.sprint()), UVM_NONE)
    sys_clk_vseq.start(vsequencer);
    `uvm_info("TEST", "Finished sys_clk virtual sequence", UVM_NONE)
@@ -204,7 +193,6 @@ endtask : pre_reset_phase
 task uvmt_apb_adv_timer_base_test_c::reset_phase(uvm_phase phase);
 
    super.reset_phase(phase);
-
    `uvm_info("TEST", $sformatf("Starting sys_reset virtual sequence:\n%s", sys_reset_vseq.sprint()), UVM_NONE)
    sys_reset_vseq.start(vsequencer);
    `uvm_info("TEST", "Finished sys_reset virtual sequence", UVM_NONE)
@@ -215,9 +203,7 @@ endtask : reset_phase
 task uvmt_apb_adv_timer_base_test_c::configure_phase(uvm_phase phase);
 
    uvm_status_e status;
-
    super.configure_phase(phase);
-
    if (test_cfg.auto_ral_update) begin
       `uvm_info("TEST", $sformatf("Starting to update DUT with RAL contents:\n%s", reg_block.sprint()), UVM_NONE)
       reg_block.update(status);
@@ -225,18 +211,6 @@ task uvmt_apb_adv_timer_base_test_c::configure_phase(uvm_phase phase);
    end
 
 endtask : configure_phase
-
-
-function void uvmt_apb_adv_timer_base_test_c::retrieve_probe_vif();
-
-   if (!uvm_config_db#(virtual uvmt_apb_adv_timer_probe_if)::get(this, "", "vif", probe_vif)) begin
-      `uvm_fatal("TEST", $sformatf("Could not find probe_vif handle of type %s in uvm_config_db", $typename(probe_vif)))
-   end
-   else begin
-      `uvm_info("TEST", $sformatf("Found probe_vif handle of type %s in uvm_config_db", $typename(probe_vif)), UVM_DEBUG)
-   end
-
-endfunction : retrieve_probe_vif
 
 
 function void uvmt_apb_adv_timer_base_test_c::create_cfg();

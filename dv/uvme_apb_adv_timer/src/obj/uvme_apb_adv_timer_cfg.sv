@@ -9,8 +9,9 @@
 
 
 /**
- * Object encapsulating all parameters for creating, connecting and running the APB Advanced Timer Sub-System environment
+ * Object encapsulating all parameters for creating, connecting and running the CORE-V MCU APB Advanced Timer Sub-System environment
  * (uvme_apb_adv_timer_env_c) components.
+ * @ingroup uvme_apb_adv_timer_obj
  */
 class uvme_apb_adv_timer_cfg_c extends uvml_cfg_c;
 
@@ -55,17 +56,13 @@ class uvme_apb_adv_timer_cfg_c extends uvml_cfg_c;
       `uvm_field_int (                         scoreboarding_enabled, UVM_DEFAULT)
       `uvm_field_int (                         cov_model_enabled    , UVM_DEFAULT)
       `uvm_field_int (                         trn_log_enabled      , UVM_DEFAULT)
-
       `uvm_field_int(reg_block_base_address, UVM_DEFAULT)
       `uvm_field_int(sys_clk_frequency, UVM_DEFAULT + UVM_DEC)
-
       // TODO: Add sub-environments configuration field macros
       //       Ex: `uvm_field_object(sub_env_cfg, UVM_DEFAULT)
-
       `uvm_field_object(sys_clk_cfg, UVM_DEFAULT)
       `uvm_field_object(sys_reset_cfg, UVM_DEFAULT)
       `uvm_field_object(apb_cfg, UVM_DEFAULT)
-
       `uvm_field_object(apb_adv_timer_reg_block, UVM_DEFAULT)
       // TODO Add scoreboard cfg field macros
       //      Ex: `uvm_field_object(sb_egress_cfg , UVM_DEFAULT)
@@ -97,7 +94,6 @@ class uvme_apb_adv_timer_cfg_c extends uvml_cfg_c;
       sys_clk_cfg.cov_model_enabled == 0;
       sys_reset_cfg.cov_model_enabled == 0;
       apb_cfg.cov_model_enabled == 0;
-
       if (enabled) {
          sys_clk_cfg.enabled == 1;
          sys_reset_cfg.enabled == 1;
@@ -108,7 +104,6 @@ class uvme_apb_adv_timer_cfg_c extends uvml_cfg_c;
          sys_reset_cfg.enabled == 0;
          apb_cfg.enabled == 0;
       }
-
       if (is_active == UVM_ACTIVE) {
          sys_clk_cfg.is_active == UVM_ACTIVE;
          sys_reset_cfg.is_active == UVM_ACTIVE;
@@ -119,7 +114,6 @@ class uvme_apb_adv_timer_cfg_c extends uvml_cfg_c;
          sys_reset_cfg.is_active == UVM_PASSIVE;
          apb_cfg.is_active == UVM_PASSIVE;
       }
-
       if (trn_log_enabled) {
          sys_clk_cfg.trn_log_enabled == 1;
          sys_reset_cfg.trn_log_enabled == 1;
@@ -144,18 +138,14 @@ endclass : uvme_apb_adv_timer_cfg_c
 function uvme_apb_adv_timer_cfg_c::new(string name="uvme_apb_adv_timer_cfg");
 
    super.new(name);
-
    // TODO Create sub-environment cfg objects
    //      Ex: sub_env_cfg  = uvme_sub_env_cfg_c::type_id::create("sub_env_cfg");
-
    sys_clk_cfg = uvma_clk_cfg_c::type_id::create("sys_clk_cfg");
    sys_reset_cfg = uvma_reset_cfg_c::type_id::create("sys_reset_cfg");
    apb_cfg = uvma_apb_cfg_c::type_id::create("apb_cfg");
-
    apb_adv_timer_reg_block = uvme_apb_adv_timer_reg_block_c::type_id::create("apb_adv_timer_reg_block");
    apb_adv_timer_reg_block.cfg = this;
    apb_adv_timer_reg_block.build();
-
    // TODO Create scoreboard cfg objects
    //      Ex: sb_egress_cfg  = uvml_sb_simplex_cfg_c::type_id::create("sb_egress_cfg" );
    //          sb_ingress_cfg = uvml_sb_simplex_cfg_c::type_id::create("sb_ingress_cfg");

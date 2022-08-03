@@ -10,6 +10,7 @@
 /**
  * Encapsulates assertions targeting uvma_cvmcu_intr_if.
  * This module must be bound to an interface in a test bench.
+ * @ingroup uvma_cvmcu_intr_misc
  */
 module uvma_cvmcu_intr_if_chkr (
    uvma_cvmcu_intr_if  cvmcu_intr_if

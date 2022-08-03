@@ -9,12 +9,13 @@
 
 
 /**
- * Module encapsulating assertions for APB Timer Sub-System DUT wrapper.  All ports are SV interfaces.
+ * Module encapsulating assertions for CORE-V MCU APB Timer Sub-System DUT wrapper.  All ports are SV interfaces.
  * This module must be bound to the design in a test bench.
+ * @ingroup uvmt_apb_timer_tb
  */
 module uvmt_apb_timer_dut_chkr (
    uvma_apb_if  apb_if, ///< Register access interface
-   uvmt_apb_timer_probe_if  probe_if ///< Misc. signals
+   uvme_apb_timer_probe_if  probe_if ///< Misc. signals
 );
 
    // TODO Add assertions to uvmt_apb_timer_dut_chkr

@@ -9,7 +9,8 @@
 
 
 /**
- * Virtual sequence checking that the hardware reset values in a register block match the APB Timer Sub-System DUT.
+ * Virtual sequence checking that the hardware reset values in a register block match the CORE-V MCU APB Timer Sub-System DUT.
+ * @ingroup uvme_apb_timer_seq
  */
 class uvme_apb_timer_reg_hw_reset_vseq_c extends uvme_apb_timer_reg_base_vseq_c;
 

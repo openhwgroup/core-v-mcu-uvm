@@ -9,7 +9,8 @@
 
 
 /**
- * Abstract test from which all other APB Timer Sub-System register tests must extend.
+ * Abstract test from which all other CORE-V MCU APB Timer Sub-System register tests must extend.
+ * @ingroup uvmt_apb_timer_tests
  */
 class uvmt_apb_timer_reg_base_test_c extends uvmt_apb_timer_base_test_c;
 

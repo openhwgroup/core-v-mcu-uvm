@@ -9,6 +9,7 @@
 
 /**
  * Component sampling transactions from CORE-V MCU Interrupt virtual interface (uvma_cvmcu_intr_if).
+ * @ingroup uvma_cvmcu_intr_comps
  */
 class uvma_cvmcu_intr_mon_c extends uvml_mon_c;
 
@@ -51,6 +52,26 @@ class uvma_cvmcu_intr_mon_c extends uvml_mon_c;
     * Oversees monitoring, depending on the reset state, by calling mon_<pre|in|post>_reset() tasks.
     */
    extern virtual task run_phase(uvm_phase phase);
+
+   /**
+    * Uses uvm_config_db to retrieve cfg.
+    */
+   extern function void get_cfg();
+
+   /**
+    * Uses uvm_config_db to retrieve cntxt.
+    */
+   extern function void get_cntxt();
+
+   /**
+    * Creates #ap.
+    */
+   extern function void create_tlm_ports();
+
+   /**
+    * Retrieves #mp from #cntxt.
+    */
+   extern function void retrieve_modports();
 
    /**
     * Updates the context's reset state.
@@ -105,19 +126,10 @@ endfunction : new
 function void uvma_cvmcu_intr_mon_c::build_phase(uvm_phase phase);
 
    super.build_phase(phase);
-
-   void'(uvm_config_db#(uvma_cvmcu_intr_cfg_c)::get(this, "", "cfg", cfg));
-   if (!cfg) begin
-      `uvm_fatal("CVMCU_INTR_MON", "Configuration handle is null")
-   end
-
-   void'(uvm_config_db#(uvma_cvmcu_intr_cntxt_c)::get(this, "", "cntxt", cntxt));
-   if (!cntxt) begin
-      `uvm_fatal("CVMCU_INTR_MON", "Context handle is null")
-   end
-
-   ap = new("ap", this);
-   mp = cntxt.vif.mon_mp;
+   get_cfg          ();
+   get_cntxt        ();
+   create_tlm_ports ();
+   retrieve_modports();
 
 endfunction : build_phase
 
@@ -125,10 +137,8 @@ endfunction : build_phase
 task uvma_cvmcu_intr_mon_c::run_phase(uvm_phase phase);
 
    super.run_phase(phase);
-
    if (cfg.enabled) begin
       cntxt.sample_cntxt_e.trigger();
-
       fork
          observe_reset();
          forever begin
@@ -142,6 +152,40 @@ task uvma_cvmcu_intr_mon_c::run_phase(uvm_phase phase);
    end
 
 endtask : run_phase
+
+
+function void uvma_cvmcu_intr_mon_c::get_cfg();
+
+   void'(uvm_config_db#(uvma_cvmcu_intr_cfg_c)::get(this, "", "cfg", cfg));
+   if (!cfg) begin
+      `uvm_fatal("CVMCU_INTR_MON", "Configuration handle is null")
+   end
+
+endfunction : get_cfg
+
+
+function void uvma_cvmcu_intr_mon_c::get_cntxt();
+
+   void'(uvm_config_db#(uvma_cvmcu_intr_cntxt_c)::get(this, "", "cntxt", cntxt));
+   if (!cntxt) begin
+      `uvm_fatal("CVMCU_INTR_MON", "Context handle is null")
+   end
+
+endfunction : get_cntxt
+
+
+function void uvma_cvmcu_intr_mon_c::create_tlm_ports();
+
+   ap = new("ap", this);
+
+endfunction : create_tlm_ports
+
+
+function void uvma_cvmcu_intr_mon_c::retrieve_modports();
+
+   mp = cntxt.vif.mon_mp;
+
+endfunction : retrieve_modports
 
 
 task uvma_cvmcu_intr_mon_c::observe_reset();
@@ -165,7 +209,6 @@ task uvma_cvmcu_intr_mon_c::observe_reset_sync();
          wait (mp.clk === 1);
          wait (mp.clk === 0);
       end
-
       cntxt.reset_state = UVML_RESET_STATE_IN_RESET;
       cntxt.sample_cntxt_e.trigger();
       `uvm_info("CVMCU_INTR_MON", "Entered IN_RESET state", UVM_HIGH)
@@ -173,7 +216,6 @@ task uvma_cvmcu_intr_mon_c::observe_reset_sync();
          wait (mp.clk === 1);
          wait (mp.clk === 0);
       end
-
       cntxt.reset_state = UVML_RESET_STATE_POST_RESET;
       cntxt.sample_cntxt_e.trigger();
       `uvm_info("CVMCU_INTR_MON", "Entered POST_RESET state", UVM_HIGH)
@@ -187,12 +229,10 @@ task uvma_cvmcu_intr_mon_c::observe_reset_async();
    forever begin
       `uvm_info("CVMCU_INTR_MON", "Waiting for asynchronous reset pulse", UVM_HIGH)
       wait (mp.reset_n === 0);
-
       cntxt.reset_state = UVML_RESET_STATE_IN_RESET;
       cntxt.sample_cntxt_e.trigger();
       `uvm_info("CVMCU_INTR_MON", "Entered IN_RESET state", UVM_HIGH)
       wait (mp.reset_n === 1);
-
       cntxt.reset_state = UVML_RESET_STATE_POST_RESET;
       cntxt.sample_cntxt_e.trigger();
       `uvm_info("CVMCU_INTR_MON", "Entered POST_RESET state", UVM_HIGH)
@@ -218,7 +258,6 @@ endtask : mon_in_reset
 task uvma_cvmcu_intr_mon_c::mon_post_reset();
 
    uvma_cvmcu_intr_mon_trn_c  trn;
-
    sample_trn (trn);
    process_trn(trn);
    ap.write   (trn);
@@ -229,7 +268,6 @@ endtask : mon_post_reset
 task uvma_cvmcu_intr_mon_c::sample_trn(output uvma_cvmcu_intr_mon_trn_c trn);
 
    bit  sampled_trn = 0;
-
    do begin
       @(mp.mon_cb);
       // TODO Sample trn

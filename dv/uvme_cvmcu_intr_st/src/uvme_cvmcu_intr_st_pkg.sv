@@ -7,6 +7,18 @@
 `define __UVME_CVMCU_INTR_ST_PKG_SV__
 
 
+// Doxygen Groups
+/**
+ * @defgroup uvme_cvmcu_intr_st_pkg CORE-V MCU Interrupt UVM Agent Self-Test Environment
+ * @{
+ * @defgroup uvme_cvmcu_intr_st_comps Components
+ * @defgroup uvme_cvmcu_intr_st_misc  Miscellaneous
+ * @defgroup uvme_cvmcu_intr_st_obj   Objects
+ * @defgroup uvme_cvmcu_intr_st_seq   Sequences & Sequence Items
+ * @}
+ */
+
+
 // Pre-processor macros
 `include "uvm_macros.svh"
 `include "uvml_macros.svh"
@@ -40,6 +52,7 @@ package uvme_cvmcu_intr_st_pkg;
    // Components
    `include "uvme_cvmcu_intr_st_vsqr.sv"
    `include "uvme_cvmcu_intr_st_prd.sv"
+   `include "uvme_cvmcu_intr_st_sb.sv"
    `include "uvme_cvmcu_intr_st_cov_model.sv"
    `include "uvme_cvmcu_intr_st_env.sv"
 

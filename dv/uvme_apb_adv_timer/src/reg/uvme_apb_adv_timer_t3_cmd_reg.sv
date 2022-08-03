@@ -1,10 +1,10 @@
-// 
-// Copyright 2021 Low Power Futures Inc.
-// 
+// Copyright 2022 Datum Technology Corporation
+// SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-// WARNING: THE FOLLOWING IS AUTO-GENERATED CODE.
-// ANY CHANGES MADE HERE WILL BE ERASED UPON THE NEXT RELEASE OF THIS RAL.
+// WARNING: THE FOLLOWING IS GENERATED CODE.
+// ANY CHANGES MADE WILL BE ERASED UPON THE NEXT RELEASE.
 
 
 `ifndef __UVME_APB_ADV_TIMER_T3_CMD_REG_SV__
@@ -12,15 +12,15 @@
 
 
 class uvme_apb_adv_timer_t3_cmd_reg_c extends uvml_ral_reg_c;
-   
+
    rand uvml_ral_reg_field_c  start; ///< ADV_TIMER0 start command bitfield.
    rand uvml_ral_reg_field_c  stop; ///< ADV_TIMER0 stop command bitfield.
    rand uvml_ral_reg_field_c  update; ///< ADV_TIMER0 update command bitfield.
    rand uvml_ral_reg_field_c  reset; ///< ADV_TIMER0 reset command bitfield.
    rand uvml_ral_reg_field_c  arm; ///< ADV_TIMER0 arm command bitfield.
    rand uvml_ral_reg_field_c  rfu; ///< 
-   
-   
+
+
    `uvm_object_utils_begin(uvme_apb_adv_timer_t3_cmd_reg_c)
       `uvm_field_object(start, UVM_DEFAULT)
       `uvm_field_object(stop, UVM_DEFAULT)
@@ -29,30 +29,30 @@ class uvme_apb_adv_timer_t3_cmd_reg_c extends uvml_ral_reg_c;
       `uvm_field_object(arm, UVM_DEFAULT)
       `uvm_field_object(rfu, UVM_DEFAULT)
    `uvm_object_utils_end
-   
-   
+
+
    /**
     * Default constructor.
     */
    extern function new(string name="uvme_apb_adv_timer_t3_cmd_reg", int unsigned n_bits=32, int has_coverage=UVM_NO_COVERAGE);
-   
+
    /**
     * Creates and configures register fields.
     */
    extern virtual function void build();
-   
+
 endclass : uvme_apb_adv_timer_t3_cmd_reg_c
 
 
 function uvme_apb_adv_timer_t3_cmd_reg_c::new(string name="uvme_apb_adv_timer_t3_cmd_reg", int unsigned n_bits=32, int has_coverage=UVM_NO_COVERAGE);
-   
+
    super.new(name, n_bits, has_coverage);
-   
+
 endfunction : new
 
 
 function void uvme_apb_adv_timer_t3_cmd_reg_c::build();
-   
+
    start = uvml_ral_reg_field_c::type_id::create("start");
    start.configure(
       .parent                 (this),
@@ -63,7 +63,7 @@ function void uvme_apb_adv_timer_t3_cmd_reg_c::build();
       .reset                  (   0),
       .has_reset              (   1),
       .is_rand                (   1),
-      .individually_accessible(   0)
+      .individually_accessible(   1)
    );
    stop = uvml_ral_reg_field_c::type_id::create("stop");
    stop.configure(
@@ -75,7 +75,7 @@ function void uvme_apb_adv_timer_t3_cmd_reg_c::build();
       .reset                  (   0),
       .has_reset              (   1),
       .is_rand                (   1),
-      .individually_accessible(   0)
+      .individually_accessible(   1)
    );
    update = uvml_ral_reg_field_c::type_id::create("update");
    update.configure(
@@ -87,7 +87,7 @@ function void uvme_apb_adv_timer_t3_cmd_reg_c::build();
       .reset                  (   0),
       .has_reset              (   1),
       .is_rand                (   1),
-      .individually_accessible(   0)
+      .individually_accessible(   1)
    );
    reset = uvml_ral_reg_field_c::type_id::create("reset");
    reset.configure(
@@ -99,7 +99,7 @@ function void uvme_apb_adv_timer_t3_cmd_reg_c::build();
       .reset                  (   0),
       .has_reset              (   1),
       .is_rand                (   1),
-      .individually_accessible(   0)
+      .individually_accessible(   1)
    );
    arm = uvml_ral_reg_field_c::type_id::create("arm");
    arm.configure(
@@ -111,7 +111,7 @@ function void uvme_apb_adv_timer_t3_cmd_reg_c::build();
       .reset                  (   0),
       .has_reset              (   1),
       .is_rand                (   1),
-      .individually_accessible(   0)
+      .individually_accessible(   1)
    );
    rfu = uvml_ral_reg_field_c::type_id::create("rfu");
    rfu.configure(
@@ -123,9 +123,9 @@ function void uvme_apb_adv_timer_t3_cmd_reg_c::build();
       .reset                  (   0),
       .has_reset              (   1),
       .is_rand                (   1),
-      .individually_accessible(   0)
+      .individually_accessible(   1)
    );
-   
+
 endfunction: build
 
 

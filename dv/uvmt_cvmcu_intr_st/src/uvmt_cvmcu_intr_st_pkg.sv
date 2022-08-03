@@ -7,6 +7,17 @@
 `define __UVMT_CVMCU_INTR_ST_PKG_SV__
 
 
+// Doxygen Groups
+/**
+ * @defgroup uvmt_cvmcu_intr_st_pkg CORE-V MCU Interrupt UVM Agent Self-Test Bench
+ * @{
+ * @defgroup uvmt_cvmcu_intr_st_misc   Miscellaneous
+ * @defgroup uvmt_cvmcu_intr_st_tb     Test Bench
+ * @defgroup uvmt_cvmcu_intr_st_tests  Tests
+ * @}
+ */
+
+
 // Pre-processor macros
 `include "uvm_macros.svh"
 `include "uvml_macros.svh"
@@ -26,6 +37,7 @@ timeprecision  1ps;
 
 /**
  * Encapsulates the test library of the CORE-V MCU Interrupt UVM Agent Self-Test Bench.
+ * @ingroup uvmt_cvmcu_intr_st_pkg
  */
 package uvmt_cvmcu_intr_st_pkg;
 

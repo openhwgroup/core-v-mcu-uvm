@@ -1,10 +1,10 @@
-// 
-// Copyright 2021 Low Power Futures Inc.
-// 
+// Copyright 2022 Datum Technology Corporation
+// SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-// WARNING: THE FOLLOWING IS AUTO-GENERATED CODE.
-// ANY CHANGES MADE HERE WILL BE ERASED UPON THE NEXT RELEASE OF THIS RAL.
+// WARNING: THE FOLLOWING IS GENERATED CODE.
+// ANY CHANGES MADE WILL BE ERASED UPON THE NEXT RELEASE.
 
 
 `ifndef __UVME_APB_ADV_TIMER_T1_CONFIG_REG_SV__
@@ -12,14 +12,14 @@
 
 
 class uvme_apb_adv_timer_t1_config_reg_c extends uvml_ral_reg_c;
-   
+
    rand uvml_ral_reg_field_c  insel; ///< ADV_TIMER0 input source configuration bitfield:
    rand uvml_ral_reg_field_c  mode; ///< ADV_TIMER0 trigger mode configuration bitfield:
    rand uvml_ral_reg_field_c  clksel; ///< ADV_TIMER0 clock source configuration bitfield:
    rand uvml_ral_reg_field_c  updownsel; ///< ADV_TIMER0 center-aligned mode configuration bitfield:
    rand uvml_ral_reg_field_c  presc; ///< ADV_TIMER0 prescaler value configuration bitfield.
-   
-   
+
+
    `uvm_object_utils_begin(uvme_apb_adv_timer_t1_config_reg_c)
       `uvm_field_object(insel, UVM_DEFAULT)
       `uvm_field_object(mode, UVM_DEFAULT)
@@ -27,30 +27,30 @@ class uvme_apb_adv_timer_t1_config_reg_c extends uvml_ral_reg_c;
       `uvm_field_object(updownsel, UVM_DEFAULT)
       `uvm_field_object(presc, UVM_DEFAULT)
    `uvm_object_utils_end
-   
-   
+
+
    /**
     * Default constructor.
     */
    extern function new(string name="uvme_apb_adv_timer_t1_config_reg", int unsigned n_bits=32, int has_coverage=UVM_NO_COVERAGE);
-   
+
    /**
     * Creates and configures register fields.
     */
    extern virtual function void build();
-   
+
 endclass : uvme_apb_adv_timer_t1_config_reg_c
 
 
 function uvme_apb_adv_timer_t1_config_reg_c::new(string name="uvme_apb_adv_timer_t1_config_reg", int unsigned n_bits=32, int has_coverage=UVM_NO_COVERAGE);
-   
+
    super.new(name, n_bits, has_coverage);
-   
+
 endfunction : new
 
 
 function void uvme_apb_adv_timer_t1_config_reg_c::build();
-   
+
    insel = uvml_ral_reg_field_c::type_id::create("insel");
    insel.configure(
       .parent                 (this),
@@ -61,7 +61,7 @@ function void uvme_apb_adv_timer_t1_config_reg_c::build();
       .reset                  (   0),
       .has_reset              (   1),
       .is_rand                (   1),
-      .individually_accessible(   0)
+      .individually_accessible(   1)
    );
    mode = uvml_ral_reg_field_c::type_id::create("mode");
    mode.configure(
@@ -73,7 +73,7 @@ function void uvme_apb_adv_timer_t1_config_reg_c::build();
       .reset                  (   0),
       .has_reset              (   1),
       .is_rand                (   1),
-      .individually_accessible(   0)
+      .individually_accessible(   1)
    );
    clksel = uvml_ral_reg_field_c::type_id::create("clksel");
    clksel.configure(
@@ -85,7 +85,7 @@ function void uvme_apb_adv_timer_t1_config_reg_c::build();
       .reset                  (   0),
       .has_reset              (   1),
       .is_rand                (   1),
-      .individually_accessible(   0)
+      .individually_accessible(   1)
    );
    updownsel = uvml_ral_reg_field_c::type_id::create("updownsel");
    updownsel.configure(
@@ -97,7 +97,7 @@ function void uvme_apb_adv_timer_t1_config_reg_c::build();
       .reset                  (   1),
       .has_reset              (   1),
       .is_rand                (   1),
-      .individually_accessible(   0)
+      .individually_accessible(   1)
    );
    presc = uvml_ral_reg_field_c::type_id::create("presc");
    presc.configure(
@@ -109,9 +109,9 @@ function void uvme_apb_adv_timer_t1_config_reg_c::build();
       .reset                  (   0),
       .has_reset              (   1),
       .is_rand                (   1),
-      .individually_accessible(   0)
+      .individually_accessible(   1)
    );
-   
+
 endfunction: build
 
 

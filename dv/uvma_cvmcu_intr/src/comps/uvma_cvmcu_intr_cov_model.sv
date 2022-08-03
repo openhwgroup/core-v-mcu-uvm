@@ -10,6 +10,7 @@
 /**
  * Component encapsulating abstract CORE-V MCU Interrupt functional coverage model.
  * Sub-classes must extend this class, add covergroups of their own and override the sample_x() functions.
+ * @ingroup uvma_cvmcu_intr_comps
  */
 class uvma_cvmcu_intr_cov_model_c extends uvm_component;
 
@@ -58,6 +59,26 @@ class uvma_cvmcu_intr_cov_model_c extends uvm_component;
    extern virtual task run_phase(uvm_phase phase);
 
    /**
+    * Uses uvm_config_db to retrieve cfg.
+    */
+   extern function void get_cfg();
+
+   /**
+    * Uses uvm_config_db to retrieve cntxt.
+    */
+   extern function void get_cntxt();
+
+   /**
+    * Creates TLM FIFOs and Analysis Ports.
+    */
+   extern function void create_tlm_objects();
+
+   /**
+    * Connects Exports to FIFOs.
+    */
+   extern function void connect_ports();
+
+   /**
     * Pure virtual function
     */
    extern virtual function void sample_cfg();
@@ -90,19 +111,9 @@ endfunction : new
 function void uvma_cvmcu_intr_cov_model_c::build_phase(uvm_phase phase);
 
    super.build_phase(phase);
-
-   void'(uvm_config_db#(uvma_cvmcu_intr_cfg_c)::get(this, "", "cfg", cfg));
-   if (!cfg) begin
-      `uvm_fatal("CVMCU_INTR_COV_MODEL", "Configuration handle is null")
-   end
-
-   void'(uvm_config_db#(uvma_cvmcu_intr_cntxt_c)::get(this, "", "cntxt", cntxt));
-   if (!cntxt) begin
-      `uvm_fatal("CVMCU_INTR_COV_MODEL", "Context handle is null")
-   end
-
-   seq_item_fifo = new("seq_item_fifo", this);
-   mon_trn_fifo  = new("mon_trn_fifo" , this);
+   get_cfg           ();
+   get_cntxt         ();
+   create_tlm_objects();
 
 endfunction : build_phase
 
@@ -110,9 +121,7 @@ endfunction : build_phase
 function void uvma_cvmcu_intr_cov_model_c::connect_phase(uvm_phase phase);
 
    super.connect_phase(phase);
-
-   seq_item_export = seq_item_fifo.analysis_export;
-   mon_trn_export  = mon_trn_fifo .analysis_export;
+   connect_ports();
 
 endfunction : connect_phase
 
@@ -120,7 +129,6 @@ endfunction : connect_phase
 task uvma_cvmcu_intr_cov_model_c::run_phase(uvm_phase phase);
 
    super.run_phase(phase);
-
    if (cfg.enabled && cfg.cov_model_enabled) begin
       fork
          // Configuration
@@ -128,19 +136,16 @@ task uvma_cvmcu_intr_cov_model_c::run_phase(uvm_phase phase);
             cntxt.sample_cfg_e.wait_trigger();
             sample_cfg();
          end
-
          // Context
          forever begin
             cntxt.sample_cntxt_e.wait_trigger();
             sample_cntxt();
          end
-
          // Sequence items
          forever begin
             seq_item_fifo.get(seq_item);
             sample_seq_item();
          end
-
          // Monitor transactions
          forever begin
             mon_trn_fifo.get(mon_trn);
@@ -150,6 +155,42 @@ task uvma_cvmcu_intr_cov_model_c::run_phase(uvm_phase phase);
    end
 
 endtask : run_phase
+
+
+function void uvma_cvmcu_intr_cov_model_c::get_cfg();
+
+   void'(uvm_config_db#(uvma_cvmcu_intr_cfg_c)::get(this, "", "cfg", cfg));
+   if (!cfg) begin
+      `uvm_fatal("CVMCU_INTR_COV_MODEL", "Configuration handle is null")
+   end
+
+endfunction : get_cfg
+
+
+function void uvma_cvmcu_intr_cov_model_c::get_cntxt();
+
+   void'(uvm_config_db#(uvma_cvmcu_intr_cntxt_c)::get(this, "", "cntxt", cntxt));
+   if (!cntxt) begin
+      `uvm_fatal("CVMCU_INTR_COV_MODEL", "Context handle is null")
+   end
+
+endfunction : get_cntxt
+
+
+function void uvma_cvmcu_intr_cov_model_c::create_tlm_objects();
+
+   seq_item_fifo = new("seq_item_fifo", this);
+   mon_trn_fifo  = new("mon_trn_fifo" , this);
+
+endfunction : create_tlm_objects
+
+
+function void uvma_cvmcu_intr_cov_model_c::connect_ports();
+
+   seq_item_export = seq_item_fifo.analysis_export;
+   mon_trn_export  = mon_trn_fifo .analysis_export;
+
+endfunction : connect_ports
 
 
 function void uvma_cvmcu_intr_cov_model_c::sample_cfg();

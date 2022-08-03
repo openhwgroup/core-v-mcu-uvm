@@ -9,6 +9,7 @@
 
 /**
  * Sends a fixed number of completely random sequence items to the active sequencer.
+ * @ingroup uvma_cvmcu_intr_st_seq
  */
 class uvme_cvmcu_intr_st_rand_stim_vseq_c extends uvme_cvmcu_intr_st_base_vseq_c;
 

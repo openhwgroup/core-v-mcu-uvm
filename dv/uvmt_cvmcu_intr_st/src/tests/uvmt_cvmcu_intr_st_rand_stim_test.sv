@@ -9,6 +9,7 @@
 
 /**
  * Runs uvme_cvmcu_intr_st_rand_stim_vseq_c with default parameters and scoreboarding enabled.
+ * @ingroup uvmt_cvmcu_intr_st_tests
  */
 class uvmt_cvmcu_intr_st_rand_stim_test_c extends uvmt_cvmcu_intr_st_base_test_c;
 
@@ -52,7 +53,6 @@ endfunction : new
 task uvmt_cvmcu_intr_st_rand_stim_test_c::main_phase(uvm_phase phase);
 
    super.main_phase(phase);
-
    phase.raise_objection(this);
    `uvm_info("TEST", $sformatf("Starting rand_stim virtual sequence:\n%s", rand_stim_vseq.sprint()), UVM_NONE)
    rand_stim_vseq.start(vsequencer);

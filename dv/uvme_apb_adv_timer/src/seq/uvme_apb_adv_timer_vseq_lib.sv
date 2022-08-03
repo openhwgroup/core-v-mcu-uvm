@@ -11,14 +11,15 @@
 `include "uvme_apb_adv_timer_base_vseq.sv"
 `include "uvme_apb_adv_timer_sys_clk_vseq.sv"
 `include "uvme_apb_adv_timer_sys_reset_vseq.sv"
-`include "uvme_apb_adv_timer_smoke_vseq.sv"
 `include "uvme_apb_adv_timer_reg_base_vseq.sv"
 `include "uvme_apb_adv_timer_reg_bit_bash_vseq.sv"
 `include "uvme_apb_adv_timer_reg_hw_reset_vseq.sv"
+`include "uvme_apb_adv_timer_smoke_vseq.sv"
 
 
 /**
- * Object cataloging the APB Advanced Timer Sub-System environment's virtual sequences.
+ * Object cataloging the CORE-V MCU APB Advanced Timer Sub-System environment's virtual sequences.
+ * @ingroup uvme_apb_adv_timer_seq
  */
 class uvme_apb_adv_timer_vseq_lib_c extends uvml_vseq_lib_c #(
    .REQ(uvm_sequence_item),
@@ -27,7 +28,6 @@ class uvme_apb_adv_timer_vseq_lib_c extends uvml_vseq_lib_c #(
 
    `uvm_object_utils          (uvme_apb_adv_timer_vseq_lib_c)
    `uvm_sequence_library_utils(uvme_apb_adv_timer_vseq_lib_c)
-
 
    /**
     * 1. Initializes sequence library
@@ -42,8 +42,6 @@ function uvme_apb_adv_timer_vseq_lib_c::new(string name="uvme_apb_adv_timer_vseq
 
    super.new(name);
    init_sequence_library();
-
-   add_sequence(uvme_apb_adv_timer_smoke_vseq_c       ::get_type());
    add_sequence(uvme_apb_adv_timer_reg_bit_bash_vseq_c::get_type());
    add_sequence(uvme_apb_adv_timer_reg_hw_reset_vseq_c::get_type());
 

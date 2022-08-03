@@ -9,7 +9,8 @@
 
 
 /**
- * Component implementing transaction-based model of APB Timer Sub-System.
+ * Component implementing transaction-based model of CORE-V MCU APB Timer Sub-System.
+ * @ingroup uvme_apb_timer_comps
  */
 class uvme_apb_timer_prd_c extends uvm_component;
 
@@ -64,6 +65,26 @@ class uvme_apb_timer_prd_c extends uvm_component;
    extern virtual task run_phase(uvm_phase phase);
 
    /**
+    * Uses uvm_config_db to retrieve cfg.
+    */
+   extern function void get_cfg();
+
+   /**
+    * Uses uvm_config_db to retrieve cntxt.
+    */
+   extern function void get_cntxt();
+
+   /**
+    * Creates TLM FIFOs and Analysis Ports.
+    */
+   extern function void create_tlm_objects();
+
+   /**
+    * Connects Exports to FIFOs.
+    */
+   extern function void connect_ports();
+
+   /**
     * Processes input sys_clk monitor transactions.
     */
    extern task process_sys_clk();
@@ -96,28 +117,9 @@ endfunction : new
 function void uvme_apb_timer_prd_c::build_phase(uvm_phase phase);
 
    super.build_phase(phase);
-
-   void'(uvm_config_db#(uvme_apb_timer_cfg_c)::get(this, "", "cfg", cfg));
-   if (!cfg) begin
-      `uvm_fatal("APB_TIMER_PRD", "Configuration handle is null")
-   end
-
-   void'(uvm_config_db#(uvme_apb_timer_cntxt_c)::get(this, "", "cntxt", cntxt));
-   if (!cntxt) begin
-      `uvm_fatal("APB_TIMER_PRD", "Context handle is null")
-   end
-
-   // Build Input TLM objects
-   sys_clk_fifo   = new("sys_clk_fifo"  , this);
-   sys_reset_fifo = new("sys_reset_fifo"  , this);
-   apb_fifo = new("apb_fifo"  , this);
-   sys_clk_export = new("sys_clk_export", this);
-   sys_reset_export = new("sys_reset_export", this);
-   apb_export = new("apb_export", this);
-
-   // Build Output TLM objects
-   // TODO Create Output TLM objects for uvme_apb_timer_prd_c
-   //      Ex: pkt_out_ap = new("pkt_out_ap", this);
+   get_cfg           ();
+   get_cntxt         ();
+   create_tlm_objects();
 
 endfunction : build_phase
 
@@ -125,11 +127,7 @@ endfunction : build_phase
 function void uvme_apb_timer_prd_c::connect_phase(uvm_phase phase);
 
    super.connect_phase(phase);
-
-   // Connect TLM objects
-   sys_clk_export.connect(sys_clk_fifo.analysis_export);
-   sys_reset_export.connect(sys_reset_fifo.analysis_export);
-   apb_export.connect(apb_fifo.analysis_export);
+   connect_ports();
 
 endfunction: connect_phase
 
@@ -137,7 +135,6 @@ endfunction: connect_phase
 task uvme_apb_timer_prd_c::run_phase(uvm_phase phase);
 
    super.run_phase(phase);
-
    fork
       process_sys_clk();
       process_sys_reset();
@@ -147,10 +144,54 @@ task uvme_apb_timer_prd_c::run_phase(uvm_phase phase);
 endtask: run_phase
 
 
+function void uvme_apb_timer_prd_c::get_cfg();
+
+   void'(uvm_config_db#(uvme_apb_timer_cfg_c)::get(this, "", "cfg", cfg));
+   if (cfg == null) begin
+      `uvm_fatal("APB_TIMER_PRD", "Configuration handle is null")
+   end
+
+endfunction : get_cfg
+
+
+function void uvme_apb_timer_prd_c::get_cntxt();
+
+   void'(uvm_config_db#(uvme_apb_timer_cntxt_c)::get(this, "", "cntxt", cntxt));
+   if (cntxt == null) begin
+      `uvm_fatal("APB_TIMER_PRD", "Context handle is null")
+   end
+
+endfunction : get_cntxt
+
+
+function void uvme_apb_timer_prd_c::create_tlm_objects();
+
+   // Build Input TLM objects
+   sys_clk_fifo   = new("sys_clk_fifo"  , this);
+   sys_reset_fifo = new("sys_reset_fifo"  , this);
+   apb_fifo = new("apb_fifo"  , this);
+   sys_clk_export = new("sys_clk_export", this);
+   sys_reset_export = new("sys_reset_export", this);
+   apb_export = new("apb_export", this);
+   // Build Output TLM objects
+   // TODO Create Output TLM objects for uvme_apb_timer_prd_c
+   //      Ex: pkt_out_ap = new("pkt_out_ap", this);
+
+endfunction : create_tlm_objects
+
+
+function void uvme_apb_timer_prd_c::connect_ports();
+
+   sys_clk_export.connect(sys_clk_fifo.analysis_export);
+   sys_reset_export.connect(sys_reset_fifo.analysis_export);
+   apb_export.connect(apb_fifo.analysis_export);
+
+endfunction : connect_ports
+
+
 task uvme_apb_timer_prd_c::process_sys_clk();
 
    uvma_clk_mon_trn_c  sys_clk_trn;
-
    forever begin
       sys_clk_fifo.get(sys_clk_trn);
       // TODO Implement uvme_apb_timer_prd_c::process_sys_clk()
@@ -162,7 +203,6 @@ endtask : process_sys_clk
 task uvme_apb_timer_prd_c::process_sys_reset();
 
    uvma_reset_mon_trn_c  trn;
-
    forever begin
       sys_reset_fifo.get(trn);
       case (trn.transition)
@@ -182,7 +222,6 @@ endtask : process_sys_reset
 task uvme_apb_timer_prd_c::process_apb();
 
    uvma_apb_mon_trn_c  trn;
-
    forever begin
       apb_fifo.get(trn);
       predict_reg(trn);
@@ -193,7 +232,7 @@ endtask : process_apb
 
 task uvme_apb_timer_prd_c::predict_reg(ref uvma_apb_mon_trn_c trn);
 
-   // TODO Implement uvme_apb_timer_prd_c::process_apb()
+   // TODO Implement uvme_apb_timer_prd_c::predict_apb()
    //      Ex: uvm_reg  accessed_reg = cfg.apb_timer_reg_block.get_reg_by_offset(trn.address-cfg.reg_block_base_address);
 
 endtask : predict_reg

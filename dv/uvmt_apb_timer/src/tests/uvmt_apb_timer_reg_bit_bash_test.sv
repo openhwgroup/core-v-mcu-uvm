@@ -9,7 +9,8 @@
 
 
 /**
- * Test checking the accessibility of every bit of every register in the APB Timer Sub-System DUT.
+ * Test checking the accessibility of every bit of every register in the CORE-V MCU APB Timer Sub-System DUT.
+ * @ingroup uvmt_apb_timer_tests
  */
 class uvmt_apb_timer_reg_bit_bash_test_c extends uvmt_apb_timer_reg_base_test_c;
 

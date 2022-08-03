@@ -11,6 +11,7 @@
  * Encapsulates all signals and clocking of CORE-V MCU Interrupt interface.
  * Used by monitor (uvma_cvmcu_intr_mon_c) and driver (uvma_cvmcu_intr_drv_c).
  * Assertions must be captured within uvma_cvmcu_intr_if_chkr.
+ * @ingroup uvma_cvmcu_intr_misc
  */
 interface uvma_cvmcu_intr_if (
    input  clk    ,

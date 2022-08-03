@@ -9,7 +9,8 @@
 
 
 /**
- * Abstract virtual sequence from which all other APB Timer Sub-System register virtual sequences must extend.
+ * Abstract virtual sequence from which all other CORE-V MCU APB Timer Sub-System register virtual sequences must extend.
+ * @ingroup uvme_apb_timer_seq
  */
 class uvme_apb_timer_reg_base_vseq_c extends uvme_apb_timer_base_vseq_c;
 

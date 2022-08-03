@@ -11,6 +11,7 @@
 /**
  * Encapsulates assertions targeting uvme_apb_adv_timer interfaces.
  * This module must be bound to interfaces in a test bench.
+ * @ingroup uvme_apb_adv_timer_misc
  */
 module uvme_apb_adv_timer_chkr (
    uvma_apb_if  apb_if ///< Register access interface
