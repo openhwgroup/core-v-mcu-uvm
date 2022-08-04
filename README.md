@@ -40,8 +40,8 @@ mio install uvmt_apb_timer
 ```
 
 
-3. To run compilation, elaboration and simulation for sub-system `apb_timer`, test `reg_hw_reset` and seed `1`:
+3. To run compilation, elaboration and simulation for sub-system `apb_timer`, test `reg_hw_bit_bash` and seed `1`:
 
 ```
-mio sim uvmt_apb_timer -t reg_hw_reset -s 1
+mio sim uvmt_apb_timer -t reg_hw_bit_bash -s 1
 ```
