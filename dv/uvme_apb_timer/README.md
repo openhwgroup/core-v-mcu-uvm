@@ -1,32 +1,3 @@
-# Hello from your Code Generator!
-Thank you for using the Moore.io Sub-System UVM Environment+TB Code Template v1.0!
-
-Your parameters are:
-* Name: 'apb_timer'
-* Full Name: 'CORE-V MCU APB Timer'
-* Clock Agent Name: 'sys_clk'
-* Reset Agent Name: 'sys_reset'
-* RAL Agent Type: 'apb'
-* RAL Agent Name: 'apb'
-
-If this is incorrect, it is recommended to delete the generated IP and re-generate with the correct parameters.
-
-This code template assumes the DUT has a single apb interconnect interface, clock and reset.
-The Predictor has example code for adding datapath prediction.
-Sub-environments can be easily added by uncommenting the examples in the code.
-The register model is empty but contains example code best used for small applications.
-It is highly recommended to use a UVM Register Model generator.
-
-use `grep -nr TODO .` for a full list of recommendations.
-
-
-## Have fun!
-Make sure to check out the other IP generated along with this environment:
-* `uvmt_apb_timer`
-
-
-
-
 # CORE-V MCU APB Timer Sub-System UVM Environment
 
 
