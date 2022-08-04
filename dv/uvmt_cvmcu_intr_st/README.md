@@ -20,7 +20,7 @@ Make sure to check out the other IP generated along with this test bench:
 
 
 
-# CORE-V MCU Interrupt Self-Test Bench and UVM Test Library
+# CORE-V MCU Interrupt Agent Self-Test Bench and UVM Test Library
 
 
 # About
