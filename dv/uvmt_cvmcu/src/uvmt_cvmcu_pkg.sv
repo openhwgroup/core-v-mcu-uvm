@@ -17,6 +17,8 @@
 `include "uvma_cvmcu_intr_macros.svh"
 `include "uvme_cvmcu_macros.svh"
 `include "uvmt_cvmcu_macros.svh"
+`include "uvml_sb_macros.svh"
+`include "uvml_ral_macros.svh"
 
 // Time units and precision for this test bench
 timeunit       1ns;
@@ -31,14 +33,16 @@ timeprecision  1ps;
  */
 package uvmt_cvmcu_pkg;
 
-   import uvm_pkg      ::*;
-   import uvml_pkg     ::*;
-   import uvml_logs_pkg::*;
-   import uvma_clk_pkg::*;
-   import uvma_reset_pkg::*;
-   import uvma_obi_pkg::*;
+   import uvm_pkg            ::*;
+   import uvml_pkg           ::*;
+   import uvml_logs_pkg      ::*;
+   import uvma_clk_pkg       ::*;
+   import uvma_reset_pkg     ::*;
+   import uvma_obi_pkg       ::*;
    import uvma_cvmcu_intr_pkg::*;
-   import uvme_cvmcu_pkg::*;
+   import uvml_sb_pkg        ::*;
+   import uvml_ral_pkg       ::*;
+   import uvme_cvmcu_pkg     ::*;
 
    // Constants / Structs / Enums
    `include "uvmt_cvmcu_tdefs.sv"

@@ -8,10 +8,10 @@
 `define __UVME_APB_ADV_TIMER_REG_HW_RESET_VSEQ_IGNORE_LIST_SV__
 
 
-string  ignore_list[$] = '{
-   // TODO Add registers and/or register blocks to ignore list for automated testing of reset values
-   //      Ex: "block_name.reg_name", // One register at a time
-   //      Ex: "block_name.*", // One block at a time
+string  reset_ignore_list[$] = '{
+   // TODO Add registers and/or register blocks to ignore list for automated bit-bash testing
+   //      Ex: "reg_name"     , // One register at a time
+   //      Ex: "reg_name.abc*", // One register field at a time
 };
 
 

@@ -14,10 +14,10 @@
  */
 class uvme_apb_timer_reg_base_vseq_c extends uvme_apb_timer_base_vseq_c;
 
-   `include "uvme_apb_timer_reg_base_vseq_ignore_list.sv"
 
    /// @defgroup Knobs
    /// @{
+   string         ignore_list   [$]; ///<
    rand bit       single_block_mode; ///< Enables/disables testing multiple register blocks
    uvm_reg_block  single_block     ; ///< If testing only one block, this is its handle
    /// @}
@@ -38,6 +38,16 @@ class uvme_apb_timer_reg_base_vseq_c extends uvme_apb_timer_base_vseq_c;
     * Executes run_single_block() or run_all_blocks(), depending on #single_block_mode.
     */
    extern virtual task body();
+
+   /**
+    * TODO Describe uvme_apb_timer_reg_base_vseq_c::add_to_ignore_list()
+    */
+   extern virtual function void add_to_ignore_list();
+
+   /**
+    * TODO Describe uvme_apb_timer_reg_base_vseq_c::process_ignore_list()
+    */
+   extern function void process_ignore_list();
 
    /**
     * Pure virtual task
@@ -61,6 +71,8 @@ endfunction : new
 
 task uvme_apb_timer_reg_base_vseq_c::body();
 
+   add_to_ignore_list ();
+   process_ignore_list();
    if (single_block_mode) begin
       run_single_block();
    end
@@ -69,6 +81,22 @@ task uvme_apb_timer_reg_base_vseq_c::body();
    end
 
 endtask : body
+
+
+function void uvme_apb_timer_reg_base_vseq_c::add_to_ignore_list();
+
+   `uvm_fatal("VSEQ", "Call to pure virtual function")
+
+endfunction : add_to_ignore_list
+
+
+function void uvme_apb_timer_reg_base_vseq_c::process_ignore_list();
+
+   foreach (ignore_list[ii]) begin
+      uvm_resource_db#(bit)::set({"REG::", cfg.apb_timer_reg_block.get_full_name(), ".", ignore_list[ii]}, "NO_REG_TESTS", 1, this);
+   end
+
+endfunction : process_ignore_list
 
 
 task uvme_apb_timer_reg_base_vseq_c::run_single_block();

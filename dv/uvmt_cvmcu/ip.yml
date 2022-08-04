@@ -31,6 +31,7 @@ dependencies:
   - { name: "uvml"      , version: "~1.0" }
   - { name: "uvml_logs" , version: "~1.0" }
   - { name: "uvml_sb"   , version: "~1.0" }
+  - { name: "uvml_ral"  , version: "~1.0" }
   - { name: "uvma_clk"  , version: "~1.0" }
   - { name: "uvma_reset", version: "~1.0" }
   - { name: "uvma_apb"  , version: "~1.0" }

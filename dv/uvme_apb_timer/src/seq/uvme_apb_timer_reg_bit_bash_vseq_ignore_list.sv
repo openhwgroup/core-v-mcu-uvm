@@ -8,10 +8,12 @@
 `define __UVME_APB_TIMER_REG_BIT_BASH_VSEQ_IGNORE_LIST_SV__
 
 
-string  ignore_list[$] = '{
+string  bb_ignore_list[$] = '{
    // TODO Add registers and/or register blocks to ignore list for automated bit-bash testing
-   //      Ex: "block_name.reg_name", // One register at a time
-   //      Ex: "block_name.*", // One block at a time
+   //      Ex: "reg_name"     , // One register at a time
+   //      Ex: "reg_name.abc*", // One register field at a time
+   "cfg_reg_hi",
+   "cfg_reg_low"
 };
 
 

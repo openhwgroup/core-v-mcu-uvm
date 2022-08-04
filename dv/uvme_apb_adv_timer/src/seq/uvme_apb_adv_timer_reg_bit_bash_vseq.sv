@@ -30,6 +30,11 @@ class uvme_apb_adv_timer_reg_bit_bash_vseq_c extends uvme_apb_adv_timer_reg_base
    extern function new(string name="uvme_apb_adv_timer_reg_bit_bash_vseq");
 
    /**
+    * TODO Describe uvme_apb_adv_timer_reg_bit_bash_vseq_c::add_to_ignore_list()
+    */
+   extern virtual function void add_to_ignore_list();
+
+   /**
     * Runs #bit_bash_seq against #single_block.
     */
    extern virtual task run_single_block();
@@ -48,6 +53,15 @@ function uvme_apb_adv_timer_reg_bit_bash_vseq_c::new(string name="uvme_apb_adv_t
    bit_bash_seq = uvm_reg_bit_bash_seq::type_id::create("bit_bash_seq");
 
 endfunction : new
+
+
+function void uvme_apb_adv_timer_reg_bit_bash_vseq_c::add_to_ignore_list();
+
+   foreach (bb_ignore_list[ii]) begin
+      ignore_list.push_back(bb_ignore_list[ii]);
+   end
+
+endfunction : add_to_ignore_list
 
 
 task uvme_apb_adv_timer_reg_bit_bash_vseq_c::run_single_block();

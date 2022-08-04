@@ -6,7 +6,6 @@
 // Libraries
 //-f ${UVM_SRC_PATH}/uvm_pkg.flist.xsim
 -f ${UVML_SRC_PATH}/uvml_pkg.flist.xsim
--f ${UVML_MEM_SRC_PATH}/uvml_mem_pkg.flist.xsim
 -f ${UVML_LOGS_SRC_PATH}/uvml_logs_pkg.flist.xsim
 -f ${UVML_SB_SRC_PATH}/uvml_sb_pkg.flist.xsim
 -f ${UVML_RAL_SRC_PATH}/uvml_ral_pkg.flist.xsim

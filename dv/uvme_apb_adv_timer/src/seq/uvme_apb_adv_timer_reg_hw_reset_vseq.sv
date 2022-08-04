@@ -30,6 +30,11 @@ class uvme_apb_adv_timer_reg_hw_reset_vseq_c extends uvme_apb_adv_timer_reg_base
    extern function new(string name="uvme_apb_adv_timer_reg_hw_reset_vseq");
 
    /**
+    * TODO Describe uvme_apb_adv_timer_reg_hw_reset_vseq_c::add_to_ignore_list()
+    */
+   extern virtual function void add_to_ignore_list();
+
+   /**
     * Runs #hw_reset_seq against #single_block.
     */
    extern virtual task run_single_block();
@@ -48,6 +53,15 @@ function uvme_apb_adv_timer_reg_hw_reset_vseq_c::new(string name="uvme_apb_adv_t
    hw_reset_seq = uvm_reg_hw_reset_seq::type_id::create("hw_reset_seq");
 
 endfunction : new
+
+
+function void uvme_apb_adv_timer_reg_hw_reset_vseq_c::add_to_ignore_list();
+
+   foreach (reset_ignore_list[ii]) begin
+      ignore_list.push_back(reset_ignore_list[ii]);
+   end
+
+endfunction : add_to_ignore_list
 
 
 task uvme_apb_adv_timer_reg_hw_reset_vseq_c::run_single_block();
