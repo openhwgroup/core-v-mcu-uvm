@@ -9,10 +9,7 @@
 
 
 string  bb_ignore_list[$] = '{
-   // TODO Add registers and/or register blocks to ignore list for automated bit-bash testing
-   //      Ex: "reg_name"     , // One register at a time
-   //      Ex: "reg_name.abc*", // One register field at a time
-   "cfg_reg_hi",
+   "cfg_reg_hi" ,
    "cfg_reg_low"
 };
 

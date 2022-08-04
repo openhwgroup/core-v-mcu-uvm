@@ -46,7 +46,7 @@ function void uvme_apb_timer_timer_reset_hi_reg_c::build();
    timer_reset_hi = uvml_ral_reg_field_c::type_id::create("timer_reset_hi");
    timer_reset_hi.configure(
       .parent                 (this),
-      .size                   (   31),
+      .size                   (   32),
       .lsb_pos                (   0),
       .access                 ("WO"),
       .volatile               (   0),

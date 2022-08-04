@@ -46,7 +46,7 @@ function void uvme_apb_timer_timer_cmp_lo_reg_c::build();
    timer_cmp_lo = uvml_ral_reg_field_c::type_id::create("timer_cmp_lo");
    timer_cmp_lo.configure(
       .parent                 (this),
-      .size                   (   31),
+      .size                   (   32),
       .lsb_pos                (   0),
       .access                 ("RW"),
       .volatile               (   0),

@@ -46,7 +46,7 @@ function void uvme_apb_timer_timer_val_hi_reg_c::build();
    timer_val_hi = uvml_ral_reg_field_c::type_id::create("timer_val_hi");
    timer_val_hi.configure(
       .parent                 (this),
-      .size                   (   31),
+      .size                   (   32),
       .lsb_pos                (   0),
       .access                 ("RW"),
       .volatile               (   0),

@@ -21,11 +21,11 @@ Offset,RegisterName,Type,Size,LSB,FieldName,Reset,Description
 0x004,CFG_REG_HI,RW,1,2,IRQ_BIT,0x0,1 = IRQ is enabled when counter ==cmp value 
 0x004,CFG_REG_HI,W1C,1,1,RESET_BIT,0x0,1 = reset the counter
 0x004,CFG_REG_HI,RW,1,0,ENABLE_BIT,0x0,1 = enable the counter to count
-0x008,TIMER_VAL_LO,RW,31,0,TIMER_VAL_LO,0x0,32-bit counter value – low 32-bits in 64-bit mode
-0x00C,TIMER_VAL_HI,RW,31,0,TIMER_VAL_HI,0x0,32-bit counter value – high 32-bits in 64-bit mode
-0x010,TIMER_CMP_LO,RW,31,0,TIMER_CMP_LO,0x0,compare value for low 32-bit counter
-0x014,TIMER_CMP_HI,RW,31,0,TIMER_CMP_HI,0x0,compare value for high 32-bit counter
-0x018,TIMER_START_LO,WO,31,0,TIMER_START_LO,0x0,Write strobe address for starting low counter
-0x01C,TIMER_START_HI,WO,31,0,TIMER_START_HI,0x0,Write strobe address for starting high counter
-0x020,TIMER_RESET_LO,WO,31,0,TIMER_RESET_LO,0x0,Write strobe address for resetting the low counter
-0x024,TIMER_RESET_HI,WO,31,0,TIMER_RESET_HI,0x0,Write strobe address for resetting the high counter
+0x008,TIMER_VAL_LO,RW,32,0,TIMER_VAL_LO,0x0,32-bit counter value – low 32-bits in 64-bit mode
+0x00C,TIMER_VAL_HI,RW,32,0,TIMER_VAL_HI,0x0,32-bit counter value – high 32-bits in 64-bit mode
+0x010,TIMER_CMP_LO,RW,32,0,TIMER_CMP_LO,0x0,compare value for low 32-bit counter
+0x014,TIMER_CMP_HI,RW,32,0,TIMER_CMP_HI,0x0,compare value for high 32-bit counter
+0x018,TIMER_START_LO,WO,32,0,TIMER_START_LO,0x0,Write strobe address for starting low counter
+0x01C,TIMER_START_HI,WO,32,0,TIMER_START_HI,0x0,Write strobe address for starting high counter
+0x020,TIMER_RESET_LO,WO,32,0,TIMER_RESET_LO,0x0,Write strobe address for resetting the low counter
+0x024,TIMER_RESET_HI,WO,32,0,TIMER_RESET_HI,0x0,Write strobe address for resetting the high counter

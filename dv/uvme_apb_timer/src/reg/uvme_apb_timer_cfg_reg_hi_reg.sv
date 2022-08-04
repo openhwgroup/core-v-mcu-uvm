@@ -176,7 +176,7 @@ function void uvme_apb_timer_cfg_reg_hi_reg_c::build();
       .parent                 (this),
       .size                   (   1),
       .lsb_pos                (   1),
-      .access                 ("RW"),
+      .access                 ("W1C"),
       .volatile               (   0),
       .reset                  (   0),
       .has_reset              (   1),
