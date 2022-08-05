@@ -1,5 +1,5 @@
 # About
-This project aims to build a UVM test bench and environment for the CORE-V MCU.
+This project aims to bring the [OpenHW Group](https://www.openhwgroup.org/)'s [CORE-V MCU Project](https://docs.openhwgroup.org/projects/core-v-mcu/index.html) to TRL-5 and beyond via [Advanced UVM Verification](https://github.com/advanced-uvm) and the [Moore.io](https://mooreio.org/) libraries and toolchain. [Datum](https://datumtc.ca/) is the primary contributor to this effort.
 
 ## IP List
  IP Name | Description
