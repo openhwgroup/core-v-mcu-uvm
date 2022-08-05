@@ -17,9 +17,9 @@ This project aims to bring the [OpenHW Group](https://www.openhwgroup.org/)'s [C
 
 # Installing Toolchain
 1. Download and install the latest version of [Xilinx Vivado WebPack](https://www.xilinx.com/support/download.html)
-1. Set environment variable for Vivado installation location: `export VIVADO_HOME=/path/to/vivado/bin`
+1. Set an environment variable for the Vivado installation location: `export VIVADO_HOME=/path/to/vivado/bin`
 1. Install `pipx` if needed: `python3 -m pip install --user pipx; python3 -m pipx ensurepath`
-1. Install Moore.io CLI Client: `pipx install mio-client`
+1. Install the Moore.io CLI Client: `pipx install mio-client`
 1. [Create a free Moore.io IP Marketplace user account](https://mooreio.org/account/register). The VIP libraries for this project are under license from [Datum](https://datumtc.ca/) and credentials are needed to install them.
 
 
