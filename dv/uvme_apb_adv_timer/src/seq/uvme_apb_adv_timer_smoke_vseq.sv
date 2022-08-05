@@ -2,7 +2,6 @@
 // Copyright 2022 Low Power Futures
 // SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// This file contains sample code that demonstrates how to add a new sequence to the APB Timer Sub-System environment.
 
 
 `ifndef __UVME_APB_ADV_TIMER_SMOKE_VSEQ_SV__
