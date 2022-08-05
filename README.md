@@ -1,7 +1,7 @@
 # About
 This project aims to build a UVM test bench and environment for the CORE-V MCU.
 
-## IP
+## IP List
  IP Name | Description
  --------|------------
  `uvma_cvmcu_intr` | Interrupt Agent
