@@ -4,14 +4,14 @@ This project aims to bring the [OpenHW Group](https://www.openhwgroup.org/)'s [C
 ## IP List
  IP Name | Description
  --------|------------
- `uvma_cvmcu_intr` | Interrupt Agent
- `uvme_apb_timer` | APB Timer Sub-System Environment
- `uvme_apb_adv_timer` | APB Advanced Timer Sub-System Environment
  `uvme_cvmcu` | CORE-V MCU Top-Level Environment
- `uvme_cvmcu_intr_st` | Interrupt Agent Self-Test Environment
- `uvmt_apb_timer` | APB Timer Sub-System Test Bench
- `uvmt_apb_adv_timer` | APB Advanced Timer Sub-System Test Bench
  `uvmt_cvmcu` | CORE-V MCU Top-Level Test Bench
+ `uvme_apb_adv_timer` | APB Advanced Timer Sub-System Environment
+ `uvme_apb_timer` | APB Timer Sub-System Environment
+ `uvmt_apb_adv_timer` | APB Advanced Timer Sub-System Test Bench
+ `uvmt_apb_timer` | APB Timer Sub-System Test Bench
+ `uvma_cvmcu_intr` | Interrupt Agent
+ `uvme_cvmcu_intr_st` | Interrupt Agent Self-Test Environment
  `uvmt_cvmcu_intr_st` | Interrupt Agent Self-Test Bench
 
 
