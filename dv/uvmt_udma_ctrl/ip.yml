@@ -1,0 +1,65 @@
+# Copyright 2022 Datum Technology Corporation
+# SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
+########################################################################################################################
+
+
+ip:
+  name: "uvmt_udma_ctrl"
+  version: "1.0.0"
+  full-name: "Datum Technology Corporation uDMA Controller Block UVM Test Bench"
+  type: "DV"
+  sub-type: "UVM Test Bench"
+  sub-sub-type: "Block"
+  description: >
+    TODO Describe uDMA Controller
+  home-page: ""
+  repo-uri: ""
+  bugs: ""
+  aliases: []
+  logo: ""
+  block-diagram: ""
+  languages: ["sv"]
+  simulators-supported:
+    - { name: "vivado", version: "2022.1" }
+  tags: []
+  copyright-holders: ["Datum Technology Corporation"]
+  licenses: ["SHL-2.1"]
+
+structure:
+   scripts-path : "bin"
+   docs-path    : "docs"
+   examples-path: "examples"
+   src-path     : "src"
+
+dependencies:
+  - { name: "uvm"       , version:  "1.2" }
+  - { name: "uvml"      , version: "~1.0" }
+  - { name: "uvml_logs" , version: "~1.0" }
+  - { name: "uvml_ral"  , version: "~1.0" }
+  - { name: "uvml_sb"   , version: "~1.0" }
+  - { name: "uvma_clk"  , version: "~1.0" }
+  - { name: "uvma_reset", version: "~1.0" }
+#  - { name: "uvma_udma_ctrl_cp", version: "^" }
+#  - { name: "uvma_udma_ctrl_dp_in", version: "^" }
+#  - { name: "uvma_udma_ctrl_dp_out", version: "^" }
+#  - { name: "uvme_udma_ctrl", version: "^" }
+  
+hdl-src:
+  top-constructs: ["uvmt_udma_ctrl_tb", "uvml_sim_summary"]
+  directories: [".", "tb", "tests"]
+  top-files: [ "uvmt_udma_ctrl_pkg.sv" ]
+  test-paths: ["tests"]
+  test-name-template: "uvmt_udma_ctrl_{{ name }}_test_c"
+  flist:
+    metrics : "uvmt_udma_ctrl_pkg.flist"
+    riviera : "uvmt_udma_ctrl_pkg.flist"
+    questa  : "uvmt_udma_ctrl_pkg.flist"
+    vcs     : "uvmt_udma_ctrl_pkg.flist"
+    vivado  : "uvmt_udma_ctrl_pkg.flist.xsim"
+    xcelium : "uvmt_udma_ctrl_pkg.flist"
+
+dut:
+  ip-type: fsoc
+  name: "core-v-mcu"
+  full-name: "openhwgroup.org:systems:core-v-mcu"
+  target: "sim"

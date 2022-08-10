@@ -1,0 +1,49 @@
+# Copyright 2022 Datum Technology Corporation
+# SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
+########################################################################################################################
+
+
+ip:
+  name: "uvma_udma_rx_cp"
+  version: "1.0.0"
+  full-name: "Datum Technology Corporation uDMA Rx Channels Block Control Plane UVM Agent"
+  type: "DV"
+  sub-type: "UVM Agent"
+  sub-sub-type: "Simplex; Non-Layered"
+  description: >
+    TODO Describe uDMA Rx Channels Block Control Plane
+  home-page: ""
+  repo-uri: ""
+  bugs: ""
+  aliases: []
+  logo: ""
+  block-diagram: "src/docs/agent_block_diagram.svg"
+  languages: ["sv"]
+  simulators-supported:
+    - { name: "vivado", version: "2022.1" }
+  tags: []
+  copyright-holders: ["Datum Technology Corporation"]
+  licenses: ["${license_id}"]
+
+structure:
+   scripts-path : "bin"
+   docs-path    : "docs"
+   examples-path: "examples"
+   src-path     : "src"
+
+dependencies:
+  - { name: "uvm"      , version:  "1.2" }
+  - { name: "uvml"     , version: "~1.0" }
+  - { name: "uvml_logs", version: "~1.0" }
+
+hdl-src:
+  directories: ["comps", "obj", "seq"]
+  top-files: [ "uvma_udma_rx_cp_pkg.sv" ]
+  flist:
+    metrics : "uvma_udma_rx_cp_pkg.flist"
+    riviera : "uvma_udma_rx_cp_pkg.flist"
+    questa  : "uvma_udma_rx_cp_pkg.flist"
+    vcs     : "uvma_udma_rx_cp_pkg.flist"
+    vivado  : "uvma_udma_rx_cp_pkg.flist.xsim"
+    xcelium : "uvma_udma_rx_cp_pkg.flist"
+

@@ -1,0 +1,13 @@
+// Copyright 2022 Datum Technology Corporation
+// SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// Directories
++incdir+${UVMA_UDMA_CTRL_DP_OUT_SRC_PATH}
++incdir+${UVMA_UDMA_CTRL_DP_OUT_SRC_PATH}/comps
++incdir+${UVMA_UDMA_CTRL_DP_OUT_SRC_PATH}/obj
++incdir+${UVMA_UDMA_CTRL_DP_OUT_SRC_PATH}/seq
+
+// Files
+${UVMA_UDMA_CTRL_DP_OUT_SRC_PATH}/uvma_udma_ctrl_dp_out_pkg.sv
