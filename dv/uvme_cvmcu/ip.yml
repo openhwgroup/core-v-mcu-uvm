@@ -1,12 +1,17 @@
+# Copyright 2022 Datum Technology Corporation
+# SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
+########################################################################################################################
+
+
 ip:
   name: "uvme_cvmcu"
   version: "1.0.0"
-  full-name: "Datum Technology Corporation CORE-V MCU Sub-System UVM Environment"
+  full-name: "CORE-V MCU Sub-System UVM Environment"
   type: "DV"
   sub-type: "UVM Environment"
   sub-sub-type: "Sub-System"
   description: >
-    TODO Describe CORE-V MCU
+    TODO Describe CORE-V MCU Sub-System UVM Environment
   home-page: ""
   repo-uri: ""
   bugs: ""
@@ -34,7 +39,7 @@ dependencies:
   - { name: "uvml_ral"  , version: "~1.0" }
 
 hdl-src:
-  directories: [".", "comps", "obj", "reg", "seq"]
+  directories: [ ".", "comps", "obj", "reg", "seq" ]
   flist:
     metrics : "uvme_cvmcu_st_pkg.flist"
     riviera : "uvme_cvmcu_st_pkg.flist"

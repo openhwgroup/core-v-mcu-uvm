@@ -4,24 +4,8 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-// Libraries
--f ${UVM_SRC_PATH}/uvm_pkg.flist
--f ${UVML_SRC_PATH}/uvml_pkg.flist
--f ${UVML_LOGS_SRC_PATH}/uvml_logs_pkg.flist
--f ${UVML_SB_SRC_PATH}/uvml_sb_pkg.flist
--f ${UVML_RAL_SRC_PATH}/uvml_ral_pkg.flist
-
-// Agents
--f ${UVMA_CLK_SRC_PATH}/uvma_clk_pkg.flist
--f ${UVMA_RESET_SRC_PATH}/uvma_reset_pkg.flist
--f ${UVMA_APB_SRC_PATH}/uvma_apb_pkg.flist
-
-// Environments
--f ${UVME_APB_TIMER_SRC_PATH}/uvme_apb_timer_pkg.flist
-
 // Directories
 +incdir+${UVMT_APB_TIMER_SRC_PATH}
-+incdir+${UVMT_APB_TIMER_SRC_PATH}/seq
 +incdir+${UVMT_APB_TIMER_SRC_PATH}/tb
 +incdir+${UVMT_APB_TIMER_SRC_PATH}/tests
 

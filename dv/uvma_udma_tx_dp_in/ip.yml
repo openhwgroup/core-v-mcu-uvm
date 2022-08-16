@@ -6,12 +6,12 @@
 ip:
   name: "uvma_udma_tx_dp_in"
   version: "1.0.0"
-  full-name: "Datum Technology Corporation uDMA Tx Channels Block Data Plane Input UVM Agent"
+  full-name: "uDMA Tx Channels Block Data Plane Input UVM Agent"
   type: "DV"
   sub-type: "UVM Agent"
   sub-sub-type: "Simplex; Non-Layered"
   description: >
-    TODO Describe uDMA Tx Channels Block Data Plane Input
+    TODO Describe uDMA Tx Channels Block Data Plane Input UVM Agent
   home-page: ""
   repo-uri: ""
   bugs: ""
@@ -23,7 +23,7 @@ ip:
     - { name: "vivado", version: "2022.1" }
   tags: []
   copyright-holders: ["Datum Technology Corporation"]
-  licenses: ["${license_id}"]
+  licenses: ["SHL-2.1"]
 
 structure:
    scripts-path : "bin"
@@ -37,7 +37,7 @@ dependencies:
   - { name: "uvml_logs", version: "~1.0" }
 
 hdl-src:
-  directories: ["comps", "obj", "seq"]
+  directories: [ "comps", "obj", "seq" ]
   top-files: [ "uvma_udma_tx_dp_in_pkg.sv" ]
   flist:
     metrics : "uvma_udma_tx_dp_in_pkg.flist"

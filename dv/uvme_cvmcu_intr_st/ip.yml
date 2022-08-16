@@ -6,12 +6,12 @@
 ip:
   name: "uvme_cvmcu_intr_st"
   version: "1.0.0"
-  full-name: "Datum Technology Corporation CORE-V MCU Interrupt UVM Agent Self-Test Environment"
+  full-name: "CORE-V MCU Interrupt UVM Agent Self-Test Environment"
   type: "DV"
   sub-type: "UVM Environment"
   sub-sub-type: "Agent Self-Testing"
   description: >
-    TODO Describe CORE-V MCU Interrupt
+    TODO Describe CORE-V MCU Interrupt UVM Agent Self-Test Environment
   home-page: ""
   repo-uri: ""
   bugs: ""
@@ -23,7 +23,7 @@ ip:
     - { name: "vivado", version: "2022.1" }
   tags: []
   copyright-holders: ["Datum Technology Corporation"]
-  licenses: ["${license_id}"]
+  licenses: ["SHL-2.1"]
 
 structure:
    scripts-path : "bin"
@@ -36,15 +36,8 @@ dependencies:
   - { name: "uvml"     , version: "~1.0" }
   - { name: "uvml_logs", version: "~1.0" }
   - { name: "uvml_sb"  , version: "~1.0" }
-#  - { name: "uvma_cvmcu_intr", version: "^" }
+  - { name: "uvma_cvmcu_intr", version: "^" }
 
 hdl-src:
-  directories: ["comps", "obj", "seq"]
+  directories: [ "comps", "obj", "seq" ]
   top-files: [ "uvme_cvmcu_intr_st_pkg.sv" ]
-  flist:
-    metrics : "uvme_cvmcu_intr_st_pkg.flist"
-    riviera : "uvme_cvmcu_intr_st_pkg.flist"
-    questa  : "uvme_cvmcu_intr_st_pkg.flist"
-    vcs     : "uvme_cvmcu_intr_st_pkg.flist"
-    vivado  : "uvme_cvmcu_intr_st_pkg.flist.xsim"
-    xcelium : "uvme_cvmcu_intr_st_pkg.flist"

@@ -39,16 +39,16 @@ dependencies:
   - { name: "uvml_sb"   , version: "~1.0" }
   - { name: "uvma_clk"  , version: "~1.0" }
   - { name: "uvma_reset", version: "~1.0" }
-#  - { name: "uvma_udma_ctrl_cp", version: "^" }
-#  - { name: "uvma_udma_ctrl_dp_in", version: "^" }
-#  - { name: "uvma_udma_ctrl_dp_out", version: "^" }
-#  - { name: "uvme_udma_ctrl", version: "^" }
+  - { name: "uvma_udma_ctrl_cp", version: "^" }
+  - { name: "uvma_udma_ctrl_dp_in", version: "^" }
+  - { name: "uvma_udma_ctrl_dp_out", version: "^" }
+  - { name: "uvme_udma_ctrl", version: "^" }
   
 hdl-src:
-  top-constructs: ["uvmt_udma_ctrl_tb", "uvml_sim_summary"]
+  top-constructs: ["uvmt_udma_ctrl_tb", "uvml.uvml_sim_summary"]
   directories: [".", "tb", "tests"]
   top-files: [ "uvmt_udma_ctrl_pkg.sv" ]
-  test-paths: ["tests"]
+  tests-path: "tests"
   test-name-template: "uvmt_udma_ctrl_{{ name }}_test_c"
   flist:
     metrics : "uvmt_udma_ctrl_pkg.flist"

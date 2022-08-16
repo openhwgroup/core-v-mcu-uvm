@@ -3,23 +3,10 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-// Libraries
-//-f ${UVM_SRC_PATH}/uvm_pkg.flist.xsim
--f ${UVML_SRC_PATH}/uvml_pkg.flist.xsim
--f ${UVML_LOGS_SRC_PATH}/uvml_logs_pkg.flist.xsim
--f ${UVML_SB_SRC_PATH}/uvml_sb_pkg.flist.xsim
-
-// Agents
--f ${UVMA_CVMCU_INTR_SRC_PATH}/uvma_cvmcu_intr_pkg.flist.xsim
-
-// Environments
--f ${UVME_CVMCU_INTR_ST_SRC_PATH}/uvme_cvmcu_intr_st_pkg.flist.xsim
-
-// Test bench directories
+// Directories
 -i ${UVMT_CVMCU_INTR_ST_SRC_PATH}
--i ${UVMT_CVMCU_INTR_ST_SRC_PATH}/seq
 -i ${UVMT_CVMCU_INTR_ST_SRC_PATH}/tb
 -i ${UVMT_CVMCU_INTR_ST_SRC_PATH}/tests
 
-// Test bench package and modules/interfaces
+// Files
 ${UVMT_CVMCU_INTR_ST_SRC_PATH}/uvmt_cvmcu_intr_st_pkg.sv

@@ -7,12 +7,12 @@
 ip:
   name: "uvme_apb_timer"
   version: "1.0.0"
-  full-name: "Datum Technology Corporation CORE-V MCU APB Timer Sub-System UVM Environment"
+  full-name: "CORE-V MCU APB Timer Sub-System UVM Environment"
   type: "DV"
   sub-type: "UVM Environment"
   sub-sub-type: "Sub-System"
   description: >
-    TODO Describe CORE-V MCU APB Timer
+    TODO Describe CORE-V MCU APB Timer Sub-System UVM Environment
   home-page: ""
   repo-uri: ""
   bugs: ""
@@ -23,7 +23,7 @@ ip:
   simulators-supported:
     - { name: "vivado", version: "2022.1" }
   tags: []
-  copyright-holders: ["Datum Technology Corporation"]
+  copyright-holders: ["Datum Technology Corporation", "Low Power Futures"]
   licenses: ["SHL-2.1"]
 
 structure:
@@ -43,7 +43,7 @@ dependencies:
   - { name: "uvma_apb", version: "~1.0" }
 
 hdl-src:
-  directories: [".", "comps", "obj", "reg", "seq"]
+  directories: [ ".", "comps", "obj", "reg", "seq" ]
   top-files: [ "uvme_apb_timer_pkg.sv" ]
   flist:
     metrics : "uvme_apb_timer_pkg.flist"

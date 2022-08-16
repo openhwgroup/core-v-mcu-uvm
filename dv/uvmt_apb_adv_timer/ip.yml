@@ -41,13 +41,13 @@ dependencies:
   - { name: "uvma_clk"  , version: "~1.0" }
   - { name: "uvma_reset", version: "~1.0" }
   - { name: "uvma_apb", version: "~1.0" }
-#  - { name: "uvme_apb_adv_timer", version: "^" }
+  - { name: "uvme_apb_adv_timer", version: "^" }
 
 hdl-src:
-  top-constructs: ["uvmt_apb_adv_timer_tb", "uvml_sim_summary"]
+  top-constructs: ["uvmt_apb_adv_timer_tb", "uvml.uvml_sim_summary"]
   directories: [".", "tb", "tests"]
   top-files: [ "uvmt_apb_adv_timer_pkg.sv" ]
-  test-paths: ["tests"]
+  tests-path: "tests"
   test-name-template: "uvmt_apb_adv_timer_{{ name }}_test_c"
   flist:
     metrics : "uvmt_apb_adv_timer_pkg.flist"

@@ -1,0 +1,29 @@
+// Copyright 2022 Datum Technology Corporation
+// SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// Libraries
+//-f ${UVM_SRC_PATH}/uvm_pkg.flist.xsim
+-f ${UVML_SRC_PATH}/uvml_pkg.flist.xsim
+-f ${UVML_LOGS_SRC_PATH}/uvml_logs_pkg.flist.xsim
+-f ${UVML_SB_SRC_PATH}/uvml_sb_pkg.flist.xsim
+-f ${UVML_RAL_SRC_PATH}/uvml_ral_pkg.flist.xsim
+
+// Agents
+-f ${UVMA_CLK_SRC_PATH}/uvma_clk_pkg.flist.xsim
+-f ${UVMA_RESET_SRC_PATH}/uvma_reset_pkg.flist.xsim
+-f ${UVMA_OBI_SRC_PATH}/uvma_obi_pkg.flist.xsim
+-f ${UVMA_CVMCU_INTR_SRC_PATH}/uvma_cvmcu_intr_pkg.flist.xsim
+
+// Environments
+-f ${UVME_CVMCU_SRC_PATH}/uvme_cvmcu_pkg.flist.xsim
+
+// CORE-V MCU test bench directories
+-i ${UVMT_CVMCU_SRC_PATH}
+-i ${UVMT_CVMCU_SRC_PATH}/seq
+-i ${UVMT_CVMCU_SRC_PATH}/tb
+-i ${UVMT_CVMCU_SRC_PATH}/tests
+
+// CORE-V MCU test bench files
+${UVMT_CVMCU_SRC_PATH}/uvmt_cvmcu_pkg.sv

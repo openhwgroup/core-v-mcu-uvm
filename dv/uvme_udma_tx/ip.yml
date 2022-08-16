@@ -6,7 +6,7 @@
 ip:
   name: "uvme_udma_tx"
   version: "1.0.0"
-  full-name: "Datum Technology Corporation uDMA Tx Channels Block UVM Environment"
+  full-name: "uDMA Tx Channels Block UVM Environment"
   type: "DV"
   sub-type: "UVM Environment"
   sub-sub-type: "Block"
@@ -39,12 +39,12 @@ dependencies:
   - { name: "uvml_sb"   , version: "~1.0" }
   - { name: "uvma_clk"  , version: "~1.0" }
   - { name: "uvma_reset", version: "~1.0" }
-#  - { name: "uvma_udma_tx_cp", version: "^" }
-#  - { name: "uvma_udma_tx_dp_in", version: "^" }
-#  - { name: "uvma_udma_tx_dp_out", version: "^" }
+  - { name: "uvma_udma_tx_cp", version: "^" }
+  - { name: "uvma_udma_tx_dp_in", version: "^" }
+  - { name: "uvma_udma_tx_dp_out", version: "^" }
 
 hdl-src:
-  directories: [".", "comps", "obj", "reg", "seq"]
+  directories: [ ".", "comps", "obj", "reg", "seq" ]
   top-files: [ "uvme_udma_tx_st_pkg.sv" ]
   flist:
     metrics : "uvme_udma_tx_st_pkg.flist"

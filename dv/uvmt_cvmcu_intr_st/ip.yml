@@ -36,14 +36,14 @@ dependencies:
   - { name: "uvml"     , version: "~1.0" }
   - { name: "uvml_logs", version: "~1.0" }
   - { name: "uvml_sb"  , version: "~1.0" }
- # - { name: "uvma_cvmcu_intr"   , version: "^" }
- # - { name: "uvme_cvmcu_intr_st", version: "^" }
+  - { name: "uvma_cvmcu_intr"   , version: "^" }
+  - { name: "uvme_cvmcu_intr_st", version: "^" }
 
 hdl-src:
-  top-constructs: ["uvmt_cvmcu_intr_st_tb", "uvml_sim_summary"]
+  top-constructs: ["uvmt_cvmcu_intr_st_tb", "uvml.uvml_sim_summary"]
   directories: [".", "tb", "tests"]
   top-files: [ "uvmt_cvmcu_intr_st_pkg.sv" ]
-  test-paths: ["tests"]
+  tests-path: "tests"
   test-name-template: "uvmt_cvmcu_intr_st_{{ name }}_test_c"
   flist:
     metrics : "uvmt_cvmcu_intr_st_pkg.flist"
