@@ -1,18 +1,22 @@
 # About
-This project aims to bring the [OpenHW Group](https://www.openhwgroup.org/)'s [CORE-V MCU Project](https://docs.openhwgroup.org/projects/core-v-mcu/index.html) to TRL-5 and beyond via [Advanced UVM Verification](https://github.com/advanced-uvm) and the [Moore.io](https://mooreio.org/) libraries and toolchain. [Datum](https://datumtc.ca/) and [Low Power Futures](https://lowpowerfutures.com/) are the primary contributor to this effort.
+This project aims to bring the [OpenHW Group](https://www.openhwgroup.org/)'s [CORE-V MCU Project](https://docs.openhwgroup.org/projects/core-v-mcu/index.html) to TRL-5 and beyond via [Advanced UVM Verification](https://github.com/advanced-uvm) and the [Moore.io](https://mooreio.org/) libraries and toolchain. [Datum](https://datumtc.ca/) and [Low Power Futures](https://lowpowerfutures.com/) are the primary contributors to this effort.
 
-## IP List
+## Abridged IP List
  IP Name | Description
  --------|------------
  `uvme_cvmcu` | CORE-V MCU Top-Level Environment
  `uvmt_cvmcu` | CORE-V MCU Top-Level Test Bench
+ `uvme_udma_ctrl` | uDMA Engine Controller Block-Level Environment
+ `uvmt_udma_ctrl` | uDMA Engine Controller Block-Level Test Bench
+ `uvme_udma_rx` | uDMA Engine Rx Channels Block-Level Environment
+ `uvmt_udma_rx` | uDMA Engine Rx Channels Block-Level Test Bench
+ `uvme_udma_tx` | uDMA Engine Tx Channels Block-Level Environment
+ `uvmt_udma_tx` | uDMA Engine Tx Channels Block-Level Test Bench
  `uvme_apb_adv_timer` | APB Advanced Timer Sub-System Environment
  `uvme_apb_timer` | APB Timer Sub-System Environment
  `uvmt_apb_adv_timer` | APB Advanced Timer Sub-System Test Bench
  `uvmt_apb_timer` | APB Timer Sub-System Test Bench
  `uvma_cvmcu_intr` | Interrupt Agent
- `uvme_cvmcu_intr_st` | Interrupt Agent Self-Test Environment
- `uvmt_cvmcu_intr_st` | Interrupt Agent Self-Test Bench
 
 
 # Installing Toolchain
