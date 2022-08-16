@@ -27,6 +27,11 @@ class uvmt_apb_timer_smoke_test_c extends uvmt_apb_timer_base_test_c;
     */
    extern virtual task main_phase(uvm_phase phase);
 
+   /**
+    * Empty.
+    */
+   extern virtual task configure_phase(uvm_phase phase);
+
 endclass : uvmt_apb_timer_smoke_test_c
 
 
@@ -48,6 +53,13 @@ task uvmt_apb_timer_smoke_test_c::main_phase(uvm_phase phase);
    phase.drop_objection(this);
 
 endtask : main_phase
+
+
+task uvmt_apb_timer_smoke_test_c::configure_phase(uvm_phase phase);
+
+   // Do not update DUT with RAL contents for smoke test
+
+endtask : configure_phase
 
 
 `endif // __UVMT_APB_TIMER_SMOKE_TEST_SV__

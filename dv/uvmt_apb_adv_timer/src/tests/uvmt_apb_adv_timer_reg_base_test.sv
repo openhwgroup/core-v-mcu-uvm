@@ -40,6 +40,11 @@ class uvmt_apb_adv_timer_reg_base_test_c extends uvmt_apb_adv_timer_base_test_c;
     */
    extern virtual function void connect_phase(uvm_phase phase);
 
+   /**
+    * Empty.
+    */
+   extern virtual task configure_phase(uvm_phase phase);
+
 endclass : uvmt_apb_adv_timer_reg_base_test_c
 
 
@@ -62,6 +67,13 @@ function void uvmt_apb_adv_timer_reg_base_test_c::connect_phase(uvm_phase phase)
    end
 
 endfunction : connect_phase
+
+
+task uvmt_apb_adv_timer_reg_base_test_c::configure_phase(uvm_phase phase);
+
+   // Do not update DUT with RAL contents for register tests
+
+endtask : configure_phase
 
 
 `endif // __UVMT_APB_ADV_TIMER_REG_BASE_TEST_SV__
