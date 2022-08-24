@@ -81,7 +81,7 @@ class uvme_apb_adv_timer_cfg_c extends uvml_cfg_c;
       soft trn_log_enabled             == 1;
            reset_type                  == UVML_RESET_TYPE_SYNCHRONOUS;
            reg_block_base_address      == uvme_apb_adv_timer_default_reg_block_base_address;
-           sys_clk_frequency == uvme_apb_adv_timer_default_sys_clk_frequency;
+           sys_clk_frequency           == uvme_apb_adv_timer_default_sys_clk_frequency;
    }
 
    /**
@@ -94,6 +94,7 @@ class uvme_apb_adv_timer_cfg_c extends uvml_cfg_c;
       sys_clk_cfg.cov_model_enabled == 0;
       sys_reset_cfg.cov_model_enabled == 0;
       apb_cfg.cov_model_enabled == 0;
+      apb_cfg.drv_mode == UVMA_APB_DRV_MODE_MSTR;
       if (enabled) {
          sys_clk_cfg.enabled == 1;
          sys_reset_cfg.enabled == 1;

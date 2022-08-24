@@ -38,19 +38,19 @@ endfunction : new
 
 task uvme_apb_adv_timer_smoke_vseq_c::body();
 
-   uvma_apb_mstr_seq_item_c  req;
+   uvma_apb_seq_item_c  req;
    // Write
-   `uvm_do_on_with(req, p_sequencer.apb_sequencer, {
+   `uvm_do_on_with(req, p_sequencer.apb_vsequencer, {
       access_type == UVMA_APB_ACCESS_WRITE;
       address     == 32'h1A10_5004;
-      wdata       == 32'h9876_ABCD;
+      data        == 32'h9876_ABCD;
    })
    // Read
-   `uvm_do_on_with(req, p_sequencer.apb_sequencer, {
+   `uvm_do_on_with(req, p_sequencer.apb_vsequencer, {
       access_type == UVMA_APB_ACCESS_READ;
       address     == 32'h1A10_5004;
    })
-   `uvm_info("SMOKE_VSEQ", $sformatf("Data read back from location 'x%h is x%h", req.address, req.rdata), UVM_LOW)
+   `uvm_info("SMOKE_VSEQ", $sformatf("Data read back from location 'x%h is x%h", req.address, req.data), UVM_LOW)
 
 endtask : body
 

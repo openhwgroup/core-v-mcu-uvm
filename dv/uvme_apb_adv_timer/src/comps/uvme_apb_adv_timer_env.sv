@@ -22,8 +22,8 @@ class uvme_apb_adv_timer_env_c extends uvml_env_c;
 
    /// @defgroup Register Abstraction Layer (RAL)
    /// @{
-   uvme_apb_adv_timer_reg_block_c  reg_block; ///< Top-level register block for {name_normal_case} Sub-System.
-   uvma_apb_reg_adapter_c  reg_adapter; ///< Converts apb sequence items to/from register operations.
+   uvme_apb_adv_timer_reg_block_c  reg_block  ; ///< Top-level register block for {name_normal_case} Sub-System.
+   uvma_apb_reg_adapter_c          reg_adapter; ///< Converts apb sequence items to/from register operations.
    /// @}
 
    /// @defgroup Components
@@ -313,9 +313,9 @@ endfunction: create_cov_model
 
 function void uvme_apb_adv_timer_env_c::connect_predictor();
 
-   sys_clk_agent.mon_ap.connect(predictor.sys_clk_export);
-   sys_reset_agent.mon_ap.connect(predictor.sys_reset_export);
-   apb_agent.mon_ap.connect(predictor.apb_export);
+   sys_clk_agent  .mon_ap    .connect(predictor.sys_clk_export  );
+   sys_reset_agent.mon_ap    .connect(predictor.sys_reset_export);
+   apb_agent      .mon_trn_ap.connect(predictor.apb_export      );
 
 endfunction: connect_predictor
 
@@ -334,7 +334,7 @@ function void uvme_apb_adv_timer_env_c::connect_reg_block();
 
    reg_block.cntxt = cntxt;
    reg_block.connect();
-   reg_block.default_map.set_sequencer(apb_agent.sequencer, reg_adapter);
+   reg_block.default_map.set_sequencer(apb_agent.vsequencer, reg_adapter);
    reg_block.default_map.set_auto_predict(1);
 
 endfunction: connect_reg_block
@@ -350,9 +350,9 @@ endfunction: connect_coverage_model
 
 function void uvme_apb_adv_timer_env_c::assemble_vsequencer();
 
-   vsequencer.sys_clk_sequencer = sys_clk_agent.sequencer;
-   vsequencer.sys_reset_sequencer = sys_reset_agent.sequencer;
-   vsequencer.apb_sequencer = apb_agent.sequencer;
+   vsequencer.sys_clk_sequencer   = sys_clk_agent  .sequencer ;
+   vsequencer.sys_reset_sequencer = sys_reset_agent.sequencer ;
+   vsequencer.apb_vsequencer      = apb_agent      .vsequencer;
 
 endfunction: assemble_vsequencer
 

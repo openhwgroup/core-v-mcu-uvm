@@ -25,9 +25,9 @@ class uvme_apb_timer_vsqr_c extends uvml_vsqr_c #(
 
    /// @defgroup Sequencer handles
    /// @{
-   uvma_clk_sqr_c    sys_clk_sequencer; ///< Clock agent sequencer
+   uvma_clk_sqr_c    sys_clk_sequencer  ; ///< Clock agent sequencer
    uvma_reset_sqr_c  sys_reset_sequencer; ///< Reset agent sequener
-   uvma_apb_sqr_c  apb_sequencer; ///< Register access agent sequencer
+   uvma_apb_vsqr_c   apb_vsequencer     ; ///< Register access agent sequencer
    // TODO: Add sub-environments (virtual) sequencer handles
    //       Ex: uvme_sub_vsqr_c  sub_vsequencer; ///< Describe me!
    /// @}
