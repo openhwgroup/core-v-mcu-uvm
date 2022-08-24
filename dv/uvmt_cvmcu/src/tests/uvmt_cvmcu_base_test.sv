@@ -18,7 +18,7 @@ class uvmt_cvmcu_base_test_c extends uvm_test;
    rand uvme_cvmcu_cfg_c       env_cfg  ;
    uvme_cvmcu_cntxt_c          env_cntxt;
    uvme_cvmcu_reg_block_c      reg_block;
-   uvml_logs_rs_text_c         rs       ;
+   uvml_logs_rs_c              rs       ;
    uvml_logs_reg_logger_cbs_c  reg_cbs  ;
 
    // Components

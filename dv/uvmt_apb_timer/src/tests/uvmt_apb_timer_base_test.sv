@@ -21,8 +21,8 @@ class uvmt_apb_timer_base_test_c extends uvml_test_c;
    rand uvme_apb_timer_cfg_c       env_cfg  ; ///< Environment configuration handle
    uvme_apb_timer_cntxt_c          env_cntxt; ///< Environment context handle
    uvme_apb_timer_reg_block_c      reg_block; ///< Top-level register block handle
-   uvml_logs_rs_text_c           rs       ; ///< Custom UVM report server
-   uvml_logs_reg_logger_cbs_c    reg_cbs  ; ///< Logs register operations to disk
+   uvml_logs_rs_c                  rs       ; ///< Custom UVM report server
+   uvml_logs_reg_logger_cbs_c      reg_cbs  ; ///< Logs register operations to disk
    /// @}
 
    /// @defgroup Components

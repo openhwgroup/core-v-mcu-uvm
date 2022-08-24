@@ -21,7 +21,7 @@ class uvmt_udma_ctrl_base_test_c extends uvml_test_c;
    rand uvmt_udma_ctrl_test_cfg_c  test_cfg ; ///< Test configuration handle
    rand uvme_udma_ctrl_cfg_c       env_cfg  ; ///< Environment configuration handle
    uvme_udma_ctrl_cntxt_c          env_cntxt; ///< Environment context handle
-   uvml_logs_rs_text_c           rs       ; ///< Custom UVM report server
+   uvml_logs_rs_c                  rs       ; ///< Custom UVM report server
    /// @}
 
    /// @defgroup Components

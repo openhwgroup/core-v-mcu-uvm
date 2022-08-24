@@ -1,11 +1,6 @@
-*.log
-*.pb
-xsim.dir
-*.jou
-*.wdb
-out
+regressions
+cmp
+elab
 results
-history.yaml
-results.html
-results.xml
-fsoc
+*.html
+*.xml

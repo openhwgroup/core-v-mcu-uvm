@@ -97,43 +97,43 @@ function void uvme_apb_timer_reg_block_c::create_regs();
    cfg_reg_low = uvme_apb_timer_cfg_reg_low_reg_c::type_id::create("cfg_reg_low");
    cfg_reg_low.configure(this);
    cfg_reg_low.build();
-   
+
    cfg_reg_hi = uvme_apb_timer_cfg_reg_hi_reg_c::type_id::create("cfg_reg_hi");
    cfg_reg_hi.configure(this);
    cfg_reg_hi.build();
-   
+
    timer_val_lo = uvme_apb_timer_timer_val_lo_reg_c::type_id::create("timer_val_lo");
    timer_val_lo.configure(this);
    timer_val_lo.build();
-   
+
    timer_val_hi = uvme_apb_timer_timer_val_hi_reg_c::type_id::create("timer_val_hi");
    timer_val_hi.configure(this);
    timer_val_hi.build();
-   
+
    timer_cmp_lo = uvme_apb_timer_timer_cmp_lo_reg_c::type_id::create("timer_cmp_lo");
    timer_cmp_lo.configure(this);
    timer_cmp_lo.build();
-   
+
    timer_cmp_hi = uvme_apb_timer_timer_cmp_hi_reg_c::type_id::create("timer_cmp_hi");
    timer_cmp_hi.configure(this);
    timer_cmp_hi.build();
-   
+
    timer_start_lo = uvme_apb_timer_timer_start_lo_reg_c::type_id::create("timer_start_lo");
    timer_start_lo.configure(this);
    timer_start_lo.build();
-   
+
    timer_start_hi = uvme_apb_timer_timer_start_hi_reg_c::type_id::create("timer_start_hi");
    timer_start_hi.configure(this);
    timer_start_hi.build();
-   
+
    timer_reset_lo = uvme_apb_timer_timer_reset_lo_reg_c::type_id::create("timer_reset_lo");
    timer_reset_lo.configure(this);
    timer_reset_lo.build();
-   
+
    timer_reset_hi = uvme_apb_timer_timer_reset_hi_reg_c::type_id::create("timer_reset_hi");
    timer_reset_hi.configure(this);
    timer_reset_hi.build();
-   
+
 endfunction : create_regs
 
 
