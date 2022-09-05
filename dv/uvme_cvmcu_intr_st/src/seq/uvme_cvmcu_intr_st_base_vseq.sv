@@ -17,7 +17,7 @@ class uvme_cvmcu_intr_st_base_vseq_c extends uvml_vseq_c #(
    .RSP(uvm_sequence_item)
 );
 
-   /// @defgroup Objects
+   /// @name Objects
    /// @{
    uvme_cvmcu_intr_st_cfg_c    cfg  ; ///< Environment configuration handle
    uvme_cvmcu_intr_st_cntxt_c  cntxt; ///< Environment context handle

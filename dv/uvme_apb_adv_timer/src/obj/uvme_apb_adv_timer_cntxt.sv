@@ -16,25 +16,25 @@ class uvme_apb_adv_timer_cntxt_c extends uvml_cntxt_c;
 
    virtual uvme_apb_adv_timer_probe_if  probe_vif; ///< Handle to DUT probe interface
 
-   /// @defgroup Integrals
+   /// @name Integrals
    /// @{
    uvml_reset_state_enum  reset_state = UVML_RESET_STATE_PRE_RESET; ///< Predicted Pre/In/Post reset state of the DUT
    /// @}
 
-   /// @defgroup Sub-environments
+   /// @name Sub-environments
    /// @{
    // TODO Add sub-environments context handles
    //      Ex: uvme_sub_env_cntxt_c  sub_env_cntxt; ///< Describe me!
    /// @}
 
-   /// @defgroup Agents
+   /// @name Agents
    /// @{
    uvma_clk_cntxt_c  sys_clk_cntxt; ///< Clock agent context
    uvma_reset_cntxt_c  sys_reset_cntxt; ///< Reset agent context
    uvma_apb_cntxt_c  apb_cntxt; ///< Register access agent content
    /// @}
 
-   /// @defgroup Objects
+   /// @name Objects
    /// @{
    uvm_event  sample_cfg_e  ; ///< Triggers sampling of environment configuration by the functional coverage model.
    uvm_event  sample_cntxt_e; ///< Triggers sampling of environment context by the functional coverage model.

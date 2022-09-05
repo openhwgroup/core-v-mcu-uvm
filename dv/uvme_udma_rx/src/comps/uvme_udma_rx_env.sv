@@ -13,13 +13,13 @@
  */
 class uvme_udma_rx_env_c extends uvml_env_c;
 
-   /// @defgroup Objects
+   /// @name Objects
    /// @{
    uvme_udma_rx_cfg_c    cfg  ; ///< Configuration handle.  Must be provided by component instantiating this environment.
    uvme_udma_rx_cntxt_c  cntxt; ///< Context handle.  Can be provided by component instantiating this environment.
    /// @}
 
-   /// @defgroup Components
+   /// @name Components
    /// @{
    uvme_udma_rx_vsqr_c       vsequencer; ///< Virtual sequencer on which virtual sequences are run.
    uvme_udma_rx_prd_c        predictor ; ///< Feeds #scoreboard's expected port(s) with monitor transactions.
@@ -27,7 +27,7 @@ class uvme_udma_rx_env_c extends uvml_env_c;
    uvme_udma_rx_cov_model_c  cov_model ; ///< Functional coverage model.
    /// @}
 
-   /// @defgroup Agents
+   /// @name Agents
    /// @{
    uvma_clk_agent_c    clk_agent; ///< Clocking agent
    uvma_reset_agent_c  reset_agent; ///< Reset agent

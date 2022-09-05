@@ -13,13 +13,13 @@
  */
 class uvma_cvmcu_intr_seq_item_c extends uvml_seq_item_c;
 
-   /// @defgroup Data
+   /// @name Data
    /// @{
    // TODO Add uvma_cvmcu_intr_seq_item_c fields
    //      Ex: rand bit [7:0]  abc; ///< Describe abc here
    /// @}
 
-   /// @defgroup Metadata
+   /// @name Metadata
    /// @{
    uvma_cvmcu_intr_cfg_c  cfg; ///< Agent configuration handle
    /// @}

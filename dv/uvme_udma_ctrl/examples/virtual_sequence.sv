@@ -13,7 +13,7 @@
  */
 class uvme_udma_ctrl_my_seq_c extends uvme_udma_ctrl_base_vseq_c;
 
-   /// @defgroup Knobs
+   /// @name Knobs
    /// @{
    rand int unsigned  num_items; ///< Number of sequence items to be generated.
    /// @}

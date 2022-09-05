@@ -17,7 +17,7 @@ class uvma_udma_rx_dp_in_sqr_c extends uvml_sqr_c #(
    .RSP(uvma_udma_rx_dp_in_seq_item_c)
 );
 
-   /// @defgroup Objects
+   /// @name Objects
    /// @{
    uvma_udma_rx_dp_in_cfg_c    cfg  ; ///< Agent configuration handle
    uvma_udma_rx_dp_in_cntxt_c  cntxt; ///< Agent context handle

@@ -13,7 +13,7 @@
  */
 class uvma_udma_ctrl_dp_out_cfg_c extends uvml_cfg_c;
 
-   /// @defgroup Generic options
+   /// @name Generic options
    /// @{
    rand bit                      enabled          ; ///< Components do not execute their run_phase() if '0'.
    rand uvm_active_passive_enum  is_active        ; ///< Driver does not execute its run_phase() if 'UVM_PASSIVE'.

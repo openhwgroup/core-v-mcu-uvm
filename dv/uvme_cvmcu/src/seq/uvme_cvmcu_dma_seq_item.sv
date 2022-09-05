@@ -12,7 +12,7 @@
  */
 class uvme_cvmcu_dma_seq_item_c extends uvml_mon_trn_c;
 
-   /// @defgroup Data
+   /// @name Data
    /// @{
    rand uvme_cvmcu_peripherals_enum       peripheral_selected; ///< TODO Describe peripheral_selected
    rand int unsigned                      data_sz            ; ///< TODO Describe data_sz
@@ -20,7 +20,7 @@ class uvme_cvmcu_dma_seq_item_c extends uvml_mon_trn_c;
    rand bit [7:0]                         data[$]            ; ///< TODO Describe data
    /// @}
 
-   /// @defgroup Metadata
+   /// @name Metadata
    /// @{
    uvme_cvmcu_cfg_c  cfg; ///< Environment configuration handle
    /// @}

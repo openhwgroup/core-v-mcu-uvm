@@ -16,13 +16,13 @@ class uvme_udma_rx_vsqr_c extends uvml_vsqr_c #(
    .RSP(uvm_sequence_item)
 );
 
-   /// @defgroup Objects
+   /// @name Objects
    /// @{
    uvme_udma_rx_cfg_c    cfg  ; ///< Environment configuration handle
    uvme_udma_rx_cntxt_c  cntxt; ///< Environment context handle
    /// @}
 
-   /// @defgroup Sequencer handles
+   /// @name Sequencer handles
    /// @{
    uvma_clk_sqr_c    clk_sequencer  ; ///< Clock agent sequencer
    uvma_reset_sqr_c  reset_sequencer; ///< Reset agent sequencer

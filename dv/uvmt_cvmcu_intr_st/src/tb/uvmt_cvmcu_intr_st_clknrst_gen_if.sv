@@ -14,7 +14,7 @@
  */
 interface uvmt_cvmcu_intr_st_clknrst_gen_if;
 
-   /// @defgroup Signals
+   /// @name Signals
    /// @{
    logic  clk     = 0;
    logic  reset   = 0;

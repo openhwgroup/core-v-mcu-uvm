@@ -15,7 +15,7 @@
  */
 class uvme_apb_timer_cfg_c extends uvml_cfg_c;
 
-   /// @defgroup Generic options
+   /// @name Generic options
    /// @{
    rand bit                      enabled              ; ///< Enables/disables all components' run_phase() execution
    rand uvm_active_passive_enum  is_active            ; ///< Enables/disables stimulus generation
@@ -24,7 +24,7 @@ class uvme_apb_timer_cfg_c extends uvml_cfg_c;
    rand bit                      trn_log_enabled      ; ///< Enables/disables transaction logging.
    /// @}
 
-   /// @defgroup Sub-system parameters
+   /// @name Sub-system parameters
    /// @{
    rand uvml_reset_type_enum  reset_type            ; ///< Specifies if reset pulse is sync/async
    rand longint unsigned      reg_block_base_address; ///< Base address for #apb_timer_reg_block
@@ -34,14 +34,14 @@ class uvme_apb_timer_cfg_c extends uvml_cfg_c;
    // TODO: Add sub-environments configuration handles
    //       Ex: rand uvme_sub_env_cfg_c  sub_env_cfg; ///< Describe me!
 
-   /// @defgroup Agent configuration handles
+   /// @name Agent configuration handles
    /// @{
    rand uvma_clk_cfg_c    sys_clk_cfg  ; ///< Clock agent configuration
    rand uvma_reset_cfg_c  sys_reset_cfg; ///< Reset agent configuration
    rand uvma_apb_cfg_c    apb_cfg      ; ///< Register access agent configuration
    /// @}
 
-   /// @defgroup Objects
+   /// @name Objects
    /// @{
    rand uvme_apb_timer_reg_block_c  apb_timer_reg_block; ///< Register block model
    // TODO Add scoreboard configuration handles

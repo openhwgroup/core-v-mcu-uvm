@@ -12,19 +12,19 @@
  */
 class uvme_cvmcu_intr_st_sb_c extends uvm_component;
 
-   /// @defgroup Objects
+   /// @name Objects
    /// @{
    uvme_cvmcu_intr_st_cfg_c    cfg  ; ///< Environment configuration handle
    uvme_cvmcu_intr_st_cntxt_c  cntxt; ///< Environment context handle
    /// @}
 
-   /// @defgroup Components
+   /// @name Components
    /// @{
    uvme_cvmcu_intr_st_sb_simplex_c  sb_e2e  ; ///< Ensures that monitored transactions from #active_agent and #passive_agent match.
    uvme_cvmcu_intr_st_sb_simplex_c  sb_agent; ///< Ensures that #active_agent sequence items and monitored transactions match.
    /// @}
 
-   /// @defgroup TLM
+   /// @name TLM
    /// @{
    uvm_analysis_export #(uvma_cvmcu_intr_mon_trn_c)  e2e_act_export  ; ///< Port for #sb_e2e Actual Transactions.
    uvm_analysis_export #(uvma_cvmcu_intr_mon_trn_c)  e2e_exp_export  ; ///< Port for #sb_e2e Expected Transactions.

@@ -15,12 +15,12 @@ class uvma_udma_ctrl_dp_out_cntxt_c extends uvml_cntxt_c;
 
    virtual uvma_udma_ctrl_dp_out_if  vif; ///< Handle to agent virtual interface.  Used by monitor and driver.
 
-   /// @defgroup Integrals
+   /// @name Integrals
    /// @{
    uvml_reset_state_enum  reset_state = UVML_RESET_STATE_PRE_RESET;
    /// @}
 
-   /// @defgroup Objects
+   /// @name Objects
    /// @{
    uvm_event  sample_cfg_e  ; ///< Triggers sampling of the agent configuration by the functional coverage model.
    uvm_event  sample_cntxt_e; ///< Triggers sampling of the agent context by the functional coverage model.

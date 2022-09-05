@@ -13,7 +13,7 @@
  */
 class uvme_cvmcu_intr_st_rand_stim_vseq_c extends uvme_cvmcu_intr_st_base_vseq_c;
 
-   /// @defgroup Knobs
+   /// @name Knobs
    /// @{
    rand int unsigned  num_items; ///< Number of sequence items to generate.
    /// @}

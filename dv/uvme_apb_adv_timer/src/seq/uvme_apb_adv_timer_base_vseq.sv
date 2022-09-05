@@ -19,7 +19,7 @@ class uvme_apb_adv_timer_base_vseq_c extends uvml_vseq_c #(
    .RSP(uvm_sequence_item)
 );
 
-   /// @defgroup Objects
+   /// @name Objects
    /// @{
    uvme_apb_adv_timer_cfg_c    cfg  ; ///< Environment configuration handle
    uvme_apb_adv_timer_cntxt_c  cntxt; ///< Environment context handle

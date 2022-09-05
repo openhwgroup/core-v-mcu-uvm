@@ -13,7 +13,7 @@
  */
 class uvme_cvmcu_intr_st_cntxt_c extends uvml_cntxt_c;
 
-   /// @defgroup Objects
+   /// @name Objects
    /// @{
    uvma_cvmcu_intr_cntxt_c  active_agent_cntxt ; ///< Active agent context handle
    uvma_cvmcu_intr_cntxt_c  passive_agent_cntxt; ///< Passive agent context handle

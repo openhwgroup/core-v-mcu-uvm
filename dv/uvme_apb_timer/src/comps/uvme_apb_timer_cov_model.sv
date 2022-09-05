@@ -14,7 +14,7 @@
  */
 class uvme_apb_timer_cov_model_c extends uvm_component;
 
-   /// @defgroup Objects
+   /// @name Objects
    /// @{
    uvme_apb_timer_cfg_c    cfg  ; ///< Environment configuration handle
    uvme_apb_timer_cntxt_c  cntxt; ///< Environment context handle
@@ -22,7 +22,7 @@ class uvme_apb_timer_cov_model_c extends uvm_component;
    //      Ex: uvma_pkt_mon_trn_c  pkt_trn; ///< Describe me!
    /// @}
 
-   /// @defgroup TLM
+   /// @name TLM
    /// @{
    // TODO Add Input TLM to uvme_apb_timer_cov_model_c
    //      Ex: uvm_tlm_analysis_fifo #(uvma_pkt_mon_trn_c)  pkt_fifo  ; ///< Describe me!

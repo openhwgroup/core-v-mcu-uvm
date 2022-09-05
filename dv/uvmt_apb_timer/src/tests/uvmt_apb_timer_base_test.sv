@@ -15,7 +15,7 @@
  */
 class uvmt_apb_timer_base_test_c extends uvml_test_c;
 
-   /// @defgroup Objects
+   /// @name Objects
    /// @{
    rand uvmt_apb_timer_test_cfg_c  test_cfg ; ///< Test configuration handle
    rand uvme_apb_timer_cfg_c       env_cfg  ; ///< Environment configuration handle
@@ -25,13 +25,13 @@ class uvmt_apb_timer_base_test_c extends uvml_test_c;
    uvml_logs_reg_logger_cbs_c      reg_cbs  ; ///< Logs register operations to disk
    /// @}
 
-   /// @defgroup Components
+   /// @name Components
    /// @{
    uvme_apb_timer_env_c   env       ; ///< Target environment
    uvme_apb_timer_vsqr_c  vsequencer; ///< Target environment virtual sequencer handle
    /// @}
 
-   /// @defgroup Default sequences
+   /// @name Default sequences
    /// @{
    rand uvme_apb_timer_sys_clk_vseq_c  sys_clk_vseq; ///< Starts clock generation during pre_reset_phase()
    rand uvme_apb_timer_sys_reset_vseq_c  sys_reset_vseq; ///< Asserts reset during reset_phase()

@@ -13,19 +13,19 @@
  */
 class uvma_udma_ctrl_dp_out_logger_c extends uvm_component;
 
-   /// @defgroup Objects
+   /// @name Objects
    /// @{
    uvma_udma_ctrl_dp_out_cfg_c    cfg  ; ///< Agent configuration handle
    uvma_udma_ctrl_dp_out_cntxt_c  cntxt; ///< Agent context handle
    /// @}
 
-   /// @defgroup Components
+   /// @name Components
    /// @{
    uvml_logs_metadata_logger_c #(uvma_udma_ctrl_dp_out_seq_item_c)  seq_item_logger; ///< Logs sequence items from driver.
    uvml_logs_metadata_logger_c #(uvma_udma_ctrl_dp_out_mon_trn_c )  mon_trn_logger ; ///< Logs transactions from monitor.
    /// @}
 
-   /// @defgroup TLM
+   /// @name TLM
    /// @{
    uvm_analysis_export #(uvma_udma_ctrl_dp_out_seq_item_c)  seq_item_export; ///< Port receiving sequence items
    uvm_analysis_export #(uvma_udma_ctrl_dp_out_mon_trn_c )  mon_trn_export ; ///< Port receiving monitored transactions

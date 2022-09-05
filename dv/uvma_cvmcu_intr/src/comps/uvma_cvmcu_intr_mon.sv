@@ -13,18 +13,18 @@
  */
 class uvma_cvmcu_intr_mon_c extends uvml_mon_c;
 
-   /// @defgroup Objects
+   /// @name Objects
    /// @{
    uvma_cvmcu_intr_cfg_c    cfg  ; ///< Agent configuration handle
    uvma_cvmcu_intr_cntxt_c  cntxt; ///< Agent context handle
    /// @}
 
-   /// @defgroup TLM
+   /// @name TLM
    /// @{
    uvm_analysis_port#(uvma_cvmcu_intr_mon_trn_c)  ap; ///< Port producing sampled transactions.
    /// @}
 
-   /// @defgroup Interface handles
+   /// @name Interface handles
    /// @{
    virtual uvma_cvmcu_intr_if.mon_mp  mp; ///< Handle to monitor modport
    /// @}

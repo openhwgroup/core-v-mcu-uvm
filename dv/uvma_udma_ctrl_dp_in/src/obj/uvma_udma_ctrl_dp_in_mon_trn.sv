@@ -13,13 +13,13 @@
  */
 class uvma_udma_ctrl_dp_in_mon_trn_c extends uvml_mon_trn_c;
 
-   /// @defgroup Data
+   /// @name Data
    /// @{
    // TODO Add uvma_udma_ctrl_dp_in_mon_trn_c data fields
    //      Ex: logic [7:0]  xyz; ///< Describe abc here
    /// @}
 
-   /// @defgroup Metadata
+   /// @name Metadata
    /// @{
    uvma_udma_ctrl_dp_in_cfg_c  cfg; ///< Agent configuration handle
    /// @}

@@ -14,13 +14,13 @@
  */
 class uvme_apb_timer_sb_c extends uvm_scoreboard;
 
-   /// @defgroup Objects
+   /// @name Objects
    /// @{
    uvme_apb_timer_cfg_c    cfg  ; ///< Environment configuration handle
    uvme_apb_timer_cntxt_c  cntxt; ///< Environment context handle
    /// @}
 
-   /// @defgroup Components
+   /// @name Components
    /// @{
    // TODO Add sub-scoreboards
    //      Ex: uvml_sb_simplex_c  sb_egress ; ///< Describe me!

@@ -14,13 +14,13 @@
  */
 class uvme_apb_adv_timer_prd_c extends uvm_component;
 
-   /// @defgroup Objects
+   /// @name Objects
    /// @{
    uvme_apb_adv_timer_cfg_c    cfg  ; ///< Environment configuration handle
    uvme_apb_adv_timer_cntxt_c  cntxt; ///< Environment context handle
    /// @}
 
-   /// @defgroup Input TLM
+   /// @name Input TLM
    /// @{
    uvm_tlm_analysis_fifo #(uvma_clk_mon_trn_c)  sys_clk_fifo  ; ///< Queue of sys_clk transactions
    uvm_tlm_analysis_fifo #(uvma_reset_mon_trn_c)  sys_reset_fifo  ; ///< Queue of sys_reset transactions
@@ -30,7 +30,7 @@ class uvme_apb_adv_timer_prd_c extends uvm_component;
    uvm_analysis_export   #(uvma_apb_mon_trn_c)  apb_export; ///< Port taking in apb transactions
    /// @}
 
-   /// @defgroup Output TLM
+   /// @name Output TLM
    /// @{
    // TODO Add TLM outputs to uvme_apb_adv_timer_prd_c
    //      Ex: uvm_analysis_port #(uvma_pkt_trn_c)  pkt_out_ap; ///< Describe me!

@@ -16,7 +16,7 @@ class uvmt_udma_rx_base_test_c extends uvml_test_c;
 
    virtual uvmt_udma_rx_probe_if  probe_vif; ///< Handle to DUT probe interface
 
-   /// @defgroup Objects
+   /// @name Objects
    /// @{
    rand uvmt_udma_rx_test_cfg_c  test_cfg ; ///< Test configuration handle
    rand uvme_udma_rx_cfg_c       env_cfg  ; ///< Environment configuration handle
@@ -24,13 +24,13 @@ class uvmt_udma_rx_base_test_c extends uvml_test_c;
    uvml_logs_rs_c                rs       ; ///< Custom UVM report server
    /// @}
 
-   /// @defgroup Components
+   /// @name Components
    /// @{
    uvme_udma_rx_env_c   env       ; ///< Target environment
    uvme_udma_rx_vsqr_c  vsequencer; ///< Target environment virtual sequencer handle
    /// @}
 
-   /// @defgroup Default sequences
+   /// @name Default sequences
    /// @{
    rand uvme_udma_rx_clk_vseq_c    clk_vseq  ; ///< Starts clock generation during pre_reset_phase()
    rand uvme_udma_rx_reset_vseq_c  reset_vseq; ///< Asserts reset during reset_phase()

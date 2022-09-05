@@ -14,13 +14,13 @@
  */
 class uvme_cvmcu_intr_st_prd_c extends uvm_component;
 
-   /// @defgroup Objects
+   /// @name Objects
    /// @{
    uvme_cvmcu_intr_st_cfg_c    cfg  ; ///< Environment configuration handle
    uvme_cvmcu_intr_st_cntxt_c  cntxt; ///< Environment context handle
    /// @}
 
-   /// @defgroup TLM
+   /// @name TLM
    /// @{
    uvm_tlm_analysis_fifo #(uvma_cvmcu_intr_mon_trn_c )  e2e_in_fifo    ; ///< Queue of passive agent monitor transactions
    uvm_tlm_analysis_fifo #(uvma_cvmcu_intr_seq_item_c)  agent_in_fifo  ; ///< Queue of active agent sequence items

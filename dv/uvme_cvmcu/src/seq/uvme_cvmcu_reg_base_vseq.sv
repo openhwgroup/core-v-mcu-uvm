@@ -12,7 +12,7 @@
  */
 class uvme_cvmcu_reg_base_vseq_c extends uvme_cvmcu_base_vseq_c;
 
-   /// @defgroup Knobs
+   /// @name Knobs
    /// @{
    string         ignore_list   [$]; ///<
    rand bit       single_block_mode; ///< Enables/disables testing multiple register blocks

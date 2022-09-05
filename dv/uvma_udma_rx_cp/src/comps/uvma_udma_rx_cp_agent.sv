@@ -14,13 +14,13 @@
  */
 class uvma_udma_rx_cp_agent_c extends uvml_agent_c;
 
-   /// @defgroup Objects
+   /// @name Objects
    /// @{
    uvma_udma_rx_cp_cfg_c    cfg  ; ///< Configuration handle.  Must be provided by component instantiating this agent.
    uvma_udma_rx_cp_cntxt_c  cntxt; ///< Context handle.  Can be provided by component instantiating this agent.
    /// @}
 
-   /// @defgroup Components
+   /// @name Components
    /// @{
    uvma_udma_rx_cp_sqr_c        sequencer; ///< Provides sequence items for #driver.
    uvma_udma_rx_cp_drv_c        driver   ; ///< Drives the virtual interface with stimulus obtained from the #sequencer.
@@ -29,7 +29,7 @@ class uvma_udma_rx_cp_agent_c extends uvml_agent_c;
    uvma_udma_rx_cp_logger_c     logger   ; ///< Transaction logger for #driver and #monitor.
    /// @}
 
-   /// @defgroup TLM
+   /// @name TLM
    /// @{
    uvm_analysis_port #(uvma_udma_rx_cp_seq_item_c)  drv_ap; ///< Port from #driver for stimulus transactions.
    uvm_analysis_port #(uvma_udma_rx_cp_mon_trn_c )  mon_ap; ///< Port from #monitor for sampled transactions.

@@ -15,7 +15,7 @@ class uvme_cvmcu_dma_sqr_c extends uvm_sequencer #(
    .RSP(uvme_cvmcu_dma_seq_item_c)
 );
 
-   /// @defgroup Objects
+   /// @name Objects
    /// @{
    uvme_cvmcu_cfg_c    cfg  ; ///< Environment configuration handle
    uvme_cvmcu_cntxt_c  cntxt; ///< Environment context handle

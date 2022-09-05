@@ -14,7 +14,7 @@
  */
 class uvme_apb_adv_timer_my_seq_c extends uvme_apb_adv_timer_base_vseq_c;
 
-   /// @defgroup Knobs
+   /// @name Knobs
    /// @{
    rand int unsigned  num_items; ///< Number of sequence items to be generated.
    /// @}

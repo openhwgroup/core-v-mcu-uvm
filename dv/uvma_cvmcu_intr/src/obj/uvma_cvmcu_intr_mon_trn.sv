@@ -13,13 +13,13 @@
  */
 class uvma_cvmcu_intr_mon_trn_c extends uvml_mon_trn_c;
 
-   /// @defgroup Data
+   /// @name Data
    /// @{
    // TODO Add uvma_cvmcu_intr_mon_trn_c data fields
    //      Ex: logic [7:0]  xyz; ///< Describe abc here
    /// @}
 
-   /// @defgroup Metadata
+   /// @name Metadata
    /// @{
    uvma_cvmcu_intr_cfg_c  cfg; ///< Agent configuration handle
    /// @}

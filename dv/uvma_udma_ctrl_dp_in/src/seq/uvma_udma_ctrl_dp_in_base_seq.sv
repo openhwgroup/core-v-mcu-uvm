@@ -17,7 +17,7 @@ class uvma_udma_ctrl_dp_in_base_seq_c extends uvml_seq_c #(
    .RSP(uvma_udma_ctrl_dp_in_seq_item_c)
 );
 
-   /// @defgroup Objects
+   /// @name Objects
    /// @{
    uvma_udma_ctrl_dp_in_cfg_c    cfg  ; ///< Agent configuration handle
    uvma_udma_ctrl_dp_in_cntxt_c  cntxt; ///< Agent context handle

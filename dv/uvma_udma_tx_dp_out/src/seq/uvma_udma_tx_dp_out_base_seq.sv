@@ -17,7 +17,7 @@ class uvma_udma_tx_dp_out_base_seq_c extends uvml_seq_c #(
    .RSP(uvma_udma_tx_dp_out_seq_item_c)
 );
 
-   /// @defgroup Objects
+   /// @name Objects
    /// @{
    uvma_udma_tx_dp_out_cfg_c    cfg  ; ///< Agent configuration handle
    uvma_udma_tx_dp_out_cntxt_c  cntxt; ///< Agent context handle

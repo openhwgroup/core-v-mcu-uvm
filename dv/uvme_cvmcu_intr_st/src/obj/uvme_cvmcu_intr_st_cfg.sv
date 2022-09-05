@@ -14,7 +14,7 @@
  */
 class uvme_cvmcu_intr_st_cfg_c extends uvml_cfg_c;
 
-   /// @defgroup Integrals
+   /// @name Integrals
    /// @{
    rand bit                      enabled              ; ///< Enables/disables all components' run_phase() execution
    rand uvm_active_passive_enum  is_active            ; ///< Controls #active_agent_cfg's setting of the same name
@@ -23,7 +23,7 @@ class uvme_cvmcu_intr_st_cfg_c extends uvml_cfg_c;
    rand bit                      trn_log_enabled      ; ///< Enables/disables agents' transaction logging.
    /// @}
 
-   /// @defgroup Objects
+   /// @name Objects
    /// @{
    rand uvma_cvmcu_intr_cfg_c  active_agent_cfg ; ///< Active agent configuration
    rand uvma_cvmcu_intr_cfg_c  passive_agent_cfg; ///< Passive agent configuration

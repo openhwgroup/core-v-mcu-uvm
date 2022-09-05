@@ -17,7 +17,7 @@ class uvma_cvmcu_intr_sqr_c extends uvml_sqr_c #(
    .RSP(uvma_cvmcu_intr_seq_item_c)
 );
 
-   /// @defgroup Objects
+   /// @name Objects
    /// @{
    uvma_cvmcu_intr_cfg_c    cfg  ; ///< Agent configuration handle
    uvma_cvmcu_intr_cntxt_c  cntxt; ///< Agent context handle

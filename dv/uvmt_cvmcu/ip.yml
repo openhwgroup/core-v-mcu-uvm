@@ -1,3 +1,8 @@
+# Copyright 2022 Datum Technology Corporation
+# SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
+########################################################################################################################
+
+
 ip:
   name: "uvmt_cvmcu"
   version: "1.0.0"
@@ -5,8 +10,7 @@ ip:
   type: "DV"
   sub-type: "UVM Test Bench"
   sub-sub-type: "Sub-System"
-  description: >
-    TODO Describe CORE-V MCU
+  description: "TODO Describe CORE-V MCU"
   home-page: ""
   repo-uri: ""
   bugs: ""
@@ -15,7 +19,7 @@ ip:
   block-diagram: ""
   languages: ["sv"]
   simulators-supported:
-    - { name: "vivado", version: "2021.1" }
+    - { name: "vivado", version: "2022.1" }
   tags: []
   copyright-holders: ["Datum Technology Corporation"]
   licenses: ["SHL-2.1"]
@@ -50,7 +54,6 @@ hdl-src:
   top-constructs: ["uvmt_cvmcu_tb", "uvml.uvml_sim_summary"]
   tests-path: "tests"
   test-name-template: "uvmt_cvmcu_{{ name }}_test_c"
-
 
 dut:
   ip-type: fsoc

@@ -13,12 +13,12 @@
  */
 class uvme_udma_rx_cntxt_c extends uvml_cntxt_c;
 
-   /// @defgroup Integrals
+   /// @name Integrals
    /// @{
    uvml_reset_state_enum  reset_state = UVML_RESET_STATE_PRE_RESET; ///< Predicted Pre/In/Post reset state of the DUT
    /// @}
 
-   /// @defgroup Agents
+   /// @name Agents
    /// @{
    uvma_clk_cntxt_c    clk_cntxt  ; ///< Clock agent context
    uvma_reset_cntxt_c  reset_cntxt; ///< Reset agent context
@@ -27,7 +27,7 @@ class uvme_udma_rx_cntxt_c extends uvml_cntxt_c;
    uvma_udma_rx_dp_out_cntxt_c  dp_out_cntxt; ///< Data plane output agent content
    /// @}
 
-   /// @defgroup Objects
+   /// @name Objects
    /// @{
    uvml_sb_simplex_cntxt_c  sb_cntxt      ; ///< Data path scoreboard context
    uvm_event                sample_cfg_e  ; ///< Triggers sampling of environment configuration by the functional coverage model.

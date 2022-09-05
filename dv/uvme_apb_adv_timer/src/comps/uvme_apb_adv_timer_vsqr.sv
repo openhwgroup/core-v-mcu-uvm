@@ -17,13 +17,13 @@ class uvme_apb_adv_timer_vsqr_c extends uvml_vsqr_c #(
    .RSP(uvm_sequence_item)
 );
 
-   /// @defgroup Objects
+   /// @name Objects
    /// @{
    uvme_apb_adv_timer_cfg_c    cfg  ; ///< Environment configuration handle
    uvme_apb_adv_timer_cntxt_c  cntxt; ///< Environment context handle
    /// @}
 
-   /// @defgroup Sequencer handles
+   /// @name Sequencer handles
    /// @{
    uvma_clk_sqr_c    sys_clk_sequencer  ; ///< Clock agent sequencer
    uvma_reset_sqr_c  sys_reset_sequencer; ///< Reset agent sequener

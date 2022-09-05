@@ -16,18 +16,18 @@ class uvma_udma_tx_dp_in_drv_c extends uvml_drv_c #(
    .RSP(uvma_udma_tx_dp_in_seq_item_c)
 );
 
-   /// @defgroup Objects
+   /// @name Objects
    /// @{
    uvma_udma_tx_dp_in_cfg_c    cfg  ; ///< Agent configuration handle
    uvma_udma_tx_dp_in_cntxt_c  cntxt; ///< Agent context handle
    /// @}
 
-   /// @defgroup TLM
+   /// @name TLM
    /// @{
    uvm_analysis_port#(uvma_udma_tx_dp_in_seq_item_c)  ap; ///< Port producing sampled transactions.
    /// @}
 
-   /// @defgroup Interface handles
+   /// @name Interface handles
    /// @{
    virtual uvma_udma_tx_dp_in_if.drv_mp  mp; ///< Handle to driver modport
    /// @}

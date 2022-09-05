@@ -13,7 +13,7 @@
  */
 class uvme_udma_rx_cov_model_c extends uvm_component;
 
-   /// @defgroup Objects
+   /// @name Objects
    /// @{
    uvme_udma_rx_cfg_c             cfg       ; ///< Environment configuration handle
    uvme_udma_rx_cntxt_c           cntxt     ; ///< Environment context handle
@@ -22,7 +22,7 @@ class uvme_udma_rx_cov_model_c extends uvm_component;
    uvma_udma_rx_dp_out_mon_trn_c  dp_out_trn; ///< Data plane output transaction being sampled
    /// @}
 
-   /// @defgroup TLM
+   /// @name TLM
    /// @{
    uvm_tlm_analysis_fifo #(uvma_udma_rx_cp_mon_trn_c    )  cp_fifo      ; ///< Queue of control plane transactions
    uvm_tlm_analysis_fifo #(uvma_udma_rx_dp_in_mon_trn_c )  dp_in_fifo   ; ///< Queue of data plane input transactions

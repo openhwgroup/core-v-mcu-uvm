@@ -16,13 +16,13 @@ class uvme_cvmcu_intr_st_vsqr_c extends uvml_vsqr_c #(
    .RSP(uvm_sequence_item)
 );
 
-   /// @defgroup Objects
+   /// @name Objects
    /// @{
    uvme_cvmcu_intr_st_cfg_c    cfg  ; ///< Environment configuration handle
    uvme_cvmcu_intr_st_cntxt_c  cntxt; ///< Environment context handle
    /// @}
 
-   /// @defgroup Components
+   /// @name Components
    /// @{
    uvma_cvmcu_intr_sqr_c  active_sequencer ; ///< Sequencer handle for active agent
    uvma_cvmcu_intr_sqr_c  passive_sequencer; ///< Sequencer handle for passive agent

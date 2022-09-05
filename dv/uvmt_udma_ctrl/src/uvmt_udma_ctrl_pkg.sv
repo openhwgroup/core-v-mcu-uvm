@@ -9,11 +9,11 @@
 
 // Doxygen Groups
 /**
- * @defgroup uvmt_udma_ctrl_pkg uDMA Controller Block UVM Test Bench
+ * @name uvmt_udma_ctrl_pkg uDMA Controller Block UVM Test Bench
  * @{
- * @defgroup uvmt_udma_ctrl_misc   Miscellaneous
- * @defgroup uvmt_udma_ctrl_tb     Test Bench
- * @defgroup uvmt_udma_ctrl_tests  Tests
+ * @name uvmt_udma_ctrl_misc   Miscellaneous
+ * @name uvmt_udma_ctrl_tb     Test Bench
+ * @name uvmt_udma_ctrl_tests  Tests
  * @}
  */
 

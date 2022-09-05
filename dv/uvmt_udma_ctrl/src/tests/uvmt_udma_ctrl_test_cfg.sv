@@ -20,7 +20,7 @@ class uvmt_udma_ctrl_test_cfg_c extends uvml_test_cfg_c;
    rand int unsigned  simulation_timeout; ///< Timer ending simulation (ns)
    /// @}
 
-   /// @defgroup Command line arguments
+   /// @name Command line arguments
    /// @{
    bit           cli_num_items_override = 0; ///< Set to '1' if argument was found for num_items
    int unsigned  cli_num_items_parsed      ; ///< Parsed integer value from the CLI for num_items

@@ -28,13 +28,13 @@
  */
 class uvme_apb_timer_reg_block_c extends uvml_ral_reg_block_c;
 
-   /// @defgroup Objects
+   /// @name Objects
    /// @{
    uvme_apb_timer_cfg_c    cfg  ; ///< Environment configuration handle
    uvme_apb_timer_cntxt_c  cntxt; ///< Environment context handle
    /// @}
 
-   /// @defgroup Registers
+   /// @name Registers
    /// @{
   rand uvme_apb_timer_cfg_reg_low_reg_c  cfg_reg_low;
   rand uvme_apb_timer_cfg_reg_hi_reg_c  cfg_reg_hi;

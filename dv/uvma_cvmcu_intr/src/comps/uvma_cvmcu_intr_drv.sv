@@ -16,18 +16,18 @@ class uvma_cvmcu_intr_drv_c extends uvml_drv_c #(
    .RSP(uvma_cvmcu_intr_seq_item_c)
 );
 
-   /// @defgroup Objects
+   /// @name Objects
    /// @{
    uvma_cvmcu_intr_cfg_c    cfg  ; ///< Agent configuration handle
    uvma_cvmcu_intr_cntxt_c  cntxt; ///< Agent context handle
    /// @}
 
-   /// @defgroup TLM
+   /// @name TLM
    /// @{
    uvm_analysis_port#(uvma_cvmcu_intr_seq_item_c)  ap; ///< Port producing sampled transactions.
    /// @}
 
-   /// @defgroup Interface handles
+   /// @name Interface handles
    /// @{
    virtual uvma_cvmcu_intr_if.drv_mp  mp; ///< Handle to driver modport
    /// @}

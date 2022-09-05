@@ -13,7 +13,7 @@
  */
 class uvme_udma_ctrl_reset_vseq_c extends uvme_udma_ctrl_base_vseq_c;
 
-   /// @defgroup Knobs
+   /// @name Knobs
    /// @{
    rand int unsigned  duration_min; ///< Lower bound for reset pulse duration
    rand int unsigned  duration_max; ///< Upper bound for reset pulse duration

@@ -14,7 +14,7 @@
  */
 class uvma_cvmcu_intr_cov_model_c extends uvm_component;
 
-   /// @defgroup Objects
+   /// @name Objects
    /// @{
    uvma_cvmcu_intr_cfg_c       cfg     ; ///< Agent configuration handle
    uvma_cvmcu_intr_cntxt_c     cntxt   ; ///< Agent context handle
@@ -22,7 +22,7 @@ class uvma_cvmcu_intr_cov_model_c extends uvm_component;
    uvma_cvmcu_intr_mon_trn_c   mon_trn ; ///< Monitored transaction being sampled
    /// @}
 
-   /// @defgroup TLM
+   /// @name TLM
    /// @{
    uvm_tlm_analysis_fifo #(uvma_cvmcu_intr_seq_item_c)  seq_item_fifo  ; ///< Queue of sequence items waiting to be sampled.
    uvm_tlm_analysis_fifo #(uvma_cvmcu_intr_mon_trn_c )  mon_trn_fifo   ; ///< Queue of monitored transactions waiting to be sampled.

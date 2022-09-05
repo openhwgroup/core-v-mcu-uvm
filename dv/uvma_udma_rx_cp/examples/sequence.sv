@@ -13,7 +13,7 @@
  */
 class uvma_udma_rx_cp_my_seq_c extends uvma_udma_rx_cp_base_seq_c;
 
-   /// @defgroup Knobs
+   /// @name Knobs
    /// @{
    rand int unsigned  num_items; ///< Number of sequence items to be generated.
    /// @}

@@ -16,7 +16,7 @@ class uvmt_cvmcu_intr_st_base_test_c extends uvml_test_c;
 
    virtual uvmt_cvmcu_intr_st_clknrst_gen_if  clknrst_gen_vif; ///< Handle to clock and reset generation interface
 
-   /// @defgroup Objects
+   /// @name Objects
    /// @{
    rand uvmt_cvmcu_intr_st_test_cfg_c  test_cfg ; ///< Test configuration handle
    rand uvme_cvmcu_intr_st_cfg_c       env_cfg  ; ///< Environment configuration handle
@@ -24,7 +24,7 @@ class uvmt_cvmcu_intr_st_base_test_c extends uvml_test_c;
    uvml_logs_rs_c                      rs       ; ///< Custom UVM report server
    /// @}
 
-   /// @defgroup Components
+   /// @name Components
    /// @{
    uvme_cvmcu_intr_st_env_c   env       ; ///< Target environment
    uvme_cvmcu_intr_st_vsqr_c  vsequencer; ///< Target environment virtual sequencer handle

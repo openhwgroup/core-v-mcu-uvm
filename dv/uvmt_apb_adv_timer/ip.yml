@@ -11,8 +11,7 @@ ip:
   type: "DV"
   sub-type: "UVM Test Bench"
   sub-sub-type: "Sub-System"
-  description: >
-    TODO Describe CORE-V MCU APB Advanced Timer
+  description: "TODO Describe CORE-V MCU APB Advanced Timer"
   home-page: ""
   repo-uri: ""
   bugs: ""
@@ -23,7 +22,7 @@ ip:
   simulators-supported:
     - { name: "vivado", version: "2022.1" }
   tags: []
-  copyright-holders: ["Datum Technology Corporation"]
+  copyright-holders: ["Datum Technology Corporation", "Low Power Futures"]
   licenses: ["SHL-2.1"]
 
 structure:

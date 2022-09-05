@@ -14,19 +14,19 @@
  */
 class uvme_cvmcu_intr_st_env_c extends uvml_env_c;
 
-   /// @defgroup Objects
+   /// @name Objects
    /// @{
    uvme_cvmcu_intr_st_cfg_c    cfg  ; ///< Configuration handle.  Must be provided by component instantiating this environment.
    uvme_cvmcu_intr_st_cntxt_c  cntxt; ///< Context handle.  Can be provided by component instantiating this environment.
    /// @}
 
-   /// @defgroup Agents
+   /// @name Agents
    /// @{
    uvma_cvmcu_intr_agent_c  active_agent ; ///< Agent instance generating stimulus.
    uvma_cvmcu_intr_agent_c  passive_agent; ///< Agent instance receiving stimulus.
    /// @}
 
-   /// @defgroup Components
+   /// @name Components
    /// @{
    uvme_cvmcu_intr_st_vsqr_c  vsequencer; ///< Virtual sequencer on which virtual sequences are run.
    uvme_cvmcu_intr_st_prd_c   predictor ; ///< Feeds #scoreboard's expected ports.

@@ -27,7 +27,7 @@ class uvmt_apb_timer_test_cfg_c extends uvml_test_cfg_c;
    uvm_reg_block  selected_reg_block; ///< Register block to be tested.
    /// @}
 
-   /// @defgroup Command line arguments
+   /// @name Command line arguments
    /// @{
    bit     cli_block_name_override = 0; ///< Set to '1' if argument was found for #selected_reg_block
    string  cli_block_name_parsed_str  ; ///< Parsed string value from the CLI for #selected_reg_block

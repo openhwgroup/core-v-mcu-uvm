@@ -14,7 +14,7 @@
  */
 class uvme_udma_ctrl_cfg_c extends uvml_cfg_c;
 
-   /// @defgroup Generic options
+   /// @name Generic options
    /// @{
    rand bit                      enabled              ; ///< Enables/disables all components' run_phase() execution
    rand uvm_active_passive_enum  is_active            ; ///< Enables/disables stimulus generation
@@ -23,13 +23,13 @@ class uvme_udma_ctrl_cfg_c extends uvml_cfg_c;
    rand bit                      trn_log_enabled      ; ///< Enables/disables transaction logging.
    /// @}
 
-   /// @defgroup Block parameters
+   /// @name Block parameters
    /// @{
    rand uvml_reset_type_enum  reset_type; ///< Specifies if reset pulse is sync/async
    rand int unsigned          clk_frequency; ///< Frequency for clock generation (Hz)
    /// @}
 
-   /// @defgroup Agent configuration handles
+   /// @name Agent configuration handles
    /// @{
    rand uvma_clk_cfg_c    clk_cfg  ; ///< Clock agent configuration
    rand uvma_reset_cfg_c  reset_cfg; ///< Reset agent configuration
@@ -38,7 +38,7 @@ class uvme_udma_ctrl_cfg_c extends uvml_cfg_c;
    rand uvma_udma_ctrl_dp_out_cfg_c  dp_out_cfg; ///< Data plane output agent configuration
    /// @}
 
-   /// @defgroup Objects
+   /// @name Objects
    /// @{
    rand uvml_sb_simplex_cfg_c  sb_cfg; ///< Data path scoreboard configuration
    /// @}

@@ -18,7 +18,7 @@ class uvme_udma_ctrl_base_vseq_c extends uvml_vseq_c #(
    .RSP(uvm_sequence_item)
 );
 
-   /// @defgroup Objects
+   /// @name Objects
    /// @{
    uvme_udma_ctrl_cfg_c    cfg  ; ///< Environment configuration handle
    uvme_udma_ctrl_cntxt_c  cntxt; ///< Environment context handle

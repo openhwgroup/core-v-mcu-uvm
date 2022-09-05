@@ -13,13 +13,13 @@
  */
 class uvme_udma_rx_prd_c extends uvm_component;
 
-   /// @defgroup Objects
+   /// @name Objects
    /// @{
    uvme_udma_rx_cfg_c    cfg  ; ///< Environment configuration handle
    uvme_udma_rx_cntxt_c  cntxt; ///< Environment context handle
    /// @}
 
-   /// @defgroup TLM
+   /// @name TLM
    /// @{
    uvm_tlm_analysis_fifo #(uvma_clk_mon_trn_c  )  clk_fifo    ; ///< Queue of clk monitor transactions
    uvm_analysis_export   #(uvma_clk_mon_trn_c  )  clk_export  ; ///< Port taking in clk monitor transactions
