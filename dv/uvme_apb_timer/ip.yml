@@ -6,13 +6,13 @@
 
 ip:
   name: "uvme_apb_timer"
+  vendor: "datum"
   version: "1.0.0"
   full-name: "CORE-V MCU APB Timer Sub-System UVM Environment"
   type: "DV"
   sub-type: "UVM Environment"
   sub-sub-type: "Sub-System"
-  description: >
-    TODO Describe CORE-V MCU APB Timer Sub-System UVM Environment
+  description: ""
   home-page: ""
   repo-uri: ""
   bugs: ""
@@ -21,26 +21,26 @@ ip:
   block-diagram: ""
   languages: ["sv"]
   simulators-supported:
-    - { name: "vivado", version: "2022.1" }
+    vivado : "2022.1"
   tags: []
   copyright-holders: ["Datum Technology Corporation", "Low Power Futures"]
   licenses: ["SHL-2.1"]
 
 structure:
-   scripts-path : "bin"
-   docs-path    : "docs"
-   examples-path: "examples"
-   src-path     : "src"
+  scripts-path : "bin"
+  docs-path    : "docs"
+  examples-path: "examples"
+  src-path     : "src"
 
 dependencies:
-  - { name: "uvm"       , version:  "1.2" }
-  - { name: "uvml"      , version: "~1.0" }
-  - { name: "uvml_logs" , version: "~1.0" }
-  - { name: "uvml_ral"  , version: "~1.0" }
-  - { name: "uvml_sb"   , version: "~1.0" }
-  - { name: "uvma_clk"  , version: "~1.0" }
-  - { name: "uvma_reset", version: "~1.0" }
-  - { name: "uvma_apb", version: "~1.0" }
+  "@datum/uvm"        :  "1.2"
+  "@datum/uvml"       : "~1.0"
+  "@datum/uvml_logs"  : "~1.0"
+  "@datum/uvml_ral"   : "~1.0"
+  "@datum/uvml_sb"    : "~1.0"
+  "@datum/uvma_clk"   : "~1.0"
+  "@datum/uvma_reset" : "~1.0"
+  "@datum/uvma_apb"   : "~1.0"
 
 hdl-src:
   directories: [ ".", "comps", "obj", "reg", "seq" ]
@@ -52,4 +52,3 @@ hdl-src:
     vcs     : "uvme_apb_timer_pkg.flist"
     vivado  : "uvme_apb_timer_pkg.flist.xsim"
     xcelium : "uvme_apb_timer_pkg.flist"
-

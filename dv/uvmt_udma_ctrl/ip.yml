@@ -5,13 +5,13 @@
 
 ip:
   name: "uvmt_udma_ctrl"
+  vendor: "datum"
   version: "1.0.0"
-  full-name: "Datum Technology Corporation uDMA Controller Block UVM Test Bench"
+  full-name: "uDMA Controller Block UVM Test Bench"
   type: "DV"
   sub-type: "UVM Test Bench"
   sub-sub-type: "Block"
-  description: >
-    TODO Describe uDMA Controller
+  description: ""
   home-page: ""
   repo-uri: ""
   bugs: ""
@@ -20,34 +20,34 @@ ip:
   block-diagram: ""
   languages: ["sv"]
   simulators-supported:
-    - { name: "vivado", version: "2022.1" }
+    vivado: "2022.1"
   tags: []
   copyright-holders: ["Datum Technology Corporation"]
   licenses: ["SHL-2.1"]
 
 structure:
-   scripts-path : "bin"
-   docs-path    : "docs"
-   examples-path: "examples"
-   src-path     : "src"
+  scripts-path : "bin"
+  docs-path    : "docs"
+  examples-path: "examples"
+  src-path     : "src"
 
 dependencies:
-  - { name: "uvm"       , version:  "1.2" }
-  - { name: "uvml"      , version: "~1.0" }
-  - { name: "uvml_logs" , version: "~1.0" }
-  - { name: "uvml_ral"  , version: "~1.0" }
-  - { name: "uvml_sb"   , version: "~1.0" }
-  - { name: "uvma_clk"  , version: "~1.0" }
-  - { name: "uvma_reset", version: "~1.0" }
-  - { name: "uvma_udma_ctrl_cp", version: "^" }
-  - { name: "uvma_udma_ctrl_dp_in", version: "^" }
-  - { name: "uvma_udma_ctrl_dp_out", version: "^" }
-  - { name: "uvme_udma_ctrl", version: "^" }
+  "@datum/uvm"            :  "1.2"
+  "@datum/uvml"           : "~1.0"
+  "@datum/uvml_logs"      : "~1.0"
+  "@datum/uvml_ral"       : "~1.0"
+  "@datum/uvml_sb"        : "~1.0"
+  "@datum/uvma_clk"       : "~1.0"
+  "@datum/uvma_reset"     : "~1.0"
+  "uvma_udma_ctrl_cp"     : "^"
+  "uvma_udma_ctrl_dp_in"  : "^"
+  "uvma_udma_ctrl_dp_out" : "^"
+  "uvme_udma_ctrl"        : "^"
   
 hdl-src:
-  top-constructs: ["uvmt_udma_ctrl_tb", "uvml.uvml_sim_summary"]
   directories: [".", "tb", "tests"]
-  top-files: [ "uvmt_udma_ctrl_pkg.sv" ]
+  top-files: ["uvmt_udma_ctrl_pkg.sv"]
+  top-constructs: ["uvmt_udma_ctrl_tb", "uvml.uvml_sim_summary"]
   tests-path: "tests"
   test-name-template: "uvmt_udma_ctrl_{{ name }}_test_c"
   flist:

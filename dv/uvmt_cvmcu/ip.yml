@@ -5,12 +5,13 @@
 
 ip:
   name: "uvmt_cvmcu"
+  vendor: "datum"
   version: "1.0.0"
-  full-name: "Datum Technology Corporation CORE-V MCU Sub-System UVM Test Bench"
+  full-name: "CORE-V MCU Sub-System UVM Test Bench"
   type: "DV"
   sub-type: "UVM Test Bench"
   sub-sub-type: "Sub-System"
-  description: "TODO Describe CORE-V MCU"
+  description: ""
   home-page: ""
   repo-uri: ""
   bugs: ""
@@ -19,29 +20,34 @@ ip:
   block-diagram: ""
   languages: ["sv"]
   simulators-supported:
-    - { name: "vivado", version: "2022.1" }
+    vivado : "2022.1"
   tags: []
   copyright-holders: ["Datum Technology Corporation"]
   licenses: ["SHL-2.1"]
 
 structure:
-   scripts-path : "bin"
-   docs-path    : "docs"
-   examples-path: "examples"
-   src-path     : "src"
+  scripts-path : "bin"
+  docs-path    : "docs"
+  examples-path: "examples"
+  src-path     : "src"
 
 dependencies:
-  - { name: "uvm"       , version:  "1.2" }
-  - { name: "uvml"      , version: "~1.0" }
-  - { name: "uvml_logs" , version: "~1.0" }
-  - { name: "uvml_sb"   , version: "~1.0" }
-  - { name: "uvml_ral"  , version: "~1.0" }
-  - { name: "uvma_clk"  , version: "~1.0" }
-  - { name: "uvma_reset", version: "~1.0" }
-  - { name: "uvma_apb"  , version: "~1.0" }
-  - { name: "uvma_obi"  , version: "~1.0" }
+  "@datum/uvm"        :  "1.2"
+  "@datum/uvml"       : "~1.0"
+  "@datum/uvml_logs"  : "~1.0"
+  "@datum/uvml_ral"   : "~1.0"
+  "@datum/uvml_sb"    : "~1.0"
+  "@datum/uvma_clk"   : "~1.0"
+  "@datum/uvma_reset" : "~1.0"
+  "@datum/uvma_apb"   : "~1.0"
+  "@datum/uvma_obi"   : "~1.0"
 
 hdl-src:
+  directories: [".", "tb", "tests"]
+  top-files: ["uvmt_cvmcu_pkg.sv"]
+  top-constructs: ["uvmt_cvmcu_tb", "uvml.uvml_sim_summary"]
+  tests-path: "tests"
+  test-name-template: "uvmt_cvmcu_{{ name }}_test_c"
   flist:
     metrics : "uvmt_cvmcu_pkg.flist"
     riviera : "uvmt_cvmcu_pkg.flist"
@@ -49,11 +55,6 @@ hdl-src:
     vcs     : "uvmt_cvmcu_pkg.flist"
     vivado  : "uvmt_cvmcu_pkg.flist.xsim"
     xcelium : "uvmt_cvmcu_pkg.flist"
-  directories: [".", "tb", "tests"]
-  files: ["uvmt_cvmcu_pkg.sv"]
-  top-constructs: ["uvmt_cvmcu_tb", "uvml.uvml_sim_summary"]
-  tests-path: "tests"
-  test-name-template: "uvmt_cvmcu_{{ name }}_test_c"
 
 dut:
   ip-type: fsoc

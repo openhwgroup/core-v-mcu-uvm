@@ -5,13 +5,12 @@
 
 ip:
   name: "uvmt_cvmcu_intr_st"
-  version: "1.0.0 Beta 0"
-  full-name: "Datum Technology Corporation CORE-V MCU Interrupt UVM Agent Self-Test Bench"
+  version: "1.0.0"
+  full-name: "CORE-V MCU Interrupt UVM Agent Self-Test Bench"
   type: "DV"
   sub-type: "UVM Test Bench"
   sub-sub-type: "Agent Self-Test"
-  description: >
-    TODO Describe CORE-V MCU Interrupt
+  description: ""
   home-page: ""
   repo-uri: ""
   bugs: ""
@@ -20,24 +19,24 @@ ip:
   block-diagram: ""
   languages: ["sv"]
   simulators-supported:
-    - { name: "vivado", version: "2022.1" }
+    vivado : "2022.1"
   tags: []
   copyright-holders: ["Datum Technology Corporation"]
   licenses: ["SHL-2.1"]
 
 structure:
-   scripts-path : "bin"
-   docs-path    : "docs"
-   examples-path: "examples"
-   src-path     : "src"
+  scripts-path : "bin"
+  docs-path    : "docs"
+  examples-path: "examples"
+  src-path     : "src"
 
 dependencies:
-  - { name: "uvm"      , version:  "1.2" }
-  - { name: "uvml"     , version: "~1.0" }
-  - { name: "uvml_logs", version: "~1.0" }
-  - { name: "uvml_sb"  , version: "~1.0" }
-  - { name: "uvma_cvmcu_intr"   , version: "^" }
-  - { name: "uvme_cvmcu_intr_st", version: "^" }
+  "@datum/uvm"         :  "1.2"
+  "@datum/uvml"        : "~1.0"
+  "@datum/uvml_logs"   : "~1.0"
+  "@datum/uvml_sb"     : "~1.0"
+  "uvma_cvmcu_intr"    : "^"
+  "uvme_cvmcu_intr_st" : "^"
 
 hdl-src:
   top-constructs: ["uvmt_cvmcu_intr_st_tb", "uvml.uvml_sim_summary"]

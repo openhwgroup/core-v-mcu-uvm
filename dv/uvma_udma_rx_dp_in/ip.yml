@@ -5,13 +5,13 @@
 
 ip:
   name: "uvma_udma_rx_dp_in"
+  vendor: "datum"
   version: "1.0.0"
   full-name: "uDMA Rx Channels Block Data Plane Input UVM Agent"
   type: "DV"
   sub-type: "UVM Agent"
   sub-sub-type: "Simplex; Non-Layered"
-  description: >
-    TODO Describe uDMA Rx Channels Block Data Plane Input UVM Agent
+  description: ""
   home-page: ""
   repo-uri: ""
   bugs: ""
@@ -20,25 +20,25 @@ ip:
   block-diagram: "src/docs/agent_block_diagram.svg"
   languages: ["sv"]
   simulators-supported:
-    - { name: "vivado", version: "2022.1" }
+    vivado : "2022.1"
   tags: []
   copyright-holders: ["Datum Technology Corporation"]
   licenses: ["SHL-2.1"]
 
 structure:
-   scripts-path : "bin"
-   docs-path    : "docs"
-   examples-path: "examples"
-   src-path     : "src"
+  scripts-path : "bin"
+  docs-path    : "docs"
+  examples-path: "examples"
+  src-path     : "src"
 
 dependencies:
-  - { name: "uvm"      , version:  "1.2" }
-  - { name: "uvml"     , version: "~1.0" }
-  - { name: "uvml_logs", version: "~1.0" }
+  "@datum/uvm"       :  "1.2"
+  "@datum/uvml"      : "~1.0"
+  "@datum/uvml_logs" : "~1.0"
 
 hdl-src:
-  directories: [ "comps", "obj", "seq" ]
-  top-files: [ "uvma_udma_rx_dp_in_pkg.sv" ]
+  directories: ["comps", "obj", "seq"]
+  top-files: ["uvma_udma_rx_dp_in_pkg.sv"]
   flist:
     metrics : "uvma_udma_rx_dp_in_pkg.flist"
     riviera : "uvma_udma_rx_dp_in_pkg.flist"
@@ -46,4 +46,3 @@ hdl-src:
     vcs     : "uvma_udma_rx_dp_in_pkg.flist"
     vivado  : "uvma_udma_rx_dp_in_pkg.flist.xsim"
     xcelium : "uvma_udma_rx_dp_in_pkg.flist"
-
