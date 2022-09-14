@@ -21,7 +21,7 @@ ip:
   block-diagram: ""
   languages: ["sv"]
   simulators-supported:
-    vivado : "2022.1"
+    vivado: "2022.1"
   tags: []
   copyright-holders: ["Datum Technology Corporation", "Low Power Futures"]
   licenses: ["SHL-2.1"]
@@ -43,8 +43,8 @@ dependencies:
   "@datum/uvma_apb"   : "~1.0"
 
 hdl-src:
-  directories: [ ".", "comps", "obj", "reg", "seq" ]
-  top-files: [ "uvme_apb_timer_pkg.sv" ]
+  directories: [".", "comps", "obj", "reg", "seq"]
+  top-files: ["uvme_apb_timer_pkg.sv"]
   flist:
     metrics : "uvme_apb_timer_pkg.flist"
     riviera : "uvme_apb_timer_pkg.flist"
