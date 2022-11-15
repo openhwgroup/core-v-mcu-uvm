@@ -45,6 +45,7 @@ dependencies:
 hdl-src:
   directories: [".", "comps", "obj", "reg", "seq"]
   top-files: ["uvme_apb_timer_pkg.sv"]
+  so-libs: []
   flist:
     metrics : "uvme_apb_timer_pkg.flist"
     riviera : "uvme_apb_timer_pkg.flist"

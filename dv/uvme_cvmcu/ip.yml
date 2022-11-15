@@ -39,6 +39,8 @@ dependencies:
 
 hdl-src:
   directories: [ ".", "comps", "obj", "reg", "seq" ]
+  top-files: ["uvme_cvmcu_st_pkg.sv"]
+  so-libs: []
   flist:
     metrics : "uvme_cvmcu_st_pkg.flist"
     riviera : "uvme_cvmcu_st_pkg.flist"

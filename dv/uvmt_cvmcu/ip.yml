@@ -46,6 +46,7 @@ hdl-src:
   directories: [".", "tb", "tests"]
   top-files: ["uvmt_cvmcu_pkg.sv"]
   top-constructs: ["uvmt_cvmcu_tb", "uvml.uvml_sim_summary"]
+  so-libs: []
   tests-path: "tests"
   test-name-template: "uvmt_cvmcu_{{ name }}_test_c"
   flist:

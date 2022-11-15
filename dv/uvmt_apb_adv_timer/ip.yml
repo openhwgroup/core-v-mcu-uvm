@@ -44,9 +44,10 @@ dependencies:
   "uvme_apb_adv_timer" : "^"
 
 hdl-src:
-  top-constructs: ["uvmt_apb_adv_timer_tb", "uvml.uvml_sim_summary"]
   directories: [".", "tb", "tests"]
+  top-constructs: ["uvmt_apb_adv_timer_tb", "uvml.uvml_sim_summary"]
   top-files: [ "uvmt_apb_adv_timer_pkg.sv" ]
+  so-libs: []
   tests-path: "tests"
   test-name-template: "uvmt_apb_adv_timer_{{ name }}_test_c"
   flist:

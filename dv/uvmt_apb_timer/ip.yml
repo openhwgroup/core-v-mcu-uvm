@@ -47,6 +47,7 @@ hdl-src:
   directories: [".", "tb", "tests"]
   top-files: [ "uvmt_apb_timer_pkg.sv" ]
   top-constructs: ["uvmt_apb_timer_tb", "uvml.uvml_sim_summary"]
+  so-libs: []
   tests-path: "tests"
   test-name-template: "uvmt_apb_timer_{{ name }}_test_c"
   flist:
