@@ -1,8 +1,7 @@
 // Copyright 2022 Datum Technology Corporation
-// Copyright 2022 Low Power Futures
-// SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
+// All rights reserved.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// This file contains sample code that demonstrates how to add an instance of the CORE-V MCU APB Advanced Timer
+// This file contains sample code that demonstrates how to add an instance of the APB Advanced Timer
 // Sub-System UVM Environment to another UVM environment.
 // NOTE: It is recommended to split up class member declaration and definition; these classes are all inline to keep
 //       the example short.
@@ -84,7 +83,7 @@ class my_env_c extends uvm_env;
 
    my_env_cfg_c    cfg  ; ///< Configuration handle.  Must be provided by component instantiating this environment.
    my_env_cntxt_c  cntxt; ///< Context handle.  Can be provided by component instantiating this environment.
-   uvme_apb_adv_timer_env_c  apb_adv_timer_env; ///< CORE-V MCU APB Advanced Timer environment instance.
+   uvme_apb_adv_timer_env_c  apb_adv_timer_env; ///< APB Advanced Timer environment instance.
 
    `uvm_component_utils_begin(my_env_c)
       `uvm_field_object(cfg  , UVM_DEFAULT)

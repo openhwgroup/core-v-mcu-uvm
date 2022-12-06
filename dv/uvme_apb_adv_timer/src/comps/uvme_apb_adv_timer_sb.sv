@@ -1,6 +1,5 @@
 // Copyright 2022 Datum Technology Corporation
-// Copyright 2022 Low Power Futures
-// SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
+// All rights reserved.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -9,16 +8,13 @@
 
 
 /**
- * Component encapsulating scoreboards which compare CORE-V MCU APB Advanced Timer Sub-System's expected (from predictor) vs. actual (monitored) transactions.
+ * Component encapsulating scoreboards which compare APB Advanced Timer Sub-System's expected (from predictor) vs. actual (monitored) transactions.
  * @ingroup uvme_apb_adv_timer_comps
  */
-class uvme_apb_adv_timer_sb_c extends uvm_scoreboard;
-
-   /// @name Objects
-   /// @{
-   uvme_apb_adv_timer_cfg_c    cfg  ; ///< Environment configuration handle
-   uvme_apb_adv_timer_cntxt_c  cntxt; ///< Environment context handle
-   /// @}
+class uvme_apb_adv_timer_sb_c extends uvmx_sb_c #(
+   .T_CFG  (uvme_apb_adv_timer_cfg_c  ),
+   .T_CNTXT(uvme_apb_adv_timer_cntxt_c)
+);
 
    /// @name Components
    /// @{
@@ -37,108 +33,38 @@ class uvme_apb_adv_timer_sb_c extends uvm_scoreboard;
    /**
     * Default constructor.
     */
-   extern function new(string name="uvme_apb_adv_timer_sb", uvm_component parent=null);
-
-   /**
-    * Create and configures sub-scoreboards via:
-    * 1. assign_cfg()
-    * 2. assign_cntxt()
-    * 3. create_sbs()
-    */
-   extern virtual function void build_phase(uvm_phase phase);
-
-   /**
-    * Uses uvm_config_db to retrieve cfg.
-    */
-   extern function void get_cfg();
-
-   /**
-    * Uses uvm_config_db to retrieve cntxt.
-    */
-   extern function void get_cntxt();
+   function new(string name="uvme_apb_adv_timer_sb", uvm_component parent=null);
+      super.new(name, parent);
+   endfunction
 
    /**
     * Assigns configuration handles.
     */
-   extern function void assign_cfg();
+   virtual function void assign_cfg();
+      // TODO Implement uvme_apb_adv_timer_sb_c::assign_cfg()
+      //      Ex: uvm_config_db#(uvml_sb_simplex_cfg_c)::set(this, "sb_egress" , "cfg", cfg.sb_egress_cfg );
+      //          uvm_config_db#(uvml_sb_simplex_cfg_c)::set(this, "sb_ingress", "cfg", cfg.sb_ingress_cfg);
+   endfunction
 
    /**
     * Assigns context handles.
     */
-   extern function void assign_cntxt();
+   virtual function void assign_cntxt();
+      // TODO Implement uvme_apb_adv_timer_sb_c::assign_cntxt()
+      //      Ex: uvm_config_db#(uvml_sb_simplex_cntxt_c)::set(this, "sb_egress" , "cntxt", cntxt.sb_egress_cntxt );
+      //          uvm_config_db#(uvml_sb_simplex_cntxt_c)::set(this, "sb_ingress", "cntxt", cntxt.sb_ingress_cntxt);
+   endfunction
 
    /**
-    * Creates sub-scoreboard components.
+    * Creates scoreboard components.
     */
-   extern function void create_sbs();
+   virtual function void create_components();
+      // TODO Implement uvme_apb_adv_timer_sb_c::create_sbs()
+      //      Ex: sb_egress  = uvml_sb_simplex_c::type_id::create("sb_egress" , this);
+      //          sb_ingress = uvml_sb_simplex_c::type_id::create("sb_ingress", this);
+   endfunction
 
 endclass : uvme_apb_adv_timer_sb_c
-
-
-function uvme_apb_adv_timer_sb_c::new(string name="uvme_apb_adv_timer_sb", uvm_component parent=null);
-
-   super.new(name, parent);
-
-endfunction : new
-
-
-function void uvme_apb_adv_timer_sb_c::build_phase(uvm_phase phase);
-
-   super.build_phase(phase);
-   get_cfg     ();
-   get_cntxt   ();
-   assign_cfg  ();
-   assign_cntxt();
-   create_sbs  ();
-
-endfunction : build_phase
-
-
-function void uvme_apb_adv_timer_sb_c::get_cfg();
-
-   void'(uvm_config_db#(uvme_apb_adv_timer_cfg_c)::get(this, "", "cfg", cfg));
-   if (cfg == null) begin
-      `uvm_fatal("APB_ADV_TIMER_SB", "Configuration handle is null")
-   end
-
-endfunction : get_cfg
-
-
-function void uvme_apb_adv_timer_sb_c::get_cntxt();
-
-   void'(uvm_config_db#(uvme_apb_adv_timer_cntxt_c)::get(this, "", "cntxt", cntxt));
-   if (cntxt == null) begin
-      `uvm_fatal("APB_ADV_TIMER_SB", "Context handle is null")
-   end
-
-endfunction : get_cntxt
-
-
-function void uvme_apb_adv_timer_sb_c::assign_cfg();
-
-   // TODO Implement uvme_apb_adv_timer_sb_c::assign_cfg()
-   //      Ex: uvm_config_db#(uvml_sb_simplex_cfg_c)::set(this, "sb_egress" , "cfg", cfg.sb_egress_cfg );
-   //          uvm_config_db#(uvml_sb_simplex_cfg_c)::set(this, "sb_ingress", "cfg", cfg.sb_ingress_cfg);
-
-endfunction : assign_cfg
-
-
-function void uvme_apb_adv_timer_sb_c::assign_cntxt();
-
-   // TODO Implement uvme_apb_adv_timer_sb_c::assign_cntxt()
-   //      Ex: uvm_config_db#(uvml_sb_simplex_cntxt_c)::set(this, "sb_egress" , "cntxt", cntxt.sb_egress_cntxt );
-   //          uvm_config_db#(uvml_sb_simplex_cntxt_c)::set(this, "sb_ingress", "cntxt", cntxt.sb_ingress_cntxt);
-
-endfunction : assign_cntxt
-
-
-function void uvme_apb_adv_timer_sb_c::create_sbs();
-
-   // TODO Implement uvme_apb_adv_timer_sb_c::create_sbs()
-   //      Ex: sb_egress  = uvml_sb_simplex_c::type_id::create("sb_egress" , this);
-   //          sb_ingress = uvml_sb_simplex_c::type_id::create("sb_ingress", this);
-
-endfunction : create_sbs
 
 
 `endif // __UVME_APB_ADV_TIMER_SB_SV__

@@ -11,19 +11,19 @@
 `define __UVME_APB_TIMER_CFG_REG_LOW_REG_SV__
 
 
-class uvme_apb_timer_cfg_reg_low_reg_c extends uvml_ral_reg_c;
+class uvme_apb_timer_cfg_reg_low_reg_c extends uvmx_reg_c;
 
-   rand uvml_ral_reg_field_c  mode_64_bit; ///< 1 = 64-bit mode, 0=32-bit mode
-   rand uvml_ral_reg_field_c  mode_mtime_bit; ///< 1=MTIME mode Changes interrupt to be >= CMP value
-   rand uvml_ral_reg_field_c  prescaler_count; ///< Prescaler divisor
-   rand uvml_ral_reg_field_c  ref_clk_en_bit; ///< 1= use Refclk for counter, 0 = use APB bus clk for counter
-   rand uvml_ral_reg_field_c  prescaler_en_bit; ///< 1= Use prescaler 0= no prescaler
-   rand uvml_ral_reg_field_c  one_shot_bit; ///< 1= disable timer when counter == cmp value
-   rand uvml_ral_reg_field_c  cmp_clr_bit; ///< 1=counter is reset once counter == cmp,  0=counter is not reset
-   rand uvml_ral_reg_field_c  iem_bit; ///< 1 = event input is enabled
-   rand uvml_ral_reg_field_c  irq_bit; ///< 1 = IRQ is enabled when counter ==cmp value
-   rand uvml_ral_reg_field_c  reset_bit; ///< 1 = reset the counter
-   rand uvml_ral_reg_field_c  enable_bit; ///< 1 = enable the counter to count
+   rand uvmx_reg_field_c  mode_64_bit; ///< 1 = 64-bit mode, 0=32-bit mode
+   rand uvmx_reg_field_c  mode_mtime_bit; ///< 1=MTIME mode Changes interrupt to be >= CMP value
+   rand uvmx_reg_field_c  prescaler_count; ///< Prescaler divisor
+   rand uvmx_reg_field_c  ref_clk_en_bit; ///< 1= use Refclk for counter, 0 = use APB bus clk for counter
+   rand uvmx_reg_field_c  prescaler_en_bit; ///< 1= Use prescaler 0= no prescaler
+   rand uvmx_reg_field_c  one_shot_bit; ///< 1= disable timer when counter == cmp value
+   rand uvmx_reg_field_c  cmp_clr_bit; ///< 1=counter is reset once counter == cmp,  0=counter is not reset
+   rand uvmx_reg_field_c  iem_bit; ///< 1 = event input is enabled
+   rand uvmx_reg_field_c  irq_bit; ///< 1 = IRQ is enabled when counter ==cmp value
+   rand uvmx_reg_field_c  reset_bit; ///< 1 = reset the counter
+   rand uvmx_reg_field_c  enable_bit; ///< 1 = enable the counter to count
 
 
    `uvm_object_utils_begin(uvme_apb_timer_cfg_reg_low_reg_c)
@@ -63,7 +63,7 @@ endfunction : new
 
 function void uvme_apb_timer_cfg_reg_low_reg_c::build();
 
-   mode_64_bit = uvml_ral_reg_field_c::type_id::create("mode_64_bit");
+   mode_64_bit = uvmx_reg_field_c::type_id::create("mode_64_bit");
    mode_64_bit.configure(
       .parent                 (this),
       .size                   (   1),
@@ -75,7 +75,7 @@ function void uvme_apb_timer_cfg_reg_low_reg_c::build();
       .is_rand                (   1),
       .individually_accessible(   1)
    );
-   mode_mtime_bit = uvml_ral_reg_field_c::type_id::create("mode_mtime_bit");
+   mode_mtime_bit = uvmx_reg_field_c::type_id::create("mode_mtime_bit");
    mode_mtime_bit.configure(
       .parent                 (this),
       .size                   (   1),
@@ -87,7 +87,7 @@ function void uvme_apb_timer_cfg_reg_low_reg_c::build();
       .is_rand                (   1),
       .individually_accessible(   1)
    );
-   prescaler_count = uvml_ral_reg_field_c::type_id::create("prescaler_count");
+   prescaler_count = uvmx_reg_field_c::type_id::create("prescaler_count");
    prescaler_count.configure(
       .parent                 (this),
       .size                   (   7),
@@ -99,7 +99,7 @@ function void uvme_apb_timer_cfg_reg_low_reg_c::build();
       .is_rand                (   1),
       .individually_accessible(   1)
    );
-   ref_clk_en_bit = uvml_ral_reg_field_c::type_id::create("ref_clk_en_bit");
+   ref_clk_en_bit = uvmx_reg_field_c::type_id::create("ref_clk_en_bit");
    ref_clk_en_bit.configure(
       .parent                 (this),
       .size                   (   1),
@@ -111,7 +111,7 @@ function void uvme_apb_timer_cfg_reg_low_reg_c::build();
       .is_rand                (   1),
       .individually_accessible(   1)
    );
-   prescaler_en_bit = uvml_ral_reg_field_c::type_id::create("prescaler_en_bit");
+   prescaler_en_bit = uvmx_reg_field_c::type_id::create("prescaler_en_bit");
    prescaler_en_bit.configure(
       .parent                 (this),
       .size                   (   1),
@@ -123,7 +123,7 @@ function void uvme_apb_timer_cfg_reg_low_reg_c::build();
       .is_rand                (   1),
       .individually_accessible(   1)
    );
-   one_shot_bit = uvml_ral_reg_field_c::type_id::create("one_shot_bit");
+   one_shot_bit = uvmx_reg_field_c::type_id::create("one_shot_bit");
    one_shot_bit.configure(
       .parent                 (this),
       .size                   (   1),
@@ -135,7 +135,7 @@ function void uvme_apb_timer_cfg_reg_low_reg_c::build();
       .is_rand                (   1),
       .individually_accessible(   1)
    );
-   cmp_clr_bit = uvml_ral_reg_field_c::type_id::create("cmp_clr_bit");
+   cmp_clr_bit = uvmx_reg_field_c::type_id::create("cmp_clr_bit");
    cmp_clr_bit.configure(
       .parent                 (this),
       .size                   (   1),
@@ -147,7 +147,7 @@ function void uvme_apb_timer_cfg_reg_low_reg_c::build();
       .is_rand                (   1),
       .individually_accessible(   1)
    );
-   iem_bit = uvml_ral_reg_field_c::type_id::create("iem_bit");
+   iem_bit = uvmx_reg_field_c::type_id::create("iem_bit");
    iem_bit.configure(
       .parent                 (this),
       .size                   (   1),
@@ -159,7 +159,7 @@ function void uvme_apb_timer_cfg_reg_low_reg_c::build();
       .is_rand                (   1),
       .individually_accessible(   1)
    );
-   irq_bit = uvml_ral_reg_field_c::type_id::create("irq_bit");
+   irq_bit = uvmx_reg_field_c::type_id::create("irq_bit");
    irq_bit.configure(
       .parent                 (this),
       .size                   (   1),
@@ -171,7 +171,7 @@ function void uvme_apb_timer_cfg_reg_low_reg_c::build();
       .is_rand                (   1),
       .individually_accessible(   1)
    );
-   reset_bit = uvml_ral_reg_field_c::type_id::create("reset_bit");
+   reset_bit = uvmx_reg_field_c::type_id::create("reset_bit");
    reset_bit.configure(
       .parent                 (this),
       .size                   (   1),
@@ -183,7 +183,7 @@ function void uvme_apb_timer_cfg_reg_low_reg_c::build();
       .is_rand                (   1),
       .individually_accessible(   1)
    );
-   enable_bit = uvml_ral_reg_field_c::type_id::create("enable_bit");
+   enable_bit = uvmx_reg_field_c::type_id::create("enable_bit");
    enable_bit.configure(
       .parent                 (this),
       .size                   (   1),

@@ -50,13 +50,7 @@
 /**
  * Top-Level Register Block for apb_adv_timer.
  */
-class uvme_apb_adv_timer_reg_block_c extends uvml_ral_reg_block_c;
-
-   /// @name Objects
-   /// @{
-   uvme_apb_adv_timer_cfg_c    cfg  ; ///< Environment configuration handle
-   uvme_apb_adv_timer_cntxt_c  cntxt; ///< Environment context handle
-   /// @}
+class uvme_apb_adv_timer_reg_block_c extends uvmx_reg_block_c;
 
    /// @name Registers
    /// @{
@@ -169,139 +163,139 @@ function void uvme_apb_adv_timer_reg_block_c::create_regs();
    t0_cmd = uvme_apb_adv_timer_t0_cmd_reg_c::type_id::create("t0_cmd");
    t0_cmd.configure(this);
    t0_cmd.build();
-   
+
    t0_config = uvme_apb_adv_timer_t0_config_reg_c::type_id::create("t0_config");
    t0_config.configure(this);
    t0_config.build();
-   
+
    t0_threshold = uvme_apb_adv_timer_t0_threshold_reg_c::type_id::create("t0_threshold");
    t0_threshold.configure(this);
    t0_threshold.build();
-   
+
    t0_th_channel0 = uvme_apb_adv_timer_t0_th_channel0_reg_c::type_id::create("t0_th_channel0");
    t0_th_channel0.configure(this);
    t0_th_channel0.build();
-   
+
    t0_th_channel1 = uvme_apb_adv_timer_t0_th_channel1_reg_c::type_id::create("t0_th_channel1");
    t0_th_channel1.configure(this);
    t0_th_channel1.build();
-   
+
    t0_th_channel2 = uvme_apb_adv_timer_t0_th_channel2_reg_c::type_id::create("t0_th_channel2");
    t0_th_channel2.configure(this);
    t0_th_channel2.build();
-   
+
    t0_th_channel3 = uvme_apb_adv_timer_t0_th_channel3_reg_c::type_id::create("t0_th_channel3");
    t0_th_channel3.configure(this);
    t0_th_channel3.build();
-   
+
    t0_counter = uvme_apb_adv_timer_t0_counter_reg_c::type_id::create("t0_counter");
    t0_counter.configure(this);
    t0_counter.build();
-   
+
    t1_cmd = uvme_apb_adv_timer_t1_cmd_reg_c::type_id::create("t1_cmd");
    t1_cmd.configure(this);
    t1_cmd.build();
-   
+
    t1_config = uvme_apb_adv_timer_t1_config_reg_c::type_id::create("t1_config");
    t1_config.configure(this);
    t1_config.build();
-   
+
    t1_threshold = uvme_apb_adv_timer_t1_threshold_reg_c::type_id::create("t1_threshold");
    t1_threshold.configure(this);
    t1_threshold.build();
-   
+
    t1_th_channel0 = uvme_apb_adv_timer_t1_th_channel0_reg_c::type_id::create("t1_th_channel0");
    t1_th_channel0.configure(this);
    t1_th_channel0.build();
-   
+
    t1_th_channel1 = uvme_apb_adv_timer_t1_th_channel1_reg_c::type_id::create("t1_th_channel1");
    t1_th_channel1.configure(this);
    t1_th_channel1.build();
-   
+
    t1_th_channel2 = uvme_apb_adv_timer_t1_th_channel2_reg_c::type_id::create("t1_th_channel2");
    t1_th_channel2.configure(this);
    t1_th_channel2.build();
-   
+
    t1_th_channel3 = uvme_apb_adv_timer_t1_th_channel3_reg_c::type_id::create("t1_th_channel3");
    t1_th_channel3.configure(this);
    t1_th_channel3.build();
-   
+
    t1_counter = uvme_apb_adv_timer_t1_counter_reg_c::type_id::create("t1_counter");
    t1_counter.configure(this);
    t1_counter.build();
-   
+
    t2_cmd = uvme_apb_adv_timer_t2_cmd_reg_c::type_id::create("t2_cmd");
    t2_cmd.configure(this);
    t2_cmd.build();
-   
+
    t2_config = uvme_apb_adv_timer_t2_config_reg_c::type_id::create("t2_config");
    t2_config.configure(this);
    t2_config.build();
-   
+
    t2_threshold = uvme_apb_adv_timer_t2_threshold_reg_c::type_id::create("t2_threshold");
    t2_threshold.configure(this);
    t2_threshold.build();
-   
+
    t2_th_channel0 = uvme_apb_adv_timer_t2_th_channel0_reg_c::type_id::create("t2_th_channel0");
    t2_th_channel0.configure(this);
    t2_th_channel0.build();
-   
+
    t2_th_channel1 = uvme_apb_adv_timer_t2_th_channel1_reg_c::type_id::create("t2_th_channel1");
    t2_th_channel1.configure(this);
    t2_th_channel1.build();
-   
+
    t2_th_channel2 = uvme_apb_adv_timer_t2_th_channel2_reg_c::type_id::create("t2_th_channel2");
    t2_th_channel2.configure(this);
    t2_th_channel2.build();
-   
+
    t2_th_channel3 = uvme_apb_adv_timer_t2_th_channel3_reg_c::type_id::create("t2_th_channel3");
    t2_th_channel3.configure(this);
    t2_th_channel3.build();
-   
+
    t2_counter = uvme_apb_adv_timer_t2_counter_reg_c::type_id::create("t2_counter");
    t2_counter.configure(this);
    t2_counter.build();
-   
+
    t3_cmd = uvme_apb_adv_timer_t3_cmd_reg_c::type_id::create("t3_cmd");
    t3_cmd.configure(this);
    t3_cmd.build();
-   
+
    t3_config = uvme_apb_adv_timer_t3_config_reg_c::type_id::create("t3_config");
    t3_config.configure(this);
    t3_config.build();
-   
+
    t3_threshold = uvme_apb_adv_timer_t3_threshold_reg_c::type_id::create("t3_threshold");
    t3_threshold.configure(this);
    t3_threshold.build();
-   
+
    t3_th_channel0 = uvme_apb_adv_timer_t3_th_channel0_reg_c::type_id::create("t3_th_channel0");
    t3_th_channel0.configure(this);
    t3_th_channel0.build();
-   
+
    t3_th_channel1 = uvme_apb_adv_timer_t3_th_channel1_reg_c::type_id::create("t3_th_channel1");
    t3_th_channel1.configure(this);
    t3_th_channel1.build();
-   
+
    t3_th_channel2 = uvme_apb_adv_timer_t3_th_channel2_reg_c::type_id::create("t3_th_channel2");
    t3_th_channel2.configure(this);
    t3_th_channel2.build();
-   
+
    t3_th_channel3 = uvme_apb_adv_timer_t3_th_channel3_reg_c::type_id::create("t3_th_channel3");
    t3_th_channel3.configure(this);
    t3_th_channel3.build();
-   
+
    t3_counter = uvme_apb_adv_timer_t3_counter_reg_c::type_id::create("t3_counter");
    t3_counter.configure(this);
    t3_counter.build();
-   
+
    event_cfg = uvme_apb_adv_timer_event_cfg_reg_c::type_id::create("event_cfg");
    event_cfg.configure(this);
    event_cfg.build();
-   
+
    cg = uvme_apb_adv_timer_cg_reg_c::type_id::create("cg");
    cg.configure(this);
    cg.build();
-   
+
 endfunction : create_regs
 
 

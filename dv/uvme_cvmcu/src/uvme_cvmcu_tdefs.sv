@@ -1,5 +1,5 @@
 // Copyright 2022 Datum Technology Corporation
-// SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
+// All rights reserved.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -7,37 +7,21 @@
 `define __UVME_CVMCU_TDEFS_SV__
 
 
-/**
- * Scoreboard specializations
- */
-typedef class uvme_cvmcu_dma_seq_item_c;
-typedef uvml_sb_simplex_c#(
-   .T_ACT_TRN(uvme_cvmcu_dma_seq_item_c)
-) uvme_cvmcu_dma_sb_c;
+// TODO Add scoreboard specialization(s)
+//      Ex: typedef uvml_sb_simplex_c#(
+//             .T_CNTXT(uvme_cvmcu_sb_cntxt_c),
+//             .T_TRN  (uvma_cvmcu_mon_trn_c )
+//          ) uvme_cvmcu_sb_simplex_c;
 
-/**
- *
- */
-typedef enum {
-   UVME_CVMCU_PERIPHERALS_GPIO , ///<
-   UVME_CVMCU_PERIPHERALS_I2S  , ///<
-   UVME_CVMCU_PERIPHERALS_SPIM , ///<
-   UVME_CVMCU_PERIPHERALS_CAMIF, ///<
-   UVME_CVMCU_PERIPHERALS_I2C  , ///<
-   UVME_CVMCU_PERIPHERALS_UART , ///<
-   UVME_CVMCU_PERIPHERALS_SDIO   ///<
-} uvme_cvmcu_peripherals_enum;
-
-
-/**
- *
- */
-typedef enum {
-   UVME_CVMCU_DMA_DATA_PATTERN_RANDOM  , ///<
-   UVME_CVMCU_DMA_DATA_PATTERN_COUNTING, ///<
-   UVME_CVMCU_DMA_DATA_PATTERN_ZEROS   , ///<
-   UVME_CVMCU_DMA_DATA_PATTERN_55AA      ///<
-} uvme_cvmcu_dma_data_pattern_enum;
+// Add tdefs, enums and structs here
+// Ex: typedef bit [(`UVME_CVMCU_ABC_MAX_WIDTH-1):0]  uvme_cvmcu_abc_b_t;
+// Ex: typedef enum {
+//        UVME_CVMCU_MY_ABC
+//     } uvme_cvmcu_my_enum;
+// Ex: typedef struct {
+//        bit [2:0]  abc;
+//        logic      xyz;
+//     } uvme_cvmcu_my_struct;
 
 
 `endif // __UVME_CVMCU_TDEFS_SV__

@@ -1,6 +1,5 @@
 // Copyright 2022 Datum Technology Corporation
-// Copyright 2022 Low Power Futures
-// SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
+// All rights reserved.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -9,56 +8,22 @@
 
 
 /**
- * Test checking the accessibility of every bit of every register in the CORE-V MCU APB Timer Sub-System DUT.
+ * Test checking the accessibility of every bit of every register in the APB Timer Sub-System DUT.
  * @ingroup uvmt_apb_timer_tests
  */
-class uvmt_apb_timer_reg_bit_bash_test_c extends uvmt_apb_timer_reg_base_test_c;
-
-   rand uvme_apb_timer_reg_bit_bash_vseq_c  bit_bash_vseq; ///< Virtual sequence to be run
-
+class uvmt_apb_timer_reg_bit_bash_test_c extends uvmt_apb_timer_base_test_c;
 
    `uvm_component_utils(uvmt_apb_timer_reg_bit_bash_test_c)
-
-
-   /**
-    * By default, we only test a single register block.
-    */
-   constraint defaults_cons {
-      soft bit_bash_vseq.single_block_mode == 1;
-   }
-
+   `uvmx_test_reg(UVM_DO_REG_BIT_BASH)
 
    /**
-    * Creates bit_bash_vseq.
+    * Default constructor.
     */
-   extern function new(string name="uvmt_apb_timer_reg_bit_bash_test", uvm_component parent=null);
-
-   /**
-    * Runs bit_bash_vseq on vsequencer.
-    */
-   extern virtual task configure_phase(uvm_phase phase);
+   function new(string name="uvmt_apb_timer_reg_bit_bash_test", uvm_component parent=null);
+      super.new(name, parent);
+   endfunction
 
 endclass : uvmt_apb_timer_reg_bit_bash_test_c
-
-
-function uvmt_apb_timer_reg_bit_bash_test_c::new(string name="uvmt_apb_timer_reg_bit_bash_test", uvm_component parent=null);
-
-   super.new(name, parent);
-   bit_bash_vseq = uvme_apb_timer_reg_bit_bash_vseq_c::type_id::create("bit_bash_vseq");
-
-endfunction : new
-
-
-task uvmt_apb_timer_reg_bit_bash_test_c::configure_phase(uvm_phase phase);
-
-   super.configure_phase(phase);
-
-   `uvm_info("TEST", $sformatf("Starting bit bash virtual sequence:\n%s", bit_bash_vseq.sprint()), UVM_NONE)
-   bit_bash_vseq.single_block = test_cfg.selected_reg_block;
-   bit_bash_vseq.start(vsequencer);
-   `uvm_info("TEST", "Finished bit bash virtual sequence", UVM_NONE)
-
-endtask : configure_phase
 
 
 `endif // __UVMT_APB_TIMER_REG_BIT_BASH_TEST_SV__

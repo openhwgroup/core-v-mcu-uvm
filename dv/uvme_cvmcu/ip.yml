@@ -1,5 +1,5 @@
 # Copyright 2022 Datum Technology Corporation
-# SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
+# All rights reserved.
 ########################################################################################################################
 
 
@@ -11,19 +11,26 @@ ip:
   type: "DV"
   sub-type: "UVM Environment"
   sub-sub-type: "Sub-System"
-  description: ""
+  description: "TODO Describe CORE-V MCU Sub-System UVM Environment"
   home-page: ""
   repo-uri: ""
   bugs: ""
   aliases: []
   logo: ""
-  block-diagram: ""
+  block-diagram: "docs/env_block_diagram.svg"
   languages: ["sv"]
   simulators-supported:
-    vivado : "2022.1"
+    viv: "2022.2"
   tags: []
   copyright-holders: ["Datum Technology Corporation"]
-  licenses: ["SHL-2.1"]
+  licenses: ["All rights reserved."]
+
+dependencies:
+  "@datum/uvmx"      : "~1.0"
+  "@datum/uvml_sb"   : "~1.0"
+  "@datum/uvma_clk"  : "~1.0"
+  "@datum/uvma_reset": "~1.0"
+  "@datum/uvma_obi": "~1.0"
 
 structure:
   scripts-path : "bin"
@@ -31,20 +38,7 @@ structure:
   examples-path: "examples"
   src-path     : "src"
 
-dependencies:
-  "@datum/uvm"       :  "1.2"
-  "@datum/uvml"      : "~1.0"
-  "@datum/uvml_logs" : "~1.0"
-  "@datum/uvml_ral"  : "~1.0"
-
 hdl-src:
-  directories: [ ".", "comps", "obj", "reg", "seq" ]
-  top-files: ["uvme_cvmcu_st_pkg.sv"]
+  directories: [".", "comps", "obj", "reg", "seq"]
+  top-files: ["uvme_cvmcu_pkg.sv"]
   so-libs: []
-  flist:
-    metrics : "uvme_cvmcu_st_pkg.flist"
-    riviera : "uvme_cvmcu_st_pkg.flist"
-    questa  : "uvme_cvmcu_st_pkg.flist"
-    vcs     : "uvme_cvmcu_st_pkg.flist"
-    vivado  : "uvme_cvmcu_st_pkg.flist.xsim"
-    xcelium : "uvme_cvmcu_st_pkg.flist"

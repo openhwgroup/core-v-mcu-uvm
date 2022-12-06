@@ -1,6 +1,5 @@
 // Copyright 2022 Datum Technology Corporation
-// Copyright 2022 Low Power Futures
-// SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
+// All rights reserved.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -14,7 +13,8 @@
  * @ingroup uvme_apb_timer_misc
  */
 module uvme_apb_timer_chkr (
-   uvma_apb_if  apb_if ///< Register access interface
+   uvma_apb_if  apb_if, ///< Register access interface
+   uvme_apb_timer_probe_if  probe_if ///< Misc. signals interface
 );
 
    // TODO Add assertions to uvme_$[name}_chkr

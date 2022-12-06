@@ -1,5 +1,5 @@
 // Copyright 2022 Datum Technology Corporation
-// SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
+// All rights reserved.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -8,162 +8,115 @@
 
 
 /**
- * Component encapsulating CORE-V MCU environment's functional coverage model.
+ * Component encapsulating CORE-V MCU Sub-Sytem's functional coverage model.
+ * @ingroup uvme_cvmcu_comps
  */
-class uvme_cvmcu_cov_model_c extends uvm_component;
+class uvme_cvmcu_cov_model_c extends uvmx_env_cov_model_c #(
+   .T_CFG  (uvme_cvmcu_cfg_c  ),
+   .T_CNTXT(uvme_cvmcu_cntxt_c)
+);
 
-   // Objects
-   uvme_cvmcu_cfg_c    cfg;
-   uvme_cvmcu_cntxt_c  cntxt;
+   /// @name Objects
+   /// @{
    // TODO Add covergoup sampling variable(s)
-   //      Ex: uvma_obi_mon_trn_c  obi_trn;
+   //      Ex: uvml_eth_pkt_mon_trn_c  pkt_trn; ///< Describe me!
+   /// @}
 
-   // Input TLM
+   /// @name TLM
+   /// @{
    // TODO Add Input TLM to uvme_cvmcu_cov_model_c
-   //      Ex: uvm_analysis_port    #(uvma_obi_mon_trn_c)  obi_export;
-   //          uvm_tlm_analysis_fifo#(uvma_obi_mon_trn_c)  obi_fifo;
+   //      Ex: uvm_tlm_analysis_fifo #(uvml_eth_pkt_mon_trn_c)  pkt_fifo; ///< Describe me!
+   /// @}
 
 
-   `uvm_component_utils_begin(uvme_cvmcu_cov_model_c)
-      `uvm_field_object(cfg  , UVM_DEFAULT)
-      `uvm_field_object(cntxt, UVM_DEFAULT)
-   `uvm_component_utils_end
+   `uvm_component_utils(uvme_cvmcu_cov_model_c)
 
+
+   /**
+    * Coverage for #cfg
+    */
+   covergroup cvmcu_cfg_cg;
+      // TODO Implement cvmcu_cfg_cg
+      //      Ex: abc_cp : coverpoint cfg.abc;
+   endgroup : cvmcu_cfg_cg
+
+   /**
+    * Coverage for #cntxt
+    */
+   covergroup cvmcu_cntxt_cg;
+      // TODO Implement cvmcu_cntxt_cg
+      //      Ex: abc_cp : coverpoint cntxt.abc;
+   endgroup : cvmcu_cntxt_cg
+
+   /**
+    * Coverage for probe virtual interface.
+    */
+   covergroup cvmcu_probe_vif_cg;
+      // TODO Implement cvmcu_cntxt_cg
+      //      Ex: abc_cp : coverpoint cntxt.probe_vif.abc;
+   endgroup
 
    // TODO Add covergroup(s) to uvme_cvmcu_cov_model_c
-   //      Ex: covergroup cvmcu_cfg_cg;
-   //             abc_cpt : coverpoint cfg.abc;
-   //             xyz_cpt : coverpoint cfg.xyz;
-   //          endgroup : cvmcu_cfg_cg
-   //
-   //          covergroup cvmcu_cntxt_cg;
-   //             abc_cpt : coverpoint cntxt.abc;
-   //             xyz_cpt : coverpoint cntxt.xyz;
-   //          endgroup : cvmcu_cntxt_cg
-   //
-   //          covergroup obi_trn_cg;
-   //             address : coverpoint obi_trn.address {
-   //                bins low   = {32'h0000_0000, 32'h4FFF_FFFF};
-   //                bins med   = {32'h5000_0000, 32'h9FFF_FFFF};
-   //                bins high  = {32'hA000_0000, 32'hFFFF_FFFF};
+   //      Ex: covergroup cvmcu_pkt_trn_cg;
+   //             address_cp : coverpoint pkt_trn.payload_size {
+   //                bins small  = {0   ,   64};
+   //                bins medium = {65  , 1024};
+   //                bins large  = {1024, 2048};
    //             }
-   //          endgroup : obi_trn_cg
+   //          endgroup : cvmcu_pkt_trn_cg
 
 
    /**
-    * Default constructor.
+    * Creates covergroups.
     */
-   extern function new(string name="uvme_cvmcu_cov_model", uvm_component parent=null);
+   function new(string name="uvme_cvmcu_cov_model", uvm_component parent=null);
+      super.new(name, parent);
+      cvmcu_cfg_cg       = new();
+      cvmcu_cntxt_cg     = new();
+      cvmcu_probe_vif_cg = new();
+      // TODO Create coverage groups for uvme_cvmcu_cov_model_c
+      //      Ex: cvmcu_pkt_cg = new();
+   endfunction
 
    /**
-    * Ensures cfg & cntxt handles are not null.
+    * Creates TLM FIFOs.
     */
-   extern virtual function void build_phase(uvm_phase phase);
+   virtual function void create_fifos();
+      // TODO Build Input TLM
+      //      Ex: pkt_fifo = new("pkt_fifo", this);
+   endfunction
 
-   /**
-    * Describe uvme_cvmcu_cov_model_c::run_phase()
-    */
-   extern virtual task run_phase(uvm_phase phase);
+   /// @name Sampling functions
+   /// @{
+   virtual function void sample_cfg();
+      cvmcu_cfg_cg.sample();
+   endfunction
 
-   /**
-    * TODO Describe uvme_cvmcu_cov_model_c::sample_cfg()
-    */
-   extern function void sample_cfg();
+   virtual function void sample_cntxt();
+      cvmcu_cntxt_cg.sample();
+   endfunction
 
-   /**
-    * TODO Describe uvme_cvmcu_cov_model_c::sample_cntxt()
-    */
-   extern function void sample_cntxt();
+   virtual task sample_vifs();
+      fork
+         forever begin
+            @(cntxt.probe_vif.mp.cb);
+            cvmcu_probe_vif_cg.sample();
+         end
+      join
+   endtask
 
-   // TODO Add coverage functions to uvme_cvmcu_cov_model_c
-   //      Ex: /**
-   //           * Samples trn via obi_cg
-   //           */
-   //          extern function void sample_obi();
+   virtual task sample_tlm();
+      fork
+         // TODO Implement uvme_cvmcu_cov_model_c::run_phase()
+         //      Ex: forever begin
+         //             pkt_fifo.get(pkt_trn);
+         //             cvmcu_pkt_trn_cg.sample();
+         //          end
+      join
+   endtask
+   /// @}
 
 endclass : uvme_cvmcu_cov_model_c
-
-
-function uvme_cvmcu_cov_model_c::new(string name="uvme_cvmcu_cov_model", uvm_component parent=null);
-
-   super.new(name, parent);
-
-   // TODO Create coverage groups for uvme_cvmcu_cov_model_c
-   //      Ex: obi_cg = new();
-
-endfunction : new
-
-
-function void uvme_cvmcu_cov_model_c::build_phase(uvm_phase phase);
-
-   super.build_phase(phase);
-
-   void'(uvm_config_db#(uvme_cvmcu_cfg_c)::get(this, "", "cfg", cfg));
-   if (!cfg) begin
-      `uvm_fatal("CFG", "Configuration handle is null")
-   end
-
-   void'(uvm_config_db#(uvme_cvmcu_cntxt_c)::get(this, "", "cntxt", cntxt));
-   if (!cntxt) begin
-      `uvm_fatal("CNTXT", "Context handle is null")
-   end
-
-   // TODO Build Input TLM
-   //      Ex: obi_export = new("obi_export", this);
-   //          obi_fifo   = new("obi_fifo"  , this);
-
-endfunction : build_phase
-
-
-task uvme_cvmcu_cov_model_c::run_phase(uvm_phase phase);
-
-   super.run_phase(phase);
-
-   fork
-      // Configuration
-      forever begin
-         cntxt.sample_cfg_e.wait_trigger();
-         sample_cfg();
-      end
-
-      // Context
-      forever begin
-         cntxt.sample_cntxt_e.wait_trigger();
-         sample_cntxt();
-      end
-
-      // TODO Implement uvme_cvmcu_cov_model_c::run_phase()
-      //      Ex: forever begin
-      //             obi_fifo.get(obi_trn);
-      //             sample_obi();
-      //          end
-   join_none
-
-endtask : run_phase
-
-
-function void uvme_cvmcu_cov_model_c::sample_cfg();
-
-   // TODO Implement uvme_cvmcu_cov_model_c::sample_cfg();
-   //      Ex: cvmcu_cfg_cg.sample();
-
-endfunction : sample_cfg
-
-
-function void uvme_cvmcu_cov_model_c::sample_cntxt();
-
-   // TODO Implement uvme_cvmcu_cov_model_c::sample_cntxt();
-   //      Ex: cvmcu_cntxt_cg.sample();
-
-endfunction : sample_cntxt
-
-
-// TODO Implement coverage function(s) to uvme_cvmcu_cov_model_c
-//      Ex: function void uvme_cvmcu_cov_model_c::sample_obi();
-//
-//             obi_trn_cg.sample();
-//
-//          endfunction : sample_obi
 
 
 `endif // __UVME_CVMCU_COV_MODEL_SV__

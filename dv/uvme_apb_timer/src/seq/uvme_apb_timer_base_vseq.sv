@@ -1,6 +1,5 @@
 // Copyright 2022 Datum Technology Corporation
-// Copyright 2022 Low Power Futures
-// SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
+// All rights reserved.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -9,53 +8,27 @@
 
 
 /**
- * Abstract virtual sequence from which all other CORE-V MCU APB Timer Sub-System environment virtual sequences extend.
+ * Abstract virtual sequence from which all other APB Timer Sub-System environment virtual sequences extend.
  * Subclasses must be run on uvme_apb_timer_vsqr_c.
  * @note Does not generate any sequence items of its own.
  * @ingroup uvme_apb_timer_seq
  */
-class uvme_apb_timer_base_vseq_c extends uvml_vseq_c #(
-   .REQ(uvm_sequence_item),
-   .RSP(uvm_sequence_item)
+class uvme_apb_timer_base_vseq_c extends uvmx_seq_c #(
+   .T_CFG  (uvme_apb_timer_cfg_c  ),
+   .T_CNTXT(uvme_apb_timer_cntxt_c),
+   .T_SQR  (uvme_apb_timer_vsqr_c )
 );
 
-   /// @name Objects
-   /// @{
-   uvme_apb_timer_cfg_c    cfg  ; ///< Environment configuration handle
-   uvme_apb_timer_cntxt_c  cntxt; ///< Environment context handle
-   /// @}
-
-
    `uvm_object_utils(uvme_apb_timer_base_vseq_c)
-   `uvm_declare_p_sequencer(uvme_apb_timer_vsqr_c)
-
 
    /**
     * Default constructor.
     */
-   extern function new(string name="uvme_apb_timer_base_vseq");
-
-   /**
-    * Retrieve #cfg and #cntxt handles from p_sequencer.
-    */
-   extern virtual task pre_start();
+   function new(string name="uvme_apb_timer_base_vseq");
+      super.new(name);
+   endfunction
 
 endclass : uvme_apb_timer_base_vseq_c
-
-
-function uvme_apb_timer_base_vseq_c::new(string name="uvme_apb_timer_base_vseq");
-
-   super.new(name);
-
-endfunction : new
-
-
-task uvme_apb_timer_base_vseq_c::pre_start();
-
-   cfg   = p_sequencer.cfg;
-   cntxt = p_sequencer.cntxt;
-
-endtask : pre_start
 
 
 `endif // __UVME_APB_TIMER_BASE_VSEQ_SV__

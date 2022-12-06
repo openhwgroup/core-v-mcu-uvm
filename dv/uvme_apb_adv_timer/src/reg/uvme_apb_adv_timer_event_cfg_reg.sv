@@ -11,13 +11,13 @@
 `define __UVME_APB_ADV_TIMER_EVENT_CFG_REG_SV__
 
 
-class uvme_apb_adv_timer_event_cfg_reg_c extends uvml_ral_reg_c;
+class uvme_apb_adv_timer_event_cfg_reg_c extends uvmx_reg_c;
 
-   rand uvml_ral_reg_field_c  sel0; ///< ADV_TIMER output event 0 source configuration bitfiled:
-   rand uvml_ral_reg_field_c  sel1; ///< ADV_TIMER output event 1 source configuration bitfiled:
-   rand uvml_ral_reg_field_c  sel2; ///< ADV_TIMER output event 2 source configuration bitfiled:
-   rand uvml_ral_reg_field_c  sel3; ///< ADV_TIMER output event 3 source configuration bitfiled:
-   rand uvml_ral_reg_field_c  ena; ///< ADV_TIMER output event enable configuration bitfield. ENA[i]=1 enables output event i generation.
+   rand uvmx_reg_field_c  sel0; ///< ADV_TIMER output event 0 source configuration bitfiled:
+   rand uvmx_reg_field_c  sel1; ///< ADV_TIMER output event 1 source configuration bitfiled:
+   rand uvmx_reg_field_c  sel2; ///< ADV_TIMER output event 2 source configuration bitfiled:
+   rand uvmx_reg_field_c  sel3; ///< ADV_TIMER output event 3 source configuration bitfiled:
+   rand uvmx_reg_field_c  ena; ///< ADV_TIMER output event enable configuration bitfield. ENA[i]=1 enables output event i generation.
 
 
    `uvm_object_utils_begin(uvme_apb_adv_timer_event_cfg_reg_c)
@@ -51,7 +51,7 @@ endfunction : new
 
 function void uvme_apb_adv_timer_event_cfg_reg_c::build();
 
-   sel0 = uvml_ral_reg_field_c::type_id::create("sel0");
+   sel0 = uvmx_reg_field_c::type_id::create("sel0");
    sel0.configure(
       .parent                 (this),
       .size                   (   4),
@@ -63,7 +63,7 @@ function void uvme_apb_adv_timer_event_cfg_reg_c::build();
       .is_rand                (   1),
       .individually_accessible(   1)
    );
-   sel1 = uvml_ral_reg_field_c::type_id::create("sel1");
+   sel1 = uvmx_reg_field_c::type_id::create("sel1");
    sel1.configure(
       .parent                 (this),
       .size                   (   4),
@@ -75,7 +75,7 @@ function void uvme_apb_adv_timer_event_cfg_reg_c::build();
       .is_rand                (   1),
       .individually_accessible(   1)
    );
-   sel2 = uvml_ral_reg_field_c::type_id::create("sel2");
+   sel2 = uvmx_reg_field_c::type_id::create("sel2");
    sel2.configure(
       .parent                 (this),
       .size                   (   4),
@@ -87,7 +87,7 @@ function void uvme_apb_adv_timer_event_cfg_reg_c::build();
       .is_rand                (   1),
       .individually_accessible(   1)
    );
-   sel3 = uvml_ral_reg_field_c::type_id::create("sel3");
+   sel3 = uvmx_reg_field_c::type_id::create("sel3");
    sel3.configure(
       .parent                 (this),
       .size                   (   4),
@@ -99,7 +99,7 @@ function void uvme_apb_adv_timer_event_cfg_reg_c::build();
       .is_rand                (   1),
       .individually_accessible(   1)
    );
-   ena = uvml_ral_reg_field_c::type_id::create("ena");
+   ena = uvmx_reg_field_c::type_id::create("ena");
    ena.configure(
       .parent                 (this),
       .size                   (   4),

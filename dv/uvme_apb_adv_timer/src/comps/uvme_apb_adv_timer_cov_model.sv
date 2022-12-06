@@ -1,6 +1,5 @@
 // Copyright 2022 Datum Technology Corporation
-// Copyright 2022 Low Power Futures
-// SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
+// All rights reserved.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -9,31 +8,28 @@
 
 
 /**
- * Component encapsulating CORE-V MCU APB Advanced Timer Sub-Sytem's functional coverage model.
+ * Component encapsulating APB Advanced Timer Sub-Sytem's functional coverage model.
  * @ingroup uvme_apb_adv_timer_comps
  */
-class uvme_apb_adv_timer_cov_model_c extends uvm_component;
+class uvme_apb_adv_timer_cov_model_c extends uvmx_env_cov_model_c #(
+   .T_CFG  (uvme_apb_adv_timer_cfg_c  ),
+   .T_CNTXT(uvme_apb_adv_timer_cntxt_c)
+);
 
    /// @name Objects
    /// @{
-   uvme_apb_adv_timer_cfg_c    cfg  ; ///< Environment configuration handle
-   uvme_apb_adv_timer_cntxt_c  cntxt; ///< Environment context handle
    // TODO Add covergoup sampling variable(s)
-   //      Ex: uvma_pkt_mon_trn_c  pkt_trn; ///< Describe me!
+   //      Ex: uvml_eth_pkt_mon_trn_c  pkt_trn; ///< Describe me!
    /// @}
 
    /// @name TLM
    /// @{
    // TODO Add Input TLM to uvme_apb_adv_timer_cov_model_c
-   //      Ex: uvm_tlm_analysis_fifo #(uvma_pkt_mon_trn_c)  pkt_fifo  ; ///< Describe me!
-   //          uvm_analysis_port     #(uvma_pkt_mon_trn_c)  pkt_export; ///< Describe me!
+   //      Ex: uvm_tlm_analysis_fifo #(uvml_eth_pkt_mon_trn_c)  pkt_fifo; ///< Describe me!
    /// @}
 
 
-   `uvm_component_utils_begin(uvme_apb_adv_timer_cov_model_c)
-      `uvm_field_object(cfg  , UVM_DEFAULT)
-      `uvm_field_object(cntxt, UVM_DEFAULT)
-   `uvm_component_utils_end
+   `uvm_component_utils(uvme_apb_adv_timer_cov_model_c)
 
 
    /**
@@ -52,6 +48,14 @@ class uvme_apb_adv_timer_cov_model_c extends uvm_component;
       //      Ex: abc_cp : coverpoint cntxt.abc;
    endgroup : apb_adv_timer_cntxt_cg
 
+   /**
+    * Coverage for probe virtual interface.
+    */
+   covergroup apb_adv_timer_probe_vif_cg;
+      // TODO Implement apb_adv_timer_cntxt_cg
+      //      Ex: abc_cp : coverpoint cntxt.probe_vif.abc;
+   endgroup
+
    // TODO Add covergroup(s) to uvme_apb_adv_timer_cov_model_c
    //      Ex: covergroup apb_adv_timer_pkt_trn_cg;
    //             address_cp : coverpoint pkt_trn.payload_size {
@@ -65,172 +69,54 @@ class uvme_apb_adv_timer_cov_model_c extends uvm_component;
    /**
     * Creates covergroups.
     */
-   extern function new(string name="uvme_apb_adv_timer_cov_model", uvm_component parent=null);
+   function new(string name="uvme_apb_adv_timer_cov_model", uvm_component parent=null);
+      super.new(name, parent);
+      apb_adv_timer_cfg_cg       = new();
+      apb_adv_timer_cntxt_cg     = new();
+      apb_adv_timer_probe_vif_cg = new();
+      // TODO Create coverage groups for uvme_apb_adv_timer_cov_model_c
+      //      Ex: apb_adv_timer_pkt_cg = new();
+   endfunction
 
    /**
-    * 1. Ensures #cfg & #cntxt handles are not null.
-    * 2. Creates fifos.
+    * Creates TLM FIFOs.
     */
-   extern virtual function void build_phase(uvm_phase phase);
+   virtual function void create_fifos();
+      // TODO Build Input TLM
+      //      Ex: pkt_fifo = new("pkt_fifo", this);
+   endfunction
 
-   /**
-    * Connects exports to fifos.
-    */
-   extern virtual function void connect_phase(uvm_phase phase);
+   /// @name Sampling functions
+   /// @{
+   virtual function void sample_cfg();
+      apb_adv_timer_cfg_cg.sample();
+   endfunction
 
-   /**
-    * Forks all sampling loops.
-    */
-   extern virtual task run_phase(uvm_phase phase);
+   virtual function void sample_cntxt();
+      apb_adv_timer_cntxt_cg.sample();
+   endfunction
 
-   /**
-    * Uses uvm_config_db to retrieve cfg.
-    */
-   extern function void get_cfg();
+   virtual task sample_vifs();
+      fork
+         forever begin
+            @(cntxt.probe_vif.mp.cb);
+            apb_adv_timer_probe_vif_cg.sample();
+         end
+      join
+   endtask
 
-   /**
-    * Uses uvm_config_db to retrieve cntxt.
-    */
-   extern function void get_cntxt();
-
-   /**
-    * Creates TLM FIFOs and Analysis Ports.
-    */
-   extern function void create_tlm_objects();
-
-   /**
-    * Connects Exports to FIFOs.
-    */
-   extern function void connect_ports();
-
-   /**
-    * Samples #apb_adv_timer_cfg_cg
-    */
-   extern function void sample_cfg();
-
-   /**
-    * Samples #apb_adv_timer_cntxt_cg
-    */
-   extern function void sample_cntxt();
-
-   // TODO Add coverage functions to uvme_apb_adv_timer_cov_model_c
-   //      Ex: /**
-   //           * Samples #apb_adv_timer_pkt_cg
-   //           */
-   //          extern function void sample_pkt();
+   virtual task sample_tlm();
+      fork
+         // TODO Implement uvme_apb_adv_timer_cov_model_c::run_phase()
+         //      Ex: forever begin
+         //             pkt_fifo.get(pkt_trn);
+         //             apb_adv_timer_pkt_trn_cg.sample();
+         //          end
+      join
+   endtask
+   /// @}
 
 endclass : uvme_apb_adv_timer_cov_model_c
-
-
-function uvme_apb_adv_timer_cov_model_c::new(string name="uvme_apb_adv_timer_cov_model", uvm_component parent=null);
-
-   super.new(name, parent);
-   apb_adv_timer_cfg_cg   = new();
-   apb_adv_timer_cntxt_cg = new();
-   // TODO Create coverage groups for uvme_apb_adv_timer_cov_model_c
-   //      Ex: apb_adv_timer_pkt_cg = new();
-
-endfunction : new
-
-
-function void uvme_apb_adv_timer_cov_model_c::build_phase(uvm_phase phase);
-
-   super.build_phase(phase);
-   get_cfg           ();
-   get_cntxt         ();
-   create_tlm_objects();
-
-endfunction : build_phase
-
-
-function void uvme_apb_adv_timer_cov_model_c::connect_phase(uvm_phase phase);
-
-   super.connect_phase(phase);
-   connect_ports();
-
-endfunction : connect_phase
-
-
-task uvme_apb_adv_timer_cov_model_c::run_phase(uvm_phase phase);
-
-   super.run_phase(phase);
-   fork
-      // Configuration
-      forever begin
-         cntxt.sample_cfg_e.wait_trigger();
-         sample_cfg();
-      end
-      // Context
-      forever begin
-         cntxt.sample_cntxt_e.wait_trigger();
-         sample_cntxt();
-      end
-      // TODO Implement uvme_apb_adv_timer_cov_model_c::run_phase()
-      //      Ex: forever begin
-      //             pkt_fifo.get(pkt_trn);
-      //             sample_pkt();
-      //          end
-   join_none
-
-endtask : run_phase
-
-
-function void uvme_apb_adv_timer_cov_model_c::get_cfg();
-
-   void'(uvm_config_db#(uvme_apb_adv_timer_cfg_c)::get(this, "", "cfg", cfg));
-   if (!cfg) begin
-      `uvm_fatal("APB_ADV_TIMER_COV_MODEL", "Configuration handle is null")
-   end
-
-endfunction : get_cfg
-
-
-function void uvme_apb_adv_timer_cov_model_c::get_cntxt();
-
-   void'(uvm_config_db#(uvme_apb_adv_timer_cntxt_c)::get(this, "", "cntxt", cntxt));
-   if (!cntxt) begin
-      `uvm_fatal("APB_ADV_TIMER_COV_MODEL", "Context handle is null")
-   end
-
-endfunction : get_cntxt
-
-
-function void uvme_apb_adv_timer_cov_model_c::create_tlm_objects();
-
-   // TODO Build Input TLM
-   //      Ex: pkt_fifo = new("pkt_fifo", this);
-
-endfunction : create_tlm_objects
-
-
-function void uvme_apb_adv_timer_cov_model_c::connect_ports();
-
-   // TODO Connect Input TLM
-   //      Ex: pkt_export = pkt_trn_fifo.analysis_export;
-
-endfunction : connect_ports
-
-
-function void uvme_apb_adv_timer_cov_model_c::sample_cfg();
-
-   apb_adv_timer_cfg_cg.sample();
-
-endfunction : sample_cfg
-
-
-function void uvme_apb_adv_timer_cov_model_c::sample_cntxt();
-
-   apb_adv_timer_cntxt_cg.sample();
-
-endfunction : sample_cntxt
-
-
-// TODO Implement coverage function(s) to uvme_apb_adv_timer_cov_model_c
-//      Ex: function void uvme_apb_adv_timer_cov_model_c::sample_pkt();
-//
-//             apb_adv_timer_pkt_trn_cg.sample();
-//
-//          endfunction : sample_pkt
 
 
 `endif // __UVME_APB_ADV_TIMER_COV_MODEL_SV__

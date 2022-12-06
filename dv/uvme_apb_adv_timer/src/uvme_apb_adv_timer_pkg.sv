@@ -1,6 +1,5 @@
 // Copyright 2022 Datum Technology Corporation
-// Copyright 2022 Low Power Futures
-// SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
+// All rights reserved.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -10,7 +9,7 @@
 
 // Doxygen Groups
 /**
- * @defgroup uvme_apb_adv_timer_pkg CORE-V MCU APB Advanced Timer Sub-System UVM Environment
+ * @defgroup uvme_apb_adv_timer_pkg APB Advanced Timer Sub-System UVM Environment
  * @{
  * @defgroup uvme_apb_adv_timer_comps Components
  * @defgroup uvme_apb_adv_timer_misc  Miscellaneous
@@ -23,27 +22,24 @@
 
 // Pre-processor macros
 `include "uvm_macros.svh"
-`include "uvml_macros.svh"
-`include "uvml_sb_macros.svh"
-`include "uvml_ral_macros.svh"
-`include "uvma_clk_macros.svh"
-`include "uvma_reset_macros.svh"
+`include "uvmx_macros.svh"
 `include "uvma_apb_macros.svh"
 `include "uvme_apb_adv_timer_macros.svh"
 
 
+// Interface(s)
+`include "uvme_apb_adv_timer_probe_if.sv"
+
+
 /**
- * Encapsulates all the types of the CORE-V MCU APB Advanced Timer Sub-System UVM environment.
+ * Encapsulates all the types of the APB Advanced Timer Sub-System UVM environment.
  * @ingroup uvme_apb_adv_timer_pkg
  */
 package uvme_apb_adv_timer_pkg;
 
-   import uvm_pkg       ::*;
-   import uvml_pkg      ::*;
-   import uvml_sb_pkg   ::*;
-   import uvml_ral_pkg  ::*;
-   import uvma_clk_pkg  ::*;
-   import uvma_reset_pkg::*;
+   import uvm_pkg    ::*;
+   import uvmx_pkg   ::*;
+   import uvml_sb_pkg::*;
    import uvma_apb_pkg::*;
 
    // Constants / Structs / Enums
@@ -52,6 +48,7 @@ package uvme_apb_adv_timer_pkg;
 
    // Register Abstraction Layer
    `include "uvme_apb_adv_timer_reg_block.sv"
+   `include "uvme_apb_adv_timer_reg_ignore_lists.sv"
 
    // Objects
    `include "uvme_apb_adv_timer_cfg.sv"
@@ -71,10 +68,7 @@ endpackage : uvme_apb_adv_timer_pkg
 
 
 // Module(s) / Checker(s)
-`include "uvme_apb_adv_timer_probe_if.sv"
-`ifdef UVME_APB_ADV_TIMER_INC_CHKR
 `include "uvme_apb_adv_timer_chkr.sv"
-`endif
 
 
 `endif // __UVME_APB_ADV_TIMER_PKG_SV__

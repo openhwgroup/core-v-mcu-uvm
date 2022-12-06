@@ -1,6 +1,5 @@
 // Copyright 2022 Datum Technology Corporation
-// Copyright 2022 Low Power Futures
-// SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
+// All rights reserved.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -9,12 +8,13 @@
 
 
 /**
- * Interface encapsulating all extra signals to/from CORE-V MCU APB Advanced Timer Sub-System design hierarchy.
+ * Interface encapsulating all extra signals to/from APB Advanced Timer Sub-System design hierarchy.
  * @ingroup uvme_apb_adv_timer_misc
  */
-interface uvme_apb_adv_timer_probe_if;
-
-   import uvme_apb_adv_timer_pkg::*;
+interface uvme_apb_adv_timer_probe_if (
+   input  clk    ,
+   input  reset_n
+);
 
    logic         dft_cg_enable_i = 0;
    logic [31:0]  ext_sig_i       = 0;
@@ -23,6 +23,17 @@ interface uvme_apb_adv_timer_probe_if;
    logic [ 3:0]  ch_1_o             ;
    logic [ 3:0]  ch_2_o             ;
    logic [ 3:0]  ch_3_o             ;
+
+   clocking cb @(posedge clk);
+      input   events_o, ch_0_o, ch_1_o, ch_2_o, ch_3_o;
+      output  dft_cg_enable_i, ext_sig_i;
+   endclocking
+
+   modport mp (
+      clocking cb     ,
+      input    clk    ,
+      input    reset_n
+   );
 
 endinterface : uvme_apb_adv_timer_probe_if
 

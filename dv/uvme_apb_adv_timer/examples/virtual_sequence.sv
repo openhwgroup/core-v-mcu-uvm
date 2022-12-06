@@ -1,8 +1,7 @@
 // Copyright 2022 Datum Technology Corporation
-// Copyright 2022 Low Power Futures
-// SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
+// All rights reserved.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// This file contains sample code that demonstrates how to add a new sequence to the CORE-V MCU APB Advanced Timer Sub-System environment.
+// This file contains sample code that demonstrates how to add a new sequence to the APB Advanced Timer Sub-System environment.
 
 
 `ifndef __UVME_APB_ADV_TIMER_MY_SEQ_SV__

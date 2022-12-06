@@ -1,5 +1,5 @@
 # Copyright 2022 Datum Technology Corporation
-# SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
+# All rights reserved.
 ########################################################################################################################
 
 
@@ -10,3 +10,7 @@ description = ""
 
 [simulation]
 preferred-simulators = [ "vivado" ]
+
+[ip]
+paths = ["dv", "rtl", "rtl/core-v-mcu"]
+global-paths = ["/home/dpoulin/git/uvma_apb/dv", "/homes/dpoulin/git/uvma_obi/dv", "/homes/dpoulin/git/uvmx/dv"]

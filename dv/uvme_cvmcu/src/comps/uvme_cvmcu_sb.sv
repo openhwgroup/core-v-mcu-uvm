@@ -1,5 +1,5 @@
 // Copyright 2022 Datum Technology Corporation
-// SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
+// All rights reserved.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -8,16 +8,20 @@
 
 
 /**
- * Component encapsulating scoreboards which compare CORE-V MCU DUT's expected (from predictor) vs. actual (monitored) transactions.
+ * Component encapsulating scoreboards which compare CORE-V MCU Sub-System's expected (from predictor) vs. actual (monitored) transactions.
+ * @ingroup uvme_cvmcu_comps
  */
-class uvme_cvmcu_sb_c extends uvm_scoreboard;
+class uvme_cvmcu_sb_c extends uvmx_sb_c #(
+   .T_CFG  (uvme_cvmcu_cfg_c  ),
+   .T_CNTXT(uvme_cvmcu_cntxt_c)
+);
 
-   // Objects
-   uvme_cvmcu_cfg_c    cfg;
-   uvme_cvmcu_cntxt_c  cntxt;
-
-   // Components
-   uvme_cvmcu_dma_sb_c  dma_sb;
+   /// @name Components
+   /// @{
+   // TODO Add sub-scoreboards
+   //      Ex: uvml_sb_simplex_c  sb_egress ; ///< Describe me!
+   //          uvml_sb_simplex_c  sb_ingress; ///< Describe me!
+   /// @}
 
 
    `uvm_component_utils_begin(uvme_cvmcu_sb_c)
@@ -29,81 +33,38 @@ class uvme_cvmcu_sb_c extends uvm_scoreboard;
    /**
     * Default constructor.
     */
-   extern function new(string name="uvme_cvmcu_sb", uvm_component parent=null);
-
-   /**
-    * Create and configures sub-scoreboards via:
-    * 1. assign_cfg()
-    * 2. assign_cntxt()
-    * 3. create_sbs()
-    */
-   extern virtual function void build_phase(uvm_phase phase);
+   function new(string name="uvme_cvmcu_sb", uvm_component parent=null);
+      super.new(name, parent);
+   endfunction
 
    /**
     * Assigns configuration handles.
     */
-   extern function void assign_cfg();
+   virtual function void assign_cfg();
+      // TODO Implement uvme_cvmcu_sb_c::assign_cfg()
+      //      Ex: uvm_config_db#(uvml_sb_simplex_cfg_c)::set(this, "sb_egress" , "cfg", cfg.sb_egress_cfg );
+      //          uvm_config_db#(uvml_sb_simplex_cfg_c)::set(this, "sb_ingress", "cfg", cfg.sb_ingress_cfg);
+   endfunction
 
    /**
     * Assigns context handles.
     */
-   extern function void assign_cntxt();
+   virtual function void assign_cntxt();
+      // TODO Implement uvme_cvmcu_sb_c::assign_cntxt()
+      //      Ex: uvm_config_db#(uvml_sb_simplex_cntxt_c)::set(this, "sb_egress" , "cntxt", cntxt.sb_egress_cntxt );
+      //          uvm_config_db#(uvml_sb_simplex_cntxt_c)::set(this, "sb_ingress", "cntxt", cntxt.sb_ingress_cntxt);
+   endfunction
 
    /**
-    * Creates sub-scoreboard components.
+    * Creates scoreboard components.
     */
-   extern function void create_sbs();
+   virtual function void create_components();
+      // TODO Implement uvme_cvmcu_sb_c::create_sbs()
+      //      Ex: sb_egress  = uvml_sb_simplex_c::type_id::create("sb_egress" , this);
+      //          sb_ingress = uvml_sb_simplex_c::type_id::create("sb_ingress", this);
+   endfunction
 
 endclass : uvme_cvmcu_sb_c
-
-
-function uvme_cvmcu_sb_c::new(string name="uvme_cvmcu_sb", uvm_component parent=null);
-
-   super.new(name, parent);
-
-endfunction : new
-
-
-function void uvme_cvmcu_sb_c::build_phase(uvm_phase phase);
-
-   super.build_phase(phase);
-
-   void'(uvm_config_db#(uvme_cvmcu_cfg_c)::get(this, "", "cfg", cfg));
-   if (!cfg) begin
-      `uvm_fatal("CFG", "Configuration handle is null")
-   end
-
-   void'(uvm_config_db#(uvme_cvmcu_cntxt_c)::get(this, "", "cntxt", cntxt));
-   if (!cntxt) begin
-      `uvm_fatal("CNTXT", "Context handle is null")
-   end
-
-   assign_cfg  ();
-   assign_cntxt();
-   create_sbs  ();
-
-endfunction : build_phase
-
-
-function void uvme_cvmcu_sb_c::assign_cfg();
-
-   uvm_config_db#(uvml_sb_simplex_cfg_c)::set(this, "dma_sb", "cfg", cfg.dma_sb_cfg);
-
-endfunction : assign_cfg
-
-
-function void uvme_cvmcu_sb_c::assign_cntxt();
-
-   uvm_config_db#(uvml_sb_simplex_cntxt_c)::set(this, "dma_sb", "cntxt", cntxt.dma_sb_cntxt );
-
-endfunction : assign_cntxt
-
-
-function void uvme_cvmcu_sb_c::create_sbs();
-
-   dma_sb = uvme_cvmcu_dma_sb_c::type_id::create("dma_sb", this);
-
-endfunction : create_sbs
 
 
 `endif // __UVME_CVMCU_SB_SV__

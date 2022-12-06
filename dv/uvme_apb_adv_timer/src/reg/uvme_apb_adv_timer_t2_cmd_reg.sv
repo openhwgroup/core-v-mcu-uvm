@@ -11,14 +11,14 @@
 `define __UVME_APB_ADV_TIMER_T2_CMD_REG_SV__
 
 
-class uvme_apb_adv_timer_t2_cmd_reg_c extends uvml_ral_reg_c;
+class uvme_apb_adv_timer_t2_cmd_reg_c extends uvmx_reg_c;
 
-   rand uvml_ral_reg_field_c  start; ///< ADV_TIMER0 start command bitfield.
-   rand uvml_ral_reg_field_c  stop; ///< ADV_TIMER0 stop command bitfield.
-   rand uvml_ral_reg_field_c  update; ///< ADV_TIMER0 update command bitfield.
-   rand uvml_ral_reg_field_c  reset; ///< ADV_TIMER0 reset command bitfield.
-   rand uvml_ral_reg_field_c  arm; ///< ADV_TIMER0 arm command bitfield.
-   rand uvml_ral_reg_field_c  rfu; ///< 
+   rand uvmx_reg_field_c  start; ///< ADV_TIMER0 start command bitfield.
+   rand uvmx_reg_field_c  stop; ///< ADV_TIMER0 stop command bitfield.
+   rand uvmx_reg_field_c  update; ///< ADV_TIMER0 update command bitfield.
+   rand uvmx_reg_field_c  reset; ///< ADV_TIMER0 reset command bitfield.
+   rand uvmx_reg_field_c  arm; ///< ADV_TIMER0 arm command bitfield.
+   rand uvmx_reg_field_c  rfu; ///< 
 
 
    `uvm_object_utils_begin(uvme_apb_adv_timer_t2_cmd_reg_c)
@@ -53,7 +53,7 @@ endfunction : new
 
 function void uvme_apb_adv_timer_t2_cmd_reg_c::build();
 
-   start = uvml_ral_reg_field_c::type_id::create("start");
+   start = uvmx_reg_field_c::type_id::create("start");
    start.configure(
       .parent                 (this),
       .size                   (   1),
@@ -65,7 +65,7 @@ function void uvme_apb_adv_timer_t2_cmd_reg_c::build();
       .is_rand                (   1),
       .individually_accessible(   1)
    );
-   stop = uvml_ral_reg_field_c::type_id::create("stop");
+   stop = uvmx_reg_field_c::type_id::create("stop");
    stop.configure(
       .parent                 (this),
       .size                   (   1),
@@ -77,7 +77,7 @@ function void uvme_apb_adv_timer_t2_cmd_reg_c::build();
       .is_rand                (   1),
       .individually_accessible(   1)
    );
-   update = uvml_ral_reg_field_c::type_id::create("update");
+   update = uvmx_reg_field_c::type_id::create("update");
    update.configure(
       .parent                 (this),
       .size                   (   1),
@@ -89,7 +89,7 @@ function void uvme_apb_adv_timer_t2_cmd_reg_c::build();
       .is_rand                (   1),
       .individually_accessible(   1)
    );
-   reset = uvml_ral_reg_field_c::type_id::create("reset");
+   reset = uvmx_reg_field_c::type_id::create("reset");
    reset.configure(
       .parent                 (this),
       .size                   (   1),
@@ -101,7 +101,7 @@ function void uvme_apb_adv_timer_t2_cmd_reg_c::build();
       .is_rand                (   1),
       .individually_accessible(   1)
    );
-   arm = uvml_ral_reg_field_c::type_id::create("arm");
+   arm = uvmx_reg_field_c::type_id::create("arm");
    arm.configure(
       .parent                 (this),
       .size                   (   1),
@@ -113,7 +113,7 @@ function void uvme_apb_adv_timer_t2_cmd_reg_c::build();
       .is_rand                (   1),
       .individually_accessible(   1)
    );
-   rfu = uvml_ral_reg_field_c::type_id::create("rfu");
+   rfu = uvmx_reg_field_c::type_id::create("rfu");
    rfu.configure(
       .parent                 (this),
       .size                   (   27),

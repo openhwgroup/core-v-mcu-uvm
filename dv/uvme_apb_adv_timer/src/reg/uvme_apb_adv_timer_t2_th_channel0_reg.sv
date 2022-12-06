@@ -11,10 +11,10 @@
 `define __UVME_APB_ADV_TIMER_T2_TH_CHANNEL0_REG_SV__
 
 
-class uvme_apb_adv_timer_t2_th_channel0_reg_c extends uvml_ral_reg_c;
+class uvme_apb_adv_timer_t2_th_channel0_reg_c extends uvmx_reg_c;
 
-   rand uvml_ral_reg_field_c  th; ///< ADV_TIMER0 channel 0 threshold configuration bitfield.
-   rand uvml_ral_reg_field_c  mode; ///< ADV_TIMER0 channel 0 threshold match action on channel output signal configuration bitfield:
+   rand uvmx_reg_field_c  th; ///< ADV_TIMER0 channel 0 threshold configuration bitfield.
+   rand uvmx_reg_field_c  mode; ///< ADV_TIMER0 channel 0 threshold match action on channel output signal configuration bitfield:
 
 
    `uvm_object_utils_begin(uvme_apb_adv_timer_t2_th_channel0_reg_c)
@@ -45,7 +45,7 @@ endfunction : new
 
 function void uvme_apb_adv_timer_t2_th_channel0_reg_c::build();
 
-   th = uvml_ral_reg_field_c::type_id::create("th");
+   th = uvmx_reg_field_c::type_id::create("th");
    th.configure(
       .parent                 (this),
       .size                   (   16),
@@ -57,7 +57,7 @@ function void uvme_apb_adv_timer_t2_th_channel0_reg_c::build();
       .is_rand                (   1),
       .individually_accessible(   1)
    );
-   mode = uvml_ral_reg_field_c::type_id::create("mode");
+   mode = uvmx_reg_field_c::type_id::create("mode");
    mode.configure(
       .parent                 (this),
       .size                   (   3),

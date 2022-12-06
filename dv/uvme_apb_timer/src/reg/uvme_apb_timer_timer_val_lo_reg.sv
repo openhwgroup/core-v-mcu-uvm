@@ -11,9 +11,9 @@
 `define __UVME_APB_TIMER_TIMER_VAL_LO_REG_SV__
 
 
-class uvme_apb_timer_timer_val_lo_reg_c extends uvml_ral_reg_c;
+class uvme_apb_timer_timer_val_lo_reg_c extends uvmx_reg_c;
 
-   rand uvml_ral_reg_field_c  timer_val_lo; ///< 32-bit counter value – low 32-bits in 64-bit mode
+   rand uvmx_reg_field_c  timer_val_lo; ///< 32-bit counter value – low 32-bits in 64-bit mode
 
 
    `uvm_object_utils_begin(uvme_apb_timer_timer_val_lo_reg_c)
@@ -43,7 +43,7 @@ endfunction : new
 
 function void uvme_apb_timer_timer_val_lo_reg_c::build();
 
-   timer_val_lo = uvml_ral_reg_field_c::type_id::create("timer_val_lo");
+   timer_val_lo = uvmx_reg_field_c::type_id::create("timer_val_lo");
    timer_val_lo.configure(
       .parent                 (this),
       .size                   (   32),

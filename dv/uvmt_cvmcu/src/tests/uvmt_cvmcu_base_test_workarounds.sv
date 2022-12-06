@@ -1,5 +1,5 @@
 // Copyright 2022 Datum Technology Corporation
-// SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
+// All rights reserved.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -7,11 +7,8 @@
 `define __UVMT_CVMCU_BASE_TEST_WORKAROUNDS_SV__
 
 
-// This file should be empty by the end of the project
-constraint disable_cov_cons {
-   env_cfg.cov_model_enabled     == 0;
-   env_cfg.scoreboarding_enabled == 0;
-}
+// Temporary configuration constraints here (this file should be empty by the end of the project).
+constraint no_sb_cons { env_cfg.scoreboarding_enabled == 0; } // TODO Remove this to enable scoreboards end-of-test error reporting!
 
 
 `endif // __UVMT_CVMCU_BASE_TEST_WORKAROUNDS_SV__

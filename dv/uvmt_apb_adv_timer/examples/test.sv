@@ -1,8 +1,7 @@
 // Copyright 2022 Datum Technology Corporation
-// Copyright 2022 Low Power Futures
-// SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
+// All rights reserved.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// This file contains sample code that demonstrates how to add a new test to the CORE-V MCU APB Advanced Timer Sub-System Test Bench and UVM Test Library.
+// This file contains sample code that demonstrates how to add a new test to the APB Advanced Timer Sub-System Test Bench and UVM Test Library.
 
 
 `ifndef __UVMT_APB_ADV_TIMER_MY_TEST_SV__

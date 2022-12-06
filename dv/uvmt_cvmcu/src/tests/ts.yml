@@ -1,31 +1,64 @@
 # Copyright 2022 Datum Technology Corporation
-# SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
+# All rights reserved.
 ########################################################################################################################
 
 
-suite:
+test-suite:
    info:
-      name: CORE-V-MCU UVM Test Suite
+      name: CORE-V MCU Sub-System UVM Test Suite
       ip: uvmt_cvmcu
    target:
-      compilation-args: []
-      elaboration-args: []
+      cmp-args : []
+      elab-args: []
+      sim-args : []
    settings:
       waves: [sanity, bugs]
       cov  : [nightly, weekly]
-      verbosity   : { sanity: high, nightly: medium, weekly: low, bugs: debug }
-      max-duration: { sanity: 1, nightly:  5, weekly: 12, bugs: 1 }
-      max-jobs    : { sanity: 5, nightly: 10, weekly: 20, bugs: 1 }
+      verbosity:
+         sanity : high
+         nightly: medium
+         weekly : low
+         bugs   : debug
+      max-duration:
+         sanity :  1
+         nightly:  5
+         weekly : 12
+         bugs   :  1
+      max-jobs:
+         sanity :  5
+         nightly: 10
+         weekly : 20
+         bugs   :  1
 
 functional:
    registers:
       reg_hw_reset:
-         - { regr: sanity , seeds: [1] }
-         - { regr: nightly, seeds: [1] }
-         - { regr: weekly , seeds: [1] }
-         - { regr: bugs   , seeds:  [] }
+         sanity : [1]
+         nightly: [1]
+         weekly : [1]
+         bugs   :  []
       reg_bit_bash:
-         - { regr: sanity , seeds: [1] }
-         - { regr: nightly, seeds: [1] }
-         - { regr: weekly , seeds: [1] }
-         - { regr: bugs   , seeds:  [] }
+         sanity : [1]
+         nightly: [1]
+         weekly : [1]
+         bugs   :  []
+      reg_access:
+         sanity : []
+         nightly: []
+         weekly : []
+         bugs   : []
+      mem_access:
+         sanity : []
+         nightly: []
+         weekly : []
+         bugs   : []
+      shared_access:
+         sanity : []
+         nightly: []
+         weekly : []
+         bugs   : []
+      mem_walk:
+         sanity : [1]
+         nightly: [1]
+         weekly : [1]
+         bugs   :  []

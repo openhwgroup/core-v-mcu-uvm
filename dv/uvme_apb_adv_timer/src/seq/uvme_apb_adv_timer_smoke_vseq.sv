@@ -1,6 +1,5 @@
 // Copyright 2022 Datum Technology Corporation
-// Copyright 2022 Low Power Futures
-// SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
+// All rights reserved.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -19,40 +18,30 @@ class uvme_apb_adv_timer_smoke_vseq_c extends uvme_apb_adv_timer_base_vseq_c;
    /**
     * Default constructor.
     */
-   extern function new(string name="uvme_apb_adv_timer_smoke_vseq");
+   function new(string name="uvme_apb_adv_timer_smoke_vseq");
+      super.new(name);
+   endfunction
 
    /**
     * Reads/writes registers.
     */
-   extern virtual task body();
+   virtual task body();
+      uvma_apb_seq_item_c  req;
+      // Write
+      `uvm_do_on_with(req, p_sequencer.apb_vsequencer, {
+         access_type == UVMA_APB_ACCESS_WRITE;
+         address     == 32'h1A10_5004;
+         data        == 32'h9876_ABCD;
+      })
+      // Read
+      `uvm_do_on_with(req, p_sequencer.apb_vsequencer, {
+         access_type == UVMA_APB_ACCESS_READ;
+         address     == 32'h1A10_5004;
+      })
+      `uvm_info("SMOKE_VSEQ", $sformatf("Data read back from location 'x%h is x%h", req.address, req.data), UVM_LOW)
+   endtask
 
 endclass : uvme_apb_adv_timer_smoke_vseq_c
-
-
-function uvme_apb_adv_timer_smoke_vseq_c::new(string name="uvme_apb_adv_timer_smoke_vseq");
-
-   super.new(name);
-
-endfunction : new
-
-
-task uvme_apb_adv_timer_smoke_vseq_c::body();
-
-   uvma_apb_seq_item_c  req;
-   // Write
-   `uvm_do_on_with(req, p_sequencer.apb_vsequencer, {
-      access_type == UVMA_APB_ACCESS_WRITE;
-      address     == 32'h1A10_5004;
-      data        == 32'h9876_ABCD;
-   })
-   // Read
-   `uvm_do_on_with(req, p_sequencer.apb_vsequencer, {
-      access_type == UVMA_APB_ACCESS_READ;
-      address     == 32'h1A10_5004;
-   })
-   `uvm_info("SMOKE_VSEQ", $sformatf("Data read back from location 'x%h is x%h", req.address, req.data), UVM_LOW)
-
-endtask : body
 
 
 `endif // __UVME_APB_ADV_TIMER_SMOKE_VSEQ_SV__

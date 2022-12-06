@@ -1,5 +1,5 @@
 // Copyright 2022 Datum Technology Corporation
-// SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
+// All rights reserved.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -8,79 +8,75 @@
 
 
 /**
- * Object encapsulating all state variables for CORE-V MCU environment (uvme_cvmcu_env_c) components.
+ * Object encapsulating all state variables for CORE-V MCU Sub-System environment (uvme_cvmcu_env_c) components.
+ * @ingroup uvme_cvmcu_obj
  */
-class uvme_cvmcu_cntxt_c extends uvm_object;
+class uvme_cvmcu_cntxt_c extends uvmx_env_cntxt_c #(
+   .T_REG_MODEL(uvme_cvmcu_reg_block_c)
+);
 
-   // Agent context handles
-   uvma_clk_cntxt_c         sys_clk_cntxt;
-   uvma_reset_cntxt_c       sys_reset_cntxt;
-   uvma_obi_cntxt_c         obi_instr_cntxt;
-   uvma_obi_cntxt_c         obi_data_cntxt;
-   uvma_cvmcu_intr_cntxt_c  intr_cntxt;
+   virtual uvme_cvmcu_probe_if  probe_vif; ///< Handle to DUT probe interface
 
-   // Scoreboard context handles
-   uvml_sb_simplex_cntxt_c  dma_sb_cntxt;
+   /// @name Integrals
+   /// @{
+   /// @}
 
-   // Events
-   uvm_event  sample_cfg_e;
-   uvm_event  sample_cntxt_e;
+   /// @name Sub-environments
+   /// @{
+   // TODO Add sub-environments context handles
+   //      Ex: uvme_sub_cntxt_c  sub_env_cntxt; ///< Describe me!
+   /// @}
+
+   /// @name Agents
+   /// @{
+   uvma_obi_cntxt_c  obi_instr_cntxt; ///< Register access agent content
+   uvma_obi_cntxt_c  obi_data_cntxt; ///< Register access agent content
+   /// @}
+
+   /// @name Objects
+   /// @{
+   // TODO Add scoreboard context handles
+   //      Ex: uvml_sb_simplex_cntxt_c  sb_egress_cntxt ; ///< Describe me!
+   //          uvml_sb_simplex_cntxt_c  sb_ingress_cntxt; ///< Describe me!
+   /// @}
 
 
    `uvm_object_utils_begin(uvme_cvmcu_cntxt_c)
-      `uvm_field_object(sys_clk_cntxt  , UVM_DEFAULT)
-      `uvm_field_object(sys_reset_cntxt, UVM_DEFAULT)
+      `uvm_field_enum(uvmx_reset_state_enum, reset_state, UVM_DEFAULT)
+       // TODO: Add sub-environments context field macros
+       //       Ex: `uvm_field_object(sub_env_cntxt, UVM_DEFAULT)
       `uvm_field_object(obi_instr_cntxt, UVM_DEFAULT)
       `uvm_field_object(obi_data_cntxt , UVM_DEFAULT)
-      `uvm_field_object(intr_cntxt     , UVM_DEFAULT)
-
-      `uvm_field_object(dma_sb_cntxt, UVM_DEFAULT)
-
-      `uvm_field_event(sample_cfg_e  , UVM_DEFAULT)
-      `uvm_field_event(sample_cntxt_e, UVM_DEFAULT)
+      // TODO Add scoreboard context field macros
+      //      Ex: `uvm_field_object(sb_egress_cntxt , UVM_DEFAULT)
+      //          `uvm_field_object(sb_ingress_cntxt, UVM_DEFAULT)
    `uvm_object_utils_end
 
 
    /**
     * Builds events and sub-context objects.
     */
-   extern function new(string name="uvme_cvmcu_cntxt");
+   function new(string name="uvme_cvmcu_cntxt");
+      super.new(name);
+      // TODO Create environment cntxt objects
+      //      Ex: sub_env_cntxt  = uvme_sub_env_cntxt_c::type_id::create("sub_env_cntxt");
+      obi_instr_cntxt = uvma_obi_cntxt_c::type_id::create("obi_instr_cntxt");
+      obi_data_cntxt  = uvma_obi_cntxt_c::type_id::create("obi_data_cntxt" );
+      // TODO Create uvme_cvmcu_cntxt_c scoreboard context objects
+      //      Ex: sb_egress_cntxt  = uvml_sb_simplex_cntxt_c::type_id::create("sb_egress_cntxt" );
+      //          sb_ingress_cntxt = uvml_sb_simplex_cntxt_c::type_id::create("sb_ingress_cntxt");
+   endfunction
 
 
    /**
-    * TODO Describe uvme_cvmcu_cntxt_c::reset()
+    * Returns all state variables to initial values.
     */
-   extern function void reset();
+   virtual function void reset();
+      obi_instr_cntxt.reset();
+      obi_data_cntxt .reset();
+   endfunction
 
 endclass : uvme_cvmcu_cntxt_c
-
-
-function uvme_cvmcu_cntxt_c::new(string name="uvme_cvmcu_cntxt");
-
-   super.new(name);
-
-   sys_clk_cntxt   = uvma_reset_cntxt_c     ::type_id::create("sys_clk_cntxt"  );
-   sys_reset_cntxt = uvma_reset_cntxt_c     ::type_id::create("sys_reset_cntxt");
-   obi_instr_cntxt = uvma_obi_cntxt_c       ::type_id::create("obi_instr_cntxt");
-   obi_data_cntxt  = uvma_obi_cntxt_c       ::type_id::create("obi_data_cntxt" );
-   intr_cntxt      = uvma_cvmcu_intr_cntxt_c::type_id::create("intr_cntxt"     );
-
-   // Create uvme_cvmcu_cntxt_c scoreboard context objects
-   dma_sb_cntxt = uvml_sb_simplex_cntxt_c::type_id::create("dma_sb_cntxt");
-
-   sample_cfg_e   = new("sample_cfg_e"  );
-   sample_cntxt_e = new("sample_cntxt_e");
-
-endfunction : new
-
-
-function void uvme_cvmcu_cntxt_c::reset();
-
-   obi_instr_cntxt.reset();
-   obi_data_cntxt .reset();
-   intr_cntxt     .reset();
-
-endfunction : reset
 
 
 `endif // __UVME_CVMCU_CNTXT_SV__

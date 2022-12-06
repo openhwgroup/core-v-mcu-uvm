@@ -1,5 +1,5 @@
 // Copyright 2022 Datum Technology Corporation
-// SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
+// All rights reserved.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -8,7 +8,7 @@
 
 
 /**
- * Virtual sequence checking basic access to the DUT.
+ * Virtual Sequence that checks basic register access to DUT.
  */
 class uvme_cvmcu_smoke_vseq_c extends uvme_cvmcu_base_vseq_c;
 
@@ -18,40 +18,30 @@ class uvme_cvmcu_smoke_vseq_c extends uvme_cvmcu_base_vseq_c;
    /**
     * Default constructor.
     */
-   extern function new(string name="uvme_cvmcu_smoke_vseq_c");
+   function new(string name="uvme_cvmcu_smoke_vseq");
+      super.new(name);
+   endfunction
 
    /**
-    * TODO Describe uvme_cvmcu_smoke_vseq_c::body()
+    * Reads/writes registers.
     */
-   extern virtual task body();
+   virtual task body();
+      uvma_obi_seq_item_c  req;
+      // Write
+      `uvm_do_on_with(req, p_sequencer.obi_data_vsequencer, {
+         access_type == UVMA_OBI_ACCESS_WRITE;
+         address     == 32'h1A10_B000;
+         data        == 32'h9876_ABCD;
+      })
+      // Read
+      `uvm_do_on_with(req, p_sequencer.obi_data_vsequencer, {
+         access_type == UVMA_OBI_ACCESS_READ;
+         address     == 32'h1A10_B000;
+      })
+      `uvm_info("SMOKE_VSEQ", $sformatf("Data read back from location 'x%h is x%h", req.address, req.data), UVM_LOW)
+   endtask
 
 endclass : uvme_cvmcu_smoke_vseq_c
-
-
-function uvme_cvmcu_smoke_vseq_c::new(string name="uvme_cvmcu_smoke_vseq_c");
-
-   super.new(name);
-
-endfunction : new
-
-
-task uvme_cvmcu_smoke_vseq_c::body();
-
-   uvma_obi_seq_item_c  req;
-   // Write
-   `uvm_do_on_with(req, p_sequencer.obi_data_sequencer, {
-      access_type == UVMA_OBI_ACCESS_WRITE;
-      address     == 32'h1A10_B000;
-      data        == 32'h9876_ABCD;
-   })
-   // Read
-   `uvm_do_on_with(req, p_sequencer.obi_data_sequencer, {
-      access_type == UVMA_OBI_ACCESS_READ;
-      address     == 32'h1A10_B000;
-   })
-   `uvm_info("SMOKE_VSEQ", $sformatf("Data read back from location 'x%h is x%h", req.address, req.data), UVM_LOW)
-
-endtask : body
 
 
 `endif // __UVME_CVMCU_SMOKE_VSEQ_SV__

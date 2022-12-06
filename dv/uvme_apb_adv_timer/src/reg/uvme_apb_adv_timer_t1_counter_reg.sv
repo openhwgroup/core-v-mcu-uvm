@@ -11,9 +11,9 @@
 `define __UVME_APB_ADV_TIMER_T1_COUNTER_REG_SV__
 
 
-class uvme_apb_adv_timer_t1_counter_reg_c extends uvml_ral_reg_c;
+class uvme_apb_adv_timer_t1_counter_reg_c extends uvmx_reg_c;
 
-   rand uvml_ral_reg_field_c  counter; ///< ADV_TIMER0 counter value.
+   rand uvmx_reg_field_c  counter; ///< ADV_TIMER0 counter value.
 
 
    `uvm_object_utils_begin(uvme_apb_adv_timer_t1_counter_reg_c)
@@ -43,7 +43,7 @@ endfunction : new
 
 function void uvme_apb_adv_timer_t1_counter_reg_c::build();
 
-   counter = uvml_ral_reg_field_c::type_id::create("counter");
+   counter = uvmx_reg_field_c::type_id::create("counter");
    counter.configure(
       .parent                 (this),
       .size                   (   16),

@@ -26,13 +26,7 @@
 /**
  * Top-Level Register Block for apb_timer.
  */
-class uvme_apb_timer_reg_block_c extends uvml_ral_reg_block_c;
-
-   /// @name Objects
-   /// @{
-   uvme_apb_timer_cfg_c    cfg  ; ///< Environment configuration handle
-   uvme_apb_timer_cntxt_c  cntxt; ///< Environment context handle
-   /// @}
+class uvme_apb_timer_reg_block_c extends uvmx_reg_block_c;
 
    /// @name Registers
    /// @{

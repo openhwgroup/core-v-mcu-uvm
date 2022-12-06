@@ -12,7 +12,7 @@
 @section license_agreement_ug License Agreement
 © Copyright 2022 Datum Technology Corporation
 
-SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
+All rights reserved.
 
 
 @section user_guide_id Document Information
@@ -22,7 +22,7 @@ ID | Name | Version
 
 
 @subsection user_guide_description Description
-This guide will walk you through integrating the CORE-V MCU APB Timer Sub-System UVM Environment in your own UVM Environment and Test Bench.
+This guide will walk you through integrating the APB Timer Sub-System UVM Environment in your own UVM Environment and Test Bench.
 
 ![uvme_apb_timer_env_c Block Diagram](env_block_diagram.svg)
 
@@ -49,12 +49,12 @@ The Moore.io Client CLI, used throughout this tutorial is available via "pipx":
 
 
 @section user_guide_guide_installation Installation
-Install the CORE-V MCU APB Timer Sub-System UVM Environment: @code{.sh}mio install uvme_apb_timer@endcode
+Install the APB Timer Sub-System UVM Environment: @code{.sh}mio install uvme_apb_timer@endcode
 
 
 
 @section user_guide_guide_todo Contents
-TODO Finish the CORE-V MCU APB Timer User Guide
+TODO Finish the APB Timer User Guide
 
 
 

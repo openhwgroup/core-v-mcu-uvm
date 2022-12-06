@@ -11,9 +11,9 @@
 `define __UVME_APB_TIMER_TIMER_RESET_HI_REG_SV__
 
 
-class uvme_apb_timer_timer_reset_hi_reg_c extends uvml_ral_reg_c;
+class uvme_apb_timer_timer_reset_hi_reg_c extends uvmx_reg_c;
 
-   rand uvml_ral_reg_field_c  timer_reset_hi; ///< Write strobe address for resetting the high counter
+   rand uvmx_reg_field_c  timer_reset_hi; ///< Write strobe address for resetting the high counter
 
 
    `uvm_object_utils_begin(uvme_apb_timer_timer_reset_hi_reg_c)
@@ -43,7 +43,7 @@ endfunction : new
 
 function void uvme_apb_timer_timer_reset_hi_reg_c::build();
 
-   timer_reset_hi = uvml_ral_reg_field_c::type_id::create("timer_reset_hi");
+   timer_reset_hi = uvmx_reg_field_c::type_id::create("timer_reset_hi");
    timer_reset_hi.configure(
       .parent                 (this),
       .size                   (   32),

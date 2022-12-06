@@ -1,6 +1,5 @@
 // Copyright 2022 Datum Technology Corporation
-// Copyright 2022 Low Power Futures
-// SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
+// All rights reserved.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -9,18 +8,19 @@
 
 
 /**
- * Module wrapper for CORE-V MCU APB Timer Sub-System DUT.  All ports are SV interfaces.
+ * Module wrapper for APB Timer Sub-System DUT.  All ports are SV interfaces.
  * @ingroup uvmt_apb_timer_tb
  */
 module uvmt_apb_timer_dut_wrap (
-   uvma_apb_if              apb_if  , ///< Register access interface
-   uvme_apb_timer_probe_if  probe_if  ///< Misc. signals
+   uvma_clk_if              sys_clk_if  , ///< Clock generating interface
+   uvma_reset_if            sys_reset_if, ///< Reset assertion interface
+   uvma_apb_if              apb_if      , ///< Register access interface
+   uvme_apb_timer_probe_if  probe_if      ///< Misc. signals
 );
 
-   // \/ CODE BELOW IS RESPONSABILITY OF DESIGNERS \/
    apb_timer_unit  dut (
-      .HCLK        (apb_if.clk          ),
-      .HRESETn     (apb_if.reset_n      ),
+      .HCLK        (sys_clk_if.clk      ),
+      .HRESETn     (sys_reset_if.reset_n),
       .PADDR       (apb_if.paddr        ),
       .PWDATA      (apb_if.pwdata       ),
       .PWRITE      (apb_if.pwrite       ),
@@ -29,7 +29,7 @@ module uvmt_apb_timer_dut_wrap (
       .PRDATA      (apb_if.prdata       ),
       .PREADY      (apb_if.pready       ),
       .PSLVERR     (apb_if.pslverr      ),
-      .ref_clk_i   (apb_if.clk          ),
+      .ref_clk_i   (sys_clk_if.clk      ),
       .stoptimer_i (probe_if.stoptimer_i),
       .event_lo_i  (probe_if.event_lo_i ),
       .event_hi_i  (probe_if.event_hi_i ),
@@ -37,7 +37,9 @@ module uvmt_apb_timer_dut_wrap (
       .irq_hi_o    (probe_if.irq_hi_o   ),
       .busy_o      (probe_if.busy_o     )
    );
-   // /\ CODE ABOVE IS RESPONSABILITY OF DESIGNERS /\
+
+   // TODO Connect probe interface signals to design
+   //      Ex: assign probe_if.abc = dut.abc;
 
 endmodule : uvmt_apb_timer_dut_wrap
 

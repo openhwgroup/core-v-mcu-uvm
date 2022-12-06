@@ -12,13 +12,13 @@
 @section license_agreement License Agreement
 © Copyright 2022 Datum Technology Corporation
 
-SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
+All rights reserved.
 
 
 
 @section ip_desc IP Description
-This IP contains the Datum Technology Corporation CORE-V MCU APB Advanced Timer Sub-System UVM Environment.
-TODO Describe CORE-V MCU APB Advanced Timer Sub-System UVM Environment
+This IP contains the Datum Technology Corporation APB Advanced Timer Sub-System UVM Environment.
+TODO Describe APB Advanced Timer Sub-System UVM Environment
 
 ![uvme_apb_adv_timer_env_c Block Diagram](env_block_diagram.svg)
 

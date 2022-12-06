@@ -11,13 +11,13 @@
 `define __UVME_APB_ADV_TIMER_T1_CONFIG_REG_SV__
 
 
-class uvme_apb_adv_timer_t1_config_reg_c extends uvml_ral_reg_c;
+class uvme_apb_adv_timer_t1_config_reg_c extends uvmx_reg_c;
 
-   rand uvml_ral_reg_field_c  insel; ///< ADV_TIMER0 input source configuration bitfield:
-   rand uvml_ral_reg_field_c  mode; ///< ADV_TIMER0 trigger mode configuration bitfield:
-   rand uvml_ral_reg_field_c  clksel; ///< ADV_TIMER0 clock source configuration bitfield:
-   rand uvml_ral_reg_field_c  updownsel; ///< ADV_TIMER0 center-aligned mode configuration bitfield:
-   rand uvml_ral_reg_field_c  presc; ///< ADV_TIMER0 prescaler value configuration bitfield.
+   rand uvmx_reg_field_c  insel; ///< ADV_TIMER0 input source configuration bitfield:
+   rand uvmx_reg_field_c  mode; ///< ADV_TIMER0 trigger mode configuration bitfield:
+   rand uvmx_reg_field_c  clksel; ///< ADV_TIMER0 clock source configuration bitfield:
+   rand uvmx_reg_field_c  updownsel; ///< ADV_TIMER0 center-aligned mode configuration bitfield:
+   rand uvmx_reg_field_c  presc; ///< ADV_TIMER0 prescaler value configuration bitfield.
 
 
    `uvm_object_utils_begin(uvme_apb_adv_timer_t1_config_reg_c)
@@ -51,7 +51,7 @@ endfunction : new
 
 function void uvme_apb_adv_timer_t1_config_reg_c::build();
 
-   insel = uvml_ral_reg_field_c::type_id::create("insel");
+   insel = uvmx_reg_field_c::type_id::create("insel");
    insel.configure(
       .parent                 (this),
       .size                   (   8),
@@ -63,7 +63,7 @@ function void uvme_apb_adv_timer_t1_config_reg_c::build();
       .is_rand                (   1),
       .individually_accessible(   1)
    );
-   mode = uvml_ral_reg_field_c::type_id::create("mode");
+   mode = uvmx_reg_field_c::type_id::create("mode");
    mode.configure(
       .parent                 (this),
       .size                   (   3),
@@ -75,7 +75,7 @@ function void uvme_apb_adv_timer_t1_config_reg_c::build();
       .is_rand                (   1),
       .individually_accessible(   1)
    );
-   clksel = uvml_ral_reg_field_c::type_id::create("clksel");
+   clksel = uvmx_reg_field_c::type_id::create("clksel");
    clksel.configure(
       .parent                 (this),
       .size                   (   1),
@@ -87,7 +87,7 @@ function void uvme_apb_adv_timer_t1_config_reg_c::build();
       .is_rand                (   1),
       .individually_accessible(   1)
    );
-   updownsel = uvml_ral_reg_field_c::type_id::create("updownsel");
+   updownsel = uvmx_reg_field_c::type_id::create("updownsel");
    updownsel.configure(
       .parent                 (this),
       .size                   (   1),
@@ -99,7 +99,7 @@ function void uvme_apb_adv_timer_t1_config_reg_c::build();
       .is_rand                (   1),
       .individually_accessible(   1)
    );
-   presc = uvml_ral_reg_field_c::type_id::create("presc");
+   presc = uvmx_reg_field_c::type_id::create("presc");
    presc.configure(
       .parent                 (this),
       .size                   (   8),

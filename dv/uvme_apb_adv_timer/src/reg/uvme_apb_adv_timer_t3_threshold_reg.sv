@@ -11,10 +11,10 @@
 `define __UVME_APB_ADV_TIMER_T3_THRESHOLD_REG_SV__
 
 
-class uvme_apb_adv_timer_t3_threshold_reg_c extends uvml_ral_reg_c;
+class uvme_apb_adv_timer_t3_threshold_reg_c extends uvmx_reg_c;
 
-   rand uvml_ral_reg_field_c  th_lo; ///< ADV_TIMER0 threshold low part configuration bitfield. It defines start counter value.
-   rand uvml_ral_reg_field_c  th_hi; ///< ADV_TIMER0 threshold high part configuration bitfield. It defines end counter value.
+   rand uvmx_reg_field_c  th_lo; ///< ADV_TIMER0 threshold low part configuration bitfield. It defines start counter value.
+   rand uvmx_reg_field_c  th_hi; ///< ADV_TIMER0 threshold high part configuration bitfield. It defines end counter value.
 
 
    `uvm_object_utils_begin(uvme_apb_adv_timer_t3_threshold_reg_c)
@@ -45,7 +45,7 @@ endfunction : new
 
 function void uvme_apb_adv_timer_t3_threshold_reg_c::build();
 
-   th_lo = uvml_ral_reg_field_c::type_id::create("th_lo");
+   th_lo = uvmx_reg_field_c::type_id::create("th_lo");
    th_lo.configure(
       .parent                 (this),
       .size                   (   16),
@@ -57,7 +57,7 @@ function void uvme_apb_adv_timer_t3_threshold_reg_c::build();
       .is_rand                (   1),
       .individually_accessible(   1)
    );
-   th_hi = uvml_ral_reg_field_c::type_id::create("th_hi");
+   th_hi = uvmx_reg_field_c::type_id::create("th_hi");
    th_hi.configure(
       .parent                 (this),
       .size                   (   16),

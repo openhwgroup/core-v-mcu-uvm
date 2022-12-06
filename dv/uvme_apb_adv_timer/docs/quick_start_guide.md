@@ -12,7 +12,7 @@
 @section quick_start_license_agreement License Agreement
 © Copyright 2022 Datum Technology Corporation
 
-SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
+All rights reserved.
 
 
 
@@ -23,7 +23,7 @@ ID | Name | Version
 
 
 @subsection quick_start_guide_description Description
-This document is a short guide to running the CORE-V MCU APB Advanced Timer Sub-System UVM Environment in its own Test Bench.
+This document is a short guide to running the APB Advanced Timer Sub-System UVM Environment in its own Test Bench.
 
 ![uvme_apb_adv_timer_env_c Block Diagram](env_block_diagram.svg)
 
@@ -50,23 +50,23 @@ The Moore.io Client CLI, used throughout this tutorial is available via "pipx":
 
 
 @section quick_start_guide_introduction Introduction
-The CORE-V MCU APB Advanced Timer UVM Environment has a Test Bench used to verify the CORE-V MCU APB Advanced Timer Sub-System thoroughly.
+The APB Advanced Timer UVM Environment has a Test Bench used to verify the APB Advanced Timer Sub-System thoroughly.
 This guide will walk you through running a Test from this Test Bench.
 
 
 
 @section quick_start_guide_installation Installation
-1. Install the CORE-V MCU APB Advanced Timer Sub-System UVM Environment: @code{.sh}mio install uvme_apb_adv_timer@endcode
-2. Install the CORE-V MCU APB Advanced Timer Sub-System UVM Test Bench: @code{.sh}mio install uvmt_apb_adv_timer@endcode
+1. Install the APB Advanced Timer Sub-System UVM Environment: @code{.sh}mio install uvme_apb_adv_timer@endcode
+2. Install the APB Advanced Timer Sub-System UVM Test Bench: @code{.sh}mio install uvmt_apb_adv_timer@endcode
 
 
 @section quick_start_guide_compile_elaborate Compile and Elaborate
-1. Compile the CORE-V MCU APB Advanced Timer Sub-System UVM Test Bench: @code{.sh}mio sim uvmt_apb_adv_timer -C@endcode
-2. Elaborate the CORE-V MCU APB Advanced Timer Sub-System UVM Test Bench with wave capture enabled: @code{.sh}mio sim uvmt_apb_adv_timer -E -w@endcode
+1. Compile the APB Advanced Timer Sub-System UVM Test Bench: @code{.sh}mio sim uvmt_apb_adv_timer -C@endcode
+2. Elaborate the APB Advanced Timer Sub-System UVM Test Bench with wave capture enabled: @code{.sh}mio sim uvmt_apb_adv_timer -E -w@endcode
 
 
 @section quick_start_guide_simulate Simulate
-Launch CORE-V MCU APB Advanced Timer Sub-System UVM Test "rand_stim" with seed "1":
+Launch APB Advanced Timer Sub-System UVM Test "rand_stim" with seed "1":
 @code{.sh}mio sim uvmt_apb_adv_timer -S -t rand_stim -s 1@endcode
 
 

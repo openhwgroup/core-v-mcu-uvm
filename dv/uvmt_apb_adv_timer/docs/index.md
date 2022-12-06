@@ -12,15 +12,15 @@
 @section license_agreement License Agreement
 © Copyright 2022 Datum Technology Corporation
 
-SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
+All rights reserved.
 
 
 
 @section ip_desc IP Description
-This IP contains the Datum Technology Corporation CORE-V MCU APB Advanced Timer Sub-System UVM Test Bench.
-TODO Describe CORE-V MCU APB Advanced Timer Sub-System UVM Test Bench
+This IP contains the Datum Technology Corporation APB Advanced Timer Sub-System UVM Test Bench.
+TODO Describe APB Advanced Timer Sub-System UVM Test Bench
 
-![CORE-V MCU APB Advanced Timer Sub-System UVM Test Bench Block Diagram](tb_block_diagram.svg)
+![APB Advanced Timer Sub-System UVM Test Bench Block Diagram](tb_block_diagram.svg)
 
 
 @section ip_documents Documents

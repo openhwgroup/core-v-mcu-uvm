@@ -11,9 +11,9 @@
 `define __UVME_APB_ADV_TIMER_CG_REG_SV__
 
 
-class uvme_apb_adv_timer_cg_reg_c extends uvml_ral_reg_c;
+class uvme_apb_adv_timer_cg_reg_c extends uvmx_reg_c;
 
-   rand uvml_ral_reg_field_c  ena; ///< ADV_TIMER clock gating configuration bitfield.
+   rand uvmx_reg_field_c  ena; ///< ADV_TIMER clock gating configuration bitfield.
 
 
    `uvm_object_utils_begin(uvme_apb_adv_timer_cg_reg_c)
@@ -43,7 +43,7 @@ endfunction : new
 
 function void uvme_apb_adv_timer_cg_reg_c::build();
 
-   ena = uvml_ral_reg_field_c::type_id::create("ena");
+   ena = uvmx_reg_field_c::type_id::create("ena");
    ena.configure(
       .parent                 (this),
       .size                   (   4),
