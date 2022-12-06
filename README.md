@@ -6,24 +6,16 @@ This project aims to bring the [OpenHW Group](https://www.openhwgroup.org/)'s [C
  --------|------------
  `uvme_cvmcu` | CORE-V MCU Top-Level Environment
  `uvmt_cvmcu` | CORE-V MCU Top-Level Test Bench
- `uvme_udma_ctrl` | uDMA Engine Controller Block-Level Environment
- `uvmt_udma_ctrl` | uDMA Engine Controller Block-Level Test Bench
- `uvme_udma_rx` | uDMA Engine Rx Channels Block-Level Environment
- `uvmt_udma_rx` | uDMA Engine Rx Channels Block-Level Test Bench
- `uvme_udma_tx` | uDMA Engine Tx Channels Block-Level Environment
- `uvmt_udma_tx` | uDMA Engine Tx Channels Block-Level Test Bench
  `uvme_apb_adv_timer` | APB Advanced Timer Sub-System Environment
  `uvme_apb_timer` | APB Timer Sub-System Environment
  `uvmt_apb_adv_timer` | APB Advanced Timer Sub-System Test Bench
  `uvmt_apb_timer` | APB Timer Sub-System Test Bench
- `uvma_cvmcu_intr` | Interrupt Agent
 
 
 # Installing Toolchain
 1. Download and install the latest version of [Xilinx Vivado WebPack](https://www.xilinx.com/support/download.html)
-1. Set an environment variable for the Vivado installation location: `export VIVADO_HOME=/path/to/vivado/bin`
-1. Install `pipx` if needed: `python3 -m pip install --user pipx; python3 -m pipx ensurepath`
-1. Install the [Moore.io CLI Client](https://mooreio-client.readthedocs.io/en/latest/): `pipx install mio-client`
+1. Set an environment variable for the Vivado installation location: `export MIO_VIVADO_HOME=/path/to/vivado/bin`
+1. Install the [Moore.io CLI Client](https://mooreio-client.readthedocs.io/en/latest/): `pip3 install mio-cli`
 1. [Create a free Moore.io IP Marketplace user account](https://mooreio.org/account/register). The VIP libraries for this project are under license from [Datum](https://datumtc.ca/) and credentials are needed to install them.
 
 
@@ -36,15 +28,15 @@ cd sim
 ```
 
 
-2. Install IP dependencies for `uvmt_apb_timer`:
+2. Install IP dependencies for `uvmt_cvmcu`:
 
 ```
-mio install uvmt_apb_timer
+mio install uvmt_cvmcu
 ```
 
 
-3. To run compilation, elaboration and simulation for Test Bench `uvmt_apb_timer`, test `reg_hw_bit_bash` and seed `1`:
+3. To run compilation, elaboration and simulation for Test Bench `uvmt_cvmcu`, test `reg_hw_bit_bash` and seed `1`:
 
 ```
-mio sim uvmt_apb_timer -t reg_hw_bit_bash -s 1
+mio sim uvmt_cvmcu -t reg_hw_bit_bash -s 1
 ```
