@@ -9,7 +9,7 @@ full-name   = "CORE-V MCU UVM"
 description = ""
 
 [simulation]
-preferred-simulators = [ "vivado" ]
+default-simulator = "viv"
 
 [ip]
 paths = ["dv", "rtl", "rtl/core-v-mcu"]
