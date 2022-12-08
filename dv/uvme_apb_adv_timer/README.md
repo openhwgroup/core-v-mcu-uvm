@@ -17,7 +17,6 @@ This IP contains the APB Advanced Timer Sub-System UVM Environment.
 # Dependencies
 It is dependent on the following IP:
 
-* `uvm`
 * `uvmx`
 * `uvml_sb`
 * `uvma_clk`
