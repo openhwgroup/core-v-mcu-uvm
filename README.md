@@ -4,12 +4,12 @@ This project aims to bring the [OpenHW Group](https://www.openhwgroup.org/)'s [C
 ## Abridged IP List
  IP Name | Description
  --------|------------
- `uvme_cvmcu` | CORE-V MCU Top-Level Environment
- `uvmt_cvmcu` | CORE-V MCU Top-Level Test Bench
- `uvme_apb_adv_timer` | APB Advanced Timer Sub-System Environment
- `uvme_apb_timer` | APB Timer Sub-System Environment
- `uvmt_apb_adv_timer` | APB Advanced Timer Sub-System Test Bench
- `uvmt_apb_timer` | APB Timer Sub-System Test Bench
+ [`uvme_cvmcu`](dv/uvme_cvmcu) | CORE-V MCU Top-Level Environment
+ [`uvmt_cvmcu`](dv/uvmt_cvmcu) | CORE-V MCU Top-Level Test Bench
+ [`uvme_apb_adv_timer`](dv/uvme_apb_adv_timer) | APB Advanced Timer Sub-System Environment
+ [`uvme_apb_timer`](dv/uvme_apb_timer) | APB Timer Sub-System Environment
+ [`uvmt_apb_adv_timer`](dv/uvmt_apb_adv_timer) | APB Advanced Timer Sub-System Test Bench
+ [`uvmt_apb_timer`](dv/uvmt_apb_timer) | APB Timer Sub-System Test Bench
 
 
 # Installing Toolchain
