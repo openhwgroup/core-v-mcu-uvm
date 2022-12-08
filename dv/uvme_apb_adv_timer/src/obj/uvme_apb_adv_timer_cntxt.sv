@@ -52,10 +52,16 @@ class uvme_apb_adv_timer_cntxt_c extends uvmx_env_cntxt_c #(
 
 
    /**
-    * Builds events and sub-context objects.
+    * Default constructor.
     */
    function new(string name="uvme_apb_adv_timer_cntxt");
       super.new(name);
+   endfunction
+
+   /**
+    * Builds events and sub-context objects.
+    */
+   virtual function void create_objects();
       // TODO Create environment cntxt objects
       //      Ex: sub_env_cntxt  = uvme_sub_env_cntxt_c::type_id::create("sub_env_cntxt");
       apb_cntxt = uvma_apb_cntxt_c::type_id::create("apb_cntxt");

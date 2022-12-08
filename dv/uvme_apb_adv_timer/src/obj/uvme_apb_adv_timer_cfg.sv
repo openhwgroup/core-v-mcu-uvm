@@ -64,6 +64,7 @@ class uvme_apb_adv_timer_cfg_c extends uvmx_env_cfg_c;
     */
    constraint agent_cfg_cons {
       apb_cfg.cov_model_enabled == 0;
+      apb_cfg.drv_mode == UVMA_APB_DRV_MODE_MSTR;
       apb_cfg.data_width == (uvme_apb_adv_timer_reg_block_reg_n_bytes*8);
       if (enabled) {
          apb_cfg.enabled == 1;
@@ -87,10 +88,16 @@ class uvme_apb_adv_timer_cfg_c extends uvmx_env_cfg_c;
 
 
    /**
-    * Creates sub-configuration objects.
+    * Default constructor.
     */
    function new(string name="uvme_apb_adv_timer_cfg");
       super.new(name);
+   endfunction
+
+   /**
+    * Creates sub-configuration objects.
+    */
+   virtual function void create_objects();
       // TODO Create sub-environment cfg objects
       //      Ex: sub_env_cfg  = uvme_sub_env_cfg_c::type_id::create("sub_env_cfg");
       apb_cfg = uvma_apb_cfg_c::type_id::create("apb_cfg");

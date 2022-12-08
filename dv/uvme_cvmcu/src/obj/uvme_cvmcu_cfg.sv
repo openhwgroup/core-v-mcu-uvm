@@ -65,6 +65,8 @@ class uvme_cvmcu_cfg_c extends uvmx_env_cfg_c;
     * Sets agents configuration.
     */
    constraint agent_cfg_cons {
+      obi_instr_cfg.drv_mode == UVMA_OBI_DRV_MODE_MSTR;
+      obi_data_cfg .drv_mode == UVMA_OBI_DRV_MODE_MSTR;
       obi_instr_cfg.cov_model_enabled == 0;
       obi_data_cfg .cov_model_enabled == 0;
       obi_instr_cfg.data_width == (uvme_cvmcu_reg_block_reg_n_bytes*8);
@@ -97,10 +99,16 @@ class uvme_cvmcu_cfg_c extends uvmx_env_cfg_c;
 
 
    /**
-    * Creates sub-configuration objects.
+    * Default constructor.
     */
    function new(string name="uvme_cvmcu_cfg");
       super.new(name);
+   endfunction
+
+   /**
+    *
+    */
+   virtual function void create_objects();
       // TODO Create sub-environment cfg objects
       //      Ex: sub_env_cfg  = uvme_sub_env_cfg_c::type_id::create("sub_env_cfg");
       obi_instr_cfg = uvma_obi_cfg_c::type_id::create("obi_instr_cfg");
