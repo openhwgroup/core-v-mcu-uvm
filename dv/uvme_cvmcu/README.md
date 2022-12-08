@@ -17,7 +17,6 @@ This IP contains the CORE-V MCU UVM Environment.
 # Dependencies
 It is dependent on the following IP:
 
-* `uvm`
 * `uvmx`
 * `uvml_sb`
 * `uvma_clk`
