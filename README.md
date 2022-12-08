@@ -20,22 +20,7 @@ This project aims to bring the [OpenHW Group](https://www.openhwgroup.org/)'s [C
 
 
 # Simulation
-1. Change directory to 'sim'
-
-This is from where all jobs will be launched.
-```
-cd sim
-```
-
-
-2. Install IP dependencies for `uvmt_cvmcu`:
-
-```
-mio install uvmt_cvmcu
-```
-
-
-3. To run compilation, elaboration and simulation for Test Bench `uvmt_cvmcu`, test `reg_bit_bash` and seed `1`:
+To run compilation, elaboration and simulation for Test Bench `uvmt_cvmcu`, test `reg_bit_bash` and seed `1`:
 
 ```
 mio sim uvmt_cvmcu -t reg_bit_bash -s 1
