@@ -1,7 +1,7 @@
 # About
 This project aims to bring the [OpenHW Group](https://www.openhwgroup.org/)'s [CORE-V MCU Project](https://docs.openhwgroup.org/projects/core-v-mcu/index.html) to TRL-5 and beyond via [Advanced UVM Verification](https://www.linkedin.com/pulse/advanced-uvm-brian-hunter/) and the [Moore.io](https://mooreio.org/) libraries and toolchain. [Datum](https://datumtc.ca/) and [Low Power Futures](https://lowpowerfutures.com/) are the primary contributors to this effort.
 
-## Abridged IP List
+# IP List
  IP Name | Description
  --------|------------
  [`uvme_cvmcu`](dv/uvme_cvmcu) | CORE-V MCU Top-Level Environment
