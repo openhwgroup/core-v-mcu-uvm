@@ -1,2 +1,5 @@
 /.pydevproject
 /.mio/
+.mdc_empty_dir_sync
+.mdc/sync
+.mdc/workspace

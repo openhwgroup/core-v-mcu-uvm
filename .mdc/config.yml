@@ -1,0 +1,4 @@
+# Reference documentation: https://support.metrics.ca/hc/en-us/articles/9905737591565
+toolchain:
+  environment-variables: # Define environment variables
+    # HELLO: world
