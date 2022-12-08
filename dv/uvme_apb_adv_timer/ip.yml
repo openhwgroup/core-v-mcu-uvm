@@ -21,6 +21,7 @@ ip:
   languages: ["sv"]
   simulators-supported:
     viv: "2022.2"
+    mtr: "20220822.10.0"
   tags: []
   copyright-holders: ["Datum Technology Corporation"]
   licenses: ["All rights reserved."]
@@ -30,7 +31,7 @@ dependencies:
   "datum/uvml_sb"   : "~1.0"
   "datum/uvma_clk"  : "~1.0"
   "datum/uvma_reset": "~1.0"
-  "datum/uvma_apb": "~1.0"
+  "datum/uvma_apb"  : "~1.0"
 
 structure:
   scripts-path : "bin"

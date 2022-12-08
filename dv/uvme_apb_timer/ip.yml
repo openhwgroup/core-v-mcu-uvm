@@ -21,6 +21,7 @@ ip:
   languages: ["sv"]
   simulators-supported:
     viv: "2022.2"
+    mtr: "20220822.10.0"
   tags: []
   copyright-holders: ["Datum Technology Corporation"]
   licenses: ["All rights reserved."]
