@@ -35,8 +35,8 @@ mio install uvmt_cvmcu
 ```
 
 
-3. To run compilation, elaboration and simulation for Test Bench `uvmt_cvmcu`, test `reg_hw_bit_bash` and seed `1`:
+3. To run compilation, elaboration and simulation for Test Bench `uvmt_cvmcu`, test `reg_bit_bash` and seed `1`:
 
 ```
-mio sim uvmt_cvmcu -t reg_hw_bit_bash -s 1
+mio sim uvmt_cvmcu -t reg_bit_bash -s 1
 ```
