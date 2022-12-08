@@ -25,3 +25,10 @@ To run compilation, elaboration and simulation for Test Bench `uvmt_cvmcu`, test
 ```
 mio sim uvmt_cvmcu -t reg_bit_bash -s 1
 ```
+
+# Regressions
+To run regression `sanity` for Test Bench `uvmt_cvmcu`:
+
+```
+mio regr uvmt_cvmcu sanity
+```
