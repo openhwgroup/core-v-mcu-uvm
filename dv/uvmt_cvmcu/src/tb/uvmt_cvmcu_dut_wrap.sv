@@ -24,7 +24,7 @@ module uvmt_cvmcu_dut_wrap (
    reg  jtag_tdo_o     ;
    reg  jtag_tms_i  = 0;
    reg  jtag_trst_i = 0;
-   reg  bootsel_i   = 0;
+   reg  bootsel_i   = 1;
    reg  stm_i       = 0;
    reg  [ 47:0]  io_in_i     = 0;
    reg  [ 47:0]  io_out_o       ;
@@ -48,21 +48,21 @@ module uvmt_cvmcu_dut_wrap (
    );
 
    // Instruction OBI Interface
-   assign obi_instr_if.addr = dut.i_soc_domain.fc_subsystem_i.core_instr_addr;
-   assign obi_instr_if.req  = dut.i_soc_domain.fc_subsystem_i.core_instr_req ;
-   assign dut.i_soc_domain.fc_subsystem_i.core_instr_rdata  = obi_instr_if.rdata ;
-   assign dut.i_soc_domain.fc_subsystem_i.core_instr_gnt    = obi_instr_if.gnt   ;
-   assign dut.i_soc_domain.fc_subsystem_i.core_instr_rvalid = obi_instr_if.rvalid;
+   assign dut.i_soc_domain.fc_subsystem_i.core_instr_addr = obi_instr_if.addr;
+   assign dut.i_soc_domain.fc_subsystem_i.core_instr_req  = obi_instr_if.req ;
+   assign obi_instr_if.rdata  = dut.i_soc_domain.fc_subsystem_i.core_instr_rdata ;
+   assign obi_instr_if.gnt    = dut.i_soc_domain.fc_subsystem_i.core_instr_gnt   ;
+   assign obi_instr_if.rvalid = dut.i_soc_domain.fc_subsystem_i.core_instr_rvalid;
 
    // Data OBI Interface
-   assign obi_data_if.addr  = dut.i_soc_domain.fc_subsystem_i.core_data_addr ;
-   assign obi_data_if.req   = dut.i_soc_domain.fc_subsystem_i.core_data_req  ;
-   assign obi_data_if.be    = dut.i_soc_domain.fc_subsystem_i.core_data_be   ;
-   assign obi_data_if.we    = dut.i_soc_domain.fc_subsystem_i.core_data_we   ;
-   assign obi_data_if.wdata = dut.i_soc_domain.fc_subsystem_i.core_data_wdata;
-   assign dut.i_soc_domain.fc_subsystem_i.core_data_rdata  = obi_data_if.rdata ;
-   assign dut.i_soc_domain.fc_subsystem_i.core_data_gnt    = obi_data_if.gnt   ;
-   assign dut.i_soc_domain.fc_subsystem_i.core_data_rvalid = obi_data_if.rvalid;
+   assign dut.i_soc_domain.fc_subsystem_i.core_data_addr  = obi_data_if.addr ;
+   assign dut.i_soc_domain.fc_subsystem_i.core_data_req   = obi_data_if.req  ;
+   assign dut.i_soc_domain.fc_subsystem_i.core_data_be    = obi_data_if.be   ;
+   assign dut.i_soc_domain.fc_subsystem_i.core_data_we    = obi_data_if.we   ;
+   assign dut.i_soc_domain.fc_subsystem_i.core_data_wdata = obi_data_if.wdata;
+   assign obi_data_if.rdata  = dut.i_soc_domain.fc_subsystem_i.core_data_rdata  ;
+   assign obi_data_if.gnt    = dut.i_soc_domain.fc_subsystem_i.core_data_gnt    ;
+   assign obi_data_if.rvalid = dut.i_soc_domain.fc_subsystem_i.core_data_rvalid ;
 
 endmodule : uvmt_cvmcu_dut_wrap
 
