@@ -1,4 +1,7 @@
-# Reference documentation: https://support.metrics.ca/hc/en-us/articles/9905737591565
 toolchain:
-  environment-variables: # Define environment variables
-    # HELLO: world
+  dsim:
+    version: 20220822.10.0
+  environment-variables: null
+  packages:
+  - name: uvm
+    version: '1.2'
