@@ -1,0 +1,99 @@
+Offset,RegisterName,Type,Size,LSB,FieldName,Reset,Description
+0x0,T0_CMD,WO,1,0,START,0x0,ADV_TIMER0 start command bitfield.
+0x0,T0_CMD,WO,1,1,STOP,0x0,ADV_TIMER0 stop command bitfield.
+0x0,T0_CMD,WO,1,2,UPDATE,0x0,ADV_TIMER0 update command bitfield.
+0x0,T0_CMD,WO,1,3,RESET,0x0,ADV_TIMER0 reset command bitfield.
+0x0,T0_CMD,WO,1,4,ARM,0x0,ADV_TIMER0 arm command bitfield.
+0x0,T0_CMD,WO,27,5,RFU,0x0,
+0x4,T0_CONFIG,RW,8,0,INSEL,0x0,ADV_TIMER0 input source configuration bitfield:
+0x4,T0_CONFIG,RW,3,8,MODE,0x0,ADV_TIMER0 trigger mode configuration bitfield:
+0x4,T0_CONFIG,RW,1,11,CLKSEL,0x0,ADV_TIMER0 clock source configuration bitfield:
+0x4,T0_CONFIG,RW,1,12,UPDOWNSEL,0x1,ADV_TIMER0 center-aligned mode configuration bitfield:
+0x4,T0_CONFIG,RW,8,16,PRESC,0x0,ADV_TIMER0 prescaler value configuration bitfield.
+0x8,T0_THRESHOLD,RW,16,0,TH_LO,0x0,ADV_TIMER0 threshold low part configuration bitfield. It defines start counter value.
+0x8,T0_THRESHOLD,RW,16,16,TH_HI,0x0,ADV_TIMER0 threshold high part configuration bitfield. It defines end counter value.
+0xC,T0_TH_CHANNEL0,RW,16,0,TH,0x0,ADV_TIMER0 channel 0 threshold configuration bitfield.
+0xC,T0_TH_CHANNEL0,RW,3,16,MODE,0x0,ADV_TIMER0 channel 0 threshold match action on channel output signal configuration bitfield:
+0x10,T0_THRESHOLD,RW,16,0,TH_LO,0x0,ADV_TIMER0 threshold low part configuration bitfield. It defines start counter value.
+0x8,T0_THRESHOLD,RW,16,16,TH_HI,0x0,ADV_TIMER0 threshold high part configuration bitfield. It defines end counter value.
+0xC,T0_TH_CHANNEL0,RW,16,0,TH,0x0,ADV_TIMER0 channel 0 threshold configuration bitfield.
+0xC,T0_TH_CHANNEL0,RW,3,16,MODE,0x0,ADV_TIMER0 channel 0 threshold match action on channel output signal configuration bitfield:
+0x10,T0_TH_CHANNEL1,RW,16,0,TH,0x0,ADV_TIMER0 channel 0 threshold configuration bitfield.
+0x10,T0_TH_CHANNEL1,RW,3,16,MODE,0x0,ADV_TIMER0 channel 0 threshold match action on channel output signal configuration bitfield:
+0x14,T0_TH_CHANNEL2,RW,16,0,TH,0x0,ADV_TIMER0 channel 0 threshold configuration bitfield.
+0x14,T0_TH_CHANNEL2,RW,3,16,MODE,0x0,ADV_TIMER0 channel 0 threshold match action on channel output signal configuration bitfield:
+0x18,T0_TH_CHANNEL3,RW,16,0,TH,0x0,ADV_TIMER0 channel 0 threshold configuration bitfield.
+0x18,T0_TH_CHANNEL3,RW,3,16,MODE,0x0,ADV_TIMER0 channel 0 threshold match action on channel output signal configuration bitfield:
+0x2C,T0_COUNTER,WO,16,0,COUNTER,0x0,ADV_TIMER0 counter value.
+0x40,T1_CMD,WO,1,0,START,0x0,ADV_TIMER0 start command bitfield.
+0x40,T1_CMD,WO,1,1,STOP,0x0,ADV_TIMER0 stop command bitfield.
+0x40,T1_CMD,WO,1,2,UPDATE,0x0,ADV_TIMER0 update command bitfield.
+0x40,T1_CMD,WO,1,3,RESET,0x0,ADV_TIMER0 reset command bitfield.
+0x40,T1_CMD,WO,1,4,ARM,0x0,ADV_TIMER0 arm command bitfield.
+0x40,T1_CMD,WO,27,5,RFU,0x0,
+0x44,T1_CONFIG,RW,8,0,INSEL,0x0,ADV_TIMER0 input source configuration bitfield:
+0x44,T1_CONFIG,RW,3,8,MODE,0x0,ADV_TIMER0 trigger mode configuration bitfield:
+0x44,T1_CONFIG,RW,1,11,CLKSEL,0x0,ADV_TIMER0 clock source configuration bitfield:
+0x44,T1_CONFIG,RW,1,12,UPDOWNSEL,0x1,ADV_TIMER0 center-aligned mode configuration bitfield:
+0x44,T1_CONFIG,RW,8,16,PRESC,0x0,ADV_TIMER0 prescaler value configuration bitfield.
+0x48,T1_THRESHOLD,RW,16,0,TH_LO,0x0,ADV_TIMER0 threshold low part configuration bitfield. It defines start counter value.
+0x48,T1_THRESHOLD,RW,16,16,TH_HI,0x0,ADV_TIMER0 threshold high part configuration bitfield. It defines end counter value.
+0x4C,T1_TH_CHANNEL0,RW,16,0,TH,0x0,ADV_TIMER0 channel 0 threshold configuration bitfield.
+0x4C,T1_TH_CHANNEL0,RW,3,16,MODE,0x0,ADV_TIMER0 channel 0 threshold match action on channel output signal configuration bitfield:
+0x50,T1_TH_CHANNEL1,RW,16,0,TH,0x0,ADV_TIMER0 channel 0 threshold configuration bitfield.
+0x50,T1_TH_CHANNEL1,RW,3,16,MODE,0x0,ADV_TIMER0 channel 0 threshold match action on channel output signal configuration bitfield:
+0x54,T1_TH_CHANNEL2,RW,16,0,TH,0x0,ADV_TIMER0 channel 0 threshold configuration bitfield.
+0x54,T1_TH_CHANNEL2,RW,3,16,MODE,0x0,ADV_TIMER0 channel 0 threshold match action on channel output signal configuration bitfield:
+0x58,T1_TH_CHANNEL3,RW,16,0,TH,0x0,ADV_TIMER0 channel 0 threshold configuration bitfield.
+0x58,T1_TH_CHANNEL3,RW,3,16,MODE,0x0,ADV_TIMER0 channel 0 threshold match action on channel output signal configuration bitfield:
+0x6C,T1_COUNTER,WO,16,0,COUNTER,0x0,ADV_TIMER0 counter value.
+0x80,T2_CMD,WO,1,0,START,0x0,ADV_TIMER0 start command bitfield.
+0x80,T2_CMD,WO,1,1,STOP,0x0,ADV_TIMER0 stop command bitfield.
+0x80,T2_CMD,WO,1,2,UPDATE,0x0,ADV_TIMER0 update command bitfield.
+0x80,T2_CMD,WO,1,3,RESET,0x0,ADV_TIMER0 reset command bitfield.
+0x80,T2_CMD,WO,1,4,ARM,0x0,ADV_TIMER0 arm command bitfield.
+0x80,T2_CMD,WO,27,5,RFU,0x0,
+0x84,T2_CONFIG,RW,8,0,INSEL,0x0,ADV_TIMER0 input source configuration bitfield:
+0x84,T2_CONFIG,RW,3,8,MODE,0x0,ADV_TIMER0 trigger mode configuration bitfield:
+0x84,T2_CONFIG,RW,1,11,CLKSEL,0x0,ADV_TIMER0 clock source configuration bitfield:
+0x84,T2_CONFIG,RW,1,12,UPDOWNSEL,0x1,ADV_TIMER0 center-aligned mode configuration bitfield:
+0x84,T2_CONFIG,RW,8,16,PRESC,0x0,ADV_TIMER0 prescaler value configuration bitfield.
+0x88,T2_THRESHOLD,RW,16,0,TH_LO,0x0,ADV_TIMER0 threshold low part configuration bitfield. It defines start counter value.
+0x88,T2_THRESHOLD,RW,16,16,TH_HI,0x0,ADV_TIMER0 threshold high part configuration bitfield. It defines end counter value.
+0x8C,T2_TH_CHANNEL0,RW,16,0,TH,0x0,ADV_TIMER0 channel 0 threshold configuration bitfield.
+0x8C,T2_TH_CHANNEL0,RW,3,16,MODE,0x0,ADV_TIMER0 channel 0 threshold match action on channel output signal configuration bitfield:
+0x90,T2_TH_CHANNEL1,RW,16,0,TH,0x0,ADV_TIMER0 channel 0 threshold configuration bitfield.
+0x90,T2_TH_CHANNEL1,RW,3,16,MODE,0x0,ADV_TIMER0 channel 0 threshold match action on channel output signal configuration bitfield:
+0x94,T2_TH_CHANNEL2,RW,16,0,TH,0x0,ADV_TIMER0 channel 0 threshold configuration bitfield.
+0x94,T2_TH_CHANNEL2,RW,3,16,MODE,0x0,ADV_TIMER0 channel 0 threshold match action on channel output signal configuration bitfield:
+0x98,T2_TH_CHANNEL3,RW,16,0,TH,0x0,ADV_TIMER0 channel 0 threshold configuration bitfield.
+0x98,T2_TH_CHANNEL3,RW,3,16,MODE,0x0,ADV_TIMER0 channel 0 threshold match action on channel output signal configuration bitfield:
+0xAC,T2_COUNTER,WO,16,0,COUNTER,0x0,ADV_TIMER0 counter value.
+0xC0,T3_CMD,WO,1,0,START,0x0,ADV_TIMER0 start command bitfield.
+0xC0,T3_CMD,WO,1,1,STOP,0x0,ADV_TIMER0 stop command bitfield.
+0xC0,T3_CMD,WO,1,2,UPDATE,0x0,ADV_TIMER0 update command bitfield.
+0xC0,T3_CMD,WO,1,3,RESET,0x0,ADV_TIMER0 reset command bitfield.
+0xC0,T3_CMD,WO,1,4,ARM,0x0,ADV_TIMER0 arm command bitfield.
+0xC0,T3_CMD,WO,27,5,RFU,0x0,
+0xC4,T3_CONFIG,RW,8,0,INSEL,0x0,ADV_TIMER0 input source configuration bitfield:
+0xC4,T3_CONFIG,RW,3,8,MODE,0x0,ADV_TIMER0 trigger mode configuration bitfield:
+0xC4,T3_CONFIG,RW,1,11,CLKSEL,0x0,ADV_TIMER0 clock source configuration bitfield:
+0xC4,T3_CONFIG,RW,1,12,UPDOWNSEL,0x1,ADV_TIMER0 center-aligned mode configuration bitfield:
+0xC4,T3_CONFIG,RW,8,16,PRESC,0x0,ADV_TIMER0 prescaler value configuration bitfield.
+0xC8,T3_THRESHOLD,RW,16,0,TH_LO,0x0,ADV_TIMER0 threshold low part configuration bitfield. It defines start counter value.
+0xC8,T3_THRESHOLD,RW,16,16,TH_HI,0x0,ADV_TIMER0 threshold high part configuration bitfield. It defines end counter value.
+0xCC,T3_TH_CHANNEL0,RW,16,0,TH,0x0,ADV_TIMER0 channel 0 threshold configuration bitfield.
+0xCC,T3_TH_CHANNEL0,RW,3,16,MODE,0x0,ADV_TIMER0 channel 0 threshold match action on channel output signal configuration bitfield:
+0xD0,T3_TH_CHANNEL1,RW,16,0,TH,0x0,ADV_TIMER0 channel 0 threshold configuration bitfield.
+0xD0,T3_TH_CHANNEL1,RW,3,16,MODE,0x0,ADV_TIMER0 channel 0 threshold match action on channel output signal configuration bitfield:
+0xD4,T3_TH_CHANNEL2,RW,16,0,TH,0x0,ADV_TIMER0 channel 0 threshold configuration bitfield.
+0xD4,T3_TH_CHANNEL2,RW,3,16,MODE,0x0,ADV_TIMER0 channel 0 threshold match action on channel output signal configuration bitfield:
+0xD8,T3_TH_CHANNEL3,RW,16,0,TH,0x0,ADV_TIMER0 channel 0 threshold configuration bitfield.
+0xD8,T3_TH_CHANNEL3,RW,3,16,MODE,0x0,ADV_TIMER0 channel 0 threshold match action on channel output signal configuration bitfield:
+0xEC,T3_COUNTER,WO,16,0,COUNTER,0x0,ADV_TIMER0 counter value.
+0x100,EVENT_CFG,RW,4,0,SEL0,0x0,ADV_TIMER output event 0 source configuration bitfiled:
+0x100,EVENT_CFG,RW,4,4,SEL1,0x0,ADV_TIMER output event 1 source configuration bitfiled:
+0x100,EVENT_CFG,RW,4,8,SEL2,0x0,ADV_TIMER output event 2 source configuration bitfiled:
+0x100,EVENT_CFG,RW,4,12,SEL3,0x0,ADV_TIMER output event 3 source configuration bitfiled:
+0x100,EVENT_CFG,RW,4,16,ENA,0x0,ADV_TIMER output event enable configuration bitfield. ENA[i]=1 enables output event i generation.
+0x104,CG,RW,4,0,ENA,0x0,ADV_TIMER clock gating configuration bitfield. 
