@@ -22,5 +22,4 @@ Offset,RegisterName,Type,Size,LSB,FieldName,Reset,Description
 0x3C,SETINT,WO,3,17,INTTYPE,0x0,"Type of interrupt for GPIO[gpio_num]. 0x0: active low, level type interrupt. 0x1: rising edge type interupt. 0x2: falling edge type interrupt. 0x3: no interrupt. 0x4: active high, level type interrupt. 0x5 to 0x7: no interrupt."
 0x3C,SETINT,WO,1,16,INTENABLE,0x0,Enable interrupt on GPIO[GPIO_ADDDR]
 0x3C,SETINT,WO,8,0,gpio_num,0x0,Address of GPIO to set interrupt type and enable for
-0x40,INTACK,RW,24,8,RESERVED,0x0,Enable interrupt for GPIO[gpio_num]
 0x40,INTACK,RW,8,0,gpio_num,0x0,Input value reported by GPIO[gpio_num]
