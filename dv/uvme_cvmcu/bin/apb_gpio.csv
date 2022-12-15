@@ -23,3 +23,4 @@ Offset,RegisterName,Type,Size,LSB,FieldName,Reset,Description
 0x3C,SETINT,WO,1,16,INTENABLE,0x0,Enable interrupt on GPIO[GPIO_ADDDR]
 0x3C,SETINT,WO,8,0,gpio_num,0x0,Address of GPIO to set interrupt type and enable for
 0x40,INTACK,RW,8,0,gpio_num,0x0,Input value reported by GPIO[gpio_num]
+0x40,INTACK,RW,24,8,RESERVED,0x0,Enable interrupt for GPIO[gpio_num]

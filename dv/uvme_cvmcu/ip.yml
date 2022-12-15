@@ -40,6 +40,6 @@ structure:
   src-path     : "src"
 
 hdl-src:
-  directories: [".", "comps", "obj", "reg", "seq"]
+  directories: [".", "comps", "obj", "reg", "reg/gpio", "reg/uart", "seq"]
   top-files: ["uvme_cvmcu_pkg.sv"]
   so-libs: []

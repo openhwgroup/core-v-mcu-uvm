@@ -7,24 +7,24 @@
 // ANY CHANGES MADE WILL BE ERASED UPON THE NEXT RELEASE.
 
 
-`ifndef __UVME_APB_TIMER_TIMER_VAL_LO_REG_SV__
-`define __UVME_APB_TIMER_TIMER_VAL_LO_REG_SV__
+`ifndef __UVME_CVMCU_GPIO_OUT0_REG_SV__
+`define __UVME_CVMCU_GPIO_OUT0_REG_SV__
 
 
-class uvme_apb_timer_timer_val_lo_reg_c extends uvmx_reg_c;
+class uvme_cvmcu_gpio_out0_reg_c extends uvmx_reg_c;
 
-   rand uvmx_reg_field_c  timer_val_lo; ///< 32-bit counter value  low 32-bits in 64-bit mode
+   rand uvmx_reg_field_c  value; ///< Drive value[31:0] onto GPIO[31:0]
 
 
-   `uvm_object_utils_begin(uvme_apb_timer_timer_val_lo_reg_c)
-      `uvm_field_object(timer_val_lo, UVM_DEFAULT)
+   `uvm_object_utils_begin(uvme_cvmcu_gpio_out0_reg_c)
+      `uvm_field_object(value, UVM_DEFAULT)
    `uvm_object_utils_end
 
 
    /**
     * Default constructor.
     */
-   function new(string name="uvme_apb_timer_timer_val_lo_reg", int unsigned n_bits=32, int has_coverage=UVM_NO_COVERAGE);
+   function new(string name="uvme_cvmcu_gpio_out0_reg", int unsigned n_bits=32, int has_coverage=UVM_NO_COVERAGE);
       super.new(name, n_bits, has_coverage);
    endfunction
 
@@ -32,12 +32,12 @@ class uvme_apb_timer_timer_val_lo_reg_c extends uvmx_reg_c;
     * Creates and configures register fields.
     */
    virtual function void build();
-      timer_val_lo = uvmx_reg_field_c::type_id::create("timer_val_lo");
-      timer_val_lo.configure(
+      value = uvmx_reg_field_c::type_id::create("value");
+      value.configure(
          .parent                 (this),
          .size                   (   32),
          .lsb_pos                (   0),
-         .access                 ("RW"),
+         .access                 ("WO"),
          .volatile               (   0),
          .reset                  (   0),
          .has_reset              (   1),
@@ -46,7 +46,7 @@ class uvme_apb_timer_timer_val_lo_reg_c extends uvmx_reg_c;
       );
    endfunction
 
-endclass : uvme_apb_timer_timer_val_lo_reg_c
+endclass : uvme_cvmcu_gpio_out0_reg_c
 
 
-`endif // __UVME_APB_TIMER_TIMER_VAL_LO_REG_SV__
+`endif // __UVME_CVMCU_GPIO_OUT0_REG_SV__
