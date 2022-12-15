@@ -15,8 +15,8 @@ class uvme_cvmcu_reg_block_c extends uvmx_reg_block_c;
 
    /// @name Sub-Blocks
    /// @{
-   // TODO Add sub-block(s)
-   //      Ex: rand uvme_cvmcu_abc_reg_block_c  abc; ///< Describe me!
+   rand uvme_apb_timer_reg_block_c      apb_timer    ; ///< APB Timer Unit
+   rand uvme_apb_adv_timer_reg_block_c  apb_adv_timer; ///< Advanced APB Timer Unit
    /// @}
 
    /// @name Registers
@@ -27,9 +27,8 @@ class uvme_cvmcu_reg_block_c extends uvmx_reg_block_c;
 
 
    `uvm_object_utils_begin(uvme_cvmcu_reg_block_c)
-      // TODO Add field macros for sub-block(s) and register(s)
-      //      Ex: `uvm_field_object(abc, UVM_DEFAULT)
-      //          `uvm_field_object(xyz, UVM_DEFAULT)
+      `uvm_field_object(apb_timer    , UVM_DEFAULT)
+      `uvm_field_object(apb_adv_timer, UVM_DEFAULT)
    `uvm_object_utils_end
 
 
@@ -44,10 +43,12 @@ class uvme_cvmcu_reg_block_c extends uvmx_reg_block_c;
     * Creates sub-block(s).
     */
    virtual function void create_blocks();
-      // TODO Implement uvme_cvmcu_reg_block_c::create_blocks()
-      //      Ex: abc = uvme_cvmcu_abc_reg_block_c::type_id::create("abc");
-      //          abc.configure(this);
-      //          abc.build();
+      apb_timer = uvme_apb_timer_reg_block_c::type_id::create("apb_timer");
+      apb_timer.configure(this);
+      apb_timer.build();
+      apb_adv_timer = uvme_apb_adv_timer_reg_block_c::type_id::create("apb_adv_timer");
+      apb_adv_timer.configure(this);
+      apb_adv_timer.build();
    endfunction
 
    /**
@@ -82,6 +83,14 @@ class uvme_cvmcu_reg_block_c extends uvmx_reg_block_c;
       //             .offset(32'h00_00_00_00),
       //             .rights("RW")
       //          );
+   endfunction
+
+   /**
+    * Adds block(s) to register map.
+    */
+   virtual function void add_blocks_to_map();
+      default_map.add_submap(apb_timer    .default_map, `UVM_REG_ADDR_WIDTH'h1A10_B000);
+      default_map.add_submap(apb_adv_timer.default_map, `UVM_REG_ADDR_WIDTH'h1A10_5000);
    endfunction
 
 endclass : uvme_cvmcu_reg_block_c

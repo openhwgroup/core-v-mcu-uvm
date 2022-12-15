@@ -23,7 +23,7 @@ class uvme_cvmcu_env_c extends uvmx_env_c #(
    /// @name Environment(s)
    /// @{
    // TODO: Add sub-environments
-   //       Ex: uvme_sub_env_c  sub_env; ///< Describe me!
+   //       Ex: uvme_apb_timer_env_c  sub_env; ///< Describe me!
    /// @}
 
    /// @name Agents

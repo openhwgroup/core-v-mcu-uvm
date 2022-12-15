@@ -24,6 +24,9 @@
 `include "uvm_macros.svh"
 `include "uvmx_macros.svh"
 `include "uvma_obi_macros.svh"
+`include "uvma_apb_macros.svh"
+`include "uvme_apb_timer_macros.svh"
+`include "uvme_apb_adv_timer_macros.svh"
 `include "uvme_cvmcu_macros.svh"
 
 
@@ -37,10 +40,13 @@
  */
 package uvme_cvmcu_pkg;
 
-   import uvm_pkg    ::*;
-   import uvmx_pkg   ::*;
-   import uvml_sb_pkg::*;
-   import uvma_obi_pkg::*;
+   import uvm_pkg               ::*;
+   import uvmx_pkg              ::*;
+   import uvml_sb_pkg           ::*;
+   import uvma_obi_pkg          ::*;
+   import uvma_apb_pkg          ::*;
+   import uvme_apb_timer_pkg    ::*;
+   import uvme_apb_adv_timer_pkg::*;
 
    // Constants / Structs / Enums
    `include "uvme_cvmcu_tdefs.sv"

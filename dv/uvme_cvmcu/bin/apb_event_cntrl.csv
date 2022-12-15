@@ -1,16 +1,3 @@
-Module,APB_EVENT_CNTRL,,,,,
-,Memory address: SOC_EVENT_GEN_START_ADDR(`SOC_EVENT_START_ADDR),,,,,
-,,,,,,
-,This APB peripheral device collects all the events which presented,,,,,
-,to the CPU as IRQ11 (Machine interrupt).,,,,,
-,Each event is individually maskable by the appropriate bit in the,,,,,
-,EVENT_MASKx register.,,,,,
-,When an enabled event (unmasked) is received it is placed in a event FIFO,,,,,
-,and the IRQ11 signal is presented to the CPU which can then read,,,,,
-,the EVENT FIFO to determine which event cause the interrupt.,,,,,
-,each event has a queue of depth four to collect events if the ,,,,,
-,queue for any event overflows an error is logged into the appropriate,,,,,
-,EVENT_ERR register  and IRQ31 is presented to the CPU. ,,,,,
 Register,Offset/Field,MSB,LSB,Type,Default,Description
 0x000,APB_EVENTS,,,RW,,
 ,apb_event,15,0,,,16-bits of software generated events

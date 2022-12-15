@@ -20,9 +20,8 @@ string  uvme_apb_timer_reg_hw_reset_ignore_list[$] = '{
 };
 
 string  uvme_apb_timer_reg_bit_bash_ignore_list[$] = '{
-   // TODO Add registers and/or register blocks to ignore list for uvm_reg_bit_bash_seq
-   //      Ex: "reg_name"     , // One register at a time
-   //      Ex: "reg_name.abc*", // One register field at a time
+   "cfg_reg_hi" ,
+   "cfg_reg_low"
 };
 
 string  uvme_apb_timer_reg_access_ignore_list[$] = '{

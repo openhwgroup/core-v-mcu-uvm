@@ -27,11 +27,11 @@ ip:
   licenses: ["All rights reserved."]
 
 dependencies:
-  "datum/uvmx"      : "~1.0"
-  "datum/uvml_sb"   : "~1.0"
-  "datum/uvma_clk"  : "~1.0"
-  "datum/uvma_reset": "~1.0"
-  "datum/uvma_obi"  : "~1.0"
+  "datum/uvmx"        : "~1.0"
+  "datum/uvml_sb"     : "~1.0"
+  "datum/uvma_obi"    : "~1.0"
+  "uvme_apb_timer"    : "^"
+  "uvme_apb_adv_timer": "^"
 
 structure:
   scripts-path : "bin"

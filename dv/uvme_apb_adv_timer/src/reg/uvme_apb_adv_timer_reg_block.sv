@@ -304,7 +304,7 @@ function void uvme_apb_adv_timer_reg_block_c::create_reg_map();
    // Create default register map (default_map)
    default_map = create_map(
       .name     ("default_map"),
-      .base_addr(32'h1a10_b000),
+      .base_addr(32'h1a10_5000),
       .n_bytes  (4),
       .endian   (UVM_LITTLE_ENDIAN)
    );
