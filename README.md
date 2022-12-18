@@ -1,7 +1,7 @@
 # About
 This project aims to bring the [OpenHW Group](https://www.openhwgroup.org/)'s [CORE-V MCU Project](https://docs.openhwgroup.org/projects/core-v-mcu/index.html) to [TRL-5](https://www.nasa.gov/directorates/heo/scan/engineering/technology/technology_readiness_level) and beyond via [Advanced UVM Verification](https://www.linkedin.com/pulse/advanced-uvm-brian-hunter/) and the [Moore.io](https://mooreio.org/) libraries and toolchain. [Datum](https://datumtc.ca/) and [Low Power Futures](https://lowpowerfutures.com/) are the primary contributors to this effort.
 
-![alt text](./docs/cvmcu_uvm_block_diagram.png "CORE-V MCU UVM Test Bench Block Diagram")
+[![alt text](./docs/cvmcu_uvm_block_diagram.png "CORE-V MCU UVM Test Bench Block Diagram")](https://docs.google.com/presentation/d/1iDyMnr6qHctas9Ce_29tlLaOn_mJ5B11AzqFdvYi0zA/edit?usp=sharing)
 
 
 # IP List
