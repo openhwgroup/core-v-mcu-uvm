@@ -17,6 +17,9 @@ This IP contains the CORE-V MCU UVM Environment.
 # Dependencies
 It is dependent on the following IP:
 
-* `uvmx`
-* `uvml_sb`
-* `uvma_obi`
+
+* [`uvmx`](https://www.mooreio.com/catalog/1152)
+* [`uvml_sb`](https://www.mooreio.com/catalog/1155)
+* [`uvma_obi`](https://www.mooreio.com/catalog/1161)
+* [`uvme_apb_timer`](../uvme_apb_timer)
+* [`uvme_apb_adv_timer`](../uvme_apb_adv_timer)
