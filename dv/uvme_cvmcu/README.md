@@ -21,5 +21,6 @@ It is dependent on the following IP:
 * [`uvmx`](https://www.mooreio.com/catalog/1152)
 * [`uvml_sb`](https://www.mooreio.com/catalog/1155)
 * [`uvma_obi`](https://www.mooreio.com/catalog/1161)
+* [`uvma_apb`](https://www.mooreio.com/catalog/1158)
 * [`uvme_apb_timer`](../uvme_apb_timer)
 * [`uvme_apb_adv_timer`](../uvme_apb_adv_timer)
