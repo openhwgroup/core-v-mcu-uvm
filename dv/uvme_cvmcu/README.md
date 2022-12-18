@@ -19,6 +19,4 @@ It is dependent on the following IP:
 
 * `uvmx`
 * `uvml_sb`
-* `uvma_clk`
-* `uvma_reset`
 * `uvma_obi`
