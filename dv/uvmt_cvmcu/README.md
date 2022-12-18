@@ -40,9 +40,9 @@ This IP contains the CORE-V MCU UVM Test Bench.
 # Dependencies
 It is dependent on the following IP:
 
-* `uvmx`
-* `uvml_sb`
-* `uvma_clk`
-* `uvma_reset`
-* `uvma_obi`
-* `uvme_cvmcu`
+* [`uvmx`](https://www.mooreio.com/catalog/1152)
+* [`uvml_sb`](https://www.mooreio.com/catalog/1155)
+* [`uvma_clk`](https://www.mooreio.com/catalog/1156)
+* [`uvma_reset`](https://www.mooreio.com/catalog/1157)
+* [`uvma_obi`](https://www.mooreio.com/catalog/1161)
+* [`uvme_cvmcu`](../uvme_cvmcu)
