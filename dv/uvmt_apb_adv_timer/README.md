@@ -39,9 +39,9 @@ This IP contains the APB Advanced Timer Sub-System UVM Test Bench.
 # Dependencies
 It is dependent on the following IP:
 
-* `uvmx`
-* `uvml_sb`
-* `uvma_clk`
-* `uvma_reset`
-* `uvma_apb`
-* `uvme_apb_adv_timer`
+* [`uvmx`](https://www.mooreio.com/catalog/1152)
+* [`uvml_sb`](https://www.mooreio.com/catalog/1155)
+* [`uvma_clk`](https://www.mooreio.com/catalog/1156)
+* [`uvma_reset`](https://www.mooreio.com/catalog/1157)
+* [`uvma_apb`](https://www.mooreio.com/catalog/1158)
+* [`uvme_apb_adv_timer`](../uvme_apb_adv_timer)
