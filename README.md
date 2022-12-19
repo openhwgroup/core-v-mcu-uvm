@@ -23,7 +23,7 @@ This project aims to bring the [OpenHW Group](https://www.openhwgroup.org/)'s [C
 
 
 # Simulation
-To run compilation, elaboration and simulation for Test Bench `uvmt_cvmcu`, test `reg_bit_bash`, seed `1`, `high` verbosity, with waveform capture enabled, using the Vivado simulator:
+To run compilation, elaboration and simulation for IP `uvmt_cvmcu`, test `reg_bit_bash`, seed `1`, `high` verbosity, with waveform capture enabled, using the Vivado simulator:
 
 ```
 mio sim uvmt_cvmcu -t reg_bit_bash -s 1 -v high -w -a viv
