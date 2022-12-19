@@ -24,7 +24,7 @@ This project aims to bring the [OpenHW Group](https://www.openhwgroup.org/)'s [C
 ## Supported Simulators
 - Xilinx Vivado: `2022.2`
 - Metrics DSim: `20220822.10.0`
-- Siemens QuestaSim: ETA Q1 '23
+- Siemens QuestaSim: ETA Q4 '22
 - Synopsys VCS: ETA Q1 '23
 - Cadence Xcelium: ETA Q1 '23
 - Aldec Riviera-PRO: TBD
