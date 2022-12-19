@@ -21,6 +21,14 @@ This project aims to bring the [OpenHW Group](https://www.openhwgroup.org/)'s [C
 1. Install the [Moore.io CLI Client](https://mio-cli.readthedocs.io/en/latest/): `pip3 install mio-cli`
 1. [Create a free Moore.io IP Marketplace user account](https://mooreio.org/account/register). The VIP libraries for this project are under license from [Datum](https://datumtc.ca/) and credentials are needed to install them.
 
+## Supported Simulators
+- Xilinx Vivado: `2022.2`
+- Metrics DSim: `20220822.10.0`
+- Siemens QuestaSim: ETA Q1 '23
+- Synopsys VCS: ETA Q1 '23
+- Cadence Xcelium: ETA Q1 '23
+- Aldec Riviera-PRO: TBD
+
 
 # Simulation
 To run compilation, elaboration and simulation for IP `uvmt_cvmcu`, test `reg_bit_bash`, seed `1`, `high` verbosity, with waveform capture enabled, using the Vivado simulator:
