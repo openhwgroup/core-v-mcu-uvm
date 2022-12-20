@@ -38,7 +38,7 @@ mio sim uvmt_cvmcu -t reg_bit_bash -s 1 -v high -w -a viv
 ```
 
 # Regressions
-To run regression `sanity` for Test Bench `uvmt_cvmcu`:
+To run regression `sanity` for IP `uvmt_cvmcu`:
 
 ```
 mio regr uvmt_cvmcu sanity
