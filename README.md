@@ -24,8 +24,8 @@ This project aims to bring the [OpenHW Group](https://www.openhwgroup.org/)'s [C
 1. Set an environment variable for the Vivado installation location: `export MIO_VIVADO_HOME=/path/to/vivado/bin`
 
 ## Supported Simulators
-- Xilinx Vivado: `2022.2`
 - Metrics DSim Cloud: `20220822.10.0`
+- Xilinx Vivado: `2022.2`
 - Siemens QuestaSim: ETA Q4 '22
 - Synopsys VCS: ETA Q1 '23
 - Cadence Xcelium: ETA Q1 '23
