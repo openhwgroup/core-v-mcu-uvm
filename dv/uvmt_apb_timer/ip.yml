@@ -20,8 +20,8 @@ ip:
   block-diagram: "docs/tb_block_diagram.svg"
   languages: ["sv"]
   simulators-supported:
-    viv: "2022.2"
     mdc: "20220822.10.0"
+    viv: "2022.2"
   tags: []
   copyright-holders: ["Datum Technology Corporation"]
   licenses: ["All rights reserved."]
