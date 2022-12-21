@@ -18,6 +18,7 @@ This project aims to bring the [OpenHW Group](https://www.openhwgroup.org/)'s [C
 # Installing Toolchain
 1. Download and install the latest version of [Xilinx Vivado ML Edition](https://www.xilinx.com/support/download.html)
 1. Set an environment variable for the Vivado installation location: `export MIO_VIVADO_HOME=/path/to/vivado/bin`
+1. Set an environment variable for the Metrics installation location: `export MIO_METRICS_HOME=/usr/local/bin`
 1. Install the [Moore.io CLI Client](https://mio-cli.readthedocs.io/en/latest/): `pip3 install mio-cli`
 1. [Create a free Moore.io IP Marketplace user account](https://mooreio.org/account/register). The VIP libraries for this project are under license from [Datum](https://datumtc.ca/) and credentials are needed to install them.
 
