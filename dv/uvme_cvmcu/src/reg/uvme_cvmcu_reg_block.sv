@@ -106,7 +106,7 @@ class uvme_cvmcu_reg_block_c extends uvmx_reg_block_c;
       default_map.add_submap(apb_timer    .default_map, `UVM_REG_ADDR_WIDTH'h1A10_B000);
       default_map.add_submap(apb_adv_timer.default_map, `UVM_REG_ADDR_WIDTH'h1A10_5000);
       default_map.add_submap(gpio         .default_map, `UVM_REG_ADDR_WIDTH'h1A10_1000);
-      default_map.add_submap(uart         .default_map, `UVM_REG_ADDR_WIDTH'h1A10_2080);
+      default_map.add_submap(uart         .default_map, `UVM_REG_ADDR_WIDTH'h1A10_20A0);
    endfunction
 
 endclass : uvme_cvmcu_reg_block_c

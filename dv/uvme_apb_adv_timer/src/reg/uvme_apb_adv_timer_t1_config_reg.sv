@@ -1,5 +1,5 @@
 // Copyright 2022 Datum Technology Corporation
-// SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
+// All rights reserved
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -32,87 +32,77 @@ class uvme_apb_adv_timer_t1_config_reg_c extends uvmx_reg_c;
    /**
     * Default constructor.
     */
-   extern function new(string name="uvme_apb_adv_timer_t1_config_reg", int unsigned n_bits=32, int has_coverage=UVM_NO_COVERAGE);
+   function new(string name="uvme_apb_adv_timer_t1_config_reg", int unsigned n_bits=32, int has_coverage=UVM_NO_COVERAGE);
+      super.new(name, n_bits, has_coverage);
+   endfunction
 
    /**
     * Creates and configures register fields.
     */
-   extern virtual function void build();
+   virtual function void build();
+      insel = uvmx_reg_field_c::type_id::create("insel");
+      insel.configure(
+         .parent                 (this),
+         .size                   (   8),
+         .lsb_pos                (   0),
+         .access                 ("RW"),
+         .volatile               (   0),
+         .reset                  (   0),
+         .has_reset              (   1),
+         .is_rand                (   1),
+         .individually_accessible(   1)
+      );
+      mode = uvmx_reg_field_c::type_id::create("mode");
+      mode.configure(
+         .parent                 (this),
+         .size                   (   3),
+         .lsb_pos                (   8),
+         .access                 ("RW"),
+         .volatile               (   0),
+         .reset                  (   0),
+         .has_reset              (   1),
+         .is_rand                (   1),
+         .individually_accessible(   1)
+      );
+      clksel = uvmx_reg_field_c::type_id::create("clksel");
+      clksel.configure(
+         .parent                 (this),
+         .size                   (   1),
+         .lsb_pos                (   11),
+         .access                 ("RW"),
+         .volatile               (   0),
+         .reset                  (   0),
+         .has_reset              (   1),
+         .is_rand                (   1),
+         .individually_accessible(   1)
+      );
+      updownsel = uvmx_reg_field_c::type_id::create("updownsel");
+      updownsel.configure(
+         .parent                 (this),
+         .size                   (   1),
+         .lsb_pos                (   12),
+         .access                 ("RW"),
+         .volatile               (   0),
+         .reset                  (   1),
+         .has_reset              (   1),
+         .is_rand                (   1),
+         .individually_accessible(   1)
+      );
+      presc = uvmx_reg_field_c::type_id::create("presc");
+      presc.configure(
+         .parent                 (this),
+         .size                   (   8),
+         .lsb_pos                (   16),
+         .access                 ("RW"),
+         .volatile               (   0),
+         .reset                  (   0),
+         .has_reset              (   1),
+         .is_rand                (   1),
+         .individually_accessible(   1)
+      );
+   endfunction
 
 endclass : uvme_apb_adv_timer_t1_config_reg_c
-
-
-function uvme_apb_adv_timer_t1_config_reg_c::new(string name="uvme_apb_adv_timer_t1_config_reg", int unsigned n_bits=32, int has_coverage=UVM_NO_COVERAGE);
-
-   super.new(name, n_bits, has_coverage);
-
-endfunction : new
-
-
-function void uvme_apb_adv_timer_t1_config_reg_c::build();
-
-   insel = uvmx_reg_field_c::type_id::create("insel");
-   insel.configure(
-      .parent                 (this),
-      .size                   (   8),
-      .lsb_pos                (   0),
-      .access                 ("RW"),
-      .volatile               (   0),
-      .reset                  (   0),
-      .has_reset              (   1),
-      .is_rand                (   1),
-      .individually_accessible(   1)
-   );
-   mode = uvmx_reg_field_c::type_id::create("mode");
-   mode.configure(
-      .parent                 (this),
-      .size                   (   3),
-      .lsb_pos                (   8),
-      .access                 ("RW"),
-      .volatile               (   0),
-      .reset                  (   0),
-      .has_reset              (   1),
-      .is_rand                (   1),
-      .individually_accessible(   1)
-   );
-   clksel = uvmx_reg_field_c::type_id::create("clksel");
-   clksel.configure(
-      .parent                 (this),
-      .size                   (   1),
-      .lsb_pos                (   11),
-      .access                 ("RW"),
-      .volatile               (   0),
-      .reset                  (   0),
-      .has_reset              (   1),
-      .is_rand                (   1),
-      .individually_accessible(   1)
-   );
-   updownsel = uvmx_reg_field_c::type_id::create("updownsel");
-   updownsel.configure(
-      .parent                 (this),
-      .size                   (   1),
-      .lsb_pos                (   12),
-      .access                 ("RW"),
-      .volatile               (   0),
-      .reset                  (   1),
-      .has_reset              (   1),
-      .is_rand                (   1),
-      .individually_accessible(   1)
-   );
-   presc = uvmx_reg_field_c::type_id::create("presc");
-   presc.configure(
-      .parent                 (this),
-      .size                   (   8),
-      .lsb_pos                (   16),
-      .access                 ("RW"),
-      .volatile               (   0),
-      .reset                  (   0),
-      .has_reset              (   1),
-      .is_rand                (   1),
-      .individually_accessible(   1)
-   );
-
-endfunction: build
 
 
 `endif // __UVME_APB_ADV_TIMER_T1_CONFIG_REG_SV__
