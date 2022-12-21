@@ -26,6 +26,12 @@ ip:
   copyright-holders: ["Datum Technology Corporation"]
   licenses: ["All rights reserved."]
 
+dut:
+  type: fsoc
+  name: "core-v-mcu"
+  full-name: "openhwgroup.org:systems:core-v-mcu"
+  target: "sim"
+
 dependencies:
   "datum/uvmx"      : "~1.0"
   "datum/uvml_sb"   : "~1.0"
@@ -47,9 +53,3 @@ hdl-src:
   so-libs: []
   tests-path: "tests"
   test-name-template: "uvmt_cvmcu_{{ name }}_test_c"
-
-dut:
-  type: fsoc
-  name: "core-v-mcu"
-  full-name: "openhwgroup.org:systems:core-v-mcu"
-  target: "sim"
