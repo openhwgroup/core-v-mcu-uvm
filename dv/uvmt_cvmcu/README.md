@@ -9,7 +9,7 @@ This IP contains the CORE-V MCU UVM Test Bench.
 ![alt text](./docs/tb_block_diagram.svg "CORE-V MCU UVM Test Bench Block Diagram")
 
 
-# Regressions
+# [Regressions](src/tests/ts.yml)
 | Name | Description |
 | ---- | ----------- |
 | `sanity` | Runs only a single known seed for a few basic tests. |
@@ -21,13 +21,13 @@ This IP contains the CORE-V MCU UVM Test Bench.
 # Tests
 | Name | Description |
 | ---- | ----------- |
-| `mem_access` | Ensures accessibility of all memories by executing the uvm_mem_single_access_seq sequence on each. |
-| `mem_walk` | Checks all memories by executing the uvm_mem_single_walk_seq sequence on each. |
-| `reg_access` | Ensures accessibility of all registers by executing the uvm_reg_single_access_seq sequence on each. |
-| `reg_bit_bash` | Checks the implementation of all registers by executing the uvm_reg_single_bit_bash_seq on each. |
-| `reg_hw_reset` | Reads all of the registers, via all of the available address maps, comparing the value read with the expected reset value. |
-| `shared_access` | Ensures accessibility of all registers by executing the uvm_reg_shared_access_seq sequence on each. |
-| `smoke` | Writes to a single memory location and reads back. |
+| [`mem_access`](src/tests/uvmt_cvmcu_mem_access_test.sv) | Ensures accessibility of all memories by executing the uvm_mem_single_access_seq sequence on each. |
+| [`mem_walk`](src/tests/uvmt_cvmcu_mem_walk_test.sv) | Checks all memories by executing the uvm_mem_single_walk_seq sequence on each. |
+| [`reg_access`](src/tests/uvmt_cvmcu_reg_access_test.sv) | Ensures accessibility of all registers by executing the uvm_reg_single_access_seq sequence on each. |
+| [`reg_bit_bash`](src/tests/uvmt_cvmcu_reg_bit_bash_test.sv) | Checks the implementation of all registers by executing the uvm_reg_single_bit_bash_seq on each. |
+| [`reg_hw_reset`](src/tests/uvmt_cvmcu_reg_hw_reset_test.sv) | Reads all of the registers, via all of the available address maps, comparing the value read with the expected reset value. |
+| [`shared_access`](src/tests/uvmt_cvmcu_shared_access_test.sv) | Ensures accessibility of all registers by executing the uvm_reg_shared_access_seq sequence on each. |
+| [`smoke`](src/tests/uvmt_cvmcu_smoke_test.sv) | Writes to a single memory location and reads back. |
 
 
 # Directory Structure
