@@ -8,7 +8,7 @@ This IP contains the APB Timer Sub-System UVM Test Bench.
 ![alt text](./docs/tb_block_diagram.svg "APB Timer Sub-System UVM Test Bench Block Diagram")
 
 
-# Regressions
+# [Regressions](src/tests/ts.yml)
 | Name | Description |
 | ---- | ----------- |
 | `sanity` | Runs only a single known seed for a few basic tests. |
