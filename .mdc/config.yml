@@ -1,7 +1,0 @@
-toolchain:
-  dsim:
-    version: 20220822.10.0
-  environment-variables: null
-  packages:
-  - name: uvm
-    version: '1.2'

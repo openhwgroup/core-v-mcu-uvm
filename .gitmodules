@@ -1,4 +1,0 @@
-[submodule "rtl/core-v-mcu"]
-	path = rtl/core-v-mcu
-	url = https://github.com/Datum-Technology-Corporation/core-v-mcu.git
-   branch = shelled_core
