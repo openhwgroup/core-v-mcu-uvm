@@ -10,7 +10,7 @@
 
 
 @section quick_start_license_agreement License Agreement
-© Copyright 2022 Datum Technology Corporation
+© Copyright 2022-2023 Datum Technology Corporation
 
 All rights reserved.
 

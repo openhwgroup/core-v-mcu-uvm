@@ -1,4 +1,4 @@
-// Copyright 2022 Datum Technology Corporation
+// Copyright 2022-2023 Datum Technology Corporation
 // All rights reserved.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -36,7 +36,7 @@ class uvmt_cvmcu_test_cfg_c extends uvmx_test_cfg_c #(
 
    `uvm_object_utils_begin(uvmt_cvmcu_test_cfg_c)
       `uvm_field_int   (                      sys_clk_frequency, UVM_DEFAULT + UVM_DEC)
-      `uvm_field_enum  (uvmx_reset_type_enum, reset_type   , UVM_DEFAULT          )
+      `uvm_field_enum  (uvmx_reset_type_enum, reset_type       , UVM_DEFAULT          )
       `uvm_field_int   (auto_ral_update         , UVM_DEFAULT          )
       `uvm_field_int   (trn_log_enabled         , UVM_DEFAULT          )
       `uvm_field_int   (cov_model_enabled       , UVM_DEFAULT          )
@@ -51,7 +51,7 @@ class uvmt_cvmcu_test_cfg_c extends uvmx_test_cfg_c #(
       `uvm_field_object(sys_clk_agent_cfg, UVM_DEFAULT)
       `uvm_field_object(sys_reset_agent_cfg, UVM_DEFAULT)
       `uvm_field_object(selected_reg_block, UVM_DEFAULT)
-      `uvm_field_object(reg_model, UVM_DEFAULT)
+      `uvm_field_object(reg_model, UVM_DEFAULT + UVM_NOPRINT)
    `uvm_object_utils_end
 
 
@@ -59,8 +59,8 @@ class uvmt_cvmcu_test_cfg_c extends uvmx_test_cfg_c #(
     * Sets safe defaults for all simulation timing parameters.
     */
    constraint defaults_cons {
-      sys_clk_frequency == uvmt_cvmcu_default_sys_clk_frequency;
-      reset_type               == UVMX_RESET_SYNC                                 ;
+      sys_clk_frequency        == uvmt_cvmcu_default_sys_clk_frequency       ;
+      reset_type               == UVMX_RESET_SYNC                            ;
       startup_timeout          == uvmt_cvmcu_default_startup_timeout         ;
       heartbeat_period         == uvmt_cvmcu_default_heartbeat_period        ;
       heartbeat_refresh_period == uvmt_cvmcu_default_heartbeat_refresh_period;
@@ -74,13 +74,13 @@ class uvmt_cvmcu_test_cfg_c extends uvmx_test_cfg_c #(
    constraint rules_cons {
       sys_reset_agent_cfg.reset_type == reset_type;
       sys_reset_agent_cfg.reset_type == reset_type;
-      sys_clk_agent_cfg.enabled == 1;
+      sys_clk_agent_cfg  .enabled == 1;
       sys_reset_agent_cfg.enabled == 1;
-      sys_clk_agent_cfg.is_active == UVM_ACTIVE;
+      sys_clk_agent_cfg  .is_active == UVM_ACTIVE;
       sys_reset_agent_cfg.is_active == UVM_ACTIVE;
-      sys_clk_agent_cfg.trn_log_enabled == trn_log_enabled;
+      sys_clk_agent_cfg  .trn_log_enabled == trn_log_enabled;
       sys_reset_agent_cfg.trn_log_enabled == trn_log_enabled;
-      sys_clk_agent_cfg.cov_model_enabled == 0;
+      sys_clk_agent_cfg  .cov_model_enabled == 0;
       sys_reset_agent_cfg.cov_model_enabled == 0;
    }
 

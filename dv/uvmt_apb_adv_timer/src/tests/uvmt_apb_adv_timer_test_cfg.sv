@@ -1,4 +1,4 @@
-// Copyright 2022 Datum Technology Corporation
+// Copyright 2022-2023 Datum Technology Corporation
 // All rights reserved.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -51,7 +51,7 @@ class uvmt_apb_adv_timer_test_cfg_c extends uvmx_test_cfg_c #(
       `uvm_field_object(sys_clk_agent_cfg, UVM_DEFAULT)
       `uvm_field_object(sys_reset_agent_cfg, UVM_DEFAULT)
       `uvm_field_object(selected_reg_block, UVM_DEFAULT)
-      `uvm_field_object(reg_model, UVM_DEFAULT)
+      `uvm_field_object(reg_model, UVM_DEFAULT + UVM_NOPRINT)
    `uvm_object_utils_end
 
 

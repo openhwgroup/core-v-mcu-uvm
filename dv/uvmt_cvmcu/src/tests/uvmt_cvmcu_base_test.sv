@@ -1,4 +1,4 @@
-// Copyright 2022 Datum Technology Corporation
+// Copyright 2022-2023 Datum Technology Corporation
 // All rights reserved.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -45,7 +45,7 @@ class uvmt_cvmcu_base_test_c extends uvmx_test_c #(
     * Describe rules_cons
     */
    constraint rules_cons {
-      sys_clk_vseq.frequency == test_cfg.sys_clk_frequency;
+      sys_clk_vseq.frequency     == test_cfg.sys_clk_frequency;
       env_cfg.reset_type         == test_cfg.reset_type       ;
       env_cfg .trn_log_enabled   == test_cfg.trn_log_enabled  ;
       env_cfg .cov_model_enabled == test_cfg.cov_model_enabled;

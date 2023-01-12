@@ -1,4 +1,4 @@
-# Copyright 2022 Datum Technology Corporation
+# Copyright 2022-2023 Datum Technology Corporation
 # All rights reserved.
 ########################################################################################################################
 
@@ -14,3 +14,4 @@ timescale    = "1ns/1ps"
 
 [ip]
 paths = ["dv", "rtl", "rtl/core-v-mcu"]
+global-paths = ["/home/dpoulin/git/uvma_apb/dv", "/homes/dpoulin/git/uvma_obi/dv", "/homes/dpoulin/git/uvmx/dv"]

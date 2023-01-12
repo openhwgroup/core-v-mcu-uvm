@@ -1,4 +1,4 @@
-// Copyright 2022 Datum Technology Corporation
+// Copyright 2022-2023 Datum Technology Corporation
 // All rights reserved.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -22,7 +22,8 @@ class uvme_cvmcu_reg_block_c extends uvmx_reg_block_c;
    rand uvme_apb_timer_reg_block_c      apb_timer    ; ///< APB Timer Unit
    rand uvme_apb_adv_timer_reg_block_c  apb_adv_timer; ///< Advanced APB Timer Unit
    rand uvme_cvmcu_gpio_reg_block_c     gpio         ; ///< GPIO
-   rand uvme_cvmcu_uart_reg_block_c     uart         ; ///< UART
+   rand uvme_cvmcu_uart_reg_block_c     uart0        ; ///< UART0
+   rand uvme_cvmcu_uart_reg_block_c     uart1        ; ///< UART0
    /// @}
 
    /// @name Registers
@@ -36,7 +37,8 @@ class uvme_cvmcu_reg_block_c extends uvmx_reg_block_c;
       `uvm_field_object(apb_timer    , UVM_DEFAULT)
       `uvm_field_object(apb_adv_timer, UVM_DEFAULT)
       `uvm_field_object(gpio         , UVM_DEFAULT)
-      `uvm_field_object(uart         , UVM_DEFAULT)
+      `uvm_field_object(uart0        , UVM_DEFAULT)
+      `uvm_field_object(uart1        , UVM_DEFAULT)
    `uvm_object_utils_end
 
 
@@ -60,9 +62,12 @@ class uvme_cvmcu_reg_block_c extends uvmx_reg_block_c;
       gpio = uvme_cvmcu_gpio_reg_block_c::type_id::create("gpio");
       gpio.configure(this);
       gpio.build();
-      uart = uvme_cvmcu_uart_reg_block_c::type_id::create("uart");
-      uart.configure(this);
-      uart.build();
+      uart0 = uvme_cvmcu_uart_reg_block_c::type_id::create("uart0");
+      uart0.configure(this);
+      uart0.build();
+      uart1 = uvme_cvmcu_uart_reg_block_c::type_id::create("uart1");
+      uart1.configure(this);
+      uart1.build();
    endfunction
 
    /**
@@ -106,7 +111,8 @@ class uvme_cvmcu_reg_block_c extends uvmx_reg_block_c;
       default_map.add_submap(apb_timer    .default_map, `UVM_REG_ADDR_WIDTH'h1A10_B000);
       default_map.add_submap(apb_adv_timer.default_map, `UVM_REG_ADDR_WIDTH'h1A10_5000);
       default_map.add_submap(gpio         .default_map, `UVM_REG_ADDR_WIDTH'h1A10_1000);
-      default_map.add_submap(uart         .default_map, `UVM_REG_ADDR_WIDTH'h1A10_20A0);
+      default_map.add_submap(uart0        .default_map, `UVM_REG_ADDR_WIDTH'h1A10_2080);
+      default_map.add_submap(uart1        .default_map, `UVM_REG_ADDR_WIDTH'h1A10_2100);
    endfunction
 
 endclass : uvme_cvmcu_reg_block_c
