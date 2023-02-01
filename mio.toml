@@ -9,9 +9,9 @@ full-name   = "CORE-V MCU UVM Test Bench Project"
 description = ""
 
 [simulation]
-uvm-version  = "1.2"
-timescale    = "1ns/1ps"
+uvm-version       = "1.2"
+timescale         = "1ns/1ps"
+default-simulator = "mdc"
 
 [ip]
 paths = ["dv", "rtl", "rtl/core-v-mcu"]
-global-paths = ["/home/dpoulin/git/uvma_apb/dv", "/homes/dpoulin/git/uvma_obi/dv", "/homes/dpoulin/git/uvmx/dv"]
