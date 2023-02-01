@@ -32,6 +32,13 @@ This project aims to bring the [OpenHW Group](https://www.openhwgroup.org/)'s [C
 - Aldec Riviera-PRO: TBD
 
 
+# Cloning the repository
+The MCU RTL is included as a git submodule; if you do not clone the repository with `--recursive`, you will have to populate the submodule(s) manually:
+```
+git submodule update --init
+```
+
+
 # Simulation
 - The UVMx libraries from Datum must first be installed: ```mio install uvmt_cvmcu```
 - To run compilation, elaboration and simulation for IP `uvmt_cvmcu`, test `reg_bit_bash`, seed `1`, `high` verbosity, with waveform capture enabled, using Metrics DSim Cloud:
