@@ -40,7 +40,7 @@ git submodule update --init
 
 
 # Simulation
-- The UVMx libraries from Datum must first be installed:
+- The UVM libraries from Datum must first be installed:
 
 > ```
 > mio install uvmt_cvmcu
