@@ -54,8 +54,19 @@ git submodule update --init
 > ```
 
 # Regressions
+## Running locally
 To run regression `sanity` for IP `uvmt_cvmcu` using Metrics DSim Cloud:
 
 ```
 mio regr uvmt_cvmcu sanity -a mdc
 ```
+
+## Reports
+### Sanity
+Coming soon
+
+### Nightly
+Coming soon
+
+### Weekly
+Coming soon
