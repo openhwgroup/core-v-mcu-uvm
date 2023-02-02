@@ -40,7 +40,12 @@ git submodule update --init
 
 
 # Simulation
-- The UVMx libraries from Datum must first be installed: ```mio install uvmt_cvmcu```
+- The UVMx libraries from Datum must first be installed:
+
+> ```
+> mio install uvmt_cvmcu
+> ```
+
 - To run compilation, elaboration and simulation for IP `uvmt_cvmcu`, test `reg_bit_bash`, seed `1`, `high` verbosity, with waveform capture enabled, using Metrics DSim Cloud:
 
 > ```
