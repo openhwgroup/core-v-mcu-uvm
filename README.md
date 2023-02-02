@@ -32,7 +32,7 @@ This project aims to bring the [OpenHW Group](https://www.openhwgroup.org/)'s [C
 - Aldec Riviera-PRO: TBD
 
 
-# Cloning the repository
+# Getting the MCU RTL
 The MCU RTL is included as a git submodule; if you do not clone the repository with `--recursive`, you will have to populate the submodule(s) manually:
 ```
 git submodule update --init
