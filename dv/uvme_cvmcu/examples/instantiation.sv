@@ -1,8 +1,7 @@
 // Copyright 2022-2023 Datum Technology Corporation
 // All rights reserved.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// This file contains sample code that demonstrates how to add an instance of the CORE-V MCU
-// Sub-System UVM Environment to another UVM environment.
+// This file contains sample code that demonstrates how to add an instance of the CORE-V MCU UVM Environment to another UVM environment.
 // NOTE: It is recommended to split up classes into separate files.
 
 
