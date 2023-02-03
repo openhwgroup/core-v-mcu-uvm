@@ -51,9 +51,9 @@ class uvme_cvmcu_example_vseq_c extends uvme_cvmcu_base_vseq_c;
       //
       //      Ex: Fixed number of random items:
       //          for (int unsigned ii=0; ii<num_items; ii++) begin
-      //             `uvm_info("CVMCU_MY_VSEQ", $sformatf("Starting item %0d/%0d", (ii+1), num_items), UVM_MEDIUM)
+      //             `uvm_info("CVMCU_EXAMPLE_VSEQ", $sformatf("Starting item %0d/%0d", (ii+1), num_items), UVM_MEDIUM)
       //             `uvm_do_on(req, p_sequencer.obi_data_vsequencer)
-      //             `uvm_info("CVMCU_MY_VSEQ", $sformatf("Finished item %0d/%0d", (ii+1), num_items), UVM_MEDIUM)
+      //             `uvm_info("CVMCU_EXAMPLE_VSEQ", $sformatf("Finished item %0d/%0d", (ii+1), num_items), UVM_MEDIUM)
       //          end
       //
       //      Ex: Register accesses:
