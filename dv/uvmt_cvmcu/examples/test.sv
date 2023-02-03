@@ -9,14 +9,14 @@
 
 
 /**
- * Test which runs virtual sequence 'my_vseq' for 100 items of stimulus.
+ * Test which runs Virtual Sequence 'example_vseq' for 100 items of stimulus.
  */
-class uvmt_cvmcu_my_test_c extends uvmt_cvmcu_base_test_c;
+class uvmt_cvmcu_example_test_c extends uvmt_cvmcu_base_test_c;
 
    rand uvme_cvmcu_example_vseq_c  example_vseq; ///< Virtual sequence to be run
 
 
-   `uvm_component_utils(uvmt_cvmcu_my_test_c)
+   `uvm_component_utils(uvmt_cvmcu_example_test_c)
 
 
    /**
@@ -28,15 +28,15 @@ class uvmt_cvmcu_my_test_c extends uvmt_cvmcu_base_test_c;
 
 
    /**
-    * Creates my_vseq.
+    * Creates example_vseq.
     */
-   function new(string name="uvmt_cvmcu_my_test", uvm_component parent=null);
+   function new(string name="uvmt_cvmcu_example_test", uvm_component parent=null);
       super.new(name, parent);
       example_vseq = uvme_cvmcu_example_vseq_c::type_id::create("example_vseq");
    endfunction
 
    /**
-    * Runs my_vseq on vsequencer.
+    * Runs example_vseq on vsequencer.
     */
    virtual task main_phase(uvm_phase phase);
       phase.raise_objection(this);
@@ -46,7 +46,7 @@ class uvmt_cvmcu_my_test_c extends uvmt_cvmcu_base_test_c;
       phase.drop_objection(this);
    endtask
 
-endclass : uvmt_cvmcu_my_test_c
+endclass : uvmt_cvmcu_example_test_c
 
 
 `endif // __UVMT_CVMCU_EXAMPLE_TEST_SV__
