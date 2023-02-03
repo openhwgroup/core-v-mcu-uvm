@@ -3,8 +3,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // This file contains sample code that demonstrates how to add an instance of the CORE-V MCU
 // Sub-System UVM Environment to another UVM environment.
-// NOTE: It is recommended to split up class member declaration and definition; these classes are all inline to keep
-//       the example short.
+// NOTE: It is recommended to split up classes into separate files.
 
 
 `ifndef __MY_ENV_CFG_SV__
