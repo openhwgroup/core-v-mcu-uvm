@@ -8,8 +8,8 @@
 
 
 /**
- * Component from which all other CORE-V MCU Sub-System tests must extend.
- * Subclasses must provide stimulus via the virtual sequencer by implementing UVM runtime phases.
+ * Component from which all other CORE-V MCU tests must extend.
+ * Subclasses must provide stimulus via vsequencer by implementing UVM runtime phases.
  * @ingroup uvmt_cvmcu_tests
  */
 class uvmt_cvmcu_base_test_c extends uvmx_test_c #(
@@ -22,14 +22,15 @@ class uvmt_cvmcu_base_test_c extends uvmx_test_c #(
 
    /// @name Agents
    /// @{
-   uvma_clk_agent_c    sys_clk_agent; ///<
-   uvma_reset_agent_c  sys_reset_agent; ///<
+   uvma_clk_agent_c    sys_clk_agent  ; ///< System Clock Agent.
+   uvma_reset_agent_c  sys_reset_agent; ///< System Reset Agent.
    /// @}
 
    /// @name Default sequences
    /// @{
    rand uvma_clk_start_vseq_c    sys_clk_vseq  ; ///< Starts clock generation during pre_reset_phase()
    rand uvma_reset_pulse_vseq_c  sys_reset_vseq; ///< Asserts reset during reset_phase()
+   rand uvme_cvmcu_init_vseq_c   init_vseq     ; ///< TODO Describe uvmt_cvmcu_base_test_c::init_vseq
    /// @}
 
 
@@ -62,7 +63,7 @@ class uvmt_cvmcu_base_test_c extends uvmx_test_c #(
     *
     */
    virtual function void create_components();
-      sys_clk_agent = uvma_clk_agent_c::type_id::create("sys_clk_agent", this);
+      sys_clk_agent   = uvma_clk_agent_c  ::type_id::create("sys_clk_agent"  , this);
       sys_reset_agent = uvma_reset_agent_c::type_id::create("sys_reset_agent", this);
    endfunction
 
@@ -77,7 +78,7 @@ class uvmt_cvmcu_base_test_c extends uvmx_test_c #(
     *
     */
    virtual function void assign_cfg();
-      uvm_config_db#(uvma_clk_cfg_c)::set(this, "sys_clk_agent", "cfg", test_cfg.sys_clk_agent_cfg);
+      uvm_config_db#(uvma_clk_cfg_c  )::set(this, "sys_clk_agent"  , "cfg", test_cfg.sys_clk_agent_cfg  );
       uvm_config_db#(uvma_reset_cfg_c)::set(this, "sys_reset_agent", "cfg", test_cfg.sys_reset_agent_cfg);
    endfunction
 
@@ -85,8 +86,9 @@ class uvmt_cvmcu_base_test_c extends uvmx_test_c #(
     *
     */
    virtual function void create_sequences();
-      sys_clk_vseq = uvma_clk_start_vseq_c::type_id::create("sys_clk_vseq");
+      sys_clk_vseq   = uvma_clk_start_vseq_c  ::type_id::create("sys_clk_vseq"  );
       sys_reset_vseq = uvma_reset_pulse_vseq_c::type_id::create("sys_reset_vseq");
+      init_vseq      = uvme_cvmcu_init_vseq_c ::type_id::create("init_vseq"     );
    endfunction
 
    /**
@@ -108,6 +110,17 @@ class uvmt_cvmcu_base_test_c extends uvmx_test_c #(
       `uvm_info("TEST", $sformatf("Starting Reset Virtual Sequence:\n%s", sys_reset_vseq.sprint()), UVM_NONE)
       sys_reset_vseq.start(sys_reset_agent.vsequencer);
       `uvm_info("TEST", $sformatf("Finished Reset Virtual Sequence", sys_reset_vseq.sprint()), UVM_NONE)
+      phase.drop_objection(this);
+   endtask
+
+   /**
+    * Runs init_vseq.
+    */
+   virtual task pre_configure_phase(uvm_phase phase);
+      phase.raise_objection(this);
+      `uvm_info("TEST", $sformatf("Starting Init Virtual Sequence:\n%s", init_vseq.sprint()), UVM_NONE)
+      init_vseq.start(vsequencer);
+      `uvm_info("TEST", $sformatf("Finished Init Virtual Sequence:\n%s", init_vseq.sprint()), UVM_NONE)
       phase.drop_objection(this);
    endtask
 

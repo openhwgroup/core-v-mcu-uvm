@@ -9,6 +9,7 @@
 
 `include "uvme_cvmcu_base_vseq.sv"
 `include "uvme_cvmcu_reg_base_vseq.sv"
+`include "uvme_cvmcu_init_vseq.sv"
 `include "uvme_cvmcu_smoke_vseq.sv"
 
 

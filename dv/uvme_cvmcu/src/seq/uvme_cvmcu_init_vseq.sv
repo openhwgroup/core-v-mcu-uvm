@@ -1,18 +1,16 @@
 // Copyright 2022-2023 Datum Technology Corporation
 // All rights reserved.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// This file contains sample code that demonstrates how to add a new sequence to the CORE-V MCU Sub-System environment.
-// Any new sequence must be `include() into uvme_cvmcu_vseq_lib.sv
 
 
-`ifndef __UVME_CVMCU_EXAMPLE_VSEQ_SV__
-`define __UVME_CVMCU_EXAMPLE_VSEQ_SV__
+`ifndef __UVME_CVMCU_INIT_VSEQ_SV__
+`define __UVME_CVMCU_INIT_VSEQ_SV__
 
 
 /**
- * TODO Describe uvme_cvmcu_example_vseq_c
+ * TODO Describe uvme_cvmcu_init_vseq_c
  */
-class uvme_cvmcu_example_vseq_c extends uvme_cvmcu_base_vseq_c;
+class uvme_cvmcu_init_vseq_c extends uvme_cvmcu_base_vseq_c;
 
    /// @name Knobs
    /// @{
@@ -21,7 +19,7 @@ class uvme_cvmcu_example_vseq_c extends uvme_cvmcu_base_vseq_c;
    /// @}
 
 
-   `uvm_object_utils_begin(uvme_cvmcu_example_vseq_c)
+   `uvm_object_utils_begin(uvme_cvmcu_init_vseq_c)
       // TODO Add UVM field macros for knobs
       //      Ex: `uvm_field_int(num_items, UVM_DEFAULT)
    `uvm_object_utils_end
@@ -39,15 +37,15 @@ class uvme_cvmcu_example_vseq_c extends uvme_cvmcu_base_vseq_c;
    /**
     * Default constructor.
     */
-   function new(string name="uvme_cvmcu_example_vseq");
+   function new(string name="uvme_cvmcu_init_vseq");
       super.new(name);
    endfunction
 
    /**
-    * TODO Describe uvme_cvmcu_example_vseq_c::body()
+    * TODO Describe uvme_cvmcu_init_vseq_c::body()
     */
    virtual task body();
-      // TODO Add stimulus to uvme_cvmcu_example_vseq_c
+      // TODO Add stimulus to uvme_cvmcu_init_vseq_c
       //
       //      Ex: Fixed number of random items:
       //          for (int unsigned ii=0; ii<num_items; ii++) begin
@@ -68,7 +66,7 @@ class uvme_cvmcu_example_vseq_c extends uvme_cvmcu_base_vseq_c;
 
 endtask : body
 
-endclass : uvme_cvmcu_example_vseq_c
+endclass : uvme_cvmcu_init_vseq_c
 
 
-`endif // __UVME_CVMCU_EXAMPLE_VSEQ_SV__
+`endif // __UVME_CVMCU_INIT_VSEQ_SV__
