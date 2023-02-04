@@ -46,7 +46,7 @@ git submodule update --init
 > mio install uvmt_cvmcu
 > ```
 
-- To run compilation, elaboration and simulation for IP `uvmt_cvmcu`, test `reg_bit_bash`, seed `1`, `high` verbosity, with waveform capture enabled, using Metrics DSim Cloud:
+- To run compilation, elaboration and simulation for IP `uvmt_cvmcu`, test `reg_bit_bash`, seed `1`, `high` verbosity, with waveform capture enabled, using Metrics DSim Cloud simulator:
 
 > ```
 > mio sim uvmt_cvmcu -t reg_bit_bash -s 1 -v high -w -a mdc
@@ -60,7 +60,7 @@ git submodule update --init
 
 # Regressions
 ## Running locally
-To run regression `sanity` for IP `uvmt_cvmcu` using Metrics DSim Cloud:
+To run regression `sanity` for IP `uvmt_cvmcu` using the Metrics DSim Cloud simulator:
 
 ```
 mio regr uvmt_cvmcu sanity -a mdc
