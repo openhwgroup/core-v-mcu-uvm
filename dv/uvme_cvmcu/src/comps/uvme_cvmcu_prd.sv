@@ -62,15 +62,17 @@ class uvme_cvmcu_prd_c extends uvmx_prd_c #(
     *
     */
    virtual task process_obi();
-      uvma_obi_mon_trn_c  obi_instr_trn;
-      uvm_reg  target_reg;
+      uvma_obi_mon_trn_c  obi_trn   ;
+      uvm_reg             target_reg;
       forever begin
-         obi_data_fifo.get(obi_instr_trn);
-         target_reg = cntxt.reg_model.default_map.get_reg_by_offset(obi_instr_trn.address-cfg.reg_block_base_address);
+         obi_data_fifo.get(obi_trn);
+         target_reg = cntxt.reg_model.default_map.get_reg_by_offset(obi_trn.address-cfg.reg_block_base_address);
          // TODO Implement uvme_cvmcu_prd_c::process_obi()
          //      Ex: case (target_reg)
          //             cntxt.reg_model.abc_reg: begin
-         //                cntxt.reg_model.def_reg.set(obi_instr_trn.data);
+         //                if (obi_trn.access == UVMA_OBI_ACCESS_WRITE) begin
+         //                   cntxt.reg_model.xyz_reg.set(obi_trn.data);
+         //                end
          //             end
          //          endcase
       end
