@@ -8,7 +8,7 @@
 
 
 /**
- * Top-level component that encapsulates, builds and connects all other CORE-V MCU Sub-System environment components.
+ * Top-level component that encapsulates, builds and connects all other CORE-V MCU environment components.
  * @ingroup uvme_cvmcu_comps
  */
 class uvme_cvmcu_env_c extends uvmx_env_c #(
