@@ -14,7 +14,7 @@
 
 
 /**
- * Object cataloging the CORE-V MCU Sub-System environment's virtual sequences.
+ * Object cataloging the CORE-V MCU environment's virtual sequences.
  * @ingroup uvme_cvmcu_seq
  */
 class uvme_cvmcu_vseq_lib_c extends uvmx_seq_lib_c #(
