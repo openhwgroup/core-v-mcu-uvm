@@ -8,7 +8,7 @@
 
 
 /**
- * Object encapsulating all state variables for CORE-V MCU Sub-System environment (uvme_cvmcu_env_c) components.
+ * Object encapsulating all state variables for CORE-V MCU environment (uvme_cvmcu_env_c) components.
  * @ingroup uvme_cvmcu_obj
  */
 class uvme_cvmcu_cntxt_c extends uvmx_env_cntxt_c #(
