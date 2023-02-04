@@ -8,7 +8,7 @@
 
 
 /**
- * Test ensuring that the reset values specified for registers in the RAL matches what is in the CORE-V MCU Sub-System DUT.
+ * Test ensuring that the reset values specified for registers in the RAL matches what is in the CORE-V MCU DUT.
  * @ingroup uvmt_cvmcu_tests
  */
 class uvmt_cvmcu_reg_hw_reset_test_c extends uvmt_cvmcu_base_test_c;
