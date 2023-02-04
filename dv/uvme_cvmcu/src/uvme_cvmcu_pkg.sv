@@ -9,7 +9,7 @@
 
 // Doxygen Groups
 /**
- * @defgroup uvme_cvmcu_pkg CORE-V MCU Sub-System UVM Environment
+ * @defgroup uvme_cvmcu_pkg CORE-V MCU UVM Environment
  * @{
  * @defgroup uvme_cvmcu_comps Components
  * @defgroup uvme_cvmcu_misc  Miscellaneous
@@ -35,7 +35,7 @@
 
 
 /**
- * Encapsulates all the types of the CORE-V MCU Sub-System UVM environment.
+ * Encapsulates all the types of the CORE-V MCU UVM environment.
  * @ingroup uvme_cvmcu_pkg
  */
 package uvme_cvmcu_pkg;
