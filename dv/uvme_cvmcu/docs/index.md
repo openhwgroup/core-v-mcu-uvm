@@ -17,8 +17,8 @@ All rights reserved.
 
 
 @section ip_desc IP Description
-This IP contains the Datum Technology Corporation CORE-V MCU Sub-System UVM Environment.
-TODO Describe CORE-V MCU Sub-System UVM Environment
+This IP contains the Datum Technology Corporation CORE-V MCU UVM Environment.
+TODO Describe CORE-V MCU UVM Environment
 
 ![uvme_cvmcu_env_c Block Diagram](env_block_diagram.svg)
 
