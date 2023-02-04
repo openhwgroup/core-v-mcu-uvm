@@ -8,7 +8,7 @@
 
 
 /**
- * Component encapsulating CORE-V MCU Sub-Sytem's functional coverage model.
+ * Component encapsulating CORE-V MCU's functional coverage model.
  * @ingroup uvme_cvmcu_comps
  */
 class uvme_cvmcu_cov_model_c extends uvmx_env_cov_model_c #(
