@@ -8,7 +8,7 @@
 
 
 /**
- * Interface encapsulating all extra signals to/from CORE-V MCU Sub-System design hierarchy.
+ * Interface encapsulating all extra signals to/from CORE-V MCU design hierarchy.
  * @ingroup uvme_cvmcu_misc
  */
 interface uvme_cvmcu_probe_if (
