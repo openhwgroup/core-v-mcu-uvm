@@ -8,7 +8,7 @@
 
 
 /**
- * Object encapsulating common configuration parameters for CORE-V MCU Sub-System tests.
+ * Object encapsulating common configuration parameters for CORE-V MCU tests.
  * @ingroup uvmt_cvmcu_tests
  */
 class uvmt_cvmcu_test_cfg_c extends uvmx_test_cfg_c #(
