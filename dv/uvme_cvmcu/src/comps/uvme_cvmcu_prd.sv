@@ -8,7 +8,7 @@
 
 
 /**
- * Component implementing transaction-based model of CORE-V MCU Sub-System.
+ * Component implementing transaction-based model of CORE-V MCU.
  * @ingroup uvme_cvmcu_comps
  */
 class uvme_cvmcu_prd_c extends uvmx_prd_c #(
