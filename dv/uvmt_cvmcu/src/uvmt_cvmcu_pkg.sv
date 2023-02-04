@@ -22,7 +22,7 @@ timeprecision  1ps;
 
 
 /**
- * Encapsulates all the types of the CORE-V MCU Sub-System UVM Test Bench.
+ * Encapsulates all the types of the CORE-V MCU UVM Test Bench.
  */
 package uvmt_cvmcu_pkg;
 
