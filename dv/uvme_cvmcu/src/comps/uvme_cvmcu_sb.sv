@@ -8,7 +8,7 @@
 
 
 /**
- * Component encapsulating scoreboards which compare CORE-V MCU Sub-System's expected (from predictor) vs. actual (monitored) transactions.
+ * Component encapsulating scoreboards which compare CORE-V MCU's expected (from predictor) vs. actual (monitored) transactions.
  * @ingroup uvme_cvmcu_comps
  */
 class uvme_cvmcu_sb_c extends uvmx_sb_c #(
