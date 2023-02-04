@@ -17,10 +17,10 @@ All rights reserved.
 
 
 @section ip_desc IP Description
-This IP contains the Datum Technology Corporation CORE-V MCU Sub-System UVM Test Bench.
-TODO Describe CORE-V MCU Sub-System UVM Test Bench
+This IP contains the Datum Technology Corporation CORE-V MCU UVM Test Bench.
+TODO Describe CORE-V MCU UVM Test Bench
 
-![CORE-V MCU Sub-System UVM Test Bench Block Diagram](tb_block_diagram.svg)
+![CORE-V MCU UVM Test Bench Block Diagram](tb_block_diagram.svg)
 
 
 @section ip_documents Documents
