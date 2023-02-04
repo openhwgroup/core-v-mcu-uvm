@@ -8,7 +8,7 @@
 
 
 /**
- * Module encapsulating the CORE-V MCU Sub-System DUT wrapper, agents and clock generating interfaces.
+ * Module encapsulating the CORE-V MCU DUT wrapper, agents and clock generating interfaces.
  * @ingroup uvmt_cvmcu_tb
  */
 module uvmt_cvmcu_tb;
