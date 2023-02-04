@@ -8,7 +8,7 @@
 
 
 /**
- * Test checking the accessibility of every bit of every register in the CORE-V MCU Sub-System DUT.
+ * Test checking the accessibility of every bit of every register in the CORE-V MCU DUT.
  * @ingroup uvmt_cvmcu_tests
  */
 class uvmt_cvmcu_reg_bit_bash_test_c extends uvmt_cvmcu_base_test_c;
