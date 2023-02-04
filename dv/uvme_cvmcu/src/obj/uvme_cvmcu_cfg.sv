@@ -8,7 +8,7 @@
 
 
 /**
- * Object encapsulating all parameters for creating, connecting and running the CORE-V MCU Sub-System environment
+ * Object encapsulating all parameters for creating, connecting and running the CORE-V MCU environment
  * (uvme_cvmcu_env_c) components.
  * @ingroup uvme_cvmcu_obj
  */
