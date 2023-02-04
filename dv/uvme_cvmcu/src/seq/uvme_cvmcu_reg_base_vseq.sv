@@ -8,7 +8,7 @@
 
 
 /**
- * Abstract virtual sequence from which all other CORE-V MCU Sub-System register virtual sequences must extend.
+ * Abstract virtual sequence from which all other CORE-V MCU register virtual sequences must extend.
  * @ingroup uvme_cvmcu_seq
  */
 class uvme_cvmcu_reg_base_vseq_c extends uvmx_reg_seq_c #(
