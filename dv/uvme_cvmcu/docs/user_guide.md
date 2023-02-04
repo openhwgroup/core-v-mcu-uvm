@@ -22,7 +22,7 @@ ID | Name | Version
 
 
 @subsection user_guide_description Description
-This guide will walk you through integrating the CORE-V MCU Sub-System UVM Environment in your own UVM Environment and Test Bench.
+This guide will walk you through integrating the CORE-V MCU UVM Environment in your own UVM Environment and Test Bench.
 
 ![uvme_cvmcu_env_c Block Diagram](env_block_diagram.svg)
 
@@ -49,7 +49,7 @@ The Moore.io Client CLI, used throughout this tutorial is available via "pipx":
 
 
 @section user_guide_guide_installation Installation
-Install the CORE-V MCU Sub-System UVM Environment: @code{.sh}mio install uvme_cvmcu@endcode
+Install the CORE-V MCU UVM Environment: @code{.sh}mio install uvme_cvmcu@endcode
 
 
 
