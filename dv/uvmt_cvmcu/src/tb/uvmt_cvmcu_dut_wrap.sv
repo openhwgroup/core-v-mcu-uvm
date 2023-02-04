@@ -8,7 +8,7 @@
 
 
 /**
- * Module wrapper for CORE-V MCU Sub-System DUT.  All ports are SV interfaces.
+ * Module wrapper for CORE-V MCU DUT.  All ports are SV interfaces.
  * @ingroup uvmt_cvmcu_tb
  */
 module uvmt_cvmcu_dut_wrap (
