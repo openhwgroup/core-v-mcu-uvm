@@ -23,7 +23,7 @@ ID | Name | Version
 
 
 @subsection quick_start_guide_description Description
-This document is a short guide to running the CORE-V MCU Sub-System UVM Environment in its own Test Bench.
+This document is a short guide to running the CORE-V MCU UVM Environment in its own Test Bench.
 
 ![uvme_cvmcu_env_c Block Diagram](env_block_diagram.svg)
 
@@ -50,23 +50,23 @@ The Moore.io Client CLI, used throughout this tutorial is available via "pipx":
 
 
 @section quick_start_guide_introduction Introduction
-The CORE-V MCU UVM Environment has a Test Bench used to verify the CORE-V MCU Sub-System thoroughly.
+The CORE-V MCU UVM Environment has a Test Bench used to verify the CORE-V MCU thoroughly.
 This guide will walk you through running a Test from this Test Bench.
 
 
 
 @section quick_start_guide_installation Installation
-1. Install the CORE-V MCU Sub-System UVM Environment: @code{.sh}mio install uvme_cvmcu@endcode
-2. Install the CORE-V MCU Sub-System UVM Test Bench: @code{.sh}mio install uvmt_cvmcu@endcode
+1. Install the CORE-V MCU UVM Environment: @code{.sh}mio install uvme_cvmcu@endcode
+2. Install the CORE-V MCU UVM Test Bench: @code{.sh}mio install uvmt_cvmcu@endcode
 
 
 @section quick_start_guide_compile_elaborate Compile and Elaborate
-1. Compile the CORE-V MCU Sub-System UVM Test Bench: @code{.sh}mio sim uvmt_cvmcu -C@endcode
-2. Elaborate the CORE-V MCU Sub-System UVM Test Bench with wave capture enabled: @code{.sh}mio sim uvmt_cvmcu -E -w@endcode
+1. Compile the CORE-V MCU UVM Test Bench: @code{.sh}mio sim uvmt_cvmcu -C@endcode
+2. Elaborate the CORE-V MCU UVM Test Bench with wave capture enabled: @code{.sh}mio sim uvmt_cvmcu -E -w@endcode
 
 
 @section quick_start_guide_simulate Simulate
-Launch CORE-V MCU Sub-System UVM Test "rand_stim" with seed "1":
+Launch CORE-V MCU UVM Test "rand_stim" with seed "1":
 @code{.sh}mio sim uvmt_cvmcu -S -t rand_stim -s 1@endcode
 
 
