@@ -8,7 +8,7 @@
 
 
 /**
- * Abstract virtual sequence from which all other CORE-V MCU Sub-System environment virtual sequences extend.
+ * Abstract virtual sequence from which all other CORE-V MCU environment virtual sequences extend.
  * Subclasses must be run on uvme_cvmcu_vsqr_c.
  * @note Does not generate any sequence items of its own.
  * @ingroup uvme_cvmcu_seq
