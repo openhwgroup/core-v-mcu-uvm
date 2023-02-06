@@ -1,29 +1,29 @@
-Offset,RegisterName,Type,Size,LSB,FieldName,Reset,Description
-0x00,RX_SADDR,RW,12,0,SADDR,0x0,Address of receive buffer on write; current address on read
-0x04,RX_SIZE,RW,16,0,SIZE,0x0,Size of receive buffer on write; bytes left on read
-0x08,RX_CFG,WO,1,6,CLEAR,0x0,Clear the receive channel
-0x08,RX_CFG,RO,1,5,PENDING,0x0,Receive transaction is pending
-0x08,RX_CFG,RW,1,4,EN,0x0,Enable the receive channel
-0x08,RX_CFG,RW,1,0,CONTINUOUS,0x0,"0x0: stop after last transfer for channel, 0x1: after last transfer for channel, reload buffer size and start address and restart channel"
-0x10,TX_SADDR,RW,12,0,SADDR,0x0,Address of transmit buffer on write; current address on read
-0x14,TX_SIZE,RW,16,0,SIZE,0x0,Size of receive buffer on write; bytes left on read
-0x18,TX_CFG,WO,1,6,CLR,0x0,Clear the transmit channel
-0x18,TX_CFG,RO,1,5,PENDING,0x0,Transmit transaction is pending
-0x18,TX_CFG,RW,1,4,EN,0x0,Enable the transmit channel
-0x18,TX_CFG,RW,1,0,CONTINUOUS,0x0,"0x0: stop after last transfer for channel, 0x1: after last transfer for channel, reload buffer size and start address and restart channel, reload buffer size and start address and restart channel"
-0x20,STATUS,RO,2,1,RX_BUSY,0x0,0x1: receiver is busy
-0x20,STATUS,RO,1,0,TX_BUSY,0x0,0x1: transmitter is busy
-0x24,UART_SETUP,RW,16,16,DIV,0x0,
-0x24,UART_SETUP,RW,1,9,EN_RX,0x0,Enable the reciever
-0x24,UART_SETUP,RW,1,8,EN_TX,0x0,Enable the transmitter
-0x24,UART_SETUP,RW,1,5,RX_CLEAN_FIFO,0x0,Empty the receive FIFO
-0x24,UART_SETUP,RW,1,4,RX_POLLING_EN,0x0,Enable polling mode for receiver
-0x24,UART_SETUP,RW,1,3,STOP_BITS,0x0,"0x0: 1 stop bit, 0x1: 2 stop bits"
-0x24,UART_SETUP,RW,2,1,BITS,0x0,"0x0: 5 bit transfers, 0x1: 6 bit transfers, 0x2: 7 bit transfers, 0x3: 8 bit transfers"
-0x24,UART_SETUP,RW,1,0,PARITY_EN,0x0,Enable parity
-0x28,ERROR,RC,1,1,PARITY_ERR,0x0,0x1 indicates parity error; read clears the bit
-0x29,ERROR,RC,1,0,OVERFLOW_ERR,0x0,0x1 indicates overflow error; read clears the bit
-0x2C,IRQ_EN,RW,1,1,ERR_IRQ_EN,0x0,Enable the error interrupt
-0x2C,IRQ_EN,RW,1,0,RX_IRQ_EN,0x0,Enable the receiver interrupt
-0x30,VALID,RO,1,0,RX_DATA_VALID,0x0,Cleared when RX_DATA is read
-0x34,DATA,RO,8,0,RX_DATA,0x0,Receive data; reading clears RX_DATA_VALID
+Offset,RegisterName,Type,Size,LSB,FieldName,Reset,Volatile,Description
+0x00,RX_SADDR,RW,12,0,SADDR,0x0,Y,Address of receive buffer on write; current address on read
+0x04,RX_SIZE,RW,16,0,SIZE,0x0,Y,Size of receive buffer on write; bytes left on read
+0x08,RX_CFG,WO,1,6,CLEAR,0x0,Y,Clear the receive channel
+0x08,RX_CFG,RO,1,5,PENDING,0x0,Y,Receive transaction is pending
+0x08,RX_CFG,RW,1,4,EN,0x0,Y,Enable the receive channel
+0x08,RX_CFG,RW,1,0,CONTINUOUS,0x0,Y,"0x0: stop after last transfer for channel, 0x1: after last transfer for channel, reload buffer size and start address and restart channel"
+0x10,TX_SADDR,RW,12,0,SADDR,0x0,Y,Address of transmit buffer on write; current address on read
+0x14,TX_SIZE,RW,16,0,SIZE,0x0,Y,Size of receive buffer on write; bytes left on read
+0x18,TX_CFG,WO,1,6,CLR,0x0,Y,Clear the transmit channel
+0x18,TX_CFG,RO,1,5,PENDING,0x0,Y,Transmit transaction is pending
+0x18,TX_CFG,RW,1,4,EN,0x0,Y,Enable the transmit channel
+0x18,TX_CFG,RW,1,0,CONTINUOUS,0x0,Y,"0x0: stop after last transfer for channel, 0x1: after last transfer for channel, reload buffer size and start address and restart channel, reload buffer size and start address and restart channel"
+0x20,STATUS,RO,2,1,RX_BUSY,0x0,Y,0x1: receiver is busy
+0x20,STATUS,RO,1,0,TX_BUSY,0x0,Y,0x1: transmitter is busy
+0x24,UART_SETUP,RW,16,16,DIV,0x0,Y,
+0x24,UART_SETUP,RW,1,9,EN_RX,0x0,Y,Enable the reciever
+0x24,UART_SETUP,RW,1,8,EN_TX,0x0,Y,Enable the transmitter
+0x24,UART_SETUP,RW,1,5,RX_CLEAN_FIFO,0x0,Y,Empty the receive FIFO
+0x24,UART_SETUP,RW,1,4,RX_POLLING_EN,0x0,Y,Enable polling mode for receiver
+0x24,UART_SETUP,RW,1,3,STOP_BITS,0x0,Y,"0x0: 1 stop bit, 0x1: 2 stop bits"
+0x24,UART_SETUP,RW,2,1,BITS,0x0,Y,"0x0: 5 bit transfers, 0x1: 6 bit transfers, 0x2: 7 bit transfers, 0x3: 8 bit transfers"
+0x24,UART_SETUP,RW,1,0,PARITY_EN,0x0,Y,Enable parity
+0x28,ERROR,RC,1,1,PARITY_ERR,0x0,Y,0x1 indicates parity error; read clears the bit
+0x29,ERROR,RC,1,0,OVERFLOW_ERR,0x0,Y,0x1 indicates overflow error; read clears the bit
+0x2C,IRQ_EN,RW,1,1,ERR_IRQ_EN,0x0,Y,Enable the error interrupt
+0x2C,IRQ_EN,RW,1,0,RX_IRQ_EN,0x0,Y,Enable the receiver interrupt
+0x30,VALID,RO,1,0,RX_DATA_VALID,0x0,Y,Cleared when RX_DATA is read
+0x34,DATA,RO,8,0,RX_DATA,0x0,Y,Receive data; reading clears RX_DATA_VALID
