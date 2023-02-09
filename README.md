@@ -67,11 +67,11 @@ mio regr uvmt_cvmcu sanity -a mdc
 ```
 
 ## Reports
-### Sanity
-Coming soon
 
-### Nightly
-Coming soon
+| IP | Sanity | Nightly | Weekly |
+|----| ------ | ------- | ------ |
+| uvmt_cvmcu | Coming Soon | Coming Soon | Coming Soon |
+| uvmt_apb_timer | [Tests](https://hdl.io/regressions/mcu_sanity/uvmt_apb_timer.html) | [Tests](https://hdl.io/regressions/mcu_nightly/uvmt_apb_timer.html) | [Tests](https://hdl.io/regressions/mcu_weekly/uvmt_apb_timer.html) |
+| uvmt_apb_adv_timer | [Tests](https://hdl.io/regressions/mcu_sanity/uvmt_apb_adv_timer.html) | [Tests](https://hdl.io/regressions/mcu_nightly/uvmt_apb_adv_timer.html) | [Tests](https://hdl.io/regressions/mcu_weekly/uvmt_apb_adv_timer.html) |
 
-### Weekly
-Coming soon
+
