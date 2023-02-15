@@ -1,0 +1,55 @@
+dependencies:
+  datum/uvma_clk: 1.0.0
+  datum/uvma_obi: 1.0.0
+  datum/uvma_reset: 1.0.0
+  datum/uvml_sb: 1.0.0
+  datum/uvmx: 1.0.0
+  uvme_cvmcu: '@local'
+dut:
+  full-name: openhwgroup.org:systems:core-v-mcu
+  name: core-v-mcu
+  target: sim
+  type: fsoc
+hdl-src:
+  directories:
+  - .
+  - tb
+  - tests
+  so-libs: []
+  test-name-template: uvmt_cvmcu_{{ name }}_test_c
+  tests-path: tests
+  top-constructs:
+  - uvmt_cvmcu_tb
+  - uvmx.uvmx_sim_summary
+  top-files:
+  - uvmt_cvmcu_pkg.sv
+ip:
+  aliases: []
+  block-diagram: docs/tb_block_diagram.svg
+  bugs: ''
+  copyright-holders:
+  - Datum Technology Corporation
+  description: TODO Describe CORE-V MCU UVM Test Bench
+  full-name: CORE-V MCU UVM Test Bench
+  home-page: ''
+  languages:
+  - sv
+  licenses:
+  - All rights reserved.
+  logo: ''
+  name: uvmt_cvmcu
+  repo-uri: ''
+  simulators-supported:
+    mdc: 20220822.10.0
+    viv: '2022.2'
+  sub-sub-type: Sub-System
+  sub-type: UVM Test Bench
+  tags: []
+  type: DV
+  vendor: datum
+  version: 1.0.0
+structure:
+  docs-path: docs
+  examples-path: examples
+  scripts-path: bin
+  src-path: src
