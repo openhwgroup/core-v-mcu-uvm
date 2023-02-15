@@ -5,7 +5,7 @@
 
 test-suite:
    info:
-      name: CORE-V MCU Sub-System UVM Test Suite
+      name: CORE-V MCU UVM Test Suite
       ip: uvmt_cvmcu
    target:
       cmp-args : []

@@ -7,7 +7,7 @@
 `define __UVME_CVMCU_CONSTANTS_SV__
 
 
-const longint unsigned  uvme_cvmcu_default_reg_block_base_address = 64'h0000_0000_0000_0000; ///< Register block base address
+const longint unsigned  uvme_cvmcu_default_reg_block_base_address = `UVM_REG_ADDR_WIDTH'h0000_0000; ///< Register block base address
 const int unsigned      uvme_cvmcu_reg_block_reg_n_bytes          = 4; ///< Width of registers (bytes)
 
 
