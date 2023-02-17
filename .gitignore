@@ -1,5 +1,4 @@
-/.pydevproject
-/.mio/
+.pydevproject
+.mio
+.mdc
 .mdc_empty_dir_sync
-.mdc/sync
-.mdc/workspace

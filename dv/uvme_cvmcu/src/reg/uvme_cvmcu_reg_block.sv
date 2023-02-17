@@ -28,7 +28,7 @@ class uvme_cvmcu_reg_block_c extends uvmx_reg_block_c;
 
    /// @name Memories
    /// @{
-   //rand uvmx_reg_mem_c  rom   ; ///< Boot ROM
+   rand uvmx_reg_mem_c  rom   ; ///< Boot ROM
    rand uvmx_reg_mem_c  ram_b0; ///< Non-Interleaved Memory Bank 0
    rand uvmx_reg_mem_c  ram_b1; ///< Non-Interleaved Memory Bank 1
    rand uvmx_reg_mem_c  ram   ; ///< Interleaved Memory
@@ -76,11 +76,11 @@ class uvme_cvmcu_reg_block_c extends uvmx_reg_block_c;
     * Creates memories.
     */
    virtual function void create_mems();
-      //rom    = new("rom"   , 4_0000, 32);
-      ram_b0 = new("ram_b0", 0_8000, 32);
-      ram_b1 = new("ram_b1", 0_8000, 32);
-      ram    = new("ram"   , 7_0000, 32);
-      //rom   .configure(this);
+      rom    = new("rom"   , 4_0000, 32, "RO");
+      ram_b0 = new("ram_b0", 0_8000, 32, "RW");
+      ram_b1 = new("ram_b1", 0_8000, 32, "RW");
+      ram    = new("ram"   , 7_0000, 32, "RW");
+      rom   .configure(this);
       ram_b0.configure(this);
       ram_b1.configure(this);
       ram   .configure(this);
@@ -102,10 +102,10 @@ class uvme_cvmcu_reg_block_c extends uvmx_reg_block_c;
     * Adds memories to register map.
     */
    virtual function void add_mems_to_map();
-      //default_map.add_mem(rom   , `UVM_REG_ADDR_WIDTH'h1A00_0000, "RO");
-      default_map.add_mem(ram_b0, `UVM_REG_ADDR_WIDTH'h1C00_0000, "RW");
-      default_map.add_mem(ram_b1, `UVM_REG_ADDR_WIDTH'h1C00_8000, "RW");
-      default_map.add_mem(ram   , `UVM_REG_ADDR_WIDTH'h1C01_0000, "RW");
+      default_map.add_mem(rom   , `UVM_REG_ADDR_WIDTH'h1A00_0000);
+      default_map.add_mem(ram_b0, `UVM_REG_ADDR_WIDTH'h1C00_0000);
+      default_map.add_mem(ram_b1, `UVM_REG_ADDR_WIDTH'h1C00_8000);
+      default_map.add_mem(ram   , `UVM_REG_ADDR_WIDTH'h1C01_0000);
    endfunction
 
    /**
