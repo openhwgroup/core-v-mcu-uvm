@@ -58,7 +58,7 @@ functional:
          weekly : []
          bugs   : []
       mem_walk:
-         sanity : [1]
-         nightly: [1]
-         weekly : [1]
-         bugs   :  []
+         sanity : []
+         nightly: []
+         weekly : []
+         bugs   : []
