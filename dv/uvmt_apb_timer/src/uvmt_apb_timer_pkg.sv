@@ -17,8 +17,8 @@
 `include "uvmt_apb_timer_macros.svh"
 
 // Time units and precision for this test bench
-timeunit       1ns;
-timeprecision  1ps;
+//timeunit       1ns;
+//timeprecision  1ps;
 
 
 /**

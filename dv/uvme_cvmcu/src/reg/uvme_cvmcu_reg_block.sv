@@ -92,7 +92,7 @@ class uvme_cvmcu_reg_block_c extends uvmx_reg_block_c;
    virtual function void create_reg_map();
       default_map = create_map(
          .name     ("default_map"),
-         .base_addr(0),
+         .base_addr(uvme_cvmcu_default_reg_block_base_address),
          .n_bytes  (uvme_cvmcu_reg_block_reg_n_bytes),
          .endian   (UVM_LITTLE_ENDIAN)
       );
