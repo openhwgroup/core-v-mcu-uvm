@@ -49,7 +49,7 @@ structure:
 hdl-src:
   directories: [".", "tb", "tests"]
   top-files: ["uvmt_apb_adv_timer_pkg.sv"]
-  top-constructs: ["uvmt_apb_adv_timer_tb", "uvmx.uvmx_sim_summary"]
+  top-constructs: ["uvmt_apb_adv_timer_tb", "uvmx_sim_summary"]
   so-libs: []
   tests-path: "tests"
   test-name-template: "uvmt_apb_adv_timer_{{ name }}_test_c"
