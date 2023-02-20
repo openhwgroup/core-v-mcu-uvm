@@ -65,6 +65,7 @@ class uvme_apb_adv_timer_cfg_c extends uvmx_env_cfg_c;
    constraint agent_cfg_cons {
       apb_cfg.cov_model_enabled == 0;
       apb_cfg.drv_mode == UVMA_APB_DRV_MODE_MSTR;
+      apb_cfg.addr_width == 32;
       apb_cfg.data_width == (uvme_apb_adv_timer_reg_block_reg_n_bytes*8);
       if (enabled) {
          apb_cfg.enabled == 1;

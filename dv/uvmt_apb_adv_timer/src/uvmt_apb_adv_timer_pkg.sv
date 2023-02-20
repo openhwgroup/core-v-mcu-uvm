@@ -16,10 +16,6 @@
 `include "uvme_apb_adv_timer_macros.svh"
 `include "uvmt_apb_adv_timer_macros.svh"
 
-// Time units and precision for this test bench
-//timeunit       1ns;
-//timeprecision  1ps;
-
 
 /**
  * Encapsulates all the types of the APB Advanced Timer Sub-System UVM Test Bench.

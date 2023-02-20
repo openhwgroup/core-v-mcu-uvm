@@ -16,10 +16,6 @@
 `include "uvme_cvmcu_macros.svh"
 `include "uvmt_cvmcu_macros.svh"
 
-// Time units and precision for this test bench
-//timeunit       1ns;
-//timeprecision  1ps;
-
 
 /**
  * Encapsulates all the types of the CORE-V MCU UVM Test Bench.

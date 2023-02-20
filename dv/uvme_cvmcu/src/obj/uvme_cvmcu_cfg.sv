@@ -69,6 +69,8 @@ class uvme_cvmcu_cfg_c extends uvmx_env_cfg_c;
       obi_data_cfg .drv_mode == UVMA_OBI_DRV_MODE_MSTR;
       obi_instr_cfg.cov_model_enabled == 0;
       obi_data_cfg .cov_model_enabled == 0;
+      obi_instr_cfg.addr_width == 32;
+      obi_data_cfg .addr_width == 32;
       obi_instr_cfg.data_width == (uvme_cvmcu_reg_block_reg_n_bytes*8);
       obi_data_cfg .data_width == (uvme_cvmcu_reg_block_reg_n_bytes*8);
       if (enabled) {
