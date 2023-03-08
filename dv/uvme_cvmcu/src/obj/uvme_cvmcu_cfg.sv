@@ -24,8 +24,9 @@ class uvme_cvmcu_cfg_c extends uvmx_env_cfg_c;
 
    /// @name Agents
    /// @{
-   rand uvma_obi_cfg_c  obi_instr_cfg; ///< Register access agent configuration
-   rand uvma_obi_cfg_c  obi_data_cfg ; ///< Register access agent configuration
+   rand uvma_obi_cfg_c  obi_instr_cfg; ///< Instruction OBI agent configuration
+   rand uvma_obi_cfg_c  obi_data_cfg ; ///< Data OBI agent configuration
+   rand uvma_apb_cfg_c  apb_cfg      ; ///< APB agent configuration
    /// @}
 
    /// @name Objects
@@ -47,7 +48,8 @@ class uvme_cvmcu_cfg_c extends uvmx_env_cfg_c;
       // TODO: Add sub-environments configuration field macros
       //       Ex: `uvm_field_object(sub_env_cfg, UVM_DEFAULT)
       `uvm_field_object(obi_instr_cfg, UVM_DEFAULT)
-      `uvm_field_object(obi_data_cfg, UVM_DEFAULT)
+      `uvm_field_object(obi_data_cfg , UVM_DEFAULT)
+      `uvm_field_object(apb_cfg      , UVM_DEFAULT)
       // TODO Add scoreboard cfg field macros
       //      Ex: `uvm_field_object(sb_egress_cfg , UVM_DEFAULT)
       //          `uvm_field_object(sb_ingress_cfg, UVM_DEFAULT)
@@ -69,17 +71,23 @@ class uvme_cvmcu_cfg_c extends uvmx_env_cfg_c;
       obi_data_cfg .drv_mode == UVMA_OBI_DRV_MODE_MSTR;
       obi_instr_cfg.cov_model_enabled == 0;
       obi_data_cfg .cov_model_enabled == 0;
+      apb_cfg      .cov_model_enabled == 0;
       obi_instr_cfg.addr_width == 32;
       obi_data_cfg .addr_width == 32;
+      apb_cfg      .addr_width == 32;
       obi_instr_cfg.data_width == (uvme_cvmcu_reg_block_reg_n_bytes*8);
       obi_data_cfg .data_width == (uvme_cvmcu_reg_block_reg_n_bytes*8);
+      apb_cfg      .data_width == (uvme_cvmcu_reg_block_reg_n_bytes*8);
+      apb_cfg      .sel_width  == 1;
       if (enabled) {
          obi_instr_cfg.enabled == 1;
          obi_data_cfg .enabled == 1;
+         apb_cfg      .enabled == 1;
       }
       else {
          obi_instr_cfg.enabled == 0;
          obi_data_cfg .enabled == 0;
+         apb_cfg      .enabled == 0;
       }
       if (is_active == UVM_ACTIVE) {
          obi_instr_cfg.is_active == UVM_ACTIVE;
@@ -89,13 +97,16 @@ class uvme_cvmcu_cfg_c extends uvmx_env_cfg_c;
          obi_instr_cfg.is_active == UVM_PASSIVE;
          obi_data_cfg .is_active == UVM_PASSIVE;
       }
+      apb_cfg.is_active == UVM_PASSIVE;
       if (trn_log_enabled) {
          obi_instr_cfg.trn_log_enabled == 1;
          obi_data_cfg .trn_log_enabled == 1;
+         apb_cfg      .trn_log_enabled == 1;
       }
       else {
          obi_instr_cfg.trn_log_enabled == 0;
          obi_data_cfg .trn_log_enabled == 0;
+         apb_cfg      .trn_log_enabled == 0;
       }
    }
 
@@ -115,6 +126,7 @@ class uvme_cvmcu_cfg_c extends uvmx_env_cfg_c;
       //      Ex: sub_env_cfg  = uvme_sub_env_cfg_c::type_id::create("sub_env_cfg");
       obi_instr_cfg = uvma_obi_cfg_c::type_id::create("obi_instr_cfg");
       obi_data_cfg  = uvma_obi_cfg_c::type_id::create("obi_data_cfg" );
+      apb_cfg       = uvma_apb_cfg_c::type_id::create("apb_cfg"      );
       // TODO Create scoreboard cfg objects
       //      Ex: sb_egress_cfg  = uvml_sb_simplex_cfg_c::type_id::create("sb_egress_cfg" );
       //          sb_ingress_cfg = uvml_sb_simplex_cfg_c::type_id::create("sb_ingress_cfg");

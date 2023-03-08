@@ -40,7 +40,7 @@ ip:
   name: uvmt_cvmcu
   repo-uri: ''
   simulators-supported:
-    mdc: 20220822.10.0
+    mdc: 20230116.4.0
     viv: '2022.2'
   sub-sub-type: Sub-System
   sub-type: UVM Test Bench

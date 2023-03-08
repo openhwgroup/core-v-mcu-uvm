@@ -29,8 +29,9 @@ class uvme_cvmcu_cntxt_c extends uvmx_env_cntxt_c #(
 
    /// @name Agents
    /// @{
-   uvma_obi_cntxt_c  obi_instr_cntxt; ///< Register access agent content
-   uvma_obi_cntxt_c  obi_data_cntxt; ///< Register access agent content
+   uvma_obi_cntxt_c  obi_instr_cntxt; ///< Instruction OBI agent context
+   uvma_obi_cntxt_c  obi_data_cntxt ; ///< Data OBI agent context
+   uvma_apb_cntxt_c  apb_cntxt      ; ///< APB agent context
    /// @}
 
    /// @name Objects
@@ -47,6 +48,7 @@ class uvme_cvmcu_cntxt_c extends uvmx_env_cntxt_c #(
        //       Ex: `uvm_field_object(sub_env_cntxt, UVM_DEFAULT)
       `uvm_field_object(obi_instr_cntxt, UVM_DEFAULT)
       `uvm_field_object(obi_data_cntxt , UVM_DEFAULT)
+      `uvm_field_object(apb_cntxt      , UVM_DEFAULT)
       // TODO Add scoreboard context field macros
       //      Ex: `uvm_field_object(sb_egress_cntxt , UVM_DEFAULT)
       //          `uvm_field_object(sb_ingress_cntxt, UVM_DEFAULT)
@@ -68,6 +70,7 @@ class uvme_cvmcu_cntxt_c extends uvmx_env_cntxt_c #(
       //      Ex: sub_env_cntxt  = uvme_sub_env_cntxt_c::type_id::create("sub_env_cntxt");
       obi_instr_cntxt = uvma_obi_cntxt_c::type_id::create("obi_instr_cntxt");
       obi_data_cntxt  = uvma_obi_cntxt_c::type_id::create("obi_data_cntxt" );
+      apb_cntxt       = uvma_apb_cntxt_c::type_id::create("apb_cntxt"      );
       // TODO Create uvme_cvmcu_cntxt_c scoreboard context objects
       //      Ex: sb_egress_cntxt  = uvml_sb_simplex_cntxt_c::type_id::create("sb_egress_cntxt" );
       //          sb_ingress_cntxt = uvml_sb_simplex_cntxt_c::type_id::create("sb_ingress_cntxt");
@@ -80,6 +83,7 @@ class uvme_cvmcu_cntxt_c extends uvmx_env_cntxt_c #(
    virtual function void reset();
       obi_instr_cntxt.reset();
       obi_data_cntxt .reset();
+      apb_cntxt      .reset();
    endfunction
 
 endclass : uvme_cvmcu_cntxt_c

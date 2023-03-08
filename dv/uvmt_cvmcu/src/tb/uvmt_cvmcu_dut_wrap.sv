@@ -12,11 +12,12 @@
  * @ingroup uvmt_cvmcu_tb
  */
 module uvmt_cvmcu_dut_wrap (
+   uvma_obi_if          obi_instr_if, ///< Instruction OBI interface
+   uvma_obi_if          obi_data_if , ///< Data OBI interface
+   uvma_apb_if          apb_if      , ///< APB interface
+   uvme_cvmcu_probe_if  probe_if    , ///< Misc. signals
    uvma_clk_if          sys_clk_if  , ///< Clock generating interface
-   uvma_reset_if        sys_reset_if, ///< Reset assertion interface
-   uvma_obi_if          obi_instr_if, ///< Register access interface
-   uvma_obi_if          obi_data_if , ///< Register access interface
-   uvme_cvmcu_probe_if  probe_if      ///< Misc. signals
+   uvma_reset_if        sys_reset_if  ///< Reset assertion interface
 );
 
    reg  jtag_tck_i  = 0;
@@ -63,6 +64,16 @@ module uvmt_cvmcu_dut_wrap (
    assign obi_data_if.rdata  = dut.i_soc_domain.fc_subsystem_i.core_data_rdata  ;
    assign obi_data_if.gnt    = dut.i_soc_domain.fc_subsystem_i.core_data_gnt    ;
    assign obi_data_if.rvalid = dut.i_soc_domain.fc_subsystem_i.core_data_rvalid ;
+
+   // APB Interface
+   assign apb_if.psel    = dut.i_soc_domain.s_apb_periph_bus.psel   ;
+   assign apb_if.penable = dut.i_soc_domain.s_apb_periph_bus.penable;
+   assign apb_if.pwrite  = dut.i_soc_domain.s_apb_periph_bus.pwrite ;
+   assign apb_if.paddr   = dut.i_soc_domain.s_apb_periph_bus.paddr  ;
+   assign apb_if.pwdata  = dut.i_soc_domain.s_apb_periph_bus.pwdata ;
+   assign apb_if.pready  = dut.i_soc_domain.s_apb_periph_bus.pready ;
+   assign apb_if.prdata  = dut.i_soc_domain.s_apb_periph_bus.prdata ;
+   assign apb_if.pslverr = dut.i_soc_domain.s_apb_periph_bus.pslverr;
 
 endmodule : uvmt_cvmcu_dut_wrap
 
