@@ -27,10 +27,10 @@ module uvmt_cvmcu_dut_wrap (
    reg  jtag_trst_i = 0;
    reg  bootsel_i   = 1;
    reg  stm_i       = 0;
-   reg  [ 47:0]  io_in_i     = 0;
-   reg  [ 47:0]  io_out_o       ;
-   reg  [287:0]  pad_cfg_o      ;
-   reg  [ 47:0]  io_oe_o        ;
+   reg  [ 47:0]  io_in_i  ;
+   reg  [ 47:0]  io_out_o ;
+   reg  [287:0]  pad_cfg_o;
+   reg  [ 47:0]  io_oe_o  ;
 
    core_v_mcu #(.USE_CORES(0)) dut (
      .jtag_tck_i (jtag_tck_i),
@@ -74,6 +74,15 @@ module uvmt_cvmcu_dut_wrap (
    assign apb_if.pready  = dut.i_soc_domain.s_apb_periph_bus.pready ;
    assign apb_if.prdata  = dut.i_soc_domain.s_apb_periph_bus.prdata ;
    assign apb_if.pslverr = dut.i_soc_domain.s_apb_periph_bus.pslverr;
+
+   // UART Loopback (temporary until TB Pad MUX is implemented)
+   initial begin
+      io_in_i = 0;
+   end
+   always @(posedge sys_clk_if.clk) begin
+      io_in_i[ 7] = io_out_o[8];
+      io_in_i[10] = io_out_o[9];
+   end
 
 endmodule : uvmt_cvmcu_dut_wrap
 
