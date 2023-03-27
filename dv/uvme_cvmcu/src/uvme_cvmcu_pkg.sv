@@ -23,6 +23,7 @@
 // Pre-processor macros
 `include "uvm_macros.svh"
 `include "uvmx_macros.svh"
+`include "uvma_irq_macros.svh"
 `include "uvma_obi_macros.svh"
 `include "uvma_apb_macros.svh"
 `include "uvme_apb_timer_macros.svh"
@@ -31,6 +32,7 @@
 
 
 // Interface(s)
+`include "uvme_cvmcu_io_sel_if.sv"
 `include "uvme_cvmcu_probe_if.sv"
 
 
@@ -42,6 +44,7 @@ package uvme_cvmcu_pkg;
 
    import uvm_pkg               ::*;
    import uvmx_pkg              ::*;
+   import uvma_irq_pkg          ::*;
    import uvml_sb_pkg           ::*;
    import uvma_obi_pkg          ::*;
    import uvma_apb_pkg          ::*;

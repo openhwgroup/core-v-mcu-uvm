@@ -31,6 +31,7 @@ class uvme_cvmcu_env_c extends uvmx_env_c #(
    uvma_obi_agent_c  obi_instr_agent; ///< Instruction OBI agent
    uvma_obi_agent_c  obi_data_agent ; ///< Data OBI agent
    uvma_apb_agent_c  apb_agent      ; ///< APB agent
+   uvma_irq_agent_c  irq_agent      ; ///< Interrupt Request agent
    /// @}
 
    /// @name Register Abstraction Layer (RAL)
@@ -59,6 +60,12 @@ class uvme_cvmcu_env_c extends uvmx_env_c #(
       else begin
          `uvm_info("CVMCU_ENV", $sformatf("Found probe_vif handle of type %s in uvm_config_db", $typename(cntxt.probe_vif)), UVM_DEBUG)
       end
+      if (!uvm_config_db#(virtual uvme_cvmcu_io_sel_if)::get(this, "", "vif", cntxt.io_sel_vif)) begin
+         `uvm_fatal("CVMCU_ENV", $sformatf("Could not find io_sel_vif handle of type %s in uvm_config_db", $typename(cntxt.io_sel_vif)))
+      end
+      else begin
+         `uvm_info("CVMCU_ENV", $sformatf("Found io_sel_vif handle of type %s in uvm_config_db", $typename(cntxt.io_sel_vif)), UVM_DEBUG)
+      end
    endfunction
 
    /**
@@ -68,6 +75,7 @@ class uvme_cvmcu_env_c extends uvmx_env_c #(
       uvm_config_db#(uvma_obi_cfg_c)::set(this, "obi_instr_agent", "cfg", cfg.obi_instr_cfg);
       uvm_config_db#(uvma_obi_cfg_c)::set(this, "obi_data_agent" , "cfg", cfg.obi_data_cfg );
       uvm_config_db#(uvma_apb_cfg_c)::set(this, "apb_agent"      , "cfg", cfg.apb_cfg      );
+      uvm_config_db#(uvma_irq_cfg_c)::set(this, "irq_agent"      , "cfg", cfg.irq_cfg      );
       // TODO Assign sub-environment cfg handle
       //      Ex: uvm_config_db#(uvme_sub_cfg_c)::set(this, "sub_env", "cfg", cfg.sub_env_cfg);
    endfunction
@@ -87,6 +95,7 @@ class uvme_cvmcu_env_c extends uvmx_env_c #(
       uvm_config_db#(uvma_obi_cntxt_c)::set(this, "obi_instr_agent", "cntxt", cntxt.obi_instr_cntxt);
       uvm_config_db#(uvma_obi_cntxt_c)::set(this, "obi_data_agent" , "cntxt", cntxt.obi_data_cntxt );
       uvm_config_db#(uvma_apb_cntxt_c)::set(this, "apb_agent"      , "cntxt", cntxt.apb_cntxt      );
+      uvm_config_db#(uvma_irq_cntxt_c)::set(this, "irq_agent"      , "cntxt", cntxt.irq_cntxt      );
       // TODO Assign sub-environment cntxt handle
       //      Ex: uvm_config_db#(uvme_sub_cntxt_c)::set(this, "sub_env", "cntxt", cntxt.sub_env_cntxt);
    endfunction
@@ -106,6 +115,7 @@ class uvme_cvmcu_env_c extends uvmx_env_c #(
       obi_instr_agent = uvma_obi_agent_c::type_id::create("obi_instr_agent", this);
       obi_data_agent  = uvma_obi_agent_c::type_id::create("obi_data_agent" , this);
       apb_agent       = uvma_apb_agent_c::type_id::create("apb_agent"      , this);
+      irq_agent       = uvma_irq_agent_c::type_id::create("irq_agent"      , this);
    endfunction
 
    /**
@@ -155,6 +165,7 @@ class uvme_cvmcu_env_c extends uvmx_env_c #(
       vsequencer.obi_instr_vsequencer = obi_instr_agent.vsequencer;
       vsequencer.obi_data_vsequencer  = obi_data_agent .vsequencer;
       vsequencer.apb_vsequencer       = apb_agent      .vsequencer;
+      vsequencer.irq_vsequencer       = irq_agent      .vsequencer;
    endfunction
 
    /**

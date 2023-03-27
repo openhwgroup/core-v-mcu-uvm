@@ -3,20 +3,20 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-`ifndef __UVME_CVMCU_PROBE_IF_SV__
-`define __UVME_CVMCU_PROBE_IF_SV__
+`ifndef __UVME_CVMCU_IO_SEL_IF_SV__
+`define __UVME_CVMCU_IO_SEL_IF_SV__
 
 
 /**
- * Interface encapsulating all extra signals to/from CORE-V MCU design hierarchy.
+ *
  * @ingroup uvme_cvmcu_misc
  */
-interface uvme_cvmcu_probe_if (
+interface uvme_cvmcu_io_sel_if (
    input  clk    ,
    input  reset_n
 );
 
-   // TODO Add uvme_cvmcu_probe_if signals
+   // TODO Add uvme_cvmcu_io_sel_if signals
    //      Ex: wire        locked; ///< Describe me!
    //          wire [7:0]  state ; ///< Describe me!
 
@@ -31,7 +31,7 @@ interface uvme_cvmcu_probe_if (
       input    reset_n
    );
 
-endinterface : uvme_cvmcu_probe_if
+endinterface : uvme_cvmcu_io_sel_if
 
 
-`endif // __UVME_CVMCU_PROBE_IF_SV__
+`endif // __UVME_CVMCU_IO_SEL_IF_SV__

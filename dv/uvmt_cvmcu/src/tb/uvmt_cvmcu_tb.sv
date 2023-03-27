@@ -21,13 +21,15 @@ module uvmt_cvmcu_tb;
    assign clk     = sys_clk_if.clk;
    assign reset_n = sys_reset_if.reset_n;
 
-   uvma_clk_if          sys_clk_if  (.*); ///< Clock generating interface
-   uvma_reset_if        sys_reset_if(.*); ///< Reset assertion interface
-   uvma_obi_if          obi_instr_if(.*); ///< Instruction OBI interface
-   uvma_obi_if          obi_data_if (.*); ///< Data OBI interface
-   uvma_apb_if          apb_if      (.*); ///< APB interface
-   uvme_cvmcu_probe_if  probe_if    (.*); ///< Misc. signals interface
-   uvmt_cvmcu_dut_wrap  dut_wrap    (.*); ///< DUT instance with interface ports
+   uvma_clk_if           sys_clk_if  (.*); ///< Clock generating interface
+   uvma_reset_if         sys_reset_if(.*); ///< Reset assertion interface
+   uvma_obi_if           obi_instr_if(.*); ///< Instruction OBI interface
+   uvma_obi_if           obi_data_if (.*); ///< Data OBI interface
+   uvma_apb_if           apb_if      (.*); ///< APB interface
+   uvma_irq_if           irq_if      (.*); ///< Interrupt request interface
+   uvme_cvmcu_io_sel_if  io_sel_if   (.*); ///< IO selector interface
+   uvme_cvmcu_probe_if   probe_if    (.*); ///< Misc. signals interface
+   uvmt_cvmcu_dut_wrap   dut_wrap    (.*); ///< DUT instance with interface ports
 
    bind uvmt_cvmcu_dut_wrap : dut_wrap  uvme_cvmcu_chkr chkr(.*); ///< Checker instantiation and binding
 
@@ -35,12 +37,14 @@ module uvmt_cvmcu_tb;
     * Test bench entry point.
     */
    initial begin
-      uvm_config_db#(virtual uvma_clk_if        )::set(null, "*.sys_clk_agent"      , "vif", sys_clk_if  );
-      uvm_config_db#(virtual uvma_reset_if      )::set(null, "*.sys_reset_agent"    , "vif", sys_reset_if);
-      uvm_config_db#(virtual uvma_obi_if        )::set(null, "*.env.obi_instr_agent", "vif", obi_instr_if);
-      uvm_config_db#(virtual uvma_obi_if        )::set(null, "*.env.obi_data_agent" , "vif", obi_data_if );
-      uvm_config_db#(virtual uvma_apb_if        )::set(null, "*.env.apb_agent"      , "vif", apb_if      );
-      uvm_config_db#(virtual uvme_cvmcu_probe_if)::set(null, "*.env"                , "vif", probe_if    );
+      uvm_config_db#(virtual uvma_clk_if         )::set(null, "*.sys_clk_agent"      , "vif", sys_clk_if  );
+      uvm_config_db#(virtual uvma_reset_if       )::set(null, "*.sys_reset_agent"    , "vif", sys_reset_if);
+      uvm_config_db#(virtual uvma_obi_if         )::set(null, "*.env.obi_instr_agent", "vif", obi_instr_if);
+      uvm_config_db#(virtual uvma_obi_if         )::set(null, "*.env.obi_data_agent" , "vif", obi_data_if );
+      uvm_config_db#(virtual uvma_apb_if         )::set(null, "*.env.apb_agent"      , "vif", apb_if      );
+      uvm_config_db#(virtual uvma_irq_if         )::set(null, "*.env.irq_agent"      , "vif", irq_if      );
+      uvm_config_db#(virtual uvme_cvmcu_io_sel_if)::set(null, "*.env"                , "vif", io_sel_if   );
+      uvm_config_db#(virtual uvme_cvmcu_probe_if )::set(null, "*.env"                , "vif", probe_if    );
       uvmx_top.run_test();
    end
 

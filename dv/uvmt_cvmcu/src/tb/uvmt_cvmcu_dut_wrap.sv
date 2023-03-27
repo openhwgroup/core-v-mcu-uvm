@@ -12,12 +12,14 @@
  * @ingroup uvmt_cvmcu_tb
  */
 module uvmt_cvmcu_dut_wrap (
-   uvma_obi_if          obi_instr_if, ///< Instruction OBI interface
-   uvma_obi_if          obi_data_if , ///< Data OBI interface
-   uvma_apb_if          apb_if      , ///< APB interface
-   uvme_cvmcu_probe_if  probe_if    , ///< Misc. signals
-   uvma_clk_if          sys_clk_if  , ///< Clock generating interface
-   uvma_reset_if        sys_reset_if  ///< Reset assertion interface
+   uvma_obi_if           obi_instr_if, ///< Instruction OBI interface
+   uvma_obi_if           obi_data_if , ///< Data OBI interface
+   uvma_apb_if           apb_if      , ///< APB interface
+   uvma_irq_if           irq_if      , ///< Interrupt request interface
+   uvme_cvmcu_io_sel_if  io_sel_if   , ///< IO selector
+   uvme_cvmcu_probe_if   probe_if    , ///< Misc. signals
+   uvma_clk_if           sys_clk_if  , ///< Clock generating interface
+   uvma_reset_if         sys_reset_if  ///< Reset assertion interface
 );
 
    reg  jtag_tck_i  = 0;
@@ -75,14 +77,12 @@ module uvmt_cvmcu_dut_wrap (
    assign apb_if.prdata  = dut.i_soc_domain.s_apb_periph_bus.prdata ;
    assign apb_if.pslverr = dut.i_soc_domain.s_apb_periph_bus.pslverr;
 
+   // Interrupt interface
+   assign irq_if.lines = dut.i_soc_domain.fc_subsystem_i.r_int;
+
    // UART Loopback (temporary until TB Pad MUX is implemented)
-   initial begin
-      io_in_i = 0;
-   end
-   always @(posedge sys_clk_if.clk) begin
-      io_in_i[ 7] = io_out_o[8];
-      io_in_i[10] = io_out_o[9];
-   end
+   assign io_in_i[ 7] = io_out_o[8];
+   assign io_in_i[10] = io_out_o[9];
 
 endmodule : uvmt_cvmcu_dut_wrap
 

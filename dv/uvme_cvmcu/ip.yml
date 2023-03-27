@@ -28,6 +28,7 @@ ip:
 
 dependencies:
   "datum/uvmx"        : "~1.0"
+  "datum/uvma_irq"    : "~1.0"
   "datum/uvml_sb"     : "~1.0"
   "datum/uvma_obi"    : "~1.0"
   "uvme_apb_timer"    : "^"

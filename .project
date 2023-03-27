@@ -29,6 +29,24 @@
 	</linkedResources>
 	<filteredResources>
 		<filter>
+			<id>1679936932369</id>
+			<name></name>
+			<type>10</type>
+			<matcher>
+				<id>org.eclipse.ui.ide.multiFilter</id>
+				<arguments>1.0-name-matches-false-false-.mio</arguments>
+			</matcher>
+		</filter>
+		<filter>
+			<id>1679936932501</id>
+			<name></name>
+			<type>10</type>
+			<matcher>
+				<id>org.eclipse.ui.ide.multiFilter</id>
+				<arguments>1.0-name-matches-false-false-.mdc</arguments>
+			</matcher>
+		</filter>
+		<filter>
 			<id>1658275739503</id>
 			<name>rtl</name>
 			<type>10</type>
