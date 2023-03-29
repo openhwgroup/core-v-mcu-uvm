@@ -44,6 +44,7 @@ package uvmt_cvmcu_pkg;
    `include "uvmt_cvmcu_mem_access_test.sv"
    `include "uvmt_cvmcu_shared_access_test.sv"
    `include "uvmt_cvmcu_mem_walk_test.sv"
+   `include "uvmt_cvmcu_uart_lpbk_test.sv"
 
 endpackage : uvmt_cvmcu_pkg
 
