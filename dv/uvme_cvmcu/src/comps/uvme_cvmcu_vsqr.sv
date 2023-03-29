@@ -32,6 +32,7 @@ class uvme_cvmcu_vsqr_c extends uvmx_env_vsqr_c #(
 
    /// @name FIFOs
    /// @{
+   uvm_tlm_analysis_fifo #(uvma_irq_mon_trn_c)  irq_mon_trn_fifo;
    /// @}
 
 
@@ -61,6 +62,7 @@ class uvme_cvmcu_vsqr_c extends uvmx_env_vsqr_c #(
     *
     */
    virtual function void create_fifos();
+      irq_mon_trn_fifo = new("irq_mon_trn_fifo", this);
    endfunction
 
 endclass : uvme_cvmcu_vsqr_c

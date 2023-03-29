@@ -166,6 +166,7 @@ class uvme_cvmcu_env_c extends uvmx_env_c #(
       vsequencer.obi_data_vsequencer  = obi_data_agent .vsequencer;
       vsequencer.apb_vsequencer       = apb_agent      .vsequencer;
       vsequencer.irq_vsequencer       = irq_agent      .vsequencer;
+      irq_agent.mon_trn_ap.connect(vsequencer.irq_mon_trn_fifo.analysis_export);
    endfunction
 
    /**
