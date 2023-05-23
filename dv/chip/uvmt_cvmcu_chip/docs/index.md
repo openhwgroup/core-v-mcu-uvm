@@ -10,14 +10,14 @@
 
 
 @section license_agreement License Agreement
-© Copyright 2023 Acme Enterprises
+© Copyright 2023 Datum Technology Corporation
 
 All rights reserved.
 
 
 
 @section ip_desc IP Description
-This IP contains the Acme Enterprises CORE-V-MCU Sub-System UVM Test Bench.
+This IP contains the Datum Technology Corporation CORE-V-MCU Sub-System UVM Test Bench.
 TODO Describe CORE-V-MCU Sub-System UVM Test Bench
 
 ![CORE-V-MCU Sub-System UVM Test Bench Block Diagram](tb_block_diagram.svg)

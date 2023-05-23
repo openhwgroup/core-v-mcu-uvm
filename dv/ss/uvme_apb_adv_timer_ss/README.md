@@ -1,8 +1,8 @@
-# Acme APB Advanced Timer Sub-System UVM Environment
+# Datum APB Advanced Timer Sub-System UVM Environment
 
 
 # About
-This IP contains the Acme APB Advanced Timer Sub-System UVM Environment.
+This IP contains the Datum APB Advanced Timer Sub-System UVM Environment.
 
 # Block Diagram
 ![alt text](./docs/env_block_diagram.svg "APB Advanced Timer Sub-System UVM Environment Block Diagram")

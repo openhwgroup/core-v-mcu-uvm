@@ -8,13 +8,13 @@
 
 
 @section uvme_tcounter_b_license_agreement License Agreement
-© Copyright 2023 Acme Enterprises
+© Copyright 2023 Datum Technology Corporation
 
 All rights reserved.
 
 
 @section uvme_tcounter_b_ip_desc IP Description
-This IP contains the acme  Block UVM Environment.
+This IP contains the datum  Block UVM Environment.
 
 ![ Block UVM Environment Block Diagram](env_block_diagram.svg)
 
@@ -35,7 +35,7 @@ ID | Name | Version
 
 
 @section uvme_tcounter_b_release_history Release History
-@subsection uvme_tcounter_b_v1_0_0 2023/5/22 - 1.0.0
+@subsection uvme_tcounter_b_v1_0_0 2023/5/23 - 1.0.0
 - Initial release
 
 

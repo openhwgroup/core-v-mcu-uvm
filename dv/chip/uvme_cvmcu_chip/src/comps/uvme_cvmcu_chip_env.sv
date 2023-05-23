@@ -1,4 +1,4 @@
-// Copyright 2023 Acme Enterprises
+// Copyright 2023 Datum Technology Corporation
 // All rights reserved.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -49,10 +49,6 @@ class uvme_cvmcu_chip_env_c extends uvmx_chip_env_c #(
 
    /// @name Register Adapters
    /// @{
-   uvma_jtag_reg_adapter_c  jtag_reg_adapter; ///< Converts JTAG sequence items to/from register operations.
-   uvma_apb_reg_adapter_c  apb_reg_adapter; ///< Converts APB sequence items to/from register operations.
-   uvma_sdio_reg_adapter_c  sdio_reg_adapter; ///< Converts SDIO sequence items to/from register operations.
-   uvma_obi_reg_adapter_c  instr_obi_reg_adapter; ///< Converts OBI sequence items to/from register operations.
    uvma_obi_reg_adapter_c  data_obi_reg_adapter; ///< Converts OBI sequence items to/from register operations.
    /// @}
 
@@ -157,10 +153,6 @@ class uvme_cvmcu_chip_env_c extends uvmx_chip_env_c #(
     * Creates register adapters.
     */
    virtual function void create_reg_adapter();
-      jtag_reg_adapter = uvma_jtag_reg_adapter_c::type_id::create("jtag_reg_adapter");
-      apb_reg_adapter = uvma_apb_reg_adapter_c::type_id::create("apb_reg_adapter");
-      sdio_reg_adapter = uvma_sdio_reg_adapter_c::type_id::create("sdio_reg_adapter");
-      instr_obi_reg_adapter = uvma_obi_reg_adapter_c::type_id::create("instr_obi_reg_adapter");
       data_obi_reg_adapter = uvma_obi_reg_adapter_c::type_id::create("data_obi_reg_adapter");
    endfunction
 

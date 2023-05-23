@@ -1,8 +1,8 @@
-# Acme APB simple timer unit Sub-System UVM Environment
+# Datum APB simple timer unit Sub-System UVM Environment
 
 
 # About
-This IP contains the Acme APB simple timer unit Sub-System UVM Environment.
+This IP contains the Datum APB simple timer unit Sub-System UVM Environment.
 
 # Block Diagram
 ![alt text](./docs/env_block_diagram.svg "APB simple timer unit Sub-System UVM Environment Block Diagram")

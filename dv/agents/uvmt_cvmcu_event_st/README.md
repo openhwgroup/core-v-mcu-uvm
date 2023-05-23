@@ -1,7 +1,7 @@
-# Acme Enterprises CORE-V-MCU Event Interface UVM Agent Self-Test Bench
+# Datum Technology Corporation CORE-V-MCU Event Interface UVM Agent Self-Test Bench
 
 # About
-This IP contains the Acme Enterprises CORE-V-MCU Event Interface UVM Agent Self-Test Bench.
+This IP contains the Datum Technology Corporation CORE-V-MCU Event Interface UVM Agent Self-Test Bench.
 
 # Block Diagram
 ![alt text](./docs/tb_block_diagram.svg "CORE-V-MCU Event Interface UVM Agent Self-Test Bench")

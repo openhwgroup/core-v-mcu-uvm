@@ -8,7 +8,7 @@
 
 
 @section uvma_tprescaler_b_user_guide_license_agreement License Agreement
-© Copyright 2023 Acme Enterprises
+© Copyright 2023 Datum Technology Corporation
 
 All rights reserved.
 
@@ -16,7 +16,7 @@ All rights reserved.
 @section uvma_tprescaler_b_user_guide_revision_history Revision History
 Revision  | Date | Description
 --------- | ---- | -----------
-1.0 | 2023/5/22 | Initial Version
+1.0 | 2023/5/23 | Initial Version
 
 @subsection uvma_tprescaler_b_user_guide_description Description
 

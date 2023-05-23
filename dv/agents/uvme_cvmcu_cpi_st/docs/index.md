@@ -8,13 +8,13 @@
 
 
 @section uvme_cvmcu_cpi_st_license_agreement License Agreement
-© Copyright 2023 Acme Enterprises
+© Copyright 2023 Datum Technology Corporation
 
 All rights reserved.
 
 
 @section uvme_cvmcu_cpi_st_ip_desc IP Description
-This IP contains the acme CORE-V-MCU Camera Parallel Interface UVM Agent Self-Test Environment.
+This IP contains the datum CORE-V-MCU Camera Parallel Interface UVM Agent Self-Test Environment.
 
 ![CORE-V-MCU Camera Parallel Interface UVM Agent Self-Test Environment Block Diagram](env_block_diagram.svg)
 

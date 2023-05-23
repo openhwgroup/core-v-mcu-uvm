@@ -1,11 +1,11 @@
-## Copyright 2023 Acme Enterprises
+## Copyright 2023 Datum Technology Corporation
 ## All rights reserved.
 ########################################################################################################################
 
 
 ip:
   name: "uvmt_cvmcu_event_st"
-  vendor: "acme"
+  vendor: "datum"
   version: "1.0.0"
   full-name: "CORE-V-MCU Event Interface UVM Agent Self-Test Bench"
   type: "DV"
@@ -23,7 +23,7 @@ ip:
     viv: "2022.2"
     mdc: "20220822.10.0"
   tags: []
-  copyright-holders: ["Acme Enterprises"]
+  copyright-holders: ["Datum Technology Corporation"]
   licenses: ["All rights reserved."]
 
 dependencies:
@@ -31,8 +31,8 @@ dependencies:
   "datum/uvml_sb"   : "~1.0"
   "datum/uvma_clk"  : "~1.0"
   "datum/uvma_reset": "~1.0"
-  "acme/uvma_cvmcu_event": "^"
-  "acme/uvme_cvmcu_event_st": "^"
+  "datum/uvma_cvmcu_event": "^"
+  "datum/uvme_cvmcu_event_st": "^"
 
 structure:
   scripts-path : "bin"

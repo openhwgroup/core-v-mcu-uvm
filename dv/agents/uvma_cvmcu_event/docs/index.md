@@ -8,13 +8,13 @@
 
 
 @section uvma_cvmcu_event_license_agreement License Agreement
-© Copyright 2023 Acme Enterprises
+© Copyright 2023 Datum Technology Corporation
 
 All rights reserved.
 
 
 @section uvma_cvmcu_event_ip_desc IP Description
-This IP contains the acme CORE-V-MCU Event Interface UVM Agent.
+This IP contains the datum CORE-V-MCU Event Interface UVM Agent.
 
 ![CORE-V-MCU Event Interface UVM Agent Block Diagram](agent_block_diagram.svg)
 

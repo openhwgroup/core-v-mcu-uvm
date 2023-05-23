@@ -1,7 +1,7 @@
-# Acme Enterprises CORE-V-MCU IO UVM Agent Self-Test Environment
+# Datum Technology Corporation CORE-V-MCU IO UVM Agent Self-Test Environment
 
 # About
-This IP contains the Acme Enterprises CORE-V-MCU IO UVM Agent Self-Test Environment.
+This IP contains the Datum Technology Corporation CORE-V-MCU IO UVM Agent Self-Test Environment.
 
 # Block Diagram
 ![alt text](./docs/env_block_diagram.svg "CORE-V-MCU IO UVM Agent Self-Test Environment")

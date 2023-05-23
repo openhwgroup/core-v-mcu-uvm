@@ -1,8 +1,8 @@
-# Acme CORE-V-MCU Chip UVM Environment
+# Datum CORE-V-MCU Chip UVM Environment
 
 
 # About
-This IP contains the Acme CORE-V-MCU Chip UVM Environment.
+This IP contains the Datum CORE-V-MCU Chip UVM Environment.
 
 # Block Diagram
 ![alt text](./docs/env_block_diagram.svg "CORE-V-MCU Chip UVM Environment Block Diagram")

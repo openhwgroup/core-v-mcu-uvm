@@ -1,11 +1,11 @@
-# Copyright 2023 Acme Enterprises
+# Copyright 2023 Datum Technology Corporation
 # All rights reserved.
 ########################################################################################################################
 
 
 ip:
   name: "uvma_adv_timer_b"
-  vendor: "acme"
+  vendor: "datum"
   version: "1.0.0"
   full-name: " UVM Agent"
   type: "DV"
@@ -23,7 +23,7 @@ ip:
     mdc: "20230116.4.0"
     viv: "2022.2"
   tags: []
-  copyright-holders: ["Acme Enterprises"]
+  copyright-holders: ["Datum Technology Corporation"]
   licenses: ["All rights reserved."]
 
 dependencies:

@@ -1,4 +1,4 @@
-// Copyright 2023 Acme Enterprises
+// Copyright 2023 Datum Technology Corporation
 // All rights reserved.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // This file contains sample code that demonstrates how to add a new sequence to the CORE-V-MCU Camera Parallel Interface Agent Self-Test UVM Environment.

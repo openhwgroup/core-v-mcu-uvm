@@ -8,13 +8,13 @@
 
 
 @section uvmt_adv_timer_b_license_agreement License Agreement
-© Copyright 2023 Acme Enterprises
+© Copyright 2023 Datum Technology Corporation
 
 All rights reserved.
 
 
 @section uvmt_adv_timer_b_ip_desc IP Description
-This IP contains the acme  Block UVM Test Bench.
+This IP contains the datum  Block UVM Test Bench.
 
 ![ Block UVM Test Bench Block Diagram](tb_block_diagram.svg)
 
@@ -34,7 +34,7 @@ ID | Name | Version
 
 
 @section uvmt_adv_timer_b_release_history Release History
-@subsection uvmt_adv_timer_b_v1_0_0 2023/5/22 - 1.0.0
+@subsection uvmt_adv_timer_b_v1_0_0 2023/5/23 - 1.0.0
 - Initial release
 
 

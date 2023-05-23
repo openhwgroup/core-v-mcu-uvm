@@ -1,7 +1,7 @@
-# Acme Enterprises CORE-V-MCU Camera Parallel Interface UVM Agent
+# Datum Technology Corporation CORE-V-MCU Camera Parallel Interface UVM Agent
 
 # About
-This IP contains the Acme Enterprises CORE-V-MCU Camera Parallel Interface UVM Agent.
+This IP contains the Datum Technology Corporation CORE-V-MCU Camera Parallel Interface UVM Agent.
 
 # Block Diagram
 ![alt text](./docs/agent_block_diagram.png "CORE-V-MCU Camera Parallel Interface UVM Agent Block Diagram")

@@ -1,11 +1,11 @@
-# Copyright 2023 Acme Enterprises
+# Copyright 2023 Datum Technology Corporation
 # All rights reserved.
 ########################################################################################################################
 
 
 ip:
   name: "uvmt_cvmcu_chip"
-  vendor: "acme"
+  vendor: "datum"
   version: "1.0.0"
   full-name: "CORE-V-MCU Chip UVM Test Bench"
   type: "DV"
@@ -23,7 +23,7 @@ ip:
     mdc: "20230116.4.0"
     viv: "2022.2"
   tags: []
-  copyright-holders: ["Acme Enterprises"]
+  copyright-holders: ["Datum Technology Corporation"]
   licenses: ["All rights reserved."]
 
 dut:
@@ -37,7 +37,7 @@ dependencies:
   "datum/uvml_sb"   : "~1.0"
   "datum/uvma_clk"  : "~1.0"
   "datum/uvma_reset": "~1.0"
-  "acme/uvme_cvmcu_chip": "^"
+  "datum/uvme_cvmcu_chip": "^"
 
 structure:
   scripts-path : "bin"

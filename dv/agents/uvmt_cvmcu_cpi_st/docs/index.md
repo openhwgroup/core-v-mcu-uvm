@@ -8,13 +8,13 @@
 
 
 @section license_agreement License Agreement
-© Copyright 2023 Acme Enterprises
+© Copyright 2023 Datum Technology Corporation
 
 All rights reserved.
 
 
 @section ip_desc IP Description
-This IP contains the acme CORE-V-MCU Camera Parallel Interface UVM Agent Self-Test Bench.
+This IP contains the datum CORE-V-MCU Camera Parallel Interface UVM Agent Self-Test Bench.
 
 ![CORE-V-MCU Camera Parallel Interface UVM Agent Self-Test Bench Block Diagram](tb_block_diagram.svg)
 

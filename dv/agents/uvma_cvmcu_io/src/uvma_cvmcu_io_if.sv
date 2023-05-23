@@ -1,4 +1,4 @@
-// Copyright 2023 Acme Enterprises
+// Copyright 2023 Datum Technology Corporation
 // All rights reserved.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -20,6 +20,7 @@ interface uvma_cvmcu_io_if(
    /// @{
    wire [47:0]  io_in_i; ///< Port’s input signal
    /// @}
+
    /// @name 'PADO' signals
    /// @{
    wire      [47:0]  io_out_o  ; ///< Port's output signal

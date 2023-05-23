@@ -1,11 +1,11 @@
-# Copyright 2023 Acme Enterprises
+# Copyright 2023 Datum Technology Corporation
 # All rights reserved.
 ########################################################################################################################
 
 
 ip:
   name: "uvme_apb_adv_timer_ss"
-  vendor: "acme"
+  vendor: "datum"
   version: "1.0.0"
   full-name: "APB Advanced Timer Sub-System UVM Environment"
   type: "DV"
@@ -23,14 +23,14 @@ ip:
     mdc: "20230116.4.0"
     viv: "2022.2"
   tags: []
-  copyright-holders: ["Acme Enterprises"]
+  copyright-holders: ["Datum Technology Corporation"]
   licenses: ["All rights reserved."]
 
 dependencies:
   "datum/uvmx"      : "~1.0"
   "datum/uvml_sb"   : "~1.0"
-  "acme/uvma_adv_timer_b": "~1.0"
-  "acme/uvme_adv_timer_b": "~1.0"
+  "datum/uvma_adv_timer_b": "~1.0"
+  "datum/uvme_adv_timer_b": "~1.0"
   "datum/uvma_apb": "~1.0"
 
 structure:

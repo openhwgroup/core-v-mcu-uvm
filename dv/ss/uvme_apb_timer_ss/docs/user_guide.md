@@ -10,7 +10,7 @@
 
 
 @section license_agreement_ug License Agreement
-© Copyright 2022 Acme Enterprises
+© Copyright 2022 Datum Technology Corporation
 
 All rights reserved.
 

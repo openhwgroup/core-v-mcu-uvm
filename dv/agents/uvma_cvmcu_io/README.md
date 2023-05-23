@@ -1,7 +1,7 @@
-# Acme Enterprises CORE-V-MCU IO UVM Agent
+# Datum Technology Corporation CORE-V-MCU IO UVM Agent
 
 # About
-This IP contains the Acme Enterprises CORE-V-MCU IO UVM Agent.
+This IP contains the Datum Technology Corporation CORE-V-MCU IO UVM Agent.
 
 # Block Diagram
 ![alt text](./docs/agent_block_diagram.png "CORE-V-MCU IO UVM Agent Block Diagram")
@@ -25,4 +25,4 @@ It is dependent on the following IP:
 * `datum/uvma_sdio`
 * `datum/uvma_uart`
 * `datum/uvma_spi`
-* `Acme/uvma_cvmcu_cpi`
+* `Datum/uvma_cvmcu_cpi`

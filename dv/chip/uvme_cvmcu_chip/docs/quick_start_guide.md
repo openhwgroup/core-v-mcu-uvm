@@ -10,7 +10,7 @@
 
 
 @section quick_start_license_agreement License Agreement
-© Copyright 2023 Acme Enterprises
+© Copyright 2023 Datum Technology Corporation
 
 All rights reserved.
 

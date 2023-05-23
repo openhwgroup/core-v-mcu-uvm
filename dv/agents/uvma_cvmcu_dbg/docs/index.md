@@ -8,13 +8,13 @@
 
 
 @section uvma_cvmcu_dbg_license_agreement License Agreement
-© Copyright 2023 Acme Enterprises
+© Copyright 2023 Datum Technology Corporation
 
 All rights reserved.
 
 
 @section uvma_cvmcu_dbg_ip_desc IP Description
-This IP contains the acme CORE-V-MCU Debug Interface UVM Agent.
+This IP contains the datum CORE-V-MCU Debug Interface UVM Agent.
 
 ![CORE-V-MCU Debug Interface UVM Agent Block Diagram](agent_block_diagram.svg)
 

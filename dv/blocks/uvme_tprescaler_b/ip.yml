@@ -1,11 +1,11 @@
-# Copyright 2023 Acme Enterprises
+# Copyright 2023 Datum Technology Corporation
 # All rights reserved.
 ########################################################################################################################
 
 
 ip:
   name: "uvme_tprescaler_b"
-  vendor: "acme"
+  vendor: "datum"
   version: "1.0.0"
   full-name: " Block UVM Environment"
   type: "DV"
@@ -23,13 +23,13 @@ ip:
     mdc: "20230116.4.0"
     viv: "2022.2"
   tags: []
-  copyright-holders: ["Acme Enterprises"]
+  copyright-holders: ["Datum Technology Corporation"]
   licenses: ["All rights reserved."]
 
 dependencies:
   "datum/uvmx"    : "~1.0"
   "datum/uvml_sb" : "~1.0"
-  "acme/uvma_tprescaler_b": "^"
+  "datum/uvma_tprescaler_b": "^"
 
 structure:
   scripts-path : "bin"

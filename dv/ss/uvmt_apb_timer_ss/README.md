@@ -1,8 +1,8 @@
-# Acme APB simple timer unit Sub-System UVM Test Bench
+# Datum APB simple timer unit Sub-System UVM Test Bench
 
 
 # About
-This IP contains the Acme APB simple timer unit Sub-System UVM Test Bench.
+This IP contains the Datum APB simple timer unit Sub-System UVM Test Bench.
 
 # Block Diagram
 ![alt text](./docs/tb_block_diagram.svg "APB simple timer unit Sub-System UVM Test Bench Block Diagram")

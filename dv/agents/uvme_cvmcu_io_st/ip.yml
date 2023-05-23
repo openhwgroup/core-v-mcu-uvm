@@ -1,11 +1,11 @@
-## Copyright 2023 Acme Enterprises
+## Copyright 2023 Datum Technology Corporation
 ## All rights reserved.
 ########################################################################################################################
 
 
 ip:
   name: "uvme_cvmcu_io_st"
-  vendor: "acme"
+  vendor: "datum"
   version: "1.0.0"
   full-name: "CORE-V-MCU IO UVM Agent Self-Test Environment"
   type: "DV"
@@ -23,13 +23,13 @@ ip:
     viv: "2022.2"
     mdc: "20220822.10.0"
   tags: []
-  copyright-holders: ["Acme Enterprises"]
+  copyright-holders: ["Datum Technology Corporation"]
   licenses: ["All rights reserved."]
 
 dependencies:
   "datum/uvmx"    : "~1.0"
   "datum/uvml_sb" : "~1.0"
-  "acme/uvma_cvmcu_io": "^"
+  "datum/uvma_cvmcu_io": "^"
 
 structure:
   scripts-path : "bin"
