@@ -7,12 +7,12 @@ This project aims to bring the [OpenHW Group](https://www.openhwgroup.org/)'s [C
 # IP List
  Name | Description
  -----|------------
- [`uvme_cvmcu_chip`](dv/uvme_cvmcu_chip) | CORE-V MCU Top-Level Environment
- [`uvmt_cvmcu_chip`](dv/uvmt_cvmcu_chip) | CORE-V MCU Top-Level Test Bench
- [`uvme_apb_adv_timer_ss`](dv/uvme_apb_adv_timer_ss) | APB Advanced Timer Sub-System Environment
- [`uvme_apb_timer_ss`](dv/uvme_apb_timer_ss) | APB Timer Sub-System Environment
- [`uvmt_apb_adv_timer_ss`](dv/uvmt_apb_adv_timer_ss) | APB Advanced Timer Sub-System Test Bench
- [`uvmt_apb_timer_ss`](dv/uvmt_apb_timer_ss) | APB Timer Sub-System Test Bench
+ [`uvme_cvmcu_chip`](dv/chip/uvme_cvmcu_chip) | CORE-V MCU Top-Level Environment
+ [`uvmt_cvmcu_chip`](dv/chip/uvmt_cvmcu_chip) | CORE-V MCU Top-Level Test Bench
+ [`uvme_apb_adv_timer_ss`](dv/ss/uvme_apb_adv_timer_ss) | APB Advanced Timer Sub-System Environment
+ [`uvme_apb_timer_ss`](dv/ss/uvme_apb_timer_ss) | APB Timer Sub-System Environment
+ [`uvmt_apb_adv_timer_ss`](dv/ss/uvmt_apb_adv_timer_ss) | APB Advanced Timer Sub-System Test Bench
+ [`uvmt_apb_timer_ss`](dv/ss/uvmt_apb_timer_ss) | APB Timer Sub-System Test Bench
 
 
 # Installing Toolchain
