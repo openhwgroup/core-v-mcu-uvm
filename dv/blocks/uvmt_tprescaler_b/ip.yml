@@ -1,0 +1,56 @@
+# Copyright 2023 Acme Enterprises
+# All rights reserved.
+########################################################################################################################
+
+
+ip:
+  name: "uvmt_tprescaler_b"
+  vendor: "acme"
+  version: "1.0.0"
+  full-name: " Block UVM Test Bench"
+  type: "DV"
+  sub-type: "UVM Test Bench"
+  sub-sub-type: "Block"
+  description: "TODO Describe  Block UVM Test Bench"
+  home-page: ""
+  repo-uri: ""
+  bugs: ""
+  aliases: []
+  logo: ""
+  block-diagram: "docs/tb_block_diagram.svg"
+  languages: ["sv"]
+  simulators-supported:
+    mdc: "20230116.4.0"
+    viv: "2022.2"
+  tags: []
+  copyright-holders: ["Acme Enterprises"]
+  licenses: ["All rights reserved."]
+
+dut:
+  type: fsoc
+  name: "core-v-mcu"
+  full-name: "openhwgroup.org:systems:core-v-mcu"
+  target: "sim"
+
+dependencies:
+  "datum/uvmx"      : "~1.0"
+  "datum/uvml_sb"   : "~1.0"
+  "datum/uvma_clk"  : "~1.0"
+  "datum/uvma_reset": "~1.0"
+  "acme/uvma_tprescaler_b": "^"
+  "acme/uvme_tprescaler_b": "^"
+
+structure:
+  scripts-path : "bin"
+  docs-path    : "docs"
+  examples-path: "examples"
+  src-path     : "src"
+
+hdl-src:
+  directories: [".", "tb", "tests"]
+  top-files: ["uvmt_tprescaler_b_pkg.sv"]
+  top-constructs: ["uvmt_tprescaler_b_tb", "uvmx_sim_summary"]
+  so-libs: []
+  tests-path: "tests"
+  test-name-template: "uvmt_tprescaler_b_{{ name }}_test_c"
+

@@ -1,0 +1,8 @@
+﻿title,description,due_date
+Fixed stimulus test,Run and debug. `src/tests/uvmt_tprescaler_b_fix_stim_test.sv`,
+Random stimulus test,Run and debug. `src/tests/uvmt_tprescaler_b_rand_stim_test.sv`,
+Functional regression,Add tests to suite if needed. `src/tests/ts.yml`,
+Add error testing self-checking to base test,`src/tests/uvmt_tprescaler_b_base_test.sv`,
+Fixed illegal stimulus test,"Add self-checking, run and debug. `src/tests/uvmt_tprescaler_b_fix_ill_stim_test.sv`",
+Random illegal stimulus test,"Add self-checking, run and debug. `src/tests/uvmt_tprescaler_b_rand_ill_stim_test.sv`",
+Full regression,Add error tests to suite first. `src/tests/ts.yml`,

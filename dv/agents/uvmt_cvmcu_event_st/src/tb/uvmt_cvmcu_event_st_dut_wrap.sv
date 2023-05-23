@@ -1,0 +1,50 @@
+// Copyright 2023 Acme Enterprises
+// All rights reserved.
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+`ifndef __UVMT_CVMCU_EVENT_ST_DUT_WRAP_SV__
+`define __UVMT_CVMCU_EVENT_ST_DUT_WRAP_SV__
+
+
+/**
+ * Module wrapper connecting CORE-V-MCU Event Interface UVM Agent Self-Test Bench interfaces.  All ports are SV interfaces.
+ * @ingroup uvmt_cvmcu_event_st_tb
+ */
+module uvmt_cvmcu_event_st_dut_wrap(
+   uvma_cvmcu_event_if  core_if, ///< CORE Agent interface
+   uvma_cvmcu_event_if  sys_if, ///< SYS Agent interface
+   uvma_cvmcu_event_if  passive_if, ///< Passive Agent interface
+   uvma_clk_if    low_speed_clk_i_if  , ///< Low speed clock interface
+   uvma_reset_if  reset_if  ///< System reset interface
+);
+
+   assign sys_if.timer_event_lo_o = core_if.timer_event_lo_o;
+   assign passive_if.timer_event_lo_o = core_if.timer_event_lo_o;
+   assign sys_if.timer_event_hi_o = core_if.timer_event_hi_o;
+   assign passive_if.timer_event_hi_o = core_if.timer_event_hi_o;
+   assign sys_if.err_event_o = core_if.err_event_o;
+   assign passive_if.err_event_o = core_if.err_event_o;
+   assign sys_if.fc_events_o = core_if.fc_events_o;
+   assign passive_if.fc_events_o = core_if.fc_events_o;
+   assign sys_if.event_fifo_valid_o = core_if.event_fifo_valid_o;
+   assign passive_if.event_fifo_valid_o = core_if.event_fifo_valid_o;
+   assign sys_if.cl_event_valid_o = core_if.cl_event_valid_o;
+   assign passive_if.cl_event_valid_o = core_if.cl_event_valid_o;
+   assign sys_if.cl_event_data_o = core_if.cl_event_data_o;
+   assign passive_if.cl_event_data_o = core_if.cl_event_data_o;
+   assign sys_if.pr_event_valid_o = core_if.pr_event_valid_o;
+   assign passive_if.pr_event_valid_o = core_if.pr_event_valid_o;
+   assign sys_if.pr_event_data_o = core_if.pr_event_data_o;
+   assign passive_if.pr_event_data_o = core_if.pr_event_data_o;
+   assign core_if.per_events_i = sys_if.per_events_i;
+   assign passive_if.per_events_i = sys_if.per_events_i;
+   assign core_if.cl_event_ready_i = sys_if.cl_event_ready_i;
+   assign passive_if.cl_event_ready_i = sys_if.cl_event_ready_i;
+   assign core_if.pr_event_ready_i = sys_if.pr_event_ready_i;
+   assign passive_if.pr_event_ready_i = sys_if.pr_event_ready_i;
+
+endmodule : uvmt_cvmcu_event_st_dut_wrap
+
+
+`endif // __UVMT_CVMCU_EVENT_ST_DUT_WRAP_SV__

@@ -1,0 +1,15 @@
+﻿Work Item Type,Title,Priority
+Issue,Customize transaction logs for Control Plane sequence item,1
+Issue,Customize transaction logs for Control Plane monitor transaction,1
+Issue,Customize transaction logs for Data Plane Input sequence item,1
+Issue,Customize transaction logs for Data Plane Input monitor transaction,1
+Issue,Customize transaction logs for Data Plane Output sequence item,1
+Issue,Customize transaction logs for Data Plane Output monitor transaction,1
+Issue,Implement sequence item,1
+Issue,Immplement monitor transaction,1
+Issue,Add configuration parameters if needed,1
+Issue,Add state variables if needed,1
+Issue,Implement input driver virtual sequence,1
+Issue,Implement output driver virtual sequence,1
+Issue,Implement idle virtual sequence,1
+Issue,Implement monitor virtual sequence,1

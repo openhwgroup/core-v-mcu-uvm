@@ -1,0 +1,28 @@
+# Copyright 2023 Acme Enterprises
+# All rights reserved.
+########################################################################################################################
+
+
+test-suite:
+  name:  Block UVM Test Suite
+  ip: uvmt_adv_timer_b
+  target: "*"
+  settings:
+    waves: [sanity, bugs]
+    cov  : [nightly, weekly]
+    max-errors  : { 'sanity':      1, 'nightly':       30, 'weekly':    30, 'bugs':       1 }
+    verbosity   : { 'sanity': 'high', 'nightly': 'medium', 'weekly': 'low', 'bugs': 'debug' }
+    max-duration: { 'sanity':      1, 'nightly':        5, 'weekly':    12, 'bugs':       1 }
+    max-jobs    : { 'sanity':      5, 'nightly':       10, 'weekly':    20, 'bugs':       1 }
+
+functional:
+  directed:
+    fix_stim : { 'sanity': [1], 'nightly': [1], 'weekly': [1], 'bugs': [] }
+  rand:
+    rand_stim: { 'sanity': [1], 'nightly':  10, 'weekly': 100, 'bugs': [] }
+
+error:
+  directed:
+    fix_ill_stim : { 'sanity': [], 'nightly':  [], 'weekly': [], 'bugs': [] }
+  rand:
+    rand_ill_stim: { 'sanity': [], 'nightly':  [], 'weekly': [], 'bugs': [] }

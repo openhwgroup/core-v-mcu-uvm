@@ -1,0 +1,10 @@
+﻿title,description,assignee,state,milestone,labels
+Add to configuration,Add knobs and scoreboards if needed and set up the agent's configurations. `src/obj/uvme_tprescaler_b_cfg.sv`,,open,,
+Add to context,Add state variables needed by the Predictor and Virtual Sequences. `src/obj/uvme_tprescaler_b_cntxt.sv`,,open,,
+Implement predictor,Model DUT behavior by transforming input transactions into output transactions. `src/comps/uvme_tprescaler_b_prd.sv`,,open,,
+Add to environment,Add and connect any additional scoreboards to predictor and agent. `src/comps/uvme_tprescaler_b_env.sv`,,open,,
+Implement functional coverage model,`src/comps/uvme_tprescaler_b_cov_model.sv`,,open,,
+Implement fixed stimulus virtual sequence,`src/seq/uvme_tprescaler_b_fix_stim_vseq.sv`,,open,,
+Implement random stimulus virtual sequence,`src/seq/uvme_tprescaler_b_rand_stim_vseq.sv`,,open,,
+Implement fixed illegal stimulus virtual sequence,`src/seq/uvme_tprescaler_b_fix_ill_stim_vseq.sv`,,open,,
+Implement random illegal stimulus virtual sequence,`src/seq/uvme_tprescaler_b_rand_ill_stim_vseq.sv`,,open,,

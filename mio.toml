@@ -14,4 +14,4 @@ timescale         = "1ns/1ps"
 default-simulator = "mdc"
 
 [ip]
-paths = ["dv", "rtl", "rtl/core-v-mcu"]
+paths = ["dv", "dv/agents", "dv/blocks", "dv/chip", "dv/ss", "rtl", "rtl/core-v-mcu"]

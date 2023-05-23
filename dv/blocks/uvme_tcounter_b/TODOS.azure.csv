@@ -1,0 +1,10 @@
+﻿Work Item Type,Title,Priority
+Issue,Add to configuration,1
+Issue,Add to context,1
+Issue,Implement predictor,1
+Issue,Add to environment,1
+Issue,Implement functional coverage model,1
+Issue,Implement fixed stimulus virtual sequence,1
+Issue,Implement random stimulus virtual sequence,1
+Issue,Implement fixed illegal stimulus virtual sequence,1
+Issue,Implement random illegal stimulus virtual sequence,1

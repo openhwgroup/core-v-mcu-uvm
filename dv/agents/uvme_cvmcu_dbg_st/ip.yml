@@ -1,0 +1,43 @@
+## Copyright 2023 Acme Enterprises
+## All rights reserved.
+########################################################################################################################
+
+
+ip:
+  name: "uvme_cvmcu_dbg_st"
+  vendor: "acme"
+  version: "1.0.0"
+  full-name: "CORE-V-MCU Debug Interface UVM Agent Self-Test Environment"
+  type: "DV"
+  sub-type: "UVM Environment"
+  sub-sub-type: "Agent Self-Testing"
+  description: "TODO Describe CORE-V-MCU Debug Interface UVM Agent Self-Test Environment"
+  home-page: ""
+  repo-uri: ""
+  bugs: ""
+  aliases: []
+  logo: ""
+  block-diagram: "docs/env_block_diagram.svg"
+  languages: ["sv"]
+  simulators-supported:
+    viv: "2022.2"
+    mdc: "20220822.10.0"
+  tags: []
+  copyright-holders: ["Acme Enterprises"]
+  licenses: ["All rights reserved."]
+
+dependencies:
+  "datum/uvmx"    : "~1.0"
+  "datum/uvml_sb" : "~1.0"
+  "acme/uvma_cvmcu_dbg": "^"
+
+structure:
+  scripts-path : "bin"
+  docs-path    : "docs"
+  examples-path: "examples"
+  src-path     : "src"
+
+hdl-src:
+  directories: [".", "comps", "obj", "seq"]
+  top-files: ["uvme_cvmcu_dbg_st_pkg.sv"]
+  so-libs: []

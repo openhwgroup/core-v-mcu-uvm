@@ -1,0 +1,76 @@
+# Copyright 2023 Acme Enterprises
+# All rights reserved.
+########################################################################################################################
+
+
+ip:
+  name: "uvmt_cvmcu_chip"
+  vendor: "acme"
+  version: "1.0.0"
+  full-name: "CORE-V-MCU Chip UVM Test Bench"
+  type: "DV"
+  sub-type: "UVM Test Bench"
+  sub-sub-type: "Chip"
+  description: ""
+  home-page: ""
+  repo-uri: ""
+  bugs: ""
+  aliases: []
+  logo: ""
+  block-diagram: "docs/tb_block_diagram.svg"
+  languages: ["sv"]
+  simulators-supported:
+    mdc: "20230116.4.0"
+    viv: "2022.2"
+  tags: []
+  copyright-holders: ["Acme Enterprises"]
+  licenses: ["All rights reserved."]
+
+dut:
+  type: fsoc
+  name: "core-v-mcu"
+  full-name: "openhwgroup.org:systems:core-v-mcu"
+  target: "sim"
+
+dependencies:
+  "datum/uvmx"      : "~1.0"
+  "datum/uvml_sb"   : "~1.0"
+  "datum/uvma_clk"  : "~1.0"
+  "datum/uvma_reset": "~1.0"
+  "acme/uvme_cvmcu_chip": "^"
+
+structure:
+  scripts-path : "bin"
+  docs-path    : "docs"
+  examples-path: "examples"
+  src-path     : "src"
+
+hdl-src:
+  directories: [".", "tb", "tests"]
+  top-files: ["uvmt_cvmcu_chip_pkg.sv"]
+  top-constructs: ["uvmt_cvmcu_chip_tb", "uvmx_sim_summary"]
+  so-libs: []
+  tests-path: "tests"
+  test-name-template: "uvmt_cvmcu_chip_{{ name }}_test_c"
+
+targets:
+  default:
+    cmp:
+       UVMT_CVMCU_CHIP_USE_CORES: 0
+    elab:
+    sim:
+  gf22fdx:
+    cmp:
+       UVMT_CVMCU_CHIP_USE_CORES: 1
+    elab:
+    sim:
+  nexys:
+    cmp:
+       UVMT_CVMCU_CHIP_USE_CORES: 1
+    elab:
+    sim:
+  genesys:
+    cmp:
+       UVMT_CVMCU_CHIP_USE_CORES: 1
+    elab:
+    sim:

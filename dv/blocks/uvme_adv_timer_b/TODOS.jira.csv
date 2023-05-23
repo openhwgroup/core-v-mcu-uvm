@@ -1,0 +1,13 @@
+﻿IssueType,Issue ID,Parent ID,Status,Summary,Component,Description
+task,0,,To Do,Configuration and context,uvme_adv_timer_b,Add knobs if needed and set up the agent's configurations. Add state variables needed by the Predictor and Virtual Sequences. Add scoreboards if needed and configure scoreboarding logging.
+Sub-task,,0,To Do,Add to configuration,uvme_adv_timer_b,`src/obj/uvme_adv_timer_b_cfg.sv`
+Sub-task,,0,To Do,Add to context,uvme_adv_timer_b,`src/obj/uvme_adv_timer_b_cntxt.sv`
+task,1,,To Do,Prediction and Scoreboarding,uvme_adv_timer_b,Model DUT behavior by transforming input transactions into output transactions. Add and connect any additional scoreboards to predictor and agent.
+Sub-task,,1,To Do,Implement predictor,uvme_adv_timer_b,`src/comps/uvme_adv_timer_b_prd.sv`
+Sub-task,,1,To Do,Add to environment,uvme_adv_timer_b,`src/comps/uvme_adv_timer_b_env.sv`
+task,2,,To Do,Implement functional coverage model,uvme_adv_timer_b,`src/comps/uvme_adv_timer_b_cov_model.sv`
+task,3,,To Do,Implement stimulus,uvme_adv_timer_b,Modify the sample stimulus to form valid stimulus for the DUT.
+Sub-task,,3,To Do,Fixed stimulus virtual sequence,uvme_adv_timer_b,`src/seq/uvme_adv_timer_b_fix_stim_vseq.sv`
+Sub-task,,3,To Do,Random stimulus virtual sequence,uvme_adv_timer_b,`src/seq/uvme_adv_timer_b_rand_stim_vseq.sv`
+Sub-task,,3,To Do,Fixed illegal stimulus virtual sequence,uvme_adv_timer_b,`src/seq/uvme_adv_timer_b_fix_ill_stim_vseq.sv`
+Sub-task,,3,To Do,Random illegal stimulus virtual sequence,uvme_adv_timer_b,`src/seq/uvme_adv_timer_b_rand_ill_stim_vseq.sv`

@@ -1,0 +1,16 @@
+﻿Work Item Type,Title,Priority
+Issue,Customize transaction logs for PHY monitor transaction,1
+Issue,Customize transaction logs for TX PHY sequence item,1
+Issue,Customize transaction logs for RX PHY sequence item,1
+Issue,Implement sequence item,1
+Issue,Implement monitor transaction,1
+Issue,Add configuration parameters if needed,1
+Issue,Add state variables if needed,1
+Issue,Implement 'TX' Driver Virtual Sequence,1
+Issue,Implement 'RX' Driver Virtual Sequence,1
+Issue,Implement idle virtual sequence,1
+Issue,Implement monitor virtual sequence,1
+Issue,Implement fixed stimulus virtual sequence,1
+Issue,Implement random stimulus virtual sequence,1
+Issue,Implement fixed illegal stimulus virtual sequence,1
+Issue,Implement random illegal stimulus virtual sequence,1

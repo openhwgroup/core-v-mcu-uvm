@@ -1,0 +1,41 @@
+## Copyright 2023 Acme Enterprises
+## All rights reserved.
+########################################################################################################################
+
+
+ip:
+  name: "uvma_cvmcu_dbg"
+  vendor: "acme"
+  version: "1.0.0"
+  full-name: "CORE-V-MCU Debug Interface UVM Agent"
+  type: "DV"
+  sub-type: "UVM Agent"
+  sub-sub-type: "Advanced; Parallel"
+  description: "TODO Describe CORE-V-MCU Debug Interface UVM Agent"
+  home-page: ""
+  repo-uri: ""
+  bugs: ""
+  aliases: []
+  logo: ""
+  block-diagram: "docs/agent_block_diagram.svg"
+  languages: ["sv"]
+  simulators-supported:
+    viv: "2022.2"
+    mdc: "20220822.10.0"
+  tags: []
+  copyright-holders: ["Acme Enterprises"]
+  licenses: ["All rights reserved."]
+
+dependencies:
+  "datum/uvmx": "~1.0"
+
+structure:
+  scripts-path : "bin"
+  docs-path    : "docs"
+  examples-path: "examples"
+  src-path     : "src"
+
+hdl-src:
+  directories: [".", "comps", "obj", "seq"]
+  top-files: ["uvma_cvmcu_dbg_pkg.sv"]
+  so-libs: []

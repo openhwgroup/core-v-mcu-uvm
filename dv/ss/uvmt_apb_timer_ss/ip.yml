@@ -1,0 +1,55 @@
+# Copyright 2023 Acme Enterprises
+# All rights reserved.
+########################################################################################################################
+
+
+ip:
+  name: "uvmt_apb_timer_ss"
+  vendor: "acme"
+  version: "1.0.0"
+  full-name: "APB simple timer unit Sub-System UVM Test Bench"
+  type: "DV"
+  sub-type: "UVM Test Bench"
+  sub-sub-type: "Sub-System"
+  description: ""
+  home-page: ""
+  repo-uri: ""
+  bugs: ""
+  aliases: []
+  logo: ""
+  block-diagram: "docs/tb_block_diagram.svg"
+  languages: ["sv"]
+  simulators-supported:
+    mdc: "20230116.4.0"
+    viv: "2022.2"
+  tags: []
+  copyright-holders: ["Acme Enterprises"]
+  licenses: ["All rights reserved."]
+
+dut:
+  type: fsoc
+  name: "core-v-mcu"
+  full-name: "openhwgroup.org:systems:core-v-mcu"
+  target: "sim"
+
+dependencies:
+  "datum/uvmx"      : "~1.0"
+  "datum/uvml_sb"   : "~1.0"
+  "datum/uvma_clk"  : "~1.0"
+  "datum/uvma_reset": "~1.0"
+  "acme/uvme_apb_timer_ss": "^"
+
+structure:
+  scripts-path : "bin"
+  docs-path    : "docs"
+  examples-path: "examples"
+  src-path     : "src"
+
+hdl-src:
+  directories: [".", "tb", "tests"]
+  top-files: ["uvmt_apb_timer_ss_pkg.sv"]
+  top-constructs: ["uvmt_apb_timer_ss_tb", "uvmx_sim_summary"]
+  so-libs: []
+  tests-path: "tests"
+  test-name-template: "uvmt_apb_timer_ss_{{ name }}_test_c"
+

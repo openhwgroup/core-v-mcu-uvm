@@ -1,0 +1,55 @@
+# Copyright 2023 Acme Enterprises
+# All rights reserved.
+########################################################################################################################
+
+
+ip:
+  name: "uvme_cvmcu_chip"
+  vendor: "acme"
+  version: "1.0.0"
+  full-name: "CORE-V-MCU Chip UVM Environment"
+  type: "DV"
+  sub-type: "UVM Environment"
+  sub-sub-type: "Chip"
+  description: ""
+  home-page: ""
+  repo-uri: ""
+  bugs: ""
+  aliases: []
+  logo: ""
+  block-diagram: "docs/env_block_diagram.svg"
+  languages: ["sv"]
+  simulators-supported:
+    mdc: "20230116.4.0"
+    viv: "2022.2"
+  tags: []
+  copyright-holders: ["Acme Enterprises"]
+  licenses: ["All rights reserved."]
+
+dependencies:
+  "datum/uvmx"      : "~1.0"
+  "datum/uvml_sb"   : "~1.0"
+  "acme/uvme_apb_timer_ss": "~1.0"
+  "acme/uvme_apb_adv_timer_ss": "~1.0"
+  "datum/uvma_jtag": "~1.0"
+  "datum/uvma_spi": "~1.0"
+  "acme/uvma_cvmcu_cpi": "~1.0"
+  "datum/uvma_i2c": "~1.0"
+  "datum/uvma_apb": "~1.0"
+  "datum/uvma_uart": "~1.0"
+  "datum/uvma_sdio": "~1.0"
+  "acme/uvma_cvmcu_io": "~1.0"
+  "datum/uvma_obi": "~1.0"
+  "acme/uvma_cvmcu_event": "~1.0"
+  "acme/uvma_cvmcu_dbg": "~1.0"
+
+structure:
+  scripts-path : "bin"
+  docs-path    : "docs"
+  examples-path: "examples"
+  src-path     : "src"
+
+hdl-src:
+  directories: [".", "comps", "obj", "reg", "seq"]
+  top-files: ["uvme_cvmcu_chip_pkg.sv"]
+  so-libs: []

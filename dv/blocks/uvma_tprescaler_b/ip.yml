@@ -1,0 +1,41 @@
+# Copyright 2023 Acme Enterprises
+# All rights reserved.
+########################################################################################################################
+
+
+ip:
+  name: "uvma_tprescaler_b"
+  vendor: "acme"
+  version: "1.0.0"
+  full-name: " UVM Agent"
+  type: "DV"
+  sub-type: "UVM Agent"
+  sub-sub-type: "Simplex; Non-Layered"
+  description: "TODO Describe  UVM Agent"
+  home-page: ""
+  repo-uri: ""
+  bugs: ""
+  aliases: []
+  logo: ""
+  block-diagram: "docs/agent_block_diagram.svg"
+  languages: ["sv"]
+  simulators-supported:
+    mdc: "20230116.4.0"
+    viv: "2022.2"
+  tags: []
+  copyright-holders: ["Acme Enterprises"]
+  licenses: ["All rights reserved."]
+
+dependencies:
+  "datum/uvmx": "~1.0"
+
+structure:
+  scripts-path : "bin"
+  docs-path    : "docs"
+  examples-path: "examples"
+  src-path     : "src"
+
+hdl-src:
+  directories: [".", "comps", "obj", "seq"]
+  top-files: ["uvma_tprescaler_b_pkg.sv"]
+  so-libs: []

@@ -1,0 +1,35 @@
+@page uvmt_cvmcu_event_st_user_guide User Guide
+@htmlonly
+<div class="autonumbering">
+@endhtmlonly
+
+
+@tableofcontents
+
+
+@section uvmt_cvmcu_event_st_user_guide_license_agreement License Agreement
+© Copyright 2023 Acme Enterprises
+
+All rights reserved.
+
+
+@section uvmt_cvmcu_event_st_user_guide_revision_history Revision History
+Revision  | Date | Description
+--------- | ---- | -----------
+1.0 | 2023// | Initial Version
+
+@subsection uvmt_cvmcu_event_st_user_guide_description Description
+
+
+@section uvmt_cvmcu_event_st_user_guide_definitions Definitions
+Symbol | Definition
+------ | ----------
+ 'SYMBOL' | Definition
+
+
+@section uvmt_cvmcu_event_st_user_guide_contents Contents
+
+
+@htmlonly
+</div>
+@endhtmlonly

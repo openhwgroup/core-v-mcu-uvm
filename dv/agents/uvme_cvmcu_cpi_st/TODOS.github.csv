@@ -1,0 +1,8 @@
+﻿title,description,assignee,state,milestone,labels
+Fixed stimulus test,Run and debug. `src/tests/uvmt_cvmcu_cpi_st_fix_stim_test.sv`,,open,,
+Random stimulus test,Run and debug. `src/tests/uvmt_cvmcu_cpi_st_rand_stim_test.sv`,,open,,
+Functional regression,Add tests to suite if needed. `src/tests/ts.yml`,,open,,
+Add error testing self-checking to base test,`src/tests/uvmt_cvmcu_cpi_st_base_test.sv`,,open,,
+Fixed illegal stimulus test,"Add self-checking, run and debug. `src/tests/uvmt_cvmcu_cpi_st_fix_ill_stim_test.sv`",,open,,
+Random illegal stimulus test,"Add self-checking, run and debug. `src/tests/uvmt_cvmcu_cpi_st_rand_ill_stim_test.sv`",,open,,
+Full regression,Add error tests to suite first. `src/tests/ts.yml`,,open,,
