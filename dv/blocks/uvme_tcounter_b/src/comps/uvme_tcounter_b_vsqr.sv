@@ -8,7 +8,7 @@
 
 
 /**
- * Virtual Sequencer running  Block Environment Virtual Sequences extending uvme_tcounter_b_base_vseq_c.
+ * Virtual Sequencer running Timer unit counter Block Environment Virtual Sequences extending uvme_tcounter_b_base_vseq_c.
  * @ingroup uvme_tcounter_b_comps
  */
 class uvme_tcounter_b_vsqr_c extends uvmx_block_env_vsqr_c #(

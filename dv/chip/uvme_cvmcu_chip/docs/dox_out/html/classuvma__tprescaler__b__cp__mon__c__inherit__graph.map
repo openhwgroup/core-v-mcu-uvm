@@ -1,0 +1,4 @@
+<map id="uvma_tprescaler_b_cp_mon_c" name="uvma_tprescaler_b_cp_mon_c">
+<area shape="rect" id="node2" href="$classuvmx__mp__mon__c.html" title="uvmx_mp_mon_c\&lt; .T_MP\l(virtual uvma_tprescaler\l_b_if.cp_mon_mp),.T_CFG\l(uvma_tprescaler_b_cfg_c)\l,.T_CNTXT(uvma_tprescaler\l_b_cntxt_c),.T_MON_TRN(uvma\l_tprescaler_b_cp_mon_trn_c) \&gt;" alt="" coords="387,5,613,120"/>
+<area shape="rect" id="node3" href="$classuvmx__mp__mon__base__c.html" title="TODO Describe uvmx_mp_mon_base_c. " alt="" coords="163,49,338,76"/>
+</map>

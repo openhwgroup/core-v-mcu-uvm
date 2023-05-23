@@ -8,7 +8,7 @@
 
 
 /**
- * Sequence-based UVM Agent capable of driving/monitoring the  Interface (uvma_tprescaler_b_if).
+ * Sequence-based UVM Agent capable of driving/monitoring the Timer unit prescaler Interface (uvma_tprescaler_b_if).
  * @ingroup uvma_tprescaler_b_comps
  */
 class uvma_tprescaler_b_agent_c extends uvmx_agent_c #(

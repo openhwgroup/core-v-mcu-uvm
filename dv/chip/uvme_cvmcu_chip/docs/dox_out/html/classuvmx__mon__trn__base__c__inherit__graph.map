@@ -1,0 +1,68 @@
+<map id="uvmx_mon_trn_base_c" name="uvmx_mon_trn_base_c">
+<area shape="rect" id="node3" href="$classuvma__obi__mon__trn__c.html" title="Object rebuilt from the Open Bus Interface monitor. " alt="" coords="471,5,633,32"/>
+<area shape="rect" id="node4" href="$classuvma__obi__mstr__a__mon__trn__c.html" title="Object rebuilt by the Open Bus Interface monitor&#39;s A Channel Master. " alt="" coords="465,57,639,98"/>
+<area shape="rect" id="node5" href="$classuvma__obi__mstr__r__mon__trn__c.html" title="Object rebuilt by the Open Bus Interface monitor. " alt="" coords="467,122,637,163"/>
+<area shape="rect" id="node6" href="$classuvma__obi__slv__a__mon__trn__c.html" title="Object rebuilt by the Open Bus Interface monitor. " alt="" coords="471,187,633,229"/>
+<area shape="rect" id="node7" href="$classuvma__obi__slv__r__mon__trn__c.html" title="Object rebuilt by the Open Bus Interface monitor. " alt="" coords="472,253,632,294"/>
+<area shape="rect" id="node8" href="$classuvml__sb__simplex__entry__c.html" title="TODO Describe uvml_sb_simplex_entry_c. " alt="" coords="457,319,647,345"/>
+<area shape="rect" id="node9" href="$classuvmx__mon__trn__c.html" title="TODO Describe uvmx_mon_trn_c. " alt="" coords="455,370,649,411"/>
+<area shape="rect" id="node10" href="$classuvmx__mon__trn__c.html" title="uvmx_mon_trn_c\&lt; .T\l_CFG(uvma_adv_timer\l_b_cfg_c),.T_CNTXT(uvma\l_adv_timer_b_cntxt_c) \&gt;" alt="" coords="456,435,648,506"/>
+<area shape="rect" id="node15" href="$classuvmx__mon__trn__c.html" title="uvmx_mon_trn_c\&lt; .T\l_CFG(uvma_cvmcu_cpi\l_cfg_c),.T_CNTXT(uvma\l_cvmcu_cpi_cntxt_c) \&gt;" alt="" coords="463,530,641,601"/>
+<area shape="rect" id="node18" href="$classuvmx__mon__trn__c.html" title="uvmx_mon_trn_c\&lt; .T\l_CFG(uvma_cvmcu_dbg\l_cfg_c),.T_CNTXT(uvma\l_cvmcu_dbg_cntxt_c) \&gt;" alt="" coords="463,625,641,695"/>
+<area shape="rect" id="node21" href="$classuvmx__mon__trn__c.html" title="uvmx_mon_trn_c\&lt; .T\l_CFG(uvma_cvmcu_event\l_cfg_c),.T_CNTXT(uvma\l_cvmcu_event_cntxt_c) \&gt;" alt="" coords="457,719,647,790"/>
+<area shape="rect" id="node24" href="$classuvmx__mon__trn__c.html" title="uvmx_mon_trn_c\&lt; .T\l_CFG(uvma_cvmcu_io_cfg\l_c),.T_CNTXT(uvma_cvmcu\l_io_cntxt_c) \&gt;" alt="" coords="452,826,652,897"/>
+<area shape="rect" id="node28" href="$classuvmx__mon__trn__c.html" title="uvmx_mon_trn_c\&lt; .T\l_CFG(uvma_i2c_cfg_c)\l,.T_CNTXT(uvma_i2c_cntxt_c) \&gt;" alt="" coords="437,1048,667,1104"/>
+<area shape="rect" id="node34" href="$classuvmx__mon__trn__c.html" title="uvmx_mon_trn_c\&lt; .T\l_CFG(uvma_jtag_cfg_c)\l,.T_CNTXT(uvma_jtag_cntxt_c) \&gt;" alt="" coords="433,1332,671,1388"/>
+<area shape="rect" id="node40" href="$classuvmx__mon__trn__c.html" title="uvmx_mon_trn_c\&lt; .T\l_CFG(uvma_sdio_cfg_c)\l,.T_CNTXT(uvma_sdio_cntxt_c) \&gt;" alt="" coords="433,1612,671,1668"/>
+<area shape="rect" id="node46" href="$classuvmx__mon__trn__c.html" title="uvmx_mon_trn_c\&lt; .T\l_CFG(uvma_spi_cfg_c)\l,.T_CNTXT(uvma_spi_cntxt_c) \&gt;" alt="" coords="437,1900,667,1956"/>
+<area shape="rect" id="node52" href="$classuvmx__mon__trn__c.html" title="uvmx_mon_trn_c\&lt; .T\l_CFG(uvma_tcounter_b\l_cfg_c),.T_CNTXT(uvma\l_tcounter_b_cntxt_c) \&gt;" alt="" coords="463,2170,641,2241"/>
+<area shape="rect" id="node57" href="$classuvmx__mon__trn__c.html" title="uvmx_mon_trn_c\&lt; .T\l_CFG(uvma_tprescaler\l_b_cfg_c),.T_CNTXT(uvma\l_tprescaler_b_cntxt_c) \&gt;" alt="" coords="456,2431,648,2502"/>
+<area shape="rect" id="node62" href="$classuvmx__mon__trn__c.html" title="uvmx_mon_trn_c\&lt; .T\l_CFG(uvma_uart_cfg_c)\l,.T_CNTXT(uvma_uart_cntxt_c) \&gt;" alt="" coords="433,2679,671,2735"/>
+<area shape="rect" id="node68" href="$classuvmx__reset__mon__trn__c.html" title="TODO Describe uvmx_reset_mon_trn_c. " alt="" coords="465,2759,639,2785"/>
+<area shape="rect" id="node11" href="$classuvma__adv__timer__b__cp__mon__trn__c.html" title="Control Plane monitor transaction sampled by uvma_adv_timer_b_cp_mon_c. " alt="" coords="737,146,906,187"/>
+<area shape="rect" id="node12" href="$classuvma__adv__timer__b__dpi__mon__trn__c.html" title="Control Plane monitor transaction sampled by uvma_adv_timer_b_dpi_mon_c. " alt="" coords="734,211,909,253"/>
+<area shape="rect" id="node13" href="$classuvma__adv__timer__b__dpo__mon__trn__c.html" title="Control Plane monitor transaction sampled by uvma_adv_timer_b_dpo_mon_c. " alt="" coords="732,277,911,318"/>
+<area shape="rect" id="node14" href="$classuvma__adv__timer__b__mon__trn__c.html" title="Monitor Transaction rebuilt by the Monitor Virtual Sequence (uvma_adv_timer_b_mon_vseq_c). " alt="" coords="730,342,913,383"/>
+<area shape="rect" id="node16" href="$classuvma__cvmcu__cpi__mon__trn__c.html" title="Monitor Transaction rebuilt by the Monitor Virtual Sequence (uvma_cvmcu_cpi_mon_vseq_c). " alt="" coords="736,407,907,449"/>
+<area shape="rect" id="node17" href="$classuvma__cvmcu__cpi__phy__mon__trn__c.html" title="PHY Monitor Transaction sampled by monitor (uvma_cvmcu_cpi_phy_mon_c). " alt="" coords="738,473,905,514"/>
+<area shape="rect" id="node19" href="$classuvma__cvmcu__dbg__mon__trn__c.html" title="Monitor Transaction rebuilt by the Monitor Virtual Sequence (uvma_cvmcu_dbg_mon_vseq_c). " alt="" coords="733,538,909,579"/>
+<area shape="rect" id="node20" href="$classuvma__cvmcu__dbg__phy__mon__trn__c.html" title="PHY Monitor Transaction sampled by monitor (uvma_cvmcu_dbg_phy_mon_c). " alt="" coords="736,603,907,645"/>
+<area shape="rect" id="node22" href="$classuvma__cvmcu__event__mon__trn__c.html" title="Monitor Transaction rebuilt by the Monitor Virtual Sequence (uvma_cvmcu_event_mon_vseq_c). " alt="" coords="727,669,916,710"/>
+<area shape="rect" id="node23" href="$classuvma__cvmcu__event__phy__mon__trn__c.html" title="PHY Monitor Transaction sampled by monitor (uvma_cvmcu_event_phy_mon_c). " alt="" coords="729,734,913,775"/>
+<area shape="rect" id="node25" href="$classuvma__cvmcu__io__mon__trn__c.html" title="Monitor Transaction rebuilt by the Monitor Virtual Sequence (uvma_cvmcu_io_mon_vseq_c). " alt="" coords="720,800,923,827"/>
+<area shape="rect" id="node26" href="$classuvma__cvmcu__io__padi__mon__trn__c.html" title="PADI Monitor Transaction sampled by monitor (uvma_cvmcu_io_padi_mon_c). " alt="" coords="740,851,903,893"/>
+<area shape="rect" id="node27" href="$classuvma__cvmcu__io__pado__mon__trn__c.html" title="PADO Monitor Transaction sampled by monitor (uvma_cvmcu_io_pado_mon_c). " alt="" coords="738,917,905,958"/>
+<area shape="rect" id="node29" href="$classuvma__i2c__m2s__mon__trn__c.html" title="M2S Monitor Transaction sampled by monitor (uvma_i2c_m2s_mon_c). " alt="" coords="724,983,919,1009"/>
+<area shape="rect" id="node30" href="$classuvma__i2c__mon__trn__c.html" title="Monitor Transaction rebuilt by the Monitor Virtual Sequence (uvma_i2c_mon_vseq_c). " alt="" coords="741,1033,901,1060"/>
+<area shape="rect" id="node31" href="$classuvma__i2c__phy__m2s__mon__trn__c.html" title="PHY_M2S Monitor Transaction sampled by monitor (uvma_i2c_phy_m2s_mon_c). " alt="" coords="728,1085,915,1126"/>
+<area shape="rect" id="node32" href="$classuvma__i2c__phy__s2m__mon__trn__c.html" title="PHY_S2M Monitor Transaction sampled by monitor (uvma_i2c_phy_s2m_mon_c). " alt="" coords="728,1150,915,1191"/>
+<area shape="rect" id="node33" href="$classuvma__i2c__s2m__mon__trn__c.html" title="S2M Monitor Transaction sampled by monitor (uvma_i2c_s2m_mon_c). " alt="" coords="724,1216,919,1243"/>
+<area shape="rect" id="node35" href="$classuvma__jtag__c2t__mon__trn__c.html" title="C2T Monitor Transaction sampled by monitor (uvma_jtag_c2t_mon_c). " alt="" coords="725,1267,918,1293"/>
+<area shape="rect" id="node36" href="$classuvma__jtag__mon__trn__c.html" title="Monitor Transaction rebuilt by the Monitor Virtual Sequence (uvma_jtag_mon_vseq_c). " alt="" coords="738,1317,905,1344"/>
+<area shape="rect" id="node37" href="$classuvma__jtag__phy__c2t__mon__trn__c.html" title="PHY_C2T Monitor Transaction sampled by monitor (uvma_jtag_phy_c2t_mon_c). " alt="" coords="729,1369,914,1410"/>
+<area shape="rect" id="node38" href="$classuvma__jtag__phy__t2c__mon__trn__c.html" title="PHY_T2C Monitor Transaction sampled by monitor (uvma_jtag_phy_t2c_mon_c). " alt="" coords="729,1434,914,1475"/>
+<area shape="rect" id="node39" href="$classuvma__jtag__t2c__mon__trn__c.html" title="T2C Monitor Transaction sampled by monitor (uvma_jtag_t2c_mon_c). " alt="" coords="725,1500,918,1527"/>
+<area shape="rect" id="node41" href="$classuvma__sdio__d2h__mon__trn__c.html" title="D2H Monitor Transaction sampled by monitor (uvma_sdio_d2h_mon_c). " alt="" coords="722,1551,921,1577"/>
+<area shape="rect" id="node42" href="$classuvma__sdio__h2d__mon__trn__c.html" title="H2D Monitor Transaction sampled by monitor (uvma_sdio_h2d_mon_c). " alt="" coords="722,1601,921,1628"/>
+<area shape="rect" id="node43" href="$classuvma__sdio__mon__trn__c.html" title="Monitor Transaction rebuilt by the Monitor Virtual Sequence (uvma_sdio_mon_vseq_c). " alt="" coords="737,1652,905,1679"/>
+<area shape="rect" id="node44" href="$classuvma__sdio__phy__d2h__mon__trn__c.html" title="PHY_D2H Monitor Transaction sampled by monitor (uvma_sdio_phy_d2h_mon_c). " alt="" coords="726,1703,917,1745"/>
+<area shape="rect" id="node45" href="$classuvma__sdio__phy__h2d__mon__trn__c.html" title="PHY_H2D Monitor Transaction sampled by monitor (uvma_sdio_phy_h2d_mon_c). " alt="" coords="726,1769,917,1810"/>
+<area shape="rect" id="node47" href="$classuvma__spi__m2s__mon__trn__c.html" title="M2S Monitor Transaction sampled by monitor (uvma_spi_m2s_mon_c). " alt="" coords="724,1835,919,1861"/>
+<area shape="rect" id="node48" href="$classuvma__spi__mon__trn__c.html" title="Monitor Transaction rebuilt by the Monitor Virtual Sequence (uvma_spi_mon_vseq_c). " alt="" coords="741,1885,901,1912"/>
+<area shape="rect" id="node49" href="$classuvma__spi__phy__m2s__mon__trn__c.html" title="PHY_M2S Monitor Transaction sampled by monitor (uvma_spi_phy_m2s_mon_c). " alt="" coords="728,1937,915,1978"/>
+<area shape="rect" id="node50" href="$classuvma__spi__phy__s2m__mon__trn__c.html" title="PHY_S2M Monitor Transaction sampled by monitor (uvma_spi_phy_s2m_mon_c). " alt="" coords="728,2002,915,2043"/>
+<area shape="rect" id="node51" href="$classuvma__spi__s2m__mon__trn__c.html" title="S2M Monitor Transaction sampled by monitor (uvma_spi_s2m_mon_c). " alt="" coords="724,2068,919,2095"/>
+<area shape="rect" id="node53" href="$classuvma__tcounter__b__cp__mon__trn__c.html" title="Control Plane monitor transaction sampled by uvma_tcounter_b_cp_mon_c. " alt="" coords="743,2119,900,2161"/>
+<area shape="rect" id="node54" href="$classuvma__tcounter__b__dpi__mon__trn__c.html" title="Control Plane monitor transaction sampled by uvma_tcounter_b_dpi_mon_c. " alt="" coords="740,2185,903,2226"/>
+<area shape="rect" id="node55" href="$classuvma__tcounter__b__dpo__mon__trn__c.html" title="Control Plane monitor transaction sampled by uvma_tcounter_b_dpo_mon_c. " alt="" coords="738,2250,905,2291"/>
+<area shape="rect" id="node56" href="$classuvma__tcounter__b__mon__trn__c.html" title="Monitor Transaction rebuilt by the Monitor Virtual Sequence (uvma_tcounter_b_mon_vseq_c). " alt="" coords="736,2315,907,2357"/>
+<area shape="rect" id="node58" href="$classuvma__tprescaler__b__cp__mon__trn__c.html" title="Control Plane monitor transaction sampled by uvma_tprescaler_b_cp_mon_c. " alt="" coords="737,2381,905,2422"/>
+<area shape="rect" id="node59" href="$classuvma__tprescaler__b__dpi__mon__trn__c.html" title="Control Plane monitor transaction sampled by uvma_tprescaler_b_dpi_mon_c. " alt="" coords="735,2446,908,2487"/>
+<area shape="rect" id="node60" href="$classuvma__tprescaler__b__dpo__mon__trn__c.html" title="Control Plane monitor transaction sampled by uvma_tprescaler_b_dpo_mon_c. " alt="" coords="733,2511,910,2553"/>
+<area shape="rect" id="node61" href="$classuvma__tprescaler__b__mon__trn__c.html" title="Monitor Transaction rebuilt by the Monitor Virtual Sequence (uvma_tprescaler_b_mon_vseq_c). " alt="" coords="730,2577,913,2618"/>
+<area shape="rect" id="node63" href="$classuvma__uart__eg__mon__trn__c.html" title="EG Monitor Transaction sampled by monitor (uvma_uart_eg_mon_c). " alt="" coords="726,2643,917,2669"/>
+<area shape="rect" id="node64" href="$classuvma__uart__ig__mon__trn__c.html" title="IG Monitor Transaction sampled by monitor (uvma_uart_ig_mon_c). " alt="" coords="728,2693,915,2720"/>
+<area shape="rect" id="node65" href="$classuvma__uart__mon__trn__c.html" title="Monitor Transaction rebuilt by the Monitor Virtual Sequence (uvma_uart_mon_vseq_c). " alt="" coords="738,2744,905,2771"/>
+<area shape="rect" id="node66" href="$classuvma__uart__phy__eg__mon__trn__c.html" title="PHY_EG Monitor Transaction sampled by monitor (uvma_uart_phy_eg_mon_c). " alt="" coords="730,2795,913,2837"/>
+<area shape="rect" id="node67" href="$classuvma__uart__phy__ig__mon__trn__c.html" title="PHY_IG Monitor Transaction sampled by monitor (uvma_uart_phy_ig_mon_c). " alt="" coords="732,2861,911,2902"/>
+</map>

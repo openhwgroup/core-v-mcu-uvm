@@ -8,7 +8,7 @@
 
 
 /**
- * Object encapsulating all parameters for creating, connecting and running the  Block environment (uvme_tprescaler_b_env_c).
+ * Object encapsulating all parameters for creating, connecting and running the Timer unit prescaler Block environment (uvme_tprescaler_b_env_c).
  * @ingroup uvme_tprescaler_b_obj
  */
 class uvme_tprescaler_b_cfg_c extends uvmx_block_env_cfg_c;

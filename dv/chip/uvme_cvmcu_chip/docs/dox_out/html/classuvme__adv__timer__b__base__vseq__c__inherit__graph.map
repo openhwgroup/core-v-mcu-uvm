@@ -1,0 +1,6 @@
+<map id="uvme_adv_timer_b_base_vseq_c" name="uvme_adv_timer_b_base_vseq_c">
+<area shape="rect" id="node3" href="$classuvme__adv__timer__b__fix__ill__stim__vseq__c.html" title="Virtual Sequence that always generates the same (i.e. " alt="" coords="492,5,663,46"/>
+<area shape="rect" id="node4" href="$classuvme__adv__timer__b__fix__stim__vseq__c.html" title="Virtual Sequence that always generates the same (i.e. " alt="" coords="492,70,663,111"/>
+<area shape="rect" id="node5" href="$classuvme__adv__timer__b__rand__ill__stim__vseq__c.html" title="Sequence that runs a fixed number of fully, potentially illegal random Sequence Items. " alt="" coords="486,135,669,177"/>
+<area shape="rect" id="node6" href="$classuvme__adv__timer__b__rand__stim__vseq__c.html" title="Sequence that runs a fixed number of fully random Sequence Items. " alt="" coords="486,201,669,242"/>
+</map>

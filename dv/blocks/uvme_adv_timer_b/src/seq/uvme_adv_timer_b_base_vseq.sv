@@ -8,7 +8,7 @@
 
 
 /**
- * Abstract Virtual Sequence from which all  Block Self-Test Environment Virtual Sequences extend.
+ * Abstract Virtual Sequence from which all Advanced timer counter Block Self-Test Environment Virtual Sequences extend.
  * @ingroup uvme_adv_timer_b_seq
  */
 class uvme_adv_timer_b_base_vseq_c extends uvmx_block_env_vseq_c #(

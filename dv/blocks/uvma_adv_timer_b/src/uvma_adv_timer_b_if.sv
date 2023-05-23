@@ -8,7 +8,7 @@
 
 
 /**
- * Encapsulates all signals and clocking of  Block interface.
+ * Encapsulates all signals and clocking of Advanced timer counter Block interface.
  * Assertions must be captured within uvma_adv_timer_b_if_chkr.
  * @ingroup uvma_adv_timer_b_pkg
  */

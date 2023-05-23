@@ -8,7 +8,7 @@
 
 
 /**
- * Object encapsulating common configuration parameters for  UVM Agent Self-Tests.
+ * Object encapsulating common configuration parameters for Advanced timer counter UVM Agent Self-Tests.
  * @ingroup uvmt_adv_timer_b_tests
  */
 class uvmt_adv_timer_b_test_cfg_c extends uvmx_block_test_cfg_c;

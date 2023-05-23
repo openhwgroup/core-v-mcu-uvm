@@ -1,0 +1,20 @@
+<map id="uvme_cvmcu_chip_apb_gpio_reg_block_c" name="uvme_cvmcu_chip_apb_gpio_reg_block_c">
+<area shape="rect" id="node2" href="$classuvmx__reg__block__c.html" title="TODO Describe uvmx_reg_block_c. " alt="" coords="475,35,618,61"/>
+<area shape="rect" id="node4" href="$classuvme__cvmcu__chip__apb__gpio__apb__gpio__out0__reg__c.html" title="uvme_cvmcu_chip_apb\l_gpio_apb_gpio_out0_reg_c" alt="" coords="446,553,647,594"/>
+<area shape="rect" id="node5" href="$classuvmx__reg__c.html" title="TODO Describe uvmx_reg_c. " alt="" coords="188,559,289,585"/>
+<area shape="rect" id="node9" href="$classuvme__cvmcu__chip__apb__gpio__apb__gpio__rdstat__reg__c.html" title="uvme_cvmcu_chip_apb\l_gpio_apb_gpio_rdstat_reg_c" alt="" coords="441,683,652,725"/>
+<area shape="rect" id="node10" href="$classuvme__cvmcu__chip__apb__gpio__apb__gpio__out2__reg__c.html" title="uvme_cvmcu_chip_apb\l_gpio_apb_gpio_out2_reg_c" alt="" coords="446,618,647,659"/>
+<area shape="rect" id="node11" href="$classuvme__cvmcu__chip__apb__gpio__apb__gpio__out1__reg__c.html" title="uvme_cvmcu_chip_apb\l_gpio_apb_gpio_out1_reg_c" alt="" coords="446,1205,647,1246"/>
+<area shape="rect" id="node12" href="$classuvme__cvmcu__chip__apb__gpio__apb__gpio__clrgpio__reg__c.html" title="uvme_cvmcu_chip_apb\l_gpio_apb_gpio_clrgpio_reg_c" alt="" coords="439,487,655,529"/>
+<area shape="rect" id="node13" href="$classuvme__cvmcu__chip__apb__gpio__apb__gpio__setsel__reg__c.html" title="uvme_cvmcu_chip_apb\l_gpio_apb_gpio_setsel_reg_c" alt="" coords="441,749,652,790"/>
+<area shape="rect" id="node14" href="$classuvme__cvmcu__chip__apb__gpio__apb__gpio__pin3__reg__c.html" title="uvme_cvmcu_chip_apb\l_gpio_apb_gpio_pin3_reg_c" alt="" coords="447,1018,647,1059"/>
+<area shape="rect" id="node15" href="$classuvme__cvmcu__chip__apb__gpio__apb__gpio__pin0__reg__c.html" title="uvme_cvmcu_chip_apb\l_gpio_apb_gpio_pin0_reg_c" alt="" coords="447,271,647,313"/>
+<area shape="rect" id="node16" href="$classuvme__cvmcu__chip__apb__gpio__apb__gpio__setgpio__reg__c.html" title="uvme_cvmcu_chip_apb\l_gpio_apb_gpio_setgpio_reg_c" alt="" coords="437,422,657,463"/>
+<area shape="rect" id="node17" href="$classuvme__cvmcu__chip__apb__gpio__apb__gpio__setmode__reg__c.html" title="uvme_cvmcu_chip_apb\l_gpio_apb_gpio_setmode_reg_c" alt="" coords="432,114,661,155"/>
+<area shape="rect" id="node18" href="$classuvme__cvmcu__chip__apb__gpio__apb__gpio__pin2__reg__c.html" title="uvme_cvmcu_chip_apb\l_gpio_apb_gpio_pin2_reg_c" alt="" coords="447,193,647,234"/>
+<area shape="rect" id="node19" href="$classuvme__cvmcu__chip__apb__gpio__apb__gpio__pin1__reg__c.html" title="uvme_cvmcu_chip_apb\l_gpio_apb_gpio_pin1_reg_c" alt="" coords="447,861,647,902"/>
+<area shape="rect" id="node20" href="$classuvme__cvmcu__chip__apb__gpio__apb__gpio__out3__reg__c.html" title="uvme_cvmcu_chip_apb\l_gpio_apb_gpio_out3_reg_c" alt="" coords="446,1126,647,1167"/>
+<area shape="rect" id="node21" href="$classuvme__cvmcu__chip__apb__gpio__apb__gpio__setint__reg__c.html" title="uvme_cvmcu_chip_apb\l_gpio_apb_gpio_setint_reg_c" alt="" coords="442,939,651,981"/>
+<area shape="rect" id="node22" href="$classuvme__cvmcu__chip__apb__gpio__apb__gpio__toggpio__reg__c.html" title="uvme_cvmcu_chip_apb\l_gpio_apb_gpio_toggpio_reg_c" alt="" coords="436,350,657,391"/>
+<area shape="rect" id="node7" href="$classuvmx__reg__field__c.html" title="TODO Describe uvmx_reg_field_c. " alt="" coords="171,672,307,699"/>
+</map>

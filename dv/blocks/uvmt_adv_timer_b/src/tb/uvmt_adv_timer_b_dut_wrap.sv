@@ -8,7 +8,7 @@
 
 
 /**
- * Module wrapper for  Block DUT.  All ports are SV interfaces.
+ * Module wrapper for Advanced timer counter Block DUT.  All ports are SV interfaces.
  * @ingroup uvmt_adv_timer_b_tb
  */
 module uvmt_adv_timer_b_dut_wrap (
@@ -19,7 +19,7 @@ module uvmt_adv_timer_b_dut_wrap (
 );
 
    /**
-    *  Device Under Test from IP '/'.
+    * Advanced timer counter Device Under Test from IP '/'.
     */
    timer_module #(
       .NUM_BITS_WIDTH (`UVMT_ADV_TIMER_B_NUM_BITS_WIDTH),

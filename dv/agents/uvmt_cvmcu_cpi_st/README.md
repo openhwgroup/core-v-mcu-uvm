@@ -16,6 +16,5 @@ This IP contains the Datum Technology Corporation CORE-V-MCU Camera Parallel Int
 # Dependencies
 It is dependent on the following IP:
 
-* `uvmx`
-* `uvma_cvmcu_cpi`
-* `uvme_cvmcu_cpi_st`
+* `datum/uvmx`
+* `datum/uvme_cvmcu_cpi_st`

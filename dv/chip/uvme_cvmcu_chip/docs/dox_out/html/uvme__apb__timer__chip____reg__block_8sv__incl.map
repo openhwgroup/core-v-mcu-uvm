@@ -1,0 +1,12 @@
+<map id="reg/uvme_apb_timer_chip__reg_block.sv" name="reg/uvme_apb_timer_chip__reg_block.sv">
+<area shape="rect" id="node2" href="$uvme__apb__timer__chip____cfg__reg__low__reg_8sv.html" title="uvme_apb_timer_chip\l__cfg_reg_low_reg.sv" alt="" coords="5,97,171,138"/>
+<area shape="rect" id="node3" href="$uvme__apb__timer__chip____cfg__reg__hi__reg_8sv.html" title="uvme_apb_timer_chip\l__cfg_reg_hi_reg.sv" alt="" coords="195,97,361,138"/>
+<area shape="rect" id="node4" href="$uvme__apb__timer__chip____timer__val__lo__reg_8sv.html" title="uvme_apb_timer_chip\l__timer_val_lo_reg.sv" alt="" coords="386,97,552,138"/>
+<area shape="rect" id="node5" href="$uvme__apb__timer__chip____timer__val__hi__reg_8sv.html" title="uvme_apb_timer_chip\l__timer_val_hi_reg.sv" alt="" coords="577,97,743,138"/>
+<area shape="rect" id="node6" href="$uvme__apb__timer__chip____timer__cmp__lo__reg_8sv.html" title="uvme_apb_timer_chip\l__timer_cmp_lo_reg.sv" alt="" coords="767,97,939,138"/>
+<area shape="rect" id="node7" href="$uvme__apb__timer__chip____timer__cmp__hi__reg_8sv.html" title="uvme_apb_timer_chip\l__timer_cmp_hi_reg.sv" alt="" coords="963,97,1135,138"/>
+<area shape="rect" id="node8" href="$uvme__apb__timer__chip____timer__start__lo__reg_8sv.html" title="uvme_apb_timer_chip\l__timer_start_lo_reg.sv" alt="" coords="1159,97,1333,138"/>
+<area shape="rect" id="node9" href="$uvme__apb__timer__chip____timer__start__hi__reg_8sv.html" title="uvme_apb_timer_chip\l__timer_start_hi_reg.sv" alt="" coords="1358,97,1532,138"/>
+<area shape="rect" id="node10" href="$uvme__apb__timer__chip____timer__reset__lo__reg_8sv.html" title="uvme_apb_timer_chip\l__timer_reset_lo_reg.sv" alt="" coords="1557,97,1733,138"/>
+<area shape="rect" id="node11" href="$uvme__apb__timer__chip____timer__reset__hi__reg_8sv.html" title="uvme_apb_timer_chip\l__timer_reset_hi_reg.sv" alt="" coords="1758,97,1935,138"/>
+</map>

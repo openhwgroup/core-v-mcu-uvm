@@ -8,7 +8,7 @@
 
 
 /**
- * Abstract Test from which all other  Block Tests must extend.
+ * Abstract Test from which all other Advanced timer counter Block Tests must extend.
  * Subclasses must provide stimulus via vsequencer by implementing UVM runtime phases.
  * @ingroup uvmt_adv_timer_b_tests
  */

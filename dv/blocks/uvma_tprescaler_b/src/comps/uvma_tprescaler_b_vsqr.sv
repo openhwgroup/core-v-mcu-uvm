@@ -39,7 +39,7 @@ typedef uvmx_sqr_c #(
 
 
 /**
- * Virtual Sequencer running  Agent Virtual Sequences extending uvma_tprescaler_b_base_vseq_c.
+ * Virtual Sequencer running Timer unit prescaler Agent Virtual Sequences extending uvma_tprescaler_b_base_vseq_c.
  * @ingroup uvma_tprescaler_b_comps
  */
 class uvma_tprescaler_b_vsqr_c extends uvmx_agent_vsqr_c #(

@@ -8,7 +8,7 @@
 
 
 /**
- *  Block UVM Environment with TLM self-checking scoreboards and prediction.
+ * Advanced timer counter Block UVM Environment with TLM self-checking scoreboards and prediction.
  * @ingroup uvme_adv_timer_b_comps
  */
 class uvme_adv_timer_b_env_c extends uvmx_block_env_c #(

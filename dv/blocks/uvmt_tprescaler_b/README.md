@@ -1,12 +1,12 @@
-# datum  Block UVM Test Bench
+# datum Timer unit prescaler Block UVM Test Bench
 
 
 ## About
-This IP contains the datum  Block UVM Test Bench.
+This IP contains the datum Timer unit prescaler Block UVM Test Bench.
 
 
 ## Block Diagram
-![alt text](./docs/tb_block_diagram.svg " Block UVM Test Bench Block Diagram")
+![alt text](./docs/tb_block_diagram.svg "Timer unit prescaler Block UVM Test Bench Block Diagram")
 
 ## Directory Structure
 * `bin` - Scripts, metadata and other miscellaneous files
@@ -24,5 +24,5 @@ It is dependent on the following IP:
 * `datum/uvmx`
 * `datum/uvma_clk`
 * `datum/uvma_reset`
-* `uvma_tprescaler_b]`
-* `uvme_tprescaler_b]`
+* `datum/uvma_tprescaler_b]`
+* `datum/uvme_tprescaler_b]`

@@ -1,0 +1,28 @@
+var classuvma__uart__cov__model__c =
+[
+    [ "new", "classuvma__uart__cov__model__c.html#a67e7969cf81edb0af1ef66c01c7ae595", null ],
+    [ "create_fifos", "classuvma__uart__cov__model__c.html#aedd8b61c53f364edfa244dd4f866cdee", null ],
+    [ "sample_tlm", "classuvma__uart__cov__model__c.html#ae092f0baeb61f66303c7dca623d806a9", null ],
+    [ "sample_eg_mon_trn", "classuvma__uart__cov__model__c.html#a5d40647e624ece53d87d6cfeb18fe506", null ],
+    [ "sample_ig_mon_trn", "classuvma__uart__cov__model__c.html#ae0f4a21b4eb266d06fa6b1d8177b8c03", null ],
+    [ "sample_tx_phy_eg_seq_item", "classuvma__uart__cov__model__c.html#a2b1b82020673663e86ca77773c07f3f1", null ],
+    [ "sample_tx_phy_ig_seq_item", "classuvma__uart__cov__model__c.html#a44a079348e0ae9da73584908988cf0cb", null ],
+    [ "sample_rx_phy_eg_seq_item", "classuvma__uart__cov__model__c.html#a788bd55b16fab2279190a29eebc70385", null ],
+    [ "sample_rx_phy_ig_seq_item", "classuvma__uart__cov__model__c.html#aeba9407aaa482c5f0f5fa91fb2ba6c10", null ],
+    [ "sample_phy_eg_mon_trn", "classuvma__uart__cov__model__c.html#a7ba42200b50a0a3c10eb5fd89033daf7", null ],
+    [ "sample_phy_ig_mon_trn", "classuvma__uart__cov__model__c.html#aae1835416ca9eedb2841303a258104d1", null ],
+    [ "eg_mon_trn", "classuvma__uart__cov__model__c.html#ab8a82b507ca8582d62469694431626f7", null ],
+    [ "ig_mon_trn", "classuvma__uart__cov__model__c.html#ac88a8acfc2ed18055bd4c34c67d9e900", null ],
+    [ "tx_phy_eg_seq_item", "classuvma__uart__cov__model__c.html#aa6012926be4aa2b289f0b1241dd6bad6", null ],
+    [ "tx_phy_ig_seq_item", "classuvma__uart__cov__model__c.html#a68eea5169ead0735a7548dff49179e54", null ],
+    [ "rx_phy_eg_seq_item", "classuvma__uart__cov__model__c.html#a0809f68a5815e22eba2b8c8bb6c07596", null ],
+    [ "rx_phy_ig_seq_item", "classuvma__uart__cov__model__c.html#ab09d5e994d446407ff566f6ddffad013", null ],
+    [ "phy_eg_mon_trn", "classuvma__uart__cov__model__c.html#addbc279533dde4370158ae16e3dc682a", null ],
+    [ "eg_mon_trn_fifo", "classuvma__uart__cov__model__c.html#ab5be7ec9299a54a17386f229eae66a85", null ],
+    [ "ig_mon_trn_fifo", "classuvma__uart__cov__model__c.html#ad17f6e4e4327997312628b3f6672eccf", null ],
+    [ "tx_phy_eg_seq_item_fifo", "classuvma__uart__cov__model__c.html#a11ac7e73b2b7d42c8cfdf3493798cac6", null ],
+    [ "tx_phy_ig_seq_item_fifo", "classuvma__uart__cov__model__c.html#aac0e0c058c1ba9d757d482c90221a1f6", null ],
+    [ "rx_phy_eg_seq_item_fifo", "classuvma__uart__cov__model__c.html#a151e8ce90744b097c101fad88986b678", null ],
+    [ "rx_phy_ig_seq_item_fifo", "classuvma__uart__cov__model__c.html#ad7323e4fea706418723f9d8b204d814a", null ],
+    [ "phy_eg_mon_trn_fifo", "classuvma__uart__cov__model__c.html#aba32d93c07d9fe4504235e1560af4db8", null ]
+];

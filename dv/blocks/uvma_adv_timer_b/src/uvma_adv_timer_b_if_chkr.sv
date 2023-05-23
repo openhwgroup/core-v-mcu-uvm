@@ -8,7 +8,7 @@
 
 
 /**
- * Module encapsulating assertions targeting  Block Agent interface.
+ * Module encapsulating assertions targeting Advanced timer counter Block Agent interface.
  * @ingroup uvma_adv_timer_b_pkg
  */
 module uvma_adv_timer_b_if_chkr (

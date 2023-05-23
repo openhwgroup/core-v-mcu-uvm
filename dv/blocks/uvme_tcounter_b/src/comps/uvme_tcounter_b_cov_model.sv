@@ -8,7 +8,7 @@
 
 
 /**
- * Component encapsulating  Block's functional coverage model.
+ * Component encapsulating Timer unit counter Block's functional coverage model.
  * @ingroup uvme_tcounter_b_comps
  */
 class uvme_tcounter_b_cov_model_c extends uvmx_block_env_cov_model_c #(

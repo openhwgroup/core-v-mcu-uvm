@@ -1,12 +1,12 @@
-# datum  Block UVM Test Bench
+# datum Advanced timer counter Block UVM Test Bench
 
 
 ## About
-This IP contains the datum  Block UVM Test Bench.
+This IP contains the datum Advanced timer counter Block UVM Test Bench.
 
 
 ## Block Diagram
-![alt text](./docs/tb_block_diagram.svg " Block UVM Test Bench Block Diagram")
+![alt text](./docs/tb_block_diagram.svg "Advanced timer counter Block UVM Test Bench Block Diagram")
 
 ## Directory Structure
 * `bin` - Scripts, metadata and other miscellaneous files
@@ -24,5 +24,5 @@ It is dependent on the following IP:
 * `datum/uvmx`
 * `datum/uvma_clk`
 * `datum/uvma_reset`
-* `uvma_adv_timer_b]`
-* `uvme_adv_timer_b]`
+* `datum/uvma_adv_timer_b]`
+* `datum/uvme_adv_timer_b]`

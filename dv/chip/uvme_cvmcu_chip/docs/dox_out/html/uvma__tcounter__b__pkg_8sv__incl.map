@@ -1,0 +1,35 @@
+<map id="uvma_tcounter_b_pkg.sv" name="uvma_tcounter_b_pkg.sv">
+<area shape="rect" id="node3" href="$uvmx__macros_8svh.html" title="uvmx_macros.svh" alt="" coords="163,88,304,115"/>
+<area shape="rect" id="node4" href="$uvma__tcounter__b__macros_8svh.html" title="uvma_tcounter_b_macros.svh" alt="" coords="329,88,545,115"/>
+<area shape="rect" id="node5" href="$uvma__tcounter__b__if_8sv.html" title="uvma_tcounter_b_if.sv" alt="" coords="570,88,739,115"/>
+<area shape="rect" id="node6" href="$uvma__tcounter__b__tdefs_8sv.html" title="uvma_tcounter_b_tdefs.sv" alt="" coords="764,88,959,115"/>
+<area shape="rect" id="node7" href="$uvma__tcounter__b__constants_8sv.html" title="uvma_tcounter_b_constants.sv" alt="" coords="983,88,1207,115"/>
+<area shape="rect" id="node8" href="$uvma__tcounter__b__cfg_8sv.html" title="uvma_tcounter_b_cfg.sv" alt="" coords="1231,88,1412,115"/>
+<area shape="rect" id="node9" href="$uvma__tcounter__b__cntxt_8sv.html" title="uvma_tcounter_b_cntxt.sv" alt="" coords="1436,88,1631,115"/>
+<area shape="rect" id="node10" href="$uvma__tcounter__b__seq__item_8sv.html" title="uvma_tcounter_b_seq\l_item.sv" alt="" coords="1655,81,1820,122"/>
+<area shape="rect" id="node11" href="$uvma__tcounter__b__cp__seq__item_8sv.html" title="uvma_tcounter_b_cp\l_seq_item.sv" alt="" coords="1844,81,2001,122"/>
+<area shape="rect" id="node12" href="$uvma__tcounter__b__dpi__seq__item_8sv.html" title="uvma_tcounter_b_dpi\l_seq_item.sv" alt="" coords="2025,81,2188,122"/>
+<area shape="rect" id="node13" href="$uvma__tcounter__b__dpo__seq__item_8sv.html" title="uvma_tcounter_b_dpo\l_seq_item.sv" alt="" coords="2213,81,2379,122"/>
+<area shape="rect" id="node14" href="$uvma__tcounter__b__mon__trn_8sv.html" title="uvma_tcounter_b_mon\l_trn.sv" alt="" coords="2404,81,2575,122"/>
+<area shape="rect" id="node15" href="$uvma__tcounter__b__cp__mon__trn_8sv.html" title="uvma_tcounter_b_cp\l_mon_trn.sv" alt="" coords="2599,81,2756,122"/>
+<area shape="rect" id="node16" href="$uvma__tcounter__b__dpi__mon__trn_8sv.html" title="uvma_tcounter_b_dpi\l_mon_trn.sv" alt="" coords="2780,81,2943,122"/>
+<area shape="rect" id="node17" href="$uvma__tcounter__b__dpo__mon__trn_8sv.html" title="uvma_tcounter_b_dpo\l_mon_trn.sv" alt="" coords="2967,81,3133,122"/>
+<area shape="rect" id="node18" href="$uvma__tcounter__b__cp__drv_8sv.html" title="uvma_tcounter_b_cp\l_drv.sv" alt="" coords="3159,81,3316,122"/>
+<area shape="rect" id="node19" href="$uvma__tcounter__b__dpi__drv_8sv.html" title="uvma_tcounter_b_dpi\l_drv.sv" alt="" coords="3340,81,3503,122"/>
+<area shape="rect" id="node20" href="$uvma__tcounter__b__dpo__drv_8sv.html" title="uvma_tcounter_b_dpo\l_drv.sv" alt="" coords="3527,81,3693,122"/>
+<area shape="rect" id="node21" href="$uvma__tcounter__b__cp__mon_8sv.html" title="uvma_tcounter_b_cp\l_mon.sv" alt="" coords="3719,81,3876,122"/>
+<area shape="rect" id="node22" href="$uvma__tcounter__b__dpi__mon_8sv.html" title="uvma_tcounter_b_dpi\l_mon.sv" alt="" coords="3900,81,4063,122"/>
+<area shape="rect" id="node23" href="$uvma__tcounter__b__dpo__mon_8sv.html" title="uvma_tcounter_b_dpo\l_mon.sv" alt="" coords="4087,81,4253,122"/>
+<area shape="rect" id="node24" href="$uvma__tcounter__b__vsqr_8sv.html" title="uvma_tcounter_b_vsqr.sv" alt="" coords="4278,88,4465,115"/>
+<area shape="rect" id="node25" href="$uvma__tcounter__b__drv_8sv.html" title="uvma_tcounter_b_drv.sv" alt="" coords="4491,88,4672,115"/>
+<area shape="rect" id="node26" href="$uvma__tcounter__b__mon_8sv.html" title="uvma_tcounter_b_mon.sv" alt="" coords="4697,88,4887,115"/>
+<area shape="rect" id="node27" href="$uvma__tcounter__b__logger_8sv.html" title="uvma_tcounter_b_logger.sv" alt="" coords="4911,88,5112,115"/>
+<area shape="rect" id="node28" href="$uvma__tcounter__b__agent_8sv.html" title="uvma_tcounter_b_agent.sv" alt="" coords="5137,88,5335,115"/>
+<area shape="rect" id="node29" href="$uvma__tcounter__b__base__vseq_8sv.html" title="uvma_tcounter_b_base\l_vseq.sv" alt="" coords="5360,81,5533,122"/>
+<area shape="rect" id="node30" href="$uvma__tcounter__b__trn__base__vseq_8sv.html" title="uvma_tcounter_b_trn\l_base_vseq.sv" alt="" coords="5557,81,5717,122"/>
+<area shape="rect" id="node31" href="$uvma__tcounter__b__mon__vseq_8sv.html" title="uvma_tcounter_b_mon\l_vseq.sv" alt="" coords="5741,81,5912,122"/>
+<area shape="rect" id="node32" href="$uvma__tcounter__b__in__drv__vseq_8sv.html" title="uvma_tcounter_b_in\l_drv_vseq.sv" alt="" coords="5936,81,6091,122"/>
+<area shape="rect" id="node33" href="$uvma__tcounter__b__out__drv__vseq_8sv.html" title="uvma_tcounter_b_out\l_drv_vseq.sv" alt="" coords="6115,81,6277,122"/>
+<area shape="rect" id="node34" href="$uvma__tcounter__b__idle__vseq_8sv.html" title="uvma_tcounter_b_idle\l_vseq.sv" alt="" coords="6302,81,6468,122"/>
+<area shape="rect" id="node35" href="$uvma__tcounter__b__if__chkr_8sv.html" title="uvma_tcounter_b_if\l_chkr.sv" alt="" coords="6493,81,6643,122"/>
+</map>

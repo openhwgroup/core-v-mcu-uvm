@@ -1,0 +1,5 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node2" href="$classuvme__adv__timer__b__cov__model__c.html" title="Component encapsulating Advanced timer counter Block&#39;s functional coverage model. ..." alt="" coords="217,5,394,46"/>
+<area shape="rect" id="node3" href="$classuvme__tcounter__b__cov__model__c.html" title="Component encapsulating Timer unit counter Block&#39;s functional coverage model. " alt="" coords="223,70,388,111"/>
+<area shape="rect" id="node4" href="$classuvme__tprescaler__b__cov__model__c.html" title="Component encapsulating Timer unit prescaler Block&#39;s functional coverage model. " alt="" coords="217,135,393,177"/>
+</map>

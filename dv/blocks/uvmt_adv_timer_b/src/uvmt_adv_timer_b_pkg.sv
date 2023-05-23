@@ -8,7 +8,7 @@
 
 
 /**
- * @defgroup uvmt_adv_timer_b_pkg  Block UVM Test Bench
+ * @defgroup uvmt_adv_timer_b_pkg Advanced timer counter Block UVM Test Bench
  * @{
  * @defgroup uvmt_adv_timer_b_misc   Miscellaneous
  * @defgroup uvmt_adv_timer_b_tb     Test Bench
@@ -30,7 +30,7 @@
 
 
 /**
- * Encapsulates the test library of the  Block Self-Test Bench.
+ * Encapsulates the test library of the Advanced timer counter Block Self-Test Bench.
  * @ingroup uvmt_adv_timer_b_st_pkg
  */
 package uvmt_adv_timer_b_pkg;

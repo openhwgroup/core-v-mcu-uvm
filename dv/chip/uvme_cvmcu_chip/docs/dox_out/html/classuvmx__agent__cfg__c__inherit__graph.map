@@ -1,0 +1,15 @@
+<map id="uvmx_agent_cfg_c" name="uvmx_agent_cfg_c">
+<area shape="rect" id="node3" href="$classuvma__cvmcu__cpi__cfg__c.html" title="Object encapsulating all parameters for creating, connecting and running all CORE&#45;V&#45;MCU Camera Parall..." alt="" coords="353,5,529,32"/>
+<area shape="rect" id="node4" href="$classuvma__cvmcu__dbg__cfg__c.html" title="Object encapsulating all parameters for creating, connecting and running all CORE&#45;V&#45;MCU Debug Interfa..." alt="" coords="351,56,532,83"/>
+<area shape="rect" id="node5" href="$classuvma__cvmcu__event__cfg__c.html" title="Object encapsulating all parameters for creating, connecting and running all CORE&#45;V&#45;MCU Event Interfa..." alt="" coords="344,107,539,133"/>
+<area shape="rect" id="node6" href="$classuvma__cvmcu__io__cfg__c.html" title="Object encapsulating all parameters for creating, connecting and running all CORE&#45;V&#45;MCU IO Agent (uvm..." alt="" coords="357,157,526,184"/>
+<area shape="rect" id="node7" href="$classuvma__i2c__cfg__c.html" title="Object encapsulating all parameters for creating, connecting and running all I2C Agent (uvma_i2c_agen..." alt="" coords="378,208,505,235"/>
+<area shape="rect" id="node8" href="$classuvma__jtag__cfg__c.html" title="Object encapsulating all parameters for creating, connecting and running all JTAG Agent (uvma_jtag_ag..." alt="" coords="375,259,507,285"/>
+<area shape="rect" id="node9" href="$classuvma__sdio__cfg__c.html" title="Object encapsulating all parameters for creating, connecting and running all SDIO Agent (uvma_sdio_ag..." alt="" coords="374,309,509,336"/>
+<area shape="rect" id="node10" href="$classuvma__spi__cfg__c.html" title="Object encapsulating all parameters for creating, connecting and running all Serial Peripheral Interf..." alt="" coords="378,360,505,387"/>
+<area shape="rect" id="node11" href="$classuvma__uart__cfg__c.html" title="Object encapsulating all parameters for creating, connecting and running all UART Agent (uvma_uart_ag..." alt="" coords="375,411,508,437"/>
+<area shape="rect" id="node12" href="$classuvmx__block__agent__cfg__c.html" title="TODO Describe uvmx_block_agent_cfg_c. " alt="" coords="348,461,535,488"/>
+<area shape="rect" id="node13" href="$classuvma__adv__timer__b__cfg__c.html" title="Object encapsulating all parameters for creating, connecting and running all Advanced timer counter A..." alt="" coords="587,411,775,437"/>
+<area shape="rect" id="node14" href="$classuvma__tcounter__b__cfg__c.html" title="Object encapsulating all parameters for creating, connecting and running all Timer unit counter Agent..." alt="" coords="593,461,769,488"/>
+<area shape="rect" id="node15" href="$classuvma__tprescaler__b__cfg__c.html" title="Object encapsulating all parameters for creating, connecting and running all Timer unit prescaler Age..." alt="" coords="588,512,775,539"/>
+</map>

@@ -8,7 +8,7 @@
 
 
 /**
- * Object encapsulating all state variables for  Block environment (uvme_tcounter_b_env_c).
+ * Object encapsulating all state variables for Timer unit counter Block environment (uvme_tcounter_b_env_c).
  * @ingroup uvme_tcounter_b_obj
  */
 class uvme_tcounter_b_cntxt_c extends uvmx_block_env_cntxt_c;

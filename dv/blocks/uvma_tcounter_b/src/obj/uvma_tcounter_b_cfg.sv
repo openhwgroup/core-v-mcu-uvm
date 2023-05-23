@@ -8,7 +8,7 @@
 
 
 /**
- * Object encapsulating all parameters for creating, connecting and running all  Agent (uvma_tcounter_b_agent_c) components.
+ * Object encapsulating all parameters for creating, connecting and running all Timer unit counter Agent (uvma_tcounter_b_agent_c) components.
  * @ingroup uvma_tcounter_b_obj
  */
 class uvma_tcounter_b_cfg_c extends uvmx_block_agent_cfg_c;

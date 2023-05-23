@@ -8,7 +8,7 @@
 
 
 /**
- *  Block UVM Environment with TLM self-checking scoreboards and prediction.
+ * Timer unit prescaler Block UVM Environment with TLM self-checking scoreboards and prediction.
  * @ingroup uvme_tprescaler_b_comps
  */
 class uvme_tprescaler_b_env_c extends uvmx_block_env_c #(

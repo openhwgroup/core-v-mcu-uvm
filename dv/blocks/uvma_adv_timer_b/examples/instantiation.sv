@@ -1,7 +1,7 @@
 // Copyright 2023 Datum Technology Corporation
 // All rights reserved.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// This file contains sample code that demonstrates how to add an instance of the  Block UVM Agent to an example UVMx environment.
+// This file contains sample code that demonstrates how to add an instance of the Advanced timer counter Block UVM Agent to an example UVMx environment.
 // NOTE: It is recommended to split up classes into separate files.
 
 
@@ -14,7 +14,7 @@
  */
 class uvme_example_env_cfg_c extends uvmx_env_cfg_c;
 
-   rand uvma_adv_timer_b_cfg_c  adv_timer_b_cfg; ///< Handle to  Block Agent configuration
+   rand uvma_adv_timer_b_cfg_c  adv_timer_b_cfg; ///< Handle to Advanced timer counter Block Agent configuration
 
    `uvm_object_utils_begin(uvme_example_env_cfg_c)
       `uvm_field_object(adv_timer_b_cfg, UVM_DEFAULT)
@@ -47,7 +47,7 @@ endclass : uvme_example_env_cfg_c
  */
 class uvme_example_env_cntxt_c extends uvmx_env_cntxt_c;
 
-   uvma_adv_timer_b_cntxt_c  adv_timer_b_cntxt; ///< Handle to  Block Agent context
+   uvma_adv_timer_b_cntxt_c  adv_timer_b_cntxt; ///< Handle to Advanced timer counter Block Agent context
 
    `uvm_object_utils_begin(uvme_example_env_cntxt_c)
       `uvm_field_object(adv_timer_b_cntxt, UVM_DEFAULT)
@@ -83,7 +83,7 @@ class uvme_example_env_c extends uvmx_env_c #(
    .T_COV_MODEL(uvme_example_env_cov_model_c)
 );
 
-   uvma_adv_timer_b_env_c  adv_timer_b_agent; ///<  Block Agent instance.
+   uvma_adv_timer_b_env_c  adv_timer_b_agent; ///< Advanced timer counter Block Agent instance.
 
    `uvm_component_utils(uvme_example_env_c)
 

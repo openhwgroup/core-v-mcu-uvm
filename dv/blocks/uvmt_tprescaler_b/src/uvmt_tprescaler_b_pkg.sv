@@ -8,7 +8,7 @@
 
 
 /**
- * @defgroup uvmt_tprescaler_b_pkg  Block UVM Test Bench
+ * @defgroup uvmt_tprescaler_b_pkg Timer unit prescaler Block UVM Test Bench
  * @{
  * @defgroup uvmt_tprescaler_b_misc   Miscellaneous
  * @defgroup uvmt_tprescaler_b_tb     Test Bench
@@ -30,7 +30,7 @@
 
 
 /**
- * Encapsulates the test library of the  Block Self-Test Bench.
+ * Encapsulates the test library of the Timer unit prescaler Block Self-Test Bench.
  * @ingroup uvmt_tprescaler_b_st_pkg
  */
 package uvmt_tprescaler_b_pkg;

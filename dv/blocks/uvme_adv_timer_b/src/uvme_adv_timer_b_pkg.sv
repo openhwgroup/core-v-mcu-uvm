@@ -8,7 +8,7 @@
 
 
 /**
- * @defgroup uvme_adv_timer_b_pkg  Block UVM Environment
+ * @defgroup uvme_adv_timer_b_pkg Advanced timer counter Block UVM Environment
  * @{
  * @defgroup uvme_adv_timer_b_comps Components
  * @defgroup uvme_adv_timer_b_misc  Miscellaneous
@@ -29,7 +29,7 @@
 
 
  /**
- * Encapsulates all the types of the  Block UVM environment.
+ * Encapsulates all the types of the Advanced timer counter Block UVM environment.
  * @ingroup uvme_adv_timer_b_st_pkg
  */
 package uvme_adv_timer_b_pkg;

@@ -31,6 +31,8 @@ module uvmt_apb_adv_timer_ss_dut_wrap (
       .PREADY(proc_if.pready),
       .PRDATA(proc_if.prdata),
       .PSLVERR(proc_if.pslverr),
+      .dft_cg_enable_i(probe_if.dft_cg_enable_i),
+      .ext_sig_i(probe_if.ext_sig_i),
       .HCLK(sys_clk_if.clk),
       .low_speed_clk_i(low_speed_clk_if.clk),
       .HRESETn(sys_reset_if.reset_n)

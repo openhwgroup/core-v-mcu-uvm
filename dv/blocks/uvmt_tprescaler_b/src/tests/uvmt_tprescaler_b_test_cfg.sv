@@ -8,7 +8,7 @@
 
 
 /**
- * Object encapsulating common configuration parameters for  UVM Agent Self-Tests.
+ * Object encapsulating common configuration parameters for Timer unit prescaler UVM Agent Self-Tests.
  * @ingroup uvmt_tprescaler_b_tests
  */
 class uvmt_tprescaler_b_test_cfg_c extends uvmx_block_test_cfg_c;

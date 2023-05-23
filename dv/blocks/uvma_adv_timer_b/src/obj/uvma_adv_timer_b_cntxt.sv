@@ -8,7 +8,7 @@
 
 
 /**
- * Object encapsulating all state variables for all  Agent (uvma_adv_timer_b_agent_c) components.
+ * Object encapsulating all state variables for all Advanced timer counter Agent (uvma_adv_timer_b_agent_c) components.
  * @ingroup uvma_adv_timer_b_obj
  */
 class uvma_adv_timer_b_cntxt_c extends uvmx_block_agent_cntxt_c #(

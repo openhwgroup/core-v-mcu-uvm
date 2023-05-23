@@ -16,6 +16,5 @@ This IP contains the Datum Technology Corporation CORE-V-MCU IO UVM Agent Self-T
 # Dependencies
 It is dependent on the following IP:
 
-* `uvmx`
-* `uvma_cvmcu_io`
-* `uvme_cvmcu_io_st`
+* `datum/uvmx`
+* `datum/uvme_cvmcu_io_st`

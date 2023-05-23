@@ -1,0 +1,25 @@
+var classuvma__jtag__cov__model__c =
+[
+    [ "new", "classuvma__jtag__cov__model__c.html#a05039cac535b26a3d9d55882cf5510b1", null ],
+    [ "create_fifos", "classuvma__jtag__cov__model__c.html#ab28f5c8ae6a28f9a94f5382f00d6682c", null ],
+    [ "sample_tlm", "classuvma__jtag__cov__model__c.html#a7f25d4775f79387c020372878be1d27b", null ],
+    [ "sample_mon_trn", "classuvma__jtag__cov__model__c.html#ab1919a6d0975efcafa66ed356053f429", null ],
+    [ "sample_ctrl_phy_c2t_seq_item", "classuvma__jtag__cov__model__c.html#a2646c3254bb0174b49d4dad40df2c9ae", null ],
+    [ "sample_ctrl_phy_t2c_seq_item", "classuvma__jtag__cov__model__c.html#aab842902ef98755ab1a5a61305c62872", null ],
+    [ "sample_tap_phy_c2t_seq_item", "classuvma__jtag__cov__model__c.html#a49436494169fa245e6918d5123ee610f", null ],
+    [ "sample_tap_phy_t2c_seq_item", "classuvma__jtag__cov__model__c.html#a144bd742e82048b48e3bf9be9b880264", null ],
+    [ "sample_phy_c2t_mon_trn", "classuvma__jtag__cov__model__c.html#a140a9a725e7ec180a6f72a3ef29822ca", null ],
+    [ "sample_phy_t2c_mon_trn", "classuvma__jtag__cov__model__c.html#a7ef8bba7f0df7c64ed161b3f13ee5e83", null ],
+    [ "mon_trn", "classuvma__jtag__cov__model__c.html#a775a6e7775321989bb0aeced4aba7e63", null ],
+    [ "ctrl_phy_c2t_seq_item", "classuvma__jtag__cov__model__c.html#af23e62673a01e67a8540587dd16273b0", null ],
+    [ "ctrl_phy_t2c_seq_item", "classuvma__jtag__cov__model__c.html#a6c7e4c456605baa63069b1c6791de872", null ],
+    [ "tap_phy_c2t_seq_item", "classuvma__jtag__cov__model__c.html#aa6cb1cd6edff3c53bbb4e1573a839808", null ],
+    [ "tap_phy_t2c_seq_item", "classuvma__jtag__cov__model__c.html#a56ff312ff1352b770f14ab48b44cc843", null ],
+    [ "phy_c2t_mon_trn", "classuvma__jtag__cov__model__c.html#abfaab78c18138f3b01f42ec10227f0e1", null ],
+    [ "mon_trn_fifo", "classuvma__jtag__cov__model__c.html#a0089345fce2907d0ee3d8e65490942d0", null ],
+    [ "ctrl_phy_c2t_seq_item_fifo", "classuvma__jtag__cov__model__c.html#acf9ab50d11bad4aa2cd4007e50560141", null ],
+    [ "ctrl_phy_t2c_seq_item_fifo", "classuvma__jtag__cov__model__c.html#a28af4ae0ec981c55feff11ad611f99bb", null ],
+    [ "tap_phy_c2t_seq_item_fifo", "classuvma__jtag__cov__model__c.html#ac1dd69691d08a670a4537dd266b06134", null ],
+    [ "tap_phy_t2c_seq_item_fifo", "classuvma__jtag__cov__model__c.html#a31b1bb4a8c24b208341bbfe89ec4f715", null ],
+    [ "phy_c2t_mon_trn_fifo", "classuvma__jtag__cov__model__c.html#a1294dc8683bc1ec9018f25e435fbe57f", null ]
+];

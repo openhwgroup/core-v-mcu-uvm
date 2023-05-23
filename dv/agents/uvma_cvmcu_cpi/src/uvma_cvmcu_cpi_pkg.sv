@@ -7,7 +7,6 @@
 `define __UVMA_CVMCU_CPI_PKG_SV__
 
 
-// Doxygen Groups
 /**
  * @defgroup uvma_cvmcu_cpi_pkg CORE-V-MCU Camera Parallel Interface UVM Agent
  * @{

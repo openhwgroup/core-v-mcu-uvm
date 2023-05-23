@@ -1,7 +1,7 @@
 // Copyright 2023 Datum Technology Corporation
 // All rights reserved.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// This file contains sample code that demonstrates how to add an instance of the  Block UVM Environment to an example UVMx environment.
+// This file contains sample code that demonstrates how to add an instance of the Advanced timer counter Block UVM Environment to an example UVMx environment.
 // NOTE: It is recommended to split up classes into separate files.
 
 
@@ -83,7 +83,7 @@ class uvme_example_env_c extends uvmx_env_c #(
    .T_COV_MODEL(uvme_example_env_cov_model_c)
 );
 
-   uvme_adv_timer_b_env_c  adv_timer_b_env; ///<  Block Environment instance.
+   uvme_adv_timer_b_env_c  adv_timer_b_env; ///< Advanced timer counter Block Environment instance.
 
    `uvm_component_utils_begin(uvme_example_env_c)
    `uvm_component_utils_end

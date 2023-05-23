@@ -8,7 +8,7 @@
 
 
 /**
- * Abstract Virtual Sequence from which all  Block Self-Test Environment Virtual Sequences extend.
+ * Abstract Virtual Sequence from which all Timer unit counter Block Self-Test Environment Virtual Sequences extend.
  * @ingroup uvme_tcounter_b_seq
  */
 class uvme_tcounter_b_base_vseq_c extends uvmx_block_env_vseq_c #(

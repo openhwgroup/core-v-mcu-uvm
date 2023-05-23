@@ -7,7 +7,6 @@
 `define __UVMA_CVMCU_DBG_PKG_SV__
 
 
-// Doxygen Groups
 /**
  * @defgroup uvma_cvmcu_dbg_pkg CORE-V-MCU Debug Interface UVM Agent
  * @{

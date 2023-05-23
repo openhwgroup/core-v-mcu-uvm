@@ -8,7 +8,7 @@
 
 
 /**
- * Sequence-based UVM Agent capable of driving/monitoring the  Interface (uvma_tcounter_b_if).
+ * Sequence-based UVM Agent capable of driving/monitoring the Timer unit counter Interface (uvma_tcounter_b_if).
  * @ingroup uvma_tcounter_b_comps
  */
 class uvma_tcounter_b_agent_c extends uvmx_agent_c #(

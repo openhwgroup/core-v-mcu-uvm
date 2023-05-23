@@ -8,7 +8,7 @@
 
 
 /**
- * Object encapsulating all parameters for creating, connecting and running all  Agent (uvma_adv_timer_b_agent_c) components.
+ * Object encapsulating all parameters for creating, connecting and running all Advanced timer counter Agent (uvma_adv_timer_b_agent_c) components.
  * @ingroup uvma_adv_timer_b_obj
  */
 class uvma_adv_timer_b_cfg_c extends uvmx_block_agent_cfg_c;

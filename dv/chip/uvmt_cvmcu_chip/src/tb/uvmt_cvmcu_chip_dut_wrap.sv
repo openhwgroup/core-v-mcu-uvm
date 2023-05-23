@@ -52,6 +52,8 @@ module uvmt_cvmcu_chip_dut_wrap (
       .pad_cfg_o(io_if.pad_cfg_o),
       .io_oe_o(io_if.io_oe_o),
       .slow_clk_o(io_if.slow_clk_o),
+      .bootsel_i(probe_if.bootsel_i),
+      .stm_i(probe_if.stm_i),
       .ref_clk_i(sys_clk_if.clk),
       .jtag_tck_i(jtag_clk_if.clk),
       .rstn_i(sys_reset_if.reset_n),

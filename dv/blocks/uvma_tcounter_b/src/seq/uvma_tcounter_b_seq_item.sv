@@ -8,7 +8,7 @@
 
 
 /**
- * Sequence Item created by  Agent Sequences.  Analog of uvma_tcounter_b_mon_trn_c
+ * Sequence Item created by Timer unit counter Agent Sequences.  Analog of uvma_tcounter_b_mon_trn_c
  * @ingroup uvma_tcounter_b_seq
  */
 class uvma_tcounter_b_seq_item_c extends uvmx_seq_item_c #(

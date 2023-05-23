@@ -8,7 +8,7 @@
 
 
 /**
- * Module wrapper for  Block DUT.  All ports are SV interfaces.
+ * Module wrapper for Timer unit prescaler Block DUT.  All ports are SV interfaces.
  * @ingroup uvmt_tprescaler_b_tb
  */
 module uvmt_tprescaler_b_dut_wrap (
@@ -18,7 +18,7 @@ module uvmt_tprescaler_b_dut_wrap (
 );
 
    /**
-    *  Device Under Test from IP '/'.
+    * Timer unit prescaler Device Under Test from IP '/'.
     */
    timer_unit_counter_presc  dut (
       // Control Plane

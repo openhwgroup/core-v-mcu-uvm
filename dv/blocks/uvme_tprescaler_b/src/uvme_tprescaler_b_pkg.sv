@@ -8,7 +8,7 @@
 
 
 /**
- * @defgroup uvme_tprescaler_b_pkg  Block UVM Environment
+ * @defgroup uvme_tprescaler_b_pkg Timer unit prescaler Block UVM Environment
  * @{
  * @defgroup uvme_tprescaler_b_comps Components
  * @defgroup uvme_tprescaler_b_misc  Miscellaneous
@@ -29,7 +29,7 @@
 
 
  /**
- * Encapsulates all the types of the  Block UVM environment.
+ * Encapsulates all the types of the Timer unit prescaler Block UVM environment.
  * @ingroup uvme_tprescaler_b_st_pkg
  */
 package uvme_tprescaler_b_pkg;

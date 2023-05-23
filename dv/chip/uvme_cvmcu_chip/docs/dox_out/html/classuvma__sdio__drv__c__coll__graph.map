@@ -1,0 +1,6 @@
+<map id="uvma_sdio_drv_c" name="uvma_sdio_drv_c">
+<area shape="rect" id="node2" href="$classuvmx__drv__c.html" title="uvmx_drv_c\&lt; .T_CFG\l(uvma_sdio_cfg_c),.T\l_CNTXT(uvma_sdio_cntxt_c) \&gt;" alt="" coords="326,41,549,97"/>
+<area shape="rect" id="node5" href="$classuvma__sdio__host__phy__h2d__drv__c.html" title="Driver driving SDIO Virtual Interface (uvma_sdio_if) HOST PHY_H2D. " alt="" coords="358,170,517,211"/>
+<area shape="rect" id="node7" href="$classuvma__sdio__dev__phy__h2d__drv__c.html" title="Driver driving SDIO Virtual Interface (uvma_sdio_if) DEV PHY_H2D. " alt="" coords="344,251,531,293"/>
+<area shape="rect" id="node9" href="$classuvma__sdio__host__phy__d2h__drv__c.html" title="Driver driving SDIO Virtual Interface (uvma_sdio_if) HOST PHY_D2H. " alt="" coords="358,366,517,407"/>
+</map>

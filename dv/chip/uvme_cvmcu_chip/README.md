@@ -4,9 +4,6 @@
 # About
 This IP contains the Datum CORE-V-MCU Chip UVM Environment.
 
-# Block Diagram
-![alt text](./docs/env_block_diagram.svg "CORE-V-MCU Chip UVM Environment Block Diagram")
-
 # Directory Structure
 * `bin` - Scripts, metadata and other miscellaneous files
 * `docs` - Reference documentation
@@ -17,18 +14,18 @@ This IP contains the Datum CORE-V-MCU Chip UVM Environment.
 # Dependencies
 It is dependent on the following IP:
 
-* `uvmx`
-* `uvml_sb`
-* ``
-* ``
-* ``
-* ``
-* ``
-* ``
-* ``
-* ``
-* ``
-* ``
-* ``
-* ``
-* ``
+* `datum/uvmx`
+* `datum/uvml_sb`
+* `datum/uvme_apb_timer_ss`
+* `datum/uvme_apb_adv_timer_ss`
+* `datum/uvma_jtag`
+* `datum/uvma_spi`
+* `datum/uvma_cvmcu_cpi`
+* `datum/uvma_i2c`
+* `datum/uvma_apb`
+* `datum/uvma_uart`
+* `datum/uvma_sdio`
+* `datum/uvma_cvmcu_io`
+* `datum/uvma_obi`
+* `datum/uvma_cvmcu_event`
+* `datum/uvma_cvmcu_dbg`

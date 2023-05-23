@@ -1,62 +1,33 @@
-@page user_guide User Guide
+@page uvme_cvmcu_chip_user_guide User Guide
 @htmlonly
 <div class="autonumbering">
 @endhtmlonly
 
 
-
 @tableofcontents
 
 
-
-@section license_agreement_ug License Agreement
-© Copyright 2022 Datum Technology Corporation
+@section uvme_cvmcu_chip_user_guide_license_agreement License Agreement
+© Copyright 2023 Datum Technology Corporation
 
 All rights reserved.
 
 
-@section user_guide_id Document Information
-ID | Name | Version
--- | ---- | -------
-002 | User Guide | v.1.0
-
-
-@subsection user_guide_description Description
-This guide will walk you through integrating the CORE-V-MCU Sub-System UVM Environment in your own UVM Environment and Test Bench.
-
-![uvme_cvmcu_chip_env_c Block Diagram](env_block_diagram.svg)
-
-
-
-@section user_guide_guide_revision_history Revision History
+@section uvme_cvmcu_chip_user_guide_revision_history Revision History
 Revision  | Date | Description
 --------- | ---- | -----------
-1.0 | 2023/01/01 | Initial Version
+1.0 | 2023/5/23 | Initial Version
+
+@subsection uvme_cvmcu_chip_user_guide_description Description
 
 
-
-@section user_guide_definitions Definitions
-Symbol  | Description
---------- | -----------
- 'PDM' | Please Define Me
-
+@section uvme_cvmcu_chip_user_guide_definitions Definitions
+Symbol | Definition
+------ | ----------
+ 'SYMBOL' | Definition
 
 
-@section user_guide_prerequisites Pre-Requisites
-The Moore.io Client CLI, used throughout this tutorial is available via "pipx":
-@code{.sh}pipx install mio-client@endcode
-
-
-
-@section user_guide_guide_installation Installation
-Install the CORE-V-MCU Sub-System UVM Environment: @code{.sh}mio install uvme_cvmcu_chip@endcode
-
-
-
-@section user_guide_guide_todo Contents
-TODO Finish the CORE-V-MCU User Guide
-
-
+@section uvme_cvmcu_chip_user_guide_contents Contents
 
 
 @htmlonly

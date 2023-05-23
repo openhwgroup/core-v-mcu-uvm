@@ -8,7 +8,7 @@
 
 
 /**
- * @defgroup uvma_tcounter_b_pkg  UVM Agent
+ * @defgroup uvma_tcounter_b_pkg Timer unit counter Block UVM Agent
  * @{
  * @defgroup uvma_tcounter_b_comps Components
  * @defgroup uvma_tcounter_b_misc  Miscellaneous
@@ -28,7 +28,7 @@
 
 
 /**
- * Encapsulates all the types needed for a UVM agent capable of driving and monitoring a  interface.
+ * Encapsulates all the types needed for a UVM agent capable of driving and monitoring a Timer unit counter interface.
  * @ingroup uvma_tcounter_b_pkg
  */
 package uvma_tcounter_b_pkg;

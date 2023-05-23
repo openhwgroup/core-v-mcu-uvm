@@ -1,0 +1,6 @@
+<map id="uvmx_block_agent_cfg_c" name="uvmx_block_agent_cfg_c">
+<area shape="rect" id="node4" href="$classuvma__adv__timer__b__cfg__c.html" title="Object encapsulating all parameters for creating, connecting and running all Advanced timer counter A..." alt="" coords="5,229,192,256"/>
+<area shape="rect" id="node5" href="$classuvma__tcounter__b__cfg__c.html" title="Object encapsulating all parameters for creating, connecting and running all Timer unit counter Agent..." alt="" coords="217,229,393,256"/>
+<area shape="rect" id="node6" href="$classuvma__tprescaler__b__cfg__c.html" title="Object encapsulating all parameters for creating, connecting and running all Timer unit prescaler Age..." alt="" coords="417,229,604,256"/>
+<area shape="rect" id="node2" href="$classuvmx__agent__cfg__c.html" title="TODO Describe uvmx_agent_cfg_c. " alt="" coords="233,80,377,107"/>
+</map>

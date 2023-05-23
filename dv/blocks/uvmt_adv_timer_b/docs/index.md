@@ -14,9 +14,9 @@ All rights reserved.
 
 
 @section uvmt_adv_timer_b_ip_desc IP Description
-This IP contains the datum  Block UVM Test Bench.
+This IP contains the datum Advanced timer counter Block UVM Test Bench.
 
-![ Block UVM Test Bench Block Diagram](tb_block_diagram.svg)
+![Advanced timer counter Block UVM Test Bench Block Diagram](tb_block_diagram.svg)
 
 
 @section uvmt_adv_timer_b_ip_documents Documents

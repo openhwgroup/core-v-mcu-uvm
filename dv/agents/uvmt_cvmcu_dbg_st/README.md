@@ -16,6 +16,5 @@ This IP contains the Datum Technology Corporation CORE-V-MCU Debug Interface UVM
 # Dependencies
 It is dependent on the following IP:
 
-* `uvmx`
-* `uvma_cvmcu_dbg`
-* `uvme_cvmcu_dbg_st`
+* `datum/uvmx`
+* `datum/uvme_cvmcu_dbg_st`

@@ -8,7 +8,7 @@
 
 
 /**
- * Module encapsulating assertions targeting  Block Agent interface.
+ * Module encapsulating assertions targeting Timer unit prescaler Block Agent interface.
  * @ingroup uvma_tprescaler_b_pkg
  */
 module uvma_tprescaler_b_if_chkr (

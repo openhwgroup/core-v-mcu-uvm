@@ -8,7 +8,7 @@
 
 
 /**
- * Sequence-based UVM Agent capable of driving/monitoring the  Interface (uvma_adv_timer_b_if).
+ * Sequence-based UVM Agent capable of driving/monitoring the Advanced timer counter Interface (uvma_adv_timer_b_if).
  * @ingroup uvma_adv_timer_b_comps
  */
 class uvma_adv_timer_b_agent_c extends uvmx_agent_c #(

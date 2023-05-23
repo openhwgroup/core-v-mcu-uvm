@@ -8,7 +8,7 @@
 
 
 /**
- * Module encapsulating the  Block DUT wrapper, agents and clock generating interfaces.
+ * Module encapsulating the Timer unit counter Block DUT wrapper, agents and clock generating interfaces.
  * @ingroup uvmt_tcounter_b_tb
  */
 module uvmt_tcounter_b_tb;

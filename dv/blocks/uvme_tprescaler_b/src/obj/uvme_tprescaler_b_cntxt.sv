@@ -8,7 +8,7 @@
 
 
 /**
- * Object encapsulating all state variables for  Block environment (uvme_tprescaler_b_env_c).
+ * Object encapsulating all state variables for Timer unit prescaler Block environment (uvme_tprescaler_b_env_c).
  * @ingroup uvme_tprescaler_b_obj
  */
 class uvme_tprescaler_b_cntxt_c extends uvmx_block_env_cntxt_c;

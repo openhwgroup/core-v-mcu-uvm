@@ -7,7 +7,6 @@
 `define __UVMA_CVMCU_EVENT_PKG_SV__
 
 
-// Doxygen Groups
 /**
  * @defgroup uvma_cvmcu_event_pkg CORE-V-MCU Event Interface UVM Agent
  * @{

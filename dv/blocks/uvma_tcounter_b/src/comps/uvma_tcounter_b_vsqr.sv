@@ -39,7 +39,7 @@ typedef uvmx_sqr_c #(
 
 
 /**
- * Virtual Sequencer running  Agent Virtual Sequences extending uvma_tcounter_b_base_vseq_c.
+ * Virtual Sequencer running Timer unit counter Agent Virtual Sequences extending uvma_tcounter_b_base_vseq_c.
  * @ingroup uvma_tcounter_b_comps
  */
 class uvma_tcounter_b_vsqr_c extends uvmx_agent_vsqr_c #(

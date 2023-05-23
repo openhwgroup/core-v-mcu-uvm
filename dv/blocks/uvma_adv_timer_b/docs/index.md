@@ -14,9 +14,9 @@ All rights reserved.
 
 
 @section uvma_adv_timer_b_ip_desc IP Description
-This IP contains the datum  Block UVM Agent.
+This IP contains the datum Advanced timer counter Block UVM Agent.
 
-![ Block UVM Agent Block Diagram](agent_block_diagram.svg)
+![Advanced timer counter Block UVM Agent Block Diagram](agent_block_diagram.svg)
 
 
 @section uvma_adv_timer_b_ip_documents Documents

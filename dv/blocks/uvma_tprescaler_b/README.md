@@ -1,12 +1,12 @@
-# datum  Block UVM Agent
+# datum Timer unit prescaler Block UVM Agent
 
 
 ## About
-This IP contains the datum  Block UVM Agent.
+This IP contains the datum Timer unit prescaler Block UVM Agent.
 
 
 ## Block Diagram
-![alt text](./docs/agent_block_diagram.svg " Block UVM Agent Block Diagram")
+![alt text](./docs/agent_block_diagram.svg "Timer unit prescaler Block UVM Agent Block Diagram")
 
 ## Directory Structure
 * `bin` - Scripts, metadata and other miscellaneous files

@@ -8,7 +8,7 @@
 
 
 /**
- * Abstract Virtual Sequence from which all  Agent Transport Sequences must extend.
+ * Abstract Virtual Sequence from which all Timer unit counter Agent Transport Sequences must extend.
  * @ingroup uvma_tcounter_b_seq
  */
 class uvma_tcounter_b_trn_base_vseq_c extends uvma_tcounter_b_base_vseq_c;

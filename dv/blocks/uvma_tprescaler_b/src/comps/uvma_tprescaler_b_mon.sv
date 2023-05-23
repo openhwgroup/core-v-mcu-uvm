@@ -8,7 +8,7 @@
 
 
 /**
- * Component sampling Monitor Transactions from  Interface (uvma_tprescaler_b_if).
+ * Component sampling Monitor Transactions from Timer unit prescaler Interface (uvma_tprescaler_b_if).
  * @ingroup uvma_tprescaler_b_comps
  */
 class uvma_tprescaler_b_mon_c extends uvmx_mon_c #(

@@ -1,0 +1,13 @@
+<map id="uvma_spi_cov_model_c" name="uvma_spi_cov_model_c">
+<area shape="rect" id="node2" href="$classuvmx__agent__cov__model__c.html" title="uvmx_agent_cov_model\l_c\&lt; .T_CFG(uvma_spi_cfg\l_c),.T_CNTXT(uvma_spi_cntxt\l_c),.T_SEQ_ITEM(uvma_spi_seq\l_item_c) \&gt;" alt="" coords="469,6,696,91"/>
+<area shape="rect" id="node6" href="$classuvmx__seq__item__c.html" title="uvmx_seq_item_c\&lt; .T\l_CFG(uvma_spi_cfg_c)\l,.T_CNTXT(uvma_spi_cntxt_c) \&gt;" alt="" coords="467,162,698,218"/>
+<area shape="rect" id="node13" href="$classuvmx__mon__trn__c.html" title="uvmx_mon_trn_c\&lt; .T\l_CFG(uvma_spi_cfg_c)\l,.T_CNTXT(uvma_spi_cntxt_c) \&gt;" alt="" coords="467,299,698,355"/>
+<area shape="rect" id="node5" href="$classuvma__spi__mstr__phy__s2m__seq__item__c.html" title="Sequence Item created by Serial Peripheral Interface Virtual Sequences for driving uvma_spi_mstr_phy_..." alt="" coords="750,111,938,152"/>
+<area shape="rect" id="node9" href="$classuvma__spi__mstr__phy__m2s__seq__item__c.html" title="Sequence Item created by Serial Peripheral Interface Virtual Sequences for driving uvma_spi_mstr_phy_..." alt="" coords="750,176,938,217"/>
+<area shape="rect" id="node10" href="$classuvma__spi__slv__phy__m2s__seq__item__c.html" title="Sequence Item created by Serial Peripheral Interface Virtual Sequences for driving uvma_spi_slv_phy_m..." alt="" coords="755,241,933,283"/>
+<area shape="rect" id="node11" href="$classuvma__spi__slv__phy__s2m__seq__item__c.html" title="Sequence Item created by Serial Peripheral Interface Virtual Sequences for driving uvma_spi_slv_phy_s..." alt="" coords="755,45,933,87"/>
+<area shape="rect" id="node7" href="$classuvmx__seq__item__base__c.html" title="TODO Describe uvmx_seq_item_base_c. " alt="" coords="213,263,392,290"/>
+<area shape="rect" id="node14" href="$classuvmx__mon__trn__base__c.html" title="TODO Describe uvmx_mon_trn_base_c. " alt="" coords="217,314,389,341"/>
+<area shape="rect" id="node12" href="$classuvma__spi__mon__trn__c.html" title="Monitor Transaction rebuilt by the Monitor Virtual Sequence (uvma_spi_mon_vseq_c). " alt="" coords="764,373,924,399"/>
+<area shape="rect" id="node15" href="$classuvma__spi__phy__m2s__mon__trn__c.html" title="PHY_M2S Monitor Transaction sampled by monitor (uvma_spi_phy_m2s_mon_c). " alt="" coords="751,307,937,348"/>
+</map>

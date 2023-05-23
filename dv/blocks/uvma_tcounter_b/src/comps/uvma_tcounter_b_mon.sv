@@ -8,7 +8,7 @@
 
 
 /**
- * Component sampling Monitor Transactions from  Interface (uvma_tcounter_b_if).
+ * Component sampling Monitor Transactions from Timer unit counter Interface (uvma_tcounter_b_if).
  * @ingroup uvma_tcounter_b_comps
  */
 class uvma_tcounter_b_mon_c extends uvmx_mon_c #(

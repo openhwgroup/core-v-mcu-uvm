@@ -7,7 +7,6 @@
 `define __UVMA_CVMCU_IO_PKG_SV__
 
 
-// Doxygen Groups
 /**
  * @defgroup uvma_cvmcu_io_pkg CORE-V-MCU IO UVM Agent
  * @{

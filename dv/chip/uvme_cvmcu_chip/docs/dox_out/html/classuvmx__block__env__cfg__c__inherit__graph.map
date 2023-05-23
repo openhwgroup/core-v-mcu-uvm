@@ -1,0 +1,6 @@
+<map id="uvmx_block_env_cfg_c" name="uvmx_block_env_cfg_c">
+<area shape="rect" id="node4" href="$classuvme__adv__timer__b__cfg__c.html" title="Object encapsulating all parameters for creating, connecting and running the Advanced timer counter B..." alt="" coords="5,229,192,256"/>
+<area shape="rect" id="node5" href="$classuvme__tcounter__b__cfg__c.html" title="Object encapsulating all parameters for creating, connecting and running the Timer unit counter Block..." alt="" coords="217,229,393,256"/>
+<area shape="rect" id="node6" href="$classuvme__tprescaler__b__cfg__c.html" title="Object encapsulating all parameters for creating, connecting and running the Timer unit prescaler Blo..." alt="" coords="417,229,604,256"/>
+<area shape="rect" id="node2" href="$classuvmx__env__cfg__c.html" title="TODO Describe uvmx_env_cfg_c. " alt="" coords="240,80,371,107"/>
+</map>

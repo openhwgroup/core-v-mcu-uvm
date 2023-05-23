@@ -8,7 +8,7 @@
 
 
 /**
- * Module encapsulating the  Block DUT wrapper, agents and clock generating interfaces.
+ * Module encapsulating the Timer unit prescaler Block DUT wrapper, agents and clock generating interfaces.
  * @ingroup uvmt_tprescaler_b_tb
  */
 module uvmt_tprescaler_b_tb;

@@ -1,0 +1,7 @@
+<map id="uvme_tprescaler_b_cfg_c" name="uvme_tprescaler_b_cfg_c">
+<area shape="rect" id="node2" href="$classuvmx__block__env__cfg__c.html" title="TODO Describe uvmx_block_env_cfg_c. " alt="" coords="5,235,179,261"/>
+<area shape="rect" id="node3" href="$classuvmx__env__cfg__c.html" title="TODO Describe uvmx_env_cfg_c. " alt="" coords="37,133,168,160"/>
+<area shape="rect" id="node7" href="$classuvmx__agent__cfg__c.html" title="TODO Describe uvmx_agent_cfg_c. " alt="" coords="144,83,288,109"/>
+<area shape="rect" id="node5" href="$classuvma__tprescaler__b__cfg__c.html" title="Object encapsulating all parameters for creating, connecting and running all Timer unit prescaler Age..." alt="" coords="129,285,316,312"/>
+<area shape="rect" id="node6" href="$classuvmx__block__agent__cfg__c.html" title="TODO Describe uvmx_block_agent_cfg_c. " alt="" coords="129,184,316,211"/>
+</map>

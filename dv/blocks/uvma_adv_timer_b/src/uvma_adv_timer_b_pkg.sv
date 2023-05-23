@@ -8,7 +8,7 @@
 
 
 /**
- * @defgroup uvma_adv_timer_b_pkg  UVM Agent
+ * @defgroup uvma_adv_timer_b_pkg Advanced timer counter Block UVM Agent
  * @{
  * @defgroup uvma_adv_timer_b_comps Components
  * @defgroup uvma_adv_timer_b_misc  Miscellaneous
@@ -28,7 +28,7 @@
 
 
 /**
- * Encapsulates all the types needed for a UVM agent capable of driving and monitoring a  interface.
+ * Encapsulates all the types needed for a UVM agent capable of driving and monitoring a Advanced timer counter interface.
  * @ingroup uvma_adv_timer_b_pkg
  */
 package uvma_adv_timer_b_pkg;

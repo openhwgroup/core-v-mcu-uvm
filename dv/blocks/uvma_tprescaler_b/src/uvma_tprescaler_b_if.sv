@@ -8,7 +8,7 @@
 
 
 /**
- * Encapsulates all signals and clocking of  Block interface.
+ * Encapsulates all signals and clocking of Timer unit prescaler Block interface.
  * Assertions must be captured within uvma_tprescaler_b_if_chkr.
  * @ingroup uvma_tprescaler_b_pkg
  */

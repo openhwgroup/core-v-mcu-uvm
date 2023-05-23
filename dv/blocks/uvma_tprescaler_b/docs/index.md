@@ -14,9 +14,9 @@ All rights reserved.
 
 
 @section uvma_tprescaler_b_ip_desc IP Description
-This IP contains the datum  Block UVM Agent.
+This IP contains the datum Timer unit prescaler Block UVM Agent.
 
-![ Block UVM Agent Block Diagram](agent_block_diagram.svg)
+![Timer unit prescaler Block UVM Agent Block Diagram](agent_block_diagram.svg)
 
 
 @section uvma_tprescaler_b_ip_documents Documents

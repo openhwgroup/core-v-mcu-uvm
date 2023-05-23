@@ -8,7 +8,7 @@
 
 
 /**
- * Object encapsulating all state variables for  Block environment (uvme_adv_timer_b_env_c).
+ * Object encapsulating all state variables for Advanced timer counter Block environment (uvme_adv_timer_b_env_c).
  * @ingroup uvme_adv_timer_b_obj
  */
 class uvme_adv_timer_b_cntxt_c extends uvmx_block_env_cntxt_c;

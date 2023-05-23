@@ -8,7 +8,7 @@
 
 
 /**
- * Component encapsulating  Block's functional coverage model.
+ * Component encapsulating Advanced timer counter Block's functional coverage model.
  * @ingroup uvme_adv_timer_b_comps
  */
 class uvme_adv_timer_b_cov_model_c extends uvmx_block_env_cov_model_c #(

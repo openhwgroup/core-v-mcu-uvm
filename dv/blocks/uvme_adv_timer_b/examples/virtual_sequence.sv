@@ -1,7 +1,7 @@
 // Copyright 2023 Datum Technology Corporation
 // All rights reserved.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// This file contains sample code that demonstrates how to add a new sequence to the  Block UVM Environment.
+// This file contains sample code that demonstrates how to add a new sequence to the Advanced timer counter Block UVM Environment.
 
 
 `ifndef __UVME_ADV_TIMER_B_EXAMPLE_VSEQ_SV__

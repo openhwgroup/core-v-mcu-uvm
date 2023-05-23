@@ -1,0 +1,23 @@
+<map id="uvmx_macros.svh" name="uvmx_macros.svh">
+<area shape="rect" id="node2" href="$uvme__cvmcu__chip__pkg_8sv.html" title="uvme_cvmcu_chip_pkg.sv" alt="" coords="5,88,197,115"/>
+<area shape="rect" id="node3" href="$uvmx__pkg_8sv.html" title="uvmx_pkg.sv" alt="" coords="223,88,332,115"/>
+<area shape="rect" id="node4" href="$uvma__cvmcu__cpi__pkg_8sv.html" title="uvma_cvmcu_cpi_pkg.sv" alt="" coords="357,88,541,115"/>
+<area shape="rect" id="node5" href="$uvma__cvmcu__dbg__pkg_8sv.html" title="uvma_cvmcu_dbg_pkg.sv" alt="" coords="566,88,756,115"/>
+<area shape="rect" id="node6" href="$uvma__cvmcu__event__pkg_8sv.html" title="uvma_cvmcu_event_pkg.sv" alt="" coords="781,88,984,115"/>
+<area shape="rect" id="node7" href="$uvma__i2c__pkg_8sv.html" title="uvma_i2c_pkg.sv" alt="" coords="1009,88,1143,115"/>
+<area shape="rect" id="node8" href="$uvma__jtag__pkg_8sv.html" title="uvma_jtag_pkg.sv" alt="" coords="1168,88,1309,115"/>
+<area shape="rect" id="node9" href="$uvma__sdio__pkg_8sv.html" title="uvma_sdio_pkg.sv" alt="" coords="1334,88,1476,115"/>
+<area shape="rect" id="node10" href="$uvma__spi__pkg_8sv.html" title="uvma_spi_pkg.sv" alt="" coords="1501,88,1635,115"/>
+<area shape="rect" id="node11" href="$uvma__uart__pkg_8sv.html" title="uvma_uart_pkg.sv" alt="" coords="1659,88,1801,115"/>
+<area shape="rect" id="node12" href="$uvma__obi__pkg_8sv.html" title="uvma_obi_pkg.sv" alt="" coords="1827,88,1963,115"/>
+<area shape="rect" id="node13" href="$uvml__sb__pkg_8sv.html" title="uvml_sb_pkg.sv" alt="" coords="1987,88,2113,115"/>
+<area shape="rect" id="node14" href="$uvma__cvmcu__io__pkg_8sv.html" title="uvma_cvmcu_io_pkg.sv" alt="" coords="2139,88,2317,115"/>
+<area shape="rect" id="node15" href="$uvma__adv__timer__b__pkg_8sv.html" title="uvma_adv_timer_b_pkg.sv" alt="" coords="2341,88,2539,115"/>
+<area shape="rect" id="node16" href="$uvme__adv__timer__b__pkg_8sv.html" title="uvme_adv_timer_b_pkg.sv" alt="" coords="2563,88,2760,115"/>
+<area shape="rect" id="node17" href="$uvme__apb__adv__timer__ss__pkg_8sv.html" title="uvme_apb_adv_timer\l_ss_pkg.sv" alt="" coords="2784,81,2947,122"/>
+<area shape="rect" id="node18" href="$uvma__tcounter__b__pkg_8sv.html" title="uvma_tcounter_b_pkg.sv" alt="" coords="2971,88,3156,115"/>
+<area shape="rect" id="node19" href="$uvma__tprescaler__b__pkg_8sv.html" title="uvma_tprescaler_b_pkg.sv" alt="" coords="3181,88,3376,115"/>
+<area shape="rect" id="node20" href="$uvme__tcounter__b__pkg_8sv.html" title="uvme_tcounter_b_pkg.sv" alt="" coords="3401,88,3585,115"/>
+<area shape="rect" id="node21" href="$uvme__tprescaler__b__pkg_8sv.html" title="uvme_tprescaler_b_pkg.sv" alt="" coords="3610,88,3805,115"/>
+<area shape="rect" id="node22" href="$uvme__apb__timer__ss__pkg_8sv.html" title="uvme_apb_timer_ss_pkg.sv" alt="" coords="3831,88,4033,115"/>
+</map>

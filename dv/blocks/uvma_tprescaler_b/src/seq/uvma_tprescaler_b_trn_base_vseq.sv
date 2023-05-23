@@ -8,7 +8,7 @@
 
 
 /**
- * Abstract Virtual Sequence from which all  Agent Transport Sequences must extend.
+ * Abstract Virtual Sequence from which all Timer unit prescaler Agent Transport Sequences must extend.
  * @ingroup uvma_tprescaler_b_seq
  */
 class uvma_tprescaler_b_trn_base_vseq_c extends uvma_tprescaler_b_base_vseq_c;

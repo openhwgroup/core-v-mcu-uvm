@@ -1,0 +1,17 @@
+<map id="uvme_cvmcu_chip_cov_model_c" name="uvme_cvmcu_chip_cov_model_c">
+<area shape="rect" id="node3" href="$classuvma__uart__mon__trn__c.html" title="Monitor Transaction rebuilt by the Monitor Virtual Sequence (uvma_uart_mon_vseq_c). " alt="" coords="781,393,947,420"/>
+<area shape="rect" id="node4" href="$classuvmx__mon__trn__c.html" title="uvmx_mon_trn_c\&lt; .T\l_CFG(uvma_uart_cfg_c)\l,.T_CNTXT(uvma_uart_cntxt_c) \&gt;" alt="" coords="462,552,701,608"/>
+<area shape="rect" id="node5" href="$classuvmx__mon__trn__base__c.html" title="TODO Describe uvmx_mon_trn_base_c. " alt="" coords="214,804,386,831"/>
+<area shape="rect" id="node9" href="$classuvmx__mon__trn__c.html" title="uvmx_mon_trn_c\&lt; .T\l_CFG(uvma_cvmcu_cpi\l_cfg_c),.T_CNTXT(uvma\l_cvmcu_cpi_cntxt_c) \&gt;" alt="" coords="493,958,670,1029"/>
+<area shape="rect" id="node11" href="$classuvmx__mon__trn__c.html" title="uvmx_mon_trn_c\&lt; .T\l_CFG(uvma_cvmcu_dbg\l_cfg_c),.T_CNTXT(uvma\l_cvmcu_dbg_cntxt_c) \&gt;" alt="" coords="492,713,671,783"/>
+<area shape="rect" id="node13" href="$classuvmx__mon__trn__c.html" title="uvmx_mon_trn_c\&lt; .T\l_CFG(uvma_cvmcu_event\l_cfg_c),.T_CNTXT(uvma\l_cvmcu_event_cntxt_c) \&gt;" alt="" coords="486,1053,677,1123"/>
+<area shape="rect" id="node15" href="$classuvmx__mon__trn__c.html" title="uvmx_mon_trn_c\&lt; .T\l_CFG(uvma_cvmcu_io_cfg\l_c),.T_CNTXT(uvma_cvmcu\l_io_cntxt_c) \&gt;" alt="" coords="481,1147,681,1218"/>
+<area shape="rect" id="node17" href="$classuvmx__mon__trn__c.html" title="uvmx_mon_trn_c\&lt; .T\l_CFG(uvma_i2c_cfg_c)\l,.T_CNTXT(uvma_i2c_cntxt_c) \&gt;" alt="" coords="466,877,697,933"/>
+<area shape="rect" id="node19" href="$classuvmx__mon__trn__c.html" title="uvmx_mon_trn_c\&lt; .T\l_CFG(uvma_spi_cfg_c)\l,.T_CNTXT(uvma_spi_cntxt_c) \&gt;" alt="" coords="466,632,697,688"/>
+<area shape="rect" id="node8" href="$classuvma__cvmcu__cpi__mon__trn__c.html" title="Monitor Transaction rebuilt by the Monitor Virtual Sequence (uvma_cvmcu_cpi_mon_vseq_c). " alt="" coords="779,999,949,1041"/>
+<area shape="rect" id="node10" href="$classuvma__cvmcu__dbg__mon__trn__c.html" title="Monitor Transaction rebuilt by the Monitor Virtual Sequence (uvma_cvmcu_dbg_mon_vseq_c). " alt="" coords="776,619,952,661"/>
+<area shape="rect" id="node12" href="$classuvma__cvmcu__event__mon__trn__c.html" title="Monitor Transaction rebuilt by the Monitor Virtual Sequence (uvma_cvmcu_event_mon_vseq_c). " alt="" coords="769,1082,959,1123"/>
+<area shape="rect" id="node14" href="$classuvma__cvmcu__io__mon__trn__c.html" title="Monitor Transaction rebuilt by the Monitor Virtual Sequence (uvma_cvmcu_io_mon_vseq_c). " alt="" coords="763,1169,965,1196"/>
+<area shape="rect" id="node16" href="$classuvma__i2c__mon__trn__c.html" title="Monitor Transaction rebuilt by the Monitor Virtual Sequence (uvma_i2c_mon_vseq_c). " alt="" coords="784,927,944,953"/>
+<area shape="rect" id="node18" href="$classuvma__spi__mon__trn__c.html" title="Monitor Transaction rebuilt by the Monitor Virtual Sequence (uvma_spi_mon_vseq_c). " alt="" coords="784,557,944,584"/>
+</map>

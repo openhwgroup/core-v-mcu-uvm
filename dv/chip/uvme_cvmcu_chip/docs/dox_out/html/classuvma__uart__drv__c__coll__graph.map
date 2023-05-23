@@ -1,0 +1,6 @@
+<map id="uvma_uart_drv_c" name="uvma_uart_drv_c">
+<area shape="rect" id="node2" href="$classuvmx__drv__c.html" title="uvmx_drv_c\&lt; .T_CFG\l(uvma_uart_cfg_c),.T\l_CNTXT(uvma_uart_cntxt_c) \&gt;" alt="" coords="323,41,546,97"/>
+<area shape="rect" id="node5" href="$classuvma__uart__rx__phy__eg__drv__c.html" title="Driver driving UART Virtual Interface (uvma_uart_if) RX PHY_EG. " alt="" coords="351,166,518,207"/>
+<area shape="rect" id="node7" href="$classuvma__uart__tx__phy__eg__drv__c.html" title="Driver driving UART Virtual Interface (uvma_uart_if) TX PHY_EG. " alt="" coords="351,246,518,287"/>
+<area shape="rect" id="node9" href="$classuvma__uart__tx__phy__ig__drv__c.html" title="Driver driving UART Virtual Interface (uvma_uart_if) TX PHY_IG. " alt="" coords="353,355,516,397"/>
+</map>

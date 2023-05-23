@@ -8,7 +8,7 @@
 
 
 /**
- * Component implementing TLM prediction of  Block behavior.
+ * Component implementing TLM prediction of Timer unit counter Block behavior.
  * @ingroup uvme_tcounter_b_comps
  */
 class uvme_tcounter_b_prd_c extends uvmx_block_prd_c #(

@@ -14,9 +14,9 @@ All rights reserved.
 
 
 @section uvme_tcounter_b_ip_desc IP Description
-This IP contains the datum  Block UVM Environment.
+This IP contains the datum Timer unit counter Block UVM Environment.
 
-![ Block UVM Environment Block Diagram](env_block_diagram.svg)
+![Timer unit counter Block UVM Environment Block Diagram](env_block_diagram.svg)
 
 
 @section uvme_tcounter_b_ip_documents Documents

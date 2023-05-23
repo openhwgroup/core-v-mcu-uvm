@@ -8,7 +8,7 @@
 
 
 /**
- * Module encapsulating assertions targeting  Block Agent interface.
+ * Module encapsulating assertions targeting Timer unit counter Block Agent interface.
  * @ingroup uvma_tcounter_b_pkg
  */
 module uvma_tcounter_b_if_chkr (

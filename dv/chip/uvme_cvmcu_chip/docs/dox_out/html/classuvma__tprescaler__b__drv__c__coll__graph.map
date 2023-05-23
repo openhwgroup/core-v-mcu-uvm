@@ -1,0 +1,5 @@
+<map id="uvma_tprescaler_b_drv_c" name="uvma_tprescaler_b_drv_c">
+<area shape="rect" id="node2" href="$classuvmx__drv__c.html" title="uvmx_drv_c\&lt; .T_CFG\l(uvma_tprescaler_b_cfg\l_c),.T_CNTXT(uvma_tprescaler\l_b_cntxt_c) \&gt;" alt="" coords="318,34,541,105"/>
+<area shape="rect" id="node5" href="$classuvma__tprescaler__b__cp__drv__c.html" title="Driver driving uvma_tprescaler_b_if with Control Plane Sequence Items (uvma_tprescaler_b_cp_seq_item_..." alt="" coords="345,143,513,185"/>
+<area shape="rect" id="node7" href="$classuvma__tprescaler__b__dpi__drv__c.html" title="Driver driving uvma_tprescaler_b_if with Data Plane Input Sequence Items (uvma_tprescaler_b_dpi_seq_i..." alt="" coords="343,245,516,286"/>
+</map>

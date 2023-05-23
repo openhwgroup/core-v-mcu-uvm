@@ -8,7 +8,7 @@
 
 
 /**
- * Component driving  Interface (uvma_adv_timer_b_if) for all planes.
+ * Component driving Advanced timer counter Interface (uvma_adv_timer_b_if) for all planes.
  * @ingroup uvma_adv_timer_b_comps
  */
 class uvma_adv_timer_b_drv_c extends uvmx_drv_c #(

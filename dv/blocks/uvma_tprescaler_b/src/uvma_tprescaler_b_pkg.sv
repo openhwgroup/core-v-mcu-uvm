@@ -8,7 +8,7 @@
 
 
 /**
- * @defgroup uvma_tprescaler_b_pkg  UVM Agent
+ * @defgroup uvma_tprescaler_b_pkg Timer unit prescaler Block UVM Agent
  * @{
  * @defgroup uvma_tprescaler_b_comps Components
  * @defgroup uvma_tprescaler_b_misc  Miscellaneous
@@ -28,7 +28,7 @@
 
 
 /**
- * Encapsulates all the types needed for a UVM agent capable of driving and monitoring a  interface.
+ * Encapsulates all the types needed for a UVM agent capable of driving and monitoring a Timer unit prescaler interface.
  * @ingroup uvma_tprescaler_b_pkg
  */
 package uvma_tprescaler_b_pkg;

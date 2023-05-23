@@ -31,6 +31,10 @@ module uvmt_apb_timer_ss_dut_wrap (
       .PREADY(proc_if.pready),
       .PRDATA(proc_if.prdata),
       .PSLVERR(proc_if.pslverr),
+      .stoptimer_i(probe_if.stoptimer_i),
+      .event_lo_i(probe_if.event_lo_i),
+      .event_hi_i(probe_if.event_hi_i),
+      .busy_o(probe_if.busy_o),
       .HCLK(sys_clk_if.clk),
       .ref_clk_i(ref_clk_if.clk),
       .HRESETn(sys_reset_if.reset_n)

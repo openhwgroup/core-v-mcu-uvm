@@ -8,7 +8,7 @@
 
 
 /**
- * @defgroup uvmt_tcounter_b_pkg  Block UVM Test Bench
+ * @defgroup uvmt_tcounter_b_pkg Timer unit counter Block UVM Test Bench
  * @{
  * @defgroup uvmt_tcounter_b_misc   Miscellaneous
  * @defgroup uvmt_tcounter_b_tb     Test Bench
@@ -30,7 +30,7 @@
 
 
 /**
- * Encapsulates the test library of the  Block Self-Test Bench.
+ * Encapsulates the test library of the Timer unit counter Block Self-Test Bench.
  * @ingroup uvmt_tcounter_b_st_pkg
  */
 package uvmt_tcounter_b_pkg;

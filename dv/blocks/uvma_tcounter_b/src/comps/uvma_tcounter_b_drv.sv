@@ -8,7 +8,7 @@
 
 
 /**
- * Component driving  Interface (uvma_tcounter_b_if) for all planes.
+ * Component driving Timer unit counter Interface (uvma_tcounter_b_if) for all planes.
  * @ingroup uvma_tcounter_b_comps
  */
 class uvma_tcounter_b_drv_c extends uvmx_drv_c #(

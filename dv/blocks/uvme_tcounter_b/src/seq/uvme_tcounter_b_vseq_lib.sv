@@ -15,7 +15,7 @@
 
 
 /**
- * Virtual Sequence Library containing Sequences for  Block Environment.
+ * Virtual Sequence Library containing Sequences for Timer unit counter Block Environment.
  * @ingroup uvme_tcounter_b_seq
  */
 class uvme_tcounter_b_vseq_lib_c extends uvmx_seq_lib_c #(

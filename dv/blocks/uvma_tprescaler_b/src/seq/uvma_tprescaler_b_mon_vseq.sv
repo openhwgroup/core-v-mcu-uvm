@@ -8,7 +8,7 @@
 
 
 /**
- * Virtual Sequence taking in CP, DPI & DPO Monitor Transactions and creating  Agent Monitor Transactions
+ * Virtual Sequence taking in CP, DPI & DPO Monitor Transactions and creating Timer unit prescaler Agent Monitor Transactions
  * (uvma_tprescaler_b_mon_trn_c) in both directions.
  * @ingroup uvma_tprescaler_b_seq
  */
@@ -35,7 +35,7 @@ class uvma_tprescaler_b_mon_vseq_c extends uvma_tprescaler_b_base_vseq_c;
    endtask
 
    /**
-    * Creates  Agent Monitor Transactions for input direction (relative to DUT).
+    * Creates Timer unit prescaler Agent Monitor Transactions for input direction (relative to DUT).
     */
    task monitor_in();
       uvma_tprescaler_b_mon_trn_c      in_trn ;
@@ -58,7 +58,7 @@ class uvma_tprescaler_b_mon_vseq_c extends uvma_tprescaler_b_base_vseq_c;
    endtask
 
    /**
-    * Creates  Agent Monitor Transactions for output direction (relative to DUT).
+    * Creates Timer unit prescaler Agent Monitor Transactions for output direction (relative to DUT).
     */
    task monitor_out();
       uvma_tprescaler_b_mon_trn_c      out_trn;

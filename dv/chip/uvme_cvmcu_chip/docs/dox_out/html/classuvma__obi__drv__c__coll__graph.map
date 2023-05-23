@@ -1,0 +1,13 @@
+<map id="uvma_obi_drv_c" name="uvma_obi_drv_c">
+<area shape="rect" id="node3" href="$classuvma__obi__mstr__a__drv__c.html" title="Component driving a Open Bus Interface virtual interface (uvma_obi_if). " alt="" coords="1521,321,1701,348"/>
+<area shape="rect" id="node5" href="$classuvma__obi__cfg__c.html" title="Object encapsulating all parameters for creating, connecting and running all Open Bus Interface agent..." alt="" coords="265,380,391,407"/>
+<area shape="rect" id="node9" href="$classuvma__obi__base__vseq__c.html" title="Abstract object from which all other Open Bus Interface agent sequences must extend. " alt="" coords="651,451,827,477"/>
+<area shape="rect" id="node12" href="$classuvma__obi__mstr__a__mon__trn__c.html" title="Object rebuilt by the Open Bus Interface monitor&#39;s A Channel Master. " alt="" coords="651,554,826,595"/>
+<area shape="rect" id="node15" href="$classuvma__obi__slv__r__drv__c.html" title="Component driving a Open Bus Interface virtual interface (uvma_obi_if). " alt="" coords="1527,221,1694,248"/>
+<area shape="rect" id="node17" href="$classuvma__obi__slv__a__drv__c.html" title="Component driving a Open Bus Interface virtual interface (uvma_obi_if). " alt="" coords="1526,416,1695,443"/>
+<area shape="rect" id="node19" href="$classuvma__obi__mstr__r__drv__c.html" title="Component driving a Open Bus Interface virtual interface (uvma_obi_if). " alt="" coords="1522,627,1699,653"/>
+<area shape="rect" id="node7" href="$classuvma__obi__cntxt__c.html" title="Object encapsulating all state variables for all Open Bus Interface agent (uvma_obi_agent_c) componen..." alt="" coords="1267,552,1407,579"/>
+<area shape="rect" id="node11" href="$classuvmx__mem__c.html" title="uvmx_mem_c\&lt; 64 \&gt;" alt="" coords="467,744,627,771"/>
+<area shape="rect" id="node8" href="$classuvma__obi__slv__handler__base__vseq__c.html" title="TODO Describe uvma_obi_slv_handler_base_vseq_c. " alt="" coords="936,487,1104,529"/>
+<area shape="rect" id="node13" href="$classuvmx__mon__trn__base__c.html" title="TODO Describe uvmx_mon_trn_base_c. " alt="" coords="242,561,414,588"/>
+</map>

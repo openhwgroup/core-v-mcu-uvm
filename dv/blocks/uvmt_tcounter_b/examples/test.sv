@@ -1,7 +1,7 @@
 // Copyright 2023 Datum Technology Corporation
 // All rights reserved.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// This file contains sample code that demonstrates how to add a new test to the  Block Test Bench and UVM Test Library.
+// This file contains sample code that demonstrates how to add a new test to the Timer unit counter Block Test Bench and UVM Test Library.
 
 
 `ifndef __UVMT_TCOUNTER_B_EXAMPLE_TEST_SV__

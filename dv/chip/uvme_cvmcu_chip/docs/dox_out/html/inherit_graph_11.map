@@ -1,0 +1,7 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node2" href="$classuvma__obi__mstr__a__sqr__c.html" title="Component running Open Bus Interface sequences extending uvma_obi_vseq_base_c. " alt="" coords="179,5,357,32"/>
+<area shape="rect" id="node3" href="$classuvma__obi__mstr__r__sqr__c.html" title="Component running Open Bus Interface sequences extending uvma_obi_vseq_base_c. " alt="" coords="180,56,356,83"/>
+<area shape="rect" id="node4" href="$classuvma__obi__slv__a__sqr__c.html" title="Component running Open Bus Interface sequences extending uvma_obi_vseq_base_c. " alt="" coords="184,107,352,133"/>
+<area shape="rect" id="node5" href="$classuvma__obi__slv__r__sqr__c.html" title="Component running Open Bus Interface sequences extending uvma_obi_vseq_base_c. " alt="" coords="185,157,351,184"/>
+<area shape="rect" id="node6" href="$classuvma__obi__vsqr__c.html" title="Component running Open Bus Interface sequences extending uvma_obi_base_vseq_c. " alt="" coords="201,208,335,235"/>
+</map>

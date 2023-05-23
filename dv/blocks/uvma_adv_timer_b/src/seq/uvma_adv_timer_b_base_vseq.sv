@@ -8,7 +8,7 @@
 
 
 /**
- * Abstract Virtual Sequence from which all  Agent Sequences must extend.
+ * Abstract Virtual Sequence from which all Advanced timer counter Agent Sequences must extend.
  * @ingroup uvma_adv_timer_b_seq
  */
 class uvma_adv_timer_b_base_vseq_c extends uvmx_agent_seq_c #(

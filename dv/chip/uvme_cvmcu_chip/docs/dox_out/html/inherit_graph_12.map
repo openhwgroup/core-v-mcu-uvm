@@ -1,0 +1,8 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node2" href="$classuvma__obi__reg__adapter__c.html" title="Object that converts between abstract register operations (UVM) and Open Bus Interface (OBI) Agent op..." alt="" coords="202,5,387,32"/>
+<area shape="rect" id="node3" href="$classuvmx__reg__adapter__c.html" title="Object that converts between abstract register operations (UVM) and RAL operations. " alt="" coords="214,56,375,112"/>
+<area shape="rect" id="node4" href="$classuvmx__reg__adapter__c.html" title="uvmx_reg_adapter_c\l\&lt; .T_CFG(uvma_jtag_cfg\l_c),.T_CNTXT(uvma_jtag\l_cntxt_c),.T_SEQ_ITEM(uvma\l_jtag_seq_item_c) \&gt;" alt="" coords="189,136,400,221"/>
+<area shape="rect" id="node6" href="$classuvmx__reg__adapter__c.html" title="uvmx_reg_adapter_c\l\&lt; .T_CFG(uvma_sdio_cfg\l_c),.T_CNTXT(uvma_sdio\l_cntxt_c),.T_SEQ_ITEM(uvma\l_sdio_seq_item_c) \&gt;" alt="" coords="189,245,400,331"/>
+<area shape="rect" id="node5" href="$classuvma__jtag__reg__adapter__c.html" title="Object that converts between UVM&#39;s abstract register operations (uvm_reg_bus_op) and uvma_jtag_seq_it..." alt="" coords="449,165,639,192"/>
+<area shape="rect" id="node7" href="$classuvma__sdio__reg__adapter__c.html" title="Object that converts between UVM&#39;s abstract register operations (uvm_reg_bus_op) and uvma_sdio_seq_it..." alt="" coords="448,275,640,301"/>
+</map>

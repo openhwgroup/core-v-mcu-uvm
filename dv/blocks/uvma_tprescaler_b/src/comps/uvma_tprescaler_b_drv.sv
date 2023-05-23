@@ -8,7 +8,7 @@
 
 
 /**
- * Component driving  Interface (uvma_tprescaler_b_if) for all planes.
+ * Component driving Timer unit prescaler Interface (uvma_tprescaler_b_if) for all planes.
  * @ingroup uvma_tprescaler_b_comps
  */
 class uvma_tprescaler_b_drv_c extends uvmx_drv_c #(

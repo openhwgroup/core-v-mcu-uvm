@@ -1,0 +1,22 @@
+<map id="reg/uvme_cvmcu_chip_apb_event_ctrl_reg_block.sv" name="reg/uvme_cvmcu_chip_apb_event_ctrl_reg_block.sv">
+<area shape="rect" id="node2" href="$uvme__cvmcu__chip__apb__event__ctrl__apb__events__reg_8sv.html" title="uvme_cvmcu_chip_apb\l_event_ctrl_apb_events\l_reg.sv" alt="" coords="5,109,181,165"/>
+<area shape="rect" id="node3" href="$uvme__cvmcu__chip__apb__event__ctrl__event__mask0__reg_8sv.html" title="uvme_cvmcu_chip_apb\l_event_ctrl_event_mask0\l_reg.sv" alt="" coords="205,109,395,165"/>
+<area shape="rect" id="node4" href="$uvme__cvmcu__chip__apb__event__ctrl__event__mask1__reg_8sv.html" title="uvme_cvmcu_chip_apb\l_event_ctrl_event_mask1\l_reg.sv" alt="" coords="419,109,608,165"/>
+<area shape="rect" id="node5" href="$uvme__cvmcu__chip__apb__event__ctrl__event__mask2__reg_8sv.html" title="uvme_cvmcu_chip_apb\l_event_ctrl_event_mask2\l_reg.sv" alt="" coords="632,109,821,165"/>
+<area shape="rect" id="node6" href="$uvme__cvmcu__chip__apb__event__ctrl__event__mask3__reg_8sv.html" title="uvme_cvmcu_chip_apb\l_event_ctrl_event_mask3\l_reg.sv" alt="" coords="845,109,1035,165"/>
+<area shape="rect" id="node7" href="$uvme__cvmcu__chip__apb__event__ctrl__event__mask4__reg_8sv.html" title="uvme_cvmcu_chip_apb\l_event_ctrl_event_mask4\l_reg.sv" alt="" coords="1059,109,1248,165"/>
+<area shape="rect" id="node8" href="$uvme__cvmcu__chip__apb__event__ctrl__event__mask5__reg_8sv.html" title="uvme_cvmcu_chip_apb\l_event_ctrl_event_mask5\l_reg.sv" alt="" coords="1272,109,1461,165"/>
+<area shape="rect" id="node9" href="$uvme__cvmcu__chip__apb__event__ctrl__event__mask6__reg_8sv.html" title="uvme_cvmcu_chip_apb\l_event_ctrl_event_mask6\l_reg.sv" alt="" coords="1485,109,1675,165"/>
+<area shape="rect" id="node10" href="$uvme__cvmcu__chip__apb__event__ctrl__event__mask7__reg_8sv.html" title="uvme_cvmcu_chip_apb\l_event_ctrl_event_mask7\l_reg.sv" alt="" coords="1699,109,1888,165"/>
+<area shape="rect" id="node11" href="$uvme__cvmcu__chip__apb__event__ctrl__event__err0__reg_8sv.html" title="uvme_cvmcu_chip_apb\l_event_ctrl_event_err0\l_reg.sv" alt="" coords="1913,109,2087,165"/>
+<area shape="rect" id="node12" href="$uvme__cvmcu__chip__apb__event__ctrl__event__err1__reg_8sv.html" title="uvme_cvmcu_chip_apb\l_event_ctrl_event_err1\l_reg.sv" alt="" coords="2111,109,2285,165"/>
+<area shape="rect" id="node13" href="$uvme__cvmcu__chip__apb__event__ctrl__event__err2__reg_8sv.html" title="uvme_cvmcu_chip_apb\l_event_ctrl_event_err2\l_reg.sv" alt="" coords="2310,109,2484,165"/>
+<area shape="rect" id="node14" href="$uvme__cvmcu__chip__apb__event__ctrl__event__err3__reg_8sv.html" title="uvme_cvmcu_chip_apb\l_event_ctrl_event_err3\l_reg.sv" alt="" coords="2509,109,2683,165"/>
+<area shape="rect" id="node15" href="$uvme__cvmcu__chip__apb__event__ctrl__event__err4__reg_8sv.html" title="uvme_cvmcu_chip_apb\l_event_ctrl_event_err4\l_reg.sv" alt="" coords="2707,109,2881,165"/>
+<area shape="rect" id="node16" href="$uvme__cvmcu__chip__apb__event__ctrl__event__err5__reg_8sv.html" title="uvme_cvmcu_chip_apb\l_event_ctrl_event_err5\l_reg.sv" alt="" coords="2906,109,3080,165"/>
+<area shape="rect" id="node17" href="$uvme__cvmcu__chip__apb__event__ctrl__event__err6__reg_8sv.html" title="uvme_cvmcu_chip_apb\l_event_ctrl_event_err6\l_reg.sv" alt="" coords="3105,109,3279,165"/>
+<area shape="rect" id="node18" href="$uvme__cvmcu__chip__apb__event__ctrl__event__err7__reg_8sv.html" title="uvme_cvmcu_chip_apb\l_event_ctrl_event_err7\l_reg.sv" alt="" coords="3303,109,3477,165"/>
+<area shape="rect" id="node19" href="$uvme__cvmcu__chip__apb__event__ctrl__timer__lo__event__reg_8sv.html" title="uvme_cvmcu_chip_apb\l_event_ctrl_timer_lo\l_event_reg.sv" alt="" coords="3502,109,3676,165"/>
+<area shape="rect" id="node20" href="$uvme__cvmcu__chip__apb__event__ctrl__timer__hi__event__reg_8sv.html" title="uvme_cvmcu_chip_apb\l_event_ctrl_timer_hi\l_event_reg.sv" alt="" coords="3701,109,3875,165"/>
+<area shape="rect" id="node21" href="$uvme__cvmcu__chip__apb__event__ctrl__event__fifo__reg_8sv.html" title="uvme_cvmcu_chip_apb\l_event_ctrl_event_fifo\l_reg.sv" alt="" coords="3899,109,4073,165"/>
+</map>

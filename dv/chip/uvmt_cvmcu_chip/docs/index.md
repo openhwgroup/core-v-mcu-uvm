@@ -4,40 +4,37 @@
 @endhtmlonly
 
 
-
 @tableofcontents
 
 
-
-@section license_agreement License Agreement
+@section uvmt_cvmcu_chip_license_agreement License Agreement
 © Copyright 2023 Datum Technology Corporation
 
 All rights reserved.
 
 
-
-@section ip_desc IP Description
-This IP contains the Datum Technology Corporation CORE-V-MCU Sub-System UVM Test Bench.
-TODO Describe CORE-V-MCU Sub-System UVM Test Bench
-
-![CORE-V-MCU Sub-System UVM Test Bench Block Diagram](tb_block_diagram.svg)
+@section uvmt_cvmcu_chip_ip_desc IP Description
+This IP contains the Datum CORE-V-MCU Chip UVM Test Bench.
 
 
-@section ip_documents Documents
-None
+
+@section uvmt_cvmcu_chip_ip_documents Documents
+ID | Name | Version
+-- | ---- | -------
+001 | @subpage uvmt_cvmcu_chip_user_guide "User Guide" | 1.0
+002 | @subpage uvmt_cvmcu_chip_dev_guide "Developer Guide" | 1.0
 
 
-@section ip_ref Reference
- * @ref uvmt_cvmcu_chip_tb
- * @ref uvmt_cvmcu_chip_tests
- * @ref uvmt_cvmcu_chip_misc
- * @ref uvmt_cvmcu_chip_pkg Typedefs
+@section uvmt_cvmcu_chip_ip_ref Reference
+ * @ref uvmt_cvmcu_chip_pkg
+   * @ref uvmt_cvmcu_chip_misc
+   * @ref uvmt_cvmcu_chip_tb
+   * @ref uvmt_cvmcu_chip_tests
 
 
-@section release_history Release History
-@subsection v_1_0_0 2023/01/01 - v.1.0.0
+@section uvmt_cvmcu_chip_release_history Release History
+@subsection uvmt_cvmcu_chip_v1_0_0 2023/5/23 - 1.0.0
 - Initial release
-
 
 
 @htmlonly

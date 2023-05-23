@@ -1,7 +1,7 @@
 // Copyright 2023 Datum Technology Corporation
 // All rights reserved.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// This file contains sample code that demonstrates how to add a new Virtual Sequence to the  Block UVM Agent.
+// This file contains sample code that demonstrates how to add a new Virtual Sequence to the Timer unit prescaler Block UVM Agent.
 
 
 `ifndef __UVMA_TPRESCALER_B_EXAMPLE_VSEQ_SV__

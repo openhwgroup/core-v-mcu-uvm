@@ -1,12 +1,12 @@
-# datum  Block UVM Environment
+# datum Advanced timer counter Block UVM Environment
 
 
 ## About
-This IP contains the datum  Block UVM Environment.
+This IP contains the datum Advanced timer counter Block UVM Environment.
 
 
 ## Block Diagram
-![alt text](./docs/env_block_diagram.svg " Block UVM Environment Block Diagram")
+![alt text](./docs/env_block_diagram.svg "Advanced timer counter Block UVM Environment Block Diagram")
 
 ## Directory Structure
 * `bin` - Scripts, metadata and other miscellaneous files
@@ -24,4 +24,4 @@ It is dependent on the following IP:
 
 * `datum/uvmx`
 * `datum/uvml_sb`
-* `uvma_adv_timer_b`
+* `datum/uvma_adv_timer_b`

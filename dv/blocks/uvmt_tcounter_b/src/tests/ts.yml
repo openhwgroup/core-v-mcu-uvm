@@ -4,7 +4,7 @@
 
 
 test-suite:
-  name:  Block UVM Test Suite
+  name: Timer unit counter Block UVM Test Suite
   ip: uvmt_tcounter_b
   target: "*"
   settings:
