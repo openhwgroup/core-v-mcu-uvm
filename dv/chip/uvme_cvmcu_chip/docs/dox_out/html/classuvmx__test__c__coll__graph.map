@@ -1,5 +1,0 @@
-<map id="uvmx_test_c&lt; T_CFG, T_ENV_CFG, T_ENV_CNTXT, T_ENV, T_ENV_VSQR &gt;" name="uvmx_test_c&lt; T_CFG, T_ENV_CFG, T_ENV_CNTXT, T_ENV, T_ENV_VSQR &gt;">
-<area shape="rect" id="node3" href="$classuvmx__report__server__c.html" title="Replacement for uvm_report_server to log messages without the long source file path. " alt="" coords="113,189,279,216"/>
-<area shape="rect" id="node5" href="$classuvmx__file__c.html" title="Models a standard OS File with read/write functionality. " alt="" coords="262,91,361,117"/>
-<area shape="rect" id="node8" href="$classuvmx__reg__logger__cbs__c.html" title="Callback implementation which logs all read/write debug info to disk. " alt="" coords="304,189,483,216"/>
-</map>

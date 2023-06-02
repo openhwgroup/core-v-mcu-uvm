@@ -1,5 +1,0 @@
-<map id="uvma_adv_timer_b_drv_c" name="uvma_adv_timer_b_drv_c">
-<area shape="rect" id="node2" href="$classuvmx__drv__c.html" title="uvmx_drv_c\&lt; .T_CFG\l(uvma_adv_timer_b_cfg\l_c),.T_CNTXT(uvma_adv\l_timer_b_cntxt_c) \&gt;" alt="" coords="320,34,501,105"/>
-<area shape="rect" id="node5" href="$classuvma__adv__timer__b__cp__drv__c.html" title="Driver driving uvma_adv_timer_b_if with Control Plane Sequence Items (uvma_adv_timer_b_cp_seq_item_c)..." alt="" coords="326,143,495,185"/>
-<area shape="rect" id="node7" href="$classuvma__adv__timer__b__dpi__drv__c.html" title="Driver driving uvma_adv_timer_b_if with Data Plane Input Sequence Items (uvma_adv_timer_b_dpi_seq_ite..." alt="" coords="323,245,498,286"/>
-</map>

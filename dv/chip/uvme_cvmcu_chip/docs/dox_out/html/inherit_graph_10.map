@@ -1,6 +1,0 @@
-<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node2" href="$classuvma__obi__mstr__a__drv__c.html" title="Component driving a Open Bus Interface virtual interface (uvma_obi_if). " alt="" coords="150,5,330,32"/>
-<area shape="rect" id="node3" href="$classuvma__obi__mstr__r__drv__c.html" title="Component driving a Open Bus Interface virtual interface (uvma_obi_if). " alt="" coords="151,56,329,83"/>
-<area shape="rect" id="node4" href="$classuvma__obi__slv__a__drv__c.html" title="Component driving a Open Bus Interface virtual interface (uvma_obi_if). " alt="" coords="155,107,325,133"/>
-<area shape="rect" id="node5" href="$classuvma__obi__slv__r__drv__c.html" title="Component driving a Open Bus Interface virtual interface (uvma_obi_if). " alt="" coords="157,157,323,184"/>
-</map>

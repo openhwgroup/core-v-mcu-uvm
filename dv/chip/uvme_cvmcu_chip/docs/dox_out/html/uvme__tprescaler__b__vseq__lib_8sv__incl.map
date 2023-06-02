@@ -1,7 +1,0 @@
-<map id="seq/uvme_tprescaler_b_vseq_lib.sv" name="seq/uvme_tprescaler_b_vseq_lib.sv">
-<area shape="rect" id="node2" href="$uvme__tprescaler__b__base__vseq_8sv.html" title="uvme_tprescaler_b_base\l_vseq.sv" alt="" coords="5,97,189,138"/>
-<area shape="rect" id="node3" href="$uvme__tprescaler__b__fix__ill__stim__vseq_8sv.html" title="uvme_tprescaler_b_fix\l_ill_stim_vseq.sv" alt="" coords="214,97,383,138"/>
-<area shape="rect" id="node4" href="$uvme__tprescaler__b__fix__stim__vseq_8sv.html" title="uvme_tprescaler_b_fix\l_stim_vseq.sv" alt="" coords="407,97,576,138"/>
-<area shape="rect" id="node5" href="$uvme__tprescaler__b__rand__ill__stim__vseq_8sv.html" title="uvme_tprescaler_b_rand\l_ill_stim_vseq.sv" alt="" coords="601,97,783,138"/>
-<area shape="rect" id="node6" href="$uvme__tprescaler__b__rand__stim__vseq_8sv.html" title="uvme_tprescaler_b_rand\l_stim_vseq.sv" alt="" coords="807,97,989,138"/>
-</map>

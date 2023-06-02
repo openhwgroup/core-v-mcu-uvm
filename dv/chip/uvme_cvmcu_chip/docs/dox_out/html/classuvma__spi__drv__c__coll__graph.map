@@ -1,6 +1,0 @@
-<map id="uvma_spi_drv_c" name="uvma_spi_drv_c">
-<area shape="rect" id="node2" href="$classuvmx__drv__c.html" title="uvmx_drv_c\&lt; .T_CFG\l(uvma_spi_cfg_c),.T\l_CNTXT(uvma_spi_cntxt_c) \&gt;" alt="" coords="313,41,527,97"/>
-<area shape="rect" id="node5" href="$classuvma__spi__mstr__phy__s2m__drv__c.html" title="Driver driving Serial Peripheral Interface Virtual Interface (uvma_spi_if) MSTR PHY_S2M. " alt="" coords="326,179,514,221"/>
-<area shape="rect" id="node7" href="$classuvma__spi__mstr__phy__m2s__drv__c.html" title="Driver driving Serial Peripheral Interface Virtual Interface (uvma_spi_if) MSTR PHY_M2S. " alt="" coords="326,263,514,305"/>
-<area shape="rect" id="node9" href="$classuvma__spi__slv__phy__m2s__drv__c.html" title="Driver driving Serial Peripheral Interface Virtual Interface (uvma_spi_if) SLV PHY_M2S. " alt="" coords="331,383,509,425"/>
-</map>

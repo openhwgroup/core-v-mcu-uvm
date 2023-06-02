@@ -1,3 +1,0 @@
-<map id="uvma_i2c_agent_c" name="uvma_i2c_agent_c">
-<area shape="rect" id="node2" href="$classuvmx__agent__c.html" title="uvmx_agent_c\&lt; .T_VIF\l(virtual uvma_i2c_if)\l,.T_CFG(uvma_i2c_cfg_c)\l,.T_CNTXT(uvma_i2c_cntxt\l_c),.T_SEQ_ITEM(uvma_i2c\l_seq_item_c),.T_VSQR(uvma\l_i2c_vsqr_c),.T_DRV(uvma_i2c\l_drv_c),.T_MON(uvma_i2c_mon_c)\l,.T_LOGGER(uvma_i2c_logger_c),\l.T_COV_MODEL(uvma_i2c_cov_model_c) \&gt;" alt="" coords="150,5,453,163"/>
-</map>

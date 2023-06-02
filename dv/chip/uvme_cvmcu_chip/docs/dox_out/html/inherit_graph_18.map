@@ -1,5 +1,0 @@
-<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node2" href="$classuvme__adv__timer__b__prd__c.html" title="Component implementing TLM prediction of Advanced timer counter Block behavior. " alt="" coords="197,5,387,32"/>
-<area shape="rect" id="node3" href="$classuvme__tcounter__b__prd__c.html" title="Component implementing TLM prediction of Timer unit counter Block behavior. " alt="" coords="203,56,381,83"/>
-<area shape="rect" id="node4" href="$classuvme__tprescaler__b__prd__c.html" title="Component implementing TLM prediction of Timer unit prescaler Block behavior. " alt="" coords="198,107,386,133"/>
-</map>

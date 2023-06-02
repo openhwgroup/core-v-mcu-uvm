@@ -1,9 +1,0 @@
-<map id="uvme_cvmcu_chip_sb_c" name="uvme_cvmcu_chip_sb_c">
-<area shape="rect" id="node3" href="$classuvml__sb__simplex__c.html" title="uvml_sb_simplex_c\&lt;\l uvma_cvmcu_cpi_mon\l_trn_c \&gt;" alt="" coords="433,293,607,349"/>
-<area shape="rect" id="node7" href="$classuvml__sb__simplex__c.html" title="uvml_sb_simplex_c\&lt;\l uvma_i2c_mon_trn_c \&gt;" alt="" coords="431,227,609,269"/>
-<area shape="rect" id="node8" href="$classuvml__sb__simplex__c.html" title="uvml_sb_simplex_c\&lt;\l uvma_cvmcu_event_mon\l_trn_c \&gt;" alt="" coords="423,440,617,496"/>
-<area shape="rect" id="node9" href="$classuvml__sb__simplex__c.html" title="uvml_sb_simplex_c\&lt;\l uvma_cvmcu_io_mon_trn_c \&gt;" alt="" coords="409,374,631,415"/>
-<area shape="rect" id="node10" href="$classuvml__sb__simplex__c.html" title="uvml_sb_simplex_c\&lt;\l uvma_uart_mon_trn_c \&gt;" alt="" coords="427,143,613,185"/>
-<area shape="rect" id="node11" href="$classuvml__sb__simplex__c.html" title="uvml_sb_simplex_c\&lt;\l uvma_spi_mon_trn_c \&gt;" alt="" coords="431,546,609,587"/>
-<area shape="rect" id="node5" href="$classuvml__sb__simplex__cfg__c.html" title="TODO Describe uvml_sb_simplex_cfg_c. " alt="" coords="155,403,333,429"/>
-</map>

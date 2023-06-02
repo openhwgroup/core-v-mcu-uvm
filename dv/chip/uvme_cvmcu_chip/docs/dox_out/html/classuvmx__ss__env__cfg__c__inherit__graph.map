@@ -1,5 +1,0 @@
-<map id="uvmx_ss_env_cfg_c" name="uvmx_ss_env_cfg_c">
-<area shape="rect" id="node4" href="$classuvme__apb__adv__timer__ss__cfg__c.html" title="Object encapsulating all parameters for creating, connecting and running the APB Advanced Timer Sub&#45;S..." alt="" coords="5,230,168,271"/>
-<area shape="rect" id="node5" href="$classuvme__apb__timer__ss__cfg__c.html" title="Object encapsulating all parameters for creating, connecting and running the APB simple timer unit Su..." alt="" coords="192,237,387,264"/>
-<area shape="rect" id="node2" href="$classuvmx__env__cfg__c.html" title="TODO Describe uvmx_env_cfg_c. " alt="" coords="123,80,253,107"/>
-</map>

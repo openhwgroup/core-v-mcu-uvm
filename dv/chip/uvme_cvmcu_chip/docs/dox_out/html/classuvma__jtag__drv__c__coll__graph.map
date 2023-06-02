@@ -1,6 +1,0 @@
-<map id="uvma_jtag_drv_c" name="uvma_jtag_drv_c">
-<area shape="rect" id="node2" href="$classuvmx__drv__c.html" title="uvmx_drv_c\&lt; .T_CFG\l(uvma_jtag_cfg_c),.T\l_CNTXT(uvma_jtag_cntxt_c) \&gt;" alt="" coords="323,41,544,97"/>
-<area shape="rect" id="node5" href="$classuvma__jtag__ctrl__phy__c2t__drv__c.html" title="Driver driving JTAG Virtual Interface (uvma_jtag_if) CTRL PHY_C2T. " alt="" coords="358,166,509,207"/>
-<area shape="rect" id="node7" href="$classuvma__jtag__ctrl__phy__t2c__drv__c.html" title="Driver driving JTAG Virtual Interface (uvma_jtag_if) CTRL PHY_T2C. " alt="" coords="358,246,509,287"/>
-<area shape="rect" id="node9" href="$classuvma__jtag__tap__phy__c2t__drv__c.html" title="Driver driving JTAG Virtual Interface (uvma_jtag_if) TAP PHY_C2T. " alt="" coords="345,359,522,401"/>
-</map>

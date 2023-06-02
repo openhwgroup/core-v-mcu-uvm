@@ -1,5 +1,0 @@
-<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node2" href="$classuvma__adv__timer__b__cntxt__c.html" title="Object encapsulating all state variables for all Advanced timer counter Agent (uvma_adv_timer_b_agent..." alt="" coords="254,5,455,32"/>
-<area shape="rect" id="node3" href="$classuvma__tcounter__b__cntxt__c.html" title="Object encapsulating all state variables for all Timer unit counter Agent (uvma_tcounter_b_agent_c) c..." alt="" coords="260,56,449,83"/>
-<area shape="rect" id="node4" href="$classuvma__tprescaler__b__cntxt__c.html" title="Object encapsulating all state variables for all Timer unit prescaler Agent (uvma_tprescaler_b_agent_..." alt="" coords="255,107,455,133"/>
-</map>
