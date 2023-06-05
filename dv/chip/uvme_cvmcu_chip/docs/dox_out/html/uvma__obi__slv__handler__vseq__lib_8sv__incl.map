@@ -1,5 +1,0 @@
-<map id="seq/uvma_obi_slv_handler_vseq_lib.sv" name="seq/uvma_obi_slv_handler_vseq_lib.sv">
-<area shape="rect" id="node2" href="$uvma__obi__slv__handler__base__vseq_8sv.html" title="uvma_obi_slv_handler\l_base_vseq.sv" alt="" coords="5,97,173,138"/>
-<area shape="rect" id="node3" href="$uvma__obi__slv__handler__mem__vseq_8sv.html" title="uvma_obi_slv_handler\l_mem_vseq.sv" alt="" coords="197,97,365,138"/>
-<area shape="rect" id="node4" href="$uvma__obi__slv__handler__print__vseq_8sv.html" title="uvma_obi_slv_handler\l_print_vseq.sv" alt="" coords="389,97,557,138"/>
-</map>

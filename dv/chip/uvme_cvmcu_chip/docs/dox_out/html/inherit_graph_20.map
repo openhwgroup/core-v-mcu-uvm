@@ -1,8 +1,0 @@
-<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node2" href="$classuvme__apb__adv__timer__ss__base__vseq__c.html" title="Abstract virtual sequence from which all other APB Advanced Timer Sub&#45;System environment virtual sequ..." alt="" coords="231,70,393,111"/>
-<area shape="rect" id="node5" href="$classuvme__apb__timer__ss__base__vseq__c.html" title="Abstract virtual sequence from which all other APB simple timer unit Sub&#45;System environment virtual s..." alt="" coords="217,135,407,177"/>
-<area shape="rect" id="node3" href="$classuvme__apb__adv__timer__ss__cfg__vseq__c.html" title="Sequence configuring registers of the APB Advanced Timer Sub&#45;System DUT. " alt="" coords="465,5,628,46"/>
-<area shape="rect" id="node4" href="$classuvme__apb__adv__timer__ss__init__vseq__c.html" title="Sequence initializing APB Advanced Timer Sub&#45;System probe input signals. " alt="" coords="465,70,628,111"/>
-<area shape="rect" id="node6" href="$classuvme__apb__timer__ss__cfg__vseq__c.html" title="Sequence configuring registers of the APB simple timer unit Sub&#45;System DUT. " alt="" coords="457,135,637,177"/>
-<area shape="rect" id="node7" href="$classuvme__apb__timer__ss__init__vseq__c.html" title="Sequence initializing APB simple timer unit Sub&#45;System probe input signals. " alt="" coords="456,201,637,242"/>
-</map>

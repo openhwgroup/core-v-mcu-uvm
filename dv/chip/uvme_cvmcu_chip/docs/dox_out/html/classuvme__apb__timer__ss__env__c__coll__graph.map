@@ -1,4 +1,0 @@
-<map id="uvme_apb_timer_ss_env_c" name="uvme_apb_timer_ss_env_c">
-<area shape="rect" id="node3" href="$classuvme__tcounter__b__env__c.html" title="Timer unit counter Block UVM Environment with TLM self&#45;checking scoreboards and prediction. " alt="" coords="401,188,581,215"/>
-<area shape="rect" id="node5" href="$classuvme__tprescaler__b__env__c.html" title="Timer unit prescaler Block UVM Environment with TLM self&#45;checking scoreboards and prediction..." alt="" coords="395,268,586,295"/>
-</map>

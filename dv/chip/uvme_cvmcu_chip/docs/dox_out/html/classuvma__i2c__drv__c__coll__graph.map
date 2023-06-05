@@ -1,6 +1,0 @@
-<map id="uvma_i2c_drv_c" name="uvma_i2c_drv_c">
-<area shape="rect" id="node2" href="$classuvmx__drv__c.html" title="uvmx_drv_c\&lt; .T_CFG\l(uvma_i2c_cfg_c),.T\l_CNTXT(uvma_i2c_cntxt_c) \&gt;" alt="" coords="313,41,527,97"/>
-<area shape="rect" id="node5" href="$classuvma__i2c__mstr__phy__m2s__drv__c.html" title="Driver driving I2C Virtual Interface (uvma_i2c_if) MSTR PHY_M2S. " alt="" coords="326,179,514,221"/>
-<area shape="rect" id="node7" href="$classuvma__i2c__slv__phy__m2s__drv__c.html" title="Driver driving I2C Virtual Interface (uvma_i2c_if) SLV PHY_M2S. " alt="" coords="331,263,509,305"/>
-<area shape="rect" id="node9" href="$classuvma__i2c__mstr__phy__s2m__drv__c.html" title="Driver driving I2C Virtual Interface (uvma_i2c_if) MSTR PHY_S2M. " alt="" coords="326,383,514,425"/>
-</map>

@@ -1,9 +1,0 @@
-<map id="uvma_obi_transport_base_vseq_c" name="uvma_obi_transport_base_vseq_c">
-<area shape="rect" id="node2" href="$classuvma__obi__base__vseq__c.html" title="Abstract object from which all other Open Bus Interface agent sequences must extend. " alt="" coords="651,167,827,193"/>
-<area shape="rect" id="node7" href="$classuvma__obi__slv__handler__base__vseq__c.html" title="TODO Describe uvma_obi_slv_handler_base_vseq_c. " alt="" coords="936,94,1104,135"/>
-<area shape="rect" id="node4" href="$classuvma__obi__cfg__c.html" title="Object encapsulating all parameters for creating, connecting and running all Open Bus Interface agent..." alt="" coords="265,191,391,217"/>
-<area shape="rect" id="node9" href="$classuvma__obi__mstr__a__mon__trn__c.html" title="Object rebuilt by the Open Bus Interface monitor&#39;s A Channel Master. " alt="" coords="651,290,826,331"/>
-<area shape="rect" id="node6" href="$classuvma__obi__cntxt__c.html" title="Object encapsulating all state variables for all Open Bus Interface agent (uvma_obi_agent_c) componen..." alt="" coords="1241,101,1381,128"/>
-<area shape="rect" id="node8" href="$classuvmx__mem__c.html" title="uvmx_mem_c\&lt; 64 \&gt;" alt="" coords="467,43,627,69"/>
-<area shape="rect" id="node10" href="$classuvmx__mon__trn__base__c.html" title="TODO Describe uvmx_mon_trn_base_c. " alt="" coords="242,297,414,324"/>
-</map>

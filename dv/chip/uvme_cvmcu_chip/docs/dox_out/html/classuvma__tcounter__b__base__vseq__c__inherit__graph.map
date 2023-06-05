@@ -1,7 +1,0 @@
-<map id="uvma_tcounter_b_base_vseq_c" name="uvma_tcounter_b_base_vseq_c">
-<area shape="rect" id="node3" href="$classuvma__tcounter__b__idle__vseq__c.html" title="Virtual Sequence generating &#39;idle&#39; Sequence Items at all times. " alt="" coords="509,5,675,46"/>
-<area shape="rect" id="node4" href="$classuvma__tcounter__b__in__drv__vseq__c.html" title="Virtual Sequence taking in uvma_tcounter_b_seq_item_c instances and driving uvma_tcounter_b_drv_c wit..." alt="" coords="515,70,669,111"/>
-<area shape="rect" id="node5" href="$classuvma__tcounter__b__mon__vseq__c.html" title="Virtual Sequence taking in CP, DPI &amp; DPO Monitor Transactions and creating Timer unit counter Agent M..." alt="" coords="507,135,677,177"/>
-<area shape="rect" id="node6" href="$classuvma__tcounter__b__out__drv__vseq__c.html" title="Virtual Sequence generating Data Plane Output Sequence Items and driving uvma_tcounter_b_dpi_drv_c. " alt="" coords="511,201,673,242"/>
-<area shape="rect" id="node7" href="$classuvma__tcounter__b__trn__base__vseq__c.html" title="Abstract Virtual Sequence from which all Timer unit counter Agent Transport Sequences must extend..." alt="" coords="512,266,672,307"/>
-</map>

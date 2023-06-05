@@ -1,5 +1,0 @@
-<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node2" href="$classuvme__apb__adv__timer__ss__reg__base__vseq__c.html" title="Abstract virtual sequence from which all other APB Advanced Timer Sub&#45;System register virtual sequenc..." alt="" coords="193,5,356,46"/>
-<area shape="rect" id="node3" href="$classuvme__apb__timer__ss__reg__base__vseq__c.html" title="Abstract virtual sequence from which all other APB simple timer unit Sub&#45;System register virtual sequ..." alt="" coords="184,70,365,111"/>
-<area shape="rect" id="node4" href="$classuvme__cvmcu__chip__reg__base__vseq__c.html" title="Abstract virtual sequence from which all other CORE&#45;V&#45;MCU Chip register virtual sequences must extend..." alt="" coords="189,135,360,177"/>
-</map>

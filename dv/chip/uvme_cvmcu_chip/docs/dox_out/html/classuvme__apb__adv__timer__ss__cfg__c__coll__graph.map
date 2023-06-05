@@ -1,9 +1,0 @@
-<map id="uvme_apb_adv_timer_ss_cfg_c" name="uvme_apb_adv_timer_ss_cfg_c">
-<area shape="rect" id="node2" href="$classuvmx__ss__env__cfg__c.html" title="TODO Describe uvmx_ss_env_cfg_c. " alt="" coords="5,288,157,315"/>
-<area shape="rect" id="node3" href="$classuvmx__env__cfg__c.html" title="TODO Describe uvmx_env_cfg_c. " alt="" coords="140,160,271,187"/>
-<area shape="rect" id="node6" href="$classuvmx__block__env__cfg__c.html" title="TODO Describe uvmx_block_env_cfg_c. " alt="" coords="119,237,292,264"/>
-<area shape="rect" id="node9" href="$classuvmx__agent__cfg__c.html" title="TODO Describe uvmx_agent_cfg_c. " alt="" coords="288,83,432,109"/>
-<area shape="rect" id="node5" href="$classuvme__adv__timer__b__cfg__c.html" title="Object encapsulating all parameters for creating, connecting and running the Advanced timer counter B..." alt="" coords="119,339,307,365"/>
-<area shape="rect" id="node7" href="$classuvma__adv__timer__b__cfg__c.html" title="Object encapsulating all parameters for creating, connecting and running all Advanced timer counter A..." alt="" coords="317,237,504,264"/>
-<area shape="rect" id="node8" href="$classuvmx__block__agent__cfg__c.html" title="TODO Describe uvmx_block_agent_cfg_c. " alt="" coords="305,160,492,187"/>
-</map>

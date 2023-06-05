@@ -1,7 +1,0 @@
-<map id="seq/uvma_cvmcu_dbg_vseq_lib.sv" name="seq/uvma_cvmcu_dbg_vseq_lib.sv">
-<area shape="rect" id="node2" href="$uvma__cvmcu__dbg__base__vseq_8sv.html" title="uvma_cvmcu_dbg_base\l_vseq.sv" alt="" coords="5,97,184,138"/>
-<area shape="rect" id="node3" href="$uvma__cvmcu__dbg__fix__stim__vseq_8sv.html" title="uvma_cvmcu_dbg_fix\l_stim_vseq.sv" alt="" coords="208,97,371,138"/>
-<area shape="rect" id="node4" href="$uvma__cvmcu__dbg__rand__stim__vseq_8sv.html" title="uvma_cvmcu_dbg_rand\l_stim_vseq.sv" alt="" coords="395,97,571,138"/>
-<area shape="rect" id="node5" href="$uvma__cvmcu__dbg__fix__ill__stim__vseq_8sv.html" title="uvma_cvmcu_dbg_fix\l_ill_stim_vseq.sv" alt="" coords="595,97,757,138"/>
-<area shape="rect" id="node6" href="$uvma__cvmcu__dbg__rand__ill__stim__vseq_8sv.html" title="uvma_cvmcu_dbg_rand\l_ill_stim_vseq.sv" alt="" coords="781,97,957,138"/>
-</map>

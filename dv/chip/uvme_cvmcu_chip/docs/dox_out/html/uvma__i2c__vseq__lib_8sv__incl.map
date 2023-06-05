@@ -1,7 +1,0 @@
-<map id="seq/uvma_i2c_vseq_lib.sv" name="seq/uvma_i2c_vseq_lib.sv">
-<area shape="rect" id="node2" href="$uvma__i2c__base__vseq_8sv.html" title="uvma_i2c_base_vseq.sv" alt="" coords="5,88,184,115"/>
-<area shape="rect" id="node3" href="$uvma__i2c__fix__stim__vseq_8sv.html" title="uvma_i2c_fix_stim_vseq.sv" alt="" coords="209,88,409,115"/>
-<area shape="rect" id="node4" href="$uvma__i2c__rand__stim__vseq_8sv.html" title="uvma_i2c_rand_stim\l_vseq.sv" alt="" coords="435,81,592,122"/>
-<area shape="rect" id="node5" href="$uvma__i2c__fix__ill__stim__vseq_8sv.html" title="uvma_i2c_fix_ill_stim\l_vseq.sv" alt="" coords="616,81,779,122"/>
-<area shape="rect" id="node6" href="$uvma__i2c__rand__ill__stim__vseq_8sv.html" title="uvma_i2c_rand_ill_stim\l_vseq.sv" alt="" coords="803,81,979,122"/>
-</map>

@@ -7,12 +7,12 @@ This project aims to bring the [OpenHW Group](https://www.openhwgroup.org/)'s [C
 # IP List
  Name | Description
  -----|------------
- [`uvme_cvmcu`](dv/uvme_cvmcu) | CORE-V MCU Top-Level Environment
- [`uvmt_cvmcu`](dv/uvmt_cvmcu) | CORE-V MCU Top-Level Test Bench
- [`uvme_apb_adv_timer`](dv/uvme_apb_adv_timer) | APB Advanced Timer Sub-System Environment
- [`uvme_apb_timer`](dv/uvme_apb_timer) | APB Timer Sub-System Environment
- [`uvmt_apb_adv_timer`](dv/uvmt_apb_adv_timer) | APB Advanced Timer Sub-System Test Bench
- [`uvmt_apb_timer`](dv/uvmt_apb_timer) | APB Timer Sub-System Test Bench
+ [`uvme_cvmcu_chip`](dv/chip/uvme_cvmcu_chip) | CORE-V MCU Top-Level Environment
+ [`uvmt_cvmcu_chip`](dv/chip/uvmt_cvmcu_chip) | CORE-V MCU Top-Level Test Bench
+ [`uvme_apb_adv_timer_ss`](dv/ss/uvme_apb_adv_timer_ss) | APB Advanced Timer Sub-System Environment
+ [`uvme_apb_timer_ss`](dv/ss/uvme_apb_timer_ss) | APB Timer Sub-System Environment
+ [`uvmt_apb_adv_timer_ss`](dv/ss/uvmt_apb_adv_timer_ss) | APB Advanced Timer Sub-System Test Bench
+ [`uvmt_apb_timer_ss`](dv/ss/uvmt_apb_timer_ss) | APB Timer Sub-System Test Bench
 
 
 # Installing Toolchain
@@ -43,35 +43,35 @@ git submodule update --init
 - The UVM libraries from Datum must first be installed:
 
 > ```
-> mio install uvmt_cvmcu
+> mio install uvmt_cvmcu_chip
 > ```
 
-- To run compilation, elaboration and simulation for IP `uvmt_cvmcu`, test `reg_bit_bash`, seed `1`, `high` verbosity, with waveform capture enabled, using Metrics DSim Cloud simulator:
+- To run compilation, elaboration and simulation for IP `uvmt_cvmcu_chip`, test `reg_bit_bash`, seed `1`, `high` verbosity, with waveform capture enabled, using Metrics DSim Cloud simulator:
 
 > ```
-> mio sim uvmt_cvmcu -t reg_bit_bash -s 1 -v high -w -a mdc
+> mio sim uvmt_cvmcu_chip -t reg_bit_bash -s 1 -v high -w -a mdc
 > ```
 
-- To run compilation, elaboration and simulation for IP `uvmt_apb_timer`, test `reg_hw_reset`, seed `1`, `high` verbosity, with waveform capture enabled, using the Vivado simulator:
+- To run compilation, elaboration and simulation for IP `uvmt_apb_timer_ss`, test `reg_hw_reset`, seed `1`, `high` verbosity, with waveform capture enabled, using the Vivado simulator:
 
 > ```
-> mio sim uvmt_apb_timer -t reg_hw_reset -s 1 -v high -w -a viv
+> mio sim uvmt_apb_timer_ss -t reg_hw_reset -s 1 -v high -w -a viv
 > ```
 
 # Regressions
 ## Running locally
-To run regression `sanity` for IP `uvmt_cvmcu` using the Metrics DSim Cloud simulator:
+To run regression `sanity` for IP `uvmt_cvmcu_chip` using the Metrics DSim Cloud simulator:
 
 ```
-mio regr uvmt_cvmcu sanity -a mdc
+mio regr uvmt_cvmcu_chip sanity -a mdc
 ```
 
 ## Reports
 
 | IP | Sanity | Nightly | Weekly |
 |----| ------ | ------- | ------ |
-| uvmt_cvmcu | Coming Soon | Coming Soon | Coming Soon |
-| uvmt_apb_timer | [Tests](https://hdl.io/regressions/mcu_sanity/uvmt_apb_timer_sanity.html) | [Tests](https://hdl.io/regressions/mcu_nightly/uvmt_apb_timer_nightly.html) | [Tests](https://hdl.io/regressions/mcu_weekly/uvmt_apb_timer_weekly.html) |
-| uvmt_apb_adv_timer | [Tests](https://hdl.io/regressions/mcu_sanity/uvmt_apb_adv_timer_sanity.html) | [Tests](https://hdl.io/regressions/mcu_nightly/uvmt_apb_adv_timer_nightly.html) | [Tests](https://hdl.io/regressions/mcu_weekly/uvmt_apb_adv_timer_weekly.html) |
+| uvmt_cvmcu_chip | Coming Soon | Coming Soon | Coming Soon |
+| uvmt_apb_timer_ss | [Tests](https://hdl.io/regressions/mcu_sanity/uvmt_apb_timer_sanity.html) | [Tests](https://hdl.io/regressions/mcu_nightly/uvmt_apb_timer_nightly.html) | [Tests](https://hdl.io/regressions/mcu_weekly/uvmt_apb_timer_weekly.html) |
+| uvmt_apb_adv_timer_ss | [Tests](https://hdl.io/regressions/mcu_sanity/uvmt_apb_adv_timer_sanity.html) | [Tests](https://hdl.io/regressions/mcu_nightly/uvmt_apb_adv_timer_nightly.html) | [Tests](https://hdl.io/regressions/mcu_weekly/uvmt_apb_adv_timer_weekly.html) |
 
 
