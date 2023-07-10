@@ -29,11 +29,12 @@ ip:
 dependencies:
   "datum/uvmx"      : "~1.0"
   "datum/uvml_sb"   : "~1.0"
-  "datum/uvma_tcounter_b": "~1.0"
-  "datum/uvme_tcounter_b": "~1.0"
-  "datum/uvma_tprescaler_b": "~1.0"
-  "datum/uvme_tprescaler_b": "~1.0"
-  "datum/uvma_apb": "~1.0"
+  "datum/uvma_irq"  : "~1.0"
+  "datum/uvma_tcounter_b": "^"
+  "datum/uvme_tcounter_b": "^"
+  "datum/uvma_tprescaler_b": "^"
+  "datum/uvme_tprescaler_b": "^"
+  "datum/uvma_apb": "^"
 
 structure:
   scripts-path : "bin"

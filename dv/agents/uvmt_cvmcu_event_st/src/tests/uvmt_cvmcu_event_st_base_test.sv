@@ -92,7 +92,7 @@ class uvmt_cvmcu_event_st_base_test_c extends uvmx_agent_test_c #(
       reset_vseq = uvma_reset_pulse_vseq_c::type_id::create("reset_vseq");
    endfunction
 
-   /**
+/**
     * Runs low_speed_clk_i_vseq.
     */
    virtual task pre_reset_phase(uvm_phase phase);

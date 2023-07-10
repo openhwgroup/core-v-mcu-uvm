@@ -154,62 +154,62 @@ class uvme_cvmcu_chip_apb_gpio_reg_block_c extends uvmx_reg_block_c;
       default_map.add_reg(
          .rg    (setgpio),
          .offset(`UVM_REG_ADDR_WIDTH'h0),
-         .rights("RW")
+         .rights("WO")
       );
       default_map.add_reg(
          .rg    (clrgpio),
          .offset(`UVM_REG_ADDR_WIDTH'h4),
-         .rights("RW")
+         .rights("WO")
       );
       default_map.add_reg(
          .rg    (toggpio),
          .offset(`UVM_REG_ADDR_WIDTH'h8),
-         .rights("RW")
+         .rights("WO")
       );
       default_map.add_reg(
          .rg    (pin0),
          .offset(`UVM_REG_ADDR_WIDTH'h10),
-         .rights("RW")
+         .rights("RO")
       );
       default_map.add_reg(
          .rg    (pin1),
          .offset(`UVM_REG_ADDR_WIDTH'h14),
-         .rights("RW")
+         .rights("RO")
       );
       default_map.add_reg(
          .rg    (pin2),
          .offset(`UVM_REG_ADDR_WIDTH'h18),
-         .rights("RW")
+         .rights("RO")
       );
       default_map.add_reg(
          .rg    (pin3),
          .offset(`UVM_REG_ADDR_WIDTH'h1c),
-         .rights("RW")
+         .rights("RO")
       );
       default_map.add_reg(
          .rg    (out0),
          .offset(`UVM_REG_ADDR_WIDTH'h20),
-         .rights("RW")
+         .rights("WO")
       );
       default_map.add_reg(
          .rg    (out1),
          .offset(`UVM_REG_ADDR_WIDTH'h24),
-         .rights("RW")
+         .rights("WO")
       );
       default_map.add_reg(
          .rg    (out2),
          .offset(`UVM_REG_ADDR_WIDTH'h28),
-         .rights("RW")
+         .rights("WO")
       );
       default_map.add_reg(
          .rg    (out3),
          .offset(`UVM_REG_ADDR_WIDTH'h2c),
-         .rights("RW")
+         .rights("WO")
       );
       default_map.add_reg(
          .rg    (setsel),
          .offset(`UVM_REG_ADDR_WIDTH'h30),
-         .rights("RW")
+         .rights("WO")
       );
       default_map.add_reg(
          .rg    (rdstat),
@@ -219,12 +219,12 @@ class uvme_cvmcu_chip_apb_gpio_reg_block_c extends uvmx_reg_block_c;
       default_map.add_reg(
          .rg    (setmode),
          .offset(`UVM_REG_ADDR_WIDTH'h38),
-         .rights("RW")
+         .rights("WO")
       );
       default_map.add_reg(
          .rg    (setint),
          .offset(`UVM_REG_ADDR_WIDTH'h3c),
-         .rights("RW")
+         .rights("WO")
       );
       default_map.add_reg(
          .rg    (intack),

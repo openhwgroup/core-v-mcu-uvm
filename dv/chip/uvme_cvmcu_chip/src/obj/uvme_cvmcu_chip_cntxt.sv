@@ -38,6 +38,8 @@ class uvme_cvmcu_chip_cntxt_c extends uvmx_chip_env_cntxt_c #(
    uvma_obi_cntxt_c  data_obi_agent_cntxt; ///< Data memory OBI agent context
    uvma_cvmcu_event_cntxt_c  event_agent_cntxt; ///< Event agent context
    uvma_cvmcu_dbg_cntxt_c  dbg_agent_cntxt; ///< Debug agent context
+   uvma_irq_cntxt_c  irq_l1_agent_cntxt; /// First Level IRQ agent context
+   uvma_irq_cntxt_c  irq_l2_agent_cntxt; /// Platform-Specific (Second Level) IRQ agent context
    /// @}
 
    /// @name Sub-Systems
@@ -88,6 +90,8 @@ class uvme_cvmcu_chip_cntxt_c extends uvmx_chip_env_cntxt_c #(
       `uvm_field_object(data_obi_agent_cntxt, UVM_DEFAULT)
       `uvm_field_object(event_agent_cntxt, UVM_DEFAULT)
       `uvm_field_object(dbg_agent_cntxt, UVM_DEFAULT)
+      `uvm_field_object(irq_l1_agent_cntxt, UVM_DEFAULT)
+      `uvm_field_object(irq_l2_agent_cntxt, UVM_DEFAULT)
       `uvm_field_object(apb_timer_ss_env_cntxt, UVM_DEFAULT)
       `uvm_field_object(apb_adv_timer_ss_env_cntxt, UVM_DEFAULT)
       `uvm_field_object(udma_qspi0_ingress_sb_cntxt , UVM_DEFAULT)
@@ -139,6 +143,8 @@ class uvme_cvmcu_chip_cntxt_c extends uvmx_chip_env_cntxt_c #(
       data_obi_agent_cntxt = uvma_obi_cntxt_c::type_id::create("data_obi_cntxt");
       event_agent_cntxt = uvma_cvmcu_event_cntxt_c::type_id::create("event_cntxt");
       dbg_agent_cntxt = uvma_cvmcu_dbg_cntxt_c::type_id::create("dbg_cntxt");
+      irq_l1_agent_cntxt = uvma_irq_cntxt_c::type_id::create("irq_l1_cntxt");
+      irq_l2_agent_cntxt = uvma_irq_cntxt_c::type_id::create("irq_l2_cntxt");
       apb_timer_ss_env_cntxt  = uvme_apb_timer_ss_cntxt_c::type_id::create("apb_timer_ss_env_cntxt");
       apb_adv_timer_ss_env_cntxt  = uvme_apb_adv_timer_ss_cntxt_c::type_id::create("apb_adv_timer_ss_env_cntxt");
       udma_qspi0_ingress_sb_cntxt = uvml_sb_simplex_cntxt_c::type_id::create("udma_qspi0_ingress_sb_cntxt");

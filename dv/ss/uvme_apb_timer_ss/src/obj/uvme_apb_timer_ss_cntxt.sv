@@ -23,6 +23,7 @@ class uvme_apb_timer_ss_cntxt_c extends uvmx_ss_env_cntxt_c #(
    /// @name Agents
    /// @{
    uvma_apb_cntxt_c  proc_agent_cntxt; ///< Processor interface agent context
+   uvma_irq_cntxt_c  irq_events_agent_cntxt; /// Events IRQ agent context
    /// @}
 
    /// @name Blocks
@@ -37,6 +38,7 @@ class uvme_apb_timer_ss_cntxt_c extends uvmx_ss_env_cntxt_c #(
    `uvm_object_utils_begin(uvme_apb_timer_ss_cntxt_c)
       `uvm_field_enum(uvmx_reset_state_enum, reset_state, UVM_DEFAULT)
       `uvm_field_object(proc_agent_cntxt, UVM_DEFAULT)
+      `uvm_field_object(irq_events_agent_cntxt, UVM_DEFAULT)
       `uvm_field_object(counter_lo_b_env_cntxt , UVM_DEFAULT)
       `uvm_field_object(counter_hi_b_env_cntxt , UVM_DEFAULT)
       `uvm_field_object(prescaler_lo_b_env_cntxt , UVM_DEFAULT)
@@ -56,6 +58,7 @@ class uvme_apb_timer_ss_cntxt_c extends uvmx_ss_env_cntxt_c #(
     */
    virtual function void create_objects();
       proc_agent_cntxt = uvma_apb_cntxt_c::type_id::create("proc_cntxt");
+      irq_events_agent_cntxt = uvma_irq_cntxt_c::type_id::create("irq_events_cntxt");
       counter_lo_b_env_cntxt  = uvme_tcounter_b_cntxt_c::type_id::create("counter_lo_b_env_cntxt");
       counter_hi_b_env_cntxt  = uvme_tcounter_b_cntxt_c::type_id::create("counter_hi_b_env_cntxt");
       prescaler_lo_b_env_cntxt  = uvme_tprescaler_b_cntxt_c::type_id::create("prescaler_lo_b_env_cntxt");

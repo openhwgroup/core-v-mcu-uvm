@@ -16,7 +16,7 @@ All rights reserved.
 @section uvmt_apb_adv_timer_ss_user_guide_revision_history Revision History
 Revision  | Date | Description
 --------- | ---- | -----------
-1.0 | 2023/5/23 | Initial Version
+1.0 | 2023/7/10 | Initial Version
 
 @subsection uvmt_apb_adv_timer_ss_user_guide_description Description
 

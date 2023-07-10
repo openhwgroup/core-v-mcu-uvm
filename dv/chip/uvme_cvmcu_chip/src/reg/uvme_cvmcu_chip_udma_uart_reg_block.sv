@@ -160,7 +160,7 @@ class uvme_cvmcu_chip_udma_uart_reg_block_c extends uvmx_reg_block_c;
       default_map.add_reg(
          .rg    (status),
          .offset(`UVM_REG_ADDR_WIDTH'h20),
-         .rights("RW")
+         .rights("RO")
       );
       default_map.add_reg(
          .rg    (uart_setup),

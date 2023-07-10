@@ -13,6 +13,7 @@
  */
 module uvmt_apb_adv_timer_ss_dut_wrap (
    uvma_apb_if  proc_if, ///< Processor access agent interface
+   uvma_irq_if  irq_events_if, ///< Events IRQ agent interface
    uvme_apb_adv_timer_ss_probe_if  probe_if, ///< Misc. signals interface
    uvma_clk_if    sys_clk_if, ///< System clock interface
    uvma_clk_if    low_speed_clk_if, ///< Low speed clock interface
@@ -37,6 +38,11 @@ module uvmt_apb_adv_timer_ss_dut_wrap (
       .low_speed_clk_i(low_speed_clk_if.clk),
       .HRESETn(sys_reset_if.reset_n)
    );
+
+   /// @name IRQ Lines
+   /// @{
+   assign irq_events_if.lines = dut.events_o;
+   /// @}
 
    /// @name adv_timer0 block
    /// @{

@@ -465,8 +465,8 @@ class uvme_cvmcu_chip_cov_model_c extends uvmx_chip_env_cov_model_c #(
     */
    function new(string name="uvme_cvmcu_chip_cov_model", uvm_component parent=null);
       super.new(name, parent);
-      cvmcu_chip_cfg_cg       = new();
-      cvmcu_chip_cntxt_cg     = new();
+      cvmcu_chip_cfg_cg   = new();
+      cvmcu_chip_cntxt_cg = new();
       cvmcu_chip_probe_vif_sys_clk_cg = new();
       cvmcu_chip_probe_vif_jtag_clk_cg = new();
       cvmcu_chip_udma_qspi0_ingress_exp_cg = new();

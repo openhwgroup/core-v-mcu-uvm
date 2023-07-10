@@ -20,6 +20,8 @@ module uvme_cvmcu_chip_chkr (
    uvma_obi_if  data_obi_if, ///< Data memory OBI interface
    uvma_cvmcu_event_if  event_if, ///< Event interface
    uvma_cvmcu_dbg_if  dbg_if, ///< Debug interface
+   uvma_irq_if  irq_l1_if, ///< First Level IRQ interface
+   uvma_irq_if  irq_l2_if, ///< Platform-Specific (Second Level) IRQ interface
    uvme_cvmcu_chip_probe_if  probe_if ///< Misc. signals interface
 );
 

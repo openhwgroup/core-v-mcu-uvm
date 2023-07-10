@@ -49,7 +49,9 @@ interface uvme_apb_timer_ss_probe_if (
     */
    modport sys_clk_mp (
       clocking sys_clk_cb,
-      input    HCLK   );
+      input    HCLK,
+      input    HRESETn
+   );
    /**
     * Signals clocked to 'ref_clk_i'.
     */

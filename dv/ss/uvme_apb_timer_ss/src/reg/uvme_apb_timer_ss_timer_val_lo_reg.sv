@@ -1,4 +1,4 @@
-// Copyright 2023 Acme Enterprises
+// Copyright 2023 Datum Technology Corporation
 // All rights reserved.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // THE FOLLOWING IS GENERATED CODE: ANY CHANGES MADE WILL BE ERASED UPON THE NEXT ITERATION
@@ -10,7 +10,7 @@
 
 class uvme_apb_timer_ss_timer_val_lo_reg_c extends uvmx_reg_c;
 
-   rand uvmx_reg_field_c  timer_val_lo; ///< 32-bit counter value  low 32-bits in 64-bit mode
+   rand uvmx_reg_field_c  timer_val_lo; ///< 32-bit counter value low 32-bits in 64-bit mode
 
 
    `uvm_object_utils_begin(uvme_apb_timer_ss_timer_val_lo_reg_c)

@@ -21,6 +21,7 @@ class uvme_apb_adv_timer_ss_cfg_c extends uvmx_ss_env_cfg_c;
    /// @name Agents
    /// @{
    rand uvma_apb_cfg_c  proc_agent_cfg; ///< Processor access agent configuration
+   rand uvma_irq_cfg_c  irq_events_agent_cfg; /// Events IRQ agent configuration
    /// @}
 
 
@@ -43,10 +44,11 @@ class uvme_apb_adv_timer_ss_cfg_c extends uvmx_ss_env_cfg_c;
       `uvm_field_int (                         trn_log_enabled      , UVM_DEFAULT)
       `uvm_field_int(reg_block_base_address, UVM_DEFAULT)
       `uvm_field_object(proc_agent_cfg, UVM_DEFAULT)
-      `uvm_field_object(adv_timer0_b_env_cfg , UVM_DEFAULT)
-      `uvm_field_object(adv_timer1_b_env_cfg , UVM_DEFAULT)
-      `uvm_field_object(adv_timer2_b_env_cfg , UVM_DEFAULT)
-      `uvm_field_object(adv_timer3_b_env_cfg , UVM_DEFAULT)
+      `uvm_field_object(irq_events_agent_cfg, UVM_DEFAULT)
+      `uvm_field_object(adv_timer0_b_env_cfg, UVM_DEFAULT)
+      `uvm_field_object(adv_timer1_b_env_cfg, UVM_DEFAULT)
+      `uvm_field_object(adv_timer2_b_env_cfg, UVM_DEFAULT)
+      `uvm_field_object(adv_timer3_b_env_cfg, UVM_DEFAULT)
    `uvm_object_utils_end
 
 
@@ -68,6 +70,18 @@ class uvme_apb_adv_timer_ss_cfg_c extends uvmx_ss_env_cfg_c;
       proc_agent_cfg.is_active == UVM_PASSIVE;
       proc_agent_cfg.trn_log_enabled == trn_log_enabled;
       proc_agent_cfg.cov_model_enabled == 0;
+   }
+
+
+   /**
+    * Sets Events IRQ agent configuration.
+    */
+   constraint irq_events_agent_cfg_cons {
+      irq_events_agent_cfg.enabled == enabled;
+      irq_events_agent_cfg.num_lines == 4;
+      irq_events_agent_cfg.is_active == UVM_PASSIVE;
+      irq_events_agent_cfg.trn_log_enabled == trn_log_enabled;
+      irq_events_agent_cfg.cov_model_enabled == 0;
    }
 
    /**
@@ -126,10 +140,18 @@ class uvme_apb_adv_timer_ss_cfg_c extends uvmx_ss_env_cfg_c;
     */
    virtual function void create_objects();
       proc_agent_cfg = uvma_apb_cfg_c::type_id::create("proc_cfg");
+      irq_events_agent_cfg = uvma_irq_cfg_c::type_id::create("irq_events_cfg");
       adv_timer0_b_env_cfg = uvme_adv_timer_b_cfg_c::type_id::create("adv_timer0_b_env_cfg");
       adv_timer1_b_env_cfg = uvme_adv_timer_b_cfg_c::type_id::create("adv_timer1_b_env_cfg");
       adv_timer2_b_env_cfg = uvme_adv_timer_b_cfg_c::type_id::create("adv_timer2_b_env_cfg");
       adv_timer3_b_env_cfg = uvme_adv_timer_b_cfg_c::type_id::create("adv_timer3_b_env_cfg");
+   endfunction
+
+   /**
+    * Configures IRQ lines.
+    */
+   virtual function void cfg_irq();
+      irq_events_agent_cfg.lines = uvme_apb_adv_timer_ss_events_irq_lines;
    endfunction
 
 endclass : uvme_apb_adv_timer_ss_cfg_c

@@ -24,6 +24,7 @@ class uvme_apb_timer_ss_env_c extends uvmx_ss_env_c #(
    /// @name Agents
    /// @{
    uvma_apb_agent_c  proc_agent; ///< Processor interface agent
+   uvma_irq_agent_c  irq_events_agent; /// Events IRQ agent
    /// @}
 
    /// @name Blocks
@@ -55,6 +56,7 @@ class uvme_apb_timer_ss_env_c extends uvmx_ss_env_c #(
     */
    virtual function void assign_cfg();
       uvm_config_db#(uvma_apb_cfg_c)::set(this, "proc_agent", "cfg", cfg.proc_agent_cfg);
+      uvm_config_db#(uvma_irq_cfg_c)::set(this, "irq_events_agent", "cfg", cfg.irq_events_agent_cfg);
       uvm_config_db#(uvme_tcounter_b_cfg_c)::set(this, "counter_lo_b_env", "cfg", cfg.counter_lo_b_env_cfg);
       uvm_config_db#(uvme_tcounter_b_cfg_c)::set(this, "counter_hi_b_env", "cfg", cfg.counter_hi_b_env_cfg);
       uvm_config_db#(uvme_tprescaler_b_cfg_c)::set(this, "prescaler_lo_b_env", "cfg", cfg.prescaler_lo_b_env_cfg);
@@ -66,6 +68,7 @@ class uvme_apb_timer_ss_env_c extends uvmx_ss_env_c #(
     */
    virtual function void assign_cntxt();
       uvm_config_db#(uvma_apb_cntxt_c)::set(this, "proc_agent", "cntxt", cntxt.proc_agent_cntxt);
+      uvm_config_db#(uvma_irq_cntxt_c)::set(this, "irq_events_agent", "cntxt", cntxt.irq_events_agent_cntxt);
       uvm_config_db#(uvme_tcounter_b_cntxt_c)::set(this, "counter_lo_b_env", "cntxt", cntxt.counter_lo_b_env_cntxt);
       uvm_config_db#(uvme_tcounter_b_cntxt_c)::set(this, "counter_hi_b_env", "cntxt", cntxt.counter_hi_b_env_cntxt);
       uvm_config_db#(uvme_tprescaler_b_cntxt_c)::set(this, "prescaler_lo_b_env", "cntxt", cntxt.prescaler_lo_b_env_cntxt);
@@ -77,6 +80,7 @@ class uvme_apb_timer_ss_env_c extends uvmx_ss_env_c #(
     */
    virtual function void create_agents();
       proc_agent = uvma_apb_agent_c::type_id::create("proc_agent", this);
+      irq_events_agent = uvma_irq_agent_c::type_id::create("irq_events_agent", this);
    endfunction
 
    /**

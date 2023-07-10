@@ -13,6 +13,7 @@
  */
 module uvmt_apb_timer_ss_dut_wrap (
    uvma_apb_if  proc_if, ///< Processor interface agent interface
+   uvma_irq_if  irq_events_if, ///< Events IRQ agent interface
    uvme_apb_timer_ss_probe_if  probe_if, ///< Misc. signals interface
    uvma_clk_if    sys_clk_if, ///< Processor clock interface
    uvma_clk_if    ref_clk_if, ///< Reference clock interface
@@ -39,6 +40,12 @@ module uvmt_apb_timer_ss_dut_wrap (
       .ref_clk_i(ref_clk_if.clk),
       .HRESETn(sys_reset_if.reset_n)
    );
+
+   /// @name IRQ Lines
+   /// @{
+   assign irq_events_if.lines[0] = dut..;
+   assign irq_events_if.lines[1] = dut..;
+   /// @}
 
    /// @name counter_lo block
    /// @{

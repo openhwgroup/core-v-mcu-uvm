@@ -65,8 +65,8 @@ class uvme_apb_adv_timer_ss_cov_model_c extends uvmx_ss_env_cov_model_c #(
     */
    function new(string name="uvme_apb_adv_timer_ss_cov_model", uvm_component parent=null);
       super.new(name, parent);
-      apb_adv_timer_ss_cfg_cg       = new();
-      apb_adv_timer_ss_cntxt_cg     = new();
+      apb_adv_timer_ss_cfg_cg   = new();
+      apb_adv_timer_ss_cntxt_cg = new();
       apb_adv_timer_ss_probe_vif_sys_clk_cg = new();
       apb_adv_timer_ss_probe_vif_low_speed_clk_cg = new();
    endfunction

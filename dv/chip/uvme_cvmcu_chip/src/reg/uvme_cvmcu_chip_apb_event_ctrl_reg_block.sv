@@ -273,7 +273,7 @@ class uvme_cvmcu_chip_apb_event_ctrl_reg_block_c extends uvmx_reg_block_c;
       default_map.add_reg(
          .rg    (event_fifo),
          .offset(`UVM_REG_ADDR_WIDTH'h90),
-         .rights("RW")
+         .rights("RO")
       );
    endfunction
 

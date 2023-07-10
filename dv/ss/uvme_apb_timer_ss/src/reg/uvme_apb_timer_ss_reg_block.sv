@@ -1,4 +1,4 @@
-// Copyright 2023 Acme Enterprises
+// Copyright 2023 Datum Technology Corporation
 // All rights reserved.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // THE FOLLOWING IS GENERATED CODE: ANY CHANGES MADE WILL BE ERASED UPON THE NEXT ITERATION
@@ -30,8 +30,8 @@ class uvme_apb_timer_ss_reg_block_c extends uvmx_reg_block_c;
    /// @{
    rand uvme_apb_timer_ss_cfg_reg_low_reg_c  cfg_reg_low; ///< 1 = 64-bit mode, 0=32-bit mode
    rand uvme_apb_timer_ss_cfg_reg_hi_reg_c  cfg_reg_hi; ///< 1 = 64-bit mode, 0=32-bit mode
-   rand uvme_apb_timer_ss_timer_val_lo_reg_c  timer_val_lo; ///< 32-bit counter value  low 32-bits in 64-bit mode
-   rand uvme_apb_timer_ss_timer_val_hi_reg_c  timer_val_hi; ///< 32-bit counter value  high 32-bits in 64-bit mode
+   rand uvme_apb_timer_ss_timer_val_lo_reg_c  timer_val_lo; ///< 32-bit counter value low 32-bits in 64-bit mode
+   rand uvme_apb_timer_ss_timer_val_hi_reg_c  timer_val_hi; ///< 32-bit counter value high 32-bits in 64-bit mode
    rand uvme_apb_timer_ss_timer_cmp_lo_reg_c  timer_cmp_lo; ///< compare value for low 32-bit counter
    rand uvme_apb_timer_ss_timer_cmp_hi_reg_c  timer_cmp_hi; ///< compare value for high 32-bit counter
    rand uvme_apb_timer_ss_timer_start_lo_reg_c  timer_start_lo; ///< Write strobe address for starting low counter
@@ -148,22 +148,22 @@ class uvme_apb_timer_ss_reg_block_c extends uvmx_reg_block_c;
       default_map.add_reg(
          .rg    (timer_start_lo),
          .offset(`UVM_REG_ADDR_WIDTH'h18),
-         .rights("RW")
+         .rights("WO")
       );
       default_map.add_reg(
          .rg    (timer_start_hi),
          .offset(`UVM_REG_ADDR_WIDTH'h1c),
-         .rights("RW")
+         .rights("WO")
       );
       default_map.add_reg(
          .rg    (timer_reset_lo),
          .offset(`UVM_REG_ADDR_WIDTH'h20),
-         .rights("RW")
+         .rights("WO")
       );
       default_map.add_reg(
          .rg    (timer_reset_hi),
          .offset(`UVM_REG_ADDR_WIDTH'h24),
-         .rights("RW")
+         .rights("WO")
       );
    endfunction
 

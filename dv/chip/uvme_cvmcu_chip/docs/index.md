@@ -34,7 +34,7 @@ ID | Name | Version
 
 
 @section uvme_cvmcu_chip_release_history Release History
-@subsection uvme_cvmcu_chip_v1_0_0 2023/5/23 - 1.0.0
+@subsection uvme_cvmcu_chip_v1_0_0 2023/7/10 - 1.0.0
 - Initial release
 
 

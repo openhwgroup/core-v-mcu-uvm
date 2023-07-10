@@ -39,6 +39,8 @@ class uvme_cvmcu_chip_env_c extends uvmx_chip_env_c #(
    uvma_obi_agent_c  data_obi_agent; ///< Data memory OBI agent
    uvma_cvmcu_event_agent_c  event_agent; ///< Event agent
    uvma_cvmcu_dbg_agent_c  dbg_agent; ///< Debug agent
+   uvma_irq_agent_c  irq_l1_agent; /// First Level IRQ agent
+   uvma_irq_agent_c  irq_l2_agent; /// Platform-Specific (Second Level) IRQ agent
    /// @}
 
    /// @name Sub-Systems
@@ -83,16 +85,10 @@ class uvme_cvmcu_chip_env_c extends uvmx_chip_env_c #(
       uvm_config_db#(uvma_obi_cfg_c)::set(this, "data_obi_agent", "cfg", cfg.data_obi_agent_cfg);
       uvm_config_db#(uvma_cvmcu_event_cfg_c)::set(this, "event_agent", "cfg", cfg.event_agent_cfg);
       uvm_config_db#(uvma_cvmcu_dbg_cfg_c)::set(this, "dbg_agent", "cfg", cfg.dbg_agent_cfg);
+      uvm_config_db#(uvma_irq_cfg_c)::set(this, "irq_l1_agent", "cfg", cfg.irq_l1_agent_cfg);
+      uvm_config_db#(uvma_irq_cfg_c)::set(this, "irq_l2_agent", "cfg", cfg.irq_l2_agent_cfg);
       uvm_config_db#(uvme_apb_timer_ss_cfg_c)::set(this, "apb_timer_ss_env", "cfg", cfg.apb_timer_ss_env_cfg);
       uvm_config_db#(uvme_apb_adv_timer_ss_cfg_c)::set(this, "apb_adv_timer_ss_env", "cfg", cfg.apb_adv_timer_ss_env_cfg);
-   endfunction
-
-   /**
-    * Distributes register blocks to sub-systems.
-    */
-   virtual function void assign_reg_blocks();
-      cntxt.apb_timer_ss_env_cntxt.reg_model = cntxt.reg_model.timer;
-      cntxt.apb_adv_timer_ss_env_cntxt.reg_model = cntxt.reg_model.adv_timer;
    endfunction
 
    /**
@@ -115,8 +111,18 @@ class uvme_cvmcu_chip_env_c extends uvmx_chip_env_c #(
       uvm_config_db#(uvma_obi_cntxt_c)::set(this, "data_obi_agent", "cntxt", cntxt.data_obi_agent_cntxt);
       uvm_config_db#(uvma_cvmcu_event_cntxt_c)::set(this, "event_agent", "cntxt", cntxt.event_agent_cntxt);
       uvm_config_db#(uvma_cvmcu_dbg_cntxt_c)::set(this, "dbg_agent", "cntxt", cntxt.dbg_agent_cntxt);
+      uvm_config_db#(uvma_irq_cntxt_c)::set(this, "irq_l1_agent", "cntxt", cntxt.irq_l1_agent_cntxt);
+      uvm_config_db#(uvma_irq_cntxt_c)::set(this, "irq_l2_agent", "cntxt", cntxt.irq_l2_agent_cntxt);
       uvm_config_db#(uvme_apb_timer_ss_cntxt_c)::set(this, "apb_timer_ss_env", "cntxt", cntxt.apb_timer_ss_env_cntxt);
       uvm_config_db#(uvme_apb_adv_timer_ss_cntxt_c)::set(this, "apb_adv_timer_ss_env", "cntxt", cntxt.apb_adv_timer_ss_env_cntxt);
+   endfunction
+
+   /**
+    * Distributes register blocks to sub-systems.
+    */
+   virtual function void assign_reg_blocks();
+      cntxt.apb_timer_ss_env_cntxt.reg_model = cntxt.reg_model.timer;
+      cntxt.apb_adv_timer_ss_env_cntxt.reg_model = cntxt.reg_model.adv_timer;
    endfunction
 
    /**
@@ -139,6 +145,8 @@ class uvme_cvmcu_chip_env_c extends uvmx_chip_env_c #(
       data_obi_agent = uvma_obi_agent_c::type_id::create("data_obi_agent", this);
       event_agent = uvma_cvmcu_event_agent_c::type_id::create("event_agent", this);
       dbg_agent = uvma_cvmcu_dbg_agent_c::type_id::create("dbg_agent", this);
+      irq_l1_agent = uvma_irq_agent_c::type_id::create("irq_l1_agent", this);
+      irq_l2_agent = uvma_irq_agent_c::type_id::create("irq_l2_agent", this);
    endfunction
 
    /**

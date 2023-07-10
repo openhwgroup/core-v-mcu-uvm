@@ -1,8 +1,7 @@
 // Copyright 2023 Datum Technology Corporation
 // All rights reserved.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// This file contains sample code that demonstrates how to add an instance of the APB simple timer unit
-// Sub-System UVM Environment to another UVM environment.
+// This file contains sample code that demonstrates how to add an instance of the APB simple timer unit Sub-System UVM Environment to another environment.
 // NOTE: It is recommended to split up class member declaration and definition; these classes are all inline to keep
 //       the example short.
 

@@ -1,4 +1,4 @@
-// Copyright 2023 Acme Enterprises
+// Copyright 2023 Datum Technology Corporation
 // All rights reserved.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // THE FOLLOWING IS GENERATED CODE: ANY CHANGES MADE WILL BE ERASED UPON THE NEXT ITERATION
@@ -262,7 +262,7 @@ class uvme_apb_adv_timer_ss_reg_block_c extends uvmx_reg_block_c;
       default_map.add_reg(
          .rg    (t0_cmd),
          .offset(`UVM_REG_ADDR_WIDTH'h0),
-         .rights("RW")
+         .rights("WO")
       );
       default_map.add_reg(
          .rg    (t0_config),
@@ -297,12 +297,12 @@ class uvme_apb_adv_timer_ss_reg_block_c extends uvmx_reg_block_c;
       default_map.add_reg(
          .rg    (t0_counter),
          .offset(`UVM_REG_ADDR_WIDTH'h2c),
-         .rights("RW")
+         .rights("WO")
       );
       default_map.add_reg(
          .rg    (t1_cmd),
          .offset(`UVM_REG_ADDR_WIDTH'h40),
-         .rights("RW")
+         .rights("WO")
       );
       default_map.add_reg(
          .rg    (t1_config),
@@ -337,12 +337,12 @@ class uvme_apb_adv_timer_ss_reg_block_c extends uvmx_reg_block_c;
       default_map.add_reg(
          .rg    (t1_counter),
          .offset(`UVM_REG_ADDR_WIDTH'h6c),
-         .rights("RW")
+         .rights("WO")
       );
       default_map.add_reg(
          .rg    (t2_cmd),
          .offset(`UVM_REG_ADDR_WIDTH'h80),
-         .rights("RW")
+         .rights("WO")
       );
       default_map.add_reg(
          .rg    (t2_config),
@@ -377,12 +377,12 @@ class uvme_apb_adv_timer_ss_reg_block_c extends uvmx_reg_block_c;
       default_map.add_reg(
          .rg    (t2_counter),
          .offset(`UVM_REG_ADDR_WIDTH'hac),
-         .rights("RW")
+         .rights("WO")
       );
       default_map.add_reg(
          .rg    (t3_cmd),
          .offset(`UVM_REG_ADDR_WIDTH'hc0),
-         .rights("RW")
+         .rights("WO")
       );
       default_map.add_reg(
          .rg    (t3_config),
@@ -417,7 +417,7 @@ class uvme_apb_adv_timer_ss_reg_block_c extends uvmx_reg_block_c;
       default_map.add_reg(
          .rg    (t3_counter),
          .offset(`UVM_REG_ADDR_WIDTH'hec),
-         .rights("RW")
+         .rights("WO")
       );
       default_map.add_reg(
          .rg    (event_cfg),

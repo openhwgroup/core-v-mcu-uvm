@@ -1,7 +1,7 @@
 // Copyright 2023 Datum Technology Corporation
 // All rights reserved.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// This file contains sample code that demonstrates how to add a new sequence to the CORE-V-MCU Sub-System environment.
+// This file contains sample code that demonstrates how to add a new sequence to the CORE-V-MCU Chip environment.
 
 
 `ifndef __UVME_CVMCU_CHIP_EXAMPLE_VSEQ_SV__

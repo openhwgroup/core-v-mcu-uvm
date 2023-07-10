@@ -19,13 +19,17 @@ module uvmt_cvmcu_chip_dut_wrap (
    uvma_obi_if  data_obi_if, ///< Data memory OBI agent interface
    uvma_cvmcu_event_if  event_if, ///< Event agent interface
    uvma_cvmcu_dbg_if  dbg_if, ///< Debug agent interface
+   uvma_irq_if  irq_l1_if, ///< First Level IRQ agent interface
+   uvma_irq_if  irq_l2_if, ///< Platform-Specific (Second Level) IRQ agent interface
    uvma_apb_if  apb_timer__proc_if, ///< apb_timer sub-system Processor interface agent interface
+   uvma_irq_if  apb_timer__irq_events_if, ///< apb_timer sub-system Events IRQ agent interface
    uvma_tcounter_b_if  apb_timer__counter_lo_if, ///< apb_timer sub-system Counter block 0 block interface
    uvma_tcounter_b_if  apb_timer__counter_hi_if, ///< apb_timer sub-system Counter block 1 block interface
    uvma_tprescaler_b_if  apb_timer__prescaler_lo_if, ///< apb_timer sub-system Prescaler block 0 block interface
    uvma_tprescaler_b_if  apb_timer__prescaler_hi_if, ///< apb_timer sub-system Prescaler block 1 block interface
    uvme_apb_timer_ss_probe_if  apb_timer__probe_if, ///< apb_timer sub-system probe interface
    uvma_apb_if  apb_adv_timer__proc_if, ///< apb_adv_timer sub-system Processor access agent interface
+   uvma_irq_if  apb_adv_timer__irq_events_if, ///< apb_adv_timer sub-system Events IRQ agent interface
    uvma_adv_timer_b_if  apb_adv_timer__adv_timer0_if, ///< apb_adv_timer sub-system Advanced timer 0 block interface
    uvma_adv_timer_b_if  apb_adv_timer__adv_timer1_if, ///< apb_adv_timer sub-system Advanced timer 1 block interface
    uvma_adv_timer_b_if  apb_adv_timer__adv_timer2_if, ///< apb_adv_timer sub-system Advanced timer 2 block interface
@@ -139,6 +143,19 @@ module uvmt_cvmcu_chip_dut_wrap (
       assign data_obi_if.rreadypar = 0;
       assign data_obi_if.rchk = 0;
    endgenerate
+   /// @}
+
+   /// @name IRQ Lines
+   /// @{
+   assign irq_l1_if.clk = dut.i_soc_domain.fc_subsystem_i.clk_i;
+   assign irq_l1_if.reset_n = dut.i_soc_domain.fc_subsystem_i.rst_ni;
+   assign irq_l1_if.lines = dut.i_soc_domain.fc_subsystem_i.r_int;
+   assign irq_l2_if.clk = dut.i_soc_domain.soc_peripherals_i.u_evnt_gen.u_arbiter.clk_i;
+   assign irq_l2_if.reset_n = dut.i_soc_domain.soc_peripherals_i.u_evnt_gen.u_arbiter.rstn_i;
+   assign irq_l2_if.lines = dut.i_soc_domain.soc_peripherals_i.u_evnt_gen.u_arbiter.grant_o;
+   assign apb_timer__irq_events_if.lines[0] = dut.i_soc_domain.soc_peripherals_i.i_apb_timer_unit.irq_lo_o;
+   assign apb_timer__irq_events_if.lines[1] = dut.i_soc_domain.soc_peripherals_i.i_apb_timer_unit.irq_hi_o;
+   assign apb_adv_timer__irq_events_if.lines = dut.i_soc_domain.soc_peripherals_i.i_apb_adv_timer.events_o;
    /// @}
 
    /// @name apb_timer.counter_lo block

@@ -38,6 +38,8 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
    rand uvma_obi_cfg_c  data_obi_agent_cfg; ///< Data memory OBI agent configuration
    rand uvma_cvmcu_event_cfg_c  event_agent_cfg; ///< Event agent configuration
    rand uvma_cvmcu_dbg_cfg_c  dbg_agent_cfg; ///< Debug agent configuration
+   rand uvma_irq_cfg_c  irq_l1_agent_cfg; /// First Level IRQ agent configuration
+   rand uvma_irq_cfg_c  irq_l2_agent_cfg; /// Platform-Specific (Second Level) IRQ agent configuration
    /// @}
 
    /// @name Sub-Systems
@@ -96,27 +98,29 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
       `uvm_field_object(data_obi_agent_cfg, UVM_DEFAULT)
       `uvm_field_object(event_agent_cfg, UVM_DEFAULT)
       `uvm_field_object(dbg_agent_cfg, UVM_DEFAULT)
+      `uvm_field_object(irq_l1_agent_cfg, UVM_DEFAULT)
+      `uvm_field_object(irq_l2_agent_cfg, UVM_DEFAULT)
       `uvm_field_object(apb_timer_ss_env_cfg, UVM_DEFAULT)
       `uvm_field_object(apb_adv_timer_ss_env_cfg, UVM_DEFAULT)
-      `uvm_field_object(udma_qspi0_ingress_sb_cfg , UVM_DEFAULT)
-      `uvm_field_object(udma_qspi1_ingress_sb_cfg , UVM_DEFAULT)
-      `uvm_field_object(udma_camera_sb_cfg , UVM_DEFAULT)
-      `uvm_field_object(udma_i2c0_ingress_sb_cfg , UVM_DEFAULT)
-      `uvm_field_object(udma_i2c1_ingress_sb_cfg , UVM_DEFAULT)
-      `uvm_field_object(udma_uart0_ingress_sb_cfg , UVM_DEFAULT)
-      `uvm_field_object(udma_uart1_ingress_sb_cfg , UVM_DEFAULT)
-      `uvm_field_object(apb_i2c_ingress_sb_cfg , UVM_DEFAULT)
-      `uvm_field_object(gpio_ingress_sb_cfg , UVM_DEFAULT)
-      `uvm_field_object(udma_qspi0_egress_sb_cfg , UVM_DEFAULT)
-      `uvm_field_object(udma_qspi1_egress_sb_cfg , UVM_DEFAULT)
-      `uvm_field_object(udma_i2c0_egress_sb_cfg , UVM_DEFAULT)
-      `uvm_field_object(udma_i2c1_egress_sb_cfg , UVM_DEFAULT)
-      `uvm_field_object(udma_uart0_egress_sb_cfg , UVM_DEFAULT)
-      `uvm_field_object(udma_uart1_egress_sb_cfg , UVM_DEFAULT)
-      `uvm_field_object(apb_i2c_egress_sb_cfg , UVM_DEFAULT)
-      `uvm_field_object(gpio_egress_sb_cfg , UVM_DEFAULT)
-      `uvm_field_object(event_sb_cfg , UVM_DEFAULT)
-      `uvm_field_object(dbg_sb_cfg , UVM_DEFAULT)
+      `uvm_field_object(udma_qspi0_ingress_sb_cfg, UVM_DEFAULT)
+      `uvm_field_object(udma_qspi1_ingress_sb_cfg, UVM_DEFAULT)
+      `uvm_field_object(udma_camera_sb_cfg, UVM_DEFAULT)
+      `uvm_field_object(udma_i2c0_ingress_sb_cfg, UVM_DEFAULT)
+      `uvm_field_object(udma_i2c1_ingress_sb_cfg, UVM_DEFAULT)
+      `uvm_field_object(udma_uart0_ingress_sb_cfg, UVM_DEFAULT)
+      `uvm_field_object(udma_uart1_ingress_sb_cfg, UVM_DEFAULT)
+      `uvm_field_object(apb_i2c_ingress_sb_cfg, UVM_DEFAULT)
+      `uvm_field_object(gpio_ingress_sb_cfg, UVM_DEFAULT)
+      `uvm_field_object(udma_qspi0_egress_sb_cfg, UVM_DEFAULT)
+      `uvm_field_object(udma_qspi1_egress_sb_cfg, UVM_DEFAULT)
+      `uvm_field_object(udma_i2c0_egress_sb_cfg, UVM_DEFAULT)
+      `uvm_field_object(udma_i2c1_egress_sb_cfg, UVM_DEFAULT)
+      `uvm_field_object(udma_uart0_egress_sb_cfg, UVM_DEFAULT)
+      `uvm_field_object(udma_uart1_egress_sb_cfg, UVM_DEFAULT)
+      `uvm_field_object(apb_i2c_egress_sb_cfg, UVM_DEFAULT)
+      `uvm_field_object(gpio_egress_sb_cfg, UVM_DEFAULT)
+      `uvm_field_object(event_sb_cfg, UVM_DEFAULT)
+      `uvm_field_object(dbg_sb_cfg, UVM_DEFAULT)
    `uvm_object_utils_end
 
 
@@ -324,6 +328,29 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
       dbg_agent_cfg.cov_model_enabled == 0;
    }
 
+
+   /**
+    * Sets First Level IRQ agent configuration.
+    */
+   constraint irq_l1_agent_cfg_cons {
+      irq_l1_agent_cfg.enabled == enabled;
+      irq_l1_agent_cfg.num_lines == 32;
+      irq_l1_agent_cfg.is_active == UVM_PASSIVE;
+      irq_l1_agent_cfg.trn_log_enabled == trn_log_enabled;
+      irq_l1_agent_cfg.cov_model_enabled == 0;
+   }
+
+   /**
+    * Sets Platform-Specific (Second Level) IRQ agent configuration.
+    */
+   constraint irq_l2_agent_cfg_cons {
+      irq_l2_agent_cfg.enabled == enabled;
+      irq_l2_agent_cfg.num_lines == 256;
+      irq_l2_agent_cfg.is_active == UVM_PASSIVE;
+      irq_l2_agent_cfg.trn_log_enabled == trn_log_enabled;
+      irq_l2_agent_cfg.cov_model_enabled == 0;
+   }
+
    /**
     * Sets Simple timer sub-system environment configuration.
     */
@@ -525,6 +552,8 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
       data_obi_agent_cfg = uvma_obi_cfg_c::type_id::create("data_obi_cfg");
       event_agent_cfg = uvma_cvmcu_event_cfg_c::type_id::create("event_cfg");
       dbg_agent_cfg = uvma_cvmcu_dbg_cfg_c::type_id::create("dbg_cfg");
+      irq_l1_agent_cfg = uvma_irq_cfg_c::type_id::create("irq_l1_cfg");
+      irq_l2_agent_cfg = uvma_irq_cfg_c::type_id::create("irq_l2_cfg");
       apb_timer_ss_env_cfg = uvme_apb_timer_ss_cfg_c::type_id::create("apb_timer_ss_env_cfg");
       apb_adv_timer_ss_env_cfg = uvme_apb_adv_timer_ss_cfg_c::type_id::create("apb_adv_timer_ss_env_cfg");
       udma_qspi0_ingress_sb_cfg = uvml_sb_simplex_cfg_c::type_id::create("udma_qspi0_ingress_sb_cfg");
@@ -546,6 +575,14 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
       gpio_egress_sb_cfg = uvml_sb_simplex_cfg_c::type_id::create("gpio_egress_sb_cfg");
       event_sb_cfg = uvml_sb_simplex_cfg_c::type_id::create("event_sb_cfg");
       dbg_sb_cfg = uvml_sb_simplex_cfg_c::type_id::create("dbg_sb_cfg");
+   endfunction
+
+   /**
+    * Configures IRQ lines.
+    */
+   virtual function void cfg_irq();
+      irq_l1_agent_cfg.lines = uvme_cvmcu_chip_l1_irq_lines;
+      irq_l2_agent_cfg.lines = uvme_cvmcu_chip_l2_irq_lines;
    endfunction
 
 endclass : uvme_cvmcu_chip_cfg_c
