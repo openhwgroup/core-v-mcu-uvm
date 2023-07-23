@@ -63,7 +63,7 @@ class uvmt_apb_adv_timer_ss_test_cfg_c extends uvmx_ss_test_cfg_c #(
     * Sets safe defaults parameters.
     */
    constraint defaults_cons {
-      reset_type == UVMX_RESET_;
+      reset_type == UVMX_RESET_SYNC;
       sys_clk_frequency == uvmt_apb_adv_timer_ss_default_sys_clk_frequency;
       low_speed_clk_frequency == uvmt_apb_adv_timer_ss_default_low_speed_clk_frequency;
       startup_timeout          == uvmt_apb_adv_timer_ss_default_startup_timeout         ;
@@ -88,7 +88,7 @@ class uvmt_apb_adv_timer_ss_test_cfg_c extends uvmx_ss_test_cfg_c #(
       sys_reset_agent_cfg.enabled           == 1;
       sys_reset_agent_cfg.is_active         == UVM_ACTIVE;
       sys_reset_agent_cfg.polarity          == UVMX_ACTIVE_LOW;
-      sys_reset_agent_cfg.reset_type        == UVMX_RESET_SYNC;
+      sys_reset_agent_cfg.reset_type        == reset_type;
       sys_reset_agent_cfg.trn_log_enabled   == trn_log_enabled;
       sys_reset_agent_cfg.cov_model_enabled == 0;
    }

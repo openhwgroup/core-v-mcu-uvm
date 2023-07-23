@@ -16,14 +16,14 @@ class uvme_apb_timer_ss_cfg_c extends uvmx_ss_env_cfg_c;
 
    // @name Integrals
    /// @{
-   rand longint unsigned  reg_block_base_address; ///< Base address for #apb_timer_ss_reg_block   /// @}
+   rand longint unsigned  reg_block_base_address; ///< Base address for #apb_timer_ss_reg_block
+   /// @}
 
    /// @name Agents
    /// @{
    rand uvma_apb_cfg_c  proc_agent_cfg; ///< Processor interface agent configuration
    rand uvma_irq_cfg_c  irq_events_agent_cfg; /// Events IRQ agent configuration
    /// @}
-
 
    /// @name Blocks
    /// @{
@@ -32,7 +32,6 @@ class uvme_apb_timer_ss_cfg_c extends uvmx_ss_env_cfg_c;
    rand uvme_tprescaler_b_cfg_c  prescaler_lo_b_env_cfg; ///< Prescaler block 0 block configuration
    rand uvme_tprescaler_b_cfg_c  prescaler_hi_b_env_cfg; ///< Prescaler block 1 block configuration
    /// @}
-
 
 
    `uvm_object_utils_begin(uvme_apb_timer_ss_cfg_c)
@@ -67,11 +66,11 @@ class uvme_apb_timer_ss_cfg_c extends uvmx_ss_env_cfg_c;
       proc_agent_cfg.bypass_mode == 0;
       proc_agent_cfg.data_width == 32;
       proc_agent_cfg.addr_width == 32;
-      proc_agent_cfg.is_active == UVM_PASSIVE;
+      proc_agent_cfg.drv_mode == UVMA_APB_DRV_MODE_MSTR;
+      proc_agent_cfg.is_active == is_active;
       proc_agent_cfg.trn_log_enabled == trn_log_enabled;
       proc_agent_cfg.cov_model_enabled == 0;
    }
-
 
    /**
     * Sets Events IRQ agent configuration.
@@ -127,6 +126,7 @@ class uvme_apb_timer_ss_cfg_c extends uvmx_ss_env_cfg_c;
       prescaler_hi_b_env_cfg.trn_log_enabled == trn_log_enabled;
       prescaler_hi_b_env_cfg.cov_model_enabled == cov_model_enabled;
    }
+
 
    /**
     * Default constructor.

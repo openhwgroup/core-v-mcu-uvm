@@ -35,8 +35,6 @@ module uvmt_apb_adv_timer_ss_tb;
    uvma_apb_if  proc_if(.clk(HCLK), .reset_n(HRESETn)); ///< Processor access agent interface
    uvma_irq_if  irq_events_if(.clk(HCLK), .reset_n(HRESETn)); ///< Events IRQ agent interface
    uvme_apb_adv_timer_ss_probe_if  probe_if(.*); ///< Misc. signals interface
-   uvmt_apb_adv_timer_ss_dut_wrap  dut_wrap(.*); ///< DUT instance with interface ports
-   bind uvmt_apb_adv_timer_ss_dut_wrap : dut_wrap  uvme_apb_adv_timer_ss_chkr chkr(.*); ///< Checker instantiation and binding
    /// @}
 
    /// @name Blocks
@@ -45,19 +43,29 @@ module uvmt_apb_adv_timer_ss_tb;
    uvma_adv_timer_b_if  adv_timer1_if(); ///< Advanced timer 1 block agent interface
    uvma_adv_timer_b_if  adv_timer2_if(); ///< Advanced timer 2 block agent interface
    uvma_adv_timer_b_if  adv_timer3_if(); ///< Advanced timer 3 block agent interface
-   bind uvmt_apb_adv_timer_ss_dut_wrap : uvma_adv_timer_b_if_chkr  adv_timer0_b_if_chkr( ///< Advanced timer 0 block interface checker instantiation and binding.
+   /// @}
+
+   /// @name Checker instantiation and binding
+   /// @{
+   bind uvmt_apb_adv_timer_ss_dut_wrap : dut_wrap  uvme_apb_adv_timer_ss_chkr chkr(.*); ///< APB Advanced Timer sub-system
+   bind uvmt_apb_adv_timer_ss_dut_wrap : dut_wrap  uvma_adv_timer_b_if_chkr adv_timer0_if_chkr( ///< Advanced timer 0 block
       .agent_if(adv_timer0_if)
    );
-   bind uvmt_apb_adv_timer_ss_dut_wrap : uvma_adv_timer_b_if_chkr  adv_timer1_b_if_chkr( ///< Advanced timer 1 block interface checker instantiation and binding.
+   bind uvmt_apb_adv_timer_ss_dut_wrap : dut_wrap  uvma_adv_timer_b_if_chkr adv_timer1_if_chkr( ///< Advanced timer 1 block
       .agent_if(adv_timer1_if)
    );
-   bind uvmt_apb_adv_timer_ss_dut_wrap : uvma_adv_timer_b_if_chkr  adv_timer2_b_if_chkr( ///< Advanced timer 2 block interface checker instantiation and binding.
+   bind uvmt_apb_adv_timer_ss_dut_wrap : dut_wrap  uvma_adv_timer_b_if_chkr adv_timer2_if_chkr( ///< Advanced timer 2 block
       .agent_if(adv_timer2_if)
    );
-   bind uvmt_apb_adv_timer_ss_dut_wrap : uvma_adv_timer_b_if_chkr  adv_timer3_b_if_chkr( ///< Advanced timer 3 block interface checker instantiation and binding.
+   bind uvmt_apb_adv_timer_ss_dut_wrap : dut_wrap  uvma_adv_timer_b_if_chkr adv_timer3_if_chkr( ///< Advanced timer 3 block
       .agent_if(adv_timer3_if)
    );
    /// @}
+
+   /**
+    * DUT instance wrapper.
+    */
+   uvmt_apb_adv_timer_ss_dut_wrap  dut_wrap(.*);
 
    /**
     * Test bench entry point.
@@ -71,10 +79,10 @@ module uvmt_apb_adv_timer_ss_tb;
       uvm_config_db#(virtual uvma_irq_if)::set(null, "uvm_test_top.env.irq_events_agent", "vif", irq_events_if);
       uvm_config_db#(virtual uvme_apb_adv_timer_ss_probe_if)::set(null, "uvm_test_top.env", "vif", probe_if);
       // Block agent interfaces
-      uvm_config_db#(virtual uvma_adv_timer_b_if)::set(null, "uvm_test_top.env.adv_timer0_b_env.agent", "vif", adv_timer0_b_if);
-      uvm_config_db#(virtual uvma_adv_timer_b_if)::set(null, "uvm_test_top.env.adv_timer1_b_env.agent", "vif", adv_timer1_b_if);
-      uvm_config_db#(virtual uvma_adv_timer_b_if)::set(null, "uvm_test_top.env.adv_timer2_b_env.agent", "vif", adv_timer2_b_if);
-      uvm_config_db#(virtual uvma_adv_timer_b_if)::set(null, "uvm_test_top.env.adv_timer3_b_env.agent", "vif", adv_timer3_b_if);
+      uvm_config_db#(virtual uvma_adv_timer_b_if)::set(null, "uvm_test_top.env.adv_timer0_b_env.agent", "vif", adv_timer0_if);
+      uvm_config_db#(virtual uvma_adv_timer_b_if)::set(null, "uvm_test_top.env.adv_timer1_b_env.agent", "vif", adv_timer1_if);
+      uvm_config_db#(virtual uvma_adv_timer_b_if)::set(null, "uvm_test_top.env.adv_timer2_b_env.agent", "vif", adv_timer2_if);
+      uvm_config_db#(virtual uvma_adv_timer_b_if)::set(null, "uvm_test_top.env.adv_timer3_b_env.agent", "vif", adv_timer3_if);
       // Test entry point
       uvmx_top.run_test();
    end

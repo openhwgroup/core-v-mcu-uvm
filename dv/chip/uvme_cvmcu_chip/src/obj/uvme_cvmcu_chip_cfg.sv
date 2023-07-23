@@ -48,7 +48,6 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
    rand uvme_apb_adv_timer_ss_cfg_c  apb_adv_timer_ss_env_cfg; ///< Advanced timer (PWM) sub-system configuration
    /// @}
 
-
    /// @name Scoreboards
    /// @{
    rand uvml_sb_simplex_cfg_c  udma_qspi0_ingress_sb_cfg; ///< Udma_qspi0_ingress scoreboard configuration
@@ -328,7 +327,6 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
       dbg_agent_cfg.cov_model_enabled == 0;
    }
 
-
    /**
     * Sets First Level IRQ agent configuration.
     */
@@ -524,6 +522,7 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
       dbg_sb_cfg.enabled == scoreboarding_enabled;
       dbg_sb_cfg.mode == UVML_SB_MODE_IN_ORDER;
    }
+
 
    /**
     * Default constructor.

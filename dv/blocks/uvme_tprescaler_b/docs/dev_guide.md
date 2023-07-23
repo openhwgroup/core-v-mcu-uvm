@@ -16,7 +16,7 @@ All rights reserved.
 @section uvme_tprescaler_b_dev_guide_revision_history Revision History
 Revision  | Date | Description
 --------- | ---- | -----------
-1.0 | 2023/7/10 | Initial Version
+1.0 | 2023/7/22 | Initial Version
 
 @subsection uvme_tprescaler_b_dev_guide_description Description
 

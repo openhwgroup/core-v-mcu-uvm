@@ -14,6 +14,10 @@
 module uvmt_apb_timer_ss_dut_wrap (
    uvma_apb_if  proc_if, ///< Processor interface agent interface
    uvma_irq_if  irq_events_if, ///< Events IRQ agent interface
+   uvma_tcounter_b_if  counter_lo_if, ///< Counter block 0 block interface
+   uvma_tcounter_b_if  counter_hi_if, ///< Counter block 1 block interface
+   uvma_tprescaler_b_if  prescaler_lo_if, ///< Prescaler block 0 block interface
+   uvma_tprescaler_b_if  prescaler_hi_if, ///< Prescaler block 1 block interface
    uvme_apb_timer_ss_probe_if  probe_if, ///< Misc. signals interface
    uvma_clk_if    sys_clk_if, ///< Processor clock interface
    uvma_clk_if    ref_clk_if, ///< Reference clock interface
@@ -43,8 +47,8 @@ module uvmt_apb_timer_ss_dut_wrap (
 
    /// @name IRQ Lines
    /// @{
-   assign irq_events_if.lines[0] = dut..;
-   assign irq_events_if.lines[1] = dut..;
+   assign irq_events_if.lines[0] = dut.irq_lo_o;
+   assign irq_events_if.lines[1] = dut.irq_hi_o;
    /// @}
 
    /// @name counter_lo block

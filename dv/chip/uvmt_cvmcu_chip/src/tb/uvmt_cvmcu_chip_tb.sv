@@ -45,8 +45,6 @@ module uvmt_cvmcu_chip_tb;
    uvma_irq_if  irq_l1_if(); ///< First Level IRQ agent interface
    uvma_irq_if  irq_l2_if(); ///< Platform-Specific (Second Level) IRQ agent interface
    uvme_cvmcu_chip_probe_if  probe_if(.*); ///< Misc. signals interface
-   uvmt_cvmcu_chip_dut_wrap  dut_wrap(.*); ///< DUT instance with interface ports
-   bind uvmt_cvmcu_chip_dut_wrap : dut_wrap  uvme_cvmcu_chip_chkr chkr(.*); ///< Checker instantiation and binding
    /// @}
 
    /// @name apb_timer sub-system
@@ -58,27 +56,6 @@ module uvmt_cvmcu_chip_tb;
    uvma_tcounter_b_if  apb_timer__counter_hi_if(); ///< Counter block 1 block agent interface
    uvma_tprescaler_b_if  apb_timer__prescaler_lo_if(); ///< Prescaler block 0 block agent interface
    uvma_tprescaler_b_if  apb_timer__prescaler_hi_if(); ///< Prescaler block 1 block agent interface
-   bind uvmt_cvmcu_chip_dut_wrap : uvme_apb_timer_ss_chkr  apb_timer_chkr( ///< Checker instantiation and binding.
-      .proc_if(apb_timer__proc_if),
-      .irq_events_if(apb_timer__irq_events_if),
-      .counter_lo_if(apb_timer__counter_lo_if),
-      .counter_hi_if(apb_timer__counter_hi_if),
-      .prescaler_lo_if(apb_timer__prescaler_lo_if),
-      .prescaler_hi_if(apb_timer__prescaler_hi_if),
-      .probe_if(apb_timer__probe_if)
-   );
-   bind uvmt_cvmcu_chip_dut_wrap : uvma_tcounter_b_if_chkr  apb_timer__counter_lo_if_chkr( ///< Counter block 0 block interface checker instantiation and binding.
-      .agent_if(apb_timer__counter_lo_if)
-   );
-   bind uvmt_cvmcu_chip_dut_wrap : uvma_tcounter_b_if_chkr  apb_timer__counter_hi_if_chkr( ///< Counter block 1 block interface checker instantiation and binding.
-      .agent_if(apb_timer__counter_hi_if)
-   );
-   bind uvmt_cvmcu_chip_dut_wrap : uvma_tprescaler_b_if_chkr  apb_timer__prescaler_lo_if_chkr( ///< Prescaler block 0 block interface checker instantiation and binding.
-      .agent_if(apb_timer__prescaler_lo_if)
-   );
-   bind uvmt_cvmcu_chip_dut_wrap : uvma_tprescaler_b_if_chkr  apb_timer__prescaler_hi_if_chkr( ///< Prescaler block 1 block interface checker instantiation and binding.
-      .agent_if(apb_timer__prescaler_hi_if)
-   );
    /// @}
 
    /// @name apb_adv_timer sub-system
@@ -90,7 +67,33 @@ module uvmt_cvmcu_chip_tb;
    uvma_adv_timer_b_if  apb_adv_timer__adv_timer1_if(); ///< Advanced timer 1 block agent interface
    uvma_adv_timer_b_if  apb_adv_timer__adv_timer2_if(); ///< Advanced timer 2 block agent interface
    uvma_adv_timer_b_if  apb_adv_timer__adv_timer3_if(); ///< Advanced timer 3 block agent interface
-   bind uvmt_cvmcu_chip_dut_wrap : uvme_apb_adv_timer_ss_chkr  apb_adv_timer_chkr( ///< Checker instantiation and binding.
+   /// @}
+
+   /// @name Checker instantiation and binding
+   /// @{
+   bind uvmt_cvmcu_chip_dut_wrap : dut_wrap  uvme_cvmcu_chip_chkr chkr(.*); ///< CORE-V-MCU chip
+   bind uvmt_cvmcu_chip_dut_wrap : dut_wrap  uvme_apb_timer_ss_chkr apb_timer_chkr( ///< apb_timer sub-system
+      .proc_if(apb_timer__proc_if),
+      .irq_events_if(apb_timer__irq_events_if),
+      .counter_lo_if(apb_timer__counter_lo_if),
+      .counter_hi_if(apb_timer__counter_hi_if),
+      .prescaler_lo_if(apb_timer__prescaler_lo_if),
+      .prescaler_hi_if(apb_timer__prescaler_hi_if),
+      .probe_if(apb_timer__probe_if)
+   );
+   bind uvmt_cvmcu_chip_dut_wrap : dut_wrap  uvma_tcounter_b_if_chkr apb_timer__counter_lo_if_chkr( ///< apb_timer sub-system Counter block 0 block
+      .agent_if(apb_timer__counter_lo_if)
+   );
+   bind uvmt_cvmcu_chip_dut_wrap : dut_wrap  uvma_tcounter_b_if_chkr apb_timer__counter_hi_if_chkr( ///< apb_timer sub-system Counter block 1 block
+      .agent_if(apb_timer__counter_hi_if)
+   );
+   bind uvmt_cvmcu_chip_dut_wrap : dut_wrap  uvma_tprescaler_b_if_chkr apb_timer__prescaler_lo_if_chkr( ///< apb_timer sub-system Prescaler block 0 block
+      .agent_if(apb_timer__prescaler_lo_if)
+   );
+   bind uvmt_cvmcu_chip_dut_wrap : dut_wrap  uvma_tprescaler_b_if_chkr apb_timer__prescaler_hi_if_chkr( ///< apb_timer sub-system Prescaler block 1 block
+      .agent_if(apb_timer__prescaler_hi_if)
+   );
+   bind uvmt_cvmcu_chip_dut_wrap : dut_wrap  uvme_apb_adv_timer_ss_chkr apb_adv_timer_chkr( ///< apb_adv_timer sub-system
       .proc_if(apb_adv_timer__proc_if),
       .irq_events_if(apb_adv_timer__irq_events_if),
       .adv_timer0_if(apb_adv_timer__adv_timer0_if),
@@ -99,19 +102,24 @@ module uvmt_cvmcu_chip_tb;
       .adv_timer3_if(apb_adv_timer__adv_timer3_if),
       .probe_if(apb_adv_timer__probe_if)
    );
-   bind uvmt_cvmcu_chip_dut_wrap : uvma_adv_timer_b_if_chkr  apb_adv_timer__adv_timer0_if_chkr( ///< Advanced timer 0 block interface checker instantiation and binding.
+   bind uvmt_cvmcu_chip_dut_wrap : dut_wrap  uvma_adv_timer_b_if_chkr apb_adv_timer__adv_timer0_if_chkr( ///< apb_adv_timer sub-system Advanced timer 0 block
       .agent_if(apb_adv_timer__adv_timer0_if)
    );
-   bind uvmt_cvmcu_chip_dut_wrap : uvma_adv_timer_b_if_chkr  apb_adv_timer__adv_timer1_if_chkr( ///< Advanced timer 1 block interface checker instantiation and binding.
+   bind uvmt_cvmcu_chip_dut_wrap : dut_wrap  uvma_adv_timer_b_if_chkr apb_adv_timer__adv_timer1_if_chkr( ///< apb_adv_timer sub-system Advanced timer 1 block
       .agent_if(apb_adv_timer__adv_timer1_if)
    );
-   bind uvmt_cvmcu_chip_dut_wrap : uvma_adv_timer_b_if_chkr  apb_adv_timer__adv_timer2_if_chkr( ///< Advanced timer 2 block interface checker instantiation and binding.
+   bind uvmt_cvmcu_chip_dut_wrap : dut_wrap  uvma_adv_timer_b_if_chkr apb_adv_timer__adv_timer2_if_chkr( ///< apb_adv_timer sub-system Advanced timer 2 block
       .agent_if(apb_adv_timer__adv_timer2_if)
    );
-   bind uvmt_cvmcu_chip_dut_wrap : uvma_adv_timer_b_if_chkr  apb_adv_timer__adv_timer3_if_chkr( ///< Advanced timer 3 block interface checker instantiation and binding.
+   bind uvmt_cvmcu_chip_dut_wrap : dut_wrap  uvma_adv_timer_b_if_chkr apb_adv_timer__adv_timer3_if_chkr( ///< apb_adv_timer sub-system Advanced timer 3 block
       .agent_if(apb_adv_timer__adv_timer3_if)
    );
    /// @}
+
+   /**
+    * DUT instance wrapper.
+    */
+   uvmt_cvmcu_chip_dut_wrap  dut_wrap(.*);
 
    /**
     * Test bench entry point.

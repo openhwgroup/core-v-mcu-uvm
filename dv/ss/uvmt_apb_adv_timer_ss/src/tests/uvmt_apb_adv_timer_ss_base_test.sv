@@ -81,10 +81,10 @@ class uvmt_apb_adv_timer_ss_base_test_c extends uvmx_ss_test_c #(
    endfunction
 
    /**
-    * Connects  reset agent to the environment's reset port.
+    * Connects System reset agent to the environment's reset port.
     */
    virtual function void connect_env_reset();
-      _agent.reset_mon_trn_ap.connect(env.reset_mon_trn_export);
+      sys_reset_agent.reset_mon_trn_ap.connect(env.reset_mon_trn_export);
    endfunction
 
    /**
@@ -138,14 +138,14 @@ class uvmt_apb_adv_timer_ss_base_test_c extends uvmx_ss_test_c #(
    endtask
 
    /**
-    * Runs _vseq.
+    * Runs sys_reset_vseq.
     */
    virtual task reset_phase(uvm_phase phase);
       phase.raise_objection(this);
       super.reset_phase(phase);
-      `uvm_info("TEST", $sformatf("Starting  Reset Virtual Sequence:\n%s", _vseq.sprint()), UVM_NONE)
-      _vseq.start(_agent.vsequencer);
-      `uvm_info("TEST", $sformatf("Finished  Reset Virtual Sequence:\n%s", _vseq.sprint()), UVM_NONE)
+      `uvm_info("TEST", $sformatf("Starting System Reset Virtual Sequence:\n%s", sys_reset_vseq.sprint()), UVM_NONE)
+      sys_reset_vseq.start(sys_reset_agent.vsequencer);
+      `uvm_info("TEST", $sformatf("Finished System Reset Virtual Sequence:\n%s", sys_reset_vseq.sprint()), UVM_NONE)
       phase.drop_objection(this);
    endtask
 

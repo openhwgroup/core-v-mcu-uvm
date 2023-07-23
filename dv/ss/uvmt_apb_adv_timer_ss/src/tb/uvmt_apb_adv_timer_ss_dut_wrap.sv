@@ -14,6 +14,10 @@
 module uvmt_apb_adv_timer_ss_dut_wrap (
    uvma_apb_if  proc_if, ///< Processor access agent interface
    uvma_irq_if  irq_events_if, ///< Events IRQ agent interface
+   uvma_adv_timer_b_if  adv_timer0_if, ///< Advanced timer 0 block interface
+   uvma_adv_timer_b_if  adv_timer1_if, ///< Advanced timer 1 block interface
+   uvma_adv_timer_b_if  adv_timer2_if, ///< Advanced timer 2 block interface
+   uvma_adv_timer_b_if  adv_timer3_if, ///< Advanced timer 3 block interface
    uvme_apb_adv_timer_ss_probe_if  probe_if, ///< Misc. signals interface
    uvma_clk_if    sys_clk_if, ///< System clock interface
    uvma_clk_if    low_speed_clk_if, ///< Low speed clock interface
