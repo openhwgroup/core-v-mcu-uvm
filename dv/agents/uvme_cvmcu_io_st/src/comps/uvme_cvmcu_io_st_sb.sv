@@ -39,20 +39,20 @@ class uvme_cvmcu_io_st_sb_c extends uvmx_agent_sb_c #(
     *
     */
    virtual function void assign_cfg();
-      uvm_config_db#(uvml_sb_simplex_cfg_c)::set(this, "sb_board", "cfg", cfg.sb_board_cfg);
-      uvm_config_db#(uvml_sb_simplex_cfg_c)::set(this, "sb_chip", "cfg", cfg.sb_chip_cfg);
-      uvm_config_db#(uvml_sb_simplex_cfg_c)::set(this, "sb_ig", "cfg", cfg.sb_ig_cfg);
-      uvm_config_db#(uvml_sb_simplex_cfg_c)::set(this, "sb_eg", "cfg", cfg.sb_eg_cfg);
+      uvm_config_db#(uvmx_sb_simplex_cfg_c)::set(this, "sb_board", "cfg", cfg.sb_board_cfg);
+      uvm_config_db#(uvmx_sb_simplex_cfg_c)::set(this, "sb_chip", "cfg", cfg.sb_chip_cfg);
+      uvm_config_db#(uvmx_sb_simplex_cfg_c)::set(this, "sb_ig", "cfg", cfg.sb_ig_cfg);
+      uvm_config_db#(uvmx_sb_simplex_cfg_c)::set(this, "sb_eg", "cfg", cfg.sb_eg_cfg);
       endfunction
 
    /**
     *
     */
    virtual function void assign_cntxt();
-      uvm_config_db#(uvml_sb_simplex_cntxt_c)::set(this, "sb_board", "cntxt", cntxt.sb_board_cntxt);
-      uvm_config_db#(uvml_sb_simplex_cntxt_c)::set(this, "sb_chip", "cntxt", cntxt.sb_chip_cntxt);
-      uvm_config_db#(uvml_sb_simplex_cntxt_c)::set(this, "sb_ig", "cntxt", cntxt.sb_ig_cntxt);
-      uvm_config_db#(uvml_sb_simplex_cntxt_c)::set(this, "sb_eg", "cntxt", cntxt.sb_eg_cntxt);
+      uvm_config_db#(uvmx_sb_simplex_cntxt_c)::set(this, "sb_board", "cntxt", cntxt.sb_board_cntxt);
+      uvm_config_db#(uvmx_sb_simplex_cntxt_c)::set(this, "sb_chip", "cntxt", cntxt.sb_chip_cntxt);
+      uvm_config_db#(uvmx_sb_simplex_cntxt_c)::set(this, "sb_ig", "cntxt", cntxt.sb_ig_cntxt);
+      uvm_config_db#(uvmx_sb_simplex_cntxt_c)::set(this, "sb_eg", "cntxt", cntxt.sb_eg_cntxt);
       
    endfunction
 

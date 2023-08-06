@@ -23,14 +23,12 @@
 `include "uvm_macros.svh"
 `include "uvmx_macros.svh"
 `include "uvma_irq_macros.svh"
-`include "uvml_sb_macros.svh"
 `include "uvme_apb_timer_ss_macros.svh"
 `include "uvme_apb_adv_timer_ss_macros.svh"
 `include "uvma_jtag_macros.svh"
 `include "uvma_spi_macros.svh"
 `include "uvma_cvmcu_cpi_macros.svh"
 `include "uvma_i2c_macros.svh"
-`include "uvma_apb_macros.svh"
 `include "uvma_uart_macros.svh"
 `include "uvma_sdio_macros.svh"
 `include "uvma_cvmcu_io_macros.svh"
@@ -52,14 +50,12 @@ package uvme_cvmcu_chip_pkg;
    import uvm_pkg    ::*;
    import uvmx_pkg   ::*;
    import uvma_irq_pkg::*;
-   import uvml_sb_pkg::*;
    import uvme_apb_timer_ss_pkg::*;
    import uvme_apb_adv_timer_ss_pkg::*;
    import uvma_jtag_pkg::*;
    import uvma_spi_pkg::*;
    import uvma_cvmcu_cpi_pkg::*;
    import uvma_i2c_pkg::*;
-   import uvma_apb_pkg::*;
    import uvma_uart_pkg::*;
    import uvma_sdio_pkg::*;
    import uvma_cvmcu_io_pkg::*;

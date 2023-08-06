@@ -21,7 +21,6 @@
 // Pre-processor macros
 `include "uvm_macros.svh"
 `include "uvmx_macros.svh"
-`include "uvml_sb_macros.svh"
 `include "uvma_tcounter_b_macros.svh"
 `include "uvme_tcounter_b_macros.svh"
 
@@ -36,7 +35,6 @@ package uvme_tcounter_b_pkg;
 
    import uvm_pkg    ::*;
    import uvmx_pkg   ::*;
-   import uvml_sb_pkg::*;
    import uvma_tcounter_b_pkg::*;
 
    // Constants / Structs / Enums

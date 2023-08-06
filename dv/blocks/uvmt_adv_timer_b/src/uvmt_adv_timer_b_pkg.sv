@@ -37,7 +37,6 @@ package uvmt_adv_timer_b_pkg;
 
    import uvm_pkg       ::*;
    import uvmx_pkg      ::*;
-   import uvml_sb_pkg   ::*;
    import uvma_clk_pkg  ::*;
    import uvma_reset_pkg::*;
    import uvma_adv_timer_b_pkg::*;

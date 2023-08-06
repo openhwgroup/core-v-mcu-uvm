@@ -21,7 +21,6 @@
 // Pre-processor macros
 `include "uvm_macros.svh"
 `include "uvmx_macros.svh"
-`include "uvml_sb_macros.svh"
 `include "uvma_cvmcu_cpi_macros.svh"
 `include "uvme_cvmcu_cpi_st_macros.svh"
 
@@ -34,9 +33,8 @@
  */
 package uvme_cvmcu_cpi_st_pkg;
 
-   import uvm_pkg    ::*;
-   import uvmx_pkg   ::*;
-   import uvml_sb_pkg::*;
+   import uvm_pkg ::*;
+   import uvmx_pkg::*;
    import uvma_cvmcu_cpi_pkg::*;
 
    // Constants / Structs / Enums

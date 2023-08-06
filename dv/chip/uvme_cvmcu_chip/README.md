@@ -15,14 +15,12 @@ This IP contains the Datum CORE-V-MCU Chip UVM Environment.
 It is dependent on the following IP:
 
 * `datum/uvmx`
-* `datum/uvml_sb`
 * `datum/uvme_apb_timer_ss`
 * `datum/uvme_apb_adv_timer_ss`
 * `datum/uvma_jtag`
 * `datum/uvma_spi`
 * `datum/uvma_cvmcu_cpi`
 * `datum/uvma_i2c`
-* `datum/uvma_apb`
 * `datum/uvma_uart`
 * `datum/uvma_sdio`
 * `datum/uvma_cvmcu_io`

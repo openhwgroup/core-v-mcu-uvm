@@ -23,10 +23,10 @@ class uvme_cvmcu_io_st_cfg_c extends uvmx_agent_env_cfg_c;
    rand uvma_cvmcu_io_cfg_c  board_cfg; ///< BOARD Agent configuration.
    rand uvma_cvmcu_io_cfg_c  chip_cfg; ///< CHIP Agent configuration.
    rand uvma_cvmcu_io_cfg_c  passive_cfg; ///< Passive Agent configuration.
-   rand uvml_sb_simplex_cfg_c  sb_board_cfg; ///< BOARD Agent configuration.
-   rand uvml_sb_simplex_cfg_c  sb_chip_cfg; ///< CHIP Agent configuration.
-   rand uvml_sb_simplex_cfg_c  sb_ig_cfg; ///< IG Agent configuration.
-   rand uvml_sb_simplex_cfg_c  sb_eg_cfg; ///< EG Agent configuration.
+   rand uvmx_sb_simplex_cfg_c  sb_board_cfg; ///< BOARD Agent configuration.
+   rand uvmx_sb_simplex_cfg_c  sb_chip_cfg; ///< CHIP Agent configuration.
+   rand uvmx_sb_simplex_cfg_c  sb_ig_cfg; ///< IG Agent configuration.
+   rand uvmx_sb_simplex_cfg_c  sb_eg_cfg; ///< EG Agent configuration.
       /// @}
 
 
@@ -81,10 +81,10 @@ class uvme_cvmcu_io_st_cfg_c extends uvmx_agent_env_cfg_c;
     * Sets all configuration fields for Scoreboard configurations.
     */
    constraint sb_e2e_cfg_cons {
-      sb_board_cfg.mode == UVML_SB_MODE_IN_ORDER;
-      sb_chip_cfg.mode == UVML_SB_MODE_IN_ORDER;
-      sb_ig_cfg.mode == UVML_SB_MODE_IN_ORDER;
-      sb_eg_cfg.mode == UVML_SB_MODE_IN_ORDER;
+      sb_board_cfg.mode == UVMX_SB_MODE_IN_ORDER;
+      sb_chip_cfg.mode == UVMX_SB_MODE_IN_ORDER;
+      sb_ig_cfg.mode == UVMX_SB_MODE_IN_ORDER;
+      sb_eg_cfg.mode == UVMX_SB_MODE_IN_ORDER;
       sb_board_cfg.enabled == scoreboarding_enabled;
       sb_chip_cfg.enabled == scoreboarding_enabled;
       sb_ig_cfg.enabled == scoreboarding_enabled;
@@ -106,10 +106,10 @@ class uvme_cvmcu_io_st_cfg_c extends uvmx_agent_env_cfg_c;
       board_cfg = uvma_cvmcu_io_cfg_c::type_id::create("board_cfg");
       chip_cfg = uvma_cvmcu_io_cfg_c::type_id::create("chip_cfg");
       passive_cfg = uvma_cvmcu_io_cfg_c::type_id::create("passive_cfg");
-      sb_board_cfg = uvml_sb_simplex_cfg_c::type_id::create("sb_board_cfg");
-      sb_chip_cfg = uvml_sb_simplex_cfg_c::type_id::create("sb_chip_cfg");
-      sb_ig_cfg = uvml_sb_simplex_cfg_c::type_id::create("sb_ig_cfg");
-      sb_eg_cfg = uvml_sb_simplex_cfg_c::type_id::create("sb_eg_cfg");
+      sb_board_cfg = uvmx_sb_simplex_cfg_c::type_id::create("sb_board_cfg");
+      sb_chip_cfg = uvmx_sb_simplex_cfg_c::type_id::create("sb_chip_cfg");
+      sb_ig_cfg = uvmx_sb_simplex_cfg_c::type_id::create("sb_ig_cfg");
+      sb_eg_cfg = uvmx_sb_simplex_cfg_c::type_id::create("sb_eg_cfg");
    endfunction
 
    /**

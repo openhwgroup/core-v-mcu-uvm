@@ -134,7 +134,6 @@ class uvme_cvmcu_chip_prd_c extends uvmx_chip_prd_c #(
     */
    virtual task predict();
       fork
-         predict_data_obi_reg();
          predict_udma_qspi0_ingress();
          predict_udma_qspi1_ingress();
          predict_udma_camera();
@@ -160,21 +159,42 @@ class uvme_cvmcu_chip_prd_c extends uvmx_chip_prd_c #(
    endtask
 
    /**
-    * Prediction thread for Data memory OBI register accesses.
+    * Prediction thread for register accesses.
     */
-   virtual task predict_data_obi_reg();
-      uvma_obi_mon_trn_c  obi_trn;
-      uvm_reg  target_reg;
-      forever begin
-         `uvmx_prd_get(data_obi_reg_fifo, obi_trn)
-         target_reg = `uvmx_prd_get_reg(default_map, obi_trn.address);
-         // TODO Implement uvme_cvmcu_chip_prd_c::process_data_obi_reg()
-         //      Ex: case (target_reg)
-         //             cntxt.reg_model.abc_reg: begin
-         //                cntxt.reg_model.xyz_reg.set(obi_trn.data);
-         //             end
-         //          endcase
-      end
+   virtual task predict_reg_op(ref uvm_reg_item op);
+      uvm_reg        target_reg  ;
+      uvm_reg_field  target_field;
+      uvm_mem        target_mem  ;
+      case (op.element_kind)
+         UVM_REG: begin
+            // TODO Implement uvme_cvmcu_chip_prd_c::predict_reg_op() for registers
+            //      Ex: case (target_reg)
+            //             cntxt.reg_model.abc_reg: begin
+            //                cntxt.reg_model.xyz_reg.set('h123);
+            //             end
+            //          endcase
+         end
+         UVM_FIELD: begin
+            // TODO Implement uvme_cvmcu_chip_prd_c::predict_reg_op() for fields
+            //      Ex: case (target_reg)
+            //             cntxt.reg_model.abc_reg.def_field: begin
+            //                cntxt.reg_model.xyz_reg.ghi_field.set('h1);
+            //             end
+            //          endcase
+         end
+         UVM_MEM: begin
+            // TODO Implement uvme_cvmcu_chip_prd_c::predict_reg_op() for memories
+            //      Ex: case (target_mem)
+            //             cntxt.reg_model.ram: begin
+            //                case (op.offset)
+            //                   cntxt.reg_model.abc_reg.def_field: begin
+            //                      cntxt.reg_model.xyz_reg.ghi_field.set('h123);
+            //                   end
+            //                endcase
+            //             end
+            //          endcase
+         end
+      endcase
    endtask
 
    /**

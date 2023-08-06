@@ -19,10 +19,10 @@ class uvma_cvmcu_cpi_logger_c extends uvmx_agent_logger_c #(
 
    /// @name Loggers
    /// @{
-   uvmx_logger_c #(uvma_cvmcu_cpi_mon_trn_c )  mon_trn_logger; ///< Logs Monitor Transactions from vsequencer.
-   uvmx_logger_c #(uvma_cvmcu_cpi_tx_phy_seq_item_c)  tx_phy_seq_item_logger; ///< Logs PHY Sequence Items from TX Driver.
-   uvmx_logger_c #(uvma_cvmcu_cpi_rx_phy_seq_item_c)  rx_phy_seq_item_logger; ///< Logs PHY Sequence Items from RX Driver.
-   uvmx_logger_c #(uvma_cvmcu_cpi_phy_mon_trn_c)  phy_mon_trn_logger; ///< Logs PHY Monitor Transactions from Monitor.
+   uvmx_tlm_logger_c #(uvma_cvmcu_cpi_mon_trn_c )  mon_trn_logger; ///< Logs Monitor Transactions from vsequencer.
+   uvmx_tlm_logger_c #(uvma_cvmcu_cpi_tx_phy_seq_item_c)  tx_phy_seq_item_logger; ///< Logs PHY Sequence Items from TX Driver.
+   uvmx_tlm_logger_c #(uvma_cvmcu_cpi_rx_phy_seq_item_c)  rx_phy_seq_item_logger; ///< Logs PHY Sequence Items from RX Driver.
+   uvmx_tlm_logger_c #(uvma_cvmcu_cpi_phy_mon_trn_c)  phy_mon_trn_logger; ///< Logs PHY Monitor Transactions from Monitor.
    /// @}
 
 
@@ -40,10 +40,10 @@ class uvma_cvmcu_cpi_logger_c extends uvmx_agent_logger_c #(
     * Creates logger components.
     */
    virtual function void create_loggers();
-      mon_trn_logger  = uvmx_logger_c #(uvma_cvmcu_cpi_mon_trn_c )::type_id::create("mon_trn_logger" , this);
-      phy_mon_trn_logger = uvmx_logger_c #(uvma_cvmcu_cpi_phy_mon_trn_c)::type_id::create("phy_mon_trn_logger", this);
-      tx_phy_seq_item_logger = uvmx_logger_c #(uvma_cvmcu_cpi_tx_phy_seq_item_c)::type_id::create("tx_phy_seq_item_logger", this);
-      rx_phy_seq_item_logger = uvmx_logger_c #(uvma_cvmcu_cpi_rx_phy_seq_item_c)::type_id::create("rx_phy_seq_item_logger", this);
+      mon_trn_logger  = uvmx_tlm_logger_c #(uvma_cvmcu_cpi_mon_trn_c )::type_id::create("mon_trn_logger" , this);
+      phy_mon_trn_logger = uvmx_tlm_logger_c #(uvma_cvmcu_cpi_phy_mon_trn_c)::type_id::create("phy_mon_trn_logger", this);
+      tx_phy_seq_item_logger = uvmx_tlm_logger_c #(uvma_cvmcu_cpi_tx_phy_seq_item_c)::type_id::create("tx_phy_seq_item_logger", this);
+      rx_phy_seq_item_logger = uvmx_tlm_logger_c #(uvma_cvmcu_cpi_rx_phy_seq_item_c)::type_id::create("rx_phy_seq_item_logger", this);
    endfunction
 
    /**

@@ -22,10 +22,10 @@ class uvme_cvmcu_io_st_cntxt_c extends uvmx_agent_env_cntxt_c;
 
    /// @name Objects
    /// @{
-   uvml_sb_simplex_cntxt_c  sb_board_cntxt; ///< BOARD Scoreboard context.
-   uvml_sb_simplex_cntxt_c  sb_chip_cntxt; ///< CHIP Scoreboard context.
-   uvml_sb_simplex_cntxt_c  sb_ig_cntxt; ///< IG Scoreboard context.
-   uvml_sb_simplex_cntxt_c  sb_eg_cntxt; ///< EG Scoreboard context.
+   uvmx_sb_simplex_cntxt_c  sb_board_cntxt; ///< BOARD Scoreboard context.
+   uvmx_sb_simplex_cntxt_c  sb_chip_cntxt; ///< CHIP Scoreboard context.
+   uvmx_sb_simplex_cntxt_c  sb_ig_cntxt; ///< IG Scoreboard context.
+   uvmx_sb_simplex_cntxt_c  sb_eg_cntxt; ///< EG Scoreboard context.
    /// @}
 
 
@@ -54,10 +54,10 @@ class uvme_cvmcu_io_st_cntxt_c extends uvmx_agent_env_cntxt_c;
       board_cntxt = uvma_cvmcu_io_cntxt_c::type_id::create("board_cntxt");
       chip_cntxt = uvma_cvmcu_io_cntxt_c::type_id::create("chip_cntxt");
       passive_cntxt = uvma_cvmcu_io_cntxt_c::type_id::create("passive_cntxt");
-      sb_board_cntxt = uvml_sb_simplex_cntxt_c::type_id::create("sb_board_cntxt");
-      sb_chip_cntxt = uvml_sb_simplex_cntxt_c::type_id::create("sb_chip_cntxt");
-      sb_ig_cntxt = uvml_sb_simplex_cntxt_c::type_id::create("sb_ig_cntxt");
-      sb_eg_cntxt = uvml_sb_simplex_cntxt_c::type_id::create("sb_eg_cntxt");
+      sb_board_cntxt = uvmx_sb_simplex_cntxt_c::type_id::create("sb_board_cntxt");
+      sb_chip_cntxt = uvmx_sb_simplex_cntxt_c::type_id::create("sb_chip_cntxt");
+      sb_ig_cntxt = uvmx_sb_simplex_cntxt_c::type_id::create("sb_ig_cntxt");
+      sb_eg_cntxt = uvmx_sb_simplex_cntxt_c::type_id::create("sb_eg_cntxt");
    
    endfunction
 

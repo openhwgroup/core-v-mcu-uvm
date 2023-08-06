@@ -23,5 +23,4 @@ This IP contains the datum Timer unit counter Block UVM Environment.
 It is dependent on the following IP:
 
 * `datum/uvmx`
-* `datum/uvml_sb`
 * `datum/uvma_tcounter_b`

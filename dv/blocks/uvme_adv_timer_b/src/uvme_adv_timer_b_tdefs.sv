@@ -34,7 +34,7 @@ typedef enum {
 /**
  * Scoreboard specialization for Data Plane Output Monitor Transactions.
  */
-typedef uvml_sb_simplex_c #(
+typedef uvmx_sb_simplex_c #(
    .T_ACT_TRN(uvma_adv_timer_b_mon_trn_c)
 ) uvme_adv_timer_b_sb_c;
 

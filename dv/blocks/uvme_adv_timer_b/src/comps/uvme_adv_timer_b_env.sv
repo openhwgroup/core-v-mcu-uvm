@@ -41,7 +41,7 @@ class uvme_adv_timer_b_env_c extends uvmx_block_env_c #(
     */
    virtual function void assign_cfg();
       uvm_config_db#(uvma_adv_timer_b_cfg_c)::set(this, "agent", "cfg", cfg.agent_cfg);
-      uvm_config_db#(uvml_sb_simplex_cfg_c)::set(this, "scoreboard", "cfg", cfg.sb_cfg);
+      uvm_config_db#(uvmx_sb_simplex_cfg_c)::set(this, "scoreboard", "cfg", cfg.sb_cfg);
    endfunction
 
    /**
@@ -49,7 +49,7 @@ class uvme_adv_timer_b_env_c extends uvmx_block_env_c #(
     */
    virtual function void assign_cntxt();
       uvm_config_db#(uvma_adv_timer_b_cntxt_c)::set(this, "agent", "cntxt", cntxt.agent_cntxt);
-      uvm_config_db#(uvml_sb_simplex_cntxt_c)::set(this, "scoreboard", "cntxt", cntxt.sb_cntxt);
+      uvm_config_db#(uvmx_sb_simplex_cntxt_c)::set(this, "scoreboard", "cntxt", cntxt.sb_cntxt);
    endfunction
 
    /**

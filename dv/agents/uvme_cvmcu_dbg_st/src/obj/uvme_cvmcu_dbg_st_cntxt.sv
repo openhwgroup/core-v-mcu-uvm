@@ -22,8 +22,8 @@ class uvme_cvmcu_dbg_st_cntxt_c extends uvmx_agent_env_cntxt_c;
 
    /// @name Objects
    /// @{
-   uvml_sb_simplex_cntxt_c  sb_agent_cntxt; ///< Agent Scoreboard context.
-   uvml_sb_simplex_cntxt_c  sb_e2e_cntxt  ; ///< End-to-end Scoreboard context.
+   uvmx_sb_simplex_cntxt_c  sb_agent_cntxt; ///< Agent Scoreboard context.
+   uvmx_sb_simplex_cntxt_c  sb_e2e_cntxt  ; ///< End-to-end Scoreboard context.
    /// @}
 
 
@@ -50,8 +50,8 @@ class uvme_cvmcu_dbg_st_cntxt_c extends uvmx_agent_env_cntxt_c;
       core_cntxt = uvma_cvmcu_dbg_cntxt_c::type_id::create("core_cntxt");
       sys_cntxt = uvma_cvmcu_dbg_cntxt_c::type_id::create("sys_cntxt");
       passive_cntxt = uvma_cvmcu_dbg_cntxt_c::type_id::create("passive_cntxt");
-      sb_agent_cntxt = uvml_sb_simplex_cntxt_c::type_id::create("sb_agent_cntxt");
-      sb_e2e_cntxt = uvml_sb_simplex_cntxt_c::type_id::create("sb_e2e_cntxt");
+      sb_agent_cntxt = uvmx_sb_simplex_cntxt_c::type_id::create("sb_agent_cntxt");
+      sb_e2e_cntxt = uvmx_sb_simplex_cntxt_c::type_id::create("sb_e2e_cntxt");
    
    endfunction
 

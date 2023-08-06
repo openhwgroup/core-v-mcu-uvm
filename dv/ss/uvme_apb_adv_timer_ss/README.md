@@ -15,7 +15,6 @@ This IP contains the Datum APB Advanced Timer Sub-System UVM Environment.
 It is dependent on the following IP:
 
 * `datum/uvmx`
-* `datum/uvml_sb`
 * `datum/uvma_adv_timer_b`
 * `datum/uvme_adv_timer_b`
 * `datum/uvma_apb`

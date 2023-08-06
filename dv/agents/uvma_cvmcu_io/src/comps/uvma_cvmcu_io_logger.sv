@@ -19,14 +19,14 @@ class uvma_cvmcu_io_logger_c extends uvmx_agent_logger_c #(
 
    /// @name Loggers
    /// @{
-   uvmx_logger_c #(uvma_cvmcu_io_mon_trn_c )  ig_mon_trn_logger; ///< Logs IG Monitor Transactions from vsequencer.
-   uvmx_logger_c #(uvma_cvmcu_io_mon_trn_c )  eg_mon_trn_logger; ///< Logs EG Monitor Transactions from vsequencer.
-   uvmx_logger_c #(uvma_cvmcu_io_board_padi_seq_item_c)  board_padi_seq_item_logger; ///< Logs PADI Sequence Items from BOARD Driver.
-   uvmx_logger_c #(uvma_cvmcu_io_board_pado_seq_item_c)  board_pado_seq_item_logger; ///< Logs PADO Sequence Items from BOARD Driver.
-   uvmx_logger_c #(uvma_cvmcu_io_chip_padi_seq_item_c)  chip_padi_seq_item_logger; ///< Logs PADI Sequence Items from CHIP Driver.
-   uvmx_logger_c #(uvma_cvmcu_io_chip_pado_seq_item_c)  chip_pado_seq_item_logger; ///< Logs PADO Sequence Items from CHIP Driver.
-   uvmx_logger_c #(uvma_cvmcu_io_padi_mon_trn_c)  padi_mon_trn_logger; ///< Logs PADI Monitor Transactions from Monitor.
-   uvmx_logger_c #(uvma_cvmcu_io_pado_mon_trn_c)  pado_mon_trn_logger; ///< Logs PADO Monitor Transactions from Monitor.
+   uvmx_tlm_logger_c #(uvma_cvmcu_io_mon_trn_c )  ig_mon_trn_logger; ///< Logs IG Monitor Transactions from vsequencer.
+   uvmx_tlm_logger_c #(uvma_cvmcu_io_mon_trn_c )  eg_mon_trn_logger; ///< Logs EG Monitor Transactions from vsequencer.
+   uvmx_tlm_logger_c #(uvma_cvmcu_io_board_padi_seq_item_c)  board_padi_seq_item_logger; ///< Logs PADI Sequence Items from BOARD Driver.
+   uvmx_tlm_logger_c #(uvma_cvmcu_io_board_pado_seq_item_c)  board_pado_seq_item_logger; ///< Logs PADO Sequence Items from BOARD Driver.
+   uvmx_tlm_logger_c #(uvma_cvmcu_io_chip_padi_seq_item_c)  chip_padi_seq_item_logger; ///< Logs PADI Sequence Items from CHIP Driver.
+   uvmx_tlm_logger_c #(uvma_cvmcu_io_chip_pado_seq_item_c)  chip_pado_seq_item_logger; ///< Logs PADO Sequence Items from CHIP Driver.
+   uvmx_tlm_logger_c #(uvma_cvmcu_io_padi_mon_trn_c)  padi_mon_trn_logger; ///< Logs PADI Monitor Transactions from Monitor.
+   uvmx_tlm_logger_c #(uvma_cvmcu_io_pado_mon_trn_c)  pado_mon_trn_logger; ///< Logs PADO Monitor Transactions from Monitor.
    /// @}
 
 
@@ -44,14 +44,14 @@ class uvma_cvmcu_io_logger_c extends uvmx_agent_logger_c #(
     * Creates logger components.
     */
    virtual function void create_loggers();
-      ig_mon_trn_logger  = uvmx_logger_c #(uvma_cvmcu_io_mon_trn_c )::type_id::create("ig_mon_trn_logger", this);
-      eg_mon_trn_logger  = uvmx_logger_c #(uvma_cvmcu_io_mon_trn_c )::type_id::create("eg_mon_trn_logger", this);
-      padi_mon_trn_logger = uvmx_logger_c #(uvma_cvmcu_io_padi_mon_trn_c)::type_id::create("padi_mon_trn_logger", this);
-      pado_mon_trn_logger = uvmx_logger_c #(uvma_cvmcu_io_pado_mon_trn_c)::type_id::create("pado_mon_trn_logger", this);
-      board_padi_seq_item_logger = uvmx_logger_c #(uvma_cvmcu_io_board_padi_seq_item_c)::type_id::create("board_padi_seq_item_logger", this);
-      board_pado_seq_item_logger = uvmx_logger_c #(uvma_cvmcu_io_board_pado_seq_item_c)::type_id::create("board_pado_seq_item_logger", this);
-      chip_padi_seq_item_logger = uvmx_logger_c #(uvma_cvmcu_io_chip_padi_seq_item_c)::type_id::create("chip_padi_seq_item_logger", this);
-      chip_pado_seq_item_logger = uvmx_logger_c #(uvma_cvmcu_io_chip_pado_seq_item_c)::type_id::create("chip_pado_seq_item_logger", this);
+      ig_mon_trn_logger  = uvmx_tlm_logger_c #(uvma_cvmcu_io_mon_trn_c )::type_id::create("ig_mon_trn_logger", this);
+      eg_mon_trn_logger  = uvmx_tlm_logger_c #(uvma_cvmcu_io_mon_trn_c )::type_id::create("eg_mon_trn_logger", this);
+      padi_mon_trn_logger = uvmx_tlm_logger_c #(uvma_cvmcu_io_padi_mon_trn_c)::type_id::create("padi_mon_trn_logger", this);
+      pado_mon_trn_logger = uvmx_tlm_logger_c #(uvma_cvmcu_io_pado_mon_trn_c)::type_id::create("pado_mon_trn_logger", this);
+      board_padi_seq_item_logger = uvmx_tlm_logger_c #(uvma_cvmcu_io_board_padi_seq_item_c)::type_id::create("board_padi_seq_item_logger", this);
+      board_pado_seq_item_logger = uvmx_tlm_logger_c #(uvma_cvmcu_io_board_pado_seq_item_c)::type_id::create("board_pado_seq_item_logger", this);
+      chip_padi_seq_item_logger = uvmx_tlm_logger_c #(uvma_cvmcu_io_chip_padi_seq_item_c)::type_id::create("chip_padi_seq_item_logger", this);
+      chip_pado_seq_item_logger = uvmx_tlm_logger_c #(uvma_cvmcu_io_chip_pado_seq_item_c)::type_id::create("chip_pado_seq_item_logger", this);
    endfunction
 
    /**

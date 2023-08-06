@@ -36,7 +36,6 @@ package uvmt_cvmcu_chip_pkg;
 
    import uvm_pkg       ::*;
    import uvmx_pkg      ::*;
-   import uvml_sb_pkg   ::*;
    import uvma_clk_pkg  ::*;
    import uvma_reset_pkg::*;
    import uvme_cvmcu_chip_pkg::*;

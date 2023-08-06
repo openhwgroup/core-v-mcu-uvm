@@ -20,7 +20,7 @@ class uvme_adv_timer_b_cntxt_c extends uvmx_block_env_cntxt_c;
    /// @name Objects
    /// @{
    uvma_adv_timer_b_cntxt_c  agent_cntxt; ///< Block Agent context.
-   uvml_sb_simplex_cntxt_c  sb_cntxt; ///< Scoreboard context
+   uvmx_sb_simplex_cntxt_c  sb_cntxt; ///< Scoreboard context
    /// @}
 
 
@@ -43,7 +43,7 @@ class uvme_adv_timer_b_cntxt_c extends uvmx_block_env_cntxt_c;
     */
    virtual function void create_objects();
       agent_cntxt = uvma_adv_timer_b_cntxt_c::type_id::create("agent_cntxt");
-      sb_cntxt    = uvml_sb_simplex_cntxt_c::type_id::create("sb_cntxt");
+      sb_cntxt    = uvmx_sb_simplex_cntxt_c::type_id::create("sb_cntxt");
    endfunction
 
    /**

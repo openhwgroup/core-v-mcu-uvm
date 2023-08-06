@@ -28,7 +28,6 @@ ip:
 
 dependencies:
   "datum/uvmx"      : "~1.0"
-  "datum/uvml_sb"   : "~1.0"
   "datum/uvma_clk"  : "~1.0"
   "datum/uvma_reset": "~1.0"
   "datum/uvma_cvmcu_event": "^"

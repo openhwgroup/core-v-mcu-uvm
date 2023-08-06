@@ -23,7 +23,6 @@
 `include "uvm_macros.svh"
 `include "uvmx_macros.svh"
 `include "uvma_irq_macros.svh"
-`include "uvml_sb_macros.svh"
 `include "uvma_adv_timer_b_macros.svh"
 `include "uvme_adv_timer_b_macros.svh"
 `include "uvma_apb_macros.svh"
@@ -42,7 +41,6 @@ package uvme_apb_adv_timer_ss_pkg;
    import uvm_pkg    ::*;
    import uvmx_pkg   ::*;
    import uvma_irq_pkg::*;
-   import uvml_sb_pkg::*;
    import uvma_adv_timer_b_pkg::*;
    import uvme_adv_timer_b_pkg::*;
    import uvma_apb_pkg::*;

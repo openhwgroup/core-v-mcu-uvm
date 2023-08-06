@@ -19,14 +19,14 @@ class uvma_tprescaler_b_logger_c extends uvmx_agent_logger_c #(
 
    /// @name Loggers
    /// @{
-   uvmx_logger_c #(uvma_tprescaler_b_mon_trn_c     )  in_mon_trn_logger  ; ///< Logger for Input Monitor Transactions.
-   uvmx_logger_c #(uvma_tprescaler_b_mon_trn_c     )  out_mon_trn_logger ; ///< Logger for Output Monitor Transactions.
-   uvmx_logger_c #(uvma_tprescaler_b_cp_seq_item_c )  cp_seq_item_logger ; ///< Logger for Control Plane Sequence Items.
-   uvmx_logger_c #(uvma_tprescaler_b_dpi_seq_item_c)  dpi_seq_item_logger; ///< Logger for Data Plane Input Sequence Items.
-   uvmx_logger_c #(uvma_tprescaler_b_dpo_seq_item_c)  dpo_seq_item_logger; ///< Logger for Data Plane Output Sequence Items.
-   uvmx_logger_c #(uvma_tprescaler_b_cp_mon_trn_c  )  cp_mon_trn_logger  ; ///< Logger for Control Plane Monitor Transactions.
-   uvmx_logger_c #(uvma_tprescaler_b_dpi_mon_trn_c )  dpi_mon_trn_logger ; ///< Logger for Data Plane Input Monitor Transactions.
-   uvmx_logger_c #(uvma_tprescaler_b_dpo_mon_trn_c )  dpo_mon_trn_logger ; ///< Logger for Data Plane Output Monitor Transactions.
+   uvmx_tlm_logger_c #(uvma_tprescaler_b_mon_trn_c     )  in_mon_trn_logger  ; ///< Logger for Input Monitor Transactions.
+   uvmx_tlm_logger_c #(uvma_tprescaler_b_mon_trn_c     )  out_mon_trn_logger ; ///< Logger for Output Monitor Transactions.
+   uvmx_tlm_logger_c #(uvma_tprescaler_b_cp_seq_item_c )  cp_seq_item_logger ; ///< Logger for Control Plane Sequence Items.
+   uvmx_tlm_logger_c #(uvma_tprescaler_b_dpi_seq_item_c)  dpi_seq_item_logger; ///< Logger for Data Plane Input Sequence Items.
+   uvmx_tlm_logger_c #(uvma_tprescaler_b_dpo_seq_item_c)  dpo_seq_item_logger; ///< Logger for Data Plane Output Sequence Items.
+   uvmx_tlm_logger_c #(uvma_tprescaler_b_cp_mon_trn_c  )  cp_mon_trn_logger  ; ///< Logger for Control Plane Monitor Transactions.
+   uvmx_tlm_logger_c #(uvma_tprescaler_b_dpi_mon_trn_c )  dpi_mon_trn_logger ; ///< Logger for Data Plane Input Monitor Transactions.
+   uvmx_tlm_logger_c #(uvma_tprescaler_b_dpo_mon_trn_c )  dpo_mon_trn_logger ; ///< Logger for Data Plane Output Monitor Transactions.
    /// @}
 
 
@@ -44,14 +44,14 @@ class uvma_tprescaler_b_logger_c extends uvmx_agent_logger_c #(
     * Creates logger components.
     */
    virtual function void create_loggers();
-      in_mon_trn_logger   = uvmx_logger_c #(uvma_tprescaler_b_mon_trn_c     )::type_id::create("in_mon_trn_logger"  , this);
-      out_mon_trn_logger  = uvmx_logger_c #(uvma_tprescaler_b_mon_trn_c     )::type_id::create("out_mon_trn_logger" , this);
-      cp_seq_item_logger  = uvmx_logger_c #(uvma_tprescaler_b_cp_seq_item_c )::type_id::create("cp_seq_item_logger" , this);
-      dpi_seq_item_logger = uvmx_logger_c #(uvma_tprescaler_b_dpi_seq_item_c)::type_id::create("dpi_seq_item_logger", this);
-      dpo_seq_item_logger = uvmx_logger_c #(uvma_tprescaler_b_dpo_seq_item_c)::type_id::create("dpo_seq_item_logger", this);
-      cp_mon_trn_logger   = uvmx_logger_c #(uvma_tprescaler_b_cp_mon_trn_c  )::type_id::create("cp_mon_trn_logger"  , this);
-      dpi_mon_trn_logger  = uvmx_logger_c #(uvma_tprescaler_b_dpi_mon_trn_c )::type_id::create("dpi_mon_trn_logger" , this);
-      dpo_mon_trn_logger  = uvmx_logger_c #(uvma_tprescaler_b_dpo_mon_trn_c )::type_id::create("dpo_mon_trn_logger" , this);
+      in_mon_trn_logger   = uvmx_tlm_logger_c #(uvma_tprescaler_b_mon_trn_c     )::type_id::create("in_mon_trn_logger"  , this);
+      out_mon_trn_logger  = uvmx_tlm_logger_c #(uvma_tprescaler_b_mon_trn_c     )::type_id::create("out_mon_trn_logger" , this);
+      cp_seq_item_logger  = uvmx_tlm_logger_c #(uvma_tprescaler_b_cp_seq_item_c )::type_id::create("cp_seq_item_logger" , this);
+      dpi_seq_item_logger = uvmx_tlm_logger_c #(uvma_tprescaler_b_dpi_seq_item_c)::type_id::create("dpi_seq_item_logger", this);
+      dpo_seq_item_logger = uvmx_tlm_logger_c #(uvma_tprescaler_b_dpo_seq_item_c)::type_id::create("dpo_seq_item_logger", this);
+      cp_mon_trn_logger   = uvmx_tlm_logger_c #(uvma_tprescaler_b_cp_mon_trn_c  )::type_id::create("cp_mon_trn_logger"  , this);
+      dpi_mon_trn_logger  = uvmx_tlm_logger_c #(uvma_tprescaler_b_dpi_mon_trn_c )::type_id::create("dpi_mon_trn_logger" , this);
+      dpo_mon_trn_logger  = uvmx_tlm_logger_c #(uvma_tprescaler_b_dpo_mon_trn_c )::type_id::create("dpo_mon_trn_logger" , this);
    endfunction
 
    /**

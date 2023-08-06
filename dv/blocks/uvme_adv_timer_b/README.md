@@ -23,5 +23,4 @@ This IP contains the datum Advanced timer counter Block UVM Environment.
 It is dependent on the following IP:
 
 * `datum/uvmx`
-* `datum/uvml_sb`
 * `datum/uvma_adv_timer_b`

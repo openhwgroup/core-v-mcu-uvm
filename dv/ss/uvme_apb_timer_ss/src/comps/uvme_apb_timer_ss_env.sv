@@ -98,6 +98,8 @@ class uvme_apb_timer_ss_env_c extends uvmx_ss_env_c #(
     */
    virtual function void create_reg_adapter();
       proc_reg_adapter = uvma_apb_reg_adapter_c::type_id::create("proc_reg_adapter");
+      proc_reg_adapter.cfg   = cfg  .proc_agent_cfg  ;
+      proc_reg_adapter.cntxt = cntxt.proc_agent_cntxt;
    endfunction
 
    /**

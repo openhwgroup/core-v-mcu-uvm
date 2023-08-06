@@ -17,5 +17,4 @@ This IP contains the Datum Technology Corporation CORE-V-MCU Event Interface UVM
 It is dependent on the following IP:
 
 * `datum/uvmx`
-* `datum/uvml_sb`
 * `datum/uvma_cvmcu_event`

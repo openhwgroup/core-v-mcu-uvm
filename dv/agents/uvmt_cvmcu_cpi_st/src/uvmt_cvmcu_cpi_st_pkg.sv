@@ -20,7 +20,6 @@
 // Pre-processor macros
 `include "uvm_macros.svh"
 `include "uvmx_macros.svh"
-`include "uvml_sb_macros.svh"
 `include "uvma_clk_macros.svh"
 `include "uvma_reset_macros.svh"
 `include "uvma_cvmcu_cpi_macros.svh"
@@ -38,7 +37,6 @@ package uvmt_cvmcu_cpi_st_pkg;
 
    import uvm_pkg       ::*;
    import uvmx_pkg      ::*;
-   import uvml_sb_pkg   ::*;
    import uvma_clk_pkg  ::*;
    import uvma_reset_pkg::*;
    import uvma_cvmcu_cpi_pkg   ::*;

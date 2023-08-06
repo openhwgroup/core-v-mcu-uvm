@@ -26,7 +26,7 @@ class uvme_adv_timer_b_cfg_c extends uvmx_block_env_cfg_c;
    /// @name Objects
    /// @{
    rand uvma_adv_timer_b_cfg_c  agent_cfg; ///< Block Agent configuration
-   rand uvml_sb_simplex_cfg_c  sb_cfg; ///< Data path scoreboard configuration
+   rand uvmx_sb_simplex_cfg_c  sb_cfg; ///< Data path scoreboard configuration
    /// @}
 
 
@@ -67,7 +67,7 @@ class uvme_adv_timer_b_cfg_c extends uvmx_block_env_cfg_c;
     */
    constraint sb_cons {
       sb_cfg.enabled     == scoreboarding_enabled;
-      sb_cfg.mode        == UVML_SB_MODE_IN_ORDER;
+      sb_cfg.mode        == UVMX_SB_MODE_IN_ORDER;
       sb_cfg.log_enabled == 1;
    }
 
@@ -84,7 +84,7 @@ class uvme_adv_timer_b_cfg_c extends uvmx_block_env_cfg_c;
     */
    virtual function void create_objects();
       agent_cfg = uvma_adv_timer_b_cfg_c::type_id::create("agent_cfg");
-      sb_cfg    = uvml_sb_simplex_cfg_c::type_id::create("sb_cfg");
+      sb_cfg    = uvmx_sb_simplex_cfg_c::type_id::create("sb_cfg");
    endfunction
 
    /**

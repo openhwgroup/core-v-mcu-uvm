@@ -15,7 +15,6 @@ This IP contains the Datum APB simple timer unit Sub-System UVM Environment.
 It is dependent on the following IP:
 
 * `datum/uvmx`
-* `datum/uvml_sb`
 * `datum/uvma_tcounter_b`
 * `datum/uvme_tcounter_b`
 * `datum/uvma_tprescaler_b`

@@ -36,7 +36,6 @@ module uvmt_cvmcu_chip_tb;
    /// @name CORE-V-MCU chip
    /// @{
    uvma_jtag_if  jtag_if(.tck(jtag_tck_i), .trst(rstn_i)); ///< JTAG controller agent interface
-   uvma_apb_if  apb_if(); ///< APB peripherals monitor agent interface
    uvma_cvmcu_io_if  io_if(.ref_clk_i(ref_clk_i), .rstn_i(rstn_i)); ///< IO ports agent interface
    uvma_obi_if  instr_obi_if(); ///< Instruction memory OBI agent interface
    uvma_obi_if  data_obi_if(); ///< Data memory OBI agent interface
@@ -131,7 +130,6 @@ module uvmt_cvmcu_chip_tb;
       uvm_config_db#(virtual uvma_reset_if)::set(null, "uvm_test_top.sys_reset_agent", "vif", sys_reset_if);
       uvm_config_db#(virtual uvma_reset_if)::set(null, "uvm_test_top.jtag_reset_agent", "vif", jtag_reset_if);
       uvm_config_db#(virtual uvma_jtag_if)::set(null, "uvm_test_top.env.jtag_agent", "vif", jtag_if);
-      uvm_config_db#(virtual uvma_apb_if)::set(null, "uvm_test_top.env.apb_agent", "vif", apb_if);
       uvm_config_db#(virtual uvma_cvmcu_io_if)::set(null, "uvm_test_top.env.io_agent", "vif", io_if);
       uvm_config_db#(virtual uvma_obi_if)::set(null, "uvm_test_top.env.instr_obi_agent", "vif", instr_obi_if);
       uvm_config_db#(virtual uvma_obi_if)::set(null, "uvm_test_top.env.data_obi_agent", "vif", data_obi_if);

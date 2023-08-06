@@ -29,7 +29,6 @@ class uvme_cvmcu_chip_env_c extends uvmx_chip_env_c #(
    uvma_cvmcu_cpi_agent_c  camera_agent; ///< Camera Parallel Interface transmitter agent
    uvma_i2c_agent_c  i2c_s0_agent; ///< I2C slave 0 agent
    uvma_i2c_agent_c  i2c_s1_agent; ///< I2C slave 1 agent
-   uvma_apb_agent_c  apb_agent; ///< APB peripherals monitor agent
    uvma_uart_agent_c  uart0_agent; ///< UART 0 agent
    uvma_uart_agent_c  uart1_agent; ///< UART 1 agent
    uvma_sdio_agent_c  sdio_agent; ///< Flash card agent
@@ -75,7 +74,6 @@ class uvme_cvmcu_chip_env_c extends uvmx_chip_env_c #(
       uvm_config_db#(uvma_cvmcu_cpi_cfg_c)::set(this, "camera_agent", "cfg", cfg.camera_agent_cfg);
       uvm_config_db#(uvma_i2c_cfg_c)::set(this, "i2c_s0_agent", "cfg", cfg.i2c_s0_agent_cfg);
       uvm_config_db#(uvma_i2c_cfg_c)::set(this, "i2c_s1_agent", "cfg", cfg.i2c_s1_agent_cfg);
-      uvm_config_db#(uvma_apb_cfg_c)::set(this, "apb_agent", "cfg", cfg.apb_agent_cfg);
       uvm_config_db#(uvma_uart_cfg_c)::set(this, "uart0_agent", "cfg", cfg.uart0_agent_cfg);
       uvm_config_db#(uvma_uart_cfg_c)::set(this, "uart1_agent", "cfg", cfg.uart1_agent_cfg);
       uvm_config_db#(uvma_sdio_cfg_c)::set(this, "sdio_agent", "cfg", cfg.sdio_agent_cfg);
@@ -101,7 +99,6 @@ class uvme_cvmcu_chip_env_c extends uvmx_chip_env_c #(
       uvm_config_db#(uvma_cvmcu_cpi_cntxt_c)::set(this, "camera_agent", "cntxt", cntxt.camera_agent_cntxt);
       uvm_config_db#(uvma_i2c_cntxt_c)::set(this, "i2c_s0_agent", "cntxt", cntxt.i2c_s0_agent_cntxt);
       uvm_config_db#(uvma_i2c_cntxt_c)::set(this, "i2c_s1_agent", "cntxt", cntxt.i2c_s1_agent_cntxt);
-      uvm_config_db#(uvma_apb_cntxt_c)::set(this, "apb_agent", "cntxt", cntxt.apb_agent_cntxt);
       uvm_config_db#(uvma_uart_cntxt_c)::set(this, "uart0_agent", "cntxt", cntxt.uart0_agent_cntxt);
       uvm_config_db#(uvma_uart_cntxt_c)::set(this, "uart1_agent", "cntxt", cntxt.uart1_agent_cntxt);
       uvm_config_db#(uvma_sdio_cntxt_c)::set(this, "sdio_agent", "cntxt", cntxt.sdio_agent_cntxt);
@@ -135,7 +132,6 @@ class uvme_cvmcu_chip_env_c extends uvmx_chip_env_c #(
       camera_agent = uvma_cvmcu_cpi_agent_c::type_id::create("camera_agent", this);
       i2c_s0_agent = uvma_i2c_agent_c::type_id::create("i2c_s0_agent", this);
       i2c_s1_agent = uvma_i2c_agent_c::type_id::create("i2c_s1_agent", this);
-      apb_agent = uvma_apb_agent_c::type_id::create("apb_agent", this);
       uart0_agent = uvma_uart_agent_c::type_id::create("uart0_agent", this);
       uart1_agent = uvma_uart_agent_c::type_id::create("uart1_agent", this);
       sdio_agent = uvma_sdio_agent_c::type_id::create("sdio_agent", this);
@@ -162,6 +158,8 @@ class uvme_cvmcu_chip_env_c extends uvmx_chip_env_c #(
     */
    virtual function void create_reg_adapter();
       data_obi_reg_adapter = uvma_obi_reg_adapter_c::type_id::create("data_obi_reg_adapter");
+      data_obi_reg_adapter.cfg   = cfg  .data_obi_agent_cfg  ;
+      data_obi_reg_adapter.cntxt = cntxt.data_obi_agent_cntxt;
    endfunction
 
    /**
@@ -291,7 +289,6 @@ class uvme_cvmcu_chip_env_c extends uvmx_chip_env_c #(
       vsequencer.camera_agent_vsequencer = camera_agent.vsequencer;
       vsequencer.i2c_s0_agent_vsequencer = i2c_s0_agent.vsequencer;
       vsequencer.i2c_s1_agent_vsequencer = i2c_s1_agent.vsequencer;
-      vsequencer.apb_agent_vsequencer = apb_agent.vsequencer;
       vsequencer.uart0_agent_vsequencer = uart0_agent.vsequencer;
       vsequencer.uart1_agent_vsequencer = uart1_agent.vsequencer;
       vsequencer.sdio_agent_vsequencer = sdio_agent.vsequencer;

@@ -37,16 +37,16 @@ class uvme_cvmcu_cpi_st_sb_c extends uvmx_agent_sb_c #(
     *
     */
    virtual function void assign_cfg();
-      uvm_config_db#(uvml_sb_simplex_cfg_c)::set(this, "sb_agent", "cfg", cfg.sb_agent_cfg);
-      uvm_config_db#(uvml_sb_simplex_cfg_c)::set(this, "sb_e2e"  , "cfg", cfg.sb_e2e_cfg  );
+      uvm_config_db#(uvmx_sb_simplex_cfg_c)::set(this, "sb_agent", "cfg", cfg.sb_agent_cfg);
+      uvm_config_db#(uvmx_sb_simplex_cfg_c)::set(this, "sb_e2e"  , "cfg", cfg.sb_e2e_cfg  );
       endfunction
 
    /**
     *
     */
    virtual function void assign_cntxt();
-      uvm_config_db#(uvml_sb_simplex_cntxt_c)::set(this, "sb_agent", "cntxt", cntxt.sb_agent_cntxt);
-      uvm_config_db#(uvml_sb_simplex_cntxt_c)::set(this, "sb_e2e"  , "cntxt", cntxt.sb_e2e_cntxt  );
+      uvm_config_db#(uvmx_sb_simplex_cntxt_c)::set(this, "sb_agent", "cntxt", cntxt.sb_agent_cntxt);
+      uvm_config_db#(uvmx_sb_simplex_cntxt_c)::set(this, "sb_e2e"  , "cntxt", cntxt.sb_e2e_cntxt  );
    
    endfunction
 

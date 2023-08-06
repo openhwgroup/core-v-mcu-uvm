@@ -21,7 +21,6 @@
 // Pre-processor macros
 `include "uvm_macros.svh"
 `include "uvmx_macros.svh"
-`include "uvml_sb_macros.svh"
 `include "uvma_tprescaler_b_macros.svh"
 `include "uvme_tprescaler_b_macros.svh"
 
@@ -36,7 +35,6 @@ package uvme_tprescaler_b_pkg;
 
    import uvm_pkg    ::*;
    import uvmx_pkg   ::*;
-   import uvml_sb_pkg::*;
    import uvma_tprescaler_b_pkg::*;
 
    // Constants / Structs / Enums

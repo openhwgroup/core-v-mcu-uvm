@@ -13,7 +13,6 @@
  */
 module uvmt_cvmcu_chip_dut_wrap (
    uvma_jtag_if  jtag_if, ///< JTAG controller agent interface
-   uvma_apb_if  apb_if, ///< APB peripherals monitor agent interface
    uvma_cvmcu_io_if  io_if, ///< IO ports agent interface
    uvma_obi_if  instr_obi_if, ///< Instruction memory OBI agent interface
    uvma_obi_if  data_obi_if, ///< Data memory OBI agent interface
@@ -330,20 +329,6 @@ module uvmt_cvmcu_chip_dut_wrap (
    assign apb_adv_timer__adv_timer3_if.counter_o = dut.i_soc_domain.soc_peripherals_i.i_apb_adv_timer.u_tim3.counter_o;
    assign apb_adv_timer__adv_timer3_if.pwm_o = dut.i_soc_domain.soc_peripherals_i.i_apb_adv_timer.u_tim3.pwm_o;
    assign apb_adv_timer__adv_timer3_if.status_o = dut.i_soc_domain.soc_peripherals_i.i_apb_adv_timer.u_tim3.status_o;
-   /// @}
-
-   /// @name apb agent
-   /// @{
-   assign apb_if.clk = dut.i_soc_domain.ref_clk_i;
-   assign apb_if.reset_n = dut.i_soc_domain.rstn_glob_i;
-   assign apb_if.psel = dut.i_soc_domain.s_apb_periph_bus.psel;
-   assign apb_if.penable = dut.i_soc_domain.s_apb_periph_bus.penable;
-   assign apb_if.pwrite = dut.i_soc_domain.s_apb_periph_bus.pwrite;
-   assign apb_if.paddr = dut.i_soc_domain.s_apb_periph_bus.paddr;
-   assign apb_if.pwdata = dut.i_soc_domain.s_apb_periph_bus.pwdata;
-   assign apb_if.pready = dut.i_soc_domain.s_apb_periph_bus.pready;
-   assign apb_if.prdata = dut.i_soc_domain.s_apb_periph_bus.prdata;
-   assign apb_if.pslverr = dut.i_soc_domain.s_apb_periph_bus.pslverr;
    /// @}
 
    /// @name event agent

@@ -24,7 +24,6 @@ class uvme_cvmcu_chip_vsqr_c extends uvmx_chip_env_vsqr_c #(
    uvma_cvmcu_cpi_vsqr_c  camera_agent_vsequencer; ///< Camera Parallel Interface transmitter sequencer
    uvma_i2c_vsqr_c  i2c_s0_agent_vsequencer; ///< I2C slave 0 sequencer
    uvma_i2c_vsqr_c  i2c_s1_agent_vsequencer; ///< I2C slave 1 sequencer
-   uvma_apb_vsqr_c  apb_agent_vsequencer; ///< APB peripherals monitor sequencer
    uvma_uart_vsqr_c  uart0_agent_vsequencer; ///< UART 0 sequencer
    uvma_uart_vsqr_c  uart1_agent_vsequencer; ///< UART 1 sequencer
    uvma_sdio_vsqr_c  sdio_agent_vsequencer; ///< Flash card sequencer

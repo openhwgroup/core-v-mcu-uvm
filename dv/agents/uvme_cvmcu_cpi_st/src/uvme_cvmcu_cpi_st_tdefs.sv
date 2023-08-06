@@ -27,7 +27,7 @@
 /**
  * Scoreboard specialization.
  */
-typedef uvml_sb_simplex_c #(
+typedef uvmx_sb_simplex_c #(
    .T_ACT_TRN(uvma_cvmcu_cpi_mon_trn_c)
 ) uvme_cvmcu_cpi_st_sb_simplex_c;
 

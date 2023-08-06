@@ -37,7 +37,6 @@ package uvmt_tprescaler_b_pkg;
 
    import uvm_pkg       ::*;
    import uvmx_pkg      ::*;
-   import uvml_sb_pkg   ::*;
    import uvma_clk_pkg  ::*;
    import uvma_reset_pkg::*;
    import uvma_tprescaler_b_pkg::*;

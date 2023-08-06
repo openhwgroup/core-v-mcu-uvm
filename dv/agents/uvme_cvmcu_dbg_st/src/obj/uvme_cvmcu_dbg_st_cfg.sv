@@ -23,8 +23,8 @@ class uvme_cvmcu_dbg_st_cfg_c extends uvmx_agent_env_cfg_c;
    rand uvma_cvmcu_dbg_cfg_c  core_cfg; ///< CORE Agent configuration.
    rand uvma_cvmcu_dbg_cfg_c  sys_cfg; ///< SYS Agent configuration.
    rand uvma_cvmcu_dbg_cfg_c  passive_cfg; ///< Passive Agent configuration.
-   rand uvml_sb_simplex_cfg_c  sb_agent_cfg; ///< Agent Scoreboard configuration.
-   rand uvml_sb_simplex_cfg_c  sb_e2e_cfg  ; ///<  End-to-end Scoreboard configuration.
+   rand uvmx_sb_simplex_cfg_c  sb_agent_cfg; ///< Agent Scoreboard configuration.
+   rand uvmx_sb_simplex_cfg_c  sb_e2e_cfg  ; ///<  End-to-end Scoreboard configuration.
    /// @}
 
 
@@ -77,8 +77,8 @@ class uvme_cvmcu_dbg_st_cfg_c extends uvmx_agent_env_cfg_c;
     * Sets all configuration fields for Scoreboard configurations.
     */
    constraint sb_e2e_cfg_cons {
-      sb_agent_cfg.mode == UVML_SB_MODE_IN_ORDER;
-      sb_e2e_cfg.mode == UVML_SB_MODE_IN_ORDER;
+      sb_agent_cfg.mode == UVMX_SB_MODE_IN_ORDER;
+      sb_e2e_cfg.mode == UVMX_SB_MODE_IN_ORDER;
       sb_agent_cfg.enabled == scoreboarding_enabled;
       sb_e2e_cfg.enabled == scoreboarding_enabled;
    }
@@ -98,8 +98,8 @@ class uvme_cvmcu_dbg_st_cfg_c extends uvmx_agent_env_cfg_c;
       core_cfg = uvma_cvmcu_dbg_cfg_c::type_id::create("core_cfg");
       sys_cfg = uvma_cvmcu_dbg_cfg_c::type_id::create("sys_cfg");
       passive_cfg = uvma_cvmcu_dbg_cfg_c::type_id::create("passive_cfg");
-      sb_agent_cfg = uvml_sb_simplex_cfg_c::type_id::create("sb_agent_cfg");
-      sb_e2e_cfg   = uvml_sb_simplex_cfg_c::type_id::create("sb_e2e_cfg"  );
+      sb_agent_cfg = uvmx_sb_simplex_cfg_c::type_id::create("sb_agent_cfg");
+      sb_e2e_cfg   = uvmx_sb_simplex_cfg_c::type_id::create("sb_e2e_cfg"  );
    endfunction
 
    /**
