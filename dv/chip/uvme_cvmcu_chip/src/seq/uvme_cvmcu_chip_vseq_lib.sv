@@ -7,10 +7,8 @@
 `define __UVME_CVMCU_CHIP_VSEQ_LIB_SV__
 
 
-`include "uvme_cvmcu_chip_base_vseq.sv"
-`include "uvme_cvmcu_chip_reg_base_vseq.sv"
-`include "uvme_cvmcu_chip_init_vseq.sv"
-`include "uvme_cvmcu_chip_cfg_vseq.sv"
+// TODO Include sequence files in uvme_cvmcu_chip_vseq_lib.sv
+//      Ex: `include "uvme_cvmcu_chip_example_vseq.sv"
 
 
 /**

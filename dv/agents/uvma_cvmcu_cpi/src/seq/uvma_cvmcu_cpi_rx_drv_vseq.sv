@@ -26,7 +26,7 @@ class uvma_cvmcu_cpi_rx_drv_vseq_c extends uvma_cvmcu_cpi_base_vseq_c;
 
 
    /**
-    *
+    * Drives all segments.
     */
    virtual task drive();
       uvma_cvmcu_cpi_rx_phy_seq_item_c  rx_seq_item;

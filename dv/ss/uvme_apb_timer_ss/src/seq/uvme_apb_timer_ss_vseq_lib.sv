@@ -7,10 +7,8 @@
 `define __UVME_APB_TIMER_SS_VSEQ_LIB_SV__
 
 
-`include "uvme_apb_timer_ss_base_vseq.sv"
-`include "uvme_apb_timer_ss_reg_base_vseq.sv"
-`include "uvme_apb_timer_ss_init_vseq.sv"
-`include "uvme_apb_timer_ss_cfg_vseq.sv"
+// TODO Include sequence files in uvme_apb_timer_ss_vseq_lib.sv
+//      Ex: `include "uvme_apb_timer_ss_example_vseq.sv"
 
 
 /**

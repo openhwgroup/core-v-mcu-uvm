@@ -10,7 +10,6 @@
 /**
  * Abstract virtual sequence from which all other CORE-V-MCU Chip environment virtual sequences extend.
  * Subclasses must be run on uvme_cvmcu_chip_vsqr_c.
- * @note Does not generate any sequence items of its own.
  * @ingroup uvme_cvmcu_chip_seq
  */
 class uvme_cvmcu_chip_base_vseq_c extends uvmx_chip_env_vseq_c #(

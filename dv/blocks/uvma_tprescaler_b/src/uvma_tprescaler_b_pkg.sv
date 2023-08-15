@@ -69,7 +69,6 @@ package uvma_tprescaler_b_pkg;
 
    // Sequences
    `include "uvma_tprescaler_b_base_vseq.sv"
-   `include "uvma_tprescaler_b_trn_base_vseq.sv"
    `include "uvma_tprescaler_b_mon_vseq.sv"
    `include "uvma_tprescaler_b_in_drv_vseq.sv"
    `include "uvma_tprescaler_b_out_drv_vseq.sv"

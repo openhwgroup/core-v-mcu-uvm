@@ -68,11 +68,11 @@ class uvma_tcounter_b_agent_c extends uvmx_agent_c #(
     * Connects top-level ports to lower-level components'.
     */
    virtual function void connect_ports();
-      in_mon_trn_ap   = vsequencer.in_mon_trn_ap ;
-      out_mon_trn_ap  = vsequencer.out_mon_trn_ap;
-      cp_seq_item_ap  = driver .cp_driver  .ap;
-      dpi_seq_item_ap = driver .dpi_driver .ap;
-      dpo_seq_item_ap = driver .dpo_driver .ap;
+      in_mon_trn_ap   = vsequencer.in_mon_trn_fifo .put_ap;
+      out_mon_trn_ap  = vsequencer.out_mon_trn_fifo.put_ap;
+      cp_seq_item_ap  = vsequencer.cp_sequencer .ap;
+      dpi_seq_item_ap = vsequencer.dpi_sequencer.ap;
+      dpo_seq_item_ap = vsequencer.dpo_sequencer.ap;
       cp_mon_trn_ap   = monitor.cp_monitor .ap;
       dpi_mon_trn_ap  = monitor.dpi_monitor.ap;
       dpo_mon_trn_ap  = monitor.dpo_monitor.ap;

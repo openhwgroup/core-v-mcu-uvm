@@ -69,7 +69,6 @@ package uvma_adv_timer_b_pkg;
 
    // Sequences
    `include "uvma_adv_timer_b_base_vseq.sv"
-   `include "uvma_adv_timer_b_trn_base_vseq.sv"
    `include "uvma_adv_timer_b_mon_vseq.sv"
    `include "uvma_adv_timer_b_in_drv_vseq.sv"
    `include "uvma_adv_timer_b_out_drv_vseq.sv"

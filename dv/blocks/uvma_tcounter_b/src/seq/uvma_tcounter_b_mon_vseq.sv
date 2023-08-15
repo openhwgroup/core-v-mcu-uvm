@@ -53,7 +53,7 @@ class uvma_tcounter_b_mon_vseq_c extends uvma_tcounter_b_base_vseq_c;
          //          `uvmx_get_mon_trn(dpi_trn, dpi_mon_trn_fifo)
          //          // ...
          //          in_trn.from(dpi_trn);
-         //          `uvmx_write_mon_trn(in_trn, in_mon_trn_ap)
+         //          `uvmx_write_mon_trn(in_trn, in_mon_trn_fifo)
       end
    endtask
 
@@ -79,7 +79,7 @@ class uvma_tcounter_b_mon_vseq_c extends uvma_tcounter_b_base_vseq_c;
          //          // ...
          //          out_trn.xyz = cp_trn.xyz;
          //          out_trn.from(cp_trn);
-         //          `uvmx_write_mon_trn(out_trn, out_mon_trn_ap)
+         //          `uvmx_write_mon_trn(out_trn, out_mon_trn_fifo)
       end
    endtask
 

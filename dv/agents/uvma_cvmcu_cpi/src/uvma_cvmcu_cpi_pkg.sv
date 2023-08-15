@@ -68,7 +68,6 @@ package uvma_cvmcu_cpi_pkg;
 
    // Sequences
    `include "uvma_cvmcu_cpi_base_vseq.sv"
-   `include "uvma_cvmcu_cpi_trn_base_vseq.sv"
    `include "uvma_cvmcu_cpi_mon_vseq.sv"
    `include "uvma_cvmcu_cpi_tx_drv_vseq.sv"
    `include "uvma_cvmcu_cpi_rx_drv_vseq.sv"

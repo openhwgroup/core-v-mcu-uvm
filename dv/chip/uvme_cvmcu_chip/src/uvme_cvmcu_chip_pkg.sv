@@ -83,6 +83,10 @@ package uvme_cvmcu_chip_pkg;
    `include "uvme_cvmcu_chip_env.sv"
 
    // Sequences
+   `include "uvme_cvmcu_chip_base_vseq.sv"
+   `include "uvme_cvmcu_chip_init_vseq.sv"
+   `include "uvme_cvmcu_chip_cfg_vseq.sv"
+   `include "uvme_cvmcu_chip_io_transport_vseq.sv"
    `include "uvme_cvmcu_chip_vseq_lib.sv"
 
 endpackage : uvme_cvmcu_chip_pkg

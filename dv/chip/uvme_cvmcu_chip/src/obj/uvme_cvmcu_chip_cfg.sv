@@ -144,7 +144,7 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
     * Sets QSPI slave 0 agent configuration.
     */
    constraint qspi_s0_agent_cfg_cons {
-      qspi_s0_agent_cfg.enabled == 0;
+      qspi_s0_agent_cfg.enabled == enabled;
       qspi_s0_agent_cfg.bypass_mode == 1;
       qspi_s0_agent_cfg.data_width == 4;
       qspi_s0_agent_cfg.drv_mode == UVMA_SPI_DRV_MODE_SLV;
@@ -157,7 +157,7 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
     * Sets QSPI slave 1 agent configuration.
     */
    constraint qspi_s1_agent_cfg_cons {
-      qspi_s1_agent_cfg.enabled == 0;
+      qspi_s1_agent_cfg.enabled == enabled;
       qspi_s1_agent_cfg.bypass_mode == 1;
       qspi_s1_agent_cfg.data_width == 4;
       qspi_s1_agent_cfg.drv_mode == UVMA_SPI_DRV_MODE_SLV;
@@ -170,7 +170,7 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
     * Sets Camera Parallel Interface transmitter agent configuration.
     */
    constraint camera_agent_cfg_cons {
-      camera_agent_cfg.enabled == 0;
+      camera_agent_cfg.enabled == enabled;
       camera_agent_cfg.bypass_mode == 1;
       camera_agent_cfg.drv_mode == UVMA_CVMCU_CPI_DRV_MODE_TX;
       camera_agent_cfg.is_active == is_active;
@@ -182,7 +182,7 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
     * Sets I2C slave 0 agent configuration.
     */
    constraint i2c_s0_agent_cfg_cons {
-      i2c_s0_agent_cfg.enabled == 0;
+      i2c_s0_agent_cfg.enabled == enabled;
       i2c_s0_agent_cfg.bypass_mode == 1;
       i2c_s0_agent_cfg.drv_mode == UVMA_I2C_DRV_MODE_SLV;
       i2c_s0_agent_cfg.is_active == is_active;
@@ -194,7 +194,7 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
     * Sets I2C slave 1 agent configuration.
     */
    constraint i2c_s1_agent_cfg_cons {
-      i2c_s1_agent_cfg.enabled == 0;
+      i2c_s1_agent_cfg.enabled == enabled;
       i2c_s1_agent_cfg.bypass_mode == 1;
       i2c_s1_agent_cfg.drv_mode == UVMA_I2C_DRV_MODE_SLV;
       i2c_s1_agent_cfg.is_active == is_active;
@@ -206,7 +206,7 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
     * Sets UART 0 agent configuration.
     */
    constraint uart0_agent_cfg_cons {
-      uart0_agent_cfg.enabled == 0;
+      uart0_agent_cfg.enabled == enabled;
       uart0_agent_cfg.bypass_mode == 1;
       uart0_agent_cfg.drv_mode == UVMA_UART_DRV_MODE_TX;
       uart0_agent_cfg.is_active == is_active;
@@ -218,7 +218,7 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
     * Sets UART 1 agent configuration.
     */
    constraint uart1_agent_cfg_cons {
-      uart1_agent_cfg.enabled == 0;
+      uart1_agent_cfg.enabled == enabled;
       uart1_agent_cfg.bypass_mode == 1;
       uart1_agent_cfg.drv_mode == UVMA_UART_DRV_MODE_TX;
       uart1_agent_cfg.is_active == is_active;
@@ -230,7 +230,7 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
     * Sets Flash card agent configuration.
     */
    constraint sdio_agent_cfg_cons {
-      sdio_agent_cfg.enabled == 0;
+      sdio_agent_cfg.enabled == enabled;
       sdio_agent_cfg.bypass_mode == 1;
       sdio_agent_cfg.drv_mode == UVMA_SDIO_DRV_MODE_DEV;
       sdio_agent_cfg.is_active == is_active;
@@ -242,7 +242,7 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
     * Sets I2C master agent configuration.
     */
    constraint i2c_m_agent_cfg_cons {
-      i2c_m_agent_cfg.enabled == 0;
+      i2c_m_agent_cfg.enabled == enabled;
       i2c_m_agent_cfg.bypass_mode == 1;
       i2c_m_agent_cfg.drv_mode == UVMA_I2C_DRV_MODE_MSTR;
       i2c_m_agent_cfg.is_active == is_active;

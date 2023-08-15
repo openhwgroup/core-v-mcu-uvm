@@ -10,7 +10,6 @@
 /**
  * Abstract virtual sequence from which all other APB simple timer unit Sub-System environment virtual sequences extend.
  * Subclasses must be run on uvme_apb_timer_ss_vsqr_c.
- * @note Does not generate any sequence items of its own.
  * @ingroup uvme_apb_timer_ss_seq
  */
 class uvme_apb_timer_ss_base_vseq_c extends uvmx_ss_env_vseq_c #(

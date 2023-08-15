@@ -40,14 +40,10 @@ class uvma_cvmcu_cpi_vsqr_c extends uvmx_agent_vsqr_c #(
    uvma_cvmcu_cpi_rx_phy_sqr_c  rx_phy_sequencer; ///< Sequencer for RX PHY Driver.
    /// @}
 
-   /// @name Ports
-   /// @{
-   uvm_analysis_port #(uvma_cvmcu_cpi_mon_trn_c)  mon_trn_ap; ///< Output Port for Monitor Transactions.
-   /// @}
-
    /// @name FIFOs
    /// @{
-   uvm_tlm_analysis_fifo  #(uvma_cvmcu_cpi_phy_mon_trn_c)  phy_mon_trn_fifo; ///< FIFO of PHY Monitor Transactions obtained from uvma_cvmcu_cpi_phy_mon_c.
+   uvm_tlm_analysis_fifo #(uvma_cvmcu_cpi_mon_trn_c)  mon_trn_fifo; ///< Output for Monitor Transactions.
+   uvm_tlm_analysis_fifo #(uvma_cvmcu_cpi_phy_mon_trn_c)  phy_mon_trn_fifo; ///< FIFO of PHY Monitor Transactions obtained from uvma_cvmcu_cpi_phy_mon_c.
    /// @}
 
 
@@ -70,16 +66,10 @@ class uvma_cvmcu_cpi_vsqr_c extends uvmx_agent_vsqr_c #(
    endfunction
 
    /**
-    * Creates TLM Ports.
-    */
-   virtual function void create_ports();
-      mon_trn_ap = new("mon_trn_ap", this);
-   endfunction
-
-   /**
     * Creates TLM FIFOs.
     */
    virtual function void create_fifos();
+      mon_trn_fifo = new("mon_trn_fifo", this);
       phy_mon_trn_fifo = new("phy_mon_trn_fifo", this);
    endfunction
 

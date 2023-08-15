@@ -55,14 +55,10 @@ class uvma_adv_timer_b_vsqr_c extends uvmx_agent_vsqr_c #(
    uvma_adv_timer_b_dpo_sqr_c  dpo_sequencer; ///< Data Plane Output Sequencer connected to uvma_adv_timer_b_dpo_drv_c.
    /// @}
 
-   /// @name Ports
-   /// @{
-   uvm_analysis_port #(uvma_adv_timer_b_mon_trn_c)  in_mon_trn_ap ; ///< Output port for Input Monitor Transactions.
-   uvm_analysis_port #(uvma_adv_timer_b_mon_trn_c)  out_mon_trn_ap; ///< Output port for Output Monitor Transactions.
-   /// @}
-
    /// @name FIFOs
    /// @{
+   uvm_tlm_analysis_fifo #(uvma_adv_timer_b_mon_trn_c    )  in_mon_trn_fifo ; ///< Output for Input Monitor Transactions.
+   uvm_tlm_analysis_fifo #(uvma_adv_timer_b_mon_trn_c    )  out_mon_trn_fifo; ///< Output for Output Monitor Transactions.
    uvm_tlm_analysis_fifo #(uvma_adv_timer_b_cp_mon_trn_c )  cp_mon_trn_fifo ; ///< Input for Monitor Transactions from uvma_adv_timer_b_cp_mon_c.
    uvm_tlm_analysis_fifo #(uvma_adv_timer_b_dpi_mon_trn_c)  dpi_mon_trn_fifo; ///< Input for Monitor Transactions from uvma_adv_timer_b_dpi_mon_c.
    uvm_tlm_analysis_fifo #(uvma_adv_timer_b_dpo_mon_trn_c)  dpo_mon_trn_fifo; ///< Input for Monitor Transactions from uvma_adv_timer_b_dpo_mon_c.
@@ -89,17 +85,11 @@ class uvma_adv_timer_b_vsqr_c extends uvmx_agent_vsqr_c #(
    endfunction
 
    /**
-    * Creates TLM Ports.
-    */
-   virtual function void create_ports();
-      in_mon_trn_ap  = new("in_mon_trn_ap" , this);
-      out_mon_trn_ap = new("out_mon_trn_ap", this);
-   endfunction
-
-   /**
     * Creates TLM FIFOs.
     */
    virtual function void create_fifos();
+      in_mon_trn_fifo  = new("in_mon_trn_fifo", this);
+      out_mon_trn_fifo = new("out_mon_trn_fifo", this);
       cp_mon_trn_fifo  = new("cp_mon_trn_fifo" , this);
       dpi_mon_trn_fifo = new("dpi_mon_trn_fifo", this);
       dpo_mon_trn_fifo = new("dpo_mon_trn_fifo", this);

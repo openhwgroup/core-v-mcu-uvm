@@ -68,12 +68,12 @@ class uvma_cvmcu_io_agent_c extends uvmx_agent_c #(
     * Connects top-level ports to lower-level components'.
     */
    virtual function void connect_ports();
-      ig_mon_trn_ap = vsequencer.ig_mon_trn_ap;
-      eg_mon_trn_ap = vsequencer.eg_mon_trn_ap;
-      board_padi_seq_item_ap = driver.board_padi_driver.ap;
-      board_pado_seq_item_ap = driver.board_pado_driver.ap;
-      chip_padi_seq_item_ap = driver.chip_padi_driver.ap;
-      chip_pado_seq_item_ap = driver.chip_pado_driver.ap;
+      ig_mon_trn_ap = vsequencer.ig_mon_trn_fifo.put_ap;
+      eg_mon_trn_ap = vsequencer.eg_mon_trn_fifo.put_ap;
+      board_padi_seq_item_ap = vsequencer.board_padi_sequencer.ap;
+      board_pado_seq_item_ap = vsequencer.board_pado_sequencer.ap;
+      chip_padi_seq_item_ap = vsequencer.chip_padi_sequencer.ap;
+      chip_pado_seq_item_ap = vsequencer.chip_pado_sequencer.ap;
       padi_mon_trn_ap = monitor.padi_monitor.ap;
       pado_mon_trn_ap = monitor.pado_monitor.ap;
    endfunction

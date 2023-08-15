@@ -68,7 +68,6 @@ package uvma_cvmcu_event_pkg;
 
    // Sequences
    `include "uvma_cvmcu_event_base_vseq.sv"
-   `include "uvma_cvmcu_event_trn_base_vseq.sv"
    `include "uvma_cvmcu_event_mon_vseq.sv"
    `include "uvma_cvmcu_event_core_drv_vseq.sv"
    `include "uvma_cvmcu_event_sys_drv_vseq.sv"

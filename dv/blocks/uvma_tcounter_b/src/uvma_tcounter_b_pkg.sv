@@ -69,7 +69,6 @@ package uvma_tcounter_b_pkg;
 
    // Sequences
    `include "uvma_tcounter_b_base_vseq.sv"
-   `include "uvma_tcounter_b_trn_base_vseq.sv"
    `include "uvma_tcounter_b_mon_vseq.sv"
    `include "uvma_tcounter_b_in_drv_vseq.sv"
    `include "uvma_tcounter_b_out_drv_vseq.sv"

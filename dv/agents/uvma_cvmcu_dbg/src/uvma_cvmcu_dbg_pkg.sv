@@ -68,7 +68,6 @@ package uvma_cvmcu_dbg_pkg;
 
    // Sequences
    `include "uvma_cvmcu_dbg_base_vseq.sv"
-   `include "uvma_cvmcu_dbg_trn_base_vseq.sv"
    `include "uvma_cvmcu_dbg_mon_vseq.sv"
    `include "uvma_cvmcu_dbg_core_drv_vseq.sv"
    `include "uvma_cvmcu_dbg_sys_drv_vseq.sv"

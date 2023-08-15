@@ -62,7 +62,7 @@ class uvma_cvmcu_io_board_drv_vseq_c extends uvma_cvmcu_io_base_vseq_c;
    endtask
 
    /**
-    *
+    * Drives all segments.
     */
    virtual task drive();
       fork

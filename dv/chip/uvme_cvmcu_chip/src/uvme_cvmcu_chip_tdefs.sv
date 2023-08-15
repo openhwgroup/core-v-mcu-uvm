@@ -7,6 +7,12 @@
 `define __UVME_CVMCU_CHIP_TDEFS_SV__
 
 
+/// @name Forward type declarations
+/// @{
+typedef class uvme_cvmcu_chip_io_transport_vseq_c;
+/// @}
+
+
 // Add tdefs, enums and structs here
 // Ex: typedef bit [(`UVME_CVMCU_CHIP_ABC_MAX_WIDTH-1):0]  uvme_cvmcu_chip_abc_b_t;
 // Ex: typedef enum {

@@ -53,16 +53,12 @@ class uvma_cvmcu_io_vsqr_c extends uvmx_agent_vsqr_c #(
    uvma_cvmcu_io_chip_pado_sqr_c  chip_pado_sequencer; ///< Sequencer for CHIP PADO Driver.
    /// @}
 
-   /// @name Ports
-   /// @{
-   uvm_analysis_port #(uvma_cvmcu_io_mon_trn_c)  ig_mon_trn_ap; ///< Output Port for IG Monitor Transactions.
-   uvm_analysis_port #(uvma_cvmcu_io_mon_trn_c)  eg_mon_trn_ap; ///< Output Port for EG Monitor Transactions.
-   /// @}
-
    /// @name FIFOs
    /// @{
-   uvm_tlm_analysis_fifo  #(uvma_cvmcu_io_padi_mon_trn_c)  padi_mon_trn_fifo; ///< FIFO of PADI Monitor Transactions obtained from uvma_cvmcu_io_padi_mon_c.
-   uvm_tlm_analysis_fifo  #(uvma_cvmcu_io_pado_mon_trn_c)  pado_mon_trn_fifo; ///< FIFO of PADO Monitor Transactions obtained from uvma_cvmcu_io_pado_mon_c.
+   uvm_tlm_analysis_fifo #(uvma_cvmcu_io_mon_trn_c)  ig_mon_trn_fifo; ///< Output for IG Monitor Transactions.
+   uvm_tlm_analysis_fifo #(uvma_cvmcu_io_mon_trn_c)  eg_mon_trn_fifo; ///< Output for EG Monitor Transactions.
+   uvm_tlm_analysis_fifo #(uvma_cvmcu_io_padi_mon_trn_c)  padi_mon_trn_fifo; ///< FIFO of PADI Monitor Transactions obtained from uvma_cvmcu_io_padi_mon_c.
+   uvm_tlm_analysis_fifo #(uvma_cvmcu_io_pado_mon_trn_c)  pado_mon_trn_fifo; ///< FIFO of PADO Monitor Transactions obtained from uvma_cvmcu_io_pado_mon_c.
    /// @}
 
 
@@ -87,17 +83,11 @@ class uvma_cvmcu_io_vsqr_c extends uvmx_agent_vsqr_c #(
    endfunction
 
    /**
-    * Creates TLM Ports.
-    */
-   virtual function void create_ports();
-      ig_mon_trn_ap = new("ig_mon_trn_ap", this);
-      eg_mon_trn_ap = new("eg_mon_trn_ap", this);
-   endfunction
-
-   /**
     * Creates TLM FIFOs.
     */
    virtual function void create_fifos();
+      ig_mon_trn_fifo = new("ig_mon_trn_fifo", this);
+      eg_mon_trn_fifo = new("eg_mon_trn_fifo", this);
       padi_mon_trn_fifo = new("padi_mon_trn_fifo", this);
       pado_mon_trn_fifo = new("pado_mon_trn_fifo", this);
    endfunction

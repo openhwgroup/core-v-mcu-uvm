@@ -84,7 +84,6 @@ package uvma_cvmcu_io_pkg;
 
    // Sequences
    `include "uvma_cvmcu_io_base_vseq.sv"
-   `include "uvma_cvmcu_io_trn_base_vseq.sv"
    `include "uvma_cvmcu_io_mon_vseq.sv"
    `include "uvma_cvmcu_io_board_drv_vseq.sv"
    `include "uvma_cvmcu_io_chip_drv_vseq.sv"

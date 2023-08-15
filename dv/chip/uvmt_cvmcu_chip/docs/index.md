@@ -33,7 +33,7 @@ ID | Name | Version
 
 
 @section uvmt_cvmcu_chip_release_history Release History
-@subsection uvmt_cvmcu_chip_v1_0_0 2023/8/5 - 1.0.0
+@subsection uvmt_cvmcu_chip_v1_0_0 2023/8/15 - 1.0.0
 - Initial release
 
 

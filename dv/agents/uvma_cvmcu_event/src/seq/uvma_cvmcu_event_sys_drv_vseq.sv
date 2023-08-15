@@ -26,7 +26,7 @@ class uvma_cvmcu_event_sys_drv_vseq_c extends uvma_cvmcu_event_base_vseq_c;
 
 
    /**
-    *
+    * Drives all segments.
     */
    virtual task drive();
       uvma_cvmcu_event_sys_phy_seq_item_c  sys_seq_item;

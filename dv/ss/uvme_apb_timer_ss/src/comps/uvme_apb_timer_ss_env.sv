@@ -127,7 +127,6 @@ class uvme_apb_timer_ss_env_c extends uvmx_ss_env_c #(
       vsequencer.prescaler_hi_b_env_vsequencer = prescaler_hi_b_env.vsequencer;
    endfunction
 
-
    /**
     * Adds automated register testing ignore lists.
     */

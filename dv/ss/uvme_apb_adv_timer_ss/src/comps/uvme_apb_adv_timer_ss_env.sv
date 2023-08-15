@@ -127,7 +127,6 @@ class uvme_apb_adv_timer_ss_env_c extends uvmx_ss_env_c #(
       vsequencer.adv_timer3_b_env_vsequencer = adv_timer3_b_env.vsequencer;
    endfunction
 
-
    /**
     * Adds automated register testing ignore lists.
     */

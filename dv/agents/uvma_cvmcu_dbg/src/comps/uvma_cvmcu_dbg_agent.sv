@@ -61,9 +61,9 @@ class uvma_cvmcu_dbg_agent_c extends uvmx_agent_c #(
     * Connects top-level ports to lower-level components'.
     */
    virtual function void connect_ports();
-      mon_trn_ap = vsequencer.mon_trn_ap;
-      core_phy_seq_item_ap = driver.core_phy_driver.ap;
-      sys_phy_seq_item_ap = driver.sys_phy_driver.ap;
+      mon_trn_ap = vsequencer.mon_trn_fifo.put_ap;
+      core_phy_seq_item_ap = vsequencer.core_phy_sequencer.ap;
+      sys_phy_seq_item_ap = vsequencer.sys_phy_sequencer.ap;
       phy_mon_trn_ap = monitor.phy_monitor.ap;
    endfunction
 

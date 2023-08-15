@@ -9,6 +9,7 @@
 
 /**
  * Sequence configuring registers of the APB simple timer unit Sub-System DUT.
+ * @ingroup uvme_apb_timer_ss_seq
  */
 class uvme_apb_timer_ss_cfg_vseq_c extends uvme_apb_timer_ss_base_vseq_c;
 

@@ -65,6 +65,9 @@ package uvme_apb_adv_timer_ss_pkg;
    `include "uvme_apb_adv_timer_ss_env.sv"
 
    // Sequences
+   `include "uvme_apb_adv_timer_ss_base_vseq.sv"
+   `include "uvme_apb_adv_timer_ss_init_vseq.sv"
+   `include "uvme_apb_adv_timer_ss_cfg_vseq.sv"
    `include "uvme_apb_adv_timer_ss_vseq_lib.sv"
 
 endpackage : uvme_apb_adv_timer_ss_pkg

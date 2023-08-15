@@ -65,7 +65,7 @@ monitor_pado();
          //             packed_bytes[ii] = data_q.pop_front();
          //          end
          //          void'(mon_trn.unpack_bytes(packed_bytes));
-         //          `uvmx_write_mon_trn(mon_trn, mon_trn_ap)
+         //          `uvmx_write_mon_trn(mon_trn, mon_trn_fifo)
       end
    endtask
 
@@ -101,7 +101,7 @@ monitor_pado();
          //             packed_bytes[ii] = data_q.pop_front();
          //          end
          //          void'(mon_trn.unpack_bytes(packed_bytes));
-         //          `uvmx_write_mon_trn(mon_trn, mon_trn_ap)
+         //          `uvmx_write_mon_trn(mon_trn, mon_trn_fifo)
       end
    endtask
 

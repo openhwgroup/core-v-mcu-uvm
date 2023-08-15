@@ -64,7 +64,7 @@ class uvma_cvmcu_cpi_mon_vseq_c extends uvma_cvmcu_cpi_base_vseq_c;
          //             packed_bytes[ii] = data_q.pop_front();
          //          end
          //          void'(mon_trn.unpack_bytes(packed_bytes));
-         //          `uvmx_write_mon_trn(mon_trn, mon_trn_ap)
+         //          `uvmx_write_mon_trn(mon_trn, mon_trn_fifo)
       end
    endtask
 

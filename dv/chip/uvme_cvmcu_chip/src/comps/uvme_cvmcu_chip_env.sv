@@ -280,6 +280,21 @@ class uvme_cvmcu_chip_env_c extends uvmx_chip_env_c #(
    endfunction
 
    /**
+    * Connects bypass agents to transport agents.
+    */
+   virtual function void connect_transport_agents();
+      `uvmx_connect_transport_agent(qspi_s0_agent, io_agent);
+      `uvmx_connect_transport_agent(qspi_s1_agent, io_agent);
+      `uvmx_connect_transport_agent(camera_agent, io_agent);
+      `uvmx_connect_transport_agent(i2c_s0_agent, io_agent);
+      `uvmx_connect_transport_agent(i2c_s1_agent, io_agent);
+      `uvmx_connect_transport_agent(uart0_agent, io_agent);
+      `uvmx_connect_transport_agent(uart1_agent, io_agent);
+      `uvmx_connect_transport_agent(sdio_agent, io_agent);
+      `uvmx_connect_transport_agent(i2c_m_agent, io_agent);
+   endfunction
+
+   /**
     * Assembles virtual sequencer from agent, sub-system and block sequencers.
     */
    virtual function void assemble_vsequencer();
@@ -302,7 +317,6 @@ class uvme_cvmcu_chip_env_c extends uvmx_chip_env_c #(
       vsequencer.apb_adv_timer_ss_env_vsequencer = apb_adv_timer_ss_env.vsequencer;
    endfunction
 
-
    /**
     * Adds automated register testing ignore lists.
     */
@@ -315,6 +329,18 @@ class uvme_cvmcu_chip_env_c extends uvmx_chip_env_c #(
       add_reg_test_ignore_list(UVM_DO_SHARED_ACCESS    , uvme_cvmcu_chip_shared_access_ignore_list  );
       add_reg_test_ignore_list(UVM_DO_MEM_WALK         , uvme_cvmcu_chip_mem_walk_access_ignore_list);
    endfunction
+
+   /**
+    * Creates and starts transport sequences.
+    */
+   virtual task run_phase(uvm_phase phase);
+      super.run_phase(phase);
+      if (cfg.enabled) begin
+         fork
+            `uvmx_run_transport_vseq(uvme_cvmcu_chip_io_transport_vseq_c)
+         join_none
+      end
+   endtask
 
 endclass : uvme_cvmcu_chip_env_c
 

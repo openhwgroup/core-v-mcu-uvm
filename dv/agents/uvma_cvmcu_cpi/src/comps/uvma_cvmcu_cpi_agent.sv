@@ -61,9 +61,9 @@ class uvma_cvmcu_cpi_agent_c extends uvmx_agent_c #(
     * Connects top-level ports to lower-level components'.
     */
    virtual function void connect_ports();
-      mon_trn_ap = vsequencer.mon_trn_ap;
-      tx_phy_seq_item_ap = driver.tx_phy_driver.ap;
-      rx_phy_seq_item_ap = driver.rx_phy_driver.ap;
+      mon_trn_ap = vsequencer.mon_trn_fifo.put_ap;
+      tx_phy_seq_item_ap = vsequencer.tx_phy_sequencer.ap;
+      rx_phy_seq_item_ap = vsequencer.rx_phy_sequencer.ap;
       phy_mon_trn_ap = monitor.phy_monitor.ap;
    endfunction
 
