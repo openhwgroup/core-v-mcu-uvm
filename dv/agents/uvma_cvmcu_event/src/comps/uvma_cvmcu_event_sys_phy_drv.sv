@@ -33,24 +33,24 @@ class uvma_cvmcu_event_sys_phy_drv_c extends uvmx_mp_drv_c #(
     * Drives SYS PHY Driver clocking block (sys_phy_drv_cb) on each clock cycle.
     */
    virtual task drive_item(ref uvma_cvmcu_event_sys_phy_seq_item_c item);
-      mp.sys_phy_drv_cb.timer_event_lo_o <= item.timer_event_lo_o;
-      mp.sys_phy_drv_cb.timer_event_hi_o <= item.timer_event_hi_o;
-      mp.sys_phy_drv_cb.err_event_o <= item.err_event_o;
-      mp.sys_phy_drv_cb.fc_events_o <= item.fc_events_o;
-      mp.sys_phy_drv_cb.event_fifo_valid_o <= item.event_fifo_valid_o;
-      mp.sys_phy_drv_cb.cl_event_valid_o <= item.cl_event_valid_o;
-      mp.sys_phy_drv_cb.cl_event_data_o <= item.cl_event_data_o;
-      mp.sys_phy_drv_cb.pr_event_valid_o <= item.pr_event_valid_o;
-      mp.sys_phy_drv_cb.pr_event_data_o <= item.pr_event_data_o;
+      `uvmx_mp_drv_signal(item, timer_event_lo_o)
+      `uvmx_mp_drv_signal(item, timer_event_hi_o)
+      `uvmx_mp_drv_signal(item, err_event_o)
+      `uvmx_mp_drv_signal(item, fc_events_o)
+      `uvmx_mp_drv_signal(item, event_fifo_valid_o)
+      `uvmx_mp_drv_signal(item, cl_event_valid_o)
+      `uvmx_mp_drv_signal(item, cl_event_data_o)
+      `uvmx_mp_drv_signal(item, pr_event_valid_o)
+      `uvmx_mp_drv_signal(item, pr_event_data_o)
    endtask
 
    /**
     * Samples SYS PHY Driver clocking block (sys_phy_drv_cb) after each clock cycle.
     */
    virtual task sample_post_clk(ref uvma_cvmcu_event_sys_phy_seq_item_c item);
-      item.per_events_i = mp.sys_phy_drv_cb.per_events_i;
-      item.cl_event_ready_i = mp.sys_phy_drv_cb.cl_event_ready_i;
-      item.pr_event_ready_i = mp.sys_phy_drv_cb.pr_event_ready_i;
+      `uvmx_mp_mon_signal(item, per_events_i)
+      `uvmx_mp_mon_signal(item, cl_event_ready_i)
+      `uvmx_mp_mon_signal(item, pr_event_ready_i)
    endtask
 
 endclass : uvma_cvmcu_event_sys_phy_drv_c

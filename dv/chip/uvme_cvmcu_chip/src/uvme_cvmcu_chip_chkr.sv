@@ -24,7 +24,7 @@ module uvme_cvmcu_chip_chkr (
    uvme_cvmcu_chip_probe_if  probe_if ///< Misc. signals interface
 );
 
-   // TODO Add assertions to uvme_cvmcu_chip_chkr
+   // TODO Add assertions and/or functional coverage to uvme_cvmcu_chip_chkr
 
 endmodule : uvme_cvmcu_chip_chkr
 

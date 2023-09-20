@@ -28,11 +28,6 @@ ip:
 
 dependencies:
   "datum/uvmx": "~1.0"
-  "datum/uvma_i2c": "^"
-  "datum/uvma_sdio": "^"
-  "datum/uvma_uart": "^"
-  "datum/uvma_spi": "^"
-  "Datum/uvma_cvmcu_cpi": "^"
 
 structure:
   scripts-path : "bin"

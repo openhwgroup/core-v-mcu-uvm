@@ -48,10 +48,7 @@ class uvmt_apb_timer_ss_base_test_c extends uvmx_ss_test_c #(
    /**
     * Sets up basic configuration for environment.
     */
-   constraint rules_cons {
-      env_cfg.reset_type        == test_cfg.reset_type       ;
-      env_cfg.trn_log_enabled   == test_cfg.trn_log_enabled  ;
-      env_cfg.cov_model_enabled == test_cfg.cov_model_enabled;
+   constraint base_cons {
    }
 
    /**

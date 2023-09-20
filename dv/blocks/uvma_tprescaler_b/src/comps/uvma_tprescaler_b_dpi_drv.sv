@@ -33,8 +33,8 @@ class uvma_tprescaler_b_dpi_drv_c extends uvmx_mp_drv_c #(
     * Drives the Data Plane Input driver clocking block (dpi_drv_cb) on each clock cycle.
     */
    virtual task drive_item(ref uvma_tprescaler_b_dpi_seq_item_c item);
-      mp.dpi_drv_cb.write_counter_i <= item.write_counter_i;
-      mp.dpi_drv_cb.counter_value_i <= item.counter_value_i;
+      `uvmx_mp_drv_signal(item, write_counter_i)
+      `uvmx_mp_drv_signal(item, counter_value_i)
    endtask
 
 

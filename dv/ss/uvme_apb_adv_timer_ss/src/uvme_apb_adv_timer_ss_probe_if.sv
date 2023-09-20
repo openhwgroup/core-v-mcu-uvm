@@ -19,8 +19,8 @@ interface uvme_apb_adv_timer_ss_probe_if (
 
    /// @name Inputs
    /// @{
-   wire   dft_cg_enable_i; ///< Design-for-test enable
-   wire [31:0]  ext_sig_i; ///< External signal
+   wire  dft_cg_enable_i; ///< Design-for-test enable
+   wire [31:0] ext_sig_i; ///< External signal
    /// @}
 
    /// @name Outputs
@@ -28,33 +28,31 @@ interface uvme_apb_adv_timer_ss_probe_if (
    /// @}
 
 
-   /**
-    * Signals clocked to 'HCLK'.
-    */
+   /// @name Signals clocked to 'HCLK'
+   /// @{
    clocking sys_clk_cb @(posedge HCLK);
       output dft_cg_enable_i, ext_sig_i;
    endclocking
-   /**
-    * Signals clocked to 'low_speed_clk_i'.
-    */
+   modport sys_clk_mp (clocking sys_clk_cb);
+   /// @}
+
+   /// @name Signals clocked to 'low_speed_clk_i'
+   /// @{
    clocking low_speed_clk_cb @(posedge low_speed_clk_i);
    endclocking
+   modport low_speed_clk_mp (clocking low_speed_clk_cb);
+   /// @}
 
 
-   /**
-    * Signals clocked to 'HCLK'.
-    */
-   modport sys_clk_mp (
-      clocking sys_clk_cb,
-      input    HCLK,
-      input    HRESETn
-   );
-   /**
-    * Signals clocked to 'low_speed_clk_i'.
-    */
-   modport low_speed_clk_mp (
-      clocking low_speed_clk_cb,
-      input    low_speed_clk_i   );
+
+   /// @name Accessors
+   /// @{
+   `uvmx_if_reset(HRESETn)
+   `uvmx_if_cb(sys_clk_mp, sys_clk_cb)
+   `uvmx_if_cb(low_speed_clk_mp, low_speed_clk_cb)
+   `uvmx_if_signal_probe_out(dft_cg_enable_i, , sys_clk_mp.sys_clk_cb)
+   `uvmx_if_signal_probe_out(ext_sig_i, , sys_clk_mp.sys_clk_cb)
+   /// @}
 
 endinterface : uvme_apb_adv_timer_ss_probe_if
 

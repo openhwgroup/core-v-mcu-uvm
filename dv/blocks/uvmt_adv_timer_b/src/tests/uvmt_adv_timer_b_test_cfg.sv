@@ -38,8 +38,6 @@ class uvmt_adv_timer_b_test_cfg_c extends uvmx_block_test_cfg_c;
       `uvm_field_int (                      clk_i_frequency, UVM_DEFAULT + UVM_DEC)
       `uvm_field_int (                      ls_clk_i_frequency, UVM_DEFAULT + UVM_DEC)
       `uvm_field_enum(uvmx_reset_type_enum, reset_type   , UVM_DEFAULT          )
-      `uvm_field_int (trn_log_enabled         , UVM_DEFAULT          )
-      `uvm_field_int (cov_model_enabled       , UVM_DEFAULT          )
       `uvm_field_int (startup_timeout         , UVM_DEFAULT + UVM_DEC)
       `uvm_field_int (heartbeat_period        , UVM_DEFAULT + UVM_DEC)
       `uvm_field_int (heartbeat_refresh_period, UVM_DEFAULT + UVM_DEC)
@@ -68,24 +66,18 @@ class uvmt_adv_timer_b_test_cfg_c extends uvmx_block_test_cfg_c;
     * Sets Agents configuration.
     */
    constraint agents_cons {
-      clk_i_agent_cfg.enabled           == 1;
-      clk_i_agent_cfg.is_active         == UVM_ACTIVE;
-      clk_i_agent_cfg.bypass_mode       == 0;
-      clk_i_agent_cfg.trn_log_enabled   == trn_log_enabled;
-      clk_i_agent_cfg.cov_model_enabled == 0;
-      ls_clk_i_agent_cfg.enabled           == 1;
-      ls_clk_i_agent_cfg.is_active         == UVM_ACTIVE;
-      ls_clk_i_agent_cfg.bypass_mode       == 0;
-      ls_clk_i_agent_cfg.trn_log_enabled   == trn_log_enabled;
-      ls_clk_i_agent_cfg.cov_model_enabled == 0;
-      reset_type                        == UVMX_RESET_SYNC;
-      reset_agent_cfg.reset_type        == reset_type;
-      reset_agent_cfg.polarity          == UVMX_ACTIVE_LOW;
-      reset_agent_cfg.bypass_mode       == 0;
-      reset_agent_cfg.enabled           == 1;
-      reset_agent_cfg.is_active         == UVM_ACTIVE;
-      reset_agent_cfg.trn_log_enabled   == trn_log_enabled;
-      reset_agent_cfg.cov_model_enabled == 0;
+      clk_i_agent_cfg.enabled     == 1;
+      clk_i_agent_cfg.is_active   == UVM_ACTIVE;
+      clk_i_agent_cfg.bypass_mode == 0;
+      ls_clk_i_agent_cfg.enabled     == 1;
+      ls_clk_i_agent_cfg.is_active   == UVM_ACTIVE;
+      ls_clk_i_agent_cfg.bypass_mode == 0;
+      reset_type                  == UVMX_RESET_SYNC;
+      reset_agent_cfg.reset_type  == reset_type;
+      reset_agent_cfg.polarity    == UVMX_RESET_ACTIVE_LOW;
+      reset_agent_cfg.bypass_mode == 0;
+      reset_agent_cfg.enabled     == 1;
+      reset_agent_cfg.is_active   == UVM_ACTIVE;
    }
 
 

@@ -36,7 +36,7 @@ class uvma_cvmcu_io_drv_c extends uvmx_drv_c #(
    endfunction
 
    /**
-    * Creates Driver components.
+    * Creates sub-driver components.
     */
    virtual function void create_drivers();
       board_padi_driver = uvma_cvmcu_io_board_padi_drv_c::type_id::create("board_padi_driver", this);

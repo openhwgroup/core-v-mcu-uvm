@@ -15,7 +15,7 @@ module uvma_cvmcu_event_if_chkr(
    uvma_cvmcu_event_if  cvmcu_event_if  ///< Target interface handle
 );
 
-   // TODO Add assertions to uvma_cvmcu_event_if_chkr
+   // TODO Add assertions and/or functional coverage to uvma_cvmcu_event_if_chkr
 
 endmodule : uvma_cvmcu_event_if_chkr
 

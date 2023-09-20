@@ -25,8 +25,8 @@ class uvme_cvmcu_cpi_st_cfg_c extends uvmx_agent_env_cfg_c;
 
    /// @name Objects
    /// @{
-   rand uvma_cvmcu_cpi_cfg_c  tx_cfg; ///< TX Agent configuration.
-   rand uvma_cvmcu_cpi_cfg_c  rx_cfg; ///< RX Agent configuration.
+   rand uvma_cvmcu_cpi_cfg_c  tx_agent_cfg; ///< TX Agent configuration.
+   rand uvma_cvmcu_cpi_cfg_c  rx_agent_cfg; ///< RX Agent configuration.
    rand uvma_cvmcu_cpi_cfg_c  passive_cfg; ///< Passive Agent configuration.
    rand uvmx_sb_simplex_cfg_c  sb_agent_cfg; ///< Agent Scoreboard configuration.
    rand uvmx_sb_simplex_cfg_c  sb_e2e_cfg  ; ///<  End-to-end Scoreboard configuration.
@@ -40,11 +40,8 @@ class uvme_cvmcu_cpi_st_cfg_c extends uvmx_agent_env_cfg_c;
       `uvm_field_int (                         drv_idle_random      , UVM_DEFAULT          )
       `uvm_field_enum(uvmx_reset_type_enum   , reset_type           , UVM_DEFAULT          )
       `uvm_field_int (                         scoreboarding_enabled, UVM_DEFAULT          )
-      `uvm_field_int (                         cov_model_enabled    , UVM_DEFAULT          )
-      `uvm_field_int (                         trn_log_enabled      , UVM_DEFAULT          )
-      `uvm_field_int (                         cov_model_enabled    , UVM_DEFAULT          )
-      `uvm_field_object(tx_cfg, UVM_DEFAULT)
-      `uvm_field_object(rx_cfg, UVM_DEFAULT)
+      `uvm_field_object(tx_agent_cfg, UVM_DEFAULT)
+      `uvm_field_object(rx_agent_cfg, UVM_DEFAULT)
       `uvm_field_object(passive_cfg, UVM_DEFAULT)
       `uvm_field_object(sb_agent_cfg, UVM_DEFAULT)
       `uvm_field_object(sb_e2e_cfg, UVM_DEFAULT)
@@ -55,8 +52,8 @@ class uvme_cvmcu_cpi_st_cfg_c extends uvmx_agent_env_cfg_c;
     * Sets variable bit width fields for agent configurations.
     */
    constraint bw_cons {
-      tx_cfg.data_width == data_width;
-      rx_cfg.data_width == data_width;
+      tx_agent_cfg.data_width == data_width;
+      rx_agent_cfg.data_width == data_width;
       passive_cfg.data_width == data_width;
    }
 
@@ -64,28 +61,22 @@ class uvme_cvmcu_cpi_st_cfg_c extends uvmx_agent_env_cfg_c;
     * Sets all configuration fields for agent configurations.
     */
    constraint agents_cfg_cons {
-      tx_cfg.bypass_mode == 0;
-      rx_cfg.bypass_mode == 0;
+      tx_agent_cfg.bypass_mode == 0;
+      rx_agent_cfg.bypass_mode == 0;
       passive_cfg.bypass_mode == 0;
-      tx_cfg.drv_mode == UVMA_CVMCU_CPI_DRV_MODE_TX;
-      rx_cfg.drv_mode == UVMA_CVMCU_CPI_DRV_MODE_RX;
-      tx_cfg.drv_idle_random == drv_idle_random;
-      rx_cfg.drv_idle_random == drv_idle_random;
-      tx_cfg.reset_type == reset_type;
-      rx_cfg.reset_type == reset_type;
+      tx_agent_cfg.drv_mode == UVMA_CVMCU_CPI_DRV_MODE_TX;
+      rx_agent_cfg.drv_mode == UVMA_CVMCU_CPI_DRV_MODE_RX;
+      tx_agent_cfg.drv_idle_random == drv_idle_random;
+      rx_agent_cfg.drv_idle_random == drv_idle_random;
+      tx_agent_cfg.reset_type == reset_type;
+      rx_agent_cfg.reset_type == reset_type;
       passive_cfg.reset_type == reset_type;
-      tx_cfg.enabled == enabled;
-      rx_cfg.enabled == enabled;
+      tx_agent_cfg.enabled == enabled;
+      rx_agent_cfg.enabled == enabled;
       passive_cfg.enabled == enabled;
       passive_cfg.is_active == UVM_PASSIVE;
-      tx_cfg.is_active == is_active;
-      rx_cfg.is_active == is_active;
-      tx_cfg.cov_model_enabled == cov_model_enabled;
-      rx_cfg.cov_model_enabled == cov_model_enabled;
-      passive_cfg.cov_model_enabled == cov_model_enabled;
-      tx_cfg.trn_log_enabled == trn_log_enabled;
-      rx_cfg.trn_log_enabled == trn_log_enabled;
-      passive_cfg.trn_log_enabled == trn_log_enabled;
+      tx_agent_cfg.is_active == is_active;
+      rx_agent_cfg.is_active == is_active;
    }
 
    /**
@@ -110,8 +101,8 @@ class uvme_cvmcu_cpi_st_cfg_c extends uvmx_agent_env_cfg_c;
     * Creates objects.
     */
    virtual function void create_objects();
-      tx_cfg = uvma_cvmcu_cpi_cfg_c::type_id::create("tx_cfg");
-      rx_cfg = uvma_cvmcu_cpi_cfg_c::type_id::create("rx_cfg");
+      tx_agent_cfg = uvma_cvmcu_cpi_cfg_c::type_id::create("tx_agent_cfg");
+      rx_agent_cfg = uvma_cvmcu_cpi_cfg_c::type_id::create("rx_agent_cfg");
       passive_cfg = uvma_cvmcu_cpi_cfg_c::type_id::create("passive_cfg");
       sb_agent_cfg = uvmx_sb_simplex_cfg_c::type_id::create("sb_agent_cfg");
       sb_e2e_cfg   = uvmx_sb_simplex_cfg_c::type_id::create("sb_e2e_cfg"  );

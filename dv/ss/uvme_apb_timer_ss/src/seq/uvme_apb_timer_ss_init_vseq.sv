@@ -26,9 +26,9 @@ class uvme_apb_timer_ss_init_vseq_c extends uvme_apb_timer_ss_base_vseq_c;
     * Drives signals to default values.
     */
    virtual task body();
-      cntxt.probe_vif.sys_clk_mp.sys_clk_cb.stoptimer_i <= 0;
-      cntxt.probe_vif.sys_clk_mp.sys_clk_cb.event_lo_i <= 0;
-      cntxt.probe_vif.sys_clk_mp.sys_clk_cb.event_hi_i <= 0;
+      `uvmx_probe_drv_signal(stoptimer_i, 0)
+      `uvmx_probe_drv_signal(event_lo_i, 0)
+      `uvmx_probe_drv_signal(event_hi_i, 0)
    endtask
 
 endclass : uvme_apb_timer_ss_init_vseq_c

@@ -47,9 +47,9 @@ class uvma_adv_timer_b_dpo_drv_c extends uvmx_mp_drv_c #(
     * Samples the Data Plane Output driver clocking block (dpo_drv_cb) after each clock cycle.
     */
    virtual task sample_post_clk(ref uvma_adv_timer_b_dpo_seq_item_c item);
-      item.counter_o = mp.dpo_drv_cb.counter_o;
-      item.pwm_o = mp.dpo_drv_cb.pwm_o;
-      item.status_o = mp.dpo_drv_cb.status_o;
+      `uvmx_mp_mon_signal(item, counter_o)
+      `uvmx_mp_mon_signal(item, pwm_o)
+      `uvmx_mp_mon_signal(item, status_o)
    endtask
 
 endclass : uvma_adv_timer_b_dpo_drv_c

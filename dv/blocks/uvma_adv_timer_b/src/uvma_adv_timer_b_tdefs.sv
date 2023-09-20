@@ -70,15 +70,4 @@ typedef class uvma_adv_timer_b_out_drv_vseq_c;
 /// @}
 
 
-/**
- * Empty coverage model.
- * @ingroup uvma_adv_timer_b_comps
- */
-typedef uvmx_agent_cov_model_c #(
-   .T_CFG     (uvma_adv_timer_b_cfg_c     ),
-   .T_CNTXT   (uvma_adv_timer_b_cntxt_c   ),
-   .T_SEQ_ITEM(uvma_adv_timer_b_seq_item_c)
-) uvma_adv_timer_b_cov_model_c;
-
-
 `endif // __UVMA_ADV_TIMER_B_TDEFS_SV__

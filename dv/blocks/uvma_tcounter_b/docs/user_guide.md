@@ -16,7 +16,7 @@ All rights reserved.
 @section uvma_tcounter_b_user_guide_revision_history Revision History
 Revision  | Date | Description
 --------- | ---- | -----------
-1.0 | 2023/8/15 | Initial Version
+1.0 | 2023/9/20 | Initial Version
 
 @subsection uvma_tcounter_b_user_guide_description Description
 

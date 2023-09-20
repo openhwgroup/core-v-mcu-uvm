@@ -34,7 +34,7 @@ class uvma_cvmcu_dbg_drv_c extends uvmx_drv_c #(
    endfunction
 
    /**
-    * Creates Driver components.
+    * Creates sub-driver components.
     */
    virtual function void create_drivers();
       core_phy_driver = uvma_cvmcu_dbg_core_phy_drv_c::type_id::create("core_phy_driver", this);

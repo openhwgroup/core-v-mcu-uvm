@@ -33,9 +33,9 @@ class uvma_tprescaler_b_cp_drv_c extends uvmx_mp_drv_c #(
     * Drives Control Plane driver clocking block (cp_drv_cb) on each clock cycle.
     */
    virtual task drive_item(ref uvma_tprescaler_b_cp_seq_item_c item);
-      mp.cp_drv_cb.reset_count_i <= item.reset_count_i;
-      mp.cp_drv_cb.enable_count_i <= item.enable_count_i;
-      mp.cp_drv_cb.compare_value_i <= item.compare_value_i;
+      `uvmx_mp_drv_signal(item, reset_count_i)
+      `uvmx_mp_drv_signal(item, enable_count_i)
+      `uvmx_mp_drv_signal(item, compare_value_i)
    endtask
 
 

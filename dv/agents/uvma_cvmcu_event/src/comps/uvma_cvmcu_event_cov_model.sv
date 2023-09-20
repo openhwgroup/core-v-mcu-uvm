@@ -44,7 +44,7 @@ class uvma_cvmcu_event_cov_model_c extends uvmx_agent_cov_model_c #(
    endfunction
 
    /**
-    *
+    * Creates all input FIFOs.
     */
    virtual function void create_fifos();
       mon_trn_fifo = new("mon_trn_fifo", this);

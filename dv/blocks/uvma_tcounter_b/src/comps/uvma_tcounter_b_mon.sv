@@ -25,7 +25,7 @@ class uvma_tcounter_b_mon_c extends uvmx_mon_c #(
 
 
    `uvm_component_utils(uvma_tcounter_b_mon_c)
-   `uvmx_mon_reset(rst_ni, UVMX_ACTIVE_LOW)
+   `uvmx_mon_reset(rst_ni)
 
 
    /**
@@ -36,7 +36,7 @@ class uvma_tcounter_b_mon_c extends uvmx_mon_c #(
    endfunction
 
    /**
-    * Creates Monitor components.
+    * Creates sub-monitor components.
     */
    virtual function void create_monitors();
       cp_monitor  = uvma_tcounter_b_cp_mon_c ::type_id::create("cp_monitor" , this);

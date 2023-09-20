@@ -49,15 +49,15 @@ package uvma_cvmcu_event_pkg;
    `include "uvma_cvmcu_event_phy_mon_trn.sv"
    `include "uvma_cvmcu_event_seq_item.sv"
    `include "uvma_cvmcu_event_core_phy_seq_item.sv"
-      `include "uvma_cvmcu_event_sys_phy_seq_item.sv"
+   `include "uvma_cvmcu_event_sys_phy_seq_item.sv"
 
    // Driver
    `include "uvma_cvmcu_event_core_phy_drv.sv"
-      `include "uvma_cvmcu_event_sys_phy_drv.sv"
+   `include "uvma_cvmcu_event_sys_phy_drv.sv"
 
    // Monitor
    `include "uvma_cvmcu_event_phy_mon.sv"
-   
+
    // Agent-Level Components
    `include "uvma_cvmcu_event_mon.sv"
    `include "uvma_cvmcu_event_drv.sv"
@@ -73,7 +73,7 @@ package uvma_cvmcu_event_pkg;
    `include "uvma_cvmcu_event_sys_drv_vseq.sv"
    `include "uvma_cvmcu_event_idle_vseq.sv"
    `include "uvma_cvmcu_event_vseq_lib.sv"
-   
+
 endpackage : uvma_cvmcu_event_pkg
 
 

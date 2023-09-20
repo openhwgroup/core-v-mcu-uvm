@@ -1,0 +1,74 @@
+dependencies:
+  datum/uvma_clk: 1.0.0
+  datum/uvma_reset: 1.0.0
+  datum/uvme_cvmcu_chip: '@local'
+  datum/uvmx: 1.0.0
+dut:
+  full-name: openhwgroup.org:systems:core-v-mcu
+  name: core-v-mcu
+  target: sim
+  type: fsoc
+hdl-src:
+  directories:
+  - .
+  - tb
+  - tests
+  so-libs: []
+  test-name-template: uvmt_cvmcu_chip_{{ name }}_test_c
+  tests-path: tests
+  top-constructs:
+  - uvmt_cvmcu_chip_tb
+  - uvmx_sim_summary
+  top-files:
+  - uvmt_cvmcu_chip_pkg.sv
+ip:
+  aliases: []
+  block-diagram: docs/tb_block_diagram.svg
+  bugs: ''
+  copyright-holders:
+  - Datum Technology Corporation
+  description: ''
+  full-name: CORE-V-MCU Chip UVM Test Bench
+  home-page: ''
+  languages:
+  - sv
+  licenses:
+  - All rights reserved.
+  logo: ''
+  name: uvmt_cvmcu_chip
+  repo-uri: ''
+  simulators-supported:
+    mdc: 20230116.4.0
+    viv: '2022.2'
+  sub-sub-type: Chip
+  sub-type: UVM Test Bench
+  tags: []
+  type: DV
+  vendor: datum
+  version: 1.0.0
+structure:
+  docs-path: docs
+  examples-path: examples
+  scripts-path: bin
+  src-path: src
+targets:
+  default:
+    cmp:
+      UVMT_CVMCU_CHIP_USE_CORES: 0
+    elab: null
+    sim: null
+  genesys:
+    cmp:
+      UVMT_CVMCU_CHIP_USE_CORES: 1
+    elab: null
+    sim: null
+  gf22fdx:
+    cmp:
+      UVMT_CVMCU_CHIP_USE_CORES: 1
+    elab: null
+    sim: null
+  nexys:
+    cmp:
+      UVMT_CVMCU_CHIP_USE_CORES: 1
+    elab: null
+    sim: null

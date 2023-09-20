@@ -33,26 +33,26 @@ class uvma_adv_timer_b_cp_mon_c extends uvmx_mp_mon_c #(
     * Samples #trn from the Control Plane monitor clocking block (cp_mon_cb) on each clock cycle.
     */
    virtual task sample_trn(ref uvma_adv_timer_b_cp_mon_trn_c trn);
-      trn.cfg_start_i = mp.cp_mon_cb.cfg_start_i;
-      trn.cfg_stop_i = mp.cp_mon_cb.cfg_stop_i;
-      trn.cfg_rst_i = mp.cp_mon_cb.cfg_rst_i;
-      trn.cfg_update_i = mp.cp_mon_cb.cfg_update_i;
-      trn.cfg_arm_i = mp.cp_mon_cb.cfg_arm_i;
-      trn.cfg_sel_i = mp.cp_mon_cb.cfg_sel_i;
-      trn.cfg_sel_clk_i = mp.cp_mon_cb.cfg_sel_clk_i;
-      trn.cfg_mode_i = mp.cp_mon_cb.cfg_mode_i;
-      trn.cfg_presc_i = mp.cp_mon_cb.cfg_presc_i;
-      trn.cfg_sawtooth_i = mp.cp_mon_cb.cfg_sawtooth_i;
-      trn.cfg_cnt_start_i = mp.cp_mon_cb.cfg_cnt_start_i;
-      trn.cfg_cnt_end_i = mp.cp_mon_cb.cfg_cnt_end_i;
-      trn.cfg_comp_ch0_i = mp.cp_mon_cb.cfg_comp_ch0_i;
-      trn.cfg_comp_op_ch0_i = mp.cp_mon_cb.cfg_comp_op_ch0_i;
-      trn.cfg_comp_ch1_i = mp.cp_mon_cb.cfg_comp_ch1_i;
-      trn.cfg_comp_op_ch1_i = mp.cp_mon_cb.cfg_comp_op_ch1_i;
-      trn.cfg_comp_ch2_i = mp.cp_mon_cb.cfg_comp_ch2_i;
-      trn.cfg_comp_op_ch2_i = mp.cp_mon_cb.cfg_comp_op_ch2_i;
-      trn.cfg_comp_ch3_i = mp.cp_mon_cb.cfg_comp_ch3_i;
-      trn.cfg_comp_op_ch3_i = mp.cp_mon_cb.cfg_comp_op_ch3_i;
+      `uvmx_mp_mon_signal(trn, cfg_start_i)
+      `uvmx_mp_mon_signal(trn, cfg_stop_i)
+      `uvmx_mp_mon_signal(trn, cfg_rst_i)
+      `uvmx_mp_mon_signal(trn, cfg_update_i)
+      `uvmx_mp_mon_signal(trn, cfg_arm_i)
+      `uvmx_mp_mon_signal(trn, cfg_sel_i)
+      `uvmx_mp_mon_signal(trn, cfg_sel_clk_i)
+      `uvmx_mp_mon_signal(trn, cfg_mode_i)
+      `uvmx_mp_mon_signal(trn, cfg_presc_i)
+      `uvmx_mp_mon_signal(trn, cfg_sawtooth_i)
+      `uvmx_mp_mon_signal(trn, cfg_cnt_start_i)
+      `uvmx_mp_mon_signal(trn, cfg_cnt_end_i)
+      `uvmx_mp_mon_signal(trn, cfg_comp_ch0_i)
+      `uvmx_mp_mon_signal(trn, cfg_comp_op_ch0_i)
+      `uvmx_mp_mon_signal(trn, cfg_comp_ch1_i)
+      `uvmx_mp_mon_signal(trn, cfg_comp_op_ch1_i)
+      `uvmx_mp_mon_signal(trn, cfg_comp_ch2_i)
+      `uvmx_mp_mon_signal(trn, cfg_comp_op_ch2_i)
+      `uvmx_mp_mon_signal(trn, cfg_comp_ch3_i)
+      `uvmx_mp_mon_signal(trn, cfg_comp_op_ch3_i)
    endtask
 
    /**

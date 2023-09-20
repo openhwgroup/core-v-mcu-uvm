@@ -34,7 +34,7 @@ ID | Name | Version
 
 
 @section uvmt_tcounter_b_release_history Release History
-@subsection uvmt_tcounter_b_v1_0_0 2023/8/15 - 1.0.0
+@subsection uvmt_tcounter_b_v1_0_0 2023/9/20 - 1.0.0
 - Initial release
 
 

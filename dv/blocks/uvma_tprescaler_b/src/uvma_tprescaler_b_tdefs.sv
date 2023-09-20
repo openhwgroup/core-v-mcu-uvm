@@ -54,15 +54,4 @@ typedef class uvma_tprescaler_b_out_drv_vseq_c;
 /// @}
 
 
-/**
- * Empty coverage model.
- * @ingroup uvma_tprescaler_b_comps
- */
-typedef uvmx_agent_cov_model_c #(
-   .T_CFG     (uvma_tprescaler_b_cfg_c     ),
-   .T_CNTXT   (uvma_tprescaler_b_cntxt_c   ),
-   .T_SEQ_ITEM(uvma_tprescaler_b_seq_item_c)
-) uvma_tprescaler_b_cov_model_c;
-
-
 `endif // __UVMA_TPRESCALER_B_TDEFS_SV__

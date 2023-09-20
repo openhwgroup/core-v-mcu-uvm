@@ -82,6 +82,7 @@ class uvma_cvmcu_io_agent_c extends uvmx_agent_c #(
     * Connects coverage model to ports.
     */
    virtual function void connect_cov_model();
+      seq_item_ap.connect(cov_model.seq_item_fifo.analysis_export);
       ig_mon_trn_ap.connect(cov_model.ig_mon_trn_fifo.analysis_export);
       eg_mon_trn_ap.connect(cov_model.eg_mon_trn_fifo.analysis_export);
       board_padi_seq_item_ap.connect(cov_model.board_padi_seq_item_fifo.analysis_export);

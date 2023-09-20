@@ -11,16 +11,15 @@
  * Sequence-based UVM Agent capable of driving/monitoring the Advanced timer counter Interface (uvma_adv_timer_b_if).
  * @ingroup uvma_adv_timer_b_comps
  */
-class uvma_adv_timer_b_agent_c extends uvmx_agent_c #(
-   .T_VIF      (virtual uvma_adv_timer_b_if ),
-   .T_CFG      (uvma_adv_timer_b_cfg_c      ),
-   .T_CNTXT    (uvma_adv_timer_b_cntxt_c    ),
-   .T_SEQ_ITEM (uvma_adv_timer_b_seq_item_c ),
-   .T_VSQR     (uvma_adv_timer_b_vsqr_c     ),
-   .T_DRV      (uvma_adv_timer_b_drv_c      ),
-   .T_MON      (uvma_adv_timer_b_mon_c      ),
-   .T_LOGGER   (uvma_adv_timer_b_logger_c   ),
-   .T_COV_MODEL(uvma_adv_timer_b_cov_model_c)
+class uvma_adv_timer_b_agent_c extends uvmx_block_agent_c #(
+   .T_VIF      (virtual uvma_adv_timer_b_if),
+   .T_CFG      (uvma_adv_timer_b_cfg_c     ),
+   .T_CNTXT    (uvma_adv_timer_b_cntxt_c   ),
+   .T_SEQ_ITEM (uvma_adv_timer_b_seq_item_c),
+   .T_VSQR     (uvma_adv_timer_b_vsqr_c    ),
+   .T_DRV      (uvma_adv_timer_b_drv_c     ),
+   .T_MON      (uvma_adv_timer_b_mon_c     ),
+   .T_LOGGER   (uvma_adv_timer_b_logger_c  )
 );
 
    /// @name Ports

@@ -44,8 +44,8 @@ class uvme_cvmcu_io_st_env_c extends uvmx_agent_env_c #(
     * Assigns configuration handles to components using UVM Configuration Database.
     */
    virtual function void assign_cfg();
-      uvm_config_db#(uvma_cvmcu_io_cfg_c)::set(this, "board_agent", "cfg", cfg.board_cfg);
-      uvm_config_db#(uvma_cvmcu_io_cfg_c)::set(this, "chip_agent", "cfg", cfg.chip_cfg);
+      uvm_config_db#(uvma_cvmcu_io_cfg_c)::set(this, "board_agent", "cfg", cfg.board_agent_cfg);
+      uvm_config_db#(uvma_cvmcu_io_cfg_c)::set(this, "chip_agent", "cfg", cfg.chip_agent_cfg);
       uvm_config_db#(uvma_cvmcu_io_cfg_c)::set(this, "passive_agent", "cfg", cfg.passive_cfg);
    endfunction
 
@@ -53,8 +53,8 @@ class uvme_cvmcu_io_st_env_c extends uvmx_agent_env_c #(
     * Assigns context handles to components using UVM Configuration Database.
     */
    virtual function void assign_cntxt();
-      uvm_config_db#(uvma_cvmcu_io_cntxt_c)::set(this, "board_agent", "cntxt", cntxt.board_cntxt);
-      uvm_config_db#(uvma_cvmcu_io_cntxt_c)::set(this, "chip_agent", "cntxt", cntxt.chip_cntxt);
+      uvm_config_db#(uvma_cvmcu_io_cntxt_c)::set(this, "board_agent", "cntxt", cntxt.board_agent_cntxt);
+      uvm_config_db#(uvma_cvmcu_io_cntxt_c)::set(this, "chip_agent", "cntxt", cntxt.chip_agent_cntxt);
       uvm_config_db#(uvma_cvmcu_io_cntxt_c)::set(this, "passive_agent", "cntxt", cntxt.passive_cntxt);
    endfunction
 

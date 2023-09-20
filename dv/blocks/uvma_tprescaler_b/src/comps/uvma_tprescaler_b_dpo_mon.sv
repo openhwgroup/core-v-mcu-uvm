@@ -33,8 +33,8 @@ class uvma_tprescaler_b_dpo_mon_c extends uvmx_mp_mon_c #(
     * Samples #trn from the Data Plane Output monitor clocking block (dpi_mon_cb) on each clock cycle.
     */
    virtual task sample_trn(ref uvma_tprescaler_b_dpo_mon_trn_c trn);
-      trn.counter_value_o = mp.dpo_mon_cb.counter_value_o;
-      trn.target_reached_o = mp.dpo_mon_cb.target_reached_o;
+      `uvmx_mp_mon_signal(trn, counter_value_o)
+      `uvmx_mp_mon_signal(trn, target_reached_o)
    endtask
 
 

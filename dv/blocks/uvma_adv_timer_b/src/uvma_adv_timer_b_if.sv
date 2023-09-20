@@ -59,102 +59,89 @@ interface uvma_adv_timer_b_if #(
    /// @}
 
 
-   /**
-    * Used by uvma_adv_timer_b_cp_drv_c.
-    */
-   clocking cp_drv_cb @(posedge clk_i);
-      output cfg_start_i, cfg_stop_i, cfg_rst_i, cfg_update_i, cfg_arm_i, cfg_sel_i, cfg_sel_clk_i, cfg_mode_i, cfg_presc_i, cfg_sawtooth_i, cfg_cnt_start_i, cfg_cnt_end_i, cfg_comp_ch0_i, cfg_comp_op_ch0_i, cfg_comp_ch1_i, cfg_comp_op_ch1_i, cfg_comp_ch2_i, cfg_comp_op_ch2_i, cfg_comp_ch3_i, cfg_comp_op_ch3_i;
-   endclocking
-
-   /**
-    * Used by uvma_adv_timer_b_cp_mon_c.
-    */
+   /// @name Used by uvma_adv_timer_b_cp_mon_c
+   /// @{
    clocking cp_mon_cb @(posedge clk_i);
       input cfg_start_i, cfg_stop_i, cfg_rst_i, cfg_update_i, cfg_arm_i, cfg_sel_i, cfg_sel_clk_i, cfg_mode_i, cfg_presc_i, cfg_sawtooth_i, cfg_cnt_start_i, cfg_cnt_end_i, cfg_comp_ch0_i, cfg_comp_op_ch0_i, cfg_comp_ch1_i, cfg_comp_op_ch1_i, cfg_comp_ch2_i, cfg_comp_op_ch2_i, cfg_comp_ch3_i, cfg_comp_op_ch3_i;
    endclocking
+   modport cp_mon_mp (clocking cp_mon_cb);
+   /// @}
 
-   /**
-    * Used by uvma_adv_timer_b_dpi_drv_c.
-    */
-   clocking dpi_drv_cb @(posedge ls_clk_i);
-      output signal_i;
+   /// @name Used by uvma_adv_timer_b_cp_drv_c
+   /// @{
+   clocking cp_drv_cb @(posedge clk_i);
+      output cfg_start_i, cfg_stop_i, cfg_rst_i, cfg_update_i, cfg_arm_i, cfg_sel_i, cfg_sel_clk_i, cfg_mode_i, cfg_presc_i, cfg_sawtooth_i, cfg_cnt_start_i, cfg_cnt_end_i, cfg_comp_ch0_i, cfg_comp_op_ch0_i, cfg_comp_ch1_i, cfg_comp_op_ch1_i, cfg_comp_ch2_i, cfg_comp_op_ch2_i, cfg_comp_ch3_i, cfg_comp_op_ch3_i;
    endclocking
+   modport cp_drv_mp (clocking cp_drv_cb);
+   /// @}
 
-   /**
-    * Used by uvma_adv_timer_b_dpi_mon_c.
-    */
+   /// @name Used by uvma_adv_timer_b_dpi_mon_c
+   /// @{
    clocking dpi_mon_cb @(posedge ls_clk_i);
       input signal_i;
    endclocking
+   modport dpi_mon_mp (clocking dpi_mon_cb);
+   /// @}
 
-   /**
-    * Used by uvma_adv_timer_b_dpo_drv_c.
-    */
-   clocking dpo_drv_cb @(posedge clk_i);
-      input counter_o, pwm_o, status_o;
+   /// @name Used by uvma_adv_timer_b_dpi_drv_c
+   /// @{
+   clocking dpi_drv_cb @(posedge ls_clk_i);
+      output signal_i;
    endclocking
+   modport dpi_drv_mp (clocking dpi_drv_cb);
+   /// @}
 
-   /**
-    * Used by uvma_adv_timer_b_dpo_mon_c.
-    */
+   /// @name Used by uvma_adv_timer_b_dpo_mon_c
+   /// @{
    clocking dpo_mon_cb @(posedge clk_i);
       input counter_o, pwm_o, status_o;
    endclocking
+   modport dpo_mon_mp (clocking dpo_mon_cb);
+   /// @}
+
+   /// @name Used by uvma_adv_timer_b_dpo_drv_c
+   /// @{
+   clocking dpo_drv_cb @(posedge clk_i);
+      input counter_o, pwm_o, status_o;
+   endclocking
+   modport dpo_drv_mp (clocking dpo_drv_cb);
+   /// @}
 
 
-   /**
-    * Used by uvma_adv_timer_b_cp_drv_c.
-    */
-   modport cp_drv_mp (
-      clocking cp_drv_cb,
-      input    clk_i,
-      input    rstn_i
-   );
-
-   /**
-    * Used by uvma_adv_timer_b_dpi_drv_c.
-    */
-   modport dpi_drv_mp (
-      clocking dpi_drv_cb,
-      input    ls_clk_i,
-      input    rstn_i
-   );
-
-   /**
-    * Used by uvma_adv_timer_b_dpo_drv_c.
-    */
-   modport dpo_drv_mp (
-      clocking dpo_drv_cb,
-      input    clk_i,
-      input    rstn_i
-   );
-
-   /**
-    * Used by uvma_adv_timer_b_cp_mon_c.
-    */
-   modport cp_mon_mp (
-      clocking cp_mon_cb,
-      input    clk_i,
-      input    rstn_i
-   );
-
-   /**
-    * Used by uvma_adv_timer_b_dpi_mon_c.
-    */
-   modport dpi_mon_mp (
-      clocking dpi_mon_cb,
-      input    ls_clk_i,
-      input    rstn_i
-   );
-
-   /**
-    * Used by uvma_adv_timer_b_dpo_mon_c.
-    */
-   modport dpo_mon_mp (
-      clocking dpo_mon_cb,
-      input    clk_i,
-      input    rstn_i
-   );
+   /// @name Accessors
+   /// @{
+   `uvmx_if_reset(rstn_i)
+   `uvmx_if_cb(cp_mon_mp , cp_mon_cb )
+   `uvmx_if_cb(cp_drv_mp , cp_drv_cb )
+   `uvmx_if_cb(dpi_mon_mp, dpi_mon_cb)
+   `uvmx_if_cb(dpi_drv_mp, dpi_drv_cb)
+   `uvmx_if_cb(dpo_mon_mp, dpo_mon_cb)
+   `uvmx_if_cb(dpo_drv_mp, dpo_drv_cb)
+   `uvmx_if_signal_out(cfg_start_i, , cp_mon_mp.cp_mon_cb, cp_drv_mp.cp_drv_cb)
+   `uvmx_if_signal_out(cfg_stop_i, , cp_mon_mp.cp_mon_cb, cp_drv_mp.cp_drv_cb)
+   `uvmx_if_signal_out(cfg_rst_i, , cp_mon_mp.cp_mon_cb, cp_drv_mp.cp_drv_cb)
+   `uvmx_if_signal_out(cfg_update_i, , cp_mon_mp.cp_mon_cb, cp_drv_mp.cp_drv_cb)
+   `uvmx_if_signal_out(cfg_arm_i, , cp_mon_mp.cp_mon_cb, cp_drv_mp.cp_drv_cb)
+   `uvmx_if_signal_out(cfg_sel_i, [7:0], cp_mon_mp.cp_mon_cb, cp_drv_mp.cp_drv_cb)
+   `uvmx_if_signal_out(cfg_sel_clk_i, , cp_mon_mp.cp_mon_cb, cp_drv_mp.cp_drv_cb)
+   `uvmx_if_signal_out(cfg_mode_i, [2:0], cp_mon_mp.cp_mon_cb, cp_drv_mp.cp_drv_cb)
+   `uvmx_if_signal_out(cfg_presc_i, [7:0], cp_mon_mp.cp_mon_cb, cp_drv_mp.cp_drv_cb)
+   `uvmx_if_signal_out(cfg_sawtooth_i, , cp_mon_mp.cp_mon_cb, cp_drv_mp.cp_drv_cb)
+   `uvmx_if_signal_out(cfg_cnt_start_i, [(NUM_BITS-1):0], cp_mon_mp.cp_mon_cb, cp_drv_mp.cp_drv_cb)
+   `uvmx_if_signal_out(cfg_cnt_end_i, [(NUM_BITS-1):0], cp_mon_mp.cp_mon_cb, cp_drv_mp.cp_drv_cb)
+   `uvmx_if_signal_out(cfg_comp_ch0_i, [(NUM_BITS-1):0], cp_mon_mp.cp_mon_cb, cp_drv_mp.cp_drv_cb)
+   `uvmx_if_signal_out(cfg_comp_op_ch0_i, [2:0], cp_mon_mp.cp_mon_cb, cp_drv_mp.cp_drv_cb)
+   `uvmx_if_signal_out(cfg_comp_ch1_i, [(NUM_BITS-1):0], cp_mon_mp.cp_mon_cb, cp_drv_mp.cp_drv_cb)
+   `uvmx_if_signal_out(cfg_comp_op_ch1_i, [2:0], cp_mon_mp.cp_mon_cb, cp_drv_mp.cp_drv_cb)
+   `uvmx_if_signal_out(cfg_comp_ch2_i, [(NUM_BITS-1):0], cp_mon_mp.cp_mon_cb, cp_drv_mp.cp_drv_cb)
+   `uvmx_if_signal_out(cfg_comp_op_ch2_i, [2:0], cp_mon_mp.cp_mon_cb, cp_drv_mp.cp_drv_cb)
+   `uvmx_if_signal_out(cfg_comp_ch3_i, [(NUM_BITS-1):0], cp_mon_mp.cp_mon_cb, cp_drv_mp.cp_drv_cb)
+   `uvmx_if_signal_out(cfg_comp_op_ch3_i, [2:0], cp_mon_mp.cp_mon_cb, cp_drv_mp.cp_drv_cb)
+   `uvmx_if_signal_out(signal_i, [(N_EXTSIG-1):0], dpi_mon_mp.dpi_mon_cb, dpi_drv_mp.dpi_drv_cb)
+   `uvmx_if_signal_in(counter_o, [(NUM_BITS-1):0], dpo_mon_mp.dpo_mon_cb)
+   `uvmx_if_signal_in(pwm_o, [3:0], dpo_mon_mp.dpo_mon_cb)
+   `uvmx_if_signal_in(status_o, [7:0], dpo_mon_mp.dpo_mon_cb)
+   /// @}
 
 endinterface : uvma_adv_timer_b_if
 

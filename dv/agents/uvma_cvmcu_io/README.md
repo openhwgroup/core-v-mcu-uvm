@@ -21,8 +21,3 @@ This IP contains the Datum Technology Corporation CORE-V-MCU IO UVM Agent.
 It is dependent on the following IP:
 
 * `datum/uvmx`
-* `datum/uvma_i2c`
-* `datum/uvma_sdio`
-* `datum/uvma_uart`
-* `datum/uvma_spi`
-* `Datum/uvma_cvmcu_cpi`

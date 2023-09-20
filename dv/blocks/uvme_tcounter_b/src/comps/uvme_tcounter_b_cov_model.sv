@@ -63,14 +63,6 @@ class uvme_tcounter_b_cov_model_c extends uvmx_block_env_cov_model_c #(
    endgroup
 
    /**
-    * Agent Interface functional coverage.
-    */
-   covergroup tcounter_b_agent_vif_cg;
-      // TODO Implement tcounter_b_vif_cg
-      //      Ex: abc_cp : coverpoint cntxt.vif.abc;
-   endgroup
-
-   /**
     * Sequence Item functional coverage.
     */
    covergroup tcounter_b_seq_item_cg;
@@ -150,7 +142,6 @@ class uvme_tcounter_b_cov_model_c extends uvmx_block_env_cov_model_c #(
       super.new(name, parent);
       tcounter_b_cfg_cg          = new();
       tcounter_b_cntxt_cg        = new();
-      tcounter_b_agent_vif_cg    = new();
       tcounter_b_seq_item_cg     = new();
       tcounter_b_in_mon_trn_cg   = new();
       tcounter_b_out_mon_trn_cg  = new();
@@ -181,16 +172,6 @@ class uvme_tcounter_b_cov_model_c extends uvmx_block_env_cov_model_c #(
    /// @{
    virtual function void sample_cfg  (); tcounter_b_cfg_cg  .sample(); endfunction
    virtual function void sample_cntxt(); tcounter_b_cntxt_cg.sample(); endfunction
-
-   virtual task sample_vifs();
-      fork
-         forever begin
-            cntxt.agent_cntxt.clk_e.wait_trigger();
-            tcounter_b_agent_vif_cg.sample();
-         end
-      join
-   endtask
-
    virtual task sample_tlm();
       fork
          forever begin

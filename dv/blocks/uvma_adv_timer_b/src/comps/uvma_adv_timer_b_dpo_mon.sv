@@ -33,9 +33,9 @@ class uvma_adv_timer_b_dpo_mon_c extends uvmx_mp_mon_c #(
     * Samples #trn from the Data Plane Output monitor clocking block (dpi_mon_cb) on each clock cycle.
     */
    virtual task sample_trn(ref uvma_adv_timer_b_dpo_mon_trn_c trn);
-      trn.counter_o = mp.dpo_mon_cb.counter_o;
-      trn.pwm_o = mp.dpo_mon_cb.pwm_o;
-      trn.status_o = mp.dpo_mon_cb.status_o;
+      `uvmx_mp_mon_signal(trn, counter_o)
+      `uvmx_mp_mon_signal(trn, pwm_o)
+      `uvmx_mp_mon_signal(trn, status_o)
    endtask
 
    /**

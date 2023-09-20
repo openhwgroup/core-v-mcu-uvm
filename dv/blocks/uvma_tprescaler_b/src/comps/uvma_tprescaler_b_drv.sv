@@ -35,7 +35,7 @@ class uvma_tprescaler_b_drv_c extends uvmx_drv_c #(
    endfunction
 
    /**
-    * Creates Driver components.
+    * Creates sub-driver components.
     */
    virtual function void create_drivers();
       cp_driver  = uvma_tprescaler_b_cp_drv_c ::type_id::create("cp_driver" , this);

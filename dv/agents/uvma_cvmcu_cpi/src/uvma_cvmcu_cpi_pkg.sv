@@ -49,15 +49,15 @@ package uvma_cvmcu_cpi_pkg;
    `include "uvma_cvmcu_cpi_phy_mon_trn.sv"
    `include "uvma_cvmcu_cpi_seq_item.sv"
    `include "uvma_cvmcu_cpi_tx_phy_seq_item.sv"
-      `include "uvma_cvmcu_cpi_rx_phy_seq_item.sv"
+   `include "uvma_cvmcu_cpi_rx_phy_seq_item.sv"
 
    // Driver
    `include "uvma_cvmcu_cpi_tx_phy_drv.sv"
-      `include "uvma_cvmcu_cpi_rx_phy_drv.sv"
+   `include "uvma_cvmcu_cpi_rx_phy_drv.sv"
 
    // Monitor
    `include "uvma_cvmcu_cpi_phy_mon.sv"
-   
+
    // Agent-Level Components
    `include "uvma_cvmcu_cpi_mon.sv"
    `include "uvma_cvmcu_cpi_drv.sv"
@@ -73,7 +73,7 @@ package uvma_cvmcu_cpi_pkg;
    `include "uvma_cvmcu_cpi_rx_drv_vseq.sv"
    `include "uvma_cvmcu_cpi_idle_vseq.sv"
    `include "uvma_cvmcu_cpi_vseq_lib.sv"
-   
+
 endpackage : uvma_cvmcu_cpi_pkg
 
 

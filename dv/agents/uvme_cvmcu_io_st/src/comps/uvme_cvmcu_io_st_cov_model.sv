@@ -37,14 +37,6 @@ class uvme_cvmcu_io_st_cov_model_c extends uvma_cvmcu_io_cov_model_c;
    endgroup : cvmcu_io_st_cntxt_cg
 
    /**
-    * Agent Interface functional coverage.
-    */
-   covergroup cvmcu_io_st_vif_cg;
-      // TODO Implement cvmcu_io_vif_cg
-      //      Ex: abc_cp : coverpoint cntxt.vif.abc;
-   endgroup
-
-   /**
     * Sequence item functional coverage.
     */
    covergroup cvmcu_io_st_seq_item_cg;
@@ -121,7 +113,6 @@ class uvme_cvmcu_io_st_cov_model_c extends uvma_cvmcu_io_cov_model_c;
       super.new(name, parent);
       cvmcu_io_st_cfg_cg      = new();
       cvmcu_io_st_cntxt_cg    = new();
-      cvmcu_io_st_vif_cg      = new();
       cvmcu_io_st_seq_item_cg = new();
       cvmcu_io_st_ig_mon_trn_cg = new();
       cvmcu_io_st_eg_mon_trn_cg = new();
@@ -137,7 +128,6 @@ class uvme_cvmcu_io_st_cov_model_c extends uvma_cvmcu_io_cov_model_c;
    /// @{
    virtual function void sample_cfg     (); cvmcu_io_st_cfg_cg     .sample(); endfunction
    virtual function void sample_cntxt   (); cvmcu_io_st_cntxt_cg   .sample(); endfunction
-   virtual function void sample_vif     (); cvmcu_io_st_vif_cg     .sample(); endfunction
    virtual function void sample_seq_item(); cvmcu_io_st_seq_item_cg.sample(); endfunction
    virtual function void sample_ig_mon_trn(); cvmcu_io_st_ig_mon_trn_cg.sample(); endfunction
    virtual function void sample_eg_mon_trn(); cvmcu_io_st_eg_mon_trn_cg.sample(); endfunction

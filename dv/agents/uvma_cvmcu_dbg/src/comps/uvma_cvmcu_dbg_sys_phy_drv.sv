@@ -33,14 +33,14 @@ class uvma_cvmcu_dbg_sys_phy_drv_c extends uvmx_mp_drv_c #(
     * Drives SYS PHY Driver clocking block (sys_phy_drv_cb) on each clock cycle.
     */
    virtual task drive_item(ref uvma_cvmcu_dbg_sys_phy_seq_item_c item);
-      mp.sys_phy_drv_cb.debug_req_i <= item.debug_req_i;
+      `uvmx_mp_drv_signal(item, debug_req_i)
    endtask
 
    /**
     * Samples SYS PHY Driver clocking block (sys_phy_drv_cb) after each clock cycle.
     */
    virtual task sample_post_clk(ref uvma_cvmcu_dbg_sys_phy_seq_item_c item);
-      item.stoptimer_o = mp.sys_phy_drv_cb.stoptimer_o;
+      `uvmx_mp_mon_signal(item, stoptimer_o)
    endtask
 
 endclass : uvma_cvmcu_dbg_sys_phy_drv_c

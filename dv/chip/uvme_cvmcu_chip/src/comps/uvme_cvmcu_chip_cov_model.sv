@@ -125,22 +125,6 @@ class uvme_cvmcu_chip_cov_model_c extends uvmx_chip_env_cov_model_c #(
    endgroup : cvmcu_chip_cntxt_cg
 
    /**
-    * Coverage for probe virtual interface signals clocked to sys_clk.
-    */
-   covergroup cvmcu_chip_probe_vif_sys_clk_cg;
-      // TODO Implement cvmcu_chip_probe_vif_sys_clk_cg
-      //      Ex: abc_cp : coverpoint cntxt.probe_vif.abc;
-   endgroup
-
-   /**
-    * Coverage for probe virtual interface signals clocked to jtag_clk.
-    */
-   covergroup cvmcu_chip_probe_vif_jtag_clk_cg;
-      // TODO Implement cvmcu_chip_probe_vif_jtag_clk_cg
-      //      Ex: abc_cp : coverpoint cntxt.probe_vif.abc;
-   endgroup
-
-   /**
     * Coverage for udma_qspi0_ingress expected transaction: udma_qspi0_ingress_exp_trn
     */
    covergroup cvmcu_chip_udma_qspi0_ingress_exp_cg;
@@ -467,8 +451,6 @@ class uvme_cvmcu_chip_cov_model_c extends uvmx_chip_env_cov_model_c #(
       super.new(name, parent);
       cvmcu_chip_cfg_cg   = new();
       cvmcu_chip_cntxt_cg = new();
-      cvmcu_chip_probe_vif_sys_clk_cg = new();
-      cvmcu_chip_probe_vif_jtag_clk_cg = new();
       cvmcu_chip_udma_qspi0_ingress_exp_cg = new();
       cvmcu_chip_udma_qspi1_ingress_exp_cg = new();
       cvmcu_chip_udma_camera_exp_cg = new();
@@ -566,19 +548,6 @@ class uvme_cvmcu_chip_cov_model_c extends uvmx_chip_env_cov_model_c #(
    virtual function void sample_cntxt();
       cvmcu_chip_cntxt_cg.sample();
    endfunction
-
-   virtual task sample_vifs();
-      fork
-         forever begin
-            @(cntxt.probe_vif.sys_clk_mp.sys_clk_cb);
-            cvmcu_chip_probe_vif_sys_clk_cg.sample();
-         end
-         forever begin
-            @(cntxt.probe_vif.jtag_clk_mp.jtag_clk_cb);
-            cvmcu_chip_probe_vif_jtag_clk_cg.sample();
-         end
-      join
-   endtask
 
    virtual task sample_tlm();
       fork

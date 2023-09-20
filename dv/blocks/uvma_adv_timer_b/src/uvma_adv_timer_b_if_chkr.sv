@@ -15,7 +15,7 @@ module uvma_adv_timer_b_if_chkr (
    uvma_adv_timer_b_if  agent_if ///< Target interface
 );
 
-   // TODO Add assertions to uvme_adv_timer_b_chkr
+   // TODO Add assertions and/or functional coverage to uvme_adv_timer_b_chkr
 
 endmodule : uvma_adv_timer_b_if_chkr
 

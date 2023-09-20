@@ -19,45 +19,45 @@ interface uvme_apb_timer_ss_probe_if (
 
    /// @name Inputs
    /// @{
-   wire   stoptimer_i; ///< Stop timer input
-   wire   event_lo_i; ///< Event low input
-   wire   event_hi_i; ///< Event high input
+   wire  stoptimer_i; ///< Stop timer input
+   wire  event_lo_i; ///< Event low input
+   wire  event_hi_i; ///< Event high input
    /// @}
 
    /// @name Outputs
    /// @{
-   wire   busy_o; ///< Busy output
+   wire  busy_o; ///< Busy output
    /// @}
 
 
-   /**
-    * Signals clocked to 'HCLK'.
-    */
+   /// @name Signals clocked to 'HCLK'
+   /// @{
    clocking sys_clk_cb @(posedge HCLK);
       output stoptimer_i, event_lo_i, event_hi_i;
       input busy_o;
    endclocking
-   /**
-    * Signals clocked to 'ref_clk_i'.
-    */
+   modport sys_clk_mp (clocking sys_clk_cb);
+   /// @}
+
+   /// @name Signals clocked to 'ref_clk_i'
+   /// @{
    clocking ref_clk_cb @(posedge ref_clk_i);
    endclocking
+   modport ref_clk_mp (clocking ref_clk_cb);
+   /// @}
 
 
-   /**
-    * Signals clocked to 'HCLK'.
-    */
-   modport sys_clk_mp (
-      clocking sys_clk_cb,
-      input    HCLK,
-      input    HRESETn
-   );
-   /**
-    * Signals clocked to 'ref_clk_i'.
-    */
-   modport ref_clk_mp (
-      clocking ref_clk_cb,
-      input    ref_clk_i   );
+
+   /// @name Accessors
+   /// @{
+   `uvmx_if_reset(HRESETn)
+   `uvmx_if_cb(sys_clk_mp, sys_clk_cb)
+   `uvmx_if_cb(ref_clk_mp, ref_clk_cb)
+   `uvmx_if_signal_probe_out(stoptimer_i, , sys_clk_mp.sys_clk_cb)
+   `uvmx_if_signal_probe_out(event_lo_i, , sys_clk_mp.sys_clk_cb)
+   `uvmx_if_signal_probe_out(event_hi_i, , sys_clk_mp.sys_clk_cb)
+   `uvmx_if_signal_probe_in(busy_o, , sys_clk_mp.sys_clk_cb)
+   /// @}
 
 endinterface : uvme_apb_timer_ss_probe_if
 

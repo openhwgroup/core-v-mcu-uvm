@@ -44,26 +44,26 @@ class uvma_adv_timer_b_cp_drv_c extends uvmx_mp_drv_c #(
     * Drives Control Plane driver clocking block (cp_drv_cb) on each clock cycle.
     */
    virtual task drive_item(ref uvma_adv_timer_b_cp_seq_item_c item);
-      mp.cp_drv_cb.cfg_start_i <= item.cfg_start_i;
-      mp.cp_drv_cb.cfg_stop_i <= item.cfg_stop_i;
-      mp.cp_drv_cb.cfg_rst_i <= item.cfg_rst_i;
-      mp.cp_drv_cb.cfg_update_i <= item.cfg_update_i;
-      mp.cp_drv_cb.cfg_arm_i <= item.cfg_arm_i;
-      mp.cp_drv_cb.cfg_sel_i <= item.cfg_sel_i;
-      mp.cp_drv_cb.cfg_sel_clk_i <= item.cfg_sel_clk_i;
-      mp.cp_drv_cb.cfg_mode_i <= item.cfg_mode_i;
-      mp.cp_drv_cb.cfg_presc_i <= item.cfg_presc_i;
-      mp.cp_drv_cb.cfg_sawtooth_i <= item.cfg_sawtooth_i;
-      mp.cp_drv_cb.cfg_cnt_start_i <= item.cfg_cnt_start_i;
-      mp.cp_drv_cb.cfg_cnt_end_i <= item.cfg_cnt_end_i;
-      mp.cp_drv_cb.cfg_comp_ch0_i <= item.cfg_comp_ch0_i;
-      mp.cp_drv_cb.cfg_comp_op_ch0_i <= item.cfg_comp_op_ch0_i;
-      mp.cp_drv_cb.cfg_comp_ch1_i <= item.cfg_comp_ch1_i;
-      mp.cp_drv_cb.cfg_comp_op_ch1_i <= item.cfg_comp_op_ch1_i;
-      mp.cp_drv_cb.cfg_comp_ch2_i <= item.cfg_comp_ch2_i;
-      mp.cp_drv_cb.cfg_comp_op_ch2_i <= item.cfg_comp_op_ch2_i;
-      mp.cp_drv_cb.cfg_comp_ch3_i <= item.cfg_comp_ch3_i;
-      mp.cp_drv_cb.cfg_comp_op_ch3_i <= item.cfg_comp_op_ch3_i;
+      `uvmx_mp_drv_signal(item, cfg_start_i)
+      `uvmx_mp_drv_signal(item, cfg_stop_i)
+      `uvmx_mp_drv_signal(item, cfg_rst_i)
+      `uvmx_mp_drv_signal(item, cfg_update_i)
+      `uvmx_mp_drv_signal(item, cfg_arm_i)
+      `uvmx_mp_drv_signal(item, cfg_sel_i)
+      `uvmx_mp_drv_signal(item, cfg_sel_clk_i)
+      `uvmx_mp_drv_signal(item, cfg_mode_i)
+      `uvmx_mp_drv_signal(item, cfg_presc_i)
+      `uvmx_mp_drv_signal(item, cfg_sawtooth_i)
+      `uvmx_mp_drv_signal(item, cfg_cnt_start_i)
+      `uvmx_mp_drv_signal(item, cfg_cnt_end_i)
+      `uvmx_mp_drv_signal(item, cfg_comp_ch0_i)
+      `uvmx_mp_drv_signal(item, cfg_comp_op_ch0_i)
+      `uvmx_mp_drv_signal(item, cfg_comp_ch1_i)
+      `uvmx_mp_drv_signal(item, cfg_comp_op_ch1_i)
+      `uvmx_mp_drv_signal(item, cfg_comp_ch2_i)
+      `uvmx_mp_drv_signal(item, cfg_comp_op_ch2_i)
+      `uvmx_mp_drv_signal(item, cfg_comp_ch3_i)
+      `uvmx_mp_drv_signal(item, cfg_comp_op_ch3_i)
    endtask
 
 

@@ -45,30 +45,12 @@ class uvme_apb_timer_ss_cov_model_c extends uvmx_ss_env_cov_model_c #(
    endgroup : apb_timer_ss_cntxt_cg
 
    /**
-    * Coverage for probe virtual interface signals clocked to sys_clk.
-    */
-   covergroup apb_timer_ss_probe_vif_sys_clk_cg;
-      // TODO Implement apb_timer_ss_probe_vif_sys_clk_cg
-      //      Ex: abc_cp : coverpoint cntxt.probe_vif.abc;
-   endgroup
-
-   /**
-    * Coverage for probe virtual interface signals clocked to ref_clk.
-    */
-   covergroup apb_timer_ss_probe_vif_ref_clk_cg;
-      // TODO Implement apb_timer_ss_probe_vif_ref_clk_cg
-      //      Ex: abc_cp : coverpoint cntxt.probe_vif.abc;
-   endgroup
-
-   /**
     * Creates covergroups.
     */
    function new(string name="uvme_apb_timer_ss_cov_model", uvm_component parent=null);
       super.new(name, parent);
       apb_timer_ss_cfg_cg   = new();
       apb_timer_ss_cntxt_cg = new();
-      apb_timer_ss_probe_vif_sys_clk_cg = new();
-      apb_timer_ss_probe_vif_ref_clk_cg = new();
    endfunction
 
    /**
@@ -86,19 +68,6 @@ class uvme_apb_timer_ss_cov_model_c extends uvmx_ss_env_cov_model_c #(
    virtual function void sample_cntxt();
       apb_timer_ss_cntxt_cg.sample();
    endfunction
-
-   virtual task sample_vifs();
-      fork
-         forever begin
-            @(cntxt.probe_vif.sys_clk_mp.sys_clk_cb);
-            apb_timer_ss_probe_vif_sys_clk_cg.sample();
-         end
-         forever begin
-            @(cntxt.probe_vif.ref_clk_mp.ref_clk_cb);
-            apb_timer_ss_probe_vif_ref_clk_cg.sample();
-         end
-      join
-   endtask
 
    virtual task sample_tlm();
       fork

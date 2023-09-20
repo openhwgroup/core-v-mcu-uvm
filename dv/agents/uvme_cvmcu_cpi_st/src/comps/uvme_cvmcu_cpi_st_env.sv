@@ -44,8 +44,8 @@ class uvme_cvmcu_cpi_st_env_c extends uvmx_agent_env_c #(
     * Assigns configuration handles to components using UVM Configuration Database.
     */
    virtual function void assign_cfg();
-      uvm_config_db#(uvma_cvmcu_cpi_cfg_c)::set(this, "tx_agent", "cfg", cfg.tx_cfg);
-      uvm_config_db#(uvma_cvmcu_cpi_cfg_c)::set(this, "rx_agent", "cfg", cfg.rx_cfg);
+      uvm_config_db#(uvma_cvmcu_cpi_cfg_c)::set(this, "tx_agent", "cfg", cfg.tx_agent_cfg);
+      uvm_config_db#(uvma_cvmcu_cpi_cfg_c)::set(this, "rx_agent", "cfg", cfg.rx_agent_cfg);
       uvm_config_db#(uvma_cvmcu_cpi_cfg_c)::set(this, "passive_agent", "cfg", cfg.passive_cfg);
    endfunction
 
@@ -53,8 +53,8 @@ class uvme_cvmcu_cpi_st_env_c extends uvmx_agent_env_c #(
     * Assigns context handles to components using UVM Configuration Database.
     */
    virtual function void assign_cntxt();
-      uvm_config_db#(uvma_cvmcu_cpi_cntxt_c)::set(this, "tx_agent", "cntxt", cntxt.tx_cntxt);
-      uvm_config_db#(uvma_cvmcu_cpi_cntxt_c)::set(this, "rx_agent", "cntxt", cntxt.rx_cntxt);
+      uvm_config_db#(uvma_cvmcu_cpi_cntxt_c)::set(this, "tx_agent", "cntxt", cntxt.tx_agent_cntxt);
+      uvm_config_db#(uvma_cvmcu_cpi_cntxt_c)::set(this, "rx_agent", "cntxt", cntxt.rx_agent_cntxt);
       uvm_config_db#(uvma_cvmcu_cpi_cntxt_c)::set(this, "passive_agent", "cntxt", cntxt.passive_cntxt);
    endfunction
 

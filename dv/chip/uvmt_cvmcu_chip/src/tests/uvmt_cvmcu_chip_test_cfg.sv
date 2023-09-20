@@ -25,7 +25,6 @@ class uvmt_cvmcu_chip_test_cfg_c extends uvmx_chip_test_cfg_c #(
    /// @{
    rand int unsigned          sys_clk_frequency; ///< System clock frequency
    rand int unsigned          jtag_clk_frequency; ///< JTAG clock frequency
-   rand uvmx_reset_type_enum  reset_type; ///< Reset type
    /// @}
 
    /// @name Objects
@@ -42,8 +41,6 @@ class uvmt_cvmcu_chip_test_cfg_c extends uvmx_chip_test_cfg_c #(
       `uvm_field_int (                      jtag_clk_frequency, UVM_DEFAULT + UVM_DEC)
       `uvm_field_enum  (uvmx_reset_type_enum, reset_type, UVM_DEFAULT)
       `uvm_field_int   (auto_ral_update         , UVM_DEFAULT          )
-      `uvm_field_int   (trn_log_enabled         , UVM_DEFAULT          )
-      `uvm_field_int   (cov_model_enabled       , UVM_DEFAULT          )
       `uvm_field_int   (startup_timeout         , UVM_DEFAULT + UVM_DEC)
       `uvm_field_int   (heartbeat_period        , UVM_DEFAULT + UVM_DEC)
       `uvm_field_int   (heartbeat_refresh_period, UVM_DEFAULT + UVM_DEC)
@@ -79,26 +76,18 @@ class uvmt_cvmcu_chip_test_cfg_c extends uvmx_chip_test_cfg_c #(
     * Sets Agents configuration.
     */
    constraint agents_cons {
-      sys_clk_agent_cfg.enabled           == 1;
+      sys_clk_agent_cfg.enabled    == 1;
       sys_clk_agent_cfg.is_active         == UVM_ACTIVE;
-      sys_clk_agent_cfg.trn_log_enabled   == trn_log_enabled;
-      sys_clk_agent_cfg.cov_model_enabled == 0;
-      jtag_clk_agent_cfg.enabled           == 1;
+      jtag_clk_agent_cfg.enabled    == 1;
       jtag_clk_agent_cfg.is_active         == UVM_ACTIVE;
-      jtag_clk_agent_cfg.trn_log_enabled   == trn_log_enabled;
-      jtag_clk_agent_cfg.cov_model_enabled == 0;
-      sys_reset_agent_cfg.enabled           == 1;
-      sys_reset_agent_cfg.is_active         == UVM_ACTIVE;
-      sys_reset_agent_cfg.polarity          == UVMX_ACTIVE_LOW;
-      sys_reset_agent_cfg.reset_type        == reset_type;
-      sys_reset_agent_cfg.trn_log_enabled   == trn_log_enabled;
-      sys_reset_agent_cfg.cov_model_enabled == 0;
-      jtag_reset_agent_cfg.enabled           == 1;
-      jtag_reset_agent_cfg.is_active         == UVM_ACTIVE;
-      jtag_reset_agent_cfg.polarity          == UVMX_ACTIVE_LOW;
-      jtag_reset_agent_cfg.reset_type        == UVMX_RESET_SYNC;
-      jtag_reset_agent_cfg.trn_log_enabled   == trn_log_enabled;
-      jtag_reset_agent_cfg.cov_model_enabled == 0;
+      sys_reset_agent_cfg.enabled    == 1;
+      sys_reset_agent_cfg.is_active  == UVM_ACTIVE;
+      sys_reset_agent_cfg.polarity   == UVMX_RESET_ACTIVE_LOW;
+      sys_reset_agent_cfg.reset_type == reset_type;
+      jtag_reset_agent_cfg.enabled    == 1;
+      jtag_reset_agent_cfg.is_active  == UVM_ACTIVE;
+      jtag_reset_agent_cfg.polarity   == UVMX_RESET_ACTIVE_LOW;
+      jtag_reset_agent_cfg.reset_type == UVMX_RESET_SYNC;
    }
 
    /**

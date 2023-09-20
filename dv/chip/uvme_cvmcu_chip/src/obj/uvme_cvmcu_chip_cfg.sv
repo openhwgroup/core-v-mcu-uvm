@@ -77,8 +77,6 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
       `uvm_field_int(use_cores, UVM_DEFAULT)
       `uvm_field_enum(uvmx_reset_type_enum   , reset_type           , UVM_DEFAULT)
       `uvm_field_int (                         scoreboarding_enabled, UVM_DEFAULT)
-      `uvm_field_int (                         cov_model_enabled    , UVM_DEFAULT)
-      `uvm_field_int (                         trn_log_enabled      , UVM_DEFAULT)
       `uvm_field_int(reg_block_base_address, UVM_DEFAULT)
       `uvm_field_object(jtag_agent_cfg, UVM_DEFAULT)
       `uvm_field_object(qspi_s0_agent_cfg, UVM_DEFAULT)
@@ -136,8 +134,6 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
       jtag_agent_cfg.bypass_mode == 0;
       jtag_agent_cfg.drv_mode == UVMA_JTAG_DRV_MODE_CTRL;
       jtag_agent_cfg.is_active == is_active;
-      jtag_agent_cfg.trn_log_enabled == trn_log_enabled;
-      jtag_agent_cfg.cov_model_enabled == 0;
    }
 
    /**
@@ -149,8 +145,6 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
       qspi_s0_agent_cfg.data_width == 4;
       qspi_s0_agent_cfg.drv_mode == UVMA_SPI_DRV_MODE_SLV;
       qspi_s0_agent_cfg.is_active == is_active;
-      qspi_s0_agent_cfg.trn_log_enabled == trn_log_enabled;
-      qspi_s0_agent_cfg.cov_model_enabled == 0;
    }
 
    /**
@@ -162,8 +156,6 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
       qspi_s1_agent_cfg.data_width == 4;
       qspi_s1_agent_cfg.drv_mode == UVMA_SPI_DRV_MODE_SLV;
       qspi_s1_agent_cfg.is_active == is_active;
-      qspi_s1_agent_cfg.trn_log_enabled == trn_log_enabled;
-      qspi_s1_agent_cfg.cov_model_enabled == 0;
    }
 
    /**
@@ -174,8 +166,6 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
       camera_agent_cfg.bypass_mode == 1;
       camera_agent_cfg.drv_mode == UVMA_CVMCU_CPI_DRV_MODE_TX;
       camera_agent_cfg.is_active == is_active;
-      camera_agent_cfg.trn_log_enabled == trn_log_enabled;
-      camera_agent_cfg.cov_model_enabled == 0;
    }
 
    /**
@@ -186,8 +176,6 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
       i2c_s0_agent_cfg.bypass_mode == 1;
       i2c_s0_agent_cfg.drv_mode == UVMA_I2C_DRV_MODE_SLV;
       i2c_s0_agent_cfg.is_active == is_active;
-      i2c_s0_agent_cfg.trn_log_enabled == trn_log_enabled;
-      i2c_s0_agent_cfg.cov_model_enabled == 0;
    }
 
    /**
@@ -198,8 +186,6 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
       i2c_s1_agent_cfg.bypass_mode == 1;
       i2c_s1_agent_cfg.drv_mode == UVMA_I2C_DRV_MODE_SLV;
       i2c_s1_agent_cfg.is_active == is_active;
-      i2c_s1_agent_cfg.trn_log_enabled == trn_log_enabled;
-      i2c_s1_agent_cfg.cov_model_enabled == 0;
    }
 
    /**
@@ -210,8 +196,6 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
       uart0_agent_cfg.bypass_mode == 1;
       uart0_agent_cfg.drv_mode == UVMA_UART_DRV_MODE_TX;
       uart0_agent_cfg.is_active == is_active;
-      uart0_agent_cfg.trn_log_enabled == trn_log_enabled;
-      uart0_agent_cfg.cov_model_enabled == 0;
    }
 
    /**
@@ -222,8 +206,6 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
       uart1_agent_cfg.bypass_mode == 1;
       uart1_agent_cfg.drv_mode == UVMA_UART_DRV_MODE_TX;
       uart1_agent_cfg.is_active == is_active;
-      uart1_agent_cfg.trn_log_enabled == trn_log_enabled;
-      uart1_agent_cfg.cov_model_enabled == 0;
    }
 
    /**
@@ -234,8 +216,6 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
       sdio_agent_cfg.bypass_mode == 1;
       sdio_agent_cfg.drv_mode == UVMA_SDIO_DRV_MODE_DEV;
       sdio_agent_cfg.is_active == is_active;
-      sdio_agent_cfg.trn_log_enabled == trn_log_enabled;
-      sdio_agent_cfg.cov_model_enabled == 0;
    }
 
    /**
@@ -246,8 +226,6 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
       i2c_m_agent_cfg.bypass_mode == 1;
       i2c_m_agent_cfg.drv_mode == UVMA_I2C_DRV_MODE_MSTR;
       i2c_m_agent_cfg.is_active == is_active;
-      i2c_m_agent_cfg.trn_log_enabled == trn_log_enabled;
-      i2c_m_agent_cfg.cov_model_enabled == 0;
    }
 
    /**
@@ -258,8 +236,6 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
       io_agent_cfg.bypass_mode == 0;
       io_agent_cfg.drv_mode == UVMA_CVMCU_IO_DRV_MODE_BOARD;
       io_agent_cfg.is_active == is_active;
-      io_agent_cfg.trn_log_enabled == trn_log_enabled;
-      io_agent_cfg.cov_model_enabled == 0;
    }
 
    /**
@@ -272,8 +248,6 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
       instr_obi_agent_cfg.addr_width == 32;
       instr_obi_agent_cfg.drv_mode == UVMA_OBI_DRV_MODE_MSTR;
       instr_obi_agent_cfg.is_active == !use_cores;
-      instr_obi_agent_cfg.trn_log_enabled == trn_log_enabled;
-      instr_obi_agent_cfg.cov_model_enabled == 0;
    }
 
    /**
@@ -286,8 +260,6 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
       data_obi_agent_cfg.addr_width == 32;
       data_obi_agent_cfg.drv_mode == UVMA_OBI_DRV_MODE_MSTR;
       data_obi_agent_cfg.is_active == !use_cores;
-      data_obi_agent_cfg.trn_log_enabled == trn_log_enabled;
-      data_obi_agent_cfg.cov_model_enabled == 0;
    }
 
    /**
@@ -297,8 +269,6 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
       event_agent_cfg.enabled == enabled;
       event_agent_cfg.bypass_mode == 0;
       event_agent_cfg.is_active == UVM_PASSIVE;
-      event_agent_cfg.trn_log_enabled == trn_log_enabled;
-      event_agent_cfg.cov_model_enabled == 0;
    }
 
    /**
@@ -308,8 +278,6 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
       dbg_agent_cfg.enabled == enabled;
       dbg_agent_cfg.bypass_mode == 0;
       dbg_agent_cfg.is_active == UVM_PASSIVE;
-      dbg_agent_cfg.trn_log_enabled == trn_log_enabled;
-      dbg_agent_cfg.cov_model_enabled == 0;
    }
 
    /**
@@ -319,8 +287,6 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
       irq_l1_agent_cfg.enabled == enabled;
       irq_l1_agent_cfg.num_lines == 32;
       irq_l1_agent_cfg.is_active == UVM_PASSIVE;
-      irq_l1_agent_cfg.trn_log_enabled == trn_log_enabled;
-      irq_l1_agent_cfg.cov_model_enabled == 0;
    }
 
    /**
@@ -330,8 +296,6 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
       irq_l2_agent_cfg.enabled == enabled;
       irq_l2_agent_cfg.num_lines == 256;
       irq_l2_agent_cfg.is_active == UVM_PASSIVE;
-      irq_l2_agent_cfg.trn_log_enabled == trn_log_enabled;
-      irq_l2_agent_cfg.cov_model_enabled == 0;
    }
 
    /**
@@ -341,8 +305,6 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
       apb_timer_ss_env_cfg.enabled == enabled;
       apb_timer_ss_env_cfg.is_active == UVM_PASSIVE;
       apb_timer_ss_env_cfg.scoreboarding_enabled == scoreboarding_enabled;
-      apb_timer_ss_env_cfg.trn_log_enabled == trn_log_enabled;
-      apb_timer_ss_env_cfg.cov_model_enabled == cov_model_enabled;
    }
 
    /**
@@ -352,8 +314,6 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
       apb_adv_timer_ss_env_cfg.enabled == enabled;
       apb_adv_timer_ss_env_cfg.is_active == UVM_PASSIVE;
       apb_adv_timer_ss_env_cfg.scoreboarding_enabled == scoreboarding_enabled;
-      apb_adv_timer_ss_env_cfg.trn_log_enabled == trn_log_enabled;
-      apb_adv_timer_ss_env_cfg.cov_model_enabled == cov_model_enabled;
    }
 
    /**

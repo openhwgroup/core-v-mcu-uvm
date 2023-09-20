@@ -33,8 +33,8 @@ class uvma_cvmcu_dbg_phy_mon_c extends uvmx_mp_mon_c #(
     * Samples #trn from the PHY Monitor modport (phy_mon_cb) on each clock cycle.
     */
    virtual task sample_trn(ref uvma_cvmcu_dbg_phy_mon_trn_c trn);
-      trn.debug_req_i = mp.phy_mon_cb.debug_req_i;
-      trn.stoptimer_o = mp.phy_mon_cb.stoptimer_o;
+      `uvmx_mp_mon_signal(trn, debug_req_i)
+      `uvmx_mp_mon_signal(trn, stoptimer_o)
    endtask
 
 

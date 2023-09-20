@@ -63,14 +63,6 @@ class uvme_adv_timer_b_cov_model_c extends uvmx_block_env_cov_model_c #(
    endgroup
 
    /**
-    * Agent Interface functional coverage.
-    */
-   covergroup adv_timer_b_agent_vif_cg;
-      // TODO Implement adv_timer_b_vif_cg
-      //      Ex: abc_cp : coverpoint cntxt.vif.abc;
-   endgroup
-
-   /**
     * Sequence Item functional coverage.
     */
    covergroup adv_timer_b_seq_item_cg;
@@ -150,7 +142,6 @@ class uvme_adv_timer_b_cov_model_c extends uvmx_block_env_cov_model_c #(
       super.new(name, parent);
       adv_timer_b_cfg_cg          = new();
       adv_timer_b_cntxt_cg        = new();
-      adv_timer_b_agent_vif_cg    = new();
       adv_timer_b_seq_item_cg     = new();
       adv_timer_b_in_mon_trn_cg   = new();
       adv_timer_b_out_mon_trn_cg  = new();
@@ -181,16 +172,6 @@ class uvme_adv_timer_b_cov_model_c extends uvmx_block_env_cov_model_c #(
    /// @{
    virtual function void sample_cfg  (); adv_timer_b_cfg_cg  .sample(); endfunction
    virtual function void sample_cntxt(); adv_timer_b_cntxt_cg.sample(); endfunction
-
-   virtual task sample_vifs();
-      fork
-         forever begin
-            cntxt.agent_cntxt.clk_e.wait_trigger();
-            adv_timer_b_agent_vif_cg.sample();
-         end
-      join
-   endtask
-
    virtual task sample_tlm();
       fork
          forever begin

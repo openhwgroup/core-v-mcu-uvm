@@ -39,7 +39,7 @@ class uvma_adv_timer_b_dpi_drv_c extends uvmx_mp_drv_c #(
     * Drives the Data Plane Input driver clocking block (dpi_drv_cb) on each clock cycle.
     */
    virtual task drive_item(ref uvma_adv_timer_b_dpi_seq_item_c item);
-      mp.dpi_drv_cb.signal_i <= item.signal_i;
+      `uvmx_mp_drv_signal(item, signal_i)
    endtask
 
 

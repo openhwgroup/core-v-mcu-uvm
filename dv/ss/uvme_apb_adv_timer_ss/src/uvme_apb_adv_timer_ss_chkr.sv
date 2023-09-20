@@ -22,7 +22,7 @@ module uvme_apb_adv_timer_ss_chkr (
    uvme_apb_adv_timer_ss_probe_if  probe_if ///< Misc. signals interface
 );
 
-   // TODO Add assertions to uvme_apb_adv_timer_ss_chkr
+   // TODO Add assertions and/or functional coverage to uvme_apb_adv_timer_ss_chkr
 
 endmodule : uvme_apb_adv_timer_ss_chkr
 

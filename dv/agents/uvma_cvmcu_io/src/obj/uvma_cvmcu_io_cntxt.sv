@@ -12,6 +12,7 @@
  * @ingroup uvma_cvmcu_io_obj
  */
 class uvma_cvmcu_io_cntxt_c extends uvmx_agent_cntxt_c #(
+   .T_CFG(uvma_cvmcu_io_cfg_c     ),
    .T_VIF(virtual uvma_cvmcu_io_if)
 );
 
@@ -25,7 +26,7 @@ class uvma_cvmcu_io_cntxt_c extends uvmx_agent_cntxt_c #(
    //      Ex: uvma_cvmcu_io_word_b_t  drv_data_q[$]; ///< TODO Describe uvma_cvmcu_io_cntxt_c::drv_data_q
    //          uvma_cvmcu_io_board_padi_mon_trn_c  mon_board_padi_q[$]; ///< TODO Describe uvma_cvmcu_io_cntxt_c::mon_board_padi_q
    //          uvma_cvmcu_io_chip_pado_mon_trn_c  mon_chip_pado_q[$]; ///< TODO Describe uvma_cvmcu_io_cntxt_c::mon_chip_pado_q
-      /// @}
+   /// @}
 
    /// @name Virtual Sequences
    /// @{
@@ -36,7 +37,7 @@ class uvma_cvmcu_io_cntxt_c extends uvmx_agent_cntxt_c #(
 
    `uvm_object_utils_begin(uvma_cvmcu_io_cntxt_c)
       `uvm_field_enum(uvmx_reset_state_enum, reset_state, UVM_DEFAULT)
-         `uvm_object_utils_end
+   `uvm_object_utils_end
 
 
    /**
@@ -49,8 +50,8 @@ class uvma_cvmcu_io_cntxt_c extends uvmx_agent_cntxt_c #(
    /**
     * Builds objects.
     */
-   virtual function void create_objects();
-         endfunction
+   virtual function void create_objects(uvma_cvmcu_io_cfg_c cfg);
+   endfunction
 
    /**
     * Returns all state variables to initial values.
@@ -62,7 +63,6 @@ class uvma_cvmcu_io_cntxt_c extends uvmx_agent_cntxt_c #(
       //          mon_board_pado_q.delete();
       //          mon_chip_padi_q.delete();
       //          mon_chip_pado_q.delete();
-      
    endfunction
 
 endclass : uvma_cvmcu_io_cntxt_c

@@ -12,6 +12,7 @@
  * @ingroup uvma_cvmcu_event_obj
  */
 class uvma_cvmcu_event_cntxt_c extends uvmx_agent_cntxt_c #(
+   .T_CFG(uvma_cvmcu_event_cfg_c     ),
    .T_VIF(virtual uvma_cvmcu_event_if)
 );
 
@@ -35,7 +36,7 @@ class uvma_cvmcu_event_cntxt_c extends uvmx_agent_cntxt_c #(
 
    `uvm_object_utils_begin(uvma_cvmcu_event_cntxt_c)
       `uvm_field_enum(uvmx_reset_state_enum, reset_state, UVM_DEFAULT)
-         `uvm_object_utils_end
+   `uvm_object_utils_end
 
 
    /**
@@ -48,8 +49,8 @@ class uvma_cvmcu_event_cntxt_c extends uvmx_agent_cntxt_c #(
    /**
     * Builds objects.
     */
-   virtual function void create_objects();
-         endfunction
+   virtual function void create_objects(uvma_cvmcu_event_cfg_c cfg);
+   endfunction
 
    /**
     * Returns all state variables to initial values.
@@ -59,7 +60,6 @@ class uvma_cvmcu_event_cntxt_c extends uvmx_agent_cntxt_c #(
       //       Ex: drv_data_q.delete();
       //          mon_core_q.delete();
       //          mon_sys_q.delete();
-   
    endfunction
 
 endclass : uvma_cvmcu_event_cntxt_c

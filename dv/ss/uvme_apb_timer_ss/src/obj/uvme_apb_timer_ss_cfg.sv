@@ -39,8 +39,6 @@ class uvme_apb_timer_ss_cfg_c extends uvmx_ss_env_cfg_c;
       `uvm_field_enum(uvm_active_passive_enum, is_active            , UVM_DEFAULT)
       `uvm_field_enum(uvmx_reset_type_enum   , reset_type           , UVM_DEFAULT)
       `uvm_field_int (                         scoreboarding_enabled, UVM_DEFAULT)
-      `uvm_field_int (                         cov_model_enabled    , UVM_DEFAULT)
-      `uvm_field_int (                         trn_log_enabled      , UVM_DEFAULT)
       `uvm_field_int(reg_block_base_address, UVM_DEFAULT)
       `uvm_field_object(proc_agent_cfg, UVM_DEFAULT)
       `uvm_field_object(irq_events_agent_cfg, UVM_DEFAULT)
@@ -68,8 +66,6 @@ class uvme_apb_timer_ss_cfg_c extends uvmx_ss_env_cfg_c;
       proc_agent_cfg.addr_width == 32;
       proc_agent_cfg.drv_mode == UVMA_APB_DRV_MODE_MSTR;
       proc_agent_cfg.is_active == is_active;
-      proc_agent_cfg.trn_log_enabled == trn_log_enabled;
-      proc_agent_cfg.cov_model_enabled == 0;
    }
 
    /**
@@ -79,8 +75,6 @@ class uvme_apb_timer_ss_cfg_c extends uvmx_ss_env_cfg_c;
       irq_events_agent_cfg.enabled == enabled;
       irq_events_agent_cfg.num_lines == 2;
       irq_events_agent_cfg.is_active == UVM_PASSIVE;
-      irq_events_agent_cfg.trn_log_enabled == trn_log_enabled;
-      irq_events_agent_cfg.cov_model_enabled == 0;
    }
 
    /**
@@ -90,8 +84,6 @@ class uvme_apb_timer_ss_cfg_c extends uvmx_ss_env_cfg_c;
       counter_lo_b_env_cfg.enabled == enabled;
       counter_lo_b_env_cfg.is_active == UVM_PASSIVE;
       counter_lo_b_env_cfg.scoreboarding_enabled == scoreboarding_enabled;
-      counter_lo_b_env_cfg.trn_log_enabled == trn_log_enabled;
-      counter_lo_b_env_cfg.cov_model_enabled == cov_model_enabled;
    }
 
    /**
@@ -101,8 +93,6 @@ class uvme_apb_timer_ss_cfg_c extends uvmx_ss_env_cfg_c;
       counter_hi_b_env_cfg.enabled == enabled;
       counter_hi_b_env_cfg.is_active == UVM_PASSIVE;
       counter_hi_b_env_cfg.scoreboarding_enabled == scoreboarding_enabled;
-      counter_hi_b_env_cfg.trn_log_enabled == trn_log_enabled;
-      counter_hi_b_env_cfg.cov_model_enabled == cov_model_enabled;
    }
 
    /**
@@ -112,8 +102,6 @@ class uvme_apb_timer_ss_cfg_c extends uvmx_ss_env_cfg_c;
       prescaler_lo_b_env_cfg.enabled == enabled;
       prescaler_lo_b_env_cfg.is_active == UVM_PASSIVE;
       prescaler_lo_b_env_cfg.scoreboarding_enabled == scoreboarding_enabled;
-      prescaler_lo_b_env_cfg.trn_log_enabled == trn_log_enabled;
-      prescaler_lo_b_env_cfg.cov_model_enabled == cov_model_enabled;
    }
 
    /**
@@ -123,8 +111,6 @@ class uvme_apb_timer_ss_cfg_c extends uvmx_ss_env_cfg_c;
       prescaler_hi_b_env_cfg.enabled == enabled;
       prescaler_hi_b_env_cfg.is_active == UVM_PASSIVE;
       prescaler_hi_b_env_cfg.scoreboarding_enabled == scoreboarding_enabled;
-      prescaler_hi_b_env_cfg.trn_log_enabled == trn_log_enabled;
-      prescaler_hi_b_env_cfg.cov_model_enabled == cov_model_enabled;
    }
 
 

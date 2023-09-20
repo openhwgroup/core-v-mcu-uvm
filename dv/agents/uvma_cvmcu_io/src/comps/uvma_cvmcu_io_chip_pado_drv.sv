@@ -38,12 +38,10 @@ class uvma_cvmcu_io_chip_pado_drv_c extends uvmx_mp_drv_c #(
     * Drives CHIP PADO Driver clocking block (chip_pado_drv_cb) on each clock cycle.
     */
    virtual task drive_item(ref uvma_cvmcu_io_chip_pado_seq_item_c item);
-      mp.chip_pado_drv_cb.io_out_o <= item.io_out_o;
-      foreach (item.pad_cfg_o[ii]) begin
-         mp.chip_pado_drv_cb.pad_cfg_o[ii] <= item.pad_cfg_o[ii];
-      end
-      mp.chip_pado_drv_cb.io_oe_o <= item.io_oe_o;
-      mp.chip_pado_drv_cb.slow_clk_o <= item.slow_clk_o;
+      `uvmx_mp_drv_signal(item, io_out_o)
+      `uvmx_mp_drv_bus(item, pad_cfg_o)
+      `uvmx_mp_drv_signal(item, io_oe_o)
+      `uvmx_mp_drv_signal(item, slow_clk_o)
    endtask
 
 

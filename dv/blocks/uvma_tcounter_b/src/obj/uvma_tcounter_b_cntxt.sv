@@ -12,6 +12,7 @@
  * @ingroup uvma_tcounter_b_obj
  */
 class uvma_tcounter_b_cntxt_c extends uvmx_block_agent_cntxt_c #(
+   .T_CFG(uvma_tcounter_b_cfg_c     ),
    .T_VIF(virtual uvma_tcounter_b_if)
 );
    /// @name Integrals

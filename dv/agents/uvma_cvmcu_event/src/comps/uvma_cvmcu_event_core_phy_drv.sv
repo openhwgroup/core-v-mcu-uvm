@@ -33,9 +33,9 @@ class uvma_cvmcu_event_core_phy_drv_c extends uvmx_mp_drv_c #(
     * Drives CORE PHY Driver clocking block (core_phy_drv_cb) on each clock cycle.
     */
    virtual task drive_item(ref uvma_cvmcu_event_core_phy_seq_item_c item);
-      mp.core_phy_drv_cb.per_events_i <= item.per_events_i;
-      mp.core_phy_drv_cb.cl_event_ready_i <= item.cl_event_ready_i;
-      mp.core_phy_drv_cb.pr_event_ready_i <= item.pr_event_ready_i;
+      `uvmx_mp_drv_signal(item, per_events_i)
+      `uvmx_mp_drv_signal(item, cl_event_ready_i)
+      `uvmx_mp_drv_signal(item, pr_event_ready_i)
    endtask
 
 endclass : uvma_cvmcu_event_core_phy_drv_c

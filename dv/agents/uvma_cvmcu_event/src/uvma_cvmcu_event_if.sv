@@ -12,6 +12,7 @@
  * @ingroup uvma_cvmcu_event_misc
  */
 interface uvma_cvmcu_event_if(
+
    input  low_speed_clk_i, ///< Low speed clock
    input  HRESETn          ///< System reset
 );
@@ -33,55 +34,51 @@ interface uvma_cvmcu_event_if(
    /// @}
 
 
-   /**
-    * Used by uvma_cvmcu_event_sys_phy_drv_c.
-    */
+   /// @name Used by uvma_cvmcu_event_sys_phy_drv_c
+   /// @{
    clocking sys_phy_drv_cb @(posedge low_speed_clk_i);
       output timer_event_lo_o, timer_event_hi_o, err_event_o, fc_events_o, event_fifo_valid_o, cl_event_valid_o, cl_event_data_o, pr_event_valid_o, pr_event_data_o;
       input per_events_i, cl_event_ready_i, pr_event_ready_i;
    endclocking
+   modport sys_phy_drv_mp (clocking sys_phy_drv_cb);
+   /// @}
 
-   /**
-    * Used by uvma_cvmcu_event_core_phy_drv_c.
-    */
+   /// @name Used by uvma_cvmcu_event_core_phy_drv_c
+   /// @{
    clocking core_phy_drv_cb @(posedge low_speed_clk_i);
       output per_events_i, cl_event_ready_i, pr_event_ready_i;
    endclocking
+   modport core_phy_drv_mp (clocking core_phy_drv_cb);
+   /// @}
 
-   /**
-    * Used by uvma_cvmcu_event_phy_mon_c.
-    */
+   /// @name Used by uvma_cvmcu_event_phy_mon_c
+   /// @{
    clocking phy_mon_cb @(posedge low_speed_clk_i);
       input timer_event_lo_o, timer_event_hi_o, per_events_i, err_event_o, fc_events_o, event_fifo_valid_o, cl_event_valid_o, cl_event_data_o, cl_event_ready_i, pr_event_valid_o, pr_event_data_o, pr_event_ready_i;
    endclocking
+   modport phy_mon_mp (clocking phy_mon_cb);
+   /// @}
 
 
-   /**
-    * Used by uvma_cvmcu_event_sys_phy_drv_c.
-    */
-   modport sys_phy_drv_mp (
-      clocking sys_phy_drv_cb,
-      input    low_speed_clk_i,
-      input    HRESETn
-   );
-
-   /**
-    * Used by uvma_cvmcu_event_core_phy_drv_c.
-    */
-   modport core_phy_drv_mp (
-      clocking core_phy_drv_cb,
-      input    low_speed_clk_i,
-      input    HRESETn
-   );
-
-   /**
-    * Used by uvma_cvmcu_event_phy_mon_c.
-    */
-   modport phy_mon_mp (
-      clocking phy_mon_cb,
-      input    low_speed_clk_i,
-      input    HRESETn
-   );
+   /// @name Accessors
+   /// @{
+   `uvmx_if_reset(HRESETn)
+   `uvmx_if_cb(sys_phy_drv_mp, sys_phy_drv_cb)
+   `uvmx_if_cb(core_phy_drv_mp, core_phy_drv_cb)
+   `uvmx_if_cb(phy_mon_mp, phy_mon_cb)
+   `uvmx_if_signal_out(timer_event_lo_o, , phy_mon_mp.phy_mon_cb, sys_phy_drv_mp.sys_phy_drv_cb)
+   `uvmx_if_signal_out(timer_event_hi_o, , phy_mon_mp.phy_mon_cb, sys_phy_drv_mp.sys_phy_drv_cb)
+   `uvmx_if_signal_out(err_event_o, , phy_mon_mp.phy_mon_cb, sys_phy_drv_mp.sys_phy_drv_cb)
+   `uvmx_if_signal_out(fc_events_o, [1:0], phy_mon_mp.phy_mon_cb, sys_phy_drv_mp.sys_phy_drv_cb)
+   `uvmx_if_signal_out(event_fifo_valid_o, , phy_mon_mp.phy_mon_cb, sys_phy_drv_mp.sys_phy_drv_cb)
+   `uvmx_if_signal_out(cl_event_valid_o, , phy_mon_mp.phy_mon_cb, sys_phy_drv_mp.sys_phy_drv_cb)
+   `uvmx_if_signal_out(cl_event_data_o, [7:0], phy_mon_mp.phy_mon_cb, sys_phy_drv_mp.sys_phy_drv_cb)
+   `uvmx_if_signal_out(pr_event_valid_o, , phy_mon_mp.phy_mon_cb, sys_phy_drv_mp.sys_phy_drv_cb)
+   `uvmx_if_signal_out(pr_event_data_o, [7:0], phy_mon_mp.phy_mon_cb, sys_phy_drv_mp.sys_phy_drv_cb)
+   `uvmx_if_signal_out(per_events_i, [16:0], phy_mon_mp.phy_mon_cb, core_phy_drv_mp.core_phy_drv_cb)
+   `uvmx_if_signal_out(cl_event_ready_i, , phy_mon_mp.phy_mon_cb, core_phy_drv_mp.core_phy_drv_cb)
+   `uvmx_if_signal_out(pr_event_ready_i, , phy_mon_mp.phy_mon_cb, core_phy_drv_mp.core_phy_drv_cb)
+   /// @}
 
 endinterface : uvma_cvmcu_event_if
 

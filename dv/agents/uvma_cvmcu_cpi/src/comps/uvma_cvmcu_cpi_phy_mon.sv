@@ -33,9 +33,9 @@ class uvma_cvmcu_cpi_phy_mon_c extends uvmx_mp_mon_c #(
     * Samples #trn from the PHY Monitor modport (phy_mon_cb) on each clock cycle.
     */
    virtual task sample_trn(ref uvma_cvmcu_cpi_phy_mon_trn_c trn);
-      trn.cam_data_i = mp.phy_mon_cb.cam_data_i;
-      trn.cam_hsync_i = mp.phy_mon_cb.cam_hsync_i;
-      trn.cam_vsync_i = mp.phy_mon_cb.cam_vsync_i;
+      `uvmx_mp_mon_signal(trn, cam_data_i)
+      `uvmx_mp_mon_signal(trn, cam_hsync_i)
+      `uvmx_mp_mon_signal(trn, cam_vsync_i)
    endtask
 
    /**
@@ -43,8 +43,6 @@ class uvma_cvmcu_cpi_phy_mon_c extends uvmx_mp_mon_c #(
     */
    virtual function void process_trn(ref uvma_cvmcu_cpi_phy_mon_trn_c trn);
       `uvmx_trim(trn.cam_data_i, cfg.data_width)
-
-
    endfunction
 
 endclass : uvma_cvmcu_cpi_phy_mon_c

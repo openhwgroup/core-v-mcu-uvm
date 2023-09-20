@@ -12,6 +12,7 @@
  * @ingroup uvme_cvmcu_chip_obj
  */
 class uvme_cvmcu_chip_cntxt_c extends uvmx_chip_env_cntxt_c #(
+   .T_CFG      (uvme_cvmcu_chip_cfg_c           ),
    .T_REG_MODEL(uvme_cvmcu_chip_reg_block_c     ),
    .T_PROBE_VIF(virtual uvme_cvmcu_chip_probe_if)
 );
@@ -37,8 +38,8 @@ class uvme_cvmcu_chip_cntxt_c extends uvmx_chip_env_cntxt_c #(
    uvma_obi_cntxt_c  data_obi_agent_cntxt; ///< Data memory OBI agent context
    uvma_cvmcu_event_cntxt_c  event_agent_cntxt; ///< Event agent context
    uvma_cvmcu_dbg_cntxt_c  dbg_agent_cntxt; ///< Debug agent context
-   uvma_irq_cntxt_c  irq_l1_agent_cntxt; /// First Level IRQ agent context
-   uvma_irq_cntxt_c  irq_l2_agent_cntxt; /// Platform-Specific (Second Level) IRQ agent context
+   uvma_irq_cntxt_c  irq_l1_agent_cntxt; ///< First Level IRQ agent context
+   uvma_irq_cntxt_c  irq_l2_agent_cntxt; ///< Platform-Specific (Second Level) IRQ agent context
    /// @}
 
    /// @name Sub-Systems
@@ -92,25 +93,25 @@ class uvme_cvmcu_chip_cntxt_c extends uvmx_chip_env_cntxt_c #(
       `uvm_field_object(irq_l2_agent_cntxt, UVM_DEFAULT)
       `uvm_field_object(apb_timer_ss_env_cntxt, UVM_DEFAULT)
       `uvm_field_object(apb_adv_timer_ss_env_cntxt, UVM_DEFAULT)
-      `uvm_field_object(udma_qspi0_ingress_sb_cntxt , UVM_DEFAULT)
-      `uvm_field_object(udma_qspi1_ingress_sb_cntxt , UVM_DEFAULT)
-      `uvm_field_object(udma_camera_sb_cntxt , UVM_DEFAULT)
-      `uvm_field_object(udma_i2c0_ingress_sb_cntxt , UVM_DEFAULT)
-      `uvm_field_object(udma_i2c1_ingress_sb_cntxt , UVM_DEFAULT)
-      `uvm_field_object(udma_uart0_ingress_sb_cntxt , UVM_DEFAULT)
-      `uvm_field_object(udma_uart1_ingress_sb_cntxt , UVM_DEFAULT)
-      `uvm_field_object(apb_i2c_ingress_sb_cntxt , UVM_DEFAULT)
-      `uvm_field_object(gpio_ingress_sb_cntxt , UVM_DEFAULT)
-      `uvm_field_object(udma_qspi0_egress_sb_cntxt , UVM_DEFAULT)
-      `uvm_field_object(udma_qspi1_egress_sb_cntxt , UVM_DEFAULT)
-      `uvm_field_object(udma_i2c0_egress_sb_cntxt , UVM_DEFAULT)
-      `uvm_field_object(udma_i2c1_egress_sb_cntxt , UVM_DEFAULT)
-      `uvm_field_object(udma_uart0_egress_sb_cntxt , UVM_DEFAULT)
-      `uvm_field_object(udma_uart1_egress_sb_cntxt , UVM_DEFAULT)
-      `uvm_field_object(apb_i2c_egress_sb_cntxt , UVM_DEFAULT)
-      `uvm_field_object(gpio_egress_sb_cntxt , UVM_DEFAULT)
-      `uvm_field_object(event_sb_cntxt , UVM_DEFAULT)
-      `uvm_field_object(dbg_sb_cntxt , UVM_DEFAULT)
+      `uvm_field_object(udma_qspi0_ingress_sb_cntxt, UVM_DEFAULT)
+      `uvm_field_object(udma_qspi1_ingress_sb_cntxt, UVM_DEFAULT)
+      `uvm_field_object(udma_camera_sb_cntxt, UVM_DEFAULT)
+      `uvm_field_object(udma_i2c0_ingress_sb_cntxt, UVM_DEFAULT)
+      `uvm_field_object(udma_i2c1_ingress_sb_cntxt, UVM_DEFAULT)
+      `uvm_field_object(udma_uart0_ingress_sb_cntxt, UVM_DEFAULT)
+      `uvm_field_object(udma_uart1_ingress_sb_cntxt, UVM_DEFAULT)
+      `uvm_field_object(apb_i2c_ingress_sb_cntxt, UVM_DEFAULT)
+      `uvm_field_object(gpio_ingress_sb_cntxt, UVM_DEFAULT)
+      `uvm_field_object(udma_qspi0_egress_sb_cntxt, UVM_DEFAULT)
+      `uvm_field_object(udma_qspi1_egress_sb_cntxt, UVM_DEFAULT)
+      `uvm_field_object(udma_i2c0_egress_sb_cntxt, UVM_DEFAULT)
+      `uvm_field_object(udma_i2c1_egress_sb_cntxt, UVM_DEFAULT)
+      `uvm_field_object(udma_uart0_egress_sb_cntxt, UVM_DEFAULT)
+      `uvm_field_object(udma_uart1_egress_sb_cntxt, UVM_DEFAULT)
+      `uvm_field_object(apb_i2c_egress_sb_cntxt, UVM_DEFAULT)
+      `uvm_field_object(gpio_egress_sb_cntxt, UVM_DEFAULT)
+      `uvm_field_object(event_sb_cntxt, UVM_DEFAULT)
+      `uvm_field_object(dbg_sb_cntxt, UVM_DEFAULT)
    `uvm_object_utils_end
 
 
@@ -124,7 +125,7 @@ class uvme_cvmcu_chip_cntxt_c extends uvmx_chip_env_cntxt_c #(
    /**
     * Creates agent, sub-system, block and scoreboard context objects.
     */
-   virtual function void create_objects();
+   virtual function void create_objects(uvme_cvmcu_chip_cfg_c cfg);
       jtag_agent_cntxt = uvma_jtag_cntxt_c::type_id::create("jtag_cntxt");
       qspi_s0_agent_cntxt = uvma_spi_cntxt_c::type_id::create("qspi_s0_cntxt");
       qspi_s1_agent_cntxt = uvma_spi_cntxt_c::type_id::create("qspi_s1_cntxt");
@@ -163,6 +164,25 @@ class uvme_cvmcu_chip_cntxt_c extends uvmx_chip_env_cntxt_c #(
       gpio_egress_sb_cntxt = uvmx_sb_simplex_cntxt_c::type_id::create("gpio_egress_sb_cntxt");
       event_sb_cntxt = uvmx_sb_simplex_cntxt_c::type_id::create("event_sb_cntxt");
       dbg_sb_cntxt = uvmx_sb_simplex_cntxt_c::type_id::create("dbg_sb_cntxt");
+      jtag_agent_cntxt.create_objects(cfg.jtag_agent_cfg);
+      qspi_s0_agent_cntxt.create_objects(cfg.qspi_s0_agent_cfg);
+      qspi_s1_agent_cntxt.create_objects(cfg.qspi_s1_agent_cfg);
+      camera_agent_cntxt.create_objects(cfg.camera_agent_cfg);
+      i2c_s0_agent_cntxt.create_objects(cfg.i2c_s0_agent_cfg);
+      i2c_s1_agent_cntxt.create_objects(cfg.i2c_s1_agent_cfg);
+      uart0_agent_cntxt.create_objects(cfg.uart0_agent_cfg);
+      uart1_agent_cntxt.create_objects(cfg.uart1_agent_cfg);
+      sdio_agent_cntxt.create_objects(cfg.sdio_agent_cfg);
+      i2c_m_agent_cntxt.create_objects(cfg.i2c_m_agent_cfg);
+      io_agent_cntxt.create_objects(cfg.io_agent_cfg);
+      instr_obi_agent_cntxt.create_objects(cfg.instr_obi_agent_cfg);
+      data_obi_agent_cntxt.create_objects(cfg.data_obi_agent_cfg);
+      event_agent_cntxt.create_objects(cfg.event_agent_cfg);
+      dbg_agent_cntxt.create_objects(cfg.dbg_agent_cfg);
+      irq_l1_agent_cntxt.create_objects(cfg.irq_l1_agent_cfg);
+      irq_l2_agent_cntxt.create_objects(cfg.irq_l2_agent_cfg);
+      apb_timer_ss_env_cntxt.create_objects(cfg.apb_timer_ss_env_cfg);
+      apb_adv_timer_ss_env_cntxt.create_objects(cfg.apb_adv_timer_ss_env_cfg);
    endfunction
 
    /**

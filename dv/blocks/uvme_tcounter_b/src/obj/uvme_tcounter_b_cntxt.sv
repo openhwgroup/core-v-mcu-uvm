@@ -11,7 +11,9 @@
  * Object encapsulating all state variables for Timer unit counter Block environment (uvme_tcounter_b_env_c).
  * @ingroup uvme_tcounter_b_obj
  */
-class uvme_tcounter_b_cntxt_c extends uvmx_block_env_cntxt_c;
+class uvme_tcounter_b_cntxt_c extends uvmx_block_env_cntxt_c #(
+   .T_CFG(uvme_tcounter_b_cfg_c)
+);
 
    /// @name Integrals
    /// @{
@@ -41,9 +43,10 @@ class uvme_tcounter_b_cntxt_c extends uvmx_block_env_cntxt_c;
    /**
     * Creates objects.
     */
-   virtual function void create_objects();
+   virtual function void create_objects(uvme_tcounter_b_cfg_c cfg);
       agent_cntxt = uvma_tcounter_b_cntxt_c::type_id::create("agent_cntxt");
       sb_cntxt    = uvmx_sb_simplex_cntxt_c::type_id::create("sb_cntxt");
+      agent_cntxt.create_objects(cfg.agent_cfg);
    endfunction
 
    /**

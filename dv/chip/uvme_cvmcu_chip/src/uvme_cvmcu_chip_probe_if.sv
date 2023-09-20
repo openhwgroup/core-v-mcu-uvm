@@ -20,8 +20,8 @@ interface uvme_cvmcu_chip_probe_if (
 
    /// @name Inputs
    /// @{
-   wire [0:0]  bootsel_i; ///< Boot select
-   wire [0:0]  stm_i; ///< Structural Test Mode
+   wire [0:0] bootsel_i; ///< Boot select
+   wire [0:0] stm_i; ///< Structural Test Mode
    /// @}
 
    /// @name Outputs
@@ -29,35 +29,32 @@ interface uvme_cvmcu_chip_probe_if (
    /// @}
 
 
-   /**
-    * Signals clocked to 'ref_clk_i'.
-    */
+   /// @name Signals clocked to 'ref_clk_i'
+   /// @{
    clocking sys_clk_cb @(posedge ref_clk_i);
       output bootsel_i, stm_i;
    endclocking
-   /**
-    * Signals clocked to 'jtag_tck_i'.
-    */
+   modport sys_clk_mp (clocking sys_clk_cb);
+   /// @}
+
+   /// @name Signals clocked to 'jtag_tck_i'
+   /// @{
    clocking jtag_clk_cb @(posedge jtag_tck_i);
    endclocking
+   modport jtag_clk_mp (clocking jtag_clk_cb);
+   /// @}
 
 
-   /**
-    * Signals clocked to 'ref_clk_i'.
-    */
-   modport sys_clk_mp (
-      clocking sys_clk_cb,
-      input    ref_clk_i,
-      input    rstn_i
-   );
-   /**
-    * Signals clocked to 'jtag_tck_i'.
-    */
-   modport jtag_clk_mp (
-      clocking jtag_clk_cb,
-      input    jtag_tck_i,
-      input    jtag_trst_i
-   );
+
+   /// @name Accessors
+   /// @{
+   `uvmx_if_reset(rstn_i)
+   `uvmx_if_reset(jtag_trst_i)
+   `uvmx_if_cb(sys_clk_mp, sys_clk_cb)
+   `uvmx_if_cb(jtag_clk_mp, jtag_clk_cb)
+   `uvmx_if_signal_probe_out(bootsel_i, , sys_clk_mp.sys_clk_cb)
+   `uvmx_if_signal_probe_out(stm_i, , sys_clk_mp.sys_clk_cb)
+   /// @}
 
 endinterface : uvme_cvmcu_chip_probe_if
 

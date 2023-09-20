@@ -24,7 +24,7 @@ class uvma_cvmcu_io_mon_c extends uvmx_mon_c #(
 
 
    `uvm_component_utils(uvma_cvmcu_io_mon_c)
-   `uvmx_mon_reset(rstn_i, UVMX_ACTIVE_LOW)
+   `uvmx_mon_reset(rstn_i)
 
 
    /**
@@ -35,7 +35,7 @@ class uvma_cvmcu_io_mon_c extends uvmx_mon_c #(
    endfunction
 
    /**
-    *
+    * Creates sub-monitor components.
     */
    virtual function void create_monitors();
       padi_monitor = uvma_cvmcu_io_padi_mon_c::type_id::create("padi_monitor", this);

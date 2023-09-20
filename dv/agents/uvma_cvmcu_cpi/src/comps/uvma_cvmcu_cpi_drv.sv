@@ -34,7 +34,7 @@ class uvma_cvmcu_cpi_drv_c extends uvmx_drv_c #(
    endfunction
 
    /**
-    * Creates Driver components.
+    * Creates sub-driver components.
     */
    virtual function void create_drivers();
       tx_phy_driver = uvma_cvmcu_cpi_tx_phy_drv_c::type_id::create("tx_phy_driver", this);

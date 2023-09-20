@@ -33,8 +33,8 @@ class uvma_tcounter_b_dpi_mon_c extends uvmx_mp_mon_c #(
     * Samples #trn from the Data Plane Input monitor clocking block (dpi_mon_cb) on each clock cycle.
     */
    virtual task sample_trn(ref uvma_tcounter_b_dpi_mon_trn_c trn);
-      trn.write_counter_i = mp.dpi_mon_cb.write_counter_i;
-      trn.counter_value_i = mp.dpi_mon_cb.counter_value_i;
+      `uvmx_mp_mon_signal(trn, write_counter_i)
+      `uvmx_mp_mon_signal(trn, counter_value_i)
    endtask
 
 

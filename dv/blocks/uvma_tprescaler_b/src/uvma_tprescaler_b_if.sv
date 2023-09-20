@@ -38,102 +38,72 @@ interface uvma_tprescaler_b_if(
    /// @}
 
 
-   /**
-    * Used by uvma_tprescaler_b_cp_drv_c.
-    */
-   clocking cp_drv_cb @(posedge clk_i);
-      output reset_count_i, enable_count_i, compare_value_i;
-   endclocking
-
-   /**
-    * Used by uvma_tprescaler_b_cp_mon_c.
-    */
+   /// @name Used by uvma_tprescaler_b_cp_mon_c
+   /// @{
    clocking cp_mon_cb @(posedge clk_i);
       input reset_count_i, enable_count_i, compare_value_i;
    endclocking
+   modport cp_mon_mp (clocking cp_mon_cb);
+   /// @}
 
-   /**
-    * Used by uvma_tprescaler_b_dpi_drv_c.
-    */
-   clocking dpi_drv_cb @(posedge clk_i);
-      output write_counter_i, counter_value_i;
+   /// @name Used by uvma_tprescaler_b_cp_drv_c
+   /// @{
+   clocking cp_drv_cb @(posedge clk_i);
+      output reset_count_i, enable_count_i, compare_value_i;
    endclocking
+   modport cp_drv_mp (clocking cp_drv_cb);
+   /// @}
 
-   /**
-    * Used by uvma_tprescaler_b_dpi_mon_c.
-    */
+   /// @name Used by uvma_tprescaler_b_dpi_mon_c
+   /// @{
    clocking dpi_mon_cb @(posedge clk_i);
       input write_counter_i, counter_value_i;
    endclocking
+   modport dpi_mon_mp (clocking dpi_mon_cb);
+   /// @}
 
-   /**
-    * Used by uvma_tprescaler_b_dpo_drv_c.
-    */
-   clocking dpo_drv_cb @(posedge clk_i);
-      input counter_value_o, target_reached_o;
+   /// @name Used by uvma_tprescaler_b_dpi_drv_c
+   /// @{
+   clocking dpi_drv_cb @(posedge clk_i);
+      output write_counter_i, counter_value_i;
    endclocking
+   modport dpi_drv_mp (clocking dpi_drv_cb);
+   /// @}
 
-   /**
-    * Used by uvma_tprescaler_b_dpo_mon_c.
-    */
+   /// @name Used by uvma_tprescaler_b_dpo_mon_c
+   /// @{
    clocking dpo_mon_cb @(posedge clk_i);
       input counter_value_o, target_reached_o;
    endclocking
+   modport dpo_mon_mp (clocking dpo_mon_cb);
+   /// @}
+
+   /// @name Used by uvma_tprescaler_b_dpo_drv_c
+   /// @{
+   clocking dpo_drv_cb @(posedge clk_i);
+      input counter_value_o, target_reached_o;
+   endclocking
+   modport dpo_drv_mp (clocking dpo_drv_cb);
+   /// @}
 
 
-   /**
-    * Used by uvma_tprescaler_b_cp_drv_c.
-    */
-   modport cp_drv_mp (
-      clocking cp_drv_cb,
-      input    clk_i,
-      input    rst_ni
-   );
-
-   /**
-    * Used by uvma_tprescaler_b_dpi_drv_c.
-    */
-   modport dpi_drv_mp (
-      clocking dpi_drv_cb,
-      input    clk_i,
-      input    rst_ni
-   );
-
-   /**
-    * Used by uvma_tprescaler_b_dpo_drv_c.
-    */
-   modport dpo_drv_mp (
-      clocking dpo_drv_cb,
-      input    clk_i,
-      input    rst_ni
-   );
-
-   /**
-    * Used by uvma_tprescaler_b_cp_mon_c.
-    */
-   modport cp_mon_mp (
-      clocking cp_mon_cb,
-      input    clk_i,
-      input    rst_ni
-   );
-
-   /**
-    * Used by uvma_tprescaler_b_dpi_mon_c.
-    */
-   modport dpi_mon_mp (
-      clocking dpi_mon_cb,
-      input    clk_i,
-      input    rst_ni
-   );
-
-   /**
-    * Used by uvma_tprescaler_b_dpo_mon_c.
-    */
-   modport dpo_mon_mp (
-      clocking dpo_mon_cb,
-      input    clk_i,
-      input    rst_ni
-   );
+   /// @name Accessors
+   /// @{
+   `uvmx_if_reset(rst_ni)
+   `uvmx_if_cb(cp_mon_mp , cp_mon_cb )
+   `uvmx_if_cb(cp_drv_mp , cp_drv_cb )
+   `uvmx_if_cb(dpi_mon_mp, dpi_mon_cb)
+   `uvmx_if_cb(dpi_drv_mp, dpi_drv_cb)
+   `uvmx_if_cb(dpo_mon_mp, dpo_mon_cb)
+   `uvmx_if_cb(dpo_drv_mp, dpo_drv_cb)
+   `uvmx_if_signal_out(reset_count_i, , cp_mon_mp.cp_mon_cb, cp_drv_mp.cp_drv_cb)
+   `uvmx_if_signal_out(enable_count_i, , cp_mon_mp.cp_mon_cb, cp_drv_mp.cp_drv_cb)
+   `uvmx_if_signal_out(compare_value_i, [31:0], cp_mon_mp.cp_mon_cb, cp_drv_mp.cp_drv_cb)
+   `uvmx_if_signal_out(write_counter_i, , dpi_mon_mp.dpi_mon_cb, dpi_drv_mp.dpi_drv_cb)
+   `uvmx_if_signal_out(counter_value_i, [31:0], dpi_mon_mp.dpi_mon_cb, dpi_drv_mp.dpi_drv_cb)
+   `uvmx_if_signal_in(counter_value_o, [31:0], dpo_mon_mp.dpo_mon_cb)
+   `uvmx_if_signal_in(target_reached_o, , dpo_mon_mp.dpo_mon_cb)
+   /// @}
 
 endinterface : uvma_tprescaler_b_if
 

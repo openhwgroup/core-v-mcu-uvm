@@ -20,11 +20,6 @@
 // Pre-processor macros
 `include "uvm_macros.svh"
 `include "uvmx_macros.svh"
-`include "uvma_i2c_macros.svh"
-`include "uvma_sdio_macros.svh"
-`include "uvma_uart_macros.svh"
-`include "uvma_spi_macros.svh"
-`include "uvma_cvmcu_cpi_macros.svh"
 `include "uvma_clk_macros.svh"
 `include "uvma_reset_macros.svh"
 `include "uvma_cvmcu_io_macros.svh"
@@ -42,11 +37,6 @@ package uvmt_cvmcu_io_st_pkg;
 
    import uvm_pkg       ::*;
    import uvmx_pkg      ::*;
-   import uvma_i2c_pkg::*;
-   import uvma_sdio_pkg::*;
-   import uvma_uart_pkg::*;
-   import uvma_spi_pkg::*;
-   import uvma_cvmcu_cpi_pkg::*;
    import uvma_clk_pkg  ::*;
    import uvma_reset_pkg::*;
    import uvma_cvmcu_io_pkg   ::*;

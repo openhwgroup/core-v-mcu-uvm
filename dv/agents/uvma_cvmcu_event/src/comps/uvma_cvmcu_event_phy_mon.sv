@@ -33,18 +33,18 @@ class uvma_cvmcu_event_phy_mon_c extends uvmx_mp_mon_c #(
     * Samples #trn from the PHY Monitor modport (phy_mon_cb) on each clock cycle.
     */
    virtual task sample_trn(ref uvma_cvmcu_event_phy_mon_trn_c trn);
-      trn.timer_event_lo_o = mp.phy_mon_cb.timer_event_lo_o;
-      trn.timer_event_hi_o = mp.phy_mon_cb.timer_event_hi_o;
-      trn.err_event_o = mp.phy_mon_cb.err_event_o;
-      trn.fc_events_o = mp.phy_mon_cb.fc_events_o;
-      trn.event_fifo_valid_o = mp.phy_mon_cb.event_fifo_valid_o;
-      trn.cl_event_valid_o = mp.phy_mon_cb.cl_event_valid_o;
-      trn.cl_event_data_o = mp.phy_mon_cb.cl_event_data_o;
-      trn.pr_event_valid_o = mp.phy_mon_cb.pr_event_valid_o;
-      trn.pr_event_data_o = mp.phy_mon_cb.pr_event_data_o;
-      trn.per_events_i = mp.phy_mon_cb.per_events_i;
-      trn.cl_event_ready_i = mp.phy_mon_cb.cl_event_ready_i;
-      trn.pr_event_ready_i = mp.phy_mon_cb.pr_event_ready_i;
+      `uvmx_mp_mon_signal(trn, timer_event_lo_o)
+      `uvmx_mp_mon_signal(trn, timer_event_hi_o)
+      `uvmx_mp_mon_signal(trn, err_event_o)
+      `uvmx_mp_mon_signal(trn, fc_events_o)
+      `uvmx_mp_mon_signal(trn, event_fifo_valid_o)
+      `uvmx_mp_mon_signal(trn, cl_event_valid_o)
+      `uvmx_mp_mon_signal(trn, cl_event_data_o)
+      `uvmx_mp_mon_signal(trn, pr_event_valid_o)
+      `uvmx_mp_mon_signal(trn, pr_event_data_o)
+      `uvmx_mp_mon_signal(trn, per_events_i)
+      `uvmx_mp_mon_signal(trn, cl_event_ready_i)
+      `uvmx_mp_mon_signal(trn, pr_event_ready_i)
    endtask
 
 

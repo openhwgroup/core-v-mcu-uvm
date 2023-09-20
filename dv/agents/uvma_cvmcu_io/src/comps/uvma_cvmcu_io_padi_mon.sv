@@ -33,7 +33,7 @@ class uvma_cvmcu_io_padi_mon_c extends uvmx_mp_mon_c #(
     * Samples #trn from the PADI Monitor modport (padi_mon_cb) on each clock cycle.
     */
    virtual task sample_trn(ref uvma_cvmcu_io_padi_mon_trn_c trn);
-      trn.io_in_i = mp.padi_mon_cb.io_in_i;
+      `uvmx_mp_mon_signal(trn, io_in_i)
    endtask
 
 

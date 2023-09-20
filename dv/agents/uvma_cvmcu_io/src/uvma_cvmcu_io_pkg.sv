@@ -21,11 +21,6 @@
 // Pre-processor macros
 `include "uvm_macros.svh"
 `include "uvmx_macros.svh"
-`include "uvma_i2c_macros.svh"
-`include "uvma_sdio_macros.svh"
-`include "uvma_uart_macros.svh"
-`include "uvma_spi_macros.svh"
-`include "uvma_cvmcu_cpi_macros.svh"
 `include "uvma_cvmcu_io_macros.svh"
 
 // Interface(s)
@@ -40,11 +35,6 @@ package uvma_cvmcu_io_pkg;
 
    import uvm_pkg ::*;
    import uvmx_pkg::*;
-   import uvma_i2c_pkg::*;
-   import uvma_sdio_pkg::*;
-   import uvma_uart_pkg::*;
-   import uvma_spi_pkg::*;
-   import uvma_cvmcu_cpi_pkg::*;
 
    // Constants / Structs / Enums
    `include "uvma_cvmcu_io_tdefs.sv"
@@ -61,19 +51,19 @@ package uvma_cvmcu_io_pkg;
    `include "uvma_cvmcu_io_seq_item.sv"
    `include "uvma_cvmcu_io_board_padi_seq_item.sv"
    `include "uvma_cvmcu_io_board_pado_seq_item.sv"
-      `include "uvma_cvmcu_io_chip_padi_seq_item.sv"
+   `include "uvma_cvmcu_io_chip_padi_seq_item.sv"
    `include "uvma_cvmcu_io_chip_pado_seq_item.sv"
 
    // Driver
    `include "uvma_cvmcu_io_board_padi_drv.sv"
    `include "uvma_cvmcu_io_board_pado_drv.sv"
-      `include "uvma_cvmcu_io_chip_padi_drv.sv"
+   `include "uvma_cvmcu_io_chip_padi_drv.sv"
    `include "uvma_cvmcu_io_chip_pado_drv.sv"
 
    // Monitor
    `include "uvma_cvmcu_io_padi_mon.sv"
    `include "uvma_cvmcu_io_pado_mon.sv"
-   
+
    // Agent-Level Components
    `include "uvma_cvmcu_io_mon.sv"
    `include "uvma_cvmcu_io_drv.sv"
@@ -89,7 +79,7 @@ package uvma_cvmcu_io_pkg;
    `include "uvma_cvmcu_io_chip_drv_vseq.sv"
    `include "uvma_cvmcu_io_idle_vseq.sv"
    `include "uvma_cvmcu_io_vseq_lib.sv"
-   
+
 endpackage : uvma_cvmcu_io_pkg
 
 

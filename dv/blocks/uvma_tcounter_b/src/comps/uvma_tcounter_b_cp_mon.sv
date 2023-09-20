@@ -33,9 +33,9 @@ class uvma_tcounter_b_cp_mon_c extends uvmx_mp_mon_c #(
     * Samples #trn from the Control Plane monitor clocking block (cp_mon_cb) on each clock cycle.
     */
    virtual task sample_trn(ref uvma_tcounter_b_cp_mon_trn_c trn);
-      trn.reset_count_i = mp.cp_mon_cb.reset_count_i;
-      trn.enable_count_i = mp.cp_mon_cb.enable_count_i;
-      trn.compare_value_i = mp.cp_mon_cb.compare_value_i;
+      `uvmx_mp_mon_signal(trn, reset_count_i)
+      `uvmx_mp_mon_signal(trn, enable_count_i)
+      `uvmx_mp_mon_signal(trn, compare_value_i)
    endtask
 
 

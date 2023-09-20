@@ -41,9 +41,6 @@ class uvmt_cvmcu_event_st_base_test_c extends uvmx_agent_test_c #(
     * Sets up basic configuration for env
     */
    constraint base_cons {
-      env_cfg.reset_type        == test_cfg.reset_type       ;
-      env_cfg.trn_log_enabled   == test_cfg.trn_log_enabled  ;
-      env_cfg.cov_model_enabled == test_cfg.cov_model_enabled;
    }
 
    /**

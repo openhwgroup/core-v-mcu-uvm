@@ -33,20 +33,16 @@ class uvma_cvmcu_io_pado_mon_c extends uvmx_mp_mon_c #(
     * Samples #trn from the PADO Monitor modport (pado_mon_cb) on each clock cycle.
     */
    virtual task sample_trn(ref uvma_cvmcu_io_pado_mon_trn_c trn);
-      trn.io_out_o = mp.pado_mon_cb.io_out_o;
-      foreach (trn.pad_cfg_o[ii]) begin
-         trn.pad_cfg_o[ii] = mp.pado_mon_cb.pad_cfg_o[ii];
-      end
-      trn.io_oe_o = mp.pado_mon_cb.io_oe_o;
-      trn.slow_clk_o = mp.pado_mon_cb.slow_clk_o;
+      `uvmx_mp_mon_signal(trn, io_out_o)
+      `uvmx_mp_mon_bus(trn, pad_cfg_o)
+      `uvmx_mp_mon_signal(trn, io_oe_o)
+      `uvmx_mp_mon_signal(trn, slow_clk_o)
    endtask
 
    /**
     * Trims data outside configured widths.
     */
    virtual function void process_trn(ref uvma_cvmcu_io_pado_mon_trn_c trn);
-
-
    endfunction
 
 endclass : uvma_cvmcu_io_pado_mon_c
