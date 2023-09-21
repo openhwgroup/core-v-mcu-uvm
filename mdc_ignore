@@ -12,3 +12,4 @@ sim
 lint
 docs
 .mio/sim
+*_backup
