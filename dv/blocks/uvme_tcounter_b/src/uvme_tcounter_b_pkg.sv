@@ -38,6 +38,7 @@ package uvme_tcounter_b_pkg;
    import uvma_tcounter_b_pkg::*;
 
    // Constants / Structs / Enums
+   `include "uvme_tcounter_b_ftdecs.sv"
    `include "uvme_tcounter_b_tdefs.sv"
    `include "uvme_tcounter_b_constants.sv"
 

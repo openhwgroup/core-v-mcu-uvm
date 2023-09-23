@@ -37,6 +37,7 @@ package uvma_cvmcu_cpi_pkg;
    import uvmx_pkg::*;
 
    // Constants / Structs / Enums
+   `include "uvma_cvmcu_cpi_ftdecs.sv"
    `include "uvma_cvmcu_cpi_tdefs.sv"
    `include "uvma_cvmcu_cpi_constants.sv"
 

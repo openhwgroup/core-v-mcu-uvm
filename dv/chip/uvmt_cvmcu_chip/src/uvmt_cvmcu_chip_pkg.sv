@@ -41,6 +41,7 @@ package uvmt_cvmcu_chip_pkg;
    import uvme_cvmcu_chip_pkg::*;
 
    // Constants / Structs / Enums
+   `include "uvmt_cvmcu_chip_ftdecs.sv"
    `include "uvmt_cvmcu_chip_tdefs.sv"
    `include "uvmt_cvmcu_chip_constants.sv"
 

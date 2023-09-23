@@ -31,11 +31,6 @@ typedef uvmx_sb_simplex_c #(
    .T_ACT_TRN(uvma_cvmcu_io_mon_trn_c)
 ) uvme_cvmcu_io_st_sb_simplex_c;
 
-
-// Forward type declarations
-typedef class uvme_cvmcu_io_st_cfg_c  ;
-typedef class uvme_cvmcu_io_st_cntxt_c;
-
 /**
  * Empty coverage model.
  */

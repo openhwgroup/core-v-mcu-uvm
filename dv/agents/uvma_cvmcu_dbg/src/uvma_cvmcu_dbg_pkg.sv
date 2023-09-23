@@ -37,6 +37,7 @@ package uvma_cvmcu_dbg_pkg;
    import uvmx_pkg::*;
 
    // Constants / Structs / Enums
+   `include "uvma_cvmcu_dbg_ftdecs.sv"
    `include "uvma_cvmcu_dbg_tdefs.sv"
    `include "uvma_cvmcu_dbg_constants.sv"
 

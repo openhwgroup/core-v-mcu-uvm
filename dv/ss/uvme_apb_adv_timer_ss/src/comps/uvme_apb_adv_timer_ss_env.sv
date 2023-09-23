@@ -35,9 +35,10 @@ class uvme_apb_adv_timer_ss_env_c extends uvmx_ss_env_c #(
    uvme_adv_timer_b_env_c  adv_timer3_b_env; ///< Advanced timer 3 block
    /// @}
 
-   /// @name Register Adapters
+   /// @name Register Adapters & Predictors
    /// @{
    uvma_apb_reg_adapter_c  proc_reg_adapter; ///< Converts APB sequence items to/from register operations.
+   uvma_apb_reg_predictor_c  proc_reg_predictor; ///< Converts APB monitor transactions to register operations.
    /// @}
 
 
@@ -94,7 +95,7 @@ class uvme_apb_adv_timer_ss_env_c extends uvmx_ss_env_c #(
    endfunction
 
    /**
-    * Creates register adapters.
+    * Creates register adapter(s).
     */
    virtual function void create_reg_adapter();
       proc_reg_adapter = uvma_apb_reg_adapter_c::type_id::create("proc_reg_adapter");
@@ -103,11 +104,26 @@ class uvme_apb_adv_timer_ss_env_c extends uvmx_ss_env_c #(
    endfunction
 
    /**
+    * Creates register predictor(s).
+    */
+   virtual function void create_reg_predictor();
+      proc_reg_predictor = uvma_apb_reg_predictor_c::type_id::create("proc_reg_predictor", this);
+   endfunction
+
+   /**
     * Connects register block to register adapters.
     */
    virtual function void connect_reg_block();
       cntxt.reg_model.default_map.set_sequencer(proc_agent.vsequencer, proc_reg_adapter);
-      cntxt.reg_model.default_map.set_auto_predict(1);
+   endfunction
+
+   /**
+    * Connects register predictor(s) to adapter(s).
+    */
+   virtual function void connect_reg_predictor();
+      proc_reg_predictor.map     = cntxt.reg_model.default_map;
+      proc_reg_predictor.adapter = proc_reg_adapter;
+      proc_agent.mon_trn_ap.connect(proc_reg_predictor.bus_in);
    endfunction
 
    /**

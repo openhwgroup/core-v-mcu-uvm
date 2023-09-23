@@ -70,17 +70,12 @@ class uvme_cvmcu_event_st_prd_c extends uvmx_agent_prd_c #(
     * TODO Describe uvme_cvmcu_event_st_prd_c::predict_agent()
     */
    task predict_agent();
-      uvma_cvmcu_event_seq_item_c  in_trn ;
+      uvma_cvmcu_event_seq_item_c  in_item;
       uvma_cvmcu_event_mon_trn_c   out_trn;
       forever begin
-         `uvmx_prd_get(agent_fifo, in_trn)
+         `uvmx_prd_get(agent_fifo, in_item)
          out_trn = uvma_cvmcu_event_mon_trn_c::type_id::create("out_trn");
-         out_trn.from(in_trn);
-         out_trn.data_size = in_trn.data_size;
-         out_trn.data      = new[in_trn.data_size];
-         foreach (out_trn.data[ii]) begin
-            out_trn.data[ii] = in_trn.data[ii];
-         end
+         out_trn.copy(in_item);
          `uvmx_prd_send(agent_ap, out_trn)
       end
    endtask

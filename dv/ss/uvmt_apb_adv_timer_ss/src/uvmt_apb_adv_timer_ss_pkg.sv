@@ -41,6 +41,7 @@ package uvmt_apb_adv_timer_ss_pkg;
    import uvme_apb_adv_timer_ss_pkg::*;
 
    // Constants / Structs / Enums
+   `include "uvmt_apb_adv_timer_ss_ftdecs.sv"
    `include "uvmt_apb_adv_timer_ss_tdefs.sv"
    `include "uvmt_apb_adv_timer_ss_constants.sv"
 

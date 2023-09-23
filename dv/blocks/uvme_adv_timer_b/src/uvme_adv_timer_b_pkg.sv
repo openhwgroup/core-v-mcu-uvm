@@ -38,6 +38,7 @@ package uvme_adv_timer_b_pkg;
    import uvma_adv_timer_b_pkg::*;
 
    // Constants / Structs / Enums
+   `include "uvme_adv_timer_b_ftdecs.sv"
    `include "uvme_adv_timer_b_tdefs.sv"
    `include "uvme_adv_timer_b_constants.sv"
 

@@ -143,8 +143,8 @@ class uvme_cvmcu_chip_cntxt_c extends uvmx_chip_env_cntxt_c #(
       dbg_agent_cntxt = uvma_cvmcu_dbg_cntxt_c::type_id::create("dbg_cntxt");
       irq_l1_agent_cntxt = uvma_irq_cntxt_c::type_id::create("irq_l1_cntxt");
       irq_l2_agent_cntxt = uvma_irq_cntxt_c::type_id::create("irq_l2_cntxt");
-      apb_timer_ss_env_cntxt  = uvme_apb_timer_ss_cntxt_c::type_id::create("apb_timer_ss_env_cntxt");
-      apb_adv_timer_ss_env_cntxt  = uvme_apb_adv_timer_ss_cntxt_c::type_id::create("apb_adv_timer_ss_env_cntxt");
+      apb_timer_ss_env_cntxt = uvme_apb_timer_ss_cntxt_c::type_id::create("apb_timer_ss_env_cntxt");
+      apb_adv_timer_ss_env_cntxt = uvme_apb_adv_timer_ss_cntxt_c::type_id::create("apb_adv_timer_ss_env_cntxt");
       udma_qspi0_ingress_sb_cntxt = uvmx_sb_simplex_cntxt_c::type_id::create("udma_qspi0_ingress_sb_cntxt");
       udma_qspi1_ingress_sb_cntxt = uvmx_sb_simplex_cntxt_c::type_id::create("udma_qspi1_ingress_sb_cntxt");
       udma_camera_sb_cntxt = uvmx_sb_simplex_cntxt_c::type_id::create("udma_camera_sb_cntxt");

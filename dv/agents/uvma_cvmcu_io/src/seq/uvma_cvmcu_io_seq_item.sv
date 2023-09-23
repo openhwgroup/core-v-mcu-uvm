@@ -55,6 +55,21 @@ class uvma_cvmcu_io_seq_item_c extends uvmx_seq_item_c #(
    endfunction
 
    /**
+    * Copies data from monitor transaction.
+    */
+   virtual function void do_copy(uvm_object rhs);
+      uvma_cvmcu_io_mon_trn_c  trn;
+      super.do_copy(rhs);
+      if ($cast(trn, rhs)) begin
+         data_size = trn.data_size;
+         data      = new[trn.data_size];
+         foreach (data[ii]) begin
+            data[ii] = trn.data[ii];
+         end
+      end
+   endfunction
+
+   /**
     * Describes transaction as metadata for logger.
     */
    virtual function uvmx_metadata_t get_metadata();

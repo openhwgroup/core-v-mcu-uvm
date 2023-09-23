@@ -43,6 +43,7 @@ package uvmt_tprescaler_b_pkg;
    import uvme_tprescaler_b_pkg::*;
 
    // Constants / Structs / Enums
+   `include "uvmt_tprescaler_b_ftdecs.sv"
    `include "uvmt_tprescaler_b_tdefs.sv"
    `include "uvmt_tprescaler_b_constants.sv"
 

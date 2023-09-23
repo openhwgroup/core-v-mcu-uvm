@@ -27,7 +27,8 @@ class uvma_cvmcu_event_mon_trn_c extends uvmx_mon_trn_c #(
 
    /// @name Metadata
    /// @{
-   int unsigned  gnt_latency; ///< Number of cycles before gnt is asserted
+   // TODO Add data fields
+   //      Ex: int unsigned  latency; ///< TODO Describe me
    /// @}
 
 
@@ -42,6 +43,21 @@ class uvma_cvmcu_event_mon_trn_c extends uvmx_mon_trn_c #(
     */
    function new(string name="uvma_cvmcu_event_mon_trn");
       super.new(name);
+   endfunction
+
+   /**
+    * Copies data from sequence item.
+    */
+   virtual function void do_copy(uvm_object rhs);
+      uvma_cvmcu_event_seq_item_c  item;
+      super.do_copy(rhs);
+      if ($cast(item, rhs)) begin
+         data_size = item.data_size;
+         data      = new[item.data_size];
+         foreach (data[ii]) begin
+            data[ii] = item.data[ii];
+         end
+      end
    endfunction
 
    /**

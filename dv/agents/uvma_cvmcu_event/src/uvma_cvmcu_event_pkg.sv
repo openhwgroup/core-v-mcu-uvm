@@ -37,6 +37,7 @@ package uvma_cvmcu_event_pkg;
    import uvmx_pkg::*;
 
    // Constants / Structs / Enums
+   `include "uvma_cvmcu_event_ftdecs.sv"
    `include "uvma_cvmcu_event_tdefs.sv"
    `include "uvma_cvmcu_event_constants.sv"
 

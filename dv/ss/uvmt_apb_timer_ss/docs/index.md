@@ -33,7 +33,7 @@ ID | Name | Version
 
 
 @section uvmt_apb_timer_ss_release_history Release History
-@subsection uvmt_apb_timer_ss_v1_0_0 2023/9/20 - 1.0.0
+@subsection uvmt_apb_timer_ss_v1_0_0 2023/9/23 - 1.0.0
 - Initial release
 
 

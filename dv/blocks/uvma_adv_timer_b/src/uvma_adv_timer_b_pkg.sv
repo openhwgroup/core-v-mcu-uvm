@@ -37,6 +37,7 @@ package uvma_adv_timer_b_pkg;
    import uvmx_pkg::*;
 
    // Constants / Structs / Enums
+   `include "uvma_adv_timer_b_ftdecs.sv"
    `include "uvma_adv_timer_b_tdefs.sv"
    `include "uvma_adv_timer_b_constants.sv"
 

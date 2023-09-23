@@ -7,7 +7,6 @@
 `define __UVMA_CVMCU_DBG_TDEFS_SV__
 
 
-
 /**
  * Driving modes for uvma_cvmcu_dbg_agent_c when active.
  */
@@ -17,27 +16,13 @@ typedef enum {
 } uvma_cvmcu_dbg_mode_enum;
 
 
+
 /// @name Logic vectors
 /// @{
 /// @}
 
 /// @name Bit vectors
 /// @{
-/// @}
-
-
-/// @name Forward Type Declarations
-/// @{
-typedef class uvma_cvmcu_dbg_cfg_c;
-typedef class uvma_cvmcu_dbg_cntxt_c;
-typedef class uvma_cvmcu_dbg_phy_mon_trn_c;
-typedef class uvma_cvmcu_dbg_sys_phy_seq_item_c;
-typedef class uvma_cvmcu_dbg_core_phy_seq_item_c;
-typedef class uvma_cvmcu_dbg_mon_vseq_c ;
-typedef class uvma_cvmcu_dbg_idle_vseq_c;
-typedef class uvma_cvmcu_dbg_core_drv_vseq_c;
-typedef class uvma_cvmcu_dbg_sys_drv_vseq_c;
-
 /// @}
 
 

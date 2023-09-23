@@ -60,10 +60,10 @@ class uvme_apb_timer_ss_cntxt_c extends uvmx_ss_env_cntxt_c #(
    virtual function void create_objects(uvme_apb_timer_ss_cfg_c cfg);
       proc_agent_cntxt = uvma_apb_cntxt_c::type_id::create("proc_cntxt");
       irq_events_agent_cntxt = uvma_irq_cntxt_c::type_id::create("irq_events_cntxt");
-      counter_lo_b_env_cntxt  = uvme_tcounter_b_cntxt_c::type_id::create("counter_lo_b_env_cntxt");
-      counter_hi_b_env_cntxt  = uvme_tcounter_b_cntxt_c::type_id::create("counter_hi_b_env_cntxt");
-      prescaler_lo_b_env_cntxt  = uvme_tprescaler_b_cntxt_c::type_id::create("prescaler_lo_b_env_cntxt");
-      prescaler_hi_b_env_cntxt  = uvme_tprescaler_b_cntxt_c::type_id::create("prescaler_hi_b_env_cntxt");
+      counter_lo_b_env_cntxt = uvme_tcounter_b_cntxt_c::type_id::create("counter_lo_b_env_cntxt");
+      counter_hi_b_env_cntxt = uvme_tcounter_b_cntxt_c::type_id::create("counter_hi_b_env_cntxt");
+      prescaler_lo_b_env_cntxt = uvme_tprescaler_b_cntxt_c::type_id::create("prescaler_lo_b_env_cntxt");
+      prescaler_hi_b_env_cntxt = uvme_tprescaler_b_cntxt_c::type_id::create("prescaler_hi_b_env_cntxt");
       proc_agent_cntxt.create_objects(cfg.proc_agent_cfg);
       irq_events_agent_cntxt.create_objects(cfg.irq_events_agent_cfg);
       counter_lo_b_env_cntxt.create_objects(cfg.counter_lo_b_env_cfg);

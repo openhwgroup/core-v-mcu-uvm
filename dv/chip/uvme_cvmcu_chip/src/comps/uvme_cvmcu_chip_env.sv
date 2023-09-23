@@ -48,9 +48,10 @@ class uvme_cvmcu_chip_env_c extends uvmx_chip_env_c #(
    uvme_apb_adv_timer_ss_env_c  apb_adv_timer_ss_env; ///< Advanced timer (PWM) sub-system
    /// @}
 
-   /// @name Register Adapters
+   /// @name Register Adapters & Predictors
    /// @{
    uvma_obi_reg_adapter_c  data_obi_reg_adapter; ///< Converts OBI sequence items to/from register operations.
+   uvma_obi_reg_predictor_c  data_obi_reg_predictor; ///< Converts OBI monitor transactions to register operations.
    /// @}
 
 
@@ -154,7 +155,7 @@ class uvme_cvmcu_chip_env_c extends uvmx_chip_env_c #(
    endfunction
 
    /**
-    * Creates register adapters.
+    * Creates register adapter(s).
     */
    virtual function void create_reg_adapter();
       data_obi_reg_adapter = uvma_obi_reg_adapter_c::type_id::create("data_obi_reg_adapter");
@@ -163,11 +164,26 @@ class uvme_cvmcu_chip_env_c extends uvmx_chip_env_c #(
    endfunction
 
    /**
+    * Creates register predictor(s).
+    */
+   virtual function void create_reg_predictor();
+      data_obi_reg_predictor = uvma_obi_reg_predictor_c::type_id::create("data_obi_reg_predictor", this);
+   endfunction
+
+   /**
     * Connects register block to register adapters.
     */
    virtual function void connect_reg_block();
       cntxt.reg_model.default_map.set_sequencer(data_obi_agent.vsequencer, data_obi_reg_adapter);
-      cntxt.reg_model.default_map.set_auto_predict(1);
+   endfunction
+
+   /**
+    * Connects register predictor(s) to adapter(s).
+    */
+   virtual function void connect_reg_predictor();
+      data_obi_reg_predictor.map     = cntxt.reg_model.default_map;
+      data_obi_reg_predictor.adapter = data_obi_reg_adapter;
+      data_obi_agent.mon_trn_ap.connect(data_obi_reg_predictor.bus_in);
    endfunction
 
    /**
