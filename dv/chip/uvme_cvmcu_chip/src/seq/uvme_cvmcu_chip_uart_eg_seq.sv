@@ -89,7 +89,7 @@ class uvme_cvmcu_chip_uart_eg_seq_c extends uvme_cvmcu_chip_base_seq_c;
          // TODO Drive the register model to output this item
          //      item.data
          //      item.parity
-         //      cfg.uart0_agent_cfg.badu_rate
+         //      cfg.uart0_agent_cfg.baud_rate
          trn = uvma_uart_mon_trn_c::type_id::create("trn");
          trn.copy(item);
          udma_uart0_egress_exp_ap.write(trn);
@@ -118,10 +118,10 @@ class uvme_cvmcu_chip_uart_eg_seq_c extends uvme_cvmcu_chip_base_seq_c;
          // TODO Drive the register model to output this item
          //      item.data
          //      item.parity
-         //      cfg.uart0_agent_cfg.badu_rate
+         //      cfg.uart1_agent_cfg.baud_rate
          trn = uvma_uart_mon_trn_c::type_id::create("trn");
          trn.copy(item);
-         udma_uart0_egress_exp_ap.write(trn);
+         udma_uart1_egress_exp_ap.write(trn);
          `uvm_info("CVMCU_CHIP_UART_EG_SEQ", $sformatf("Finished item #%0d of %0d with gap size %0d", (ii+1), num_items, gap_size), UVM_HIGH)
       end
    endtask
