@@ -17,7 +17,7 @@ module uvma_cvmcu_dbg_if_chkr(
 
    // TODO Add assertions and/or functional coverage to uvma_cvmcu_dbg_if_chkr
 
-endmodule : uvma_cvmcu_dbg_if_chkr
+endmodule
 
 
 `endif // __UVMA_CVMCU_DBG_IF_CHKR_SV__

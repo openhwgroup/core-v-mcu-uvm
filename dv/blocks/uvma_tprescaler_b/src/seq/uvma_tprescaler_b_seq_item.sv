@@ -8,40 +8,36 @@
 
 
 /**
- * Sequence Item created by Timer unit prescaler Agent Sequences.  Analog of uvma_tprescaler_b_mon_trn_c
+ * Sequence Item created by Timer unit prescaler Sequences.
+ * Analog of uvma_tprescaler_b_mon_trn_c
  * @ingroup uvma_tprescaler_b_seq
  */
-class uvma_tprescaler_b_seq_item_c extends uvmx_seq_item_c #(
+class uvma_tprescaler_b_seq_item_c extends uvmx_block_seq_item_c #(
    .T_CFG  (uvma_tprescaler_b_cfg_c  ),
    .T_CNTXT(uvma_tprescaler_b_cntxt_c)
 );
 
    /// @name Data
    /// @{
-   // TODO Add uvma_tprescaler_b_seq_item_c data fields
-   //      Ex: rand bit [7:0]  abc; ///< Describe me!
    /// @}
 
-   /// @name Metadata
-   /// @{
-   // TODO Add uvma_tprescaler_b_seq_item_c metadata fields
-   //      Ex: logic [7:0]  def; ///< Describe me!
-   /// @}
 
 
    `uvm_object_utils_begin(uvma_tprescaler_b_seq_item_c)
-      // TODO Add uvma_tprescaler_b_seq_item_c UVM field utils
-      //      Ex: `uvm_field_int(abc, UVM_DEFAULT)
    `uvm_object_utils_end
 
 
-   // TODO Add uvma_tprescaler_b_seq_item_c constraints
-   //      Ex: /**
-   //           * Describe me!
-   //           */
-   //          constraint limits_cons {
-   //             abc inside {0,2,4,8,16,32};
-   //          }
+   /**
+    * Describes data space.
+    */
+   constraint data_cons {
+   }
+
+   /**
+    * TODO Implement or remove uvma_tprescaler_b_seq_item_c::rules_cons
+    */
+   constraint rules_cons {
+   }
 
 
    /**
@@ -51,25 +47,33 @@ class uvma_tprescaler_b_seq_item_c extends uvmx_seq_item_c #(
       super.new(name);
    endfunction
 
+
    /**
-    * Create sub-objects.
+    * TODO Implement or remove uvma_tprescaler_b_seq_item_c::post_randomize()
     */
-   virtual function void create_objects();
-      // TODO Create sub-objects or remove
-      //      Ex: matrix = uvml_math_mtx_c::type_id::create("matrix");
+   virtual function void post_randomize_work();
+   endfunction
+
+
+   /**
+    * TODO Implement or remove uvma_tprescaler_b_seq_item_c::do_print()
+    */
+   virtual function void do_print(uvm_printer printer);
+      super.do_print(printer);
+      // Print dependent on configuration and/or fields
+      // Ex: if (cfg.enable_abc) begin
+      //        printer.print_field("abc", abc, 8);
+      //     end
    endfunction
 
    /**
     * Describes transaction for logger.
     */
    virtual function uvmx_metadata_t get_metadata();
-      // TODO Create metadata for transaction logger
-      //      Ex: string  abc_str;
-      //          abc_str = $sformatf("%h", abc);
-      //          `uvmx_metadata_field("abc", abc_str)
+      string  val_str;
    endfunction
 
-endclass : uvma_tprescaler_b_seq_item_c
+endclass
 
 
 `endif // __UVMA_TPRESCALER_B_SEQ_ITEM_SV__

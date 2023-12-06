@@ -16,22 +16,10 @@ class uvma_cvmcu_io_cntxt_c extends uvmx_agent_cntxt_c #(
    .T_VIF(virtual uvma_cvmcu_io_if)
 );
 
-   /// @name Integrals
+   /// @name Sequences
    /// @{
-   /// @}
-
-   /// @name Objects
-   /// @{
-   // TODO Add state variables
-   //      Ex: uvma_cvmcu_io_word_b_t  drv_data_q[$]; ///< TODO Describe uvma_cvmcu_io_cntxt_c::drv_data_q
-   //          uvma_cvmcu_io_board_padi_mon_trn_c  mon_board_padi_q[$]; ///< TODO Describe uvma_cvmcu_io_cntxt_c::mon_board_padi_q
-   //          uvma_cvmcu_io_chip_pado_mon_trn_c  mon_chip_pado_q[$]; ///< TODO Describe uvma_cvmcu_io_cntxt_c::mon_chip_pado_q
-   /// @}
-
-   /// @name Virtual Sequences
-   /// @{
-   uvm_sequence_base  board_drv_vseq; ///< BOARD Driver Virtual Sequence instance.
-   uvm_sequence_base  chip_drv_vseq; ///< CHIP Driver Virtual Sequence instance.
+   uvm_sequence_base  board_drv_seq; ///< BOARD Driver Sequence instance.
+   uvm_sequence_base  chip_drv_seq; ///< CHIP Driver Sequence instance.
    /// @}
 
 
@@ -48,24 +36,18 @@ class uvma_cvmcu_io_cntxt_c extends uvmx_agent_cntxt_c #(
    endfunction
 
    /**
-    * Builds objects.
+    * Creates objects.
     */
-   virtual function void create_objects(uvma_cvmcu_io_cfg_c cfg);
+   virtual function void build(uvma_cvmcu_io_cfg_c cfg);
    endfunction
 
    /**
     * Returns all state variables to initial values.
     */
-   virtual function void reset();
-      // TODO Reset state variables
-      //       Ex: drv_data_q.delete();
-      //          mon_board_padi_q.delete();
-      //          mon_board_pado_q.delete();
-      //          mon_chip_padi_q.delete();
-      //          mon_chip_pado_q.delete();
+   virtual function void do_reset(uvma_cvmcu_io_cfg_c cfg);
    endfunction
 
-endclass : uvma_cvmcu_io_cntxt_c
+endclass
 
 
 `endif // __UVMA_CVMCU_IO_CNTXT_SV__

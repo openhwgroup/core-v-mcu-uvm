@@ -43,7 +43,7 @@ class uvme_apb_timer_ss_timer_reset_lo_reg_c extends uvmx_reg_c;
       );
    endfunction
 
-endclass : uvme_apb_timer_ss_timer_reset_lo_reg_c
+endclass
 
 
 `endif // __UVME_APB_TIMER_SS_TIMER_RESET_LO_REG_SV__

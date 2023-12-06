@@ -28,9 +28,9 @@ interface uvma_cvmcu_event_if(
    wire  [7:0]  cl_event_data_o   ; ///< Chip-level event data
    wire         pr_event_valid_o  ; ///< Peripherals event valid
    wire  [7:0]  pr_event_data_o   ; ///< Peripherals event data
-   wire [16:0]  per_events_i      ; ///< Peripherals event
    wire         cl_event_ready_i  ; ///< Chip-level event ready
    wire         pr_event_ready_i  ; ///< Peripherals event ready
+   wire [16:0]  per_events_i      ; ///< Peripherals event
    /// @}
 
 
@@ -38,7 +38,7 @@ interface uvma_cvmcu_event_if(
    /// @{
    clocking sys_phy_drv_cb @(posedge low_speed_clk_i);
       output timer_event_lo_o, timer_event_hi_o, err_event_o, fc_events_o, event_fifo_valid_o, cl_event_valid_o, cl_event_data_o, pr_event_valid_o, pr_event_data_o;
-      input per_events_i, cl_event_ready_i, pr_event_ready_i;
+      input cl_event_ready_i, pr_event_ready_i, per_events_i;
    endclocking
    modport sys_phy_drv_mp (clocking sys_phy_drv_cb);
    /// @}
@@ -46,7 +46,8 @@ interface uvma_cvmcu_event_if(
    /// @name Used by uvma_cvmcu_event_core_phy_drv_c
    /// @{
    clocking core_phy_drv_cb @(posedge low_speed_clk_i);
-      output per_events_i, cl_event_ready_i, pr_event_ready_i;
+      output cl_event_ready_i, pr_event_ready_i, per_events_i;
+      input timer_event_lo_o, timer_event_hi_o, err_event_o, fc_events_o, event_fifo_valid_o, cl_event_valid_o, cl_event_data_o, pr_event_valid_o, pr_event_data_o;
    endclocking
    modport core_phy_drv_mp (clocking core_phy_drv_cb);
    /// @}
@@ -54,7 +55,7 @@ interface uvma_cvmcu_event_if(
    /// @name Used by uvma_cvmcu_event_phy_mon_c
    /// @{
    clocking phy_mon_cb @(posedge low_speed_clk_i);
-      input timer_event_lo_o, timer_event_hi_o, per_events_i, err_event_o, fc_events_o, event_fifo_valid_o, cl_event_valid_o, cl_event_data_o, cl_event_ready_i, pr_event_valid_o, pr_event_data_o, pr_event_ready_i;
+      input timer_event_lo_o, timer_event_hi_o, err_event_o, fc_events_o, event_fifo_valid_o, cl_event_valid_o, cl_event_data_o, pr_event_valid_o, pr_event_data_o, cl_event_ready_i, pr_event_ready_i, per_events_i;
    endclocking
    modport phy_mon_mp (clocking phy_mon_cb);
    /// @}
@@ -75,12 +76,12 @@ interface uvma_cvmcu_event_if(
    `uvmx_if_signal_out(cl_event_data_o, [7:0], phy_mon_mp.phy_mon_cb, sys_phy_drv_mp.sys_phy_drv_cb)
    `uvmx_if_signal_out(pr_event_valid_o, , phy_mon_mp.phy_mon_cb, sys_phy_drv_mp.sys_phy_drv_cb)
    `uvmx_if_signal_out(pr_event_data_o, [7:0], phy_mon_mp.phy_mon_cb, sys_phy_drv_mp.sys_phy_drv_cb)
-   `uvmx_if_signal_out(per_events_i, [16:0], phy_mon_mp.phy_mon_cb, core_phy_drv_mp.core_phy_drv_cb)
    `uvmx_if_signal_out(cl_event_ready_i, , phy_mon_mp.phy_mon_cb, core_phy_drv_mp.core_phy_drv_cb)
    `uvmx_if_signal_out(pr_event_ready_i, , phy_mon_mp.phy_mon_cb, core_phy_drv_mp.core_phy_drv_cb)
+   `uvmx_if_signal_out(per_events_i, [16:0], phy_mon_mp.phy_mon_cb, core_phy_drv_mp.core_phy_drv_cb)
    /// @}
 
-endinterface : uvma_cvmcu_event_if
+endinterface
 
 
 `endif // __UVMA_CVMCU_EVENT_IF_SV__

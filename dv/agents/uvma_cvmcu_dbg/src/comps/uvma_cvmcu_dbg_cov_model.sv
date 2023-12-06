@@ -85,7 +85,7 @@ class uvma_cvmcu_dbg_cov_model_c extends uvmx_agent_cov_model_c #(
    virtual function void sample_phy_mon_trn (); endfunction
    /// @}
 
-endclass : uvma_cvmcu_dbg_cov_model_c
+endclass
 
 
 `endif // __UVMA_CVMCU_DBG_COV_MODEL_SV__

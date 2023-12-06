@@ -18,8 +18,8 @@ class uvma_cvmcu_io_cov_model_c extends uvmx_agent_cov_model_c #(
 );
    /// @name Covergroup variables
    /// @{
-   uvma_cvmcu_io_mon_trn_c  ig_mon_trn; ///< IG Monitor Transaction currently being sampled.
-   uvma_cvmcu_io_mon_trn_c  eg_mon_trn; ///< EG Monitor Transaction currently being sampled.
+   uvma_cvmcu_io_mon_trn_c  ig_mon_trn; ///< Ig Monitor Transaction currently being sampled.
+   uvma_cvmcu_io_mon_trn_c  eg_mon_trn; ///< Eg Monitor Transaction currently being sampled.
    uvma_cvmcu_io_board_padi_seq_item_c  board_padi_seq_item; ///< BOARD PADI Sequence Item currently being sampled.
    uvma_cvmcu_io_board_pado_seq_item_c  board_pado_seq_item; ///< BOARD PADO Sequence Item currently being sampled.
    uvma_cvmcu_io_chip_padi_seq_item_c  chip_padi_seq_item; ///< CHIP PADI Sequence Item currently being sampled.
@@ -30,8 +30,8 @@ class uvma_cvmcu_io_cov_model_c extends uvmx_agent_cov_model_c #(
 
    /// @name TLM FIFOs
    /// @{
-   uvm_tlm_analysis_fifo #(uvma_cvmcu_io_mon_trn_c)  ig_mon_trn_fifo; ///< FIFO of IG Monitor Transactions to be sampled.
-   uvm_tlm_analysis_fifo #(uvma_cvmcu_io_mon_trn_c)  eg_mon_trn_fifo; ///< FIFO of EG Monitor Transactions to be sampled.
+   uvm_tlm_analysis_fifo #(uvma_cvmcu_io_mon_trn_c)  ig_mon_trn_fifo; ///< FIFO of Ig Monitor Transactions to be sampled.
+   uvm_tlm_analysis_fifo #(uvma_cvmcu_io_mon_trn_c)  eg_mon_trn_fifo; ///< FIFO of Eg Monitor Transactions to be sampled.
    uvm_tlm_analysis_fifo #(uvma_cvmcu_io_board_padi_seq_item_c)  board_padi_seq_item_fifo; ///< FIFO of BOARD PADI Sequence Items to be sampled.
    uvm_tlm_analysis_fifo #(uvma_cvmcu_io_board_pado_seq_item_c)  board_pado_seq_item_fifo; ///< FIFO of BOARD PADO Sequence Items to be sampled.
    uvm_tlm_analysis_fifo #(uvma_cvmcu_io_chip_padi_seq_item_c)  chip_padi_seq_item_fifo; ///< FIFO of CHIP PADI Sequence Items to be sampled.
@@ -118,7 +118,7 @@ board_pado_seq_item_fifo = new("board_pado_seq_item_fifo", this);
    virtual function void sample_pado_mon_trn (); endfunction
    /// @}
 
-endclass : uvma_cvmcu_io_cov_model_c
+endclass
 
 
 `endif // __UVMA_CVMCU_IO_COV_MODEL_SV__

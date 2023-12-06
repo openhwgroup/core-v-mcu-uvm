@@ -24,7 +24,7 @@ module uvme_apb_adv_timer_ss_chkr (
 
    // TODO Add assertions and/or functional coverage to uvme_apb_adv_timer_ss_chkr
 
-endmodule : uvme_apb_adv_timer_ss_chkr
+endmodule
 
 
 `endif // __UVME_APB_ADV_TIMER_SS_CHKR_SV__

@@ -25,7 +25,7 @@ class uvmt_apb_adv_timer_ss_mem_access_test_c extends uvmt_apb_adv_timer_ss_base
       super.new(name, parent);
    endfunction
 
-endclass : uvmt_apb_adv_timer_ss_mem_access_test_c
+endclass
 
 
 `endif // __UVMT_APB_ADV_TIMER_SS_MEM_ACCESS_TEST_SV__

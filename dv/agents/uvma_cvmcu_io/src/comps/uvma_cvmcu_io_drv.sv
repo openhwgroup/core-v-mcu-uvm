@@ -45,7 +45,7 @@ class uvma_cvmcu_io_drv_c extends uvmx_drv_c #(
       chip_pado_driver = uvma_cvmcu_io_chip_pado_drv_c::type_id::create("chip_pado_driver", this);
    endfunction
 
-endclass : uvma_cvmcu_io_drv_c
+endclass
 
 
 `endif // __UVMA_CVMCU_IO_DRV_SV__

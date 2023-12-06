@@ -13,11 +13,11 @@
  */
 class uvme_tcounter_b_cfg_c extends uvmx_block_env_cfg_c;
 
-   // @name Integrals
+   /// @name Settings
    /// @{
    /// @}
 
-   /// @name Objects
+    /// @name Objects
    /// @{
    rand uvma_tcounter_b_cfg_c  agent_cfg; ///< Block Agent configuration
    rand uvmx_sb_simplex_cfg_c  sb_cfg; ///< Data path scoreboard configuration
@@ -25,31 +25,39 @@ class uvme_tcounter_b_cfg_c extends uvmx_block_env_cfg_c;
 
 
    `uvm_object_utils_begin(uvme_tcounter_b_cfg_c)
-      `uvm_field_int (                         enabled              , UVM_DEFAULT)
-      `uvm_field_enum(uvm_active_passive_enum, is_active            , UVM_DEFAULT)
-      `uvm_field_enum(uvmx_reset_type_enum   , reset_type           , UVM_DEFAULT)
-      `uvm_field_int (                         scoreboarding_enabled, UVM_DEFAULT)
+      `uvm_field_int(enabled, UVM_DEFAULT)
+      `uvm_field_enum(uvm_active_passive_enum, is_active, UVM_DEFAULT)
+      `uvm_field_enum(uvmx_reset_type_enum, reset_type, UVM_DEFAULT)
+      `uvm_field_int(drv_idle_random, UVM_DEFAULT)
+      `uvm_field_int(scoreboarding_enabled, UVM_DEFAULT)
       `uvm_field_object(agent_cfg, UVM_DEFAULT)
-      `uvm_field_object(sb_cfg   , UVM_DEFAULT)
+      `uvm_field_object(sb_cfg, UVM_DEFAULT)
    `uvm_object_utils_end
 
 
    /**
-    * Sets agent configuration.
+    * Sets configuration fields for basic agent configuration.
     */
-   constraint agent_cfg_cons {
-      agent_cfg.enabled     == enabled;
-      agent_cfg.is_active   == is_active;
-      agent_cfg.bypass_mode == 0;
+   constraint agent_basics_cons {
+      agent_cfg.enabled         == enabled;
+      agent_cfg.is_active       == is_active;
+      agent_cfg.drv_idle_random == drv_idle_random;
+      agent_cfg.bypass_mode     == 0;
    }
 
    /**
-    * Sets scoreboard configuration.
+    * Sets all configuration fields for scoreboard.
     */
    constraint sb_cons {
       sb_cfg.enabled     == scoreboarding_enabled;
       sb_cfg.mode        == UVMX_SB_MODE_IN_ORDER;
       sb_cfg.log_enabled == 1;
+   }
+
+   /**
+    * TODO Implement or remove uvme_tcounter_b_cfg_c::rules_cons
+    */
+   constraint rules_cons {
    }
 
 
@@ -61,24 +69,27 @@ class uvme_tcounter_b_cfg_c extends uvmx_block_env_cfg_c;
    endfunction
 
    /**
-    * Creates objects.
+    * Initializes objects and arrays.
     */
-   virtual function void create_objects();
+   virtual function void build();
       agent_cfg = uvma_tcounter_b_cfg_c::type_id::create("agent_cfg");
-      sb_cfg    = uvmx_sb_simplex_cfg_c::type_id::create("sb_cfg");
+      sb_cfg = uvmx_sb_simplex_cfg_c::type_id::create("sb_cfg");
    endfunction
 
    /**
-    * Adds fields to Scoreboard logs.
+    * Adds transaction fields to scoreboard logs.
     */
-   function void post_randomize();
-      sb_cfg.reset_log();
-      // TODO Add scoreboard transaction log fields
-      //      Ex: sb_cfg.add_to_log("abc");
-      //          sb_cfg.add_to_log("def");
+   virtual function void cfg_sb_logs();
+      // TODO Complete uvme_tcounter_b_cfg_c scoreboard logging configuration
    endfunction
 
-endclass : uvme_tcounter_b_cfg_c
+   /**
+    * TODO Implement uvme_tcounter_b_cfg_c::post_randomize() or remove altogether
+    */
+   virtual function void post_randomize_work();
+   endfunction
+
+endclass
 
 
 `endif // __UVME_TCOUNTER_B_CFG_SV__

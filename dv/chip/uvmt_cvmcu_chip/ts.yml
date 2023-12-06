@@ -1,0 +1,100 @@
+test-suite:
+  ip: uvmt_cvmcu_chip
+  name: CORE-V-MCU Test Suite
+  settings:
+    cov:
+    - nightly
+    - weekly
+    max-duration:
+      bugs: 1
+      nightly: 10
+      sanity: 1
+      weekly: 50
+    max-errors:
+      bugs: 1
+      nightly: 10
+      sanity: 1
+      weekly: 10
+    max-jobs:
+      bugs: 1
+      nightly: 10
+      sanity: 5
+      weekly: 20
+    verbosity:
+      bugs: debug
+      nightly: medium
+      sanity: high
+      weekly: medium
+    waves:
+    - bugs
+    - sanity
+    - nightly
+    - weekly
+  target: '*'
+
+registers:
+  backdoor:
+    mem_access:
+      bugs: []
+      nightly:
+      - 1
+      sanity:
+      - 1
+      weekly:
+      - 1
+    reg_access:
+      bugs: []
+      nightly:
+      - 1
+      sanity:
+      - 1
+      weekly:
+      - 1
+    shared_access:
+      bugs: []
+      nightly:
+      - 1
+      sanity:
+      - 1
+      weekly:
+      - 1
+  frontdoor:
+    mem_walk:
+      bugs: []
+      nightly:
+      - 1
+      sanity:
+      - 1
+      weekly:
+      - 1
+    reg_bit_bash:
+      bugs: []
+      nightly:
+      - 1
+      sanity:
+      - 1
+      weekly:
+      - 1
+    reg_hw_reset:
+      bugs: []
+      nightly:
+      - 1
+      sanity:
+      - 1
+      weekly:
+      - 1
+
+functional:
+  uart:
+    uart_eg:
+      bugs: []
+      nightly: 10
+      sanity:
+      - 1
+      weekly: 100
+    uart_ig:
+      bugs: []
+      nightly: 10
+      sanity:
+      - 1
+      weekly: 100

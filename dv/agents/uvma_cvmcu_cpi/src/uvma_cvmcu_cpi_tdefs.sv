@@ -16,7 +16,6 @@ typedef enum {
 } uvma_cvmcu_cpi_mode_enum;
 
 
-
 /// @name Logic vectors
 /// @{
 typedef logic [(`UVMA_CVMCU_CPI_DATA_MAX_WIDTH-1):0]  uvma_cvmcu_cpi_data_l_t; ///< Data logic vector

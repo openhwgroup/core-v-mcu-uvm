@@ -13,6 +13,10 @@
  * @defgroup uvmt_cvmcu_io_st_misc   Miscellaneous
  * @defgroup uvmt_cvmcu_io_st_tb     Test Bench
  * @defgroup uvmt_cvmcu_io_st_tests  Tests
+ * @{
+ * @defgroup uvmt_cvmcu_io_st_tests_functional   Functional
+ * @defgroup uvmt_cvmcu_io_st_tests_error   Error
+ * @}
  * @}
  */
 
@@ -25,8 +29,6 @@
 `include "uvma_cvmcu_io_macros.svh"
 `include "uvme_cvmcu_io_st_macros.svh"
 `include "uvmt_cvmcu_io_st_macros.svh"
-
-// Interface(s)
 
 
 /**
@@ -57,7 +59,7 @@ package uvmt_cvmcu_io_st_pkg;
    `include "uvmt_cvmcu_io_st_fix_ill_stim_test.sv"
    `include "uvmt_cvmcu_io_st_rand_ill_stim_test.sv"
 
-endpackage : uvmt_cvmcu_io_st_pkg
+endpackage
 
 
 // Module(s) / Checker(s)

@@ -50,6 +50,7 @@ interface uvma_cvmcu_io_if(
    /// @name Used by uvma_cvmcu_io_chip_padi_drv_c
    /// @{
    clocking chip_padi_drv_cb @(posedge ref_clk_i);
+      input io_in_i;
    endclocking
    modport chip_padi_drv_mp (clocking chip_padi_drv_cb);
    /// @}
@@ -57,6 +58,7 @@ interface uvma_cvmcu_io_if(
    /// @name Used by uvma_cvmcu_io_board_pado_drv_c
    /// @{
    clocking board_pado_drv_cb @(posedge ref_clk_i);
+      input io_out_o, pad_cfg_o, io_oe_o, slow_clk_o;
    endclocking
    modport board_pado_drv_mp (clocking board_pado_drv_cb);
    /// @}
@@ -94,7 +96,7 @@ interface uvma_cvmcu_io_if(
    `uvmx_if_signal_out(slow_clk_o, , pado_mon_mp.pado_mon_cb, chip_pado_drv_mp.chip_pado_drv_cb)
    /// @}
 
-endinterface : uvma_cvmcu_io_if
+endinterface
 
 
 `endif // __UVMA_CVMCU_IO_IF_SV__

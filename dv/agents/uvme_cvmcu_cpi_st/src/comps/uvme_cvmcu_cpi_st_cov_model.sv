@@ -24,31 +24,32 @@ class uvme_cvmcu_cpi_st_cov_model_c extends uvma_cvmcu_cpi_cov_model_c;
       bypass_mode_cpt     : coverpoint cfg.bypass_mode    ;
       is_active_cpt       : coverpoint cfg.is_active      ;
       reset_type_cpt      : coverpoint cfg.reset_type     ;
-      trn_log_enabled_cpt : coverpoint cfg.trn_log_enabled;
       drv_mode_cpt        : coverpoint cfg.drv_mode       ;
       drv_idle_random_cpt : coverpoint cfg.drv_idle_random;
-   endgroup : cvmcu_cpi_st_cfg_cg
+   endgroup
 
    /**
     * Agent context functional coverage.
     */
    covergroup cvmcu_cpi_st_cntxt_cg;
       reset_state_cpt : coverpoint cntxt.reset_state;
-   endgroup : cvmcu_cpi_st_cntxt_cg
+   endgroup
 
    /**
     * Sequence item functional coverage.
     */
    covergroup cvmcu_cpi_st_seq_item_cg;
-      data_size_cpt : coverpoint seq_item.data_size;
-   endgroup : cvmcu_cpi_st_seq_item_cg
+      // TODO Implement cvmcu_cpi_st_seq_item_cg
+      //      Ex: abc_cpt : coverpoint seq_item.abc;
+   endgroup
 
    /**
     * Monitor Transaction functional coverage.
     */
    covergroup cvmcu_cpi_st_mon_trn_cg;
-      data_size_cpt : coverpoint mon_trn.data_size;
-   endgroup : cvmcu_cpi_st_mon_trn_cg
+      // TODO Implement cvmcu_cpi_st_mon_trn_cg
+      //      Ex: abc_cpt : coverpoint mon_trn.abc;
+   endgroup
 
    /**
     * TX PHY Sequence Item functional coverage.
@@ -56,7 +57,7 @@ class uvme_cvmcu_cpi_st_cov_model_c extends uvma_cvmcu_cpi_cov_model_c;
    covergroup cvmcu_cpi_st_tx_phy_seq_item_cg;
       // TODO Implement cvmcu_cpi_st_tx_phy_seq_item_cg
       //      Ex: abc_cpt : coverpoint tx_phy_seq_item.abc;
-   endgroup : cvmcu_cpi_st_tx_phy_seq_item_cg
+   endgroup
 
    /**
     * TX PHY Sequence Item functional coverage.
@@ -64,7 +65,7 @@ class uvme_cvmcu_cpi_st_cov_model_c extends uvma_cvmcu_cpi_cov_model_c;
    covergroup cvmcu_cpi_st_rx_phy_seq_item_cg;
       // TODO Implement cvmcu_cpi_st_rx_phy_seq_item_cg
       //      Ex: abc_cpt : coverpoint rx_phy_seq_item.abc;
-   endgroup : cvmcu_cpi_st_rx_phy_seq_item_cg
+   endgroup
 
    /**
     * PHY Monitor Transaction functional coverage.
@@ -72,7 +73,7 @@ class uvme_cvmcu_cpi_st_cov_model_c extends uvma_cvmcu_cpi_cov_model_c;
    covergroup cvmcu_cpi_st_phy_mon_trn_cg;
       // TODO Implement cvmcu_cpi_st_phy_mon_trn_cg
       //      Ex: abc_cpt : coverpoint phy_mon_trn.abc;
-   endgroup : cvmcu_cpi_st_phy_mon_trn_cg
+   endgroup
 
 
    /**
@@ -101,7 +102,7 @@ class uvme_cvmcu_cpi_st_cov_model_c extends uvma_cvmcu_cpi_cov_model_c;
    virtual function void sample_phy_mon_trn(); cvmcu_cpi_st_phy_mon_trn_cg.sample(); endfunction
 /// @}
 
-endclass : uvme_cvmcu_cpi_st_cov_model_c
+endclass
 
 
 `endif // __UVME_CVMCU_CPI_ST_COV_MODEL_SV__

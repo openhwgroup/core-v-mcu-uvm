@@ -43,7 +43,7 @@ class uvme_cvmcu_chip_apb_gpio_apb_gpio_out2_reg_c extends uvmx_reg_c;
       );
    endfunction
 
-endclass : uvme_cvmcu_chip_apb_gpio_apb_gpio_out2_reg_c
+endclass
 
 
 `endif // __UVME_CVMCU_CHIP_APB_GPIO_APB_GPIO_OUT2_REG_SV__

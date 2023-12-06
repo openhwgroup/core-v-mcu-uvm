@@ -13,7 +13,11 @@
  * @defgroup uvme_cvmcu_io_st_comps Components
  * @defgroup uvme_cvmcu_io_st_misc  Miscellaneous
  * @defgroup uvme_cvmcu_io_st_obj   Objects
- * @defgroup uvme_cvmcu_io_st_seq   Sequences & Sequence Items
+ * @defgroup uvme_cvmcu_io_st_seq   Sequences
+ * @{
+ * @defgroup uvme_cvmcu_io_st_seq_functional   Functional
+ * @defgroup uvme_cvmcu_io_st_seq_error   Error
+ * @}
  * @}
  */
 
@@ -23,8 +27,6 @@
 `include "uvmx_macros.svh"
 `include "uvma_cvmcu_io_macros.svh"
 `include "uvme_cvmcu_io_st_macros.svh"
-
-// Interface(s)
 
 
  /**
@@ -50,13 +52,13 @@ package uvme_cvmcu_io_st_pkg;
    `include "uvme_cvmcu_io_st_cov_model.sv"
    `include "uvme_cvmcu_io_st_prd.sv"
    `include "uvme_cvmcu_io_st_sb.sv"
-   `include "uvme_cvmcu_io_st_vsqr.sv"
+   `include "uvme_cvmcu_io_st_sqr.sv"
    `include "uvme_cvmcu_io_st_env.sv"
 
    // Sequences
-   `include "uvme_cvmcu_io_st_vseq_lib.sv"
+   `include "uvme_cvmcu_io_st_seq_lib.sv"
 
-endpackage : uvme_cvmcu_io_st_pkg
+endpackage
 
 
 `endif // __UVME_CVMCU_IO_ST_PKG_SV__

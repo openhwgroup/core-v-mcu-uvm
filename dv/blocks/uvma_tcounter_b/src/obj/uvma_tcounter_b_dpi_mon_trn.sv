@@ -52,7 +52,7 @@ class uvma_tcounter_b_dpi_mon_trn_c extends uvmx_mon_trn_c #(
       `uvmx_metadata_field("counter_value_i", counter_value_i_str)
    endfunction
 
-endclass : uvma_tcounter_b_dpi_mon_trn_c
+endclass
 
 
 `endif // __UVMA_TCOUNTER_B_DPI_MON_TRN_SV__

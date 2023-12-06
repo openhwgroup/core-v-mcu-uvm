@@ -16,21 +16,10 @@ class uvma_cvmcu_cpi_cntxt_c extends uvmx_agent_cntxt_c #(
    .T_VIF(virtual uvma_cvmcu_cpi_if)
 );
 
-   /// @name Integrals
+   /// @name Sequences
    /// @{
-   /// @}
-
-   /// @name Objects
-   /// @{
-   // TODO Add state variables
-   //      Ex: uvma_cvmcu_cpi_word_b_t  drv_data_q[$]; ///< TODO Describe uvma_cvmcu_cpi_cntxt_c::drv_data_q
-   //          uvma_cvmcu_cpi_tx_phy_mon_trn_c  mon_q[$]; ///< TODO Describe uvma_cvmcu_cpi_cntxt_c::mon_q
-   /// @}
-
-   /// @name Virtual Sequences
-   /// @{
-   uvm_sequence_base  tx_drv_vseq; ///< TX Driver Virtual Sequence instance.
-   uvm_sequence_base  rx_drv_vseq; ///< RX Driver Virtual Sequence instance.
+   uvm_sequence_base  tx_drv_seq; ///< TX Driver Sequence instance.
+   uvm_sequence_base  rx_drv_seq; ///< RX Driver Sequence instance.
    /// @}
 
 
@@ -47,22 +36,18 @@ class uvma_cvmcu_cpi_cntxt_c extends uvmx_agent_cntxt_c #(
    endfunction
 
    /**
-    * Builds objects.
+    * Creates objects.
     */
-   virtual function void create_objects(uvma_cvmcu_cpi_cfg_c cfg);
+   virtual function void build(uvma_cvmcu_cpi_cfg_c cfg);
    endfunction
 
    /**
     * Returns all state variables to initial values.
     */
-   virtual function void reset();
-      // TODO Reset state variables
-      //       Ex: drv_data_q.delete();
-      //          mon_tx_q.delete();
-      //          mon_rx_q.delete();
+   virtual function void do_reset(uvma_cvmcu_cpi_cfg_c cfg);
    endfunction
 
-endclass : uvma_cvmcu_cpi_cntxt_c
+endclass
 
 
 `endif // __UVMA_CVMCU_CPI_CNTXT_SV__

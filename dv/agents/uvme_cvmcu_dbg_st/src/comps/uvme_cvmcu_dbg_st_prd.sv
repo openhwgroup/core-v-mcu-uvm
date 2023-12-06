@@ -57,7 +57,7 @@ class uvme_cvmcu_dbg_st_prd_c extends uvmx_agent_prd_c #(
    endfunction
 
    /**
-    *
+    * Starts prediction threads.
     */
    virtual task predict();
       fork
@@ -93,7 +93,7 @@ class uvme_cvmcu_dbg_st_prd_c extends uvmx_agent_prd_c #(
       end
    endtask
 
-endclass : uvme_cvmcu_dbg_st_prd_c
+endclass
 
 
 `endif // __UVME_CVMCU_DBG_ST_PRD_SV__

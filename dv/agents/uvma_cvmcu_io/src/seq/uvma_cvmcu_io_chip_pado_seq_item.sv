@@ -8,8 +8,8 @@
 
 
 /**
- * Sequence Item created by CORE-V-MCU IO Virtual Sequences for driving uvma_cvmcu_io_chip_pado_drv_c.
- * @ingroup uvma_cvmcu_io_seq
+ * Sequence Item created by CORE-V-MCU IO Sequences for driving uvma_cvmcu_io_chip_pado_drv_c.
+ * @ingroup uvma_cvmcu_io_seq_item
  */
 class uvma_cvmcu_io_chip_pado_seq_item_c extends uvmx_seq_item_c #(
    .T_CFG  (uvma_cvmcu_io_cfg_c  ),
@@ -58,24 +58,27 @@ class uvma_cvmcu_io_chip_pado_seq_item_c extends uvmx_seq_item_c #(
    endfunction
 
    /**
-    * Describes transaction as metadata for uvml_logs_metadata_logger_c.
+    * Trims data outside configured widths.
     */
-   virtual function uvmx_metadata_t get_metadata();
-      string io_out_o_str;
-      string pad_cfg_o_str;
-      string io_oe_o_str;
-      string slow_clk_o_str;
-      io_out_o_str = $sformatf("%h", io_out_o);
-      pad_cfg_o_str = `uvmx_ss2str(pad_cfg_o);
-      io_oe_o_str = $sformatf("%h", io_oe_o);
-      slow_clk_o_str = $sformatf("%b", slow_clk_o);
-      `uvmx_metadata_field("io_out_o", io_out_o_str)
-      `uvmx_metadata_field("pad_cfg_o", pad_cfg_o_str)
-      `uvmx_metadata_field("io_oe_o", io_oe_o_str)
-      `uvmx_metadata_field("slow_clk_o", slow_clk_o_str)
+   virtual function void trim();
    endfunction
 
-endclass : uvma_cvmcu_io_chip_pado_seq_item_c
+   /**
+    * Describes sequence item for logger.
+    */
+   virtual function uvmx_metadata_t get_metadata();
+      string  val_str;
+      val_str = $sformatf("%h", io_out_o);
+      `uvmx_metadata_field("io_out_o", val_str)
+      val_str = `uvmx_ss2str(pad_cfg_o);
+      `uvmx_metadata_field("pad_cfg_o", val_str)
+      val_str = $sformatf("%h", io_oe_o);
+      `uvmx_metadata_field("io_oe_o", val_str)
+      val_str = $sformatf("%b", slow_clk_o);
+      `uvmx_metadata_field("slow_clk_o", val_str)
+   endfunction
+
+endclass
 
 
 `endif // __UVMA_CVMCU_IO_CHIP_PADO_SEQ_ITEM_SV__

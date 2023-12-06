@@ -8,8 +8,9 @@
 
 
 /**
- * Sequence Item created by CORE-V-MCU IO Sequences. Analog of uvma_cvmcu_io_mon_trn_c
- * @ingroup uvma_cvmcu_io_seq
+ * Sequence Item created by CORE-V-MCU IO Sequences.
+ * Analog of uvma_cvmcu_io_mon_trn_c
+ * @ingroup uvma_cvmcu_io_seq_item
  */
 class uvma_cvmcu_io_seq_item_c extends uvmx_seq_item_c #(
    .T_CFG  (uvma_cvmcu_io_cfg_c  ),
@@ -18,32 +19,35 @@ class uvma_cvmcu_io_seq_item_c extends uvmx_seq_item_c #(
 
    /// @name Data
    /// @{
-   rand uvmx_byte_b_t  data[]; ///< Payload Data
-   // TODO Add data fields
-   //      Ex: rand uvma_cvmcu_io_user_b_t  user; ///< User Data
    /// @}
 
    /// @name Metadata
    /// @{
-   rand int unsigned  data_size    ; ///< Size of #data
-   rand int unsigned  bandwidth_pct; ///< % of #be to be used on average per active cycle
+   uvma_cvmcu_io_direction_enum  direction; ///< Directionality of this transaction
    /// @}
 
 
    `uvm_object_utils_begin(uvma_cvmcu_io_seq_item_c)
-      `uvm_field_int(data_size, UVM_DEFAULT + UVM_DEC + UVM_NOPACK)
-      `uvm_field_int(bandwidth_pct, UVM_DEFAULT + UVM_DEC + UVM_NOPACK)
-      `uvm_field_array_int(data, UVM_DEFAULT)
+      `uvm_field_enum(uvma_cvmcu_io_direction_enum, direction, UVM_DEFAULT + UVM_NOCOMPARE + UVM_NOPACK)
    `uvm_object_utils_end
 
 
    /**
-    * Bounds #data_size and #data.size().  Ensures #bandwitdh_pct is a legal value.
+    * Describes data space.
     */
-   constraint limits_cons {
-      data.size() == data_size;
-      data_size inside {[`UVMA_CVMCU_IO_DATA_MIN_SIZE:`UVMA_CVMCU_IO_DATA_MAX_SIZE]};
-      bandwidth_pct inside {[1:100]};
+   constraint data_cons {
+   }
+
+   /**
+    * Describes metadata space.
+    */
+   constraint metadata_cons {
+   }
+
+   /**
+    * TODO Implement or remove uvma_cvmcu_io_seq_item_c::rules_cons
+    */
+   constraint rules_cons {
    }
 
 
@@ -54,35 +58,49 @@ class uvma_cvmcu_io_seq_item_c extends uvmx_seq_item_c #(
       super.new(name);
    endfunction
 
+
    /**
-    * Copies data from monitor transaction.
+    * Performs randomization steps not possible or practical with constraints.
+    */
+   virtual function void post_randomize_work();
+      if (cfg.drv_mode == UVMA_CVMCU_IO_DRV_MODE_BOARD) begin
+         direction = UVMA_CVMCU_IO_DIRECTION_IG;
+      end
+      else begin
+         direction = UVMA_CVMCU_IO_DIRECTION_EG;
+      end
+   endfunction
+
+   /**
+    * Copies data from a monitor transaction instance.
     */
    virtual function void do_copy(uvm_object rhs);
       uvma_cvmcu_io_mon_trn_c  trn;
       super.do_copy(rhs);
       if ($cast(trn, rhs)) begin
-         data_size = trn.data_size;
-         data      = new[trn.data_size];
-         foreach (data[ii]) begin
-            data[ii] = trn.data[ii];
-         end
+         direction = trn.direction;
       end
    endfunction
 
    /**
-    * Describes transaction as metadata for logger.
+    * TODO Implement or remove uvma_cvmcu_io_seq_item_c::do_print()
     */
-   virtual function uvmx_metadata_t get_metadata();
-      string  data_size_str, bandwidth_pct_str, data_str;
-      data_size_str     = $sformatf("%0d", data_size);
-      bandwidth_pct_str = $sformatf("%0d", bandwidth_pct);
-      data_str          = $sformatf("%h%h ... %h%h", data[data_size-1], data[data_size-2], data[1], data[0]);
-      `uvmx_metadata_field("size" , data_size_str    )
-      `uvmx_metadata_field("band%", bandwidth_pct_str)
-      `uvmx_metadata_field("data" , data_str         )
+   virtual function void do_print(uvm_printer printer);
+      super.do_print(printer);
+      // Print dependent on configuration and/or fields
+      // Ex: if (cfg.enable_abc) begin
+      //        printer.print_field("abc", abc, 8);
+      //     end
    endfunction
 
-endclass : uvma_cvmcu_io_seq_item_c
+   /**
+    * Describes sequence item for logger.
+    */
+   virtual function uvmx_metadata_t get_metadata();
+      string  val_str;
+   endfunction
+
+endclass
 
 
 `endif // __UVMA_CVMCU_IO_SEQ_ITEM_SV__

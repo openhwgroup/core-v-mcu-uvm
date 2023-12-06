@@ -14,7 +14,7 @@
 class uvme_apb_timer_ss_env_c extends uvmx_ss_env_c #(
    .T_CFG      (uvme_apb_timer_ss_cfg_c           ),
    .T_CNTXT    (uvme_apb_timer_ss_cntxt_c         ),
-   .T_VSQR     (uvme_apb_timer_ss_vsqr_c          ),
+   .T_SQR      (uvme_apb_timer_ss_sqr_c           ),
    .T_PRD      (uvme_apb_timer_ss_prd_c           ),
    .T_SB       (uvme_apb_timer_ss_sb_c            ),
    .T_COV_MODEL(uvme_apb_timer_ss_cov_model_c     ),
@@ -114,7 +114,7 @@ class uvme_apb_timer_ss_env_c extends uvmx_ss_env_c #(
     * Connects register block to register adapters.
     */
    virtual function void connect_reg_block();
-      cntxt.reg_model.default_map.set_sequencer(proc_agent.vsequencer, proc_reg_adapter);
+      cntxt.reg_model.default_map.set_sequencer(proc_agent.sequencer, proc_reg_adapter);
    endfunction
 
    /**
@@ -135,12 +135,12 @@ class uvme_apb_timer_ss_env_c extends uvmx_ss_env_c #(
    /**
     * Assembles virtual sequencer from agent, sub-system and block sequencers.
     */
-   virtual function void assemble_vsequencer();
-      vsequencer.proc_agent_vsequencer = proc_agent.vsequencer;
-      vsequencer.counter_lo_b_env_vsequencer = counter_lo_b_env.vsequencer;
-      vsequencer.counter_hi_b_env_vsequencer = counter_hi_b_env.vsequencer;
-      vsequencer.prescaler_lo_b_env_vsequencer = prescaler_lo_b_env.vsequencer;
-      vsequencer.prescaler_hi_b_env_vsequencer = prescaler_hi_b_env.vsequencer;
+   virtual function void assemble_sequencer();
+      sequencer.proc_agent_sequencer = proc_agent.sequencer;
+      sequencer.counter_lo_b_env_sequencer = counter_lo_b_env.sequencer;
+      sequencer.counter_hi_b_env_sequencer = counter_hi_b_env.sequencer;
+      sequencer.prescaler_lo_b_env_sequencer = prescaler_lo_b_env.sequencer;
+      sequencer.prescaler_hi_b_env_sequencer = prescaler_hi_b_env.sequencer;
    endfunction
 
    /**
@@ -156,7 +156,7 @@ class uvme_apb_timer_ss_env_c extends uvmx_ss_env_c #(
       add_reg_test_ignore_list(UVM_DO_MEM_WALK         , uvme_apb_timer_ss_mem_walk_access_ignore_list);
    endfunction
 
-endclass : uvme_apb_timer_ss_env_c
+endclass
 
 
 `endif // __UVME_APB_TIMER_SS_ENV_SV__

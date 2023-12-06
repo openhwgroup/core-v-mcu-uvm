@@ -233,7 +233,7 @@ class uvme_cvmcu_chip_apb_gpio_reg_block_c extends uvmx_reg_block_c;
       );
    endfunction
 
-endclass : uvme_cvmcu_chip_apb_gpio_reg_block_c
+endclass
 
 
 `endif // __UVME_CVMCU_CHIP_APB_GPIO_REG_BLOCK_SV__

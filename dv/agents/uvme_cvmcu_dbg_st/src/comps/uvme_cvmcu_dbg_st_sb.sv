@@ -34,7 +34,7 @@ class uvme_cvmcu_dbg_st_sb_c extends uvmx_agent_sb_c #(
    endfunction
 
    /**
-    *
+    * Assigns configuration handles to components using UVM Configuration Database.
     */
    virtual function void assign_cfg();
       uvm_config_db#(uvmx_sb_simplex_cfg_c)::set(this, "sb_agent", "cfg", cfg.sb_agent_cfg);
@@ -42,7 +42,7 @@ class uvme_cvmcu_dbg_st_sb_c extends uvmx_agent_sb_c #(
       endfunction
 
    /**
-    *
+    * Assigns context handles to components using UVM Configuration Database.
     */
    virtual function void assign_cntxt();
       uvm_config_db#(uvmx_sb_simplex_cntxt_c)::set(this, "sb_agent", "cntxt", cntxt.sb_agent_cntxt);
@@ -59,7 +59,7 @@ class uvme_cvmcu_dbg_st_sb_c extends uvmx_agent_sb_c #(
    
    endfunction
 
-endclass : uvme_cvmcu_dbg_st_sb_c
+endclass
 
 
 `endif // __UVME_CVMCU_DBG_ST_SB_SV__

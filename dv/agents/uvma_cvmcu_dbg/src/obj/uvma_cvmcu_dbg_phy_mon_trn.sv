@@ -16,12 +16,12 @@ class uvma_cvmcu_dbg_phy_mon_trn_c extends uvmx_mon_trn_c #(
    .T_CNTXT(uvma_cvmcu_dbg_cntxt_c)
 );
 
-   /// @name SYS
+   /// @name Sys
    /// @{
    logic  debug_req_i; ///< Request input
    /// @}
 
-   /// @name CORE
+   /// @name Core
    /// @{
    logic  stoptimer_o; ///< Timer stop output
    /// @}
@@ -41,18 +41,17 @@ class uvma_cvmcu_dbg_phy_mon_trn_c extends uvmx_mon_trn_c #(
    endfunction
 
    /**
-    * Describes transaction as metadata for uvml_logs_metadata_logger_c.
+    * Describes sequence item for logger.
     */
    virtual function uvmx_metadata_t get_metadata();
-      string debug_req_i_str;
-      string stoptimer_o_str;
-      debug_req_i_str = $sformatf("%b", debug_req_i);
-      stoptimer_o_str = $sformatf("%b", stoptimer_o);
-      `uvmx_metadata_field("debug_req_i", debug_req_i_str)
-      `uvmx_metadata_field("stoptimer_o", stoptimer_o_str)
+      string  val_str;
+      val_str = $sformatf("%b", debug_req_i);
+      `uvmx_metadata_field("debug_req_i", val_str)
+      val_str = $sformatf("%b", stoptimer_o);
+      `uvmx_metadata_field("stoptimer_o", val_str)
    endfunction
 
-endclass : uvma_cvmcu_dbg_phy_mon_trn_c
+endclass
 
 
 `endif // __UVMA_CVMCU_DBG_PHY_MON_TRN_SV__

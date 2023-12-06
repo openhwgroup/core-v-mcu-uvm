@@ -16,7 +16,7 @@ class uvma_cvmcu_event_agent_c extends uvmx_agent_c #(
    .T_CFG      (uvma_cvmcu_event_cfg_c      ),
    .T_CNTXT    (uvma_cvmcu_event_cntxt_c    ),
    .T_SEQ_ITEM (uvma_cvmcu_event_seq_item_c ),
-   .T_VSQR     (uvma_cvmcu_event_vsqr_c     ),
+   .T_SQR      (uvma_cvmcu_event_sqr_c      ),
    .T_DRV      (uvma_cvmcu_event_drv_c      ),
    .T_MON      (uvma_cvmcu_event_mon_c      ),
    .T_LOGGER   (uvma_cvmcu_event_logger_c   ),
@@ -25,7 +25,8 @@ class uvma_cvmcu_event_agent_c extends uvmx_agent_c #(
 
    /// @name Ports
    /// @{
-   uvm_analysis_port #(uvma_cvmcu_event_mon_trn_c)  mon_trn_ap ; ///< Output Port for Monitor Transactions.
+   uvm_analysis_port #(uvma_cvmcu_event_mon_trn_c)  c2s_mon_trn_ap ; ///< Output Port for C2S Monitor Transactions.
+   uvm_analysis_port #(uvma_cvmcu_event_mon_trn_c)  s2c_mon_trn_ap ; ///< Output Port for S2C Monitor Transactions.
    uvm_analysis_port #(uvma_cvmcu_event_core_phy_seq_item_c)  core_phy_seq_item_ap; ///< Output Port for CORE PHY Sequence Items from #driver.
    uvm_analysis_port #(uvma_cvmcu_event_sys_phy_seq_item_c)  sys_phy_seq_item_ap; ///< Output Port for SYS PHY Sequence Items from #driver.
    uvm_analysis_port #(uvma_cvmcu_event_phy_mon_trn_c)  phy_mon_trn_ap; ///< Output Port for PHY Monitor Transactions from #monitor.
@@ -46,24 +47,25 @@ class uvma_cvmcu_event_agent_c extends uvmx_agent_c #(
     * Connects sequencer to driver's TLM ports.
     */
    virtual function void connect_drivers_sequencers();
-      driver.core_phy_driver.seq_item_port.connect(vsequencer.core_phy_sequencer.seq_item_export);
-      driver.sys_phy_driver.seq_item_port.connect(vsequencer.sys_phy_sequencer.seq_item_export);
+      driver.core_phy_driver.seq_item_port.connect(sequencer.core_phy_sequencer.seq_item_export);
+      driver.sys_phy_driver.seq_item_port.connect(sequencer.sys_phy_sequencer.seq_item_export);
    endfunction
 
    /**
     * Connects sequencer to monitor's TLM ports.
     */
-   virtual function void connect_monitor_vsequencer();
-      monitor.phy_monitor.ap.connect(vsequencer.phy_mon_trn_fifo.analysis_export);
+   virtual function void connect_monitor_sequencer();
+      monitor.phy_monitor.ap.connect(sequencer.phy_mon_trn_fifo.analysis_export);
    endfunction
 
    /**
     * Connects top-level ports to lower-level components'.
     */
    virtual function void connect_ports();
-      mon_trn_ap = vsequencer.mon_trn_fifo.put_ap;
-      core_phy_seq_item_ap = vsequencer.core_phy_sequencer.ap;
-      sys_phy_seq_item_ap = vsequencer.sys_phy_sequencer.ap;
+      c2s_mon_trn_ap = sequencer.c2s_mon_trn_fifo.put_ap;
+      s2c_mon_trn_ap = sequencer.s2c_mon_trn_fifo.put_ap;
+      core_phy_seq_item_ap = sequencer.core_phy_sequencer.ap;
+      sys_phy_seq_item_ap = sequencer.sys_phy_sequencer.ap;
       phy_mon_trn_ap = monitor.phy_monitor.ap;
    endfunction
 
@@ -72,7 +74,8 @@ class uvma_cvmcu_event_agent_c extends uvmx_agent_c #(
     */
    virtual function void connect_cov_model();
       seq_item_ap.connect(cov_model.seq_item_fifo.analysis_export);
-      mon_trn_ap .connect(cov_model.mon_trn_fifo .analysis_export);
+      c2s_mon_trn_ap.connect(cov_model.c2s_mon_trn_fifo.analysis_export);
+      s2c_mon_trn_ap.connect(cov_model.s2c_mon_trn_fifo.analysis_export);
       core_phy_seq_item_ap.connect(cov_model.core_phy_seq_item_fifo.analysis_export);
       sys_phy_seq_item_ap.connect(cov_model.sys_phy_seq_item_fifo.analysis_export);
       phy_mon_trn_ap.connect(cov_model.phy_mon_trn_fifo.analysis_export);
@@ -82,7 +85,8 @@ class uvma_cvmcu_event_agent_c extends uvmx_agent_c #(
     * Connects loggers to ports.
     */
    virtual function void connect_logger();
-      mon_trn_ap .connect(logger.mon_trn_logger.analysis_export);
+      c2s_mon_trn_ap.connect(logger.c2s_mon_trn_logger.analysis_export);
+      s2c_mon_trn_ap.connect(logger.s2c_mon_trn_logger.analysis_export);
       core_phy_seq_item_ap.connect(logger.core_phy_seq_item_logger.analysis_export);
       sys_phy_seq_item_ap.connect(logger.sys_phy_seq_item_logger.analysis_export);
       phy_mon_trn_ap.connect(logger.phy_mon_trn_logger.analysis_export);
@@ -94,8 +98,8 @@ class uvma_cvmcu_event_agent_c extends uvmx_agent_c #(
    virtual task start_sequences();
       if (cfg.is_active) begin
          case (cfg.drv_mode)
-            UVMA_CVMCU_EVENT_DRV_MODE_CORE: start_sequence(cfg.core_drv_vseq_type, cntxt.core_drv_vseq);
-            UVMA_CVMCU_EVENT_DRV_MODE_SYS: start_sequence(cfg.sys_drv_vseq_type, cntxt.sys_drv_vseq);
+            UVMA_CVMCU_EVENT_DRV_MODE_CORE: start_sequence(cfg.core_drv_seq_type, cntxt.core_drv_seq);
+            UVMA_CVMCU_EVENT_DRV_MODE_SYS: start_sequence(cfg.sys_drv_seq_type, cntxt.sys_drv_seq);
             default: begin
                `uvm_fatal("CVMCU_EVENT_AGENT", $sformatf("Invalid cfg.drv_mode: %s", cfg.drv_mode.name()))
             end
@@ -103,7 +107,7 @@ class uvma_cvmcu_event_agent_c extends uvmx_agent_c #(
       end
    endtask
 
-endclass : uvma_cvmcu_event_agent_c
+endclass
 
 
 `endif // __UVMA_CVMCU_EVENT_AGENT_SV__

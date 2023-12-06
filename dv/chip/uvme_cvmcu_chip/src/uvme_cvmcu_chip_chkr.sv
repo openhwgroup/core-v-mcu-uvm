@@ -26,7 +26,7 @@ module uvme_cvmcu_chip_chkr (
 
    // TODO Add assertions and/or functional coverage to uvme_cvmcu_chip_chkr
 
-endmodule : uvme_cvmcu_chip_chkr
+endmodule
 
 
 `endif // __UVME_CVMCU_CHIP_CHKR_SV__

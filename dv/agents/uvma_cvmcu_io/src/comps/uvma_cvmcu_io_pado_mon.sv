@@ -45,7 +45,7 @@ class uvma_cvmcu_io_pado_mon_c extends uvmx_mp_mon_c #(
    virtual function void process_trn(ref uvma_cvmcu_io_pado_mon_trn_c trn);
    endfunction
 
-endclass : uvma_cvmcu_io_pado_mon_c
+endclass
 
 
 `endif // __UVMA_CVMCU_IO_PADO_MON_SV__

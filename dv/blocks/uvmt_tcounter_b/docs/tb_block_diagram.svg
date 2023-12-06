@@ -81,8 +81,8 @@
 			<title>Sheet.159</title>
 			<desc>&#60;uvma_clk_if&#62; clk_i_if</desc>
 			<rect x="0" y="341.24" width="127.559" height="21.7443" class="st10"/>
-			<text x="40.22" y="348.51" class="st6">&#60;uvma_clk_if&#62; <tspan x="41.09" dy="1.14em" class="st7">clk_i_if</tspan><tspan
-						class="st7"></tspan><tspan class="st7"></tspan><tspan class="st7"></tspan></text>		</g>
+			<text x="40.22" y="348.51" class="st6">&#60;uvma_clk_if&#62; <tspan x="41.09" dy="1.14em" class="st7">clk_i</tspan><tspan
+						class="st7"></tspan><tspan class="st7"> </tspan><tspan class="st7"></tspan></text>		</g>
 		<g id="shape213-26" transform="translate(571.256,-32.2635)">
 			<title>Sheet.213</title>
 			<desc>&#60;uvma_reset_if&#62; reset_if</desc>
@@ -95,9 +95,9 @@
 			<text x="4" y="232.55" class="st2">&#60;uvmt_tcounter_b_base_test_c&#62;</text>		</g>
 		<g id="shape216-33" transform="translate(163.217,-188.169)">
 			<title>Sheet.216</title>
-			<desc>&#60;uvme_tcounter_b_vsqr_c&#62; vsequencer</desc>
+			<desc>&#60;uvme_tcounter_b_sqr_c&#62; sequencer</desc>
 			<rect x="0" y="327.067" width="181.268" height="35.9176" class="st11"/>
-			<text x="46.98" y="338.27" class="st6">&#60;uvme_tcounter_b_vsqr_c&#62; <tspan x="66.8" dy="1.14em" class="st7">vsequencer</tspan></text>		</g>
+			<text x="48.78" y="338.27" class="st6">&#60;uvme_tcounter_b_sqr_c&#62; <tspan x="69.17" dy="1.14em" class="st7">sequencer</tspan></text>		</g>
 		<g id="shape217-37" transform="translate(25.5866,-104.5)">
 			<title>Sheet.217</title>
 			<desc>&#60;uvmt_tcounter_b_test_cfg_c&#62; test_cfg</desc>
@@ -163,8 +163,8 @@
 			<title>Sheet.277</title>
 			<desc>&#60;uvma_clk_agent_c&#62; clk_i_agent</desc>
 			<rect x="0" y="327.067" width="87.6496" height="35.9176" class="st11"/>
-			<text x="9.49" y="338.27" class="st6">&#60;uvma_clk_agent_c&#62; <tspan x="12.17" dy="1.14em" class="st7">clk_i_agent</tspan><tspan
-						class="st7"></tspan><tspan class="st7"></tspan><tspan class="st7"></tspan></text>		</g>
+			<text x="9.49" y="338.27" class="st6">&#60;uvma_clk_agent_c&#62; <tspan x="12.17" dy="1.14em" class="st7">clk_i}}_agent</tspan><tspan
+						class="st7"></tspan><tspan class="st7"> </tspan><tspan class="st7"></tspan></text>		</g>
 		<g id="shape278-101" transform="translate(257.067,-104.472)">
 			<title>Sheet.278</title>
 			<desc>&#60;uvma_reset_agent_c&#62; reset_agent</desc>

@@ -16,6 +16,14 @@ typedef enum {
 } uvma_cvmcu_dbg_mode_enum;
 
 
+/**
+ * Event types
+ */
+typedef enum {
+   UVMA_CVMCU_DBG_DEBUG_REQ,
+   UVMA_CVMCU_DBG_STOP_TIMER
+} uvma_cvmcu_dbg_event_type_enum;
+
 
 /// @name Logic vectors
 /// @{

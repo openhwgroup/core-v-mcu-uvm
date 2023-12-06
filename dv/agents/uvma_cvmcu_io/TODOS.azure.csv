@@ -1,19 +1,30 @@
-﻿Work Item Type,Title,Priority
-Issue,Customize transaction logs for PADI monitor transaction,1
-Issue,Customize transaction logs for BOARD PADI sequence item,1
-Issue,Customize transaction logs for CHIP PADI sequence item,1
-Issue,Customize transaction logs for PADO monitor transaction,1
-Issue,Customize transaction logs for BOARD PADO sequence item,1
-Issue,Customize transaction logs for CHIP PADO sequence item,1
-Issue,Implement sequence item,1
-Issue,Implement monitor transaction,1
-Issue,Add configuration parameters if needed,1
-Issue,Add state variables if needed,1
-Issue,Implement 'BOARD' Driver Virtual Sequence,1
-Issue,Implement 'CHIP' Driver Virtual Sequence,1
-Issue,Implement idle virtual sequence,1
-Issue,Implement monitor virtual sequence,1
-Issue,Implement fixed stimulus virtual sequence,1
-Issue,Implement random stimulus virtual sequence,1
-Issue,Implement fixed illegal stimulus virtual sequence,1
-Issue,Implement random illegal stimulus virtual sequence,1
+Work Item Type,Title,Priority
+Issue,Describe CORE-V-MCU IO UVM Agent",1
+Issue,Add assertions and/or functional coverage to uvma_cvmcu_io_if_chkr,1
+Issue,Implement uvma_cvmcu_io_rand_ill_stim_seq_c illegal sequence item generation,1
+Issue,Implement uvma_cvmcu_io_rand_ill_stim_seq_c legal sequence item generation,1
+Issue,Describe uvma_cvmcu_io_fix_stim_seq_c::body(),1
+Issue,Implement uvma_cvmcu_io_fix_stim_seq_c::body(),1
+Issue,Implement random idles for BOARD PADI,1
+Issue,Implement random idles for BOARD PADO,1
+Issue,Implement zero'd idles for BOARD PADI,1
+Issue,Implement zero'd idles for BOARD PADO,1
+Issue,Implement random idles for CHIP PADI,1
+Issue,Implement random idles for CHIP PADO,1
+Issue,Implement zero'd idles for CHIP PADI,1
+Issue,Implement zero'd idles for CHIP PADO,1
+Issue,Describe uvma_cvmcu_io_fix_ill_stim_seq_c::body(),1
+Issue,Implement uvma_cvmcu_io_fix_ill_stim_seq_c::body(),1
+Issue,Implement uvma_cvmcu_io_board_drv_seq_c::drive(),1
+Issue,Implement uvma_cvmcu_io_board_drv_seq_c::drive_pado(),1
+Issue,Implement or remove uvma_cvmcu_io_seq_item_c::rules_cons,1
+Issue,Implement or remove uvma_cvmcu_io_seq_item_c::do_print(),1
+Issue,Implement uvma_cvmcu_io_chip_drv_seq_c::drive(),1
+Issue,Implement uvma_cvmcu_io_chip_drv_seq_c::drive_padi(),1
+Issue,Implement uvma_cvmcu_io_rand_stim_seq_c sequence item generation,1
+Issue,Describe uvma_cvmcu_io_mon_seq_c::monitor_padi(),1
+Issue,Implement uvma_cvmcu_io_mon_seq_c::monitor_padi(),1
+Issue,Describe uvma_cvmcu_io_mon_seq_c::monitor_pado(),1
+Issue,Implement uvma_cvmcu_io_mon_seq_c::monitor_pado(),1
+Issue,Implement or remove uvma_cvmcu_io_mon_trn_c::do_compare(),1
+Issue,Implement or remove uvma_cvmcu_io_mon_trn_c::do_print(),1

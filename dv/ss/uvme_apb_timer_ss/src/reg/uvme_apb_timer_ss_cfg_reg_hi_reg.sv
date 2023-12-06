@@ -183,7 +183,7 @@ class uvme_apb_timer_ss_cfg_reg_hi_reg_c extends uvmx_reg_c;
       );
    endfunction
 
-endclass : uvme_apb_timer_ss_cfg_reg_hi_reg_c
+endclass
 
 
 `endif // __UVME_APB_TIMER_SS_CFG_REG_HI_REG_SV__

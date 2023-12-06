@@ -56,7 +56,7 @@ class uvma_cvmcu_dbg_logger_c extends uvmx_agent_logger_c #(
       sys_phy_seq_item_logger.set_filename("sys_phy.seq_item");
    endfunction
 
-endclass : uvma_cvmcu_dbg_logger_c
+endclass
 
 
 `endif // __UVMA_CVMCU_DBG_LOGGER_SV__

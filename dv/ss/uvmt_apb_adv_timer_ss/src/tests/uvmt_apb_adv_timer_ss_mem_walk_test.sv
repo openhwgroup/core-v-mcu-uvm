@@ -23,7 +23,7 @@ class uvmt_apb_adv_timer_ss_mem_walk_test_c extends uvmt_apb_adv_timer_ss_base_t
       super.new(name, parent);
    endfunction
 
-endclass : uvmt_apb_adv_timer_ss_mem_walk_test_c
+endclass
 
 
 `endif // __UVMT_APB_ADV_TIMER_SS_MEM_WALK_TEST_SV__

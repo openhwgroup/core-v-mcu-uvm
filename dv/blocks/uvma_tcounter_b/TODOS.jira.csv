@@ -1,18 +1,15 @@
-﻿IssueType,Issue ID,Parent ID,Status,Summary,Component,Description
-task,0,,To Do,Customize transaction logs for physical layer,uvma_tcounter_b,Modify `get_metadata()` in generated code to make logs more useful for debugging
-Sub-task,,0,To Do,Control Plane Sequence Item,uvma_tcounter_b,`src/seq/uvma_tcounter_b_cp_seq_item.sv`
-Sub-task,,0,To Do,Control Plane Monitor Transaction,uvma_tcounter_b,`src/obj/uvma_tcounter_b_cp_mon_trn.sv`
-Sub-task,,0,To Do,Data Plane Input Sequence Item,uvma_tcounter_b,`src/obj/uvma_tcounter_b_dpi_seq_item.sv`
-Sub-task,,0,To Do,Data Plane Input Monitor Transaction,uvma_tcounter_b,`src/obj/uvma_tcounter_b_dpi_mon_trn.sv`
-Sub-task,,0,To Do,Data Plane Output Sequence Item,uvma_tcounter_b,`src/obj/uvma_tcounter_b_dpo_seq_item.sv`
-Sub-task,,0,To Do,Data Plane Output Monitor Transaction,uvma_tcounter_b,`src/obj/uvma_tcounter_b_dpo_mon_trn.sv`
-task,1,,To Do,Implement logical transaction model,uvma_tcounter_b,
-Sub-task,,1,To Do,Sequence item,uvma_tcounter_b,`src/seq/uvma_tcounter_b_seq_item.sv`
-Sub-task,,1,To Do,Monitor Transaction,uvma_tcounter_b,`src/seq/uvma_tcounter_b_mon_trn.sv`
-task,2,,To Do,Protocol implementation,uvma_tcounter_b,
-Sub-task,,2,To Do,Add configuration parameters if needed,uvma_tcounter_b,`src/obj/uvma_tcounter_b_cfg.sv`
-Sub-task,,2,To Do,Add state variables if needed,uvma_tcounter_b,`src/obj/uvma_tcounter_b_cntxt.sv`
-Sub-task,,2,To Do,Input driver virtual sequence,uvma_tcounter_b,`src/seq/uvma_tcounter_b_in_drv_vseq.sv`
-Sub-task,,2,To Do,Output driver virtual sequence,uvma_tcounter_b,`src/seq/uvma_tcounter_b_out_drv_vseq.sv`
-Sub-task,,2,To Do,Idle virtual sequence,uvma_tcounter_b,`src/seq/uvma_tcounter_b_idle_vseq.sv`
-Sub-task,,2,To Do,Monitor virtual sequence,uvma_tcounter_b,`src/seq/uvma_tcounter_b_mon_vseq.sv`
+IssueType,Issue ID,Parent ID,Status,Summary,Component,Description
+task,0,,To Do,Describe Timer unit counter UVM Agent",uvma_tcounter_b,ip.yml,
+task,1,,To Do,Add assertions and/or functional coverage to uvme_tcounter_b_chkr,uvma_tcounter_b,uvma_tcounter_b_if_chkr.sv,
+task,2,,To Do,Implement uvma_tcounter_b_mon_seq_c::monitor(),uvma_tcounter_b,uvma_tcounter_b_mon_seq.sv,
+task,3,,To Do,Implement or remove uvma_tcounter_b_seq_item_c::rules_cons,uvma_tcounter_b,uvma_tcounter_b_seq_item.sv,
+task,4,,To Do,Implement or remove uvma_tcounter_b_seq_item_c::post_randomize(),uvma_tcounter_b,uvma_tcounter_b_seq_item.sv,
+task,5,,To Do,Implement or remove uvma_tcounter_b_seq_item_c::do_print(),uvma_tcounter_b,uvma_tcounter_b_seq_item.sv,
+task,6,,To Do,Describe uvma_tcounter_b_in_drv_seq_c::drive_item(),uvma_tcounter_b,uvma_tcounter_b_in_drv_seq.sv,
+task,7,,To Do,Implement uvma_tcounter_b_in_drv_seq_c::drive(),uvma_tcounter_b,uvma_tcounter_b_in_drv_seq.sv,
+task,8,,To Do,Describe uvma_tcounter_b_out_drv_seq_c::drive(),uvma_tcounter_b,uvma_tcounter_b_out_drv_seq.sv,
+task,9,,To Do,Remove this line after implementing uvma_tcounter_b_out_drv_seq_c::drive(),uvma_tcounter_b,uvma_tcounter_b_out_drv_seq.sv,
+task,10,,To Do,Implement uvma_tcounter_b_out_drv_seq_c::drive(),uvma_tcounter_b,uvma_tcounter_b_out_drv_seq.sv,
+task,11,,To Do,Implement or remove uvma_tcounter_b_mon_trn_c::do_compare(),uvma_tcounter_b,uvma_tcounter_b_mon_trn.sv,
+task,12,,To Do,Implement or remove uvma_tcounter_b_mon_trn_c::do_print(),uvma_tcounter_b,uvma_tcounter_b_mon_trn.sv,
+task,13,,To Do,Implement or remove uvma_tcounter_b_cfg_c::post_randomize(),uvma_tcounter_b,uvma_tcounter_b_cfg.sv,

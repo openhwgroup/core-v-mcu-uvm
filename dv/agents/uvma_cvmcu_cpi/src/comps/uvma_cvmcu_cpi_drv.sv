@@ -41,7 +41,7 @@ class uvma_cvmcu_cpi_drv_c extends uvmx_drv_c #(
       rx_phy_driver = uvma_cvmcu_cpi_rx_phy_drv_c::type_id::create("rx_phy_driver", this);
    endfunction
 
-endclass : uvma_cvmcu_cpi_drv_c
+endclass
 
 
 `endif // __UVMA_CVMCU_CPI_DRV_SV__

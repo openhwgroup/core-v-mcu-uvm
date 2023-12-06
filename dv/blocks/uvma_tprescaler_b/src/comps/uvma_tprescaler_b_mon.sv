@@ -44,7 +44,7 @@ class uvma_tprescaler_b_mon_c extends uvmx_mon_c #(
       dpo_monitor = uvma_tprescaler_b_dpo_mon_c::type_id::create("dpo_monitor", this);
    endfunction
 
-endclass : uvma_tprescaler_b_mon_c
+endclass
 
 
 `endif // __UVMA_TPRESCALER_B_MON_SV__

@@ -1,0 +1,3 @@
+title,description,due_date
+Implement or remove uvmt_cvmcu_chip_test_cfg_c::rules_cons,uvmt_cvmcu_chip_test_cfg.sv,
+Implement or remove uvmt_cvmcu_chip_test_cfg_c::post_randomize_work(),uvmt_cvmcu_chip_test_cfg.sv,

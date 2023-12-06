@@ -17,10 +17,6 @@ class uvme_apb_adv_timer_ss_cntxt_c extends uvmx_ss_env_cntxt_c #(
    .T_PROBE_VIF(virtual uvme_apb_adv_timer_ss_probe_if)
 );
 
-   /// @name Integrals
-   /// @{
-   /// @}
-
    /// @name Agents
    /// @{
    uvma_apb_cntxt_c  proc_agent_cntxt; ///< Processor access agent context
@@ -55,34 +51,30 @@ class uvme_apb_adv_timer_ss_cntxt_c extends uvmx_ss_env_cntxt_c #(
    endfunction
 
    /**
-    * Creates agent, sub-system, block and scoreboard context objects.
+    * Creates objects.
     */
-   virtual function void create_objects(uvme_apb_adv_timer_ss_cfg_c cfg);
+   virtual function void build(uvme_apb_adv_timer_ss_cfg_c cfg);
       proc_agent_cntxt = uvma_apb_cntxt_c::type_id::create("proc_cntxt");
       irq_events_agent_cntxt = uvma_irq_cntxt_c::type_id::create("irq_events_cntxt");
       adv_timer0_b_env_cntxt = uvme_adv_timer_b_cntxt_c::type_id::create("adv_timer0_b_env_cntxt");
       adv_timer1_b_env_cntxt = uvme_adv_timer_b_cntxt_c::type_id::create("adv_timer1_b_env_cntxt");
       adv_timer2_b_env_cntxt = uvme_adv_timer_b_cntxt_c::type_id::create("adv_timer2_b_env_cntxt");
       adv_timer3_b_env_cntxt = uvme_adv_timer_b_cntxt_c::type_id::create("adv_timer3_b_env_cntxt");
-      proc_agent_cntxt.create_objects(cfg.proc_agent_cfg);
-      irq_events_agent_cntxt.create_objects(cfg.irq_events_agent_cfg);
-      adv_timer0_b_env_cntxt.create_objects(cfg.adv_timer0_b_env_cfg);
-      adv_timer1_b_env_cntxt.create_objects(cfg.adv_timer1_b_env_cfg);
-      adv_timer2_b_env_cntxt.create_objects(cfg.adv_timer2_b_env_cfg);
-      adv_timer3_b_env_cntxt.create_objects(cfg.adv_timer3_b_env_cfg);
    endfunction
 
    /**
     * Returns all state variables to initial values.
     */
-   virtual function void reset();
+   virtual function void do_reset(uvme_apb_adv_timer_ss_cfg_c cfg);
+      proc_agent_cntxt.reset();
+      irq_events_agent_cntxt.reset();
       adv_timer0_b_env_cntxt.reset();
       adv_timer1_b_env_cntxt.reset();
       adv_timer2_b_env_cntxt.reset();
       adv_timer3_b_env_cntxt.reset();
    endfunction
 
-endclass : uvme_apb_adv_timer_ss_cntxt_c
+endclass
 
 
 `endif // __UVME_APB_ADV_TIMER_SS_CNTXT_SV__

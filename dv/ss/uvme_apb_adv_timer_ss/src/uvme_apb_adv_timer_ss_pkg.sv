@@ -14,7 +14,7 @@
  * @defgroup uvme_apb_adv_timer_ss_misc  Miscellaneous
  * @defgroup uvme_apb_adv_timer_ss_obj   Objects
  * @defgroup uvme_apb_adv_timer_ss_reg   Register Model
- * @defgroup uvme_apb_adv_timer_ss_seq   Sequences & Sequence Items
+ * @defgroup uvme_apb_adv_timer_ss_seq   Sequences
  * @}
  */
 
@@ -59,19 +59,19 @@ package uvme_apb_adv_timer_ss_pkg;
    `include "uvme_apb_adv_timer_ss_cntxt.sv"
 
    // Components
-   `include "uvme_apb_adv_timer_ss_vsqr.sv"
+   `include "uvme_apb_adv_timer_ss_sqr.sv"
    `include "uvme_apb_adv_timer_ss_prd.sv"
    `include "uvme_apb_adv_timer_ss_sb.sv"
    `include "uvme_apb_adv_timer_ss_cov_model.sv"
    `include "uvme_apb_adv_timer_ss_env.sv"
 
    // Sequences
-   `include "uvme_apb_adv_timer_ss_base_vseq.sv"
-   `include "uvme_apb_adv_timer_ss_init_vseq.sv"
-   `include "uvme_apb_adv_timer_ss_cfg_vseq.sv"
-   `include "uvme_apb_adv_timer_ss_vseq_lib.sv"
+   `include "uvme_apb_adv_timer_ss_base_seq.sv"
+   `include "uvme_apb_adv_timer_ss_init_seq.sv"
+   `include "uvme_apb_adv_timer_ss_cfg_seq.sv"
+   `include "uvme_apb_adv_timer_ss_seq_lib.sv"
 
-endpackage : uvme_apb_adv_timer_ss_pkg
+endpackage
 
 
 // Module(s) / Checker(s)

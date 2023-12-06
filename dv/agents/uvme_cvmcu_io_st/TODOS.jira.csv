@@ -1,10 +1,18 @@
-﻿IssueType,Issue ID,Parent ID,Status,Summary,Component,Description
-task,0,,To Do,Functional testing,uvmt_cvmcu_io_st,Run and debug tests with legal stimulus only.
-Sub-task,,0,To Do,Fixed stimulus test,uvmt_cvmcu_io_st,`src/tests/uvmt_cvmcu_io_st_fix_stim_test.sv`
-Sub-task,,0,To Do,Random stimulus test,uvmt_cvmcu_io_st,`src/tests/uvmt_cvmcu_io_st_rand_stim_test.sv`
-Sub-task,,0,To Do,Functional regression,uvmt_cvmcu_io_st,Add tests to suite if needed. `src/tests/ts.yml`
-task,1,,To Do,Error testing,uvmt_cvmcu_io_st,"Add self-checking, run and debug tests with legal and illegal stimulus."
-Sub-task,,1,To Do,Add self-checking to base test,uvmt_cvmcu_io_st,`src/tests/uvmt_cvmcu_io_st_base_test.sv`
-Sub-task,,1,To Do,Fixed illegal stimulus test,uvmt_cvmcu_io_st,`src/tests/uvmt_cvmcu_io_st_fix_ill_stim_test.sv`
-Sub-task,,1,To Do,Random illegal stimulus test,uvmt_cvmcu_io_st,`src/tests/uvmt_cvmcu_io_st_rand_ill_stim_test.sv`
-Sub-task,,1,To Do,Full regression,uvmt_cvmcu_io_st,Add error tests to suite first. `src/tests/ts.yml`
+IssueType,Issue ID,Parent ID,Status,Summary,Component,Description
+task,0,,To Do,Describe CORE-V-MCU IO UVM Agent Self-Test Environment",uvme_cvmcu_io_st,ip.yml,
+task,1,,To Do,Implement or remove uvme_cvmcu_io_st_cfg_c::rules_cons,uvme_cvmcu_io_st,uvme_cvmcu_io_st_cfg.sv,
+task,2,,To Do,Complete uvme_cvmcu_io_st_cfg_c scoreboard logging configuration,uvme_cvmcu_io_st,uvme_cvmcu_io_st_cfg.sv,
+task,3,,To Do,Implement uvme_cvmcu_io_st_cfg_c::post_randomize() or remove altogether,uvme_cvmcu_io_st,uvme_cvmcu_io_st_cfg.sv,
+task,4,,To Do,Implement cvmcu_io_st_seq_item_cg,uvme_cvmcu_io_st,uvme_cvmcu_io_st_cov_model.sv,
+task,5,,To Do,Implement cvmcu_io_st_ig_mon_trn_cg,uvme_cvmcu_io_st,uvme_cvmcu_io_st_cov_model.sv,
+task,6,,To Do,Implement cvmcu_io_st_eg_mon_trn_cg,uvme_cvmcu_io_st,uvme_cvmcu_io_st_cov_model.sv,
+task,7,,To Do,Implement cvmcu_io_st_board_padi_seq_item_cg,uvme_cvmcu_io_st,uvme_cvmcu_io_st_cov_model.sv,
+task,8,,To Do,Implement cvmcu_io_st_board_pado_seq_item_cg,uvme_cvmcu_io_st,uvme_cvmcu_io_st_cov_model.sv,
+task,9,,To Do,Implement cvmcu_io_st_chip_padi_seq_item_cg,uvme_cvmcu_io_st,uvme_cvmcu_io_st_cov_model.sv,
+task,10,,To Do,Implement cvmcu_io_st_chip_pado_seq_item_cg,uvme_cvmcu_io_st,uvme_cvmcu_io_st_cov_model.sv,
+task,11,,To Do,Implement cvmcu_io_st_padi_mon_trn_cg,uvme_cvmcu_io_st,uvme_cvmcu_io_st_cov_model.sv,
+task,12,,To Do,Implement cvmcu_io_st_pado_mon_trn_cg,uvme_cvmcu_io_st,uvme_cvmcu_io_st_cov_model.sv,
+task,13,,To Do,Describe uvme_cvmcu_io_st_prd_c::predict_board(),uvme_cvmcu_io_st,uvme_cvmcu_io_st_prd.sv,
+task,14,,To Do,Describe uvme_cvmcu_io_st_prd_c::predict_chip(),uvme_cvmcu_io_st,uvme_cvmcu_io_st_prd.sv,
+task,15,,To Do,Describe uvme_cvmcu_io_st_prd_c::predict_ig(),uvme_cvmcu_io_st,uvme_cvmcu_io_st_prd.sv,
+task,16,,To Do,Describe uvme_cvmcu_io_st_prd_c::predict_eg(),uvme_cvmcu_io_st,uvme_cvmcu_io_st_prd.sv,

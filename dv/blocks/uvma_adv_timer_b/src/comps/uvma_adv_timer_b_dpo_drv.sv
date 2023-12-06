@@ -30,21 +30,13 @@ class uvma_adv_timer_b_dpo_drv_c extends uvmx_mp_drv_c #(
    endfunction
 
    /**
-    * Trims data outside configured widths.
-    */
-   virtual function void process_item(ref uvma_adv_timer_b_dpo_seq_item_c item);
-
-      `uvmx_trim(item.counter_o, cfg.num_bits)
-   endfunction
-
-   /**
-    * Drives the Data Plane Output driver clocking block (dpo_drv_cb) on each clock cycle.
+    * Drives the Data Plane Output driver clocking block (dpo_drv_cb) at the beginning of each clock cycle.
     */
    virtual task drive_item(ref uvma_adv_timer_b_dpo_seq_item_c item);
    endtask
 
    /**
-    * Samples the Data Plane Output driver clocking block (dpo_drv_cb) after each clock cycle.
+    * Samples the Data Plane Output driver clocking block (dpo_drv_cb) at the end of each clock cycle.
     */
    virtual task sample_post_clk(ref uvma_adv_timer_b_dpo_seq_item_c item);
       `uvmx_mp_mon_signal(item, counter_o)
@@ -52,7 +44,7 @@ class uvma_adv_timer_b_dpo_drv_c extends uvmx_mp_drv_c #(
       `uvmx_mp_mon_signal(item, status_o)
    endtask
 
-endclass : uvma_adv_timer_b_dpo_drv_c
+endclass
 
 
 `endif // __UVMA_ADV_TIMER_B_DPO_DRV_SV__

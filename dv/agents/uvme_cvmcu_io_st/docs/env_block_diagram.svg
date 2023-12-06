@@ -2,7 +2,7 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
 		width="11.0525in" height="4.98343in" viewBox="0 0 795.778 358.807" xml:space="preserve" color-interpolation-filters="sRGB"
-		class="st31">
+		class="st30">
 	<title>uvme_cvmcu_io_st_env_c</title>
 
 	<style type="text/css">
@@ -31,13 +31,12 @@
 		.st22 {fill:#7030a0;font-family:Calibri;font-size:0.75em}
 		.st23 {fill:#f2f2f2;stroke:#ffc000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1}
 		.st24 {fill:#ffffff;stroke:#ffc000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1}
-		.st25 {fill:#ffffff;stroke:none;stroke-linecap:butt}
-		.st26 {fill:#0070c0;font-family:Calibri;font-size:0.75em}
-		.st27 {fill:#f2f2f2;stroke:#0070c0;stroke-linecap:round;stroke-linejoin:round;stroke-width:1}
-		.st28 {marker-end:url(#mrkr5-168);stroke:#ffc000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1}
-		.st29 {fill:#ffc000;fill-opacity:1;stroke:#ffc000;stroke-opacity:1;stroke-width:0.28409090909091}
-		.st30 {fill:#f2f2f2;stroke:#ff0000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1}
-		.st31 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+		.st25 {fill:#0070c0;font-family:Calibri;font-size:0.75em}
+		.st26 {fill:#f2f2f2;stroke:#0070c0;stroke-linecap:round;stroke-linejoin:round;stroke-width:1}
+		.st27 {marker-end:url(#mrkr5-168);stroke:#ffc000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1}
+		.st28 {fill:#ffc000;fill-opacity:1;stroke:#ffc000;stroke-opacity:1;stroke-width:0.28409090909091}
+		.st29 {fill:#f2f2f2;stroke:#ff0000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1}
+		.st30 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
 	]]>
 	</style>
 
@@ -57,7 +56,7 @@
 		<marker id="mrkr5-96" class="st21" refX="-6.16" orient="auto" markerUnits="strokeWidth" overflow="visible">
 			<use xlink:href="#lend5" transform="scale(-3.52,-3.52) "/>
 		</marker>
-		<marker id="mrkr5-168" class="st29" refX="-6.16" orient="auto" markerUnits="strokeWidth" overflow="visible">
+		<marker id="mrkr5-168" class="st28" refX="-6.16" orient="auto" markerUnits="strokeWidth" overflow="visible">
 			<use xlink:href="#lend5" transform="scale(-3.52,-3.52) "/>
 		</marker>
 	</defs>
@@ -70,9 +69,9 @@
 			<text x="4" y="50" class="st2">&#60;uvme_cvmcu_io_st_env_c&#62;</text>		</g>
 		<g id="shape74-4" transform="translate(328.856,-290.868)">
 			<title>Sheet.74</title>
-			<desc>&#60;uvme_cvmcu_io_st_vsqr_c&#62; vsequencer</desc>
+			<desc>&#60;uvme_cvmcu_io_st_sqr_c&#62; sequencer</desc>
 			<rect x="0" y="322.441" width="109.097" height="36.3657" class="st3"/>
-			<text x="6" y="337.02" class="st4">&#60;uvme_cvmcu_io_st_vsqr_c&#62; <tspan x="30.72" dy="1.14em" class="st5">vsequencer</tspan></text>		</g>
+			<text x="7.8" y="337.02" class="st4">&#60;uvme_cvmcu_io_st_sqr_c&#62; <tspan x="33.08" dy="1.14em" class="st5">sequencer</tspan></text>		</g>
 		<g id="shape75-8" transform="translate(530.869,-292.307)">
 			<title>Sheet.75</title>
 			<desc>&#60;uvme_cvmcu_io_st_cfg_c&#62; cfg</desc>
@@ -229,8 +228,8 @@
 			<title>Dynamic connector.43</title>
 			<desc>chip</desc>
 			<path d="M0 351.72 L37.58 351.72" class="st18"/>
-			<rect x="-0.917442" y="346.321" width="45.5757" height="10.7998" class="st25"/>
-			<text x="-0.92" y="354.42" class="st26">chip</text>		</g>
+			<rect x="-0.917442" y="346.321" width="45.5757" height="10.7998" class="st8"/>
+			<text x="-0.92" y="354.42" class="st25">chip</text>		</g>
 		<g id="shape110-127" transform="translate(705.156,235.229) rotate(90)">
 			<title>Diamond.61</title>
 			<path d="M7.36 358.81 L14.72 351.45 L7.36 344.08 L0 351.45 L7.36 358.81 Z" class="st17"/>
@@ -257,7 +256,7 @@
 			<g id="shape116-142" transform="translate(23.1024,-18.6816)">
 				<title>Sheet.116</title>
 				<desc>&#60;uvma_cvmcu_io_agent_c&#62; chip_agent</desc>
-				<rect x="0" y="322.441" width="123.222" height="36.3657" class="st27"/>
+				<rect x="0" y="322.441" width="123.222" height="36.3657" class="st26"/>
 				<text x="15.67" y="337.02" class="st4">&#60;uvma_cvmcu_io_agent_c&#62; <tspan x="21.23" dy="1.14em" class="st5">chip_agent</tspan></text>			</g>
 			<g id="shape117-146" transform="translate(497.792,314.581) rotate(90)">
 				<title>Diamond.43</title>
@@ -288,18 +287,18 @@
 		</g>
 		<g id="shape123-163" transform="translate(630.905,-214.731)">
 			<title>Dynamic connector.71</title>
-			<path d="M0 358.81 L0 380.63 L-70 380.63 A2.3622 2.3622 -180 1 0 -74.72 380.63 L-84.25 380.63" class="st28"/>
+			<path d="M0 358.81 L0 380.63 L-70 380.63 A2.3622 2.3622 -180 1 0 -74.72 380.63 L-84.25 380.63" class="st27"/>
 		</g>
 		<g id="shape124-169" transform="translate(682.956,-214.731)">
 			<title>Dynamic connector.72</title>
-			<path d="M0 358.81 L0 457.38 L-99.49 457.38 A2.3622 2.3622 -180 0 0 -104.22 457.38 L-136.25 457.38" class="st28"/>
+			<path d="M0 358.81 L0 457.38 L-99.49 457.38 A2.3622 2.3622 -180 0 0 -104.22 457.38 L-136.25 457.38" class="st27"/>
 		</g>
 		<g id="group125-174" transform="translate(18.375,-202.408)">
 			<title>Sheet.125</title>
 			<g id="shape126-175" transform="translate(37.6106,-18.6816)">
 				<title>Sheet.126</title>
 				<desc>&#60;uvma_cvmcu_io_agent_c&#62; board_agent</desc>
-				<rect x="0" y="322.441" width="123.222" height="36.3657" class="st30"/>
+				<rect x="0" y="322.441" width="123.222" height="36.3657" class="st29"/>
 				<text x="15.67" y="337.02" class="st4">&#60;uvma_cvmcu_io_agent_c&#62; <tspan x="21.23" dy="1.14em" class="st5">board_agent</tspan></text>			</g>
 			<g id="shape127-179" transform="translate(512.3,314.581) rotate(90)">
 				<title>Diamond.32</title>

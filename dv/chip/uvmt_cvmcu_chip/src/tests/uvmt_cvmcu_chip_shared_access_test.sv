@@ -26,7 +26,7 @@ class uvmt_cvmcu_chip_shared_access_test_c extends uvmt_cvmcu_chip_base_test_c;
       super.new(name, parent);
    endfunction
 
-endclass : uvmt_cvmcu_chip_shared_access_test_c
+endclass
 
 
 `endif // __UVMT_CVMCU_CHIP_SHARED_ACCESS_TEST_SV__

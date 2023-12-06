@@ -7,21 +7,6 @@
 `define __UVME_CVMCU_CPI_ST_TDEFS_SV__
 
 
-// Add enums and structs here
-// Ex: typedef bit [(`UVME__ST_ABC_MAX_WIDTH-1):0]  uvme_cvmcu_cpi_st_abc_b_t; ///< Describe me!
-// Ex: /*
-//      * Describe me!
-//      */
-//     typedef enum {
-//        UVME__ST_EX_ABC
-//     } uvme_cvmcu_cpi_st_ex_enum;
-// Ex: /*
-//      * Describe me!
-//      */
-//     typedef struct {
-//        bit [2:0]  abc;
-//        logic      xyz;
-//     } uvme_cvmcu_cpi_st_ex_struct;
 
 
 /**

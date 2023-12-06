@@ -29,14 +29,7 @@ class uvma_cvmcu_cpi_tx_phy_drv_c extends uvmx_mp_drv_c #(
    endfunction
 
    /**
-    * Trims data outside configured widths.
-    */
-   virtual function void process_item(ref uvma_cvmcu_cpi_tx_phy_seq_item_c item);
-      `uvmx_trim(item.cam_data_i, cfg.data_width)
-   endfunction
-
-   /**
-    * Drives TX PHY Driver clocking block (tx_phy_drv_cb) on each clock cycle.
+    * Drives TX PHY Driver clocking block (tx_phy_drv_cb) at the beginning of each clock cycle.
     */
    virtual task drive_item(ref uvma_cvmcu_cpi_tx_phy_seq_item_c item);
       `uvmx_mp_drv_signal(item, cam_data_i)
@@ -44,8 +37,7 @@ class uvma_cvmcu_cpi_tx_phy_drv_c extends uvmx_mp_drv_c #(
       `uvmx_mp_drv_signal(item, cam_vsync_i)
    endtask
 
-
-endclass : uvma_cvmcu_cpi_tx_phy_drv_c
+endclass
 
 
 `endif // __UVMA_CVMCU_CPI_TX_PHY_DRV_SV__

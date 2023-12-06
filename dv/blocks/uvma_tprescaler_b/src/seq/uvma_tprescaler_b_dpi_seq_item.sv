@@ -52,7 +52,7 @@ class uvma_tprescaler_b_dpi_seq_item_c extends uvmx_seq_item_c #(
       `uvmx_metadata_field("counter_value_i", counter_value_i_str)
    endfunction
 
-endclass : uvma_tprescaler_b_dpi_seq_item_c
+endclass
 
 
 `endif // __UVMA_TPRESCALER_B_DPI_SEQ_ITEM_SV__

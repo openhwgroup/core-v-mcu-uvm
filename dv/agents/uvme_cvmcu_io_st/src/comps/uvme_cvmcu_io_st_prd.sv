@@ -21,16 +21,16 @@ class uvme_cvmcu_io_st_prd_c extends uvmx_agent_prd_c #(
    /// @{
    uvm_tlm_analysis_fifo #(uvma_cvmcu_io_seq_item_c)  board_fifo; ///< FIFO of Sequence Items from BOARD Agent.
    uvm_tlm_analysis_fifo #(uvma_cvmcu_io_seq_item_c)  chip_fifo; ///< FIFO of Sequence Items from CHIP Agent.
-   uvm_tlm_analysis_fifo #(uvma_cvmcu_io_mon_trn_c )  ig_fifo; ///< FIFO of Sequence Items from IG Agent.
-   uvm_tlm_analysis_fifo #(uvma_cvmcu_io_mon_trn_c )  eg_fifo; ///< FIFO of Sequence Items from EG Agent.
+   uvm_tlm_analysis_fifo #(uvma_cvmcu_io_mon_trn_c )  ig_fifo; ///< FIFO of Sequence Items from Ig Agent.
+   uvm_tlm_analysis_fifo #(uvma_cvmcu_io_mon_trn_c )  eg_fifo; ///< FIFO of Sequence Items from Eg Agent.
    /// @}
 
    /// @name Ports
    /// @{
    uvm_analysis_port #(uvma_cvmcu_io_mon_trn_c )  board_ap; ///< Output Port for Monitor Transactions for BOARD Scoreboard Expected.
    uvm_analysis_port #(uvma_cvmcu_io_mon_trn_c )  chip_ap; ///< Output Port for Monitor Transactions for CHIP Scoreboard Expected.
-   uvm_analysis_port #(uvma_cvmcu_io_mon_trn_c )  ig_ap; ///< Output Port for Monitor Transactions for IG Scoreboard Expected.
-   uvm_analysis_port #(uvma_cvmcu_io_mon_trn_c )  eg_ap; ///< Output Port for Monitor Transactions for EG Scoreboard Expected.
+   uvm_analysis_port #(uvma_cvmcu_io_mon_trn_c )  ig_ap; ///< Output Port for Monitor Transactions for Ig Scoreboard Expected.
+   uvm_analysis_port #(uvma_cvmcu_io_mon_trn_c )  eg_ap; ///< Output Port for Monitor Transactions for Eg Scoreboard Expected.
    /// @}
 
 
@@ -65,14 +65,15 @@ class uvme_cvmcu_io_st_prd_c extends uvmx_agent_prd_c #(
       endfunction
 
    /**
-    *
+    * Starts prediction threads.
     */
    virtual task predict();
       fork
          predict_board();
-         predict_ig();predict_chip();
+         predict_chip();
+         predict_ig();
          predict_eg();
-         join
+      join
    endtask
 
    /**
@@ -84,12 +85,7 @@ class uvme_cvmcu_io_st_prd_c extends uvmx_agent_prd_c #(
       forever begin
          `uvmx_prd_get(board_fifo, in_trn)
          out_trn = uvma_cvmcu_io_mon_trn_c::type_id::create("out_trn");
-         out_trn.from(in_trn);
-         out_trn.data_size = in_trn.data_size;
-         out_trn.data      = new[in_trn.data_size];
-         foreach (out_trn.data[ii]) begin
-            out_trn.data[ii] = in_trn.data[ii];
-         end
+         out_trn.copy(in_trn);
          `uvmx_prd_send(board_ap, out_trn)
       end
    endtask
@@ -134,8 +130,8 @@ class uvme_cvmcu_io_st_prd_c extends uvmx_agent_prd_c #(
       end
    endtask
 
-   
-endclass : uvme_cvmcu_io_st_prd_c
+
+endclass
 
 
 `endif // __UVME_CVMCU_IO_ST_PRD_SV__

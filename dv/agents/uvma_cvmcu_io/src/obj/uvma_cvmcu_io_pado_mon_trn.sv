@@ -16,7 +16,7 @@ class uvma_cvmcu_io_pado_mon_trn_c extends uvmx_mon_trn_c #(
    .T_CNTXT(uvma_cvmcu_io_cntxt_c)
 );
 
-   /// @name CHIP
+   /// @name Chip
    /// @{
    uvma_cvmcu_io_io_out_o_l_t   io_out_o  ; ///< Port's output signal
    uvma_cvmcu_io_pad_cfg_o_l_t  pad_cfg_o ; ///< PAD configuration (implementation dependent)
@@ -24,7 +24,7 @@ class uvma_cvmcu_io_pado_mon_trn_c extends uvmx_mon_trn_c #(
    logic                        slow_clk_o; ///< Output clock generated from ref_clk_i. Frequency is implementation dependent.
    /// @}
 
-   /// @name BOARD
+   /// @name Board
    /// @{
    /// @}
 
@@ -51,24 +51,21 @@ class uvma_cvmcu_io_pado_mon_trn_c extends uvmx_mon_trn_c #(
    endfunction
 
    /**
-    * Describes transaction as metadata for uvml_logs_metadata_logger_c.
+    * Describes sequence item for logger.
     */
    virtual function uvmx_metadata_t get_metadata();
-      string io_out_o_str;
-      string pad_cfg_o_str;
-      string io_oe_o_str;
-      string slow_clk_o_str;
-      io_out_o_str = $sformatf("%h", io_out_o);
-      pad_cfg_o_str = `uvmx_ss2str(pad_cfg_o);
-      io_oe_o_str = $sformatf("%h", io_oe_o);
-      slow_clk_o_str = $sformatf("%b", slow_clk_o);
-      `uvmx_metadata_field("io_out_o", io_out_o_str)
-      `uvmx_metadata_field("pad_cfg_o", pad_cfg_o_str)
-      `uvmx_metadata_field("io_oe_o", io_oe_o_str)
-      `uvmx_metadata_field("slow_clk_o", slow_clk_o_str)
+      string  val_str;
+      val_str = $sformatf("%h", io_out_o);
+      `uvmx_metadata_field("io_out_o", val_str)
+      val_str = `uvmx_ss2str(pad_cfg_o);
+      `uvmx_metadata_field("pad_cfg_o", val_str)
+      val_str = $sformatf("%h", io_oe_o);
+      `uvmx_metadata_field("io_oe_o", val_str)
+      val_str = $sformatf("%b", slow_clk_o);
+      `uvmx_metadata_field("slow_clk_o", val_str)
    endfunction
 
-endclass : uvma_cvmcu_io_pado_mon_trn_c
+endclass
 
 
 `endif // __UVMA_CVMCU_IO_PADO_MON_TRN_SV__

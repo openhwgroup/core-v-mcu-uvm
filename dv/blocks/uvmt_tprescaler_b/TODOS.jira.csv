@@ -1,10 +1,3 @@
-﻿IssueType,Issue ID,Parent ID,Status,Summary,Component,Description
-task,0,,To Do,Functional testing,uvmt_tprescaler_b,Run and debug tests which exercising the DUT with legal stimulus only.
-Sub-task,,0,To Do,Fixed stimulus test,uvmt_tprescaler_b,`src/tests/uvmt_tprescaler_b_fix_stim_test.sv`
-Sub-task,,0,To Do,Random stimulus test,uvmt_tprescaler_b,`src/tests/uvmt_tprescaler_b_rand_stim_test.sv`
-Sub-task,,0,To Do,Functional regression,uvmt_tprescaler_b,Add tests to suite if needed. `src/tests/ts.yml`
-task,1,,To Do,Error testing,uvmt_tprescaler_b,"Add self-checking, run and debug tests which exercising the DUT with legal and illegal stimulus."
-Sub-task,,1,To Do,Add self-checking to base test,uvmt_tprescaler_b,`src/tests/uvmt_tprescaler_b_base_test.sv`
-Sub-task,,1,To Do,Fixed illegal stimulus test,uvmt_tprescaler_b,`src/tests/uvmt_tprescaler_b_fix_ill_stim_test.sv`
-Sub-task,,1,To Do,Random illegal stimulus test,uvmt_tprescaler_b,`src/tests/uvmt_tprescaler_b_rand_ill_stim_test.sv`
-Sub-task,,1,To Do,Full regression,uvmt_tprescaler_b,Add error tests to suite first. `src/tests/ts.yml`
+IssueType,Issue ID,Parent ID,Status,Summary,Component,Description
+task,0,,To Do,Describe Timer unit prescaler Block UVM Test Bench",uvmt_tprescaler_b,ip.yml,
+task,1,,To Do,Implement or remove uvmt_tprescaler_b_test_cfg_c::post_randomize_work(),uvmt_tprescaler_b,uvmt_tprescaler_b_test_cfg.sv,

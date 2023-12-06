@@ -41,7 +41,7 @@ class uvme_cvmcu_chip_debug_reg_block_c extends uvmx_reg_block_c;
       );
    endfunction
 
-endclass : uvme_cvmcu_chip_debug_reg_block_c
+endclass
 
 
 `endif // __UVME_CVMCU_CHIP_DEBUG_REG_BLOCK_SV__

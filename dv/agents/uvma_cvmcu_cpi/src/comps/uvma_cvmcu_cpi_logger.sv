@@ -56,7 +56,7 @@ class uvma_cvmcu_cpi_logger_c extends uvmx_agent_logger_c #(
       rx_phy_seq_item_logger.set_filename("rx_phy.seq_item");
    endfunction
 
-endclass : uvma_cvmcu_cpi_logger_c
+endclass
 
 
 `endif // __UVMA_CVMCU_CPI_LOGGER_SV__

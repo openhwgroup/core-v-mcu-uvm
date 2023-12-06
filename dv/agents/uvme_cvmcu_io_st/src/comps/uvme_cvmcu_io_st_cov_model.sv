@@ -24,38 +24,40 @@ class uvme_cvmcu_io_st_cov_model_c extends uvma_cvmcu_io_cov_model_c;
       bypass_mode_cpt     : coverpoint cfg.bypass_mode    ;
       is_active_cpt       : coverpoint cfg.is_active      ;
       reset_type_cpt      : coverpoint cfg.reset_type     ;
-      trn_log_enabled_cpt : coverpoint cfg.trn_log_enabled;
       drv_mode_cpt        : coverpoint cfg.drv_mode       ;
       drv_idle_random_cpt : coverpoint cfg.drv_idle_random;
-   endgroup : cvmcu_io_st_cfg_cg
+   endgroup
 
    /**
     * Agent context functional coverage.
     */
    covergroup cvmcu_io_st_cntxt_cg;
       reset_state_cpt : coverpoint cntxt.reset_state;
-   endgroup : cvmcu_io_st_cntxt_cg
+   endgroup
 
    /**
     * Sequence item functional coverage.
     */
    covergroup cvmcu_io_st_seq_item_cg;
-      data_size_cpt : coverpoint seq_item.data_size;
-   endgroup : cvmcu_io_st_seq_item_cg
+      // TODO Implement cvmcu_io_st_seq_item_cg
+      //      Ex: abc_cpt : coverpoint seq_item.abc;
+   endgroup
 
    /**
-    * IG Monitor Transaction functional coverage.
+    * Ig Monitor Transaction functional coverage.
     */
    covergroup cvmcu_io_st_ig_mon_trn_cg;
-      data_size_cpt : coverpoint ig_mon_trn.data_size;
-   endgroup : cvmcu_io_st_ig_mon_trn_cg
+      // TODO Implement cvmcu_io_st_ig_mon_trn_cg
+      //      Ex: abc_cpt : coverpoint ig_mon_trn.abc;
+   endgroup
 
    /**
-    * EG Monitor Transaction functional coverage.
+    * Eg Monitor Transaction functional coverage.
     */
    covergroup cvmcu_io_st_eg_mon_trn_cg;
-      data_size_cpt : coverpoint eg_mon_trn.data_size;
-   endgroup : cvmcu_io_st_eg_mon_trn_cg
+      // TODO Implement cvmcu_io_st_eg_mon_trn_cg
+      //      Ex: abc_cpt : coverpoint eg_mon_trn.abc;
+   endgroup
 
    /**
     * BOARD PADI Sequence Item functional coverage.
@@ -63,7 +65,7 @@ class uvme_cvmcu_io_st_cov_model_c extends uvma_cvmcu_io_cov_model_c;
    covergroup cvmcu_io_st_board_padi_seq_item_cg;
       // TODO Implement cvmcu_io_st_board_padi_seq_item_cg
       //      Ex: abc_cpt : coverpoint board_padi_seq_item.abc;
-   endgroup : cvmcu_io_st_board_padi_seq_item_cg
+   endgroup
 
    /**
     * BOARD PADO Sequence Item functional coverage.
@@ -71,7 +73,7 @@ class uvme_cvmcu_io_st_cov_model_c extends uvma_cvmcu_io_cov_model_c;
    covergroup cvmcu_io_st_board_pado_seq_item_cg;
       // TODO Implement cvmcu_io_st_board_pado_seq_item_cg
       //      Ex: abc_cpt : coverpoint board_pado_seq_item.abc;
-   endgroup : cvmcu_io_st_board_pado_seq_item_cg
+   endgroup
 
    /**
     * BOARD PADI Sequence Item functional coverage.
@@ -79,7 +81,7 @@ class uvme_cvmcu_io_st_cov_model_c extends uvma_cvmcu_io_cov_model_c;
    covergroup cvmcu_io_st_chip_padi_seq_item_cg;
       // TODO Implement cvmcu_io_st_chip_padi_seq_item_cg
       //      Ex: abc_cpt : coverpoint chip_padi_seq_item.abc;
-   endgroup : cvmcu_io_st_chip_padi_seq_item_cg
+   endgroup
 
    /**
     * BOARD PADO Sequence Item functional coverage.
@@ -87,7 +89,7 @@ class uvme_cvmcu_io_st_cov_model_c extends uvma_cvmcu_io_cov_model_c;
    covergroup cvmcu_io_st_chip_pado_seq_item_cg;
       // TODO Implement cvmcu_io_st_chip_pado_seq_item_cg
       //      Ex: abc_cpt : coverpoint chip_pado_seq_item.abc;
-   endgroup : cvmcu_io_st_chip_pado_seq_item_cg
+   endgroup
 
    /**
     * PADI Monitor Transaction functional coverage.
@@ -95,7 +97,7 @@ class uvme_cvmcu_io_st_cov_model_c extends uvma_cvmcu_io_cov_model_c;
    covergroup cvmcu_io_st_padi_mon_trn_cg;
       // TODO Implement cvmcu_io_st_padi_mon_trn_cg
       //      Ex: abc_cpt : coverpoint padi_mon_trn.abc;
-   endgroup : cvmcu_io_st_padi_mon_trn_cg
+   endgroup
 
    /**
     * PADO Monitor Transaction functional coverage.
@@ -103,7 +105,7 @@ class uvme_cvmcu_io_st_cov_model_c extends uvma_cvmcu_io_cov_model_c;
    covergroup cvmcu_io_st_pado_mon_trn_cg;
       // TODO Implement cvmcu_io_st_pado_mon_trn_cg
       //      Ex: abc_cpt : coverpoint pado_mon_trn.abc;
-   endgroup : cvmcu_io_st_pado_mon_trn_cg
+   endgroup
 
 
    /**
@@ -139,7 +141,7 @@ class uvme_cvmcu_io_st_cov_model_c extends uvma_cvmcu_io_cov_model_c;
    virtual function void sample_pado_mon_trn(); cvmcu_io_st_pado_mon_trn_cg.sample(); endfunction
 /// @}
 
-endclass : uvme_cvmcu_io_st_cov_model_c
+endclass
 
 
 `endif // __UVME_CVMCU_IO_ST_COV_MODEL_SV__

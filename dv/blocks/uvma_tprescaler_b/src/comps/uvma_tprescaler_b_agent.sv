@@ -16,7 +16,7 @@ class uvma_tprescaler_b_agent_c extends uvmx_block_agent_c #(
    .T_CFG      (uvma_tprescaler_b_cfg_c     ),
    .T_CNTXT    (uvma_tprescaler_b_cntxt_c   ),
    .T_SEQ_ITEM (uvma_tprescaler_b_seq_item_c),
-   .T_VSQR     (uvma_tprescaler_b_vsqr_c    ),
+   .T_SQR      (uvma_tprescaler_b_sqr_c     ),
    .T_DRV      (uvma_tprescaler_b_drv_c     ),
    .T_MON      (uvma_tprescaler_b_mon_c     ),
    .T_LOGGER   (uvma_tprescaler_b_logger_c  )
@@ -49,29 +49,29 @@ class uvma_tprescaler_b_agent_c extends uvmx_block_agent_c #(
     * Connects sequencer to driver's TLM ports.
     */
    virtual function void connect_drivers_sequencers();
-      driver.cp_driver .seq_item_port.connect(vsequencer.cp_sequencer .seq_item_export);
-      driver.dpi_driver.seq_item_port.connect(vsequencer.dpi_sequencer.seq_item_export);
-      driver.dpo_driver.seq_item_port.connect(vsequencer.dpo_sequencer.seq_item_export);
+      driver.cp_driver .seq_item_port.connect(sequencer.cp_sequencer .seq_item_export);
+      driver.dpi_driver.seq_item_port.connect(sequencer.dpi_sequencer.seq_item_export);
+      driver.dpo_driver.seq_item_port.connect(sequencer.dpo_sequencer.seq_item_export);
    endfunction
 
    /**
     * Connects sequencer to monitor's TLM ports.
     */
-   virtual function void connect_monitor_vsequencer();
-      monitor.cp_monitor .ap.connect(vsequencer.cp_mon_trn_fifo .analysis_export);
-      monitor.dpi_monitor.ap.connect(vsequencer.dpi_mon_trn_fifo.analysis_export);
-      monitor.dpo_monitor.ap.connect(vsequencer.dpo_mon_trn_fifo.analysis_export);
+   virtual function void connect_monitor_sequencer();
+      monitor.cp_monitor .ap.connect(sequencer.cp_mon_trn_fifo .analysis_export);
+      monitor.dpi_monitor.ap.connect(sequencer.dpi_mon_trn_fifo.analysis_export);
+      monitor.dpo_monitor.ap.connect(sequencer.dpo_mon_trn_fifo.analysis_export);
    endfunction
 
    /**
     * Connects top-level ports to lower-level components'.
     */
    virtual function void connect_ports();
-      in_mon_trn_ap   = vsequencer.in_mon_trn_fifo .put_ap;
-      out_mon_trn_ap  = vsequencer.out_mon_trn_fifo.put_ap;
-      cp_seq_item_ap  = vsequencer.cp_sequencer .ap;
-      dpi_seq_item_ap = vsequencer.dpi_sequencer.ap;
-      dpo_seq_item_ap = vsequencer.dpo_sequencer.ap;
+      in_mon_trn_ap   = sequencer.in_mon_trn_fifo .put_ap;
+      out_mon_trn_ap  = sequencer.out_mon_trn_fifo.put_ap;
+      cp_seq_item_ap  = sequencer.cp_sequencer .ap;
+      dpi_seq_item_ap = sequencer.dpi_sequencer.ap;
+      dpo_seq_item_ap = sequencer.dpo_sequencer.ap;
       cp_mon_trn_ap   = monitor.cp_monitor .ap;
       dpi_mon_trn_ap  = monitor.dpi_monitor.ap;
       dpo_mon_trn_ap  = monitor.dpo_monitor.ap;
@@ -96,12 +96,12 @@ class uvma_tprescaler_b_agent_c extends uvmx_block_agent_c #(
     */
    virtual task start_sequences();
       if (cfg.is_active) begin
-         start_sequence(cfg.in_drv_vseq_type , cntxt.in_drv_vseq );
-         start_sequence(cfg.out_drv_vseq_type, cntxt.out_drv_vseq);
+         start_sequence(cfg.in_drv_seq_type , cntxt.in_drv_seq );
+         start_sequence(cfg.out_drv_seq_type, cntxt.out_drv_seq);
       end
    endtask
 
-endclass : uvma_tprescaler_b_agent_c
+endclass
 
 
 `endif // __UVMA_TPRESCALER_B_AGENT_SV__

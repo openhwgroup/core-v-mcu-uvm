@@ -85,7 +85,7 @@ class uvme_cvmcu_chip_udma_uart_udma_uart_tx_cfg_reg_c extends uvmx_reg_c;
       );
    endfunction
 
-endclass : uvme_cvmcu_chip_udma_uart_udma_uart_tx_cfg_reg_c
+endclass
 
 
 `endif // __UVME_CVMCU_CHIP_UDMA_UART_UDMA_UART_TX_CFG_REG_SV__

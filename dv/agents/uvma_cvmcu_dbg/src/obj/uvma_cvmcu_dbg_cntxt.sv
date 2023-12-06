@@ -16,21 +16,10 @@ class uvma_cvmcu_dbg_cntxt_c extends uvmx_agent_cntxt_c #(
    .T_VIF(virtual uvma_cvmcu_dbg_if)
 );
 
-   /// @name Integrals
+   /// @name Sequences
    /// @{
-   /// @}
-
-   /// @name Objects
-   /// @{
-   // TODO Add state variables
-   //      Ex: uvma_cvmcu_dbg_word_b_t  drv_data_q[$]; ///< TODO Describe uvma_cvmcu_dbg_cntxt_c::drv_data_q
-   //          uvma_cvmcu_dbg_core_phy_mon_trn_c  mon_q[$]; ///< TODO Describe uvma_cvmcu_dbg_cntxt_c::mon_q
-   /// @}
-
-   /// @name Virtual Sequences
-   /// @{
-   uvm_sequence_base  core_drv_vseq; ///< CORE Driver Virtual Sequence instance.
-   uvm_sequence_base  sys_drv_vseq; ///< SYS Driver Virtual Sequence instance.
+   uvm_sequence_base  core_drv_seq; ///< CORE Driver Sequence instance.
+   uvm_sequence_base  sys_drv_seq; ///< SYS Driver Sequence instance.
    /// @}
 
 
@@ -47,22 +36,18 @@ class uvma_cvmcu_dbg_cntxt_c extends uvmx_agent_cntxt_c #(
    endfunction
 
    /**
-    * Builds objects.
+    * Creates objects.
     */
-   virtual function void create_objects(uvma_cvmcu_dbg_cfg_c cfg);
+   virtual function void build(uvma_cvmcu_dbg_cfg_c cfg);
    endfunction
 
    /**
     * Returns all state variables to initial values.
     */
-   virtual function void reset();
-      // TODO Reset state variables
-      //       Ex: drv_data_q.delete();
-      //          mon_core_q.delete();
-      //          mon_sys_q.delete();
+   virtual function void do_reset(uvma_cvmcu_dbg_cfg_c cfg);
    endfunction
 
-endclass : uvma_cvmcu_dbg_cntxt_c
+endclass
 
 
 `endif // __UVMA_CVMCU_DBG_CNTXT_SV__

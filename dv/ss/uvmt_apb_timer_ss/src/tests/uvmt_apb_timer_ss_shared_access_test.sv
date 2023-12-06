@@ -26,7 +26,7 @@ class uvmt_apb_timer_ss_shared_access_test_c extends uvmt_apb_timer_ss_base_test
       super.new(name, parent);
    endfunction
 
-endclass : uvmt_apb_timer_ss_shared_access_test_c
+endclass
 
 
 `endif // __UVMT_APB_TIMER_SS_SHARED_ACCESS_TEST_SV__

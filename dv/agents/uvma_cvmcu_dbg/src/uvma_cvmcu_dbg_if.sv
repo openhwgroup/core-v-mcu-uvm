@@ -37,6 +37,7 @@ interface uvma_cvmcu_dbg_if(
    /// @{
    clocking core_phy_drv_cb @(posedge clk);
       output stoptimer_o;
+      input debug_req_i;
    endclocking
    modport core_phy_drv_mp (clocking core_phy_drv_cb);
    /// @}
@@ -60,7 +61,7 @@ interface uvma_cvmcu_dbg_if(
    `uvmx_if_signal_out(stoptimer_o, , phy_mon_mp.phy_mon_cb, core_phy_drv_mp.core_phy_drv_cb)
    /// @}
 
-endinterface : uvma_cvmcu_dbg_if
+endinterface
 
 
 `endif // __UVMA_CVMCU_DBG_IF_SV__

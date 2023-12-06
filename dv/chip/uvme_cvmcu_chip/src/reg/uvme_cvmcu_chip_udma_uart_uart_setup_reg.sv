@@ -141,7 +141,7 @@ class uvme_cvmcu_chip_udma_uart_udma_uart_uart_setup_reg_c extends uvmx_reg_c;
       );
    endfunction
 
-endclass : uvme_cvmcu_chip_udma_uart_udma_uart_uart_setup_reg_c
+endclass
 
 
 `endif // __UVME_CVMCU_CHIP_UDMA_UART_UDMA_UART_UART_SETUP_REG_SV__

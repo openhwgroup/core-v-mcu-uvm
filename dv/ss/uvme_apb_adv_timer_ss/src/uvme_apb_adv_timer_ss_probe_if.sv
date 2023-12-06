@@ -54,7 +54,7 @@ interface uvme_apb_adv_timer_ss_probe_if (
    `uvmx_if_signal_probe_out(ext_sig_i, , sys_clk_mp.sys_clk_cb)
    /// @}
 
-endinterface : uvme_apb_adv_timer_ss_probe_if
+endinterface
 
 
 `endif // __UVME_APB_ADV_TIMER_SS_PROBE_IF_SV__

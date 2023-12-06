@@ -65,7 +65,7 @@ class uvme_tcounter_b_prd_c extends uvmx_block_prd_c #(
       `uvmx_prd_send(ap, out_trn)
    endtask
 
-endclass : uvme_tcounter_b_prd_c
+endclass
 
 
 `endif // __UVME_TCOUNTER_B_PRD_SV__

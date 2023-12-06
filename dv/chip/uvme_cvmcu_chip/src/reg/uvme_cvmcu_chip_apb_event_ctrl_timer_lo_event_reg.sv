@@ -43,7 +43,7 @@ class uvme_cvmcu_chip_apb_event_ctrl_apb_event_ctrl_timer_lo_event_reg_c extends
       );
    endfunction
 
-endclass : uvme_cvmcu_chip_apb_event_ctrl_apb_event_ctrl_timer_lo_event_reg_c
+endclass
 
 
 `endif // __UVME_CVMCU_CHIP_APB_EVENT_CTRL_APB_EVENT_CTRL_TIMER_LO_EVENT_REG_SV__

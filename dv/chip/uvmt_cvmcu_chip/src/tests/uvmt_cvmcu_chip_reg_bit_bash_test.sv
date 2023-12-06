@@ -23,7 +23,7 @@ class uvmt_cvmcu_chip_reg_bit_bash_test_c extends uvmt_cvmcu_chip_base_test_c;
       super.new(name, parent);
    endfunction
 
-endclass : uvmt_cvmcu_chip_reg_bit_bash_test_c
+endclass
 
 
 `endif // __UVMT_CVMCU_CHIP_REG_BIT_BASH_TEST_SV__

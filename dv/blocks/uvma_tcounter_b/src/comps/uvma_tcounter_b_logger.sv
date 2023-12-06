@@ -68,7 +68,7 @@ class uvma_tcounter_b_logger_c extends uvmx_agent_logger_c #(
       dpo_mon_trn_logger .set_filename("dpo_mon_trn" );
    endfunction
 
-endclass : uvma_tcounter_b_logger_c
+endclass
 
 
 `endif // __UVMA_TCOUNTER_B_LOGGER_SV__

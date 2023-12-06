@@ -16,7 +16,7 @@ class uvma_cvmcu_io_agent_c extends uvmx_agent_c #(
    .T_CFG      (uvma_cvmcu_io_cfg_c      ),
    .T_CNTXT    (uvma_cvmcu_io_cntxt_c    ),
    .T_SEQ_ITEM (uvma_cvmcu_io_seq_item_c ),
-   .T_VSQR     (uvma_cvmcu_io_vsqr_c     ),
+   .T_SQR      (uvma_cvmcu_io_sqr_c      ),
    .T_DRV      (uvma_cvmcu_io_drv_c      ),
    .T_MON      (uvma_cvmcu_io_mon_c      ),
    .T_LOGGER   (uvma_cvmcu_io_logger_c   ),
@@ -50,30 +50,30 @@ class uvma_cvmcu_io_agent_c extends uvmx_agent_c #(
     * Connects sequencer to driver's TLM ports.
     */
    virtual function void connect_drivers_sequencers();
-      driver.board_padi_driver.seq_item_port.connect(vsequencer.board_padi_sequencer.seq_item_export);
-      driver.board_pado_driver.seq_item_port.connect(vsequencer.board_pado_sequencer.seq_item_export);
-      driver.chip_padi_driver.seq_item_port.connect(vsequencer.chip_padi_sequencer.seq_item_export);
-      driver.chip_pado_driver.seq_item_port.connect(vsequencer.chip_pado_sequencer.seq_item_export);
+      driver.board_padi_driver.seq_item_port.connect(sequencer.board_padi_sequencer.seq_item_export);
+      driver.board_pado_driver.seq_item_port.connect(sequencer.board_pado_sequencer.seq_item_export);
+      driver.chip_padi_driver.seq_item_port.connect(sequencer.chip_padi_sequencer.seq_item_export);
+      driver.chip_pado_driver.seq_item_port.connect(sequencer.chip_pado_sequencer.seq_item_export);
    endfunction
 
    /**
     * Connects sequencer to monitor's TLM ports.
     */
-   virtual function void connect_monitor_vsequencer();
-      monitor.padi_monitor.ap.connect(vsequencer.padi_mon_trn_fifo.analysis_export);
-      monitor.pado_monitor.ap.connect(vsequencer.pado_mon_trn_fifo.analysis_export);
+   virtual function void connect_monitor_sequencer();
+      monitor.padi_monitor.ap.connect(sequencer.padi_mon_trn_fifo.analysis_export);
+      monitor.pado_monitor.ap.connect(sequencer.pado_mon_trn_fifo.analysis_export);
    endfunction
 
    /**
     * Connects top-level ports to lower-level components'.
     */
    virtual function void connect_ports();
-      ig_mon_trn_ap = vsequencer.ig_mon_trn_fifo.put_ap;
-      eg_mon_trn_ap = vsequencer.eg_mon_trn_fifo.put_ap;
-      board_padi_seq_item_ap = vsequencer.board_padi_sequencer.ap;
-      board_pado_seq_item_ap = vsequencer.board_pado_sequencer.ap;
-      chip_padi_seq_item_ap = vsequencer.chip_padi_sequencer.ap;
-      chip_pado_seq_item_ap = vsequencer.chip_pado_sequencer.ap;
+      ig_mon_trn_ap = sequencer.ig_mon_trn_fifo.put_ap;
+      eg_mon_trn_ap = sequencer.eg_mon_trn_fifo.put_ap;
+      board_padi_seq_item_ap = sequencer.board_padi_sequencer.ap;
+      board_pado_seq_item_ap = sequencer.board_pado_sequencer.ap;
+      chip_padi_seq_item_ap = sequencer.chip_padi_sequencer.ap;
+      chip_pado_seq_item_ap = sequencer.chip_pado_sequencer.ap;
       padi_mon_trn_ap = monitor.padi_monitor.ap;
       pado_mon_trn_ap = monitor.pado_monitor.ap;
    endfunction
@@ -113,8 +113,8 @@ class uvma_cvmcu_io_agent_c extends uvmx_agent_c #(
    virtual task start_sequences();
       if (cfg.is_active) begin
          case (cfg.drv_mode)
-            UVMA_CVMCU_IO_DRV_MODE_BOARD: start_sequence(cfg.board_drv_vseq_type, cntxt.board_drv_vseq);
-            UVMA_CVMCU_IO_DRV_MODE_CHIP: start_sequence(cfg.chip_drv_vseq_type, cntxt.chip_drv_vseq);
+            UVMA_CVMCU_IO_DRV_MODE_BOARD: start_sequence(cfg.board_drv_seq_type, cntxt.board_drv_seq);
+            UVMA_CVMCU_IO_DRV_MODE_CHIP: start_sequence(cfg.chip_drv_seq_type, cntxt.chip_drv_seq);
             default: begin
                `uvm_fatal("CVMCU_IO_AGENT", $sformatf("Invalid cfg.drv_mode: %s", cfg.drv_mode.name()))
             end
@@ -122,7 +122,7 @@ class uvma_cvmcu_io_agent_c extends uvmx_agent_c #(
       end
    endtask
 
-endclass : uvma_cvmcu_io_agent_c
+endclass
 
 
 `endif // __UVMA_CVMCU_IO_AGENT_SV__

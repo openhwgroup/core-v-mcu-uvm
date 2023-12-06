@@ -25,7 +25,7 @@ class uvmt_apb_timer_ss_reg_access_test_c extends uvmt_apb_timer_ss_base_test_c;
       super.new(name, parent);
    endfunction
 
-endclass : uvmt_apb_timer_ss_reg_access_test_c
+endclass
 
 
 `endif // __UVMT_APB_TIMER_SS_REG_ACCESS_TEST_SV__

@@ -107,7 +107,7 @@ interface uvma_tcounter_b_if(
    `uvmx_if_signal_in(target_greater_o, , dpo_mon_mp.dpo_mon_cb)
    /// @}
 
-endinterface : uvma_tcounter_b_if
+endinterface
 
 
 `endif // __UVMA_TCOUNTER_B_IF_SV__

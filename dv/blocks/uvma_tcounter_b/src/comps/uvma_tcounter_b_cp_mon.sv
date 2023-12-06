@@ -39,7 +39,7 @@ class uvma_tcounter_b_cp_mon_c extends uvmx_mp_mon_c #(
    endtask
 
 
-endclass : uvma_tcounter_b_cp_mon_c
+endclass
 
 
 `endif // __UVMA_TCOUNTER_B_CP_MON_SV__

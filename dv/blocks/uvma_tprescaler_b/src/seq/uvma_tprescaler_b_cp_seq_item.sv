@@ -57,7 +57,7 @@ class uvma_tprescaler_b_cp_seq_item_c extends uvmx_seq_item_c #(
       `uvmx_metadata_field("compare_value_i", compare_value_i_str)
    endfunction
 
-endclass : uvma_tprescaler_b_cp_seq_item_c
+endclass
 
 
 `endif // __UVMA_TPRESCALER_B_CP_SEQ_ITEM_SV__

@@ -217,7 +217,7 @@ class uvme_cvmcu_chip_reg_block_c extends uvmx_reg_block_c;
       default_map.add_mem(ram, `UVM_REG_ADDR_WIDTH'h1c010000);
    endfunction
 
-endclass : uvme_cvmcu_chip_reg_block_c
+endclass
 
 
 `endif // __UVME_CVMCU_CHIP_REG_BLOCK_SV__

@@ -14,7 +14,7 @@
 class uvme_tcounter_b_env_c extends uvmx_block_env_c #(
    .T_CFG      (uvme_tcounter_b_cfg_c      ),
    .T_CNTXT    (uvme_tcounter_b_cntxt_c    ),
-   .T_VSQR     (uvme_tcounter_b_vsqr_c     ),
+   .T_SQR      (uvme_tcounter_b_sqr_c      ),
    .T_PRD      (uvme_tcounter_b_prd_c      ),
    .T_SB       (uvme_tcounter_b_sb_c       ),
    .T_COV_MODEL(uvme_tcounter_b_cov_model_c)
@@ -90,13 +90,13 @@ class uvme_tcounter_b_env_c extends uvmx_block_env_c #(
    endfunction
 
    /**
-    * Assembles virtual sequencer from agent sequencers.
+    * Assembles sequencer from agent sequencers.
     */
-   virtual function void assemble_vsequencer();
-      vsequencer.agent_vsequencer = agent.vsequencer;
+   virtual function void assemble_sequencer();
+      sequencer.agent_sequencer = agent.sequencer;
    endfunction
 
-endclass : uvme_tcounter_b_env_c
+endclass
 
 
 `endif // __UVME_TCOUNTER_B_ENV_SV__

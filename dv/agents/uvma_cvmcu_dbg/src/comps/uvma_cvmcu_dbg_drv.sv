@@ -41,7 +41,7 @@ class uvma_cvmcu_dbg_drv_c extends uvmx_drv_c #(
       sys_phy_driver = uvma_cvmcu_dbg_sys_phy_drv_c::type_id::create("sys_phy_driver", this);
    endfunction
 
-endclass : uvma_cvmcu_dbg_drv_c
+endclass
 
 
 `endif // __UVMA_CVMCU_DBG_DRV_SV__

@@ -42,13 +42,13 @@ class uvma_cvmcu_event_phy_mon_c extends uvmx_mp_mon_c #(
       `uvmx_mp_mon_signal(trn, cl_event_data_o)
       `uvmx_mp_mon_signal(trn, pr_event_valid_o)
       `uvmx_mp_mon_signal(trn, pr_event_data_o)
-      `uvmx_mp_mon_signal(trn, per_events_i)
       `uvmx_mp_mon_signal(trn, cl_event_ready_i)
       `uvmx_mp_mon_signal(trn, pr_event_ready_i)
+      `uvmx_mp_mon_signal(trn, per_events_i)
    endtask
 
 
-endclass : uvma_cvmcu_event_phy_mon_c
+endclass
 
 
 `endif // __UVMA_CVMCU_EVENT_PHY_MON_SV__

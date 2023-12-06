@@ -16,12 +16,12 @@ class uvma_cvmcu_io_padi_mon_trn_c extends uvmx_mon_trn_c #(
    .T_CNTXT(uvma_cvmcu_io_cntxt_c)
 );
 
-   /// @name BOARD
+   /// @name Board
    /// @{
    uvma_cvmcu_io_io_in_i_l_t  io_in_i; ///< Port’s input signal
    /// @}
 
-   /// @name CHIP
+   /// @name Chip
    /// @{
    /// @}
 
@@ -39,15 +39,15 @@ class uvma_cvmcu_io_padi_mon_trn_c extends uvmx_mon_trn_c #(
    endfunction
 
    /**
-    * Describes transaction as metadata for uvml_logs_metadata_logger_c.
+    * Describes sequence item for logger.
     */
    virtual function uvmx_metadata_t get_metadata();
-      string io_in_i_str;
-      io_in_i_str = $sformatf("%h", io_in_i);
-      `uvmx_metadata_field("io_in_i", io_in_i_str)
+      string  val_str;
+      val_str = $sformatf("%h", io_in_i);
+      `uvmx_metadata_field("io_in_i", val_str)
    endfunction
 
-endclass : uvma_cvmcu_io_padi_mon_trn_c
+endclass
 
 
 `endif // __UVMA_CVMCU_IO_PADI_MON_TRN_SV__

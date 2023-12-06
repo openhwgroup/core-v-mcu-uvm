@@ -24,31 +24,40 @@ class uvme_cvmcu_event_st_cov_model_c extends uvma_cvmcu_event_cov_model_c;
       bypass_mode_cpt     : coverpoint cfg.bypass_mode    ;
       is_active_cpt       : coverpoint cfg.is_active      ;
       reset_type_cpt      : coverpoint cfg.reset_type     ;
-      trn_log_enabled_cpt : coverpoint cfg.trn_log_enabled;
       drv_mode_cpt        : coverpoint cfg.drv_mode       ;
       drv_idle_random_cpt : coverpoint cfg.drv_idle_random;
-   endgroup : cvmcu_event_st_cfg_cg
+   endgroup
 
    /**
     * Agent context functional coverage.
     */
    covergroup cvmcu_event_st_cntxt_cg;
       reset_state_cpt : coverpoint cntxt.reset_state;
-   endgroup : cvmcu_event_st_cntxt_cg
+   endgroup
 
    /**
     * Sequence item functional coverage.
     */
    covergroup cvmcu_event_st_seq_item_cg;
-      data_size_cpt : coverpoint seq_item.data_size;
-   endgroup : cvmcu_event_st_seq_item_cg
+      // TODO Implement cvmcu_event_st_seq_item_cg
+      //      Ex: abc_cpt : coverpoint seq_item.abc;
+   endgroup
 
    /**
-    * Monitor Transaction functional coverage.
+    * C2s Monitor Transaction functional coverage.
     */
-   covergroup cvmcu_event_st_mon_trn_cg;
-      data_size_cpt : coverpoint mon_trn.data_size;
-   endgroup : cvmcu_event_st_mon_trn_cg
+   covergroup cvmcu_event_st_c2s_mon_trn_cg;
+      // TODO Implement cvmcu_event_st_c2s_mon_trn_cg
+      //      Ex: abc_cpt : coverpoint c2s_mon_trn.abc;
+   endgroup
+
+   /**
+    * S2c Monitor Transaction functional coverage.
+    */
+   covergroup cvmcu_event_st_s2c_mon_trn_cg;
+      // TODO Implement cvmcu_event_st_s2c_mon_trn_cg
+      //      Ex: abc_cpt : coverpoint s2c_mon_trn.abc;
+   endgroup
 
    /**
     * CORE PHY Sequence Item functional coverage.
@@ -56,7 +65,7 @@ class uvme_cvmcu_event_st_cov_model_c extends uvma_cvmcu_event_cov_model_c;
    covergroup cvmcu_event_st_core_phy_seq_item_cg;
       // TODO Implement cvmcu_event_st_core_phy_seq_item_cg
       //      Ex: abc_cpt : coverpoint core_phy_seq_item.abc;
-   endgroup : cvmcu_event_st_core_phy_seq_item_cg
+   endgroup
 
    /**
     * CORE PHY Sequence Item functional coverage.
@@ -64,7 +73,7 @@ class uvme_cvmcu_event_st_cov_model_c extends uvma_cvmcu_event_cov_model_c;
    covergroup cvmcu_event_st_sys_phy_seq_item_cg;
       // TODO Implement cvmcu_event_st_sys_phy_seq_item_cg
       //      Ex: abc_cpt : coverpoint sys_phy_seq_item.abc;
-   endgroup : cvmcu_event_st_sys_phy_seq_item_cg
+   endgroup
 
    /**
     * PHY Monitor Transaction functional coverage.
@@ -72,7 +81,7 @@ class uvme_cvmcu_event_st_cov_model_c extends uvma_cvmcu_event_cov_model_c;
    covergroup cvmcu_event_st_phy_mon_trn_cg;
       // TODO Implement cvmcu_event_st_phy_mon_trn_cg
       //      Ex: abc_cpt : coverpoint phy_mon_trn.abc;
-   endgroup : cvmcu_event_st_phy_mon_trn_cg
+   endgroup
 
 
    /**
@@ -83,7 +92,8 @@ class uvme_cvmcu_event_st_cov_model_c extends uvma_cvmcu_event_cov_model_c;
       cvmcu_event_st_cfg_cg      = new();
       cvmcu_event_st_cntxt_cg    = new();
       cvmcu_event_st_seq_item_cg = new();
-      cvmcu_event_st_mon_trn_cg  = new();
+      cvmcu_event_st_c2s_mon_trn_cg = new();
+      cvmcu_event_st_s2c_mon_trn_cg = new();
       cvmcu_event_st_core_phy_seq_item_cg = new();
       cvmcu_event_st_sys_phy_seq_item_cg = new();
       cvmcu_event_st_phy_mon_trn_cg  = new();
@@ -94,14 +104,14 @@ class uvme_cvmcu_event_st_cov_model_c extends uvma_cvmcu_event_cov_model_c;
    virtual function void sample_cfg     (); cvmcu_event_st_cfg_cg     .sample(); endfunction
    virtual function void sample_cntxt   (); cvmcu_event_st_cntxt_cg   .sample(); endfunction
    virtual function void sample_seq_item(); cvmcu_event_st_seq_item_cg.sample(); endfunction
-
-   virtual function void sample_mon_trn(); cvmcu_event_st_mon_trn_cg.sample(); endfunction
+   virtual function void sample_c2s_mon_trn(); cvmcu_event_st_c2s_mon_trn_cg.sample(); endfunction
+   virtual function void sample_s2c_mon_trn(); cvmcu_event_st_s2c_mon_trn_cg.sample(); endfunction
    virtual function void sample_core_phy_seq_item(); cvmcu_event_st_core_phy_seq_item_cg.sample(); endfunction
    virtual function void sample_sys_phy_seq_item(); cvmcu_event_st_sys_phy_seq_item_cg.sample(); endfunction
    virtual function void sample_phy_mon_trn(); cvmcu_event_st_phy_mon_trn_cg.sample(); endfunction
 /// @}
 
-endclass : uvme_cvmcu_event_st_cov_model_c
+endclass
 
 
 `endif // __UVME_CVMCU_EVENT_ST_COV_MODEL_SV__

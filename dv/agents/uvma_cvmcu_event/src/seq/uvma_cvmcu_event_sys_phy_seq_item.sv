@@ -8,8 +8,8 @@
 
 
 /**
- * Sequence Item created by CORE-V-MCU Event Interface Virtual Sequences for driving uvma_cvmcu_event_sys_phy_drv_c.
- * @ingroup uvma_cvmcu_event_seq
+ * Sequence Item created by CORE-V-MCU Event Interface Sequences for driving uvma_cvmcu_event_sys_phy_drv_c.
+ * @ingroup uvma_cvmcu_event_seq_item
  */
 class uvma_cvmcu_event_sys_phy_seq_item_c extends uvmx_seq_item_c #(
    .T_CFG  (uvma_cvmcu_event_cfg_c  ),
@@ -31,9 +31,9 @@ class uvma_cvmcu_event_sys_phy_seq_item_c extends uvmx_seq_item_c #(
 
    /// @name Metadata
    /// @{
-   uvma_cvmcu_event_per_events_i_l_t  per_events_i    ; ///< Peripherals event
    logic                              cl_event_ready_i; ///< Chip-level event ready
    logic                              pr_event_ready_i; ///< Peripherals event ready
+   uvma_cvmcu_event_per_events_i_l_t  per_events_i    ; ///< Peripherals event
    /// @}
 
 
@@ -47,9 +47,9 @@ class uvma_cvmcu_event_sys_phy_seq_item_c extends uvmx_seq_item_c #(
       `uvm_field_int(cl_event_data_o, UVM_DEFAULT)
       `uvm_field_int(pr_event_valid_o, UVM_DEFAULT)
       `uvm_field_int(pr_event_data_o, UVM_DEFAULT)
-      `uvm_field_int(per_events_i, UVM_DEFAULT)
       `uvm_field_int(cl_event_ready_i, UVM_DEFAULT)
       `uvm_field_int(pr_event_ready_i, UVM_DEFAULT)
+      `uvm_field_int(per_events_i, UVM_DEFAULT)
    `uvm_object_utils_end
 
 
@@ -61,48 +61,37 @@ class uvma_cvmcu_event_sys_phy_seq_item_c extends uvmx_seq_item_c #(
    endfunction
 
    /**
-    * Describes transaction as metadata for uvml_logs_metadata_logger_c.
+    * Describes sequence item for logger.
     */
    virtual function uvmx_metadata_t get_metadata();
-      string timer_event_lo_o_str;
-      string timer_event_hi_o_str;
-      string err_event_o_str;
-      string fc_events_o_str;
-      string event_fifo_valid_o_str;
-      string cl_event_valid_o_str;
-      string cl_event_data_o_str;
-      string pr_event_valid_o_str;
-      string pr_event_data_o_str;
-      string per_events_i_str;
-      string cl_event_ready_i_str;
-      string pr_event_ready_i_str;
-      timer_event_lo_o_str = $sformatf("%b", timer_event_lo_o);
-      timer_event_hi_o_str = $sformatf("%b", timer_event_hi_o);
-      err_event_o_str = $sformatf("%b", err_event_o);
-      fc_events_o_str = $sformatf("%h", fc_events_o);
-      event_fifo_valid_o_str = $sformatf("%b", event_fifo_valid_o);
-      cl_event_valid_o_str = $sformatf("%b", cl_event_valid_o);
-      cl_event_data_o_str = $sformatf("%h", cl_event_data_o);
-      pr_event_valid_o_str = $sformatf("%b", pr_event_valid_o);
-      pr_event_data_o_str = $sformatf("%h", pr_event_data_o);
-      per_events_i_str = $sformatf("%h", per_events_i);
-      cl_event_ready_i_str = $sformatf("%b", cl_event_ready_i);
-      pr_event_ready_i_str = $sformatf("%b", pr_event_ready_i);
-      `uvmx_metadata_field("timer_event_lo_o", timer_event_lo_o_str)
-      `uvmx_metadata_field("timer_event_hi_o", timer_event_hi_o_str)
-      `uvmx_metadata_field("err_event_o", err_event_o_str)
-      `uvmx_metadata_field("fc_events_o", fc_events_o_str)
-      `uvmx_metadata_field("event_fifo_valid_o", event_fifo_valid_o_str)
-      `uvmx_metadata_field("cl_event_valid_o", cl_event_valid_o_str)
-      `uvmx_metadata_field("cl_event_data_o", cl_event_data_o_str)
-      `uvmx_metadata_field("pr_event_valid_o", pr_event_valid_o_str)
-      `uvmx_metadata_field("pr_event_data_o", pr_event_data_o_str)
-      `uvmx_metadata_field("per_events_i", per_events_i_str)
-      `uvmx_metadata_field("cl_event_ready_i", cl_event_ready_i_str)
-      `uvmx_metadata_field("pr_event_ready_i", pr_event_ready_i_str)
+      string  val_str;
+      val_str = $sformatf("%b", timer_event_lo_o);
+      `uvmx_metadata_field("timer_event_lo_o", val_str)
+      val_str = $sformatf("%b", timer_event_hi_o);
+      `uvmx_metadata_field("timer_event_hi_o", val_str)
+      val_str = $sformatf("%b", err_event_o);
+      `uvmx_metadata_field("err_event_o", val_str)
+      val_str = $sformatf("%h", fc_events_o);
+      `uvmx_metadata_field("fc_events_o", val_str)
+      val_str = $sformatf("%b", event_fifo_valid_o);
+      `uvmx_metadata_field("event_fifo_valid_o", val_str)
+      val_str = $sformatf("%b", cl_event_valid_o);
+      `uvmx_metadata_field("cl_event_valid_o", val_str)
+      val_str = $sformatf("%h", cl_event_data_o);
+      `uvmx_metadata_field("cl_event_data_o", val_str)
+      val_str = $sformatf("%b", pr_event_valid_o);
+      `uvmx_metadata_field("pr_event_valid_o", val_str)
+      val_str = $sformatf("%h", pr_event_data_o);
+      `uvmx_metadata_field("pr_event_data_o", val_str)
+      val_str = $sformatf("%b", cl_event_ready_i);
+      `uvmx_metadata_field("cl_event_ready_i", val_str)
+      val_str = $sformatf("%b", pr_event_ready_i);
+      `uvmx_metadata_field("pr_event_ready_i", val_str)
+      val_str = $sformatf("%h", per_events_i);
+      `uvmx_metadata_field("per_events_i", val_str)
    endfunction
 
-endclass : uvma_cvmcu_event_sys_phy_seq_item_c
+endclass
 
 
 `endif // __UVMA_CVMCU_EVENT_SYS_PHY_SEQ_ITEM_SV__

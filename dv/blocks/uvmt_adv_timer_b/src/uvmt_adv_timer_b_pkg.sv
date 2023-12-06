@@ -13,6 +13,10 @@
  * @defgroup uvmt_adv_timer_b_misc   Miscellaneous
  * @defgroup uvmt_adv_timer_b_tb     Test Bench
  * @defgroup uvmt_adv_timer_b_tests  Tests
+ * @{
+ * @defgroup uvmt_adv_timer_b_tests_functional   Functional
+ * @defgroup uvmt_adv_timer_b_tests_error   Error
+ * @}
  * @}
  */
 
@@ -25,8 +29,6 @@
 `include "uvma_adv_timer_b_macros.svh"
 `include "uvme_adv_timer_b_macros.svh"
 `include "uvmt_adv_timer_b_macros.svh"
-
-// Interface(s)
 
 
 /**
@@ -52,12 +54,8 @@ package uvmt_adv_timer_b_pkg;
    `include "uvmt_adv_timer_b_base_test.sv"
 
    // Tests
-   `include "uvmt_adv_timer_b_fix_stim_test.sv"
-   `include "uvmt_adv_timer_b_fix_ill_stim_test.sv"
-   `include "uvmt_adv_timer_b_rand_stim_test.sv"
-   `include "uvmt_adv_timer_b_rand_ill_stim_test.sv"
 
-endpackage : uvmt_adv_timer_b_pkg
+endpackage
 
 
 // Module(s) / Checker(s)

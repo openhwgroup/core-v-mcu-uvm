@@ -40,7 +40,7 @@ class uvma_cvmcu_cpi_mon_c extends uvmx_mon_c #(
       phy_monitor = uvma_cvmcu_cpi_phy_mon_c::type_id::create("phy_monitor", this);
    endfunction
 
-endclass : uvma_cvmcu_cpi_mon_c
+endclass
 
 
 `endif // __UVMA_CVMCU_CPI_MON_SV__

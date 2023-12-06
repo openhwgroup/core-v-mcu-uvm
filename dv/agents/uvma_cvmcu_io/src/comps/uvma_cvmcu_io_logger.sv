@@ -19,8 +19,8 @@ class uvma_cvmcu_io_logger_c extends uvmx_agent_logger_c #(
 
    /// @name Loggers
    /// @{
-   uvmx_tlm_logger_c #(uvma_cvmcu_io_mon_trn_c )  ig_mon_trn_logger; ///< Logs IG Monitor Transactions from vsequencer.
-   uvmx_tlm_logger_c #(uvma_cvmcu_io_mon_trn_c )  eg_mon_trn_logger; ///< Logs EG Monitor Transactions from vsequencer.
+   uvmx_tlm_logger_c #(uvma_cvmcu_io_mon_trn_c )  ig_mon_trn_logger; ///< Logs Ig Monitor Transactions from vsequencer.
+   uvmx_tlm_logger_c #(uvma_cvmcu_io_mon_trn_c )  eg_mon_trn_logger; ///< Logs Eg Monitor Transactions from vsequencer.
    uvmx_tlm_logger_c #(uvma_cvmcu_io_board_padi_seq_item_c)  board_padi_seq_item_logger; ///< Logs PADI Sequence Items from BOARD Driver.
    uvmx_tlm_logger_c #(uvma_cvmcu_io_board_pado_seq_item_c)  board_pado_seq_item_logger; ///< Logs PADO Sequence Items from BOARD Driver.
    uvmx_tlm_logger_c #(uvma_cvmcu_io_chip_padi_seq_item_c)  chip_padi_seq_item_logger; ///< Logs PADI Sequence Items from CHIP Driver.
@@ -68,7 +68,7 @@ class uvma_cvmcu_io_logger_c extends uvmx_agent_logger_c #(
       chip_pado_seq_item_logger.set_filename("chip_pado.seq_item");
    endfunction
 
-endclass : uvma_cvmcu_io_logger_c
+endclass
 
 
 `endif // __UVMA_CVMCU_IO_LOGGER_SV__

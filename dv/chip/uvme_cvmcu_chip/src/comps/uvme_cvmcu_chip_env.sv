@@ -14,7 +14,7 @@
 class uvme_cvmcu_chip_env_c extends uvmx_chip_env_c #(
    .T_CFG      (uvme_cvmcu_chip_cfg_c           ),
    .T_CNTXT    (uvme_cvmcu_chip_cntxt_c         ),
-   .T_VSQR     (uvme_cvmcu_chip_vsqr_c          ),
+   .T_SQR      (uvme_cvmcu_chip_sqr_c           ),
    .T_PRD      (uvme_cvmcu_chip_prd_c           ),
    .T_SB       (uvme_cvmcu_chip_sb_c            ),
    .T_COV_MODEL(uvme_cvmcu_chip_cov_model_c     ),
@@ -174,7 +174,7 @@ class uvme_cvmcu_chip_env_c extends uvmx_chip_env_c #(
     * Connects register block to register adapters.
     */
    virtual function void connect_reg_block();
-      cntxt.reg_model.default_map.set_sequencer(data_obi_agent.vsequencer, data_obi_reg_adapter);
+      cntxt.reg_model.default_map.set_sequencer(data_obi_agent.sequencer, data_obi_reg_adapter);
    endfunction
 
    /**
@@ -200,53 +200,51 @@ class uvme_cvmcu_chip_env_c extends uvmx_chip_env_c #(
       uart1_agent.ig_mon_trn_ap.connect(predictor.udma_uart1_ingress_fifo.analysis_export);
       i2c_m_agent.m2s_mon_trn_ap.connect(predictor.apb_i2c_ingress_fifo.analysis_export);
       io_agent.ig_mon_trn_ap.connect(predictor.gpio_ingress_fifo.analysis_export);
-      event_agent.mon_trn_ap.connect(predictor.mon_event_fifo.analysis_export);
+      event_agent.c2s_mon_trn_ap.connect(predictor.core_event_fifo.analysis_export);
+      event_agent.s2c_mon_trn_ap.connect(predictor.sys_event_fifo.analysis_export);
       dbg_agent.mon_trn_ap.connect(predictor.mon_dbg_fifo.analysis_export);
-      vsequencer.udma_qspi0_egress_exp_ap.connect(predictor.udma_qspi0_egress_fifo.analysis_export);
-      vsequencer.udma_qspi1_egress_exp_ap.connect(predictor.udma_qspi1_egress_fifo.analysis_export);
-      vsequencer.udma_i2c0_egress_exp_ap.connect(predictor.udma_i2c0_egress_fifo.analysis_export);
-      vsequencer.udma_i2c1_egress_exp_ap.connect(predictor.udma_i2c1_egress_fifo.analysis_export);
-      vsequencer.udma_uart0_egress_exp_ap.connect(predictor.udma_uart0_egress_fifo.analysis_export);
-      vsequencer.udma_uart1_egress_exp_ap.connect(predictor.udma_uart1_egress_fifo.analysis_export);
-      vsequencer.apb_i2c_egress_exp_ap.connect(predictor.apb_i2c_egress_fifo.analysis_export);
-      vsequencer.gpio_egress_exp_ap.connect(predictor.gpio_egress_fifo.analysis_export);
-      vsequencer.event_exp_ap.connect(predictor.event_fifo.analysis_export);
-      vsequencer.dbg_exp_ap.connect(predictor.dbg_fifo.analysis_export);
+      sequencer.udma_qspi0_egress_exp_ap.connect(predictor.udma_qspi0_egress_fifo.analysis_export);
+      sequencer.udma_qspi1_egress_exp_ap.connect(predictor.udma_qspi1_egress_fifo.analysis_export);
+      sequencer.udma_i2c0_egress_exp_ap.connect(predictor.udma_i2c0_egress_fifo.analysis_export);
+      sequencer.udma_i2c1_egress_exp_ap.connect(predictor.udma_i2c1_egress_fifo.analysis_export);
+      sequencer.udma_uart0_egress_exp_ap.connect(predictor.udma_uart0_egress_fifo.analysis_export);
+      sequencer.udma_uart1_egress_exp_ap.connect(predictor.udma_uart1_egress_fifo.analysis_export);
+      sequencer.apb_i2c_egress_exp_ap.connect(predictor.apb_i2c_egress_fifo.analysis_export);
+      sequencer.gpio_egress_exp_ap.connect(predictor.gpio_egress_fifo.analysis_export);
+      sequencer.dbg_exp_ap.connect(predictor.dbg_fifo.analysis_export);
    endfunction
 
    /**
     * Connects scoreboards components to agents/predictor.
     */
    virtual function void connect_scoreboard();
-      qspi_s0_agent.m2s_mon_trn_ap.connect(scoreboard.udma_qspi0_egress_sb.act_export);
-      qspi_s1_agent.m2s_mon_trn_ap.connect(scoreboard.udma_qspi1_egress_sb.act_export);
-      i2c_s0_agent.m2s_mon_trn_ap.connect(scoreboard.udma_i2c0_egress_sb.act_export);
-      i2c_s1_agent.m2s_mon_trn_ap.connect(scoreboard.udma_i2c1_egress_sb.act_export);
-      uart0_agent.eg_mon_trn_ap.connect(scoreboard.udma_uart0_egress_sb.act_export);
-      uart1_agent.eg_mon_trn_ap.connect(scoreboard.udma_uart1_egress_sb.act_export);
-      i2c_m_agent.s2m_mon_trn_ap.connect(scoreboard.apb_i2c_egress_sb.act_export);
-      io_agent.eg_mon_trn_ap.connect(scoreboard.gpio_egress_sb.act_export);
-      event_agent.mon_trn_ap.connect(scoreboard.event_sb.act_export);
-      dbg_agent.mon_trn_ap.connect(scoreboard.dbg_sb.act_export);
-      predictor.udma_qspi0_egress_ap.connect(scoreboard.udma_qspi0_egress_sb.exp_export);
-      predictor.udma_qspi1_egress_ap.connect(scoreboard.udma_qspi1_egress_sb.exp_export);
-      predictor.udma_i2c0_egress_ap.connect(scoreboard.udma_i2c0_egress_sb.exp_export);
-      predictor.udma_i2c1_egress_ap.connect(scoreboard.udma_i2c1_egress_sb.exp_export);
-      predictor.udma_uart0_egress_ap.connect(scoreboard.udma_uart0_egress_sb.exp_export);
-      predictor.udma_uart1_egress_ap.connect(scoreboard.udma_uart1_egress_sb.exp_export);
-      predictor.apb_i2c_egress_ap.connect(scoreboard.apb_i2c_egress_sb.exp_export);
-      predictor.gpio_egress_ap.connect(scoreboard.gpio_egress_sb.exp_export);
-      predictor.event_ap.connect(scoreboard.event_sb.exp_export);
-      predictor.dbg_ap.connect(scoreboard.dbg_sb.exp_export);
-      vsequencer.udma_qspi0_ingress_act_ap.connect(scoreboard.udma_qspi0_ingress_sb.act_export);
-      vsequencer.udma_qspi1_ingress_act_ap.connect(scoreboard.udma_qspi1_ingress_sb.act_export);
-      vsequencer.udma_camera_act_ap.connect(scoreboard.udma_camera_sb.act_export);
-      vsequencer.udma_i2c0_ingress_act_ap.connect(scoreboard.udma_i2c0_ingress_sb.act_export);
-      vsequencer.udma_i2c1_ingress_act_ap.connect(scoreboard.udma_i2c1_ingress_sb.act_export);
-      vsequencer.udma_uart0_ingress_act_ap.connect(scoreboard.udma_uart0_ingress_sb.act_export);
-      vsequencer.udma_uart1_ingress_act_ap.connect(scoreboard.udma_uart1_ingress_sb.act_export);
-      vsequencer.apb_i2c_ingress_act_ap.connect(scoreboard.apb_i2c_ingress_sb.act_export);
-      vsequencer.gpio_ingress_act_ap.connect(scoreboard.gpio_ingress_sb.act_export);
+      qspi_s0_agent.m2s_mon_trn_ap.connect(scoreboard.sb_udma_qspi0_egress.act_export);
+      qspi_s1_agent.m2s_mon_trn_ap.connect(scoreboard.sb_udma_qspi1_egress.act_export);
+      i2c_s0_agent.m2s_mon_trn_ap.connect(scoreboard.sb_udma_i2c0_egress.act_export);
+      i2c_s1_agent.m2s_mon_trn_ap.connect(scoreboard.sb_udma_i2c1_egress.act_export);
+      uart0_agent.eg_mon_trn_ap.connect(scoreboard.sb_udma_uart0_egress.act_export);
+      uart1_agent.eg_mon_trn_ap.connect(scoreboard.sb_udma_uart1_egress.act_export);
+      i2c_m_agent.s2m_mon_trn_ap.connect(scoreboard.sb_apb_i2c_egress.act_export);
+      io_agent.eg_mon_trn_ap.connect(scoreboard.sb_gpio_egress.act_export);
+      dbg_agent.mon_trn_ap.connect(scoreboard.sb_dbg.act_export);
+      predictor.udma_qspi0_egress_ap.connect(scoreboard.sb_udma_qspi0_egress.exp_export);
+      predictor.udma_qspi1_egress_ap.connect(scoreboard.sb_udma_qspi1_egress.exp_export);
+      predictor.udma_i2c0_egress_ap.connect(scoreboard.sb_udma_i2c0_egress.exp_export);
+      predictor.udma_i2c1_egress_ap.connect(scoreboard.sb_udma_i2c1_egress.exp_export);
+      predictor.udma_uart0_egress_ap.connect(scoreboard.sb_udma_uart0_egress.exp_export);
+      predictor.udma_uart1_egress_ap.connect(scoreboard.sb_udma_uart1_egress.exp_export);
+      predictor.apb_i2c_egress_ap.connect(scoreboard.sb_apb_i2c_egress.exp_export);
+      predictor.gpio_egress_ap.connect(scoreboard.sb_gpio_egress.exp_export);
+      predictor.dbg_ap.connect(scoreboard.sb_dbg.exp_export);
+      sequencer.udma_qspi0_ingress_act_ap.connect(scoreboard.sb_udma_qspi0_ingress.act_export);
+      sequencer.udma_qspi1_ingress_act_ap.connect(scoreboard.sb_udma_qspi1_ingress.act_export);
+      sequencer.udma_camera_act_ap.connect(scoreboard.sb_udma_camera.act_export);
+      sequencer.udma_i2c0_ingress_act_ap.connect(scoreboard.sb_udma_i2c0_ingress.act_export);
+      sequencer.udma_i2c1_ingress_act_ap.connect(scoreboard.sb_udma_i2c1_ingress.act_export);
+      sequencer.udma_uart0_ingress_act_ap.connect(scoreboard.sb_udma_uart0_ingress.act_export);
+      sequencer.udma_uart1_ingress_act_ap.connect(scoreboard.sb_udma_uart1_ingress.act_export);
+      sequencer.apb_i2c_ingress_act_ap.connect(scoreboard.sb_apb_i2c_ingress.act_export);
+      sequencer.gpio_ingress_act_ap.connect(scoreboard.sb_gpio_ingress.act_export);
    endfunction
 
    /**
@@ -262,18 +260,18 @@ class uvme_cvmcu_chip_env_c extends uvmx_chip_env_c #(
       uart1_agent.ig_mon_trn_ap.connect(cov_model.udma_uart1_ingress_exp_fifo.analysis_export);
       i2c_m_agent.m2s_mon_trn_ap.connect(cov_model.apb_i2c_ingress_exp_fifo.analysis_export);
       io_agent.ig_mon_trn_ap.connect(cov_model.gpio_ingress_exp_fifo.analysis_export);
-      event_agent.mon_trn_ap.connect(cov_model.mon_event_exp_fifo.analysis_export);
+      event_agent.c2s_mon_trn_ap.connect(cov_model.core_event_exp_fifo.analysis_export);
+      event_agent.s2c_mon_trn_ap.connect(cov_model.sys_event_exp_fifo.analysis_export);
       dbg_agent.mon_trn_ap.connect(cov_model.mon_dbg_exp_fifo.analysis_export);
-      vsequencer.udma_qspi0_egress_exp_ap.connect(cov_model.udma_qspi0_egress_exp_fifo.analysis_export);
-      vsequencer.udma_qspi1_egress_exp_ap.connect(cov_model.udma_qspi1_egress_exp_fifo.analysis_export);
-      vsequencer.udma_i2c0_egress_exp_ap.connect(cov_model.udma_i2c0_egress_exp_fifo.analysis_export);
-      vsequencer.udma_i2c1_egress_exp_ap.connect(cov_model.udma_i2c1_egress_exp_fifo.analysis_export);
-      vsequencer.udma_uart0_egress_exp_ap.connect(cov_model.udma_uart0_egress_exp_fifo.analysis_export);
-      vsequencer.udma_uart1_egress_exp_ap.connect(cov_model.udma_uart1_egress_exp_fifo.analysis_export);
-      vsequencer.apb_i2c_egress_exp_ap.connect(cov_model.apb_i2c_egress_exp_fifo.analysis_export);
-      vsequencer.gpio_egress_exp_ap.connect(cov_model.gpio_egress_exp_fifo.analysis_export);
-      vsequencer.event_exp_ap.connect(cov_model.event_exp_fifo.analysis_export);
-      vsequencer.dbg_exp_ap.connect(cov_model.dbg_exp_fifo.analysis_export);
+      sequencer.udma_qspi0_egress_exp_ap.connect(cov_model.udma_qspi0_egress_exp_fifo.analysis_export);
+      sequencer.udma_qspi1_egress_exp_ap.connect(cov_model.udma_qspi1_egress_exp_fifo.analysis_export);
+      sequencer.udma_i2c0_egress_exp_ap.connect(cov_model.udma_i2c0_egress_exp_fifo.analysis_export);
+      sequencer.udma_i2c1_egress_exp_ap.connect(cov_model.udma_i2c1_egress_exp_fifo.analysis_export);
+      sequencer.udma_uart0_egress_exp_ap.connect(cov_model.udma_uart0_egress_exp_fifo.analysis_export);
+      sequencer.udma_uart1_egress_exp_ap.connect(cov_model.udma_uart1_egress_exp_fifo.analysis_export);
+      sequencer.apb_i2c_egress_exp_ap.connect(cov_model.apb_i2c_egress_exp_fifo.analysis_export);
+      sequencer.gpio_egress_exp_ap.connect(cov_model.gpio_egress_exp_fifo.analysis_export);
+      sequencer.dbg_exp_ap.connect(cov_model.dbg_exp_fifo.analysis_export);
       predictor.udma_qspi0_egress_ap.connect(cov_model.udma_qspi0_egress_act_fifo.analysis_export);
       predictor.udma_qspi1_egress_ap.connect(cov_model.udma_qspi1_egress_act_fifo.analysis_export);
       predictor.udma_i2c0_egress_ap.connect(cov_model.udma_i2c0_egress_act_fifo.analysis_export);
@@ -282,17 +280,16 @@ class uvme_cvmcu_chip_env_c extends uvmx_chip_env_c #(
       predictor.udma_uart1_egress_ap.connect(cov_model.udma_uart1_egress_act_fifo.analysis_export);
       predictor.apb_i2c_egress_ap.connect(cov_model.apb_i2c_egress_act_fifo.analysis_export);
       predictor.gpio_egress_ap.connect(cov_model.gpio_egress_act_fifo.analysis_export);
-      predictor.event_ap.connect(cov_model.event_act_fifo.analysis_export);
       predictor.dbg_ap.connect(cov_model.dbg_act_fifo.analysis_export);
-      vsequencer.udma_qspi0_ingress_act_ap.connect(cov_model.udma_qspi0_ingress_act_fifo.analysis_export);
-      vsequencer.udma_qspi1_ingress_act_ap.connect(cov_model.udma_qspi1_ingress_act_fifo.analysis_export);
-      vsequencer.udma_camera_act_ap.connect(cov_model.udma_camera_act_fifo.analysis_export);
-      vsequencer.udma_i2c0_ingress_act_ap.connect(cov_model.udma_i2c0_ingress_act_fifo.analysis_export);
-      vsequencer.udma_i2c1_ingress_act_ap.connect(cov_model.udma_i2c1_ingress_act_fifo.analysis_export);
-      vsequencer.udma_uart0_ingress_act_ap.connect(cov_model.udma_uart0_ingress_act_fifo.analysis_export);
-      vsequencer.udma_uart1_ingress_act_ap.connect(cov_model.udma_uart1_ingress_act_fifo.analysis_export);
-      vsequencer.apb_i2c_ingress_act_ap.connect(cov_model.apb_i2c_ingress_act_fifo.analysis_export);
-      vsequencer.gpio_ingress_act_ap.connect(cov_model.gpio_ingress_act_fifo.analysis_export);
+      sequencer.udma_qspi0_ingress_act_ap.connect(cov_model.udma_qspi0_ingress_act_fifo.analysis_export);
+      sequencer.udma_qspi1_ingress_act_ap.connect(cov_model.udma_qspi1_ingress_act_fifo.analysis_export);
+      sequencer.udma_camera_act_ap.connect(cov_model.udma_camera_act_fifo.analysis_export);
+      sequencer.udma_i2c0_ingress_act_ap.connect(cov_model.udma_i2c0_ingress_act_fifo.analysis_export);
+      sequencer.udma_i2c1_ingress_act_ap.connect(cov_model.udma_i2c1_ingress_act_fifo.analysis_export);
+      sequencer.udma_uart0_ingress_act_ap.connect(cov_model.udma_uart0_ingress_act_fifo.analysis_export);
+      sequencer.udma_uart1_ingress_act_ap.connect(cov_model.udma_uart1_ingress_act_fifo.analysis_export);
+      sequencer.apb_i2c_ingress_act_ap.connect(cov_model.apb_i2c_ingress_act_fifo.analysis_export);
+      sequencer.gpio_ingress_act_ap.connect(cov_model.gpio_ingress_act_fifo.analysis_export);
    endfunction
 
    /**
@@ -313,24 +310,24 @@ class uvme_cvmcu_chip_env_c extends uvmx_chip_env_c #(
    /**
     * Assembles virtual sequencer from agent, sub-system and block sequencers.
     */
-   virtual function void assemble_vsequencer();
-      vsequencer.jtag_agent_vsequencer = jtag_agent.vsequencer;
-      vsequencer.qspi_s0_agent_vsequencer = qspi_s0_agent.vsequencer;
-      vsequencer.qspi_s1_agent_vsequencer = qspi_s1_agent.vsequencer;
-      vsequencer.camera_agent_vsequencer = camera_agent.vsequencer;
-      vsequencer.i2c_s0_agent_vsequencer = i2c_s0_agent.vsequencer;
-      vsequencer.i2c_s1_agent_vsequencer = i2c_s1_agent.vsequencer;
-      vsequencer.uart0_agent_vsequencer = uart0_agent.vsequencer;
-      vsequencer.uart1_agent_vsequencer = uart1_agent.vsequencer;
-      vsequencer.sdio_agent_vsequencer = sdio_agent.vsequencer;
-      vsequencer.i2c_m_agent_vsequencer = i2c_m_agent.vsequencer;
-      vsequencer.io_agent_vsequencer = io_agent.vsequencer;
-      vsequencer.instr_obi_agent_vsequencer = instr_obi_agent.vsequencer;
-      vsequencer.data_obi_agent_vsequencer = data_obi_agent.vsequencer;
-      vsequencer.event_agent_vsequencer = event_agent.vsequencer;
-      vsequencer.dbg_agent_vsequencer = dbg_agent.vsequencer;
-      vsequencer.apb_timer_ss_env_vsequencer = apb_timer_ss_env.vsequencer;
-      vsequencer.apb_adv_timer_ss_env_vsequencer = apb_adv_timer_ss_env.vsequencer;
+   virtual function void assemble_sequencer();
+      sequencer.jtag_agent_sequencer = jtag_agent.sequencer;
+      sequencer.qspi_s0_agent_sequencer = qspi_s0_agent.sequencer;
+      sequencer.qspi_s1_agent_sequencer = qspi_s1_agent.sequencer;
+      sequencer.camera_agent_sequencer = camera_agent.sequencer;
+      sequencer.i2c_s0_agent_sequencer = i2c_s0_agent.sequencer;
+      sequencer.i2c_s1_agent_sequencer = i2c_s1_agent.sequencer;
+      sequencer.uart0_agent_sequencer = uart0_agent.sequencer;
+      sequencer.uart1_agent_sequencer = uart1_agent.sequencer;
+      sequencer.sdio_agent_sequencer = sdio_agent.sequencer;
+      sequencer.i2c_m_agent_sequencer = i2c_m_agent.sequencer;
+      sequencer.io_agent_sequencer = io_agent.sequencer;
+      sequencer.instr_obi_agent_sequencer = instr_obi_agent.sequencer;
+      sequencer.data_obi_agent_sequencer = data_obi_agent.sequencer;
+      sequencer.event_agent_sequencer = event_agent.sequencer;
+      sequencer.dbg_agent_sequencer = dbg_agent.sequencer;
+      sequencer.apb_timer_ss_env_sequencer = apb_timer_ss_env.sequencer;
+      sequencer.apb_adv_timer_ss_env_sequencer = apb_adv_timer_ss_env.sequencer;
    endfunction
 
    /**
@@ -353,12 +350,12 @@ class uvme_cvmcu_chip_env_c extends uvmx_chip_env_c #(
       super.run_phase(phase);
       if (cfg.enabled) begin
          fork
-            `uvmx_run_transport_vseq(uvme_cvmcu_chip_io_transport_vseq_c)
+            `uvmx_run_transport_seq(uvme_cvmcu_chip_io_transport_seq_c)
          join_none
       end
    endtask
 
-endclass : uvme_cvmcu_chip_env_c
+endclass
 
 
 `endif // __UVME_CVMCU_CHIP_ENV_SV__

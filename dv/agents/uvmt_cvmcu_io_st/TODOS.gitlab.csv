@@ -1,0 +1,3 @@
+title,description,due_date
+Describe CORE-V-MCU IO UVM Agent Self-Test Bench",ip.yml,
+Implement or remove uvmt_cvmcu_io_st_test_cfg_c::post_randomize_work(),uvmt_cvmcu_io_st_test_cfg.sv,

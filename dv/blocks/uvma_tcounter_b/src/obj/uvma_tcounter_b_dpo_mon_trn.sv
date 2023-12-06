@@ -57,7 +57,7 @@ class uvma_tcounter_b_dpo_mon_trn_c extends uvmx_mon_trn_c #(
       `uvmx_metadata_field("target_greater_o", target_greater_o_str)
    endfunction
 
-endclass : uvma_tcounter_b_dpo_mon_trn_c
+endclass
 
 
 `endif // __UVMA_TCOUNTER_B_DPO_MON_TRN_SV__

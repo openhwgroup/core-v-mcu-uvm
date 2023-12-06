@@ -56,7 +56,7 @@ interface uvme_cvmcu_chip_probe_if (
    `uvmx_if_signal_probe_out(stm_i, , sys_clk_mp.sys_clk_cb)
    /// @}
 
-endinterface : uvme_cvmcu_chip_probe_if
+endinterface
 
 
 `endif // __UVME_CVMCU_CHIP_PROBE_IF_SV__

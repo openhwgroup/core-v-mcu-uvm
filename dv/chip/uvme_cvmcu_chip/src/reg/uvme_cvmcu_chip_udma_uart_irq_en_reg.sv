@@ -57,7 +57,7 @@ class uvme_cvmcu_chip_udma_uart_udma_uart_irq_en_reg_c extends uvmx_reg_c;
       );
    endfunction
 
-endclass : uvme_cvmcu_chip_udma_uart_udma_uart_irq_en_reg_c
+endclass
 
 
 `endif // __UVME_CVMCU_CHIP_UDMA_UART_UDMA_UART_IRQ_EN_REG_SV__

@@ -23,7 +23,7 @@ class uvmt_apb_timer_ss_reg_bit_bash_test_c extends uvmt_apb_timer_ss_base_test_
       super.new(name, parent);
    endfunction
 
-endclass : uvmt_apb_timer_ss_reg_bit_bash_test_c
+endclass
 
 
 `endif // __UVMT_APB_TIMER_SS_REG_BIT_BASH_TEST_SV__

@@ -57,7 +57,7 @@ class uvme_apb_adv_timer_ss_t3_th_channel0_reg_c extends uvmx_reg_c;
       );
    endfunction
 
-endclass : uvme_apb_adv_timer_ss_t3_th_channel0_reg_c
+endclass
 
 
 `endif // __UVME_APB_ADV_TIMER_SS_T3_TH_CHANNEL0_REG_SV__

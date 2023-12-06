@@ -1,10 +1,23 @@
-﻿Work Item Type,Title,Priority
-Issue,Add to configuration,1
-Issue,Add to context,1
-Issue,Implement predictor,1
-Issue,Add to environment,1
-Issue,Implement functional coverage model,1
-Issue,Implement fixed stimulus virtual sequence,1
-Issue,Implement random stimulus virtual sequence,1
-Issue,Implement fixed illegal stimulus virtual sequence,1
-Issue,Implement random illegal stimulus virtual sequence,1
+Work Item Type,Title,Priority
+Issue,Describe Advanced timer counter Block UVM Environment",1
+Issue,Implement illegal stimulus sequence item constraint for uvme_adv_timer_b_rand_ill_stim_seq_c,1
+Issue,Describe uvme_adv_timer_b_fix_stim_seq_c::body(),1
+Issue,Implement uvme_adv_timer_b_fix_stim_seq_c::body(),1
+Issue,Describe uvme_adv_timer_b_fix_ill_stim_seq_c::body(),1
+Issue,Implement uvme_adv_timer_b_fix_ill_stim_seq_c::body(),1
+Issue,Implement or remove uvme_adv_timer_b_cfg_c::rules_cons,1
+Issue,Complete uvme_adv_timer_b_cfg_c scoreboard logging configuration,1
+Issue,Implement uvme_adv_timer_b_cfg_c::post_randomize() or remove altogether,1
+Issue,Describe uvme_adv_timer_b_prd_c::predict(),1
+Issue,Implement uvme_adv_timer_b_prd_c::predict(),1
+Issue,Implement adv_timer_b_cfg_cg,1
+Issue,Implement adv_timer_b_cntxt_cg,1
+Issue,Implement adv_timer_b_seq_item_cg,1
+Issue,Implement adv_timer_b_in_mon_trn_cg,1
+Issue,Implement adv_timer_b_out_mon_trn_cg,1
+Issue,Implement adv_timer_b_cp_seq_item_cg,1
+Issue,Implement adv_timer_b_dpi_seq_item_cg,1
+Issue,Implement adv_timer_b_dpo_seq_item_cg,1
+Issue,Implement adv_timer_b_cp_mon_trn_cg,1
+Issue,Implement adv_timer_b_dpi_mon_trn_cg,1
+Issue,Implement adv_timer_b_dpo_mon_trn_cg,1

@@ -15,7 +15,13 @@ typedef enum {
    UVMA_CVMCU_IO_DRV_MODE_CHIP  ///< Drives CHIP
 } uvma_cvmcu_io_mode_enum;
 
-
+/**
+ * Traffic directions.
+ */
+typedef enum {
+   UVMA_CVMCU_IO_DIRECTION_IG, ///< From BOARD to CHIP
+   UVMA_CVMCU_IO_DIRECTION_EG  ///< From CHIP to BOARD
+} uvma_cvmcu_io_direction_enum;
 
 /// @name Logic vectors
 /// @{

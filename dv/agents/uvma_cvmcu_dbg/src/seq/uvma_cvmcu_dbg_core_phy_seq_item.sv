@@ -8,8 +8,8 @@
 
 
 /**
- * Sequence Item created by CORE-V-MCU Debug Interface Virtual Sequences for driving uvma_cvmcu_dbg_core_phy_drv_c.
- * @ingroup uvma_cvmcu_dbg_seq
+ * Sequence Item created by CORE-V-MCU Debug Interface Sequences for driving uvma_cvmcu_dbg_core_phy_drv_c.
+ * @ingroup uvma_cvmcu_dbg_seq_item
  */
 class uvma_cvmcu_dbg_core_phy_seq_item_c extends uvmx_seq_item_c #(
    .T_CFG  (uvma_cvmcu_dbg_cfg_c  ),
@@ -21,9 +21,15 @@ class uvma_cvmcu_dbg_core_phy_seq_item_c extends uvmx_seq_item_c #(
    rand bit  stoptimer_o; ///< Timer stop output
    /// @}
 
+   /// @name Metadata
+   /// @{
+   logic  debug_req_i; ///< Request input
+   /// @}
+
 
    `uvm_object_utils_begin(uvma_cvmcu_dbg_core_phy_seq_item_c)
       `uvm_field_int(stoptimer_o, UVM_DEFAULT)
+      `uvm_field_int(debug_req_i, UVM_DEFAULT)
    `uvm_object_utils_end
 
 
@@ -35,15 +41,17 @@ class uvma_cvmcu_dbg_core_phy_seq_item_c extends uvmx_seq_item_c #(
    endfunction
 
    /**
-    * Describes transaction as metadata for uvml_logs_metadata_logger_c.
+    * Describes sequence item for logger.
     */
    virtual function uvmx_metadata_t get_metadata();
-      string stoptimer_o_str;
-      stoptimer_o_str = $sformatf("%b", stoptimer_o);
-      `uvmx_metadata_field("stoptimer_o", stoptimer_o_str)
+      string  val_str;
+      val_str = $sformatf("%b", stoptimer_o);
+      `uvmx_metadata_field("stoptimer_o", val_str)
+      val_str = $sformatf("%b", debug_req_i);
+      `uvmx_metadata_field("debug_req_i", val_str)
    endfunction
 
-endclass : uvma_cvmcu_dbg_core_phy_seq_item_c
+endclass
 
 
 `endif // __UVMA_CVMCU_DBG_CORE_PHY_SEQ_ITEM_SV__

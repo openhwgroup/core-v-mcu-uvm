@@ -14,7 +14,7 @@
 class uvme_cvmcu_io_st_env_c extends uvmx_agent_env_c #(
    .T_CFG      (uvme_cvmcu_io_st_cfg_c           ),
    .T_CNTXT    (uvme_cvmcu_io_st_cntxt_c         ),
-   .T_VSQR     (uvme_cvmcu_io_st_vsqr_c          ),
+   .T_SQR      (uvme_cvmcu_io_st_sqr_c           ),
    .T_PRD      (uvme_cvmcu_io_st_prd_c           ),
    .T_SB       (uvme_cvmcu_io_st_sb_c            ),
    .T_COV_MODEL(uvme_cvmcu_io_st_mock_cov_model_c)
@@ -46,7 +46,7 @@ class uvme_cvmcu_io_st_env_c extends uvmx_agent_env_c #(
    virtual function void assign_cfg();
       uvm_config_db#(uvma_cvmcu_io_cfg_c)::set(this, "board_agent", "cfg", cfg.board_agent_cfg);
       uvm_config_db#(uvma_cvmcu_io_cfg_c)::set(this, "chip_agent", "cfg", cfg.chip_agent_cfg);
-      uvm_config_db#(uvma_cvmcu_io_cfg_c)::set(this, "passive_agent", "cfg", cfg.passive_cfg);
+      uvm_config_db#(uvma_cvmcu_io_cfg_c)::set(this, "passive_agent", "cfg", cfg.passive_agent_cfg);
    endfunction
 
    /**
@@ -55,7 +55,7 @@ class uvme_cvmcu_io_st_env_c extends uvmx_agent_env_c #(
    virtual function void assign_cntxt();
       uvm_config_db#(uvma_cvmcu_io_cntxt_c)::set(this, "board_agent", "cntxt", cntxt.board_agent_cntxt);
       uvm_config_db#(uvma_cvmcu_io_cntxt_c)::set(this, "chip_agent", "cntxt", cntxt.chip_agent_cntxt);
-      uvm_config_db#(uvma_cvmcu_io_cntxt_c)::set(this, "passive_agent", "cntxt", cntxt.passive_cntxt);
+      uvm_config_db#(uvma_cvmcu_io_cntxt_c)::set(this, "passive_agent", "cntxt", cntxt.passive_agent_cntxt);
    endfunction
 
    /**
@@ -67,18 +67,18 @@ class uvme_cvmcu_io_st_env_c extends uvmx_agent_env_c #(
       passive_agent = uvma_cvmcu_io_agent_c::type_id::create("passive_agent", this);
    endfunction
 
-   
+
 
    /**
     * Assembles virtual sequencer from agent sequencers.
     */
-   virtual function void assemble_vsequencer();
-      vsequencer.board_vsequencer = board_agent.vsequencer;
-      vsequencer.chip_vsequencer = chip_agent.vsequencer;
-      vsequencer.passive_vsequencer = passive_agent.vsequencer;
+   virtual function void assemble_sequencer();
+      sequencer.board_sequencer = board_agent.sequencer;
+      sequencer.chip_sequencer = chip_agent.sequencer;
+      sequencer.passive_sequencer = passive_agent.sequencer;
    endfunction
 
-   
+
    /**
     * Connects agents to predictor.
     */
@@ -88,7 +88,6 @@ class uvme_cvmcu_io_st_env_c extends uvmx_agent_env_c #(
       chip_agent.seq_item_ap.connect(predictor.chip_fifo.analysis_export);
       board_agent.ig_mon_trn_ap.connect(predictor.ig_fifo.analysis_export);
       chip_agent.eg_mon_trn_ap.connect(predictor.eg_fifo.analysis_export);
-      
    endfunction
 
    /**
@@ -96,19 +95,17 @@ class uvme_cvmcu_io_st_env_c extends uvmx_agent_env_c #(
     */
    virtual function void connect_scoreboard();
       // Agents -> Scoreboard
-      passive_agent.ig_mon_trn_ap.connect(scoreboard.sb_board.act_export);
-      passive_agent.eg_mon_trn_ap.connect(scoreboard.sb_chip.act_export);
+      passive_agent.ig_mon_trn_ap.connect(scoreboard.sb_board_agent.act_export);
+      passive_agent.eg_mon_trn_ap.connect(scoreboard.sb_chip_agent.act_export);
       chip_agent.ig_mon_trn_ap.connect(scoreboard.sb_ig.act_export);
       board_agent.eg_mon_trn_ap.connect(scoreboard.sb_eg.act_export);
       // Predictor -> Scoreboard
-      predictor.board_ap.connect(scoreboard.sb_board.exp_export);
-      predictor.chip_ap.connect(scoreboard.sb_chip.exp_export);
+      predictor.board_ap.connect(scoreboard.sb_board_agent.exp_export);
+      predictor.chip_ap.connect(scoreboard.sb_chip_agent.exp_export);
       predictor.ig_ap.connect(scoreboard.sb_ig.exp_export);
       predictor.eg_ap.connect(scoreboard.sb_eg.exp_export);
-      
    endfunction
-
-endclass : uvme_cvmcu_io_st_env_c
+endclass
 
 
 `endif // __UVME_CVMCU_IO_ST_ENV_SV__

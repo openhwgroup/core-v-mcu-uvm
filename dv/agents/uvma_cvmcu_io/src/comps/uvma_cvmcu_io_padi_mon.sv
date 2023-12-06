@@ -37,7 +37,7 @@ class uvma_cvmcu_io_padi_mon_c extends uvmx_mp_mon_c #(
    endtask
 
 
-endclass : uvma_cvmcu_io_padi_mon_c
+endclass
 
 
 `endif // __UVMA_CVMCU_IO_PADI_MON_SV__

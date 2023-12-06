@@ -38,7 +38,7 @@ class uvma_tprescaler_b_dpo_mon_c extends uvmx_mp_mon_c #(
    endtask
 
 
-endclass : uvma_tprescaler_b_dpo_mon_c
+endclass
 
 
 `endif // __UVMA_TPRESCALER_B_DPO_MON_SV__

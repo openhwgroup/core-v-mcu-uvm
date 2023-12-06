@@ -16,7 +16,7 @@ class uvma_cvmcu_dbg_agent_c extends uvmx_agent_c #(
    .T_CFG      (uvma_cvmcu_dbg_cfg_c      ),
    .T_CNTXT    (uvma_cvmcu_dbg_cntxt_c    ),
    .T_SEQ_ITEM (uvma_cvmcu_dbg_seq_item_c ),
-   .T_VSQR     (uvma_cvmcu_dbg_vsqr_c     ),
+   .T_SQR      (uvma_cvmcu_dbg_sqr_c      ),
    .T_DRV      (uvma_cvmcu_dbg_drv_c      ),
    .T_MON      (uvma_cvmcu_dbg_mon_c      ),
    .T_LOGGER   (uvma_cvmcu_dbg_logger_c   ),
@@ -46,24 +46,24 @@ class uvma_cvmcu_dbg_agent_c extends uvmx_agent_c #(
     * Connects sequencer to driver's TLM ports.
     */
    virtual function void connect_drivers_sequencers();
-      driver.core_phy_driver.seq_item_port.connect(vsequencer.core_phy_sequencer.seq_item_export);
-      driver.sys_phy_driver.seq_item_port.connect(vsequencer.sys_phy_sequencer.seq_item_export);
+      driver.core_phy_driver.seq_item_port.connect(sequencer.core_phy_sequencer.seq_item_export);
+      driver.sys_phy_driver.seq_item_port.connect(sequencer.sys_phy_sequencer.seq_item_export);
    endfunction
 
    /**
     * Connects sequencer to monitor's TLM ports.
     */
-   virtual function void connect_monitor_vsequencer();
-      monitor.phy_monitor.ap.connect(vsequencer.phy_mon_trn_fifo.analysis_export);
+   virtual function void connect_monitor_sequencer();
+      monitor.phy_monitor.ap.connect(sequencer.phy_mon_trn_fifo.analysis_export);
    endfunction
 
    /**
     * Connects top-level ports to lower-level components'.
     */
    virtual function void connect_ports();
-      mon_trn_ap = vsequencer.mon_trn_fifo.put_ap;
-      core_phy_seq_item_ap = vsequencer.core_phy_sequencer.ap;
-      sys_phy_seq_item_ap = vsequencer.sys_phy_sequencer.ap;
+      mon_trn_ap = sequencer.mon_trn_fifo.put_ap;
+      core_phy_seq_item_ap = sequencer.core_phy_sequencer.ap;
+      sys_phy_seq_item_ap = sequencer.sys_phy_sequencer.ap;
       phy_mon_trn_ap = monitor.phy_monitor.ap;
    endfunction
 
@@ -94,8 +94,8 @@ class uvma_cvmcu_dbg_agent_c extends uvmx_agent_c #(
    virtual task start_sequences();
       if (cfg.is_active) begin
          case (cfg.drv_mode)
-            UVMA_CVMCU_DBG_DRV_MODE_CORE: start_sequence(cfg.core_drv_vseq_type, cntxt.core_drv_vseq);
-            UVMA_CVMCU_DBG_DRV_MODE_SYS: start_sequence(cfg.sys_drv_vseq_type, cntxt.sys_drv_vseq);
+            UVMA_CVMCU_DBG_DRV_MODE_CORE: start_sequence(cfg.core_drv_seq_type, cntxt.core_drv_seq);
+            UVMA_CVMCU_DBG_DRV_MODE_SYS: start_sequence(cfg.sys_drv_seq_type, cntxt.sys_drv_seq);
             default: begin
                `uvm_fatal("CVMCU_DBG_AGENT", $sformatf("Invalid cfg.drv_mode: %s", cfg.drv_mode.name()))
             end
@@ -103,7 +103,7 @@ class uvma_cvmcu_dbg_agent_c extends uvmx_agent_c #(
       end
    endtask
 
-endclass : uvma_cvmcu_dbg_agent_c
+endclass
 
 
 `endif // __UVMA_CVMCU_DBG_AGENT_SV__

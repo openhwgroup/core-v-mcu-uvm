@@ -45,7 +45,7 @@ class uvma_cvmcu_cpi_phy_mon_c extends uvmx_mp_mon_c #(
       `uvmx_trim(trn.cam_data_i, cfg.data_width)
    endfunction
 
-endclass : uvma_cvmcu_cpi_phy_mon_c
+endclass
 
 
 `endif // __UVMA_CVMCU_CPI_PHY_MON_SV__

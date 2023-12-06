@@ -47,7 +47,7 @@ class uvma_adv_timer_b_dpi_seq_item_c extends uvmx_seq_item_c #(
       `uvmx_metadata_field("signal_i", signal_i_str)
    endfunction
 
-endclass : uvma_adv_timer_b_dpi_seq_item_c
+endclass
 
 
 `endif // __UVMA_ADV_TIMER_B_DPI_SEQ_ITEM_SV__

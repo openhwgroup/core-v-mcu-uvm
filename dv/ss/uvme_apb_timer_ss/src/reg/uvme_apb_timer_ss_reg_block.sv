@@ -167,7 +167,7 @@ class uvme_apb_timer_ss_reg_block_c extends uvmx_reg_block_c;
       );
    endfunction
 
-endclass : uvme_apb_timer_ss_reg_block_c
+endclass
 
 
 `endif // __UVME_APB_TIMER_SS_REG_BLOCK_SV__

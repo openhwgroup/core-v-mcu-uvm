@@ -1,15 +1,15 @@
-﻿Work Item Type,Title,Priority
-Issue,Customize transaction logs for Control Plane sequence item,1
-Issue,Customize transaction logs for Control Plane monitor transaction,1
-Issue,Customize transaction logs for Data Plane Input sequence item,1
-Issue,Customize transaction logs for Data Plane Input monitor transaction,1
-Issue,Customize transaction logs for Data Plane Output sequence item,1
-Issue,Customize transaction logs for Data Plane Output monitor transaction,1
-Issue,Implement sequence item,1
-Issue,Immplement monitor transaction,1
-Issue,Add configuration parameters if needed,1
-Issue,Add state variables if needed,1
-Issue,Implement input driver virtual sequence,1
-Issue,Implement output driver virtual sequence,1
-Issue,Implement idle virtual sequence,1
-Issue,Implement monitor virtual sequence,1
+Work Item Type,Title,Priority
+Issue,Describe Advanced timer counter UVM Agent",1
+Issue,Add assertions and/or functional coverage to uvme_adv_timer_b_chkr,1
+Issue,Describe uvma_adv_timer_b_in_drv_seq_c::drive_item(),1
+Issue,Implement uvma_adv_timer_b_in_drv_seq_c::drive(),1
+Issue,Implement or remove uvma_adv_timer_b_seq_item_c::rules_cons,1
+Issue,Implement or remove uvma_adv_timer_b_seq_item_c::post_randomize(),1
+Issue,Implement or remove uvma_adv_timer_b_seq_item_c::do_print(),1
+Issue,Implement uvma_adv_timer_b_mon_seq_c::monitor(),1
+Issue,Describe uvma_adv_timer_b_out_drv_seq_c::drive(),1
+Issue,Remove this line after implementing uvma_adv_timer_b_out_drv_seq_c::drive(),1
+Issue,Implement uvma_adv_timer_b_out_drv_seq_c::drive(),1
+Issue,Implement or remove uvma_adv_timer_b_cfg_c::post_randomize(),1
+Issue,Implement or remove uvma_adv_timer_b_mon_trn_c::do_compare(),1
+Issue,Implement or remove uvma_adv_timer_b_mon_trn_c::do_print(),1

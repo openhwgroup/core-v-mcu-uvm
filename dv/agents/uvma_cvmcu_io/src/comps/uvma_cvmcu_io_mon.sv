@@ -42,7 +42,7 @@ class uvma_cvmcu_io_mon_c extends uvmx_mon_c #(
       pado_monitor = uvma_cvmcu_io_pado_mon_c::type_id::create("pado_monitor", this);
    endfunction
 
-endclass : uvma_cvmcu_io_mon_c
+endclass
 
 
 `endif // __UVMA_CVMCU_IO_MON_SV__

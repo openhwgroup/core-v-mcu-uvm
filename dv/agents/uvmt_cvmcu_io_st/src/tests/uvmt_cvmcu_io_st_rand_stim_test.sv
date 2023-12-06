@@ -8,25 +8,63 @@
 
 
 /**
- * Test running uvme_cvmcu_io_st_rand_stim_vseq_c with default parameters and Scoreboarding enabled.
- * @ingroup uvmt_cvmcu_io_st_tests
+ * Ensures functionality with random valid stimulus and synchronized scoreboarding.
+ * @ingroup uvmt_cvmcu_io_st_tests_functional
  */
 class uvmt_cvmcu_io_st_rand_stim_test_c extends uvmt_cvmcu_io_st_base_test_c;
 
-   rand uvme_cvmcu_io_st_rand_stim_vseq_c  rand_stim_vseq; ///< Virtual Sequence run during #main_phase()
+   /// @name Sequences
+   /// @{
+   rand uvme_cvmcu_io_st_rand_stim_seq_c  rand_stim_seq; ///< Executes during 'main_phase()'
+   /// @}
 
 
-   `uvm_component_utils(uvmt_cvmcu_io_st_rand_stim_test_c)
+   `uvm_component_utils_begin(uvmt_cvmcu_io_st_rand_stim_test_c)
+      `uvm_field_object(rand_stim_seq, UVM_DEFAULT)
+   `uvm_component_utils_end
 
 
    /**
-    * Overrides number of stimulus items to drive with CLI argument (if present).
+    * Assigns Command Line Interface parsed values to knobs/sequences.
     */
-   constraint rand_stim_vseq_cons {
-      env_cfg.scoreboarding_enabled == 1;
+   constraint cli_cons {
       if (test_cfg.cli_num_items_override) {
-         rand_stim_vseq.num_items == test_cfg.cli_num_items;
+         rand_stim_seq.num_items == test_cfg.cli_num_items;
       }
+      else {
+         rand_stim_seq.num_items == test_cfg.num_items;
+      }
+      if (test_cfg.cli_min_size_override) {
+         rand_stim_seq.min_size == test_cfg.cli_min_size;
+      }
+      else {
+         rand_stim_seq.min_size == test_cfg.min_size;
+      }
+      if (test_cfg.cli_max_size_override) {
+         rand_stim_seq.max_size == test_cfg.cli_max_size;
+      }
+      else {
+         rand_stim_seq.max_size == test_cfg.max_size;
+      }
+      if (test_cfg.cli_min_gap_override) {
+         rand_stim_seq.min_gap == test_cfg.cli_min_gap;
+      }
+      else {
+         rand_stim_seq.min_gap == test_cfg.min_gap;
+      }
+      if (test_cfg.cli_max_gap_override) {
+         rand_stim_seq.max_gap == test_cfg.cli_max_gap;
+      }
+      else {
+         rand_stim_seq.max_gap == test_cfg.max_gap;
+      }
+   }
+
+   /**
+    * Restricts randomization space.
+    */
+   constraint rules_cons {
+      env_cfg.scoreboarding_enabled == 1;
    }
 
 
@@ -38,44 +76,54 @@ class uvmt_cvmcu_io_st_rand_stim_test_c extends uvmt_cvmcu_io_st_base_test_c;
    endfunction
 
    /**
-    * Creates rand_stim_vseq.
+    * Creates sequence rand_stim_seq.
     */
    virtual function void create_sequences();
-      super.create_sequences();
-      rand_stim_vseq = uvme_cvmcu_io_st_rand_stim_vseq_c::type_id::create("rand_stim_vseq");
+      rand_stim_seq = uvme_cvmcu_io_st_rand_stim_seq_c::type_id::create("rand_stim_seq");
    endfunction
 
    /**
-    * Runs rand_stim_vseq on vsequencer.
+    * Runs rand_stim_seq.
     */
    virtual task main_phase(uvm_phase phase);
       phase.raise_objection(this);
-      `uvm_info("TEST", $sformatf("Starting rand_stim Virtual Sequence:\n%s", rand_stim_vseq.sprint()), UVM_NONE)
-      rand_stim_vseq.start(vsequencer);
-      `uvm_info("TEST", $sformatf("Finished rand_stim Virtual Sequence:\n%s", rand_stim_vseq.sprint()), UVM_NONE)
+      `uvm_info("TEST", $sformatf("Starting 'rand_stim':\n%s", rand_stim_seq.sprint()), UVM_NONE)
+      rand_stim_seq.start(sequencer);
+      `uvm_info("TEST", $sformatf("Finished 'rand_stim':\n%s", rand_stim_seq.sprint()), UVM_NONE)
       phase.drop_objection(this);
    endtask
 
    /**
-    * Checks that all scoreboards have numbers of matches equal to number of Sequence Items specified to be generated.
+    * Ensures that test goals were met.
     */
    virtual function void check_phase(uvm_phase phase);
-      super.check_phase(phase);
-      if (env_cntxt.sb_board_cntxt.match_count != rand_stim_vseq.num_items) begin
-         `uvm_error("TEST", $sformatf("BOARD scoreboard saw less than %0d matches: %0d", rand_stim_vseq.num_items, env_cntxt.sb_board_cntxt.match_count))
+      if (env_cntxt.sb_board_agent_cntxt.match_count != rand_stim_seq.num_items) begin
+         `uvm_error("TEST", $sformatf("Scoreboard 'board_agent' saw less than %0d matches: %0d", rand_stim_seq.num_items, env_cntxt.sb_board_agent_cntxt.match_count))
       end
-      if (env_cntxt.sb_chip_cntxt.match_count != rand_stim_vseq.num_items) begin
-         `uvm_error("TEST", $sformatf("CHIP scoreboard saw less than %0d matches: %0d", rand_stim_vseq.num_items, env_cntxt.sb_chip_cntxt.match_count))
+      if (env_cntxt.sb_chip_agent_cntxt.match_count != rand_stim_seq.num_items) begin
+         `uvm_error("TEST", $sformatf("Scoreboard 'chip_agent' scoreboard saw less than %0d matches: %0d", rand_stim_seq.num_items, env_cntxt.sb_chip_agent_cntxt.match_count))
       end
-      if (env_cntxt.sb_ig_cntxt.match_count != rand_stim_vseq.num_items) begin
-         `uvm_error("TEST", $sformatf("IG scoreboard saw less than %0d matches: %0d", rand_stim_vseq.num_items, env_cntxt.sb_ig_cntxt.match_count))
+      if (env_cntxt.sb_ig_cntxt.match_count != rand_stim_seq.num_items) begin
+         `uvm_error("TEST", $sformatf("Scoreboard 'ig' saw less than %0d matches: %0d", rand_stim_seq.num_items, env_cntxt.sb_ig_cntxt.match_count))
       end
-      if (env_cntxt.sb_eg_cntxt.match_count != rand_stim_vseq.num_items) begin
-         `uvm_error("TEST", $sformatf("EG scoreboard saw less than %0d matches: %0d", rand_stim_vseq.num_items, env_cntxt.sb_eg_cntxt.match_count))
+      if (env_cntxt.sb_eg_cntxt.match_count != rand_stim_seq.num_items) begin
+         `uvm_error("TEST", $sformatf("Scoreboard 'eg' scoreboard saw less than %0d matches: %0d", rand_stim_seq.num_items, env_cntxt.sb_eg_cntxt.match_count))
       end
    endfunction
 
-endclass : uvmt_cvmcu_io_st_rand_stim_test_c
+   /**
+    * Prints end-of-test goals report.
+    */
+   virtual function void report_phase(uvm_phase phase);
+      `uvmx_test_report({
+         $sformatf("Scoreboard 'board_agent' saw %0d matches during simulation", env_cntxt.sb_board_agent_cntxt.match_count),
+         $sformatf("Scoreboard 'chip_agent' saw %0d matches during simulation", env_cntxt.sb_chip_agent_cntxt.match_count),
+         $sformatf("Scoreboard 'ig' saw %0d matches during simulation", env_cntxt.sb_ig_cntxt.match_count),
+         $sformatf("Scoreboard 'eg' saw %0d matches during simulation", env_cntxt.sb_eg_cntxt.match_count),
+      })
+   endfunction
+
+endclass
 
 
 `endif // __UVMT_CVMCU_IO_ST_RAND_STIM_TEST_SV__

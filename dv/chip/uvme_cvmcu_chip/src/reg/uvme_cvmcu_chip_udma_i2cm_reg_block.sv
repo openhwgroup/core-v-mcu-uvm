@@ -41,7 +41,7 @@ class uvme_cvmcu_chip_udma_i2cm_reg_block_c extends uvmx_reg_block_c;
       );
    endfunction
 
-endclass : uvme_cvmcu_chip_udma_i2cm_reg_block_c
+endclass
 
 
 `endif // __UVME_CVMCU_CHIP_UDMA_I2CM_REG_BLOCK_SV__
