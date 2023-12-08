@@ -58,6 +58,7 @@ class uvmt_cvmcu_chip_uart_eg_test_c extends uvmt_cvmcu_chip_base_test_c;
     */
    constraint rules_cons {
       env_cfg.scoreboarding_enabled == 1;
+      min_gap <= max_gap;
    }
 
 
@@ -108,10 +109,10 @@ class uvmt_cvmcu_chip_uart_eg_test_c extends uvmt_cvmcu_chip_base_test_c;
     * Prints end-of-test goals report.
     */
    virtual function void report_phase(uvm_phase phase);
-      `uvmx_test_report(
+      `uvmx_test_report({
          $sformatf("Scoreboard 'sb_udma_uart0_egress' observed %0d matches during simulation", env_cntxt.sb_udma_uart0_egress_cntxt.match_count),
          $sformatf("Scoreboard 'sb_udma_uart1_egress' observed %0d matches during simulation", env_cntxt.sb_udma_uart1_egress_cntxt.match_count)
-      )
+      })
    endfunction
 
 endclass

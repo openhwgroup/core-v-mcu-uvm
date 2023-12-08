@@ -36,14 +36,22 @@ module uvmt_cvmcu_chip_tb;
    /// @name CORE-V-MCU chip
    /// @{
    uvma_jtag_if  jtag_if(.tck(jtag_tck_i), .trst(rstn_i)); ///< JTAG controller agent interface
-   uvma_cvmcu_io_if  io_if(.ref_clk_i(ref_clk_i), .rstn_i(rstn_i)); ///< IO ports agent interface
+   uvma_spi_if  qspi_s0_if(.reset_n(rstn_i)); ///< QSPI slave 0 agent interface
+   uvma_spi_if  qspi_s1_if(.reset_n(rstn_i)); ///< QSPI slave 1 agent interface
+   uvma_cvmcu_cpi_if  camera_if(.rstn_i(rstn_i)); ///< Camera Parallel Interface transmitter agent interface
+   uvma_i2c_if  i2c_s0_if(.reset_n(rstn_i)); ///< I2C slave 0 agent interface
+   uvma_i2c_if  i2c_s1_if(.reset_n(rstn_i)); ///< I2C slave 1 agent interface
+   uvma_uart_if  uart0_if(.reset_n(rstn_i)); ///< UART 0 agent interface
+   uvma_uart_if  uart1_if(.reset_n(rstn_i)); ///< UART 1 agent interface
+   uvma_sdio_if  sdio_if(.trst(rstn_i)); ///< Flash card agent interface
+   uvma_i2c_if  i2c_m_if(.reset_n(rstn_i)); ///< I2C master agent interface
    uvma_obi_if  instr_obi_if(); ///< Instruction memory OBI agent interface
    uvma_obi_if  data_obi_if(); ///< Data memory OBI agent interface
    uvma_cvmcu_event_if  event_if(); ///< Event agent interface
    uvma_cvmcu_dbg_if  dbg_if(); ///< Debug agent interface
    uvma_irq_if  irq_l1_if(); ///< First Level IRQ agent interface
    uvma_irq_if  irq_l2_if(); ///< Platform-Specific (Second Level) IRQ agent interface
-   uvme_cvmcu_chip_probe_if  probe_if(.*); ///< Misc. signals interface
+   uvme_cvmcu_chip_probe_if  probe_if(.*); ///< Non-agent signals interface
    /// @}
 
    /// @name apb_timer sub-system
@@ -130,7 +138,15 @@ module uvmt_cvmcu_chip_tb;
       uvm_config_db#(virtual uvma_reset_if)::set(null, "uvm_test_top.sys_reset_agent", "vif", sys_reset_if);
       uvm_config_db#(virtual uvma_reset_if)::set(null, "uvm_test_top.jtag_reset_agent", "vif", jtag_reset_if);
       uvm_config_db#(virtual uvma_jtag_if)::set(null, "uvm_test_top.env.jtag_agent", "vif", jtag_if);
-      uvm_config_db#(virtual uvma_cvmcu_io_if)::set(null, "uvm_test_top.env.io_agent", "vif", io_if);
+      uvm_config_db#(virtual uvma_spi_if)::set(null, "uvm_test_top.env.qspi_s0_agent", "vif", qspi_s0_if);
+      uvm_config_db#(virtual uvma_spi_if)::set(null, "uvm_test_top.env.qspi_s1_agent", "vif", qspi_s1_if);
+      uvm_config_db#(virtual uvma_cvmcu_cpi_if)::set(null, "uvm_test_top.env.camera_agent", "vif", camera_if);
+      uvm_config_db#(virtual uvma_i2c_if)::set(null, "uvm_test_top.env.i2c_s0_agent", "vif", i2c_s0_if);
+      uvm_config_db#(virtual uvma_i2c_if)::set(null, "uvm_test_top.env.i2c_s1_agent", "vif", i2c_s1_if);
+      uvm_config_db#(virtual uvma_uart_if)::set(null, "uvm_test_top.env.uart0_agent", "vif", uart0_if);
+      uvm_config_db#(virtual uvma_uart_if)::set(null, "uvm_test_top.env.uart1_agent", "vif", uart1_if);
+      uvm_config_db#(virtual uvma_sdio_if)::set(null, "uvm_test_top.env.sdio_agent", "vif", sdio_if);
+      uvm_config_db#(virtual uvma_i2c_if)::set(null, "uvm_test_top.env.i2c_m_agent", "vif", i2c_m_if);
       uvm_config_db#(virtual uvma_obi_if)::set(null, "uvm_test_top.env.instr_obi_agent", "vif", instr_obi_if);
       uvm_config_db#(virtual uvma_obi_if)::set(null, "uvm_test_top.env.data_obi_agent", "vif", data_obi_if);
       uvm_config_db#(virtual uvma_cvmcu_event_if)::set(null, "uvm_test_top.env.event_agent", "vif", event_if);

@@ -26,7 +26,6 @@ class uvme_cvmcu_chip_sb_c extends uvmx_chip_sb_c #(
    uvmx_sb_simplex_c #(uvma_uart_mon_trn_c)  sb_udma_uart0_ingress; ///< Scoreboard component for Udma_uart0_ingress prediction path.
    uvmx_sb_simplex_c #(uvma_uart_mon_trn_c)  sb_udma_uart1_ingress; ///< Scoreboard component for Udma_uart1_ingress prediction path.
    uvmx_sb_simplex_c #(uvma_i2c_mon_trn_c)  sb_apb_i2c_ingress; ///< Scoreboard component for Apb_i2c_ingress prediction path.
-   uvmx_sb_simplex_c #(uvma_cvmcu_io_mon_trn_c)  sb_gpio_ingress; ///< Scoreboard component for Gpio_ingress prediction path.
    uvmx_sb_simplex_c #(uvma_spi_mon_trn_c)  sb_udma_qspi0_egress; ///< Scoreboard component for Udma_qspi0_egress prediction path.
    uvmx_sb_simplex_c #(uvma_spi_mon_trn_c)  sb_udma_qspi1_egress; ///< Scoreboard component for Udma_qspi1_egress prediction path.
    uvmx_sb_simplex_c #(uvma_i2c_mon_trn_c)  sb_udma_i2c0_egress; ///< Scoreboard component for Udma_i2c0_egress prediction path.
@@ -34,7 +33,6 @@ class uvme_cvmcu_chip_sb_c extends uvmx_chip_sb_c #(
    uvmx_sb_simplex_c #(uvma_uart_mon_trn_c)  sb_udma_uart0_egress; ///< Scoreboard component for Udma_uart0_egress prediction path.
    uvmx_sb_simplex_c #(uvma_uart_mon_trn_c)  sb_udma_uart1_egress; ///< Scoreboard component for Udma_uart1_egress prediction path.
    uvmx_sb_simplex_c #(uvma_i2c_mon_trn_c)  sb_apb_i2c_egress; ///< Scoreboard component for Apb_i2c_egress prediction path.
-   uvmx_sb_simplex_c #(uvma_cvmcu_io_mon_trn_c)  sb_gpio_egress; ///< Scoreboard component for Gpio_egress prediction path.
    uvmx_sb_simplex_c #(uvma_cvmcu_dbg_mon_trn_c)  sb_dbg; ///< Scoreboard component for Dbg prediction path.
    /// @}
 
@@ -61,7 +59,6 @@ class uvme_cvmcu_chip_sb_c extends uvmx_chip_sb_c #(
       uvm_config_db#(uvmx_sb_simplex_cfg_c)::set(this, "sb_udma_uart0_ingress" , "cfg", cfg.sb_udma_uart0_ingress_cfg );
       uvm_config_db#(uvmx_sb_simplex_cfg_c)::set(this, "sb_udma_uart1_ingress" , "cfg", cfg.sb_udma_uart1_ingress_cfg );
       uvm_config_db#(uvmx_sb_simplex_cfg_c)::set(this, "sb_apb_i2c_ingress" , "cfg", cfg.sb_apb_i2c_ingress_cfg );
-      uvm_config_db#(uvmx_sb_simplex_cfg_c)::set(this, "sb_gpio_ingress" , "cfg", cfg.sb_gpio_ingress_cfg );
       uvm_config_db#(uvmx_sb_simplex_cfg_c)::set(this, "sb_udma_qspi0_egress" , "cfg", cfg.sb_udma_qspi0_egress_cfg );
       uvm_config_db#(uvmx_sb_simplex_cfg_c)::set(this, "sb_udma_qspi1_egress" , "cfg", cfg.sb_udma_qspi1_egress_cfg );
       uvm_config_db#(uvmx_sb_simplex_cfg_c)::set(this, "sb_udma_i2c0_egress" , "cfg", cfg.sb_udma_i2c0_egress_cfg );
@@ -69,7 +66,6 @@ class uvme_cvmcu_chip_sb_c extends uvmx_chip_sb_c #(
       uvm_config_db#(uvmx_sb_simplex_cfg_c)::set(this, "sb_udma_uart0_egress" , "cfg", cfg.sb_udma_uart0_egress_cfg );
       uvm_config_db#(uvmx_sb_simplex_cfg_c)::set(this, "sb_udma_uart1_egress" , "cfg", cfg.sb_udma_uart1_egress_cfg );
       uvm_config_db#(uvmx_sb_simplex_cfg_c)::set(this, "sb_apb_i2c_egress" , "cfg", cfg.sb_apb_i2c_egress_cfg );
-      uvm_config_db#(uvmx_sb_simplex_cfg_c)::set(this, "sb_gpio_egress" , "cfg", cfg.sb_gpio_egress_cfg );
       uvm_config_db#(uvmx_sb_simplex_cfg_c)::set(this, "sb_dbg" , "cfg", cfg.sb_dbg_cfg );
    endfunction
 
@@ -85,7 +81,6 @@ class uvme_cvmcu_chip_sb_c extends uvmx_chip_sb_c #(
       uvm_config_db#(uvmx_sb_simplex_cntxt_c)::set(this, "sb_udma_uart0_ingress", "cntxt", cntxt.sb_udma_uart0_ingress_cntxt);
       uvm_config_db#(uvmx_sb_simplex_cntxt_c)::set(this, "sb_udma_uart1_ingress", "cntxt", cntxt.sb_udma_uart1_ingress_cntxt);
       uvm_config_db#(uvmx_sb_simplex_cntxt_c)::set(this, "sb_apb_i2c_ingress", "cntxt", cntxt.sb_apb_i2c_ingress_cntxt);
-      uvm_config_db#(uvmx_sb_simplex_cntxt_c)::set(this, "sb_gpio_ingress", "cntxt", cntxt.sb_gpio_ingress_cntxt);
       uvm_config_db#(uvmx_sb_simplex_cntxt_c)::set(this, "sb_udma_qspi0_egress", "cntxt", cntxt.sb_udma_qspi0_egress_cntxt);
       uvm_config_db#(uvmx_sb_simplex_cntxt_c)::set(this, "sb_udma_qspi1_egress", "cntxt", cntxt.sb_udma_qspi1_egress_cntxt);
       uvm_config_db#(uvmx_sb_simplex_cntxt_c)::set(this, "sb_udma_i2c0_egress", "cntxt", cntxt.sb_udma_i2c0_egress_cntxt);
@@ -93,7 +88,6 @@ class uvme_cvmcu_chip_sb_c extends uvmx_chip_sb_c #(
       uvm_config_db#(uvmx_sb_simplex_cntxt_c)::set(this, "sb_udma_uart0_egress", "cntxt", cntxt.sb_udma_uart0_egress_cntxt);
       uvm_config_db#(uvmx_sb_simplex_cntxt_c)::set(this, "sb_udma_uart1_egress", "cntxt", cntxt.sb_udma_uart1_egress_cntxt);
       uvm_config_db#(uvmx_sb_simplex_cntxt_c)::set(this, "sb_apb_i2c_egress", "cntxt", cntxt.sb_apb_i2c_egress_cntxt);
-      uvm_config_db#(uvmx_sb_simplex_cntxt_c)::set(this, "sb_gpio_egress", "cntxt", cntxt.sb_gpio_egress_cntxt);
       uvm_config_db#(uvmx_sb_simplex_cntxt_c)::set(this, "sb_dbg", "cntxt", cntxt.sb_dbg_cntxt);
    endfunction
 
@@ -109,7 +103,6 @@ class uvme_cvmcu_chip_sb_c extends uvmx_chip_sb_c #(
       sb_udma_uart0_ingress = uvmx_sb_simplex_c#(uvma_uart_mon_trn_c)::type_id::create("sb_udma_uart0_ingress", this);
       sb_udma_uart1_ingress = uvmx_sb_simplex_c#(uvma_uart_mon_trn_c)::type_id::create("sb_udma_uart1_ingress", this);
       sb_apb_i2c_ingress = uvmx_sb_simplex_c#(uvma_i2c_mon_trn_c)::type_id::create("sb_apb_i2c_ingress", this);
-      sb_gpio_ingress = uvmx_sb_simplex_c#(uvma_cvmcu_io_mon_trn_c)::type_id::create("sb_gpio_ingress", this);
       sb_udma_qspi0_egress = uvmx_sb_simplex_c#(uvma_spi_mon_trn_c)::type_id::create("sb_udma_qspi0_egress", this);
       sb_udma_qspi1_egress = uvmx_sb_simplex_c#(uvma_spi_mon_trn_c)::type_id::create("sb_udma_qspi1_egress", this);
       sb_udma_i2c0_egress = uvmx_sb_simplex_c#(uvma_i2c_mon_trn_c)::type_id::create("sb_udma_i2c0_egress", this);
@@ -117,7 +110,6 @@ class uvme_cvmcu_chip_sb_c extends uvmx_chip_sb_c #(
       sb_udma_uart0_egress = uvmx_sb_simplex_c#(uvma_uart_mon_trn_c)::type_id::create("sb_udma_uart0_egress", this);
       sb_udma_uart1_egress = uvmx_sb_simplex_c#(uvma_uart_mon_trn_c)::type_id::create("sb_udma_uart1_egress", this);
       sb_apb_i2c_egress = uvmx_sb_simplex_c#(uvma_i2c_mon_trn_c)::type_id::create("sb_apb_i2c_egress", this);
-      sb_gpio_egress = uvmx_sb_simplex_c#(uvma_cvmcu_io_mon_trn_c)::type_id::create("sb_gpio_egress", this);
       sb_dbg = uvmx_sb_simplex_c#(uvma_cvmcu_dbg_mon_trn_c)::type_id::create("sb_dbg", this);
    endfunction
 

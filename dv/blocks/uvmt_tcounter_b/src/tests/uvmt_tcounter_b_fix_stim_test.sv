@@ -70,9 +70,9 @@ class uvmt_tcounter_b_fix_stim_test_c extends uvmt_tcounter_b_base_test_c;
     * Prints end-of-test goals report.
     */
    virtual function void report_phase(uvm_phase phase);
-      `uvmx_test_report(
+      `uvmx_test_report({
          $sformatf("Scoreboard saw %0d matches during simulation", env_cntxt.sb_cntxt.match_count)
-      )
+      })
    endfunction
 
 endclass

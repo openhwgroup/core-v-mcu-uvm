@@ -1,26 +1,8 @@
 Work Item Type,Title,Priority
 Issue,Add assertions and/or functional coverage to uvme_cvmcu_chip_chkr,1
+Issue,Assign interface signals to uvme_cvmcu_chip_probe_if pins,1
 Issue,Describe uvme_cvmcu_chip_cfg_seq_c::body(),1
 Issue,Implement uvme_cvmcu_chip_cfg_seq_c::body(),1
-Issue,Implement uvme_cvmcu_chip_io_transport_seq_c::monitor_ig(),1
-Issue,Implement uvme_cvmcu_chip_io_transport_seq_c::monitor_eg(),1
-Issue,Implement uvme_cvmcu_chip_io_transport_seq_c::drive_qspi_s0_phym(),1
-Issue,Implement uvme_cvmcu_chip_io_transport_seq_c::drive_qspi_s0_phys(),1
-Issue,Implement uvme_cvmcu_chip_io_transport_seq_c::drive_qspi_s1_phym(),1
-Issue,Implement uvme_cvmcu_chip_io_transport_seq_c::drive_qspi_s1_phys(),1
-Issue,Implement uvme_cvmcu_chip_io_transport_seq_c::drive_camera_phy(),1
-Issue,Implement uvme_cvmcu_chip_io_transport_seq_c::drive_i2c_s0_phym(),1
-Issue,Implement uvme_cvmcu_chip_io_transport_seq_c::drive_i2c_s0_phys(),1
-Issue,Implement uvme_cvmcu_chip_io_transport_seq_c::drive_i2c_s1_phym(),1
-Issue,Implement uvme_cvmcu_chip_io_transport_seq_c::drive_i2c_s1_phys(),1
-Issue,Implement uvme_cvmcu_chip_io_transport_seq_c::drive_uart0_phyt(),1
-Issue,Implement uvme_cvmcu_chip_io_transport_seq_c::drive_uart0_phyr(),1
-Issue,Implement uvme_cvmcu_chip_io_transport_seq_c::drive_uart1_phyt(),1
-Issue,Implement uvme_cvmcu_chip_io_transport_seq_c::drive_uart1_phyr(),1
-Issue,Implement uvme_cvmcu_chip_io_transport_seq_c::drive_sdio_phyh(),1
-Issue,Implement uvme_cvmcu_chip_io_transport_seq_c::drive_sdio_phyd(),1
-Issue,Implement uvme_cvmcu_chip_io_transport_seq_c::drive_i2c_m_phym(),1
-Issue,Implement uvme_cvmcu_chip_io_transport_seq_c::drive_i2c_m_phys(),1
 Issue,Implement or remove uvme_cvmcu_chip_cfg_c::rules_cons,1
 Issue,Implement or remove uvme_cvmcu_chip_cfg_c::post_randomize(),1
 Issue,Implement uvme_cvmcu_chip_prd_c::predict_reg_op() for registers,1
@@ -34,7 +16,6 @@ Issue,Implement uvme_cvmcu_chip_prd_c::process_udma_i2c1_ingress(),1
 Issue,Implement uvme_cvmcu_chip_prd_c::process_udma_uart0_ingress(),1
 Issue,Implement uvme_cvmcu_chip_prd_c::process_udma_uart1_ingress(),1
 Issue,Implement uvme_cvmcu_chip_prd_c::process_apb_i2c_ingress(),1
-Issue,Implement uvme_cvmcu_chip_prd_c::process_gpio_ingress(),1
 Issue,Implement uvme_cvmcu_chip_prd_c::predict_core_event(),1
 Issue,Implement uvme_cvmcu_chip_prd_c::predict_sys_event(),1
 Issue,Implement uvme_cvmcu_chip_prd_c::predict_mon_dbg(),1
@@ -48,7 +29,6 @@ Issue,Implement cvmcu_chip_udma_i2c1_ingress_exp_cg,1
 Issue,Implement cvmcu_chip_udma_uart0_ingress_exp_cg,1
 Issue,Implement cvmcu_chip_udma_uart1_ingress_exp_cg,1
 Issue,Implement cvmcu_chip_apb_i2c_ingress_exp_cg,1
-Issue,Implement cvmcu_chip_gpio_ingress_exp_cg,1
 Issue,Implement cvmcu_chip_core_event_exp_cg,1
 Issue,Implement cvmcu_chip_sys_event_exp_cg,1
 Issue,Implement cvmcu_chip_mon_dbg_exp_cg,1
@@ -59,7 +39,6 @@ Issue,Implement cvmcu_chip_udma_i2c1_egress_exp_cg,1
 Issue,Implement cvmcu_chip_udma_uart0_egress_exp_cg,1
 Issue,Implement cvmcu_chip_udma_uart1_egress_exp_cg,1
 Issue,Implement cvmcu_chip_apb_i2c_egress_exp_cg,1
-Issue,Implement cvmcu_chip_gpio_egress_exp_cg,1
 Issue,Implement cvmcu_chip_dbg_exp_cg,1
 Issue,Implement cvmcu_chip_udma_qspi0_egress_act_cg,1
 Issue,Implement cvmcu_chip_udma_qspi1_egress_act_cg,1
@@ -68,7 +47,6 @@ Issue,Implement cvmcu_chip_udma_i2c1_egress_act_cg,1
 Issue,Implement cvmcu_chip_udma_uart0_egress_act_cg,1
 Issue,Implement cvmcu_chip_udma_uart1_egress_act_cg,1
 Issue,Implement cvmcu_chip_apb_i2c_egress_act_cg,1
-Issue,Implement cvmcu_chip_gpio_egress_act_cg,1
 Issue,Implement cvmcu_chip_dbg_act_cg,1
 Issue,Implement cvmcu_chip_udma_qspi0_ingress_act_cg,1
 Issue,Implement cvmcu_chip_udma_qspi1_ingress_act_cg,1
@@ -78,4 +56,3 @@ Issue,Implement cvmcu_chip_udma_i2c1_ingress_act_cg,1
 Issue,Implement cvmcu_chip_udma_uart0_ingress_act_cg,1
 Issue,Implement cvmcu_chip_udma_uart1_ingress_act_cg,1
 Issue,Implement cvmcu_chip_apb_i2c_ingress_act_cg,1
-Issue,Implement cvmcu_chip_gpio_ingress_act_cg,1

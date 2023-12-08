@@ -15,24 +15,45 @@ interface uvme_cvmcu_chip_probe_if (
    input  ref_clk_i, ///< System clock
    input  jtag_tck_i, ///< JTAG clock
    input  rstn_i, ///< System reset
-   input  jtag_trst_i ///< JTAG reset
+   input  jtag_trst_i, ///< JTAG reset
+   uvma_spi_if  qspi_s0_if, ///< QSPI slave 0
+   uvma_spi_if  qspi_s1_if, ///< QSPI slave 1
+   uvma_cvmcu_cpi_if  camera_if, ///< Camera Parallel Interface transmitter
+   uvma_i2c_if  i2c_s0_if, ///< I2C slave 0
+   uvma_i2c_if  i2c_s1_if, ///< I2C slave 1
+   uvma_uart_if  uart0_if, ///< UART 0
+   uvma_uart_if  uart1_if, ///< UART 1
+   uvma_sdio_if  sdio_if, ///< Flash card
+   uvma_i2c_if  i2c_m_if ///< I2C master
 );
 
    /// @name Inputs
    /// @{
-   wire [0:0] bootsel_i; ///< Boot select
-   wire [0:0] stm_i; ///< Structural Test Mode
+   wire  bootsel_i; ///< Boot select
+   wire  stm_i; ///< Structural Test Mode
+   wire [47:0]  io_in_i; ///< Port’s input signal
    /// @}
 
    /// @name Outputs
    /// @{
+   wire [47:0]  io_out_o; ///< Port's output signal
+   wire [47:0][5:0]  pad_cfg_o; ///< PAD configuration (implementation dependent)
+   wire [47:0]  io_oe_o; ///< Port’s Output Enable 1: IO = io_out_o. 0: io_in_i = IO.
+   wire  slow_clk_o; ///< Output clock generated from ref_clk_i. Frequency is implementation dependent.
    /// @}
+
+
+   // TODO Assign interface signals to uvme_cvmcu_chip_probe_if pins
+   //      Ex: function void assign_abc2xyz();
+   //             assign abc = xyz.def;
+   //          endfunction
 
 
    /// @name Signals clocked to 'ref_clk_i'
    /// @{
    clocking sys_clk_cb @(posedge ref_clk_i);
-      output bootsel_i, stm_i;
+      output bootsel_i, stm_i, io_in_i;
+      input io_out_o, pad_cfg_o, io_oe_o, slow_clk_o;
    endclocking
    modport sys_clk_mp (clocking sys_clk_cb);
    /// @}
@@ -45,15 +66,19 @@ interface uvme_cvmcu_chip_probe_if (
    /// @}
 
 
-
    /// @name Accessors
    /// @{
    `uvmx_if_reset(rstn_i)
    `uvmx_if_reset(jtag_trst_i)
    `uvmx_if_cb(sys_clk_mp, sys_clk_cb)
    `uvmx_if_cb(jtag_clk_mp, jtag_clk_cb)
-   `uvmx_if_signal_probe_out(bootsel_i, , sys_clk_mp.sys_clk_cb)
-   `uvmx_if_signal_probe_out(stm_i, , sys_clk_mp.sys_clk_cb)
+   `uvmx_if_signal_probe_out(bootsel_i,  , sys_clk_mp.sys_clk_cb)
+   `uvmx_if_signal_probe_out(stm_i,  , sys_clk_mp.sys_clk_cb)
+   `uvmx_if_signal_probe_out(io_in_i,  [47:0] , sys_clk_mp.sys_clk_cb)
+   `uvmx_if_signal_probe_in(io_out_o,  [47:0] , sys_clk_mp.sys_clk_cb)
+   `uvmx_if_signal_probe_in(pad_cfg_o,  [47:0][5:0] , sys_clk_mp.sys_clk_cb)
+   `uvmx_if_signal_probe_in(io_oe_o,  [47:0] , sys_clk_mp.sys_clk_cb)
+   `uvmx_if_signal_probe_in(slow_clk_o,  , sys_clk_mp.sys_clk_cb)
    /// @}
 
 endinterface

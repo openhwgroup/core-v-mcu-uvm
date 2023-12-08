@@ -23,7 +23,6 @@ It is dependent on the following IP:
 * `datum/uvma_i2c`
 * `datum/uvma_uart`
 * `datum/uvma_sdio`
-* `datum/uvma_cvmcu_io`
 * `datum/uvma_obi`
 * `datum/uvma_cvmcu_event`
 * `datum/uvma_cvmcu_dbg`

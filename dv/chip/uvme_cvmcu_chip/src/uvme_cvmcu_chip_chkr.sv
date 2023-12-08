@@ -14,7 +14,6 @@
  */
 module uvme_cvmcu_chip_chkr (
    uvma_jtag_if  jtag_if, ///< JTAG controller interface
-   uvma_cvmcu_io_if  io_if, ///< IO ports interface
    uvma_obi_if  instr_obi_if, ///< Instruction memory OBI interface
    uvma_obi_if  data_obi_if, ///< Data memory OBI interface
    uvma_cvmcu_event_if  event_if, ///< Event interface

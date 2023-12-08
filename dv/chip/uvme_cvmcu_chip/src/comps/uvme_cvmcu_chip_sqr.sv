@@ -28,7 +28,6 @@ class uvme_cvmcu_chip_sqr_c extends uvmx_chip_env_sqr_c #(
    uvma_uart_sqr_c  uart1_agent_sequencer; ///< UART 1 sequencer
    uvma_sdio_sqr_c  sdio_agent_sequencer; ///< Flash card sequencer
    uvma_i2c_sqr_c  i2c_m_agent_sequencer; ///< I2C master sequencer
-   uvma_cvmcu_io_sqr_c  io_agent_sequencer; ///< IO ports sequencer
    uvma_obi_sqr_c  instr_obi_agent_sequencer; ///< Instruction memory OBI sequencer
    uvma_obi_sqr_c  data_obi_agent_sequencer; ///< Data memory OBI sequencer
    uvma_cvmcu_event_sqr_c  event_agent_sequencer; ///< Event sequencer
@@ -46,7 +45,6 @@ class uvme_cvmcu_chip_sqr_c extends uvmx_chip_env_sqr_c #(
    uvm_analysis_port #(uvma_uart_mon_trn_c)  udma_uart0_egress_exp_ap; ///< udma_uart0_egress output for transactions to the predictor
    uvm_analysis_port #(uvma_uart_mon_trn_c)  udma_uart1_egress_exp_ap; ///< udma_uart1_egress output for transactions to the predictor
    uvm_analysis_port #(uvma_i2c_mon_trn_c)  apb_i2c_egress_exp_ap; ///< apb_i2c_egress output for transactions to the predictor
-   uvm_analysis_port #(uvma_cvmcu_io_mon_trn_c)  gpio_egress_exp_ap; ///< gpio_egress output for transactions to the predictor
    uvm_analysis_port #(uvma_cvmcu_dbg_mon_trn_c)  dbg_exp_ap; ///< dbg output for transactions to the predictor
    uvm_analysis_port #(uvma_spi_mon_trn_c)  udma_qspi0_ingress_act_ap; ///< udma_qspi0_ingress output for transactions to the scoreboard
    uvm_analysis_port #(uvma_spi_mon_trn_c)  udma_qspi1_ingress_act_ap; ///< udma_qspi1_ingress output for transactions to the scoreboard
@@ -56,7 +54,6 @@ class uvme_cvmcu_chip_sqr_c extends uvmx_chip_env_sqr_c #(
    uvm_analysis_port #(uvma_uart_mon_trn_c)  udma_uart0_ingress_act_ap; ///< udma_uart0_ingress output for transactions to the scoreboard
    uvm_analysis_port #(uvma_uart_mon_trn_c)  udma_uart1_ingress_act_ap; ///< udma_uart1_ingress output for transactions to the scoreboard
    uvm_analysis_port #(uvma_i2c_mon_trn_c)  apb_i2c_ingress_act_ap; ///< apb_i2c_ingress output for transactions to the scoreboard
-   uvm_analysis_port #(uvma_cvmcu_io_mon_trn_c)  gpio_ingress_act_ap; ///< gpio_ingress output for transactions to the scoreboard
    /// @}
 
 
@@ -81,7 +78,6 @@ class uvme_cvmcu_chip_sqr_c extends uvmx_chip_env_sqr_c #(
       udma_uart0_egress_exp_ap = new("udma_uart0_egress_exp_ap", this);
       udma_uart1_egress_exp_ap = new("udma_uart1_egress_exp_ap", this);
       apb_i2c_egress_exp_ap = new("apb_i2c_egress_exp_ap", this);
-      gpio_egress_exp_ap = new("gpio_egress_exp_ap", this);
       dbg_exp_ap = new("dbg_exp_ap", this);
       udma_qspi0_ingress_act_ap = new("udma_qspi0_ingress_act_ap", this);
       udma_qspi1_ingress_act_ap = new("udma_qspi1_ingress_act_ap", this);
@@ -91,7 +87,6 @@ class uvme_cvmcu_chip_sqr_c extends uvmx_chip_env_sqr_c #(
       udma_uart0_ingress_act_ap = new("udma_uart0_ingress_act_ap", this);
       udma_uart1_ingress_act_ap = new("udma_uart1_ingress_act_ap", this);
       apb_i2c_ingress_act_ap = new("apb_i2c_ingress_act_ap", this);
-      gpio_ingress_act_ap = new("gpio_ingress_act_ap", this);
    endfunction
 
 endclass

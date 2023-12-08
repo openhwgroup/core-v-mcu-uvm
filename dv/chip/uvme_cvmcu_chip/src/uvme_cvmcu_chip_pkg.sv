@@ -34,7 +34,6 @@
 `include "uvma_i2c_macros.svh"
 `include "uvma_uart_macros.svh"
 `include "uvma_sdio_macros.svh"
-`include "uvma_cvmcu_io_macros.svh"
 `include "uvma_obi_macros.svh"
 `include "uvma_cvmcu_event_macros.svh"
 `include "uvma_cvmcu_dbg_macros.svh"
@@ -61,7 +60,6 @@ package uvme_cvmcu_chip_pkg;
    import uvma_i2c_pkg::*;
    import uvma_uart_pkg::*;
    import uvma_sdio_pkg::*;
-   import uvma_cvmcu_io_pkg::*;
    import uvma_obi_pkg::*;
    import uvma_cvmcu_event_pkg::*;
    import uvma_cvmcu_dbg_pkg::*;
@@ -90,7 +88,6 @@ package uvme_cvmcu_chip_pkg;
    `include "uvme_cvmcu_chip_base_seq.sv"
    `include "uvme_cvmcu_chip_init_seq.sv"
    `include "uvme_cvmcu_chip_cfg_seq.sv"
-   `include "uvme_cvmcu_chip_io_transport_seq.sv"
    `include "uvme_cvmcu_chip_seq_lib.sv"
 
 endpackage

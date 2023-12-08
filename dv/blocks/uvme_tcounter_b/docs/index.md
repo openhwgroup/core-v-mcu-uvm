@@ -35,7 +35,7 @@ ID | Name | Version
 
 
 @section uvme_tcounter_b_release_history Release History
-@subsection uvme_tcounter_b_v1_0_0 2023/12/6 - 1.0.0
+@subsection uvme_tcounter_b_v1_0_0 2023/12/8 - 1.0.0
 - Initial release
 
 

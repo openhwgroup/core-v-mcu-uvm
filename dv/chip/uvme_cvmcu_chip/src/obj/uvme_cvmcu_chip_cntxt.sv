@@ -29,7 +29,6 @@ class uvme_cvmcu_chip_cntxt_c extends uvmx_chip_env_cntxt_c #(
    uvma_uart_cntxt_c  uart1_agent_cntxt; ///< UART 1 agent context
    uvma_sdio_cntxt_c  sdio_agent_cntxt; ///< Flash card agent context
    uvma_i2c_cntxt_c  i2c_m_agent_cntxt; ///< I2C master agent context
-   uvma_cvmcu_io_cntxt_c  io_agent_cntxt; ///< IO ports agent context
    uvma_obi_cntxt_c  instr_obi_agent_cntxt; ///< Instruction memory OBI agent context
    uvma_obi_cntxt_c  data_obi_agent_cntxt; ///< Data memory OBI agent context
    uvma_cvmcu_event_cntxt_c  event_agent_cntxt; ///< Event agent context
@@ -54,7 +53,6 @@ class uvme_cvmcu_chip_cntxt_c extends uvmx_chip_env_cntxt_c #(
    uvmx_sb_simplex_cntxt_c  sb_udma_uart0_ingress_cntxt; ///< Scoreboard context for Udma_uart0_ingress
    uvmx_sb_simplex_cntxt_c  sb_udma_uart1_ingress_cntxt; ///< Scoreboard context for Udma_uart1_ingress
    uvmx_sb_simplex_cntxt_c  sb_apb_i2c_ingress_cntxt; ///< Scoreboard context for Apb_i2c_ingress
-   uvmx_sb_simplex_cntxt_c  sb_gpio_ingress_cntxt; ///< Scoreboard context for Gpio_ingress
    uvmx_sb_simplex_cntxt_c  sb_udma_qspi0_egress_cntxt; ///< Scoreboard context for Udma_qspi0_egress
    uvmx_sb_simplex_cntxt_c  sb_udma_qspi1_egress_cntxt; ///< Scoreboard context for Udma_qspi1_egress
    uvmx_sb_simplex_cntxt_c  sb_udma_i2c0_egress_cntxt; ///< Scoreboard context for Udma_i2c0_egress
@@ -62,7 +60,6 @@ class uvme_cvmcu_chip_cntxt_c extends uvmx_chip_env_cntxt_c #(
    uvmx_sb_simplex_cntxt_c  sb_udma_uart0_egress_cntxt; ///< Scoreboard context for Udma_uart0_egress
    uvmx_sb_simplex_cntxt_c  sb_udma_uart1_egress_cntxt; ///< Scoreboard context for Udma_uart1_egress
    uvmx_sb_simplex_cntxt_c  sb_apb_i2c_egress_cntxt; ///< Scoreboard context for Apb_i2c_egress
-   uvmx_sb_simplex_cntxt_c  sb_gpio_egress_cntxt; ///< Scoreboard context for Gpio_egress
    uvmx_sb_simplex_cntxt_c  sb_dbg_cntxt; ///< Scoreboard context for Dbg
    /// @}
 
@@ -79,7 +76,6 @@ class uvme_cvmcu_chip_cntxt_c extends uvmx_chip_env_cntxt_c #(
       `uvm_field_object(uart1_agent_cntxt, UVM_DEFAULT)
       `uvm_field_object(sdio_agent_cntxt, UVM_DEFAULT)
       `uvm_field_object(i2c_m_agent_cntxt, UVM_DEFAULT)
-      `uvm_field_object(io_agent_cntxt, UVM_DEFAULT)
       `uvm_field_object(instr_obi_agent_cntxt, UVM_DEFAULT)
       `uvm_field_object(data_obi_agent_cntxt, UVM_DEFAULT)
       `uvm_field_object(event_agent_cntxt, UVM_DEFAULT)
@@ -96,7 +92,6 @@ class uvme_cvmcu_chip_cntxt_c extends uvmx_chip_env_cntxt_c #(
       `uvm_field_object(sb_udma_uart0_ingress_cntxt, UVM_DEFAULT)
       `uvm_field_object(sb_udma_uart1_ingress_cntxt, UVM_DEFAULT)
       `uvm_field_object(sb_apb_i2c_ingress_cntxt, UVM_DEFAULT)
-      `uvm_field_object(sb_gpio_ingress_cntxt, UVM_DEFAULT)
       `uvm_field_object(sb_udma_qspi0_egress_cntxt, UVM_DEFAULT)
       `uvm_field_object(sb_udma_qspi1_egress_cntxt, UVM_DEFAULT)
       `uvm_field_object(sb_udma_i2c0_egress_cntxt, UVM_DEFAULT)
@@ -104,7 +99,6 @@ class uvme_cvmcu_chip_cntxt_c extends uvmx_chip_env_cntxt_c #(
       `uvm_field_object(sb_udma_uart0_egress_cntxt, UVM_DEFAULT)
       `uvm_field_object(sb_udma_uart1_egress_cntxt, UVM_DEFAULT)
       `uvm_field_object(sb_apb_i2c_egress_cntxt, UVM_DEFAULT)
-      `uvm_field_object(sb_gpio_egress_cntxt, UVM_DEFAULT)
       `uvm_field_object(sb_dbg_cntxt, UVM_DEFAULT)
    `uvm_object_utils_end
 
@@ -130,7 +124,6 @@ class uvme_cvmcu_chip_cntxt_c extends uvmx_chip_env_cntxt_c #(
       uart1_agent_cntxt = uvma_uart_cntxt_c::type_id::create("uart1_cntxt");
       sdio_agent_cntxt = uvma_sdio_cntxt_c::type_id::create("sdio_cntxt");
       i2c_m_agent_cntxt = uvma_i2c_cntxt_c::type_id::create("i2c_m_cntxt");
-      io_agent_cntxt = uvma_cvmcu_io_cntxt_c::type_id::create("io_cntxt");
       instr_obi_agent_cntxt = uvma_obi_cntxt_c::type_id::create("instr_obi_cntxt");
       data_obi_agent_cntxt = uvma_obi_cntxt_c::type_id::create("data_obi_cntxt");
       event_agent_cntxt = uvma_cvmcu_event_cntxt_c::type_id::create("event_cntxt");
@@ -147,7 +140,6 @@ class uvme_cvmcu_chip_cntxt_c extends uvmx_chip_env_cntxt_c #(
       sb_udma_uart0_ingress_cntxt = uvmx_sb_simplex_cntxt_c::type_id::create("sb_udma_uart0_ingress_cntxt");
       sb_udma_uart1_ingress_cntxt = uvmx_sb_simplex_cntxt_c::type_id::create("sb_udma_uart1_ingress_cntxt");
       sb_apb_i2c_ingress_cntxt = uvmx_sb_simplex_cntxt_c::type_id::create("sb_apb_i2c_ingress_cntxt");
-      sb_gpio_ingress_cntxt = uvmx_sb_simplex_cntxt_c::type_id::create("sb_gpio_ingress_cntxt");
       sb_udma_qspi0_egress_cntxt = uvmx_sb_simplex_cntxt_c::type_id::create("sb_udma_qspi0_egress_cntxt");
       sb_udma_qspi1_egress_cntxt = uvmx_sb_simplex_cntxt_c::type_id::create("sb_udma_qspi1_egress_cntxt");
       sb_udma_i2c0_egress_cntxt = uvmx_sb_simplex_cntxt_c::type_id::create("sb_udma_i2c0_egress_cntxt");
@@ -155,7 +147,6 @@ class uvme_cvmcu_chip_cntxt_c extends uvmx_chip_env_cntxt_c #(
       sb_udma_uart0_egress_cntxt = uvmx_sb_simplex_cntxt_c::type_id::create("sb_udma_uart0_egress_cntxt");
       sb_udma_uart1_egress_cntxt = uvmx_sb_simplex_cntxt_c::type_id::create("sb_udma_uart1_egress_cntxt");
       sb_apb_i2c_egress_cntxt = uvmx_sb_simplex_cntxt_c::type_id::create("sb_apb_i2c_egress_cntxt");
-      sb_gpio_egress_cntxt = uvmx_sb_simplex_cntxt_c::type_id::create("sb_gpio_egress_cntxt");
       sb_dbg_cntxt = uvmx_sb_simplex_cntxt_c::type_id::create("sb_dbg_cntxt");
    endfunction
 
@@ -173,7 +164,6 @@ class uvme_cvmcu_chip_cntxt_c extends uvmx_chip_env_cntxt_c #(
       uart1_agent_cntxt.reset();
       sdio_agent_cntxt.reset();
       i2c_m_agent_cntxt.reset();
-      io_agent_cntxt.reset();
       instr_obi_agent_cntxt.reset();
       data_obi_agent_cntxt.reset();
       event_agent_cntxt.reset();

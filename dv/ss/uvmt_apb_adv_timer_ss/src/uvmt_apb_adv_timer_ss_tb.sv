@@ -34,7 +34,7 @@ module uvmt_apb_adv_timer_ss_tb;
    /// @{
    uvma_apb_if  proc_if(.clk(HCLK), .reset_n(HRESETn)); ///< Processor access agent interface
    uvma_irq_if  irq_events_if(.clk(HCLK), .reset_n(HRESETn)); ///< Events IRQ agent interface
-   uvme_apb_adv_timer_ss_probe_if  probe_if(.*); ///< Misc. signals interface
+   uvme_apb_adv_timer_ss_probe_if  probe_if(.*); ///< Non-agent signals interface
    /// @}
 
    /// @name Blocks

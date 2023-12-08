@@ -13,7 +13,6 @@
  */
 module uvmt_cvmcu_chip_dut_wrap (
    uvma_jtag_if  jtag_if, ///< JTAG controller agent interface
-   uvma_cvmcu_io_if  io_if, ///< IO ports agent interface
    uvma_obi_if  instr_obi_if, ///< Instruction memory OBI agent interface
    uvma_obi_if  data_obi_if, ///< Data memory OBI agent interface
    uvma_cvmcu_event_if  event_if, ///< Event agent interface
@@ -50,13 +49,13 @@ module uvmt_cvmcu_chip_dut_wrap (
       .jtag_tdi_i(jtag_if.tdi),
       .jtag_tms_i(jtag_if.tms),
       .jtag_tdo_o(jtag_if.tdo),
-      .io_in_i(io_if.io_in_i),
-      .io_out_o(io_if.io_out_o),
-      .pad_cfg_o(io_if.pad_cfg_o),
-      .io_oe_o(io_if.io_oe_o),
-      .slow_clk_o(io_if.slow_clk_o),
       .bootsel_i(probe_if.bootsel_i),
       .stm_i(probe_if.stm_i),
+      .io_in_i(probe_if.io_in_i),
+      .io_out_o(probe_if.io_out_o),
+      .pad_cfg_o(probe_if.pad_cfg_o),
+      .io_oe_o(probe_if.io_oe_o),
+      .slow_clk_o(probe_if.slow_clk_o),
       .ref_clk_i(sys_clk_if.clk),
       .jtag_tck_i(jtag_clk_if.clk),
       .rstn_i(sys_reset_if.reset_n),

@@ -1,3 +1,0 @@
-IssueType,Issue ID,Parent ID,Status,Summary,Component,Description
-task,0,,To Do,Describe CORE-V-MCU IO UVM Agent Self-Test Bench",uvmt_cvmcu_io_st,ip.yml,
-task,1,,To Do,Implement or remove uvmt_cvmcu_io_st_test_cfg_c::post_randomize_work(),uvmt_cvmcu_io_st,uvmt_cvmcu_io_st_test_cfg.sv,
