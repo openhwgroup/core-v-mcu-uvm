@@ -60,7 +60,7 @@ class uvme_apb_timer_ss_cfg_c extends uvmx_ss_env_cfg_c;
     * Sets Processor interface agent configuration.
     */
    constraint proc_agent_cfg_cons {
-      proc_agent_cfg.enabled == enabled;
+      soft proc_agent_cfg.enabled == enabled;
       proc_agent_cfg.bypass_mode == 0;
       proc_agent_cfg.data_width == 32;
       proc_agent_cfg.addr_width == 32;
@@ -72,7 +72,7 @@ class uvme_apb_timer_ss_cfg_c extends uvmx_ss_env_cfg_c;
     * Sets Events IRQ agent configuration.
     */
    constraint irq_events_agent_cfg_cons {
-      irq_events_agent_cfg.enabled == enabled;
+      soft irq_events_agent_cfg.enabled == enabled;
       irq_events_agent_cfg.num_lines == 2;
       irq_events_agent_cfg.is_active == UVM_PASSIVE;
    }
@@ -81,7 +81,7 @@ class uvme_apb_timer_ss_cfg_c extends uvmx_ss_env_cfg_c;
     * Sets Counter block 0 block environment configuration.
     */
    constraint counter_lo_b_env_cfg_cons {
-      counter_lo_b_env_cfg.enabled == enabled;
+      soft counter_lo_b_env_cfg.enabled == enabled;
       counter_lo_b_env_cfg.is_active == UVM_PASSIVE;
       counter_lo_b_env_cfg.scoreboarding_enabled == scoreboarding_enabled;
    }
@@ -90,7 +90,7 @@ class uvme_apb_timer_ss_cfg_c extends uvmx_ss_env_cfg_c;
     * Sets Counter block 1 block environment configuration.
     */
    constraint counter_hi_b_env_cfg_cons {
-      counter_hi_b_env_cfg.enabled == enabled;
+      soft counter_hi_b_env_cfg.enabled == enabled;
       counter_hi_b_env_cfg.is_active == UVM_PASSIVE;
       counter_hi_b_env_cfg.scoreboarding_enabled == scoreboarding_enabled;
    }
@@ -99,7 +99,7 @@ class uvme_apb_timer_ss_cfg_c extends uvmx_ss_env_cfg_c;
     * Sets Prescaler block 0 block environment configuration.
     */
    constraint prescaler_lo_b_env_cfg_cons {
-      prescaler_lo_b_env_cfg.enabled == enabled;
+      soft prescaler_lo_b_env_cfg.enabled == enabled;
       prescaler_lo_b_env_cfg.is_active == UVM_PASSIVE;
       prescaler_lo_b_env_cfg.scoreboarding_enabled == scoreboarding_enabled;
    }
@@ -108,7 +108,7 @@ class uvme_apb_timer_ss_cfg_c extends uvmx_ss_env_cfg_c;
     * Sets Prescaler block 1 block environment configuration.
     */
    constraint prescaler_hi_b_env_cfg_cons {
-      prescaler_hi_b_env_cfg.enabled == enabled;
+      soft prescaler_hi_b_env_cfg.enabled == enabled;
       prescaler_hi_b_env_cfg.is_active == UVM_PASSIVE;
       prescaler_hi_b_env_cfg.scoreboarding_enabled == scoreboarding_enabled;
    }

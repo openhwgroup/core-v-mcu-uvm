@@ -16,7 +16,7 @@ All rights reserved.
 @section uvme_cvmcu_chip_user_guide_revision_history Revision History
 Revision  | Date | Description
 --------- | ---- | -----------
-1.0 | 2023/12/8 | Initial Version
+1.0 | 2023/12/12 | Initial Version
 
 @subsection uvme_cvmcu_chip_user_guide_description Description
 

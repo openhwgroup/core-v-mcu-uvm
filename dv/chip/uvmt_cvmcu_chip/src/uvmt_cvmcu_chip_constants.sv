@@ -9,6 +9,8 @@
 
 const int unsigned uvmt_cvmcu_chip_default_sys_clk_frequency = 100_000_000; ///< Default System clock frequency (100.0Mhz)
 const int unsigned uvmt_cvmcu_chip_default_jtag_clk_frequency = 50_000_000; ///< Default JTAG clock frequency (50.0Mhz)
+const int unsigned uvmt_cvmcu_chip_default_uart0_clk_frequency = 100_000_000; ///< Default UART0 agent clock clock frequency (100.0Mhz)
+const int unsigned uvmt_cvmcu_chip_default_uart1_clk_frequency = 100_000_000; ///< Default UART1 agent clock clock frequency (100.0Mhz)
 const int unsigned uvmt_cvmcu_chip_default_startup_timeout          =      10_000; ///< Default Heartbeat Monitor startup timeout in ns
 const int unsigned uvmt_cvmcu_chip_default_heartbeat_period         =       1_000; ///< Default Heartbeat Monitor period in ns
 const int unsigned uvmt_cvmcu_chip_default_heartbeat_refresh_period =       5_000; ///< Default Heartbeat Monitor refresh period in ns

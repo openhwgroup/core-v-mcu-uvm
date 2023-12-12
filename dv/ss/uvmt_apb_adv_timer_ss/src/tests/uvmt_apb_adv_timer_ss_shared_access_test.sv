@@ -19,6 +19,25 @@ class uvmt_apb_adv_timer_ss_shared_access_test_c extends uvmt_apb_adv_timer_ss_b
    `uvm_component_utils(uvmt_apb_adv_timer_ss_shared_access_test_c)
    `uvmx_test_reg(UVM_DO_SHARED_ACCESS)
 
+
+   /**
+    * Disables all agents not register-related.
+    */
+   constraint disable_agents_cons {
+      env_cfg.irq_events_agent_cfg.enabled == 0;
+   }
+
+   /**
+    * Disables all blocks.
+    */
+   constraint disable_blocks_cons {
+      env_cfg.adv_timer0_b_cfg.enabled == 0;
+      env_cfg.adv_timer1_b_cfg.enabled == 0;
+      env_cfg.adv_timer2_b_cfg.enabled == 0;
+      env_cfg.adv_timer3_b_cfg.enabled == 0;
+   }
+
+
    /**
     * Default constructor.
     */

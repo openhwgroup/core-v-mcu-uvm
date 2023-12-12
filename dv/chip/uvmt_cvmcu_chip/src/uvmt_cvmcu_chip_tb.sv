@@ -25,6 +25,8 @@ module uvmt_cvmcu_chip_tb;
    logic  jtag_trst_i; ///< JTAG reset signal
    uvma_clk_if    sys_clk_if(); ///< System clock interface
    uvma_clk_if    jtag_clk_if(); ///< JTAG clock interface
+   uvma_clk_if    uart0_clk_if(); ///< UART0 agent clock clock interface
+   uvma_clk_if    uart1_clk_if(); ///< UART1 agent clock clock interface
    uvma_reset_if  sys_reset_if(.clk(ref_clk_i)); ///< System reset interface
    uvma_reset_if  jtag_reset_if(.clk(jtag_tck_i)); ///< JTAG reset interface
    assign ref_clk_i = sys_clk_if.clk;
@@ -41,8 +43,8 @@ module uvmt_cvmcu_chip_tb;
    uvma_cvmcu_cpi_if  camera_if(.rstn_i(rstn_i)); ///< Camera Parallel Interface transmitter agent interface
    uvma_i2c_if  i2c_s0_if(.reset_n(rstn_i)); ///< I2C slave 0 agent interface
    uvma_i2c_if  i2c_s1_if(.reset_n(rstn_i)); ///< I2C slave 1 agent interface
-   uvma_uart_if  uart0_if(.reset_n(rstn_i)); ///< UART 0 agent interface
-   uvma_uart_if  uart1_if(.reset_n(rstn_i)); ///< UART 1 agent interface
+   uvma_uart_if  uart0_if(.clk(uart0_clk_if.clk), .reset_n(rstn_i)); ///< UART 0 agent interface
+   uvma_uart_if  uart1_if(.clk(uart1_clk_if.clk), .reset_n(rstn_i)); ///< UART 1 agent interface
    uvma_sdio_if  sdio_if(.trst(rstn_i)); ///< Flash card agent interface
    uvma_i2c_if  i2c_m_if(.reset_n(rstn_i)); ///< I2C master agent interface
    uvma_obi_if  instr_obi_if(); ///< Instruction memory OBI agent interface
@@ -135,6 +137,8 @@ module uvmt_cvmcu_chip_tb;
       // CORE-V-MCU chip interfaces
       uvm_config_db#(virtual uvma_clk_if)::set(null, "uvm_test_top.sys_clk_agent", "vif", sys_clk_if);
       uvm_config_db#(virtual uvma_clk_if)::set(null, "uvm_test_top.jtag_clk_agent", "vif", jtag_clk_if);
+      uvm_config_db#(virtual uvma_clk_if)::set(null, "uvm_test_top.uart0_clk_agent", "vif", uart0_clk_if);
+      uvm_config_db#(virtual uvma_clk_if)::set(null, "uvm_test_top.uart1_clk_agent", "vif", uart1_clk_if);
       uvm_config_db#(virtual uvma_reset_if)::set(null, "uvm_test_top.sys_reset_agent", "vif", sys_reset_if);
       uvm_config_db#(virtual uvma_reset_if)::set(null, "uvm_test_top.jtag_reset_agent", "vif", jtag_reset_if);
       uvm_config_db#(virtual uvma_jtag_if)::set(null, "uvm_test_top.env.jtag_agent", "vif", jtag_if);

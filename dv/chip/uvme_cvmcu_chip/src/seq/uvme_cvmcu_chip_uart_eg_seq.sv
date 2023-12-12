@@ -97,7 +97,7 @@ class uvme_cvmcu_chip_uart_eg_seq_c extends uvme_cvmcu_chip_base_seq_c;
          //`uvm_info("CVMCU_CHIP_UART_EG_SEQ", $sformatf("Starting item #%0d of %0d with gap size %0d", (ii+1), num_items, gap_size), UVM_MEDIUM)
          item = uvma_uart_seq_item_c::type_id::create("item");
          item.cfg = cfg.uart0_agent_cfg;
-         item.cntxt = cfg.uart0_agent_cntxt;
+         item.cntxt = cntxt.uart0_agent_cntxt;
          if (!item.randomize()) begin
             `uvm_fatal("CVMCU_CHIP_UART_EG_SEQ", "Failed to randomize UART item")
          end
@@ -109,7 +109,7 @@ class uvme_cvmcu_chip_uart_eg_seq_c extends uvme_cvmcu_chip_base_seq_c;
          end
          trn = uvma_uart_mon_trn_c::type_id::create("trn");
          trn.copy(item);
-         udma_uart0_egress_exp_ap.write(trn);
+         p_sequencer.udma_uart0_egress_exp_ap.write(trn);
          `uvm_info("CVMCU_CHIP_UART_EG_SEQ", $sformatf("Finished item #%0d of %0d with gap size %0d", (ii+1), num_items, gap_size), UVM_HIGH)
       end
       // TODO Drive the register model to output data[$]
@@ -130,7 +130,7 @@ class uvme_cvmcu_chip_uart_eg_seq_c extends uvme_cvmcu_chip_base_seq_c;
          //`uvm_info("CVMCU_CHIP_UART_EG_SEQ", $sformatf("Starting item #%0d of %0d with gap size %0d", (ii+1), num_items, gap_size), UVM_MEDIUM)
          item = uvma_uart_seq_item_c::type_id::create("item");
          item.cfg = cfg.uart1_agent_cfg;
-         item.cntxt = cfg.uart1_agent_cntxt;
+         item.cntxt = cntxt.uart1_agent_cntxt;
          if (!item.randomize()) begin
             `uvm_fatal("CVMCU_CHIP_UART_EG_SEQ", "Failed to randomize UART item")
          end
@@ -142,7 +142,7 @@ class uvme_cvmcu_chip_uart_eg_seq_c extends uvme_cvmcu_chip_base_seq_c;
          end
          trn = uvma_uart_mon_trn_c::type_id::create("trn");
          trn.copy(item);
-         udma_uart1_egress_exp_ap.write(trn);
+         p_sequencer.udma_uart1_egress_exp_ap.write(trn);
          `uvm_info("CVMCU_CHIP_UART_EG_SEQ", $sformatf("Finished item #%0d of %0d with gap size %0d", (ii+1), num_items, gap_size), UVM_HIGH)
       end
       // TODO Drive the register model to output data[$]

@@ -41,7 +41,7 @@ class uvma_tprescaler_b_mon_trn_c extends uvmx_block_mon_trn_c #(
       uvma_tprescaler_b_mon_trn_c  trn;
       do_compare = super.do_compare(rhs, comparer);
       if (!$cast(trn, rhs)) begin
-         `uvm_fatal("<built-in method upper of str object at 0x7fb803455ef0>_MON_TRN", "Failed to cast rhs during do_compare()")
+         `uvm_fatal("<built-in method upper of str object at 0x7fced3afd530>_MON_TRN", "Failed to cast rhs during do_compare()")
       end
       else begin
          // Add compares dependent on configuration and/or fields

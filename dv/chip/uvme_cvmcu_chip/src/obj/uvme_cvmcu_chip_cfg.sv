@@ -132,8 +132,7 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
     * Sets JTAG controller agent configuration.
     */
    constraint jtag_agent_cfg_cons {
-      jtag_agent_cfg.enabled == enabled;
-      jtag_agent_cfg.bypass_mode == 0;
+      soft jtag_agent_cfg.enabled == enabled;
       jtag_agent_cfg.drv_mode == UVMA_JTAG_DRV_MODE_CTRL;
       jtag_agent_cfg.is_active == is_active;
    }
@@ -142,8 +141,7 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
     * Sets QSPI slave 0 agent configuration.
     */
    constraint qspi_s0_agent_cfg_cons {
-      qspi_s0_agent_cfg.enabled == enabled;
-      qspi_s0_agent_cfg.bypass_mode == 0;
+      soft qspi_s0_agent_cfg.enabled == enabled;
       qspi_s0_agent_cfg.data_width == 4;
       qspi_s0_agent_cfg.drv_mode == UVMA_SPI_DRV_MODE_SLV;
       qspi_s0_agent_cfg.is_active == is_active;
@@ -153,8 +151,7 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
     * Sets QSPI slave 1 agent configuration.
     */
    constraint qspi_s1_agent_cfg_cons {
-      qspi_s1_agent_cfg.enabled == enabled;
-      qspi_s1_agent_cfg.bypass_mode == 0;
+      soft qspi_s1_agent_cfg.enabled == enabled;
       qspi_s1_agent_cfg.data_width == 4;
       qspi_s1_agent_cfg.drv_mode == UVMA_SPI_DRV_MODE_SLV;
       qspi_s1_agent_cfg.is_active == is_active;
@@ -164,8 +161,7 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
     * Sets Camera Parallel Interface transmitter agent configuration.
     */
    constraint camera_agent_cfg_cons {
-      camera_agent_cfg.enabled == enabled;
-      camera_agent_cfg.bypass_mode == 0;
+      soft camera_agent_cfg.enabled == enabled;
       camera_agent_cfg.drv_mode == UVMA_CVMCU_CPI_DRV_MODE_TX;
       camera_agent_cfg.is_active == is_active;
    }
@@ -174,8 +170,7 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
     * Sets I2C slave 0 agent configuration.
     */
    constraint i2c_s0_agent_cfg_cons {
-      i2c_s0_agent_cfg.enabled == enabled;
-      i2c_s0_agent_cfg.bypass_mode == 0;
+      soft i2c_s0_agent_cfg.enabled == enabled;
       i2c_s0_agent_cfg.drv_mode == UVMA_I2C_DRV_MODE_SLV;
       i2c_s0_agent_cfg.is_active == is_active;
    }
@@ -184,8 +179,7 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
     * Sets I2C slave 1 agent configuration.
     */
    constraint i2c_s1_agent_cfg_cons {
-      i2c_s1_agent_cfg.enabled == enabled;
-      i2c_s1_agent_cfg.bypass_mode == 0;
+      soft i2c_s1_agent_cfg.enabled == enabled;
       i2c_s1_agent_cfg.drv_mode == UVMA_I2C_DRV_MODE_SLV;
       i2c_s1_agent_cfg.is_active == is_active;
    }
@@ -194,8 +188,7 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
     * Sets UART 0 agent configuration.
     */
    constraint uart0_agent_cfg_cons {
-      uart0_agent_cfg.enabled == enabled;
-      uart0_agent_cfg.bypass_mode == 0;
+      soft uart0_agent_cfg.enabled == enabled;
       uart0_agent_cfg.drv_mode == UVMA_UART_DRV_MODE_TX;
       uart0_agent_cfg.is_active == is_active;
    }
@@ -204,8 +197,7 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
     * Sets UART 1 agent configuration.
     */
    constraint uart1_agent_cfg_cons {
-      uart1_agent_cfg.enabled == enabled;
-      uart1_agent_cfg.bypass_mode == 0;
+      soft uart1_agent_cfg.enabled == enabled;
       uart1_agent_cfg.drv_mode == UVMA_UART_DRV_MODE_TX;
       uart1_agent_cfg.is_active == is_active;
    }
@@ -214,8 +206,7 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
     * Sets Flash card agent configuration.
     */
    constraint sdio_agent_cfg_cons {
-      sdio_agent_cfg.enabled == enabled;
-      sdio_agent_cfg.bypass_mode == 0;
+      soft sdio_agent_cfg.enabled == enabled;
       sdio_agent_cfg.drv_mode == UVMA_SDIO_DRV_MODE_DEV;
       sdio_agent_cfg.is_active == is_active;
    }
@@ -224,8 +215,7 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
     * Sets I2C master agent configuration.
     */
    constraint i2c_m_agent_cfg_cons {
-      i2c_m_agent_cfg.enabled == enabled;
-      i2c_m_agent_cfg.bypass_mode == 0;
+      soft i2c_m_agent_cfg.enabled == enabled;
       i2c_m_agent_cfg.drv_mode == UVMA_I2C_DRV_MODE_MSTR;
       i2c_m_agent_cfg.is_active == is_active;
    }
@@ -234,8 +224,7 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
     * Sets Instruction memory OBI agent configuration.
     */
    constraint instr_obi_agent_cfg_cons {
-      instr_obi_agent_cfg.enabled == enabled;
-      instr_obi_agent_cfg.bypass_mode == 0;
+      soft instr_obi_agent_cfg.enabled == enabled;
       instr_obi_agent_cfg.data_width == 32;
       instr_obi_agent_cfg.addr_width == 32;
       instr_obi_agent_cfg.drv_mode == UVMA_OBI_DRV_MODE_MSTR;
@@ -246,8 +235,7 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
     * Sets Data memory OBI agent configuration.
     */
    constraint data_obi_agent_cfg_cons {
-      data_obi_agent_cfg.enabled == enabled;
-      data_obi_agent_cfg.bypass_mode == 0;
+      soft data_obi_agent_cfg.enabled == enabled;
       data_obi_agent_cfg.data_width == 32;
       data_obi_agent_cfg.addr_width == 32;
       data_obi_agent_cfg.drv_mode == UVMA_OBI_DRV_MODE_MSTR;
@@ -258,8 +246,7 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
     * Sets Event agent configuration.
     */
    constraint event_agent_cfg_cons {
-      event_agent_cfg.enabled == enabled;
-      event_agent_cfg.bypass_mode == 0;
+      soft event_agent_cfg.enabled == enabled;
       event_agent_cfg.is_active == UVM_PASSIVE;
    }
 
@@ -267,8 +254,7 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
     * Sets Debug agent configuration.
     */
    constraint dbg_agent_cfg_cons {
-      dbg_agent_cfg.enabled == enabled;
-      dbg_agent_cfg.bypass_mode == 0;
+      soft dbg_agent_cfg.enabled == enabled;
       dbg_agent_cfg.is_active == UVM_PASSIVE;
    }
 
@@ -276,7 +262,7 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
     * Sets First Level IRQ agent configuration.
     */
    constraint irq_l1_agent_cfg_cons {
-      irq_l1_agent_cfg.enabled == enabled;
+      soft irq_l1_agent_cfg.enabled == enabled;
       irq_l1_agent_cfg.num_lines == 32;
       irq_l1_agent_cfg.is_active == UVM_PASSIVE;
    }
@@ -285,7 +271,7 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
     * Sets Platform-Specific (Second Level) IRQ agent configuration.
     */
    constraint irq_l2_agent_cfg_cons {
-      irq_l2_agent_cfg.enabled == enabled;
+      soft irq_l2_agent_cfg.enabled == enabled;
       irq_l2_agent_cfg.num_lines == 256;
       irq_l2_agent_cfg.is_active == UVM_PASSIVE;
    }
@@ -294,7 +280,7 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
     * Sets Simple timer sub-system environment configuration.
     */
    constraint apb_timer_ss_env_cfg_cons {
-      apb_timer_ss_env_cfg.enabled == enabled;
+      soft apb_timer_ss_env_cfg.enabled == enabled;
       apb_timer_ss_env_cfg.is_active == UVM_PASSIVE;
       apb_timer_ss_env_cfg.scoreboarding_enabled == scoreboarding_enabled;
    }
@@ -303,7 +289,7 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
     * Sets Advanced timer (PWM) sub-system environment configuration.
     */
    constraint apb_adv_timer_ss_env_cfg_cons {
-      apb_adv_timer_ss_env_cfg.enabled == enabled;
+      soft apb_adv_timer_ss_env_cfg.enabled == enabled;
       apb_adv_timer_ss_env_cfg.is_active == UVM_PASSIVE;
       apb_adv_timer_ss_env_cfg.scoreboarding_enabled == scoreboarding_enabled;
    }
@@ -312,7 +298,7 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
     * Sets udma_qspi0_ingress scoreboard configuration.
     */
    constraint sb_udma_qspi0_ingress_cfg_cons {
-      sb_udma_qspi0_ingress_cfg.enabled == scoreboarding_enabled;
+      soft sb_udma_qspi0_ingress_cfg.enabled == scoreboarding_enabled;
       sb_udma_qspi0_ingress_cfg.mode == UVMX_SB_MODE_IN_ORDER;
    }
 
@@ -320,7 +306,7 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
     * Sets udma_qspi1_ingress scoreboard configuration.
     */
    constraint sb_udma_qspi1_ingress_cfg_cons {
-      sb_udma_qspi1_ingress_cfg.enabled == scoreboarding_enabled;
+      soft sb_udma_qspi1_ingress_cfg.enabled == scoreboarding_enabled;
       sb_udma_qspi1_ingress_cfg.mode == UVMX_SB_MODE_IN_ORDER;
    }
 
@@ -328,7 +314,7 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
     * Sets udma_camera scoreboard configuration.
     */
    constraint sb_udma_camera_cfg_cons {
-      sb_udma_camera_cfg.enabled == scoreboarding_enabled;
+      soft sb_udma_camera_cfg.enabled == scoreboarding_enabled;
       sb_udma_camera_cfg.mode == UVMX_SB_MODE_IN_ORDER;
    }
 
@@ -336,7 +322,7 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
     * Sets udma_i2c0_ingress scoreboard configuration.
     */
    constraint sb_udma_i2c0_ingress_cfg_cons {
-      sb_udma_i2c0_ingress_cfg.enabled == scoreboarding_enabled;
+      soft sb_udma_i2c0_ingress_cfg.enabled == scoreboarding_enabled;
       sb_udma_i2c0_ingress_cfg.mode == UVMX_SB_MODE_IN_ORDER;
    }
 
@@ -344,7 +330,7 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
     * Sets udma_i2c1_ingress scoreboard configuration.
     */
    constraint sb_udma_i2c1_ingress_cfg_cons {
-      sb_udma_i2c1_ingress_cfg.enabled == scoreboarding_enabled;
+      soft sb_udma_i2c1_ingress_cfg.enabled == scoreboarding_enabled;
       sb_udma_i2c1_ingress_cfg.mode == UVMX_SB_MODE_IN_ORDER;
    }
 
@@ -352,7 +338,7 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
     * Sets udma_uart0_ingress scoreboard configuration.
     */
    constraint sb_udma_uart0_ingress_cfg_cons {
-      sb_udma_uart0_ingress_cfg.enabled == scoreboarding_enabled;
+      soft sb_udma_uart0_ingress_cfg.enabled == scoreboarding_enabled;
       sb_udma_uart0_ingress_cfg.mode == UVMX_SB_MODE_IN_ORDER;
    }
 
@@ -360,7 +346,7 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
     * Sets udma_uart1_ingress scoreboard configuration.
     */
    constraint sb_udma_uart1_ingress_cfg_cons {
-      sb_udma_uart1_ingress_cfg.enabled == scoreboarding_enabled;
+      soft sb_udma_uart1_ingress_cfg.enabled == scoreboarding_enabled;
       sb_udma_uart1_ingress_cfg.mode == UVMX_SB_MODE_IN_ORDER;
    }
 
@@ -368,7 +354,7 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
     * Sets apb_i2c_ingress scoreboard configuration.
     */
    constraint sb_apb_i2c_ingress_cfg_cons {
-      sb_apb_i2c_ingress_cfg.enabled == scoreboarding_enabled;
+      soft sb_apb_i2c_ingress_cfg.enabled == scoreboarding_enabled;
       sb_apb_i2c_ingress_cfg.mode == UVMX_SB_MODE_IN_ORDER;
    }
 
@@ -376,7 +362,7 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
     * Sets udma_qspi0_egress scoreboard configuration.
     */
    constraint sb_udma_qspi0_egress_cfg_cons {
-      sb_udma_qspi0_egress_cfg.enabled == scoreboarding_enabled;
+      soft sb_udma_qspi0_egress_cfg.enabled == scoreboarding_enabled;
       sb_udma_qspi0_egress_cfg.mode == UVMX_SB_MODE_IN_ORDER;
    }
 
@@ -384,7 +370,7 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
     * Sets udma_qspi1_egress scoreboard configuration.
     */
    constraint sb_udma_qspi1_egress_cfg_cons {
-      sb_udma_qspi1_egress_cfg.enabled == scoreboarding_enabled;
+      soft sb_udma_qspi1_egress_cfg.enabled == scoreboarding_enabled;
       sb_udma_qspi1_egress_cfg.mode == UVMX_SB_MODE_IN_ORDER;
    }
 
@@ -392,7 +378,7 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
     * Sets udma_i2c0_egress scoreboard configuration.
     */
    constraint sb_udma_i2c0_egress_cfg_cons {
-      sb_udma_i2c0_egress_cfg.enabled == scoreboarding_enabled;
+      soft sb_udma_i2c0_egress_cfg.enabled == scoreboarding_enabled;
       sb_udma_i2c0_egress_cfg.mode == UVMX_SB_MODE_IN_ORDER;
    }
 
@@ -400,7 +386,7 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
     * Sets udma_i2c1_egress scoreboard configuration.
     */
    constraint sb_udma_i2c1_egress_cfg_cons {
-      sb_udma_i2c1_egress_cfg.enabled == scoreboarding_enabled;
+      soft sb_udma_i2c1_egress_cfg.enabled == scoreboarding_enabled;
       sb_udma_i2c1_egress_cfg.mode == UVMX_SB_MODE_IN_ORDER;
    }
 
@@ -408,7 +394,7 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
     * Sets udma_uart0_egress scoreboard configuration.
     */
    constraint sb_udma_uart0_egress_cfg_cons {
-      sb_udma_uart0_egress_cfg.enabled == scoreboarding_enabled;
+      soft sb_udma_uart0_egress_cfg.enabled == scoreboarding_enabled;
       sb_udma_uart0_egress_cfg.mode == UVMX_SB_MODE_IN_ORDER;
    }
 
@@ -416,7 +402,7 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
     * Sets udma_uart1_egress scoreboard configuration.
     */
    constraint sb_udma_uart1_egress_cfg_cons {
-      sb_udma_uart1_egress_cfg.enabled == scoreboarding_enabled;
+      soft sb_udma_uart1_egress_cfg.enabled == scoreboarding_enabled;
       sb_udma_uart1_egress_cfg.mode == UVMX_SB_MODE_IN_ORDER;
    }
 
@@ -424,7 +410,7 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
     * Sets apb_i2c_egress scoreboard configuration.
     */
    constraint sb_apb_i2c_egress_cfg_cons {
-      sb_apb_i2c_egress_cfg.enabled == scoreboarding_enabled;
+      soft sb_apb_i2c_egress_cfg.enabled == scoreboarding_enabled;
       sb_apb_i2c_egress_cfg.mode == UVMX_SB_MODE_IN_ORDER;
    }
 
@@ -432,7 +418,7 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
     * Sets dbg scoreboard configuration.
     */
    constraint sb_dbg_cfg_cons {
-      sb_dbg_cfg.enabled == scoreboarding_enabled;
+      soft sb_dbg_cfg.enabled == scoreboarding_enabled;
       sb_dbg_cfg.mode == UVMX_SB_MODE_IN_ORDER;
    }
 
