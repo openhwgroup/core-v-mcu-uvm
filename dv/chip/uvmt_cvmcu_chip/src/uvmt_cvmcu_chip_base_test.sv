@@ -24,6 +24,8 @@ class uvmt_cvmcu_chip_base_test_c extends uvmx_chip_test_c #(
    /// @{
    uvma_clk_agent_c  sys_clk_agent; ///< System clock agent.
    uvma_clk_agent_c  jtag_clk_agent; ///< JTAG clock agent.
+   uvma_clk_agent_c  uart0_clk_agent; ///< UART0 agent clock clock agent.
+   uvma_clk_agent_c  uart1_clk_agent; ///< UART1 agent clock clock agent.
    uvma_reset_agent_c  sys_reset_agent; ///< System reset agent.
    uvma_reset_agent_c  jtag_reset_agent; ///< JTAG reset agent.
    /// @}
@@ -34,6 +36,8 @@ class uvmt_cvmcu_chip_base_test_c extends uvmx_chip_test_c #(
    rand uvme_cvmcu_chip_cfg_seq_c   cfg_seq ; ///< Configures DUT registers during configure_phase.
    rand uvma_clk_start_seq_c  sys_clk_seq; ///< Starts sys_clk clock generation during pre_reset_phase.
    rand uvma_clk_start_seq_c  jtag_clk_seq; ///< Starts jtag_clk clock generation during pre_reset_phase.
+   rand uvma_clk_start_seq_c  uart0_clk_seq; ///< Starts uart0_clk clock generation during pre_reset_phase.
+   rand uvma_clk_start_seq_c  uart1_clk_seq; ///< Starts uart1_clk clock generation during pre_reset_phase.
    rand uvma_reset_pulse_seq_c  sys_reset_seq; ///< Asserts reset during reset_phase()
    rand uvma_reset_pulse_seq_c  jtag_reset_seq; ///< Asserts reset during reset_phase()
    /// @}
@@ -51,6 +55,10 @@ class uvmt_cvmcu_chip_base_test_c extends uvmx_chip_test_c #(
     * Sets up basic configuration for environment.
     */
    constraint base_cons {
+      env_cfg.uart0_agent_cfg.baud_rate == test_cfg.uart0_baud_rate;
+      env_cfg.uart1_agent_cfg.baud_rate == test_cfg.uart1_baud_rate;
+      env_cfg.uart0_agent_cfg.clk_frequency == test_cfg.uart0_clk_frequency;
+      env_cfg.uart1_agent_cfg.clk_frequency == test_cfg.uart1_clk_frequency;
    }
 
    /**
@@ -59,6 +67,8 @@ class uvmt_cvmcu_chip_base_test_c extends uvmx_chip_test_c #(
    constraint clk_cons {
       sys_clk_seq.frequency == test_cfg.sys_clk_frequency;
       jtag_clk_seq.frequency == test_cfg.jtag_clk_frequency;
+      uart0_clk_seq.frequency == test_cfg.uart0_clk_frequency;
+      uart1_clk_seq.frequency == test_cfg.uart1_clk_frequency;
    }
 
    /**
@@ -82,6 +92,8 @@ class uvmt_cvmcu_chip_base_test_c extends uvmx_chip_test_c #(
    virtual function void create_components();
       sys_clk_agent = uvma_clk_agent_c::type_id::create("sys_clk_agent", this);
       jtag_clk_agent = uvma_clk_agent_c::type_id::create("jtag_clk_agent", this);
+      uart0_clk_agent = uvma_clk_agent_c::type_id::create("uart0_clk_agent", this);
+      uart1_clk_agent = uvma_clk_agent_c::type_id::create("uart1_clk_agent", this);
       sys_reset_agent = uvma_reset_agent_c::type_id::create("sys_reset_agent", this);
       jtag_reset_agent = uvma_reset_agent_c::type_id::create("jtag_reset_agent", this);
    endfunction
@@ -99,6 +111,8 @@ class uvmt_cvmcu_chip_base_test_c extends uvmx_chip_test_c #(
    virtual function void assign_cfg();
       uvm_config_db#(uvma_clk_cfg_c)::set(this, "sys_clk_agent", "cfg", test_cfg.sys_clk_agent_cfg);
       uvm_config_db#(uvma_clk_cfg_c)::set(this, "jtag_clk_agent", "cfg", test_cfg.jtag_clk_agent_cfg);
+      uvm_config_db#(uvma_clk_cfg_c)::set(this, "uart0_clk_agent", "cfg", test_cfg.uart0_clk_agent_cfg);
+      uvm_config_db#(uvma_clk_cfg_c)::set(this, "uart1_clk_agent", "cfg", test_cfg.uart1_clk_agent_cfg);
       uvm_config_db#(uvma_reset_cfg_c)::set(this, "sys_reset_agent", "cfg", test_cfg.sys_reset_agent_cfg);
       uvm_config_db#(uvma_reset_cfg_c)::set(this, "jtag_reset_agent", "cfg", test_cfg.jtag_reset_agent_cfg);
    endfunction
@@ -117,6 +131,8 @@ class uvmt_cvmcu_chip_base_test_c extends uvmx_chip_test_c #(
    virtual function void create_clk_reset_sequences();
       sys_clk_seq = uvma_clk_start_seq_c::type_id::create("sys_clk_seq");
       jtag_clk_seq = uvma_clk_start_seq_c::type_id::create("jtag_clk_seq");
+      uart0_clk_seq = uvma_clk_start_seq_c::type_id::create("uart0_clk_seq");
+      uart1_clk_seq = uvma_clk_start_seq_c::type_id::create("uart1_clk_seq");
       sys_reset_seq = uvma_reset_pulse_seq_c::type_id::create("sys_reset_seq");
       jtag_reset_seq = uvma_reset_pulse_seq_c::type_id::create("jtag_reset_seq");
    endfunction
@@ -140,6 +156,16 @@ class uvmt_cvmcu_chip_base_test_c extends uvmx_chip_test_c #(
             `uvm_info("TEST", $sformatf("Starting 'jtag_clk_seq'e:\n%s", jtag_clk_seq.sprint()), UVM_NONE)
             jtag_clk_seq.start(jtag_clk_agent.sequencer);
             `uvm_info("TEST", $sformatf("Finished 'jtag_clk_seq':\n%s", jtag_clk_seq.sprint()), UVM_NONE)
+         end
+         begin
+            `uvm_info("TEST", $sformatf("Starting 'uart0_clk_seq'e:\n%s", uart0_clk_seq.sprint()), UVM_NONE)
+            uart0_clk_seq.start(uart0_clk_agent.sequencer);
+            `uvm_info("TEST", $sformatf("Finished 'uart0_clk_seq':\n%s", uart0_clk_seq.sprint()), UVM_NONE)
+         end
+         begin
+            `uvm_info("TEST", $sformatf("Starting 'uart1_clk_seq'e:\n%s", uart1_clk_seq.sprint()), UVM_NONE)
+            uart1_clk_seq.start(uart1_clk_agent.sequencer);
+            `uvm_info("TEST", $sformatf("Finished 'uart1_clk_seq':\n%s", uart1_clk_seq.sprint()), UVM_NONE)
          end
       join
       phase.drop_objection(this);
