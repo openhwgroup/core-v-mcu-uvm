@@ -61,6 +61,14 @@ class uvmt_cvmcu_chip_uart_ig_test_c extends uvmt_cvmcu_chip_base_test_c;
       min_gap <= max_gap;
    }
 
+   /**
+    * Disables all sub-systems.
+    */
+   constraint disable_ss_cons {
+      env_cfg.apb_timer_ss_env_cfg.enabled == 0;
+      env_cfg.apb_adv_timer_ss_env_cfg.enabled == 0;
+   }
+
 
    /**
     * Default constructor.

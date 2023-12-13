@@ -20,6 +20,12 @@ class uvme_cvmcu_chip_uart_ig_seq_c extends uvme_cvmcu_chip_base_seq_c;
    rand int unsigned  max_gap; ///< Maximum cycles between transactions.
    /// @}
 
+   /// @name Sub-Sequences
+   /// @{
+   rand uvma_uart_rand_stim_seq_c  uart0_seq; ///< Stimulus for UART0
+   rand uvma_uart_rand_stim_seq_c  uart1_seq; ///< Stimulus for UART1
+   /// @}
+
 
    `uvm_object_utils_begin(uvme_cvmcu_chip_uart_ig_seq_c)
       `uvm_field_int(num_items, UVM_DEFAULT + UVM_DEC)
@@ -41,6 +47,13 @@ class uvme_cvmcu_chip_uart_ig_seq_c extends uvme_cvmcu_chip_base_seq_c;
     * TODO Implement or remove uvme_cvmcu_chip_uart_ig_seq_c::rules_cons
     */
    constraint rules_cons {
+      min_gap <= max_gap;
+      uart0_seq.num_items == num_items;
+      uart1_seq.num_items == num_items;
+      uart0_seq.min_gap == min_gap;
+      uart1_seq.min_gap == min_gap;
+      uart0_seq.max_gap == max_gap;
+      uart1_seq.max_gap == max_gap;
    }
 
 
@@ -52,16 +65,33 @@ class uvme_cvmcu_chip_uart_ig_seq_c extends uvme_cvmcu_chip_base_seq_c;
    endfunction
 
    /**
-    * TODO Implement or remove uvme_cvmcu_chip_uart_ig_seq_c::post_randomize_work()
+    * Creates sequences uart0_seq, uart1_seq.
     */
-   virtual function void post_randomize_work();
+   virtual function void create_sequences();
+      uart0_seq = uvma_uart_rand_stim_seq_c::type_id::create("uart0_seq");
+      uart1_seq = uvma_uart_rand_stim_seq_c::type_id::create("uart1_seq");
    endfunction
 
    /**
     * TODO Describe uvme_cvmcu_chip_uart_ig_seq_c::body()
     */
    virtual task body();
-      // TODO Implement uvme_cvmcu_chip_uart_ig_seq_c::body()
+      cntxt.probe_vif.assign_uarts();
+      fork
+         stimulus();
+         uart0_rx();
+         uart1_rx();
+      join_any
+   endtask
+
+   /**
+    * Generates UART stimulus into MCU.
+    */
+   task stimulus();
+      fork
+         uart0_seq.start(p_sequencer.uart0_agent_sequencer);
+         uart1_seq.start(p_sequencer.uart1_agent_sequencer);
+      join
    endtask
 
 endclass

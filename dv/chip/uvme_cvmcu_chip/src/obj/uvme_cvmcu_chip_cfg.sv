@@ -16,7 +16,13 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
 
    // @name Settings
    /// @{
-   rand longint unsigned  reg_block_base_address; ///< Base address for #cvmcu_chip_reg_block
+   rand uvm_reg_addr_t  reg_block_base_address; ///< Base address for #cvmcu_chip_reg_block
+   rand int unsigned    sys_clk_frequency     ; ///< System clock frequency.
+   rand uvm_reg_addr_t  malloc_base_offset    ; ///< Address offset for memory allocation blocks.
+   rand bit [15:0]      uart0_rx_buffer_size  ; ///< UART0 Rx buffer size
+   rand bit [15:0]      uart1_rx_buffer_size  ; ///< UART1 Rx buffer size
+   rand bit [15:0]      uart0_tx_buffer_size  ; ///< UART0 Tx buffer size
+   rand bit [15:0]      uart1_tx_buffer_size  ; ///< UART1 Tx buffer size
    /// @}
 
    /// @name Bus Widths
@@ -77,6 +83,11 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
       `uvm_field_enum(uvmx_reset_type_enum, reset_type, UVM_DEFAULT)
       `uvm_field_int(scoreboarding_enabled, UVM_DEFAULT)
       `uvm_field_int(reg_block_base_address, UVM_DEFAULT)
+      `uvm_field_int(malloc_base_offset, UVM_DEFAULT)
+      `uvm_field_int(uart0_rx_buffer_size, UVM_DEFAULT)
+      `uvm_field_int(uart1_rx_buffer_size, UVM_DEFAULT)
+      `uvm_field_int(uart0_tx_buffer_size, UVM_DEFAULT)
+      `uvm_field_int(uart1_tx_buffer_size, UVM_DEFAULT)
       `uvm_field_int(use_cores, UVM_DEFAULT)
       `uvm_field_object(jtag_agent_cfg, UVM_DEFAULT)
       `uvm_field_object(qspi_s0_agent_cfg, UVM_DEFAULT)
@@ -120,6 +131,11 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
     */
    constraint settings_space_cons {
       soft reg_block_base_address == uvme_cvmcu_chip_default_reg_block_base_address;
+      soft malloc_base_offset     == 'h0000_0000;
+      soft uart0_rx_buffer_size   == 1_024;
+      soft uart1_rx_buffer_size   == 1_024;
+      soft uart0_tx_buffer_size   == 1_024;
+      soft uart1_tx_buffer_size   == 1_024;
    }
 
    /**
@@ -191,6 +207,7 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
       soft uart0_agent_cfg.enabled == enabled;
       uart0_agent_cfg.drv_mode == UVMA_UART_DRV_MODE_TX;
       uart0_agent_cfg.is_active == is_active;
+      uart0_agent_cfg.frame_size inside {5,6,7,8};
    }
 
    /**
@@ -200,6 +217,7 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
       soft uart1_agent_cfg.enabled == enabled;
       uart1_agent_cfg.drv_mode == UVMA_UART_DRV_MODE_TX;
       uart1_agent_cfg.is_active == is_active;
+      uart1_agent_cfg.frame_size inside {5,6,7,8};
    }
 
    /**

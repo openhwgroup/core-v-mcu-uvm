@@ -59,6 +59,7 @@ class uvmt_cvmcu_chip_base_test_c extends uvmx_chip_test_c #(
       env_cfg.uart1_agent_cfg.baud_rate == test_cfg.uart1_baud_rate;
       env_cfg.uart0_agent_cfg.clk_frequency == test_cfg.uart0_clk_frequency;
       env_cfg.uart1_agent_cfg.clk_frequency == test_cfg.uart1_clk_frequency;
+      env_cfg.sys_clk_frequency == test_cfg.sys_clk_frequency;
    }
 
    /**
@@ -195,10 +196,10 @@ class uvmt_cvmcu_chip_base_test_c extends uvmx_chip_test_c #(
     */
    virtual task configure_phase(uvm_phase phase);
       phase.raise_objection(this);
-      super.configure_phase(phase);
       `uvm_info("TEST", $sformatf("Starting 'cfg_seq':\n%s", cfg_seq.sprint()), UVM_NONE)
       cfg_seq.start(sequencer);
       `uvm_info("TEST", $sformatf("Finished 'cfg_seq':\n%s", cfg_seq.sprint()), UVM_NONE)
+      super.configure_phase(phase);
       phase.drop_objection(this);
    endtask
 

@@ -16,8 +16,6 @@ class uvmt_cvmcu_chip_uart_eg_test_c extends uvmt_cvmcu_chip_base_test_c;
    /// @name Knobs
    /// @{
    rand int unsigned  num_items; ///< Number of transactions generated.
-   rand int unsigned  min_gap; ///< Minimum cycles between transactions.
-   rand int unsigned  max_gap; ///< Maximum cycles between transactions.
    /// @}
 
 
@@ -29,8 +27,6 @@ class uvmt_cvmcu_chip_uart_eg_test_c extends uvmt_cvmcu_chip_base_test_c;
 
    `uvm_component_utils_begin(uvmt_cvmcu_chip_uart_eg_test_c)
       `uvm_field_int(num_items, UVM_DEFAULT + UVM_DEC)
-      `uvm_field_int(min_gap, UVM_DEFAULT + UVM_DEC)
-      `uvm_field_int(max_gap, UVM_DEFAULT + UVM_DEC)
       `uvm_utils_object(uart_eg_seq, UVM_DEFAULT)
    `uvm_component_utils_end
 
@@ -40,8 +36,6 @@ class uvmt_cvmcu_chip_uart_eg_test_c extends uvmt_cvmcu_chip_base_test_c;
     */
    constraint knobs_cons {
       num_items inside {[1:'d1000]};
-      min_gap inside {[0:'d100]};
-      max_gap inside {[0:'d100]};
    }
 
    /**
@@ -49,8 +43,6 @@ class uvmt_cvmcu_chip_uart_eg_test_c extends uvmt_cvmcu_chip_base_test_c;
     */
    constraint sync_cons {
       uart_eg_seq.num_items == num_items;
-      uart_eg_seq.min_gap == min_gap;
-      uart_eg_seq.max_gap == max_gap;
    }
 
    /**
@@ -58,7 +50,14 @@ class uvmt_cvmcu_chip_uart_eg_test_c extends uvmt_cvmcu_chip_base_test_c;
     */
    constraint rules_cons {
       env_cfg.scoreboarding_enabled == 1;
-      min_gap <= max_gap;
+   }
+
+   /**
+    * Disables all sub-systems.
+    */
+   constraint disable_ss_cons {
+      env_cfg.apb_timer_ss_env_cfg.enabled == 0;
+      env_cfg.apb_adv_timer_ss_env_cfg.enabled == 0;
    }
 
 

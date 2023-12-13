@@ -17,6 +17,15 @@ class uvme_cvmcu_chip_cntxt_c extends uvmx_chip_env_cntxt_c #(
    .T_PROBE_VIF(virtual uvme_cvmcu_chip_probe_if)
 );
 
+   /// @name Fields
+   /// @{
+   uvm_reg_addr_t  malloc_ptr          ; ///< Memory address of next block to be allocated.
+   uvm_reg_addr_t  uart0_rx_buffer_addr; ///< Address of UART0 Rx buffer
+   uvm_reg_addr_t  uart1_rx_buffer_addr; ///< Address of UART1 Rx buffer
+   uvm_reg_addr_t  uart0_tx_buffer_addr; ///< Address of UART0 Tx buffer
+   uvm_reg_addr_t  uart1_tx_buffer_addr; ///< Address of UART1 Rx buffer
+   /// @}
+
    /// @name Agents
    /// @{
    uvma_jtag_cntxt_c  jtag_agent_cntxt; ///< JTAG controller agent context
@@ -172,6 +181,16 @@ class uvme_cvmcu_chip_cntxt_c extends uvmx_chip_env_cntxt_c #(
       irq_l2_agent_cntxt.reset();
       apb_timer_ss_env_cntxt.reset();
       apb_adv_timer_ss_env_cntxt.reset();
+      malloc_ptr = reg_model.ram.get_address() + cfg.malloc_base_offset;
+   endfunction
+
+   /**
+    * Simple memory allocation that doesn't re-use memory.
+    * TODO Replace with uvm_mem_mam usage
+    */
+   function uvm_reg_addr_t malloc(int unsigned block_size);
+      malloc = malloc_ptr;
+      malloc_ptr += block_size;
    endfunction
 
 endclass

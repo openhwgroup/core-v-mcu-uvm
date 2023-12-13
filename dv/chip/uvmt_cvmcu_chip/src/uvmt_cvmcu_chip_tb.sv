@@ -25,8 +25,8 @@ module uvmt_cvmcu_chip_tb;
    logic  jtag_trst_i; ///< JTAG reset signal
    uvma_clk_if    sys_clk_if(); ///< System clock interface
    uvma_clk_if    jtag_clk_if(); ///< JTAG clock interface
-   uvma_clk_if    uart0_clk_if(); ///< UART0 agent clock clock interface
-   uvma_clk_if    uart1_clk_if(); ///< UART1 agent clock clock interface
+   uvma_clk_if    uart0_clk_if(); ///< UART0 agent clock interface
+   uvma_clk_if    uart1_clk_if(); ///< UART1 agent clock interface
    uvma_reset_if  sys_reset_if(.clk(ref_clk_i)); ///< System reset interface
    uvma_reset_if  jtag_reset_if(.clk(jtag_tck_i)); ///< JTAG reset interface
    assign ref_clk_i = sys_clk_if.clk;

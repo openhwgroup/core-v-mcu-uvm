@@ -43,10 +43,15 @@ interface uvme_cvmcu_chip_probe_if (
    /// @}
 
 
-   // TODO Assign interface signals to uvme_cvmcu_chip_probe_if pins
-   //      Ex: function void assign_abc2xyz();
-   //             assign abc = xyz.def;
-   //          endfunction
+   /**
+    * Assigns UART interface signals to pins
+    */
+   function void assign_uarts();
+      force io_in_i[ 7] = uart0_if.tx;
+      force io_in_i[10] = uart1_if.tx;
+      force uart0_if.tx = io_out_o[8];
+      force uart1_if.tx = io_out_o[9];
+   endfunction
 
 
    /// @name Signals clocked to 'ref_clk_i'
