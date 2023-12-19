@@ -16,7 +16,7 @@ class uvme_apb_timer_ss_cfg_c extends uvmx_ss_env_cfg_c;
 
    // @name Settings
    /// @{
-   rand longint unsigned  reg_block_base_address; ///< Base address for #apb_timer_ss_reg_block
+   rand uvm_reg_addr_t  reg_block_base_address; ///< Base address for #apb_timer_ss_reg_block
    /// @}
 
    /// @name Agents
@@ -61,7 +61,6 @@ class uvme_apb_timer_ss_cfg_c extends uvmx_ss_env_cfg_c;
     */
    constraint proc_agent_cfg_cons {
       soft proc_agent_cfg.enabled == enabled;
-      proc_agent_cfg.bypass_mode == 0;
       proc_agent_cfg.data_width == 32;
       proc_agent_cfg.addr_width == 32;
       proc_agent_cfg.drv_mode == UVMA_APB_DRV_MODE_MSTR;

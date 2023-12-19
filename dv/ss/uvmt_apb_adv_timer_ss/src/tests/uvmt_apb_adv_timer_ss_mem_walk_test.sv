@@ -28,10 +28,10 @@ class uvmt_apb_adv_timer_ss_mem_walk_test_c extends uvmt_apb_adv_timer_ss_base_t
     * Disables all blocks.
     */
    constraint disable_blocks_cons {
-      env_cfg.adv_timer0_b_cfg.enabled == 0;
-      env_cfg.adv_timer1_b_cfg.enabled == 0;
-      env_cfg.adv_timer2_b_cfg.enabled == 0;
-      env_cfg.adv_timer3_b_cfg.enabled == 0;
+      env_cfg.adv_timer0_b_env_cfg.enabled == 0;
+      env_cfg.adv_timer1_b_env_cfg.enabled == 0;
+      env_cfg.adv_timer2_b_env_cfg.enabled == 0;
+      env_cfg.adv_timer3_b_env_cfg.enabled == 0;
    }
 
 

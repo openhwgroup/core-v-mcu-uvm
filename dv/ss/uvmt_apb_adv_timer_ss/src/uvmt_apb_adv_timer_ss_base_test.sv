@@ -150,10 +150,10 @@ class uvmt_apb_adv_timer_ss_base_test_c extends uvmx_ss_test_c #(
     */
    virtual task configure_phase(uvm_phase phase);
       phase.raise_objection(this);
-      super.configure_phase(phase);
       `uvm_info("TEST", $sformatf("Starting 'cfg_seq':\n%s", cfg_seq.sprint()), UVM_NONE)
       cfg_seq.start(sequencer);
       `uvm_info("TEST", $sformatf("Finished 'cfg_seq':\n%s", cfg_seq.sprint()), UVM_NONE)
+      super.configure_phase(phase);
       phase.drop_objection(this);
    endtask
 

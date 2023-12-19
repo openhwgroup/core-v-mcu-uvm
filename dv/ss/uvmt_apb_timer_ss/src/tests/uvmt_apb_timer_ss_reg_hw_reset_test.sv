@@ -28,10 +28,10 @@ class uvmt_apb_timer_ss_reg_hw_reset_test_c extends uvmt_apb_timer_ss_base_test_
     * Disables all blocks.
     */
    constraint disable_blocks_cons {
-      env_cfg.counter_lo_b_cfg.enabled == 0;
-      env_cfg.counter_hi_b_cfg.enabled == 0;
-      env_cfg.prescaler_lo_b_cfg.enabled == 0;
-      env_cfg.prescaler_hi_b_cfg.enabled == 0;
+      env_cfg.counter_lo_b_env_cfg.enabled == 0;
+      env_cfg.counter_hi_b_env_cfg.enabled == 0;
+      env_cfg.prescaler_lo_b_env_cfg.enabled == 0;
+      env_cfg.prescaler_hi_b_env_cfg.enabled == 0;
    }
 
 
