@@ -181,7 +181,7 @@ class uvme_cvmcu_chip_cntxt_c extends uvmx_chip_env_cntxt_c #(
       irq_l2_agent_cntxt.reset();
       apb_timer_ss_env_cntxt.reset();
       apb_adv_timer_ss_env_cntxt.reset();
-      malloc_ptr = reg_model.ram.get_address() + cfg.malloc_base_offset;
+      malloc_ptr = cfg.malloc_base_offset;
    endfunction
 
    /**

@@ -55,7 +55,6 @@ class uvme_cvmcu_chip_uart_eg_seq_c extends uvme_cvmcu_chip_base_seq_c;
     * TODO Describe uvme_cvmcu_chip_uart_eg_seq_c::body()
     */
    virtual task body();
-      cntxt.probe_vif.assign_uarts();
       fork
          uart0();
          uart1();

@@ -44,13 +44,27 @@ interface uvme_cvmcu_chip_probe_if (
 
 
    /**
-    * Assigns UART interface signals to pins
+    * Assigns 1 to UARTs Rx.
     */
-   function void assign_uarts();
+   initial begin
+      force uart0_if.rx = 1;
+      force uart1_if.rx = 1;
+   end
+
+   /**
+    * Assigns UART0 interface signals to pins
+    */
+   function void assign_uart0();
       force io_in_i[ 7] = uart0_if.tx;
+      force uart0_if.rx = io_out_o[8];
+   endfunction
+
+   /**
+    * Assigns UART1 interface signals to pins
+    */
+   function void assign_uart1();
       force io_in_i[10] = uart1_if.tx;
-      force uart0_if.tx = io_out_o[8];
-      force uart1_if.tx = io_out_o[9];
+      force uart1_if.rx = io_out_o[9];
    endfunction
 
 

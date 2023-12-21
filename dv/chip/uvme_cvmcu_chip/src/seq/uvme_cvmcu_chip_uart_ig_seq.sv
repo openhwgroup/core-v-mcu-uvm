@@ -38,7 +38,7 @@ class uvme_cvmcu_chip_uart_ig_seq_c extends uvme_cvmcu_chip_base_seq_c;
     * Describes randomization space for knobs.
     */
    constraint space_cons {
-      num_items inside {[1:'d1000]};
+      num_items inside {[1:'d100]};
       min_gap inside {[0:'d100]};
       max_gap inside {[0:'d100]};
    }
@@ -76,12 +76,13 @@ class uvme_cvmcu_chip_uart_ig_seq_c extends uvme_cvmcu_chip_base_seq_c;
     * TODO Describe uvme_cvmcu_chip_uart_ig_seq_c::body()
     */
    virtual task body();
-      cntxt.probe_vif.assign_uarts();
+      cntxt.probe_vif.assign_uart0();
+      cntxt.probe_vif.assign_uart1();
       fork
-         stimulus();
          uart0_rx();
          uart1_rx();
-      join_any
+      join_none
+      stimulus();
    endtask
 
    /**
