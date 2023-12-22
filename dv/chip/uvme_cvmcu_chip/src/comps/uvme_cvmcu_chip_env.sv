@@ -192,8 +192,8 @@ class uvme_cvmcu_chip_env_c extends uvmx_chip_env_c #(
       camera_agent.mon_trn_ap.connect(predictor.udma_camera_fifo.analysis_export);
       i2c_s0_agent.s2m_mon_trn_ap.connect(predictor.udma_i2c0_ingress_fifo.analysis_export);
       i2c_s1_agent.s2m_mon_trn_ap.connect(predictor.udma_i2c1_ingress_fifo.analysis_export);
-      uart0_agent.ig_mon_trn_ap.connect(predictor.udma_uart0_ingress_fifo.analysis_export);
-      uart1_agent.ig_mon_trn_ap.connect(predictor.udma_uart1_ingress_fifo.analysis_export);
+      uart0_agent.eg_mon_trn_ap.connect(predictor.udma_uart0_ingress_fifo.analysis_export);
+      uart1_agent.eg_mon_trn_ap.connect(predictor.udma_uart1_ingress_fifo.analysis_export);
       i2c_m_agent.m2s_mon_trn_ap.connect(predictor.apb_i2c_ingress_fifo.analysis_export);
       event_agent.c2s_mon_trn_ap.connect(predictor.core_event_fifo.analysis_export);
       event_agent.s2c_mon_trn_ap.connect(predictor.sys_event_fifo.analysis_export);
@@ -216,8 +216,8 @@ class uvme_cvmcu_chip_env_c extends uvmx_chip_env_c #(
       qspi_s1_agent.m2s_mon_trn_ap.connect(scoreboard.sb_udma_qspi1_egress.act_export);
       i2c_s0_agent.m2s_mon_trn_ap.connect(scoreboard.sb_udma_i2c0_egress.act_export);
       i2c_s1_agent.m2s_mon_trn_ap.connect(scoreboard.sb_udma_i2c1_egress.act_export);
-      uart0_agent.eg_mon_trn_ap.connect(scoreboard.sb_udma_uart0_egress.act_export);
-      uart1_agent.eg_mon_trn_ap.connect(scoreboard.sb_udma_uart1_egress.act_export);
+      uart0_agent.ig_mon_trn_ap.connect(scoreboard.sb_udma_uart0_egress.act_export);
+      uart1_agent.ig_mon_trn_ap.connect(scoreboard.sb_udma_uart1_egress.act_export);
       i2c_m_agent.s2m_mon_trn_ap.connect(scoreboard.sb_apb_i2c_egress.act_export);
       dbg_agent.mon_trn_ap.connect(scoreboard.sb_dbg.act_export);
       predictor.udma_qspi0_egress_ap.connect(scoreboard.sb_udma_qspi0_egress.exp_export);
