@@ -28,8 +28,6 @@ class uvme_cvmcu_chip_cfg_seq_c extends uvme_cvmcu_chip_base_seq_c;
     * TODO Describe uvme_cvmcu_chip_cfg_seq_c::body()
     */
    virtual task body();
-      uvm_status_e    status;
-      uvm_reg_data_t  value ;
       cfg_uart0();
       cfg_uart1();
    endtask
@@ -46,11 +44,15 @@ class uvme_cvmcu_chip_cfg_seq_c extends uvme_cvmcu_chip_base_seq_c;
          `uvmx_set_field(uart0.tx_saddr.saddr, cntxt.uart0_tx_buffer_addr)
          `uvmx_set_field(uart0.tx_size .size , cfg  .uart0_tx_buffer_size)
          `uvmx_set_field(uart0.rx_cfg.en        , 1)
+         `uvmx_set_field(uart0.rx_cfg.clear     , 1)
          `uvmx_set_field(uart0.rx_cfg.continuous, 0)
          `uvmx_set_field(uart0.tx_cfg.en        , 1)
+         `uvmx_set_field(uart0.tx_cfg.clr       , 1)
          `uvmx_set_field(uart0.tx_cfg.continuous, 0)
          `uvmx_set_field(uart0.uart_setup.en_rx    , 1)
          `uvmx_set_field(uart0.uart_setup.en_tx    , 1)
+         `uvmx_set_field(uart0.irq_en.err_irq_en   , 1)
+         `uvmx_set_field(uart0.irq_en.rx_irq_en    , 1)
          `uvmx_set_field(uart0.uart_setup.div      , cfg.sys_clk_frequency/cfg.uart0_agent_cfg.baud_rate)
          `uvmx_set_field(uart0.uart_setup.stop_bits, cfg.uart0_agent_cfg.num_stop_bits-1  )
          `uvmx_set_field(uart0.uart_setup.bits     , cfg.uart0_agent_cfg.frame_size-5     )
@@ -70,11 +72,15 @@ class uvme_cvmcu_chip_cfg_seq_c extends uvme_cvmcu_chip_base_seq_c;
          `uvmx_set_field(uart1.tx_saddr.saddr, cntxt.uart1_tx_buffer_addr)
          `uvmx_set_field(uart1.tx_size .size , cfg  .uart1_tx_buffer_size)
          `uvmx_set_field(uart1.rx_cfg.en        , 1)
+         `uvmx_set_field(uart1.rx_cfg.clear     , 1)
          `uvmx_set_field(uart1.rx_cfg.continuous, 0)
          `uvmx_set_field(uart1.tx_cfg.en        , 1)
+         `uvmx_set_field(uart1.tx_cfg.clr       , 1)
          `uvmx_set_field(uart1.tx_cfg.continuous, 0)
          `uvmx_set_field(uart1.uart_setup.en_rx    , 1)
          `uvmx_set_field(uart1.uart_setup.en_tx    , 1)
+         `uvmx_set_field(uart1.irq_en.err_irq_en   , 1)
+         `uvmx_set_field(uart1.irq_en.rx_irq_en    , 1)
          `uvmx_set_field(uart1.uart_setup.div      , cfg.sys_clk_frequency/cfg.uart1_agent_cfg.baud_rate)
          `uvmx_set_field(uart1.uart_setup.stop_bits, cfg.uart1_agent_cfg.num_stop_bits-1  )
          `uvmx_set_field(uart1.uart_setup.bits     , cfg.uart1_agent_cfg.frame_size-5     )

@@ -7,5 +7,7 @@
 `define __UVME_CVMCU_CHIP_FTDECS_SV__
 
 
+typedef class uvme_cvmcu_chip_udma_uart_seq_c;
+
 
 `endif // __UVME_CVMCU_CHIP_FTDECS_SV__

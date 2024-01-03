@@ -76,22 +76,19 @@ class uvme_cvmcu_chip_uart_ig_seq_c extends uvme_cvmcu_chip_base_seq_c;
     * TODO Describe uvme_cvmcu_chip_uart_ig_seq_c::body()
     */
    virtual task body();
-      cntxt.probe_vif.assign_uart0();
-      cntxt.probe_vif.assign_uart1();
       fork
-         uart0_rx();
-         uart1_rx();
-      join_none
-      stimulus();
-   endtask
-
-   /**
-    * Generates UART stimulus into MCU.
-    */
-   task stimulus();
-      fork
-         uart0_seq.start(p_sequencer.uart0_agent_sequencer);
-         uart1_seq.start(p_sequencer.uart1_agent_sequencer);
+         begin
+            if (cfg.uart0_agent_cfg.enabled) begin
+               cntxt.probe_vif.assign_uart0();
+               uart0_seq.start(p_sequencer.uart0_agent_sequencer);
+            end
+         end
+         begin
+            if (cfg.uart1_agent_cfg.enabled) begin
+               cntxt.probe_vif.assign_uart1();
+               uart1_seq.start(p_sequencer.uart1_agent_sequencer);
+            end
+         end
       join
    endtask
 

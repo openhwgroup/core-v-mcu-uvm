@@ -314,6 +314,19 @@ class uvme_cvmcu_chip_env_c extends uvmx_chip_env_c #(
       add_reg_test_ignore_list(UVM_DO_MEM_WALK         , uvme_cvmcu_chip_mem_walk_access_ignore_list);
    endfunction
 
+   /**
+    * Starts uDMA sequences.
+    */
+   virtual task run_sequences();
+      uvme_cvmcu_chip_udma_uart_seq_c  udma_uart_seq;
+      fork
+         begin
+            udma_uart_seq = uvme_cvmcu_chip_udma_uart_seq_c::type_id::create("udma_uart_seq");
+            udma_uart_seq.start(sequencer);
+         end
+      join_none
+   endtask
+
 endclass
 
 

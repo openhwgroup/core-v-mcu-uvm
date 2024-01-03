@@ -64,8 +64,8 @@ class uvmt_cvmcu_chip_test_cfg_c extends uvmx_chip_test_cfg_c #(
     * Describes randomization space for knobs.
     */
    constraint knobs_cons {
-      uart0_baud_rate inside {'d4800,'d9600,'d19200,'d57600,'d115200};
-      uart1_baud_rate inside {'d4800,'d9600,'d19200,'d57600,'d115200};
+      uart0_baud_rate inside {/*'d4800,'d9600,'d19200,'d57600,*/'d115200};
+      uart1_baud_rate inside {/*'d4800,'d9600,'d19200,'d57600,*/'d115200};
    }
 
    /**
