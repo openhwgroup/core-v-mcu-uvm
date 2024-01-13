@@ -317,7 +317,7 @@ class uvme_cvmcu_chip_env_c extends uvmx_chip_env_c #(
    /**
     * Starts uDMA sequences.
     */
-   virtual task run_sequences();
+   virtual task pre_main_phase(uvm_phase phase);
       uvme_cvmcu_chip_udma_uart_seq_c  udma_uart_seq;
       fork
          begin

@@ -66,27 +66,39 @@ class uvme_cvmcu_chip_uart_eg_seq_c extends uvme_cvmcu_chip_base_seq_c;
     */
    task uart0();
       uvma_uart_seq_item_c  item;
-      uvma_uart_mon_trn_c  trn;
-      bit  data[$];
-      for (int unsigned ii=0; ii<num_items; ii++) begin
-         item = uvma_uart_seq_item_c::type_id::create("item");
-         item.cfg = cfg.uart0_agent_cfg;
-         item.cntxt = cntxt.uart0_agent_cntxt;
-         if (!item.randomize()) begin
-            `uvm_fatal("CVMCU_CHIP_UART_EG_SEQ", "Failed to randomize UART item")
+      uvma_uart_mon_trn_c   trn;
+      byte unsigned  data[];
+      int unsigned   num_bits, bit_count;
+      if (cfg.uart0_agent_cfg.enabled) begin
+         for (int unsigned ii=0; ii<num_items; ii++) begin
+            `uvm_info("CVMCU_CHIP_UART_EG_SEQ", $sformatf("Starting UART0 item #%0d of %0d", (ii+1), num_items), UVM_MEDIUM)
+            // 1. Create random UART item
+            item = uvma_uart_seq_item_c::type_id::create("item");
+            trn = uvma_uart_mon_trn_c::type_id::create("trn");
+            item.cfg = cfg.uart0_agent_cfg;
+            item.cntxt = cntxt.uart0_agent_cntxt;
+            if (!item.randomize()) begin
+               `uvm_fatal("CVMCU_CHIP_UART_EG_SEQ", "Failed to randomize UART0 item")
+            end
+            // 2. Serialize item into bytes
+            num_bits = item.pack_bytes(data);
+            // 3. Write transaction to memory
+            `uvmx_set_field(uart0.tx_size.size , data.size())
+            `uvmx_update_reg_obj(uart0.tx_size, trn)
+            for (int unsigned ii=0; ii<data.size(); ii++) begin
+               `uvmx_write_mem_obj(ram, cntxt.uart0_tx_buffer_addr+ii, data[ii], trn)
+            end
+            // 4. Enable UART0
+            `uvmx_set_field(uart0.tx_cfg.en, 1)
+            `uvmx_update_reg_obj(uart0.tx_cfg, trn)
+            // 5. Wait for UART0 Tx interrupt
+            cntxt.irq_l2_agent_cntxt.wait_for_assert("UART0_1");
+            // 6. Send transaction to predictor
+            trn.copy(item);
+            p_sequencer.udma_uart0_egress_exp_ap.write(trn);
+            `uvm_info("CVMCU_CHIP_UART_EG_SEQ", $sformatf("Finished UART0 item #%0d of %0d", (ii+1), num_items), UVM_HIGH)
          end
-         foreach (item.data[ii]) begin
-            data.push_back(item.data[ii]);
-         end
-         if (cfg.uart0_agent_cfg.enable_parity_bit) begin
-            data.push_back(item.parity);
-         end
-         trn = uvma_uart_mon_trn_c::type_id::create("trn");
-         trn.copy(item);
-         p_sequencer.udma_uart0_egress_exp_ap.write(trn);
-         `uvm_info("CVMCU_CHIP_UART_EG_SEQ", $sformatf("Finished item #%0d of %0d", (ii+1), num_items), UVM_HIGH)
       end
-      // TODO Drive the register model to output data[$]
    endtask
 
    /**
@@ -94,27 +106,39 @@ class uvme_cvmcu_chip_uart_eg_seq_c extends uvme_cvmcu_chip_base_seq_c;
     */
    task uart1();
       uvma_uart_seq_item_c  item;
-      uvma_uart_mon_trn_c  trn;
-      bit  data[$];
-      for (int unsigned ii=0; ii<num_items; ii++) begin
-         item = uvma_uart_seq_item_c::type_id::create("item");
-         item.cfg = cfg.uart1_agent_cfg;
-         item.cntxt = cntxt.uart1_agent_cntxt;
-         if (!item.randomize()) begin
-            `uvm_fatal("CVMCU_CHIP_UART_EG_SEQ", "Failed to randomize UART item")
+      uvma_uart_mon_trn_c   trn;
+      byte unsigned  data[];
+      int unsigned   num_bits, bit_count;
+      if (cfg.uart1_agent_cfg.enabled) begin
+         for (int unsigned ii=0; ii<num_items; ii++) begin
+            `uvm_info("CVMCU_CHIP_UART_EG_SEQ", $sformatf("Starting UART1 item #%0d of %0d", (ii+1), num_items), UVM_MEDIUM)
+            // 1. Create random UART item
+            item = uvma_uart_seq_item_c::type_id::create("item");
+            trn = uvma_uart_mon_trn_c::type_id::create("trn");
+            item.cfg = cfg.uart1_agent_cfg;
+            item.cntxt = cntxt.uart1_agent_cntxt;
+            if (!item.randomize()) begin
+               `uvm_fatal("CVMCU_CHIP_UART_EG_SEQ", "Failed to randomize UART1 item")
+            end
+            // 2. Serialize item into bytes
+            num_bits = item.pack_bytes(data);
+            // 3. Write transaction to memory
+            `uvmx_set_field(uart1.tx_size.size , data.size())
+            `uvmx_update_reg_obj(uart1.tx_size, trn)
+            for (int unsigned ii=0; ii<data.size(); ii++) begin
+               `uvmx_write_mem_obj(ram, cntxt.uart1_tx_buffer_addr+ii, data[ii], trn)
+            end
+            // 4. Enable UART1
+            `uvmx_set_field(uart1.tx_cfg.en, 1)
+            `uvmx_update_reg_obj(uart1.tx_cfg, trn)
+            // 5. Wait for UART1 Tx interrupt
+            cntxt.irq_l2_agent_cntxt.wait_for_assert("UART1_1");
+            // 6. Send transaction to predictor
+            trn.copy(item);
+            p_sequencer.udma_uart1_egress_exp_ap.write(trn);
+            `uvm_info("CVMCU_CHIP_UART_EG_SEQ", $sformatf("Finished UART1 item #%0d of %0d", (ii+1), num_items), UVM_HIGH)
          end
-         foreach (item.data[ii]) begin
-            data.push_back(item.data[ii]);
-         end
-         if (cfg.uart1_agent_cfg.enable_parity_bit) begin
-            data.push_back(item.parity);
-         end
-         trn = uvma_uart_mon_trn_c::type_id::create("trn");
-         trn.copy(item);
-         p_sequencer.udma_uart1_egress_exp_ap.write(trn);
-         `uvm_info("CVMCU_CHIP_UART_EG_SEQ", $sformatf("Finished item #%0d of %0d", (ii+1), num_items), UVM_HIGH)
       end
-      // TODO Drive the register model to output data[$]
    endtask
 
 endclass

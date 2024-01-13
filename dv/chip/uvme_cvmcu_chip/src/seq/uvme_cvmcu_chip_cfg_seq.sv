@@ -40,13 +40,10 @@ class uvme_cvmcu_chip_cfg_seq_c extends uvme_cvmcu_chip_base_seq_c;
          cntxt.uart0_rx_buffer_addr = cntxt.malloc(cfg.uart0_rx_buffer_size);
          cntxt.uart0_tx_buffer_addr = cntxt.malloc(cfg.uart0_tx_buffer_size);
          `uvmx_set_field(uart0.rx_saddr.saddr, cntxt.uart0_rx_buffer_addr)
-         `uvmx_set_field(uart0.rx_size .size , cfg  .uart0_rx_buffer_size)
          `uvmx_set_field(uart0.tx_saddr.saddr, cntxt.uart0_tx_buffer_addr)
-         `uvmx_set_field(uart0.tx_size .size , cfg  .uart0_tx_buffer_size)
-         `uvmx_set_field(uart0.rx_cfg.en        , 1)
+         `uvmx_set_field(uart0.rx_size .size , cfg  .uart0_rx_buffer_size)
          `uvmx_set_field(uart0.rx_cfg.clear     , 1)
          `uvmx_set_field(uart0.rx_cfg.continuous, 0)
-         `uvmx_set_field(uart0.tx_cfg.en        , 1)
          `uvmx_set_field(uart0.tx_cfg.clr       , 1)
          `uvmx_set_field(uart0.tx_cfg.continuous, 0)
          `uvmx_set_field(uart0.uart_setup.en_rx    , 1)
@@ -68,13 +65,10 @@ class uvme_cvmcu_chip_cfg_seq_c extends uvme_cvmcu_chip_base_seq_c;
          cntxt.uart1_rx_buffer_addr = cntxt.malloc(cfg.uart1_rx_buffer_size);
          cntxt.uart1_tx_buffer_addr = cntxt.malloc(cfg.uart1_tx_buffer_size);
          `uvmx_set_field(uart1.rx_saddr.saddr, cntxt.uart1_rx_buffer_addr)
-         `uvmx_set_field(uart1.rx_size .size , cfg  .uart1_rx_buffer_size)
          `uvmx_set_field(uart1.tx_saddr.saddr, cntxt.uart1_tx_buffer_addr)
-         `uvmx_set_field(uart1.tx_size .size , cfg  .uart1_tx_buffer_size)
-         `uvmx_set_field(uart1.rx_cfg.en        , 1)
+         `uvmx_set_field(uart1.rx_size .size , cfg  .uart1_rx_buffer_size)
          `uvmx_set_field(uart1.rx_cfg.clear     , 1)
          `uvmx_set_field(uart1.rx_cfg.continuous, 0)
-         `uvmx_set_field(uart1.tx_cfg.en        , 1)
          `uvmx_set_field(uart1.tx_cfg.clr       , 1)
          `uvmx_set_field(uart1.tx_cfg.continuous, 0)
          `uvmx_set_field(uart1.uart_setup.en_rx    , 1)

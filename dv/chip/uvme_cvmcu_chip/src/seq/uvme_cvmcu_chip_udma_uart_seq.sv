@@ -49,15 +49,19 @@ class uvme_cvmcu_chip_udma_uart_seq_c extends uvme_cvmcu_chip_base_seq_c;
             trn = uvma_uart_mon_trn_c::type_id::create("trn");
             trn.cfg   = cfg  .uart0_agent_cfg  ;
             trn.cntxt = cntxt.uart0_agent_cntxt;
-            // 1. Wait for UART0 Rx Interrupt
+            // 1. Enable UART0 Rx
+            `uvmx_set_field(uart0.rx_cfg.en, 1)
+            `uvmx_update_reg_obj(uart0.rx_cfg, trn)
+            // 2. Wait for UART0 Rx Interrupt
             cntxt.irq_l2_agent_cntxt.wait_for_assert("UART0_0");
-            // 2. Get number of bytes to read
+            trn.from(cntxt.irq_l2_agent_cntxt.new_irq);
+            // 3. Get number of bytes to read
             `uvmx_mirror_reg_obj(uart0.rx_size, trn)
             `uvmx_get_field(num_bytes, uart0.rx_size.size)
-            // 3. Get address to read from
+            // 4. Get address to read from
             `uvmx_mirror_reg_obj(uart0.rx_saddr, trn)
             `uvmx_get_field(address, uart0.rx_saddr)
-            // 4. Read all the bytes from RAM and store the bits into a queue
+            // 5. Read all the bytes from RAM and store the bits into a queue
             data_q.delete();
             for (int unsigned ii=0; ii<num_bytes; ii++) begin
                `uvmx_read_mem_obj(r_data, ram, address+ii, trn)
@@ -67,14 +71,14 @@ class uvme_cvmcu_chip_udma_uart_seq_c extends uvme_cvmcu_chip_base_seq_c;
                   end
                end
             end
-            // 5. Convert from a queue to an array
+            // 6. Convert from a queue to an array
             data = new[cfg.uart0_agent_cfg.frame_size];
             foreach (data_q[ii]) begin
                data[ii] = data_q[ii];
             end
-            // 6. Unpack UART transaction from bit array
-            trn.unpack(data);
-            // 7. Send transaction to predictor
+            // 7. Unpack UART transaction from bit array
+            void'(trn.unpack(data));
+            // 8. Send transaction to predictor
             p_sequencer.udma_uart0_ingress_act_ap.write(trn);
          end
       end
@@ -96,15 +100,19 @@ class uvme_cvmcu_chip_udma_uart_seq_c extends uvme_cvmcu_chip_base_seq_c;
             trn = uvma_uart_mon_trn_c::type_id::create("trn");
             trn.cfg   = cfg  .uart1_agent_cfg  ;
             trn.cntxt = cntxt.uart1_agent_cntxt;
-            // 1. Wait for UART0 Rx Interrupt
+            // 1. Enable UART1 Rx
+            `uvmx_set_field(uart1.rx_cfg.en, 1)
+            `uvmx_update_reg_obj(uart1.rx_cfg, trn)
+            // 2. Wait for UART1 Rx Interrupt
             cntxt.irq_l2_agent_cntxt.wait_for_assert("UART1_0");
-            // 2. Get number of bytes to read
+            trn.from(cntxt.irq_l2_agent_cntxt.new_irq);
+            // 3. Get number of bytes to read
             `uvmx_mirror_reg_obj(uart1.rx_size, trn)
             `uvmx_get_field(num_bytes, uart1.rx_size.size)
-            // 3. Get address to read from
+            // 4. Get address to read from
             `uvmx_mirror_reg_obj(uart1.rx_saddr, trn)
             `uvmx_get_field(address, uart1.rx_saddr)
-            // 4. Read all the bytes from RAM and store the bits into a queue
+            // 5. Read all the bytes from RAM and store the bits into a queue
             data_q.delete();
             for (int unsigned ii=0; ii<num_bytes; ii++) begin
                `uvmx_read_mem_obj(r_data, ram, address+ii, trn)
@@ -114,14 +122,14 @@ class uvme_cvmcu_chip_udma_uart_seq_c extends uvme_cvmcu_chip_base_seq_c;
                   end
                end
             end
-            // 5. Convert from a queue to an array
+            // 6. Convert from a queue to an array
             data = new[cfg.uart1_agent_cfg.frame_size];
             foreach (data_q[ii]) begin
                data[ii] = data_q[ii];
             end
-            // 6. Unpack UART transaction from bit array
-            trn.unpack(data);
-            // 7. Send transaction to predictor
+            // 7. Unpack UART transaction from bit array
+            void'(trn.unpack(data));
+            // 8. Send transaction to predictor
             p_sequencer.udma_uart1_ingress_act_ap.write(trn);
          end
       end
