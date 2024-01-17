@@ -87,6 +87,7 @@ package uvme_cvmcu_chip_pkg;
    // Sequences
    `include "uvme_cvmcu_chip_base_seq.sv"
    `include "uvme_cvmcu_chip_init_seq.sv"
+   `include "uvme_cvmcu_chip_reset_seq.sv"
    `include "uvme_cvmcu_chip_cfg_seq.sv"
    `include "uvme_cvmcu_chip_udma_uart_seq.sv"
    `include "uvme_cvmcu_chip_seq_lib.sv"

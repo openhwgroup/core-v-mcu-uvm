@@ -315,16 +315,44 @@ class uvme_cvmcu_chip_env_c extends uvmx_chip_env_c #(
    endfunction
 
    /**
+    * Runs reset_seq to reset DUT registers.
+    */
+   virtual task post_reset_phase(uvm_phase phase);
+      uvme_cvmcu_chip_reset_seq_c  reset_seq = uvme_cvmcu_chip_reset_seq_c::type_id::create("reset_seq");
+      phase.raise_objection(this);
+      `uvm_info("CVMCU_ENV", $sformatf("Starting 'reset_seq':\n%s", reset_seq.sprint()), UVM_NONE)
+      reset_seq.start(sequencer);
+      `uvm_info("CVMCU_ENV", $sformatf("Finished 'reset_seq':\n%s", reset_seq.sprint()), UVM_NONE)
+      phase.drop_objection(this);
+   endtask
+
+   /**
+    * Runs cfg_seq to configure DUT registers.
+    */
+   virtual task pre_configure_phase(uvm_phase phase);
+      uvme_cvmcu_chip_cfg_seq_c  cfg_seq = uvme_cvmcu_chip_cfg_seq_c::type_id::create("cfg_seq");
+      phase.raise_objection(this);
+      `uvm_info("CVMCU_ENV", $sformatf("Starting 'cfg_seq':\n%s", cfg_seq.sprint()), UVM_NONE)
+      cfg_seq.start(sequencer);
+      `uvm_info("CVMCU_ENV", $sformatf("Finished 'cfg_seq':\n%s", cfg_seq.sprint()), UVM_NONE)
+      phase.drop_objection(this);
+   endtask
+
+   /**
     * Starts uDMA sequences.
     */
    virtual task pre_main_phase(uvm_phase phase);
       uvme_cvmcu_chip_udma_uart_seq_c  udma_uart_seq;
+      phase.raise_objection(this);
       fork
          begin
             udma_uart_seq = uvme_cvmcu_chip_udma_uart_seq_c::type_id::create("udma_uart_seq");
+            `uvm_info("CVMCU_ENV", $sformatf("Starting 'udma_uart_seq':\n%s", udma_uart_seq.sprint()), UVM_NONE)
             udma_uart_seq.start(sequencer);
+            `uvm_info("CVMCU_ENV", $sformatf("Finished 'udma_uart_seq':\n%s", udma_uart_seq.sprint()), UVM_NONE)
          end
       join_none
+      phase.drop_objection(this);
    endtask
 
 endclass
