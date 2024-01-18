@@ -1,4 +1,4 @@
-// Copyright 2023 Datum Technology Corporation
+// Copyright 2024 Datum Technology Corporation
 // All rights reserved.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -12,7 +12,7 @@ const int unsigned uvmt_apb_adv_timer_ss_default_low_speed_clk_frequency = 50_00
 const int unsigned uvmt_apb_adv_timer_ss_default_startup_timeout          =      10_000; ///< Default Heartbeat Monitor startup timeout in ns
 const int unsigned uvmt_apb_adv_timer_ss_default_heartbeat_period         =       1_000; ///< Default Heartbeat Monitor period in ns
 const int unsigned uvmt_apb_adv_timer_ss_default_heartbeat_refresh_period =       5_000; ///< Default Heartbeat Monitor refresh period in ns
-const int unsigned uvmt_apb_adv_timer_ss_default_simulation_timeout       =   1_000_000; ///< Default Watchdog Timer simulation timeout in ns
+const int unsigned uvmt_apb_adv_timer_ss_default_simulation_timeout       =  10_000_000; ///< Default Watchdog Timer simulation timeout in ns
 
 
 `endif // __UVMT_APB_ADV_TIMER_SS_CONSTANTS_SV__

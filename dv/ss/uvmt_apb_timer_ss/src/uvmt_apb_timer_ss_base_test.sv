@@ -1,4 +1,4 @@
-// Copyright 2023 Datum Technology Corporation
+// Copyright 2024 Datum Technology Corporation
 // All rights reserved.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -29,8 +29,7 @@ class uvmt_apb_timer_ss_base_test_c extends uvmx_ss_test_c #(
 
    /// @name Default sequences
    /// @{
-   rand uvme_apb_timer_ss_init_seq_c  init_seq; ///< Starts at time 0.
-   rand uvme_apb_timer_ss_cfg_seq_c   cfg_seq ; ///< Configures DUT registers during configure_phase.
+   rand uvme_apb_timer_ss_init_seq_c    init_seq ; ///< Starts at time 0.
    rand uvma_clk_start_seq_c  sys_clk_seq; ///< Starts sys_clk clock generation during pre_reset_phase.
    rand uvma_clk_start_seq_c  ref_clk_seq; ///< Starts ref_clk clock generation during pre_reset_phase.
    rand uvma_reset_pulse_seq_c  sys_reset_seq; ///< Asserts reset during reset_phase()
@@ -97,7 +96,6 @@ class uvmt_apb_timer_ss_base_test_c extends uvmx_ss_test_c #(
     */
    virtual function void create_init_cfg_sequences();
       init_seq = uvme_apb_timer_ss_init_seq_c::type_id::create("init_seq");
-      cfg_seq  = uvme_apb_timer_ss_cfg_seq_c ::type_id::create("cfg_seq" );
    endfunction
 
    /**
@@ -145,17 +143,6 @@ class uvmt_apb_timer_ss_base_test_c extends uvmx_ss_test_c #(
       phase.drop_objection(this);
    endtask
 
-   /**
-    * Runs cfg_seq to configure DUT registers.
-    */
-   virtual task configure_phase(uvm_phase phase);
-      phase.raise_objection(this);
-      `uvm_info("TEST", $sformatf("Starting 'cfg_seq':\n%s", cfg_seq.sprint()), UVM_NONE)
-      cfg_seq.start(sequencer);
-      `uvm_info("TEST", $sformatf("Finished 'cfg_seq':\n%s", cfg_seq.sprint()), UVM_NONE)
-      super.configure_phase(phase);
-      phase.drop_objection(this);
-   endtask
 
 endclass
 

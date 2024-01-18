@@ -1,4 +1,4 @@
-// Copyright 2023 Datum Technology Corporation
+// Copyright 2024 Datum Technology Corporation
 // All rights reserved.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -72,6 +72,7 @@ package uvme_apb_timer_ss_pkg;
    // Sequences
    `include "uvme_apb_timer_ss_base_seq.sv"
    `include "uvme_apb_timer_ss_init_seq.sv"
+   `include "uvme_apb_timer_ss_reset_seq.sv"
    `include "uvme_apb_timer_ss_cfg_seq.sv"
    `include "uvme_apb_timer_ss_seq_lib.sv"
 

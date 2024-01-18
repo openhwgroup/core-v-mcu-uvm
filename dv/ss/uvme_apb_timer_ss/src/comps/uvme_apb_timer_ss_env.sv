@@ -1,4 +1,4 @@
-// Copyright 2023 Datum Technology Corporation
+// Copyright 2024 Datum Technology Corporation
 // All rights reserved.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -155,6 +155,31 @@ class uvme_apb_timer_ss_env_c extends uvmx_ss_env_c #(
       add_reg_test_ignore_list(UVM_DO_SHARED_ACCESS    , uvme_apb_timer_ss_shared_access_ignore_list  );
       add_reg_test_ignore_list(UVM_DO_MEM_WALK         , uvme_apb_timer_ss_mem_walk_access_ignore_list);
    endfunction
+
+   /**
+    * Runs reset_seq to perform DUT software reset.
+    */
+   virtual task post_reset_phase(uvm_phase phase);
+      uvme_apb_timer_ss_reset_seq_c  reset_seq = uvme_apb_timer_ss_reset_seq_c::type_id::create("reset_seq" );
+      phase.raise_objection(this);
+      `uvm_info("ENV", $sformatf("Starting 'reset_seq':\n%s", reset_seq.sprint()), UVM_NONE)
+      reset_seq.start(sequencer);
+      `uvm_info("ENV", $sformatf("Finished 'reset_seq':\n%s", reset_seq.sprint()), UVM_NONE)
+      super.configure_phase(phase);
+      phase.drop_objection(this);
+   endtask
+   /**
+    * Runs cfg_seq to configure DUT registers.
+    */
+   virtual task pre_configure_phase(uvm_phase phase);
+      uvme_apb_timer_ss_cfg_seq_c  cfg_seq = uvme_apb_timer_ss_cfg_seq_c ::type_id::create("cfg_seq");
+      phase.raise_objection(this);
+      `uvm_info("ENV", $sformatf("Starting 'cfg_seq':\n%s", cfg_seq.sprint()), UVM_NONE)
+      cfg_seq.start(sequencer);
+      `uvm_info("ENV", $sformatf("Finished 'cfg_seq':\n%s", cfg_seq.sprint()), UVM_NONE)
+      super.configure_phase(phase);
+      phase.drop_objection(this);
+   endtask
 
 endclass
 

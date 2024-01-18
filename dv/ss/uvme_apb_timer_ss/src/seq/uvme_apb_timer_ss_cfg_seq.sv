@@ -1,4 +1,4 @@
-// Copyright 2023 Datum Technology Corporation
+// Copyright 2024 Datum Technology Corporation
 // All rights reserved.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -8,12 +8,12 @@
 
 
 /**
- * Sets register values to reflect environment configuration.
+ * Sets APB simple timer unit Sub-System register values to reflect environment configuration.
  * @ingroup uvme_apb_timer_ss_seq
  */
 class uvme_apb_timer_ss_cfg_seq_c extends uvme_apb_timer_ss_base_seq_c;
 
-   /// @name Knobs
+   /// @name State
    /// @{
    /// @}
 
@@ -33,10 +33,8 @@ class uvme_apb_timer_ss_cfg_seq_c extends uvme_apb_timer_ss_base_seq_c;
     * TODO Describe uvme_apb_timer_ss_cfg_seq_c::body()
     */
    virtual task body();
-      uvm_status_e    status;
-      uvm_reg_data_t  value ;
       // TODO Implement uvme_apb_timer_ss_cfg_seq_c::body()
-      //      Ex: cntxt.reg_model.abc.xyz.write(status, cfg.xyz);
+      //      Ex: `uvmx_set_field(abc.def.xyz, 8'h5a)
    endtask
 
 endclass

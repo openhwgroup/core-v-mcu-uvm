@@ -8,7 +8,7 @@
 
 
 @section uvmt_apb_adv_timer_ss_dev_guide_license_agreement License Agreement
-© Copyright 2023 Datum Technology Corporation
+© Copyright 2024 Datum Technology Corporation
 
 All rights reserved.
 
@@ -16,7 +16,7 @@ All rights reserved.
 @section uvmt_apb_adv_timer_ss_dev_guide_revision_history Revision History
 Revision  | Date | Description
 --------- | ---- | -----------
-1.0 | 2023/12/19 | Initial Version
+1.0 | 2024/1/17 | Initial Version
 
 @subsection uvmt_apb_adv_timer_ss_dev_guide_description Description
 
