@@ -54,7 +54,7 @@ class uvme_cvmcu_chip_cfg_seq_c extends uvme_cvmcu_chip_base_seq_c;
          `uvmx_set_field(uart0.uart_setup.stop_bits, cfg.uart0_agent_cfg.num_stop_bits-1  )
          `uvmx_set_field(uart0.uart_setup.bits     , cfg.uart0_agent_cfg.frame_size-5     )
          `uvmx_set_field(uart0.uart_setup.parity_en, cfg.uart0_agent_cfg.enable_parity_bit)
-         `uvmx_set_field(udma.udma_clk_en.uart0, 1)
+         `uvmx_set_field(udma_ctrl.clk_en.uart0, 1)
       end
    endfunction
 
@@ -80,7 +80,7 @@ class uvme_cvmcu_chip_cfg_seq_c extends uvme_cvmcu_chip_base_seq_c;
          `uvmx_set_field(uart1.uart_setup.stop_bits, cfg.uart1_agent_cfg.num_stop_bits-1  )
          `uvmx_set_field(uart1.uart_setup.bits     , cfg.uart1_agent_cfg.frame_size-5     )
          `uvmx_set_field(uart1.uart_setup.parity_en, cfg.uart1_agent_cfg.enable_parity_bit)
-         `uvmx_set_field(udma.udma_clk_en.uart1, 1)
+         `uvmx_set_field(udma_ctrl.clk_en.uart1, 1)
       end
    endfunction
 

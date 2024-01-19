@@ -34,22 +34,22 @@ class uvme_cvmcu_chip_apb_gpio_reg_block_c extends uvmx_reg_block_c;
 
    /// @name Registers
    /// @{
-   rand uvme_cvmcu_chip_apb_gpio_apb_gpio_setgpio_reg_c  setgpio; ///< Set GPIO[gpio_num] = 1
-   rand uvme_cvmcu_chip_apb_gpio_apb_gpio_clrgpio_reg_c  clrgpio; ///< Set GPIO[gpio_num] = 0
-   rand uvme_cvmcu_chip_apb_gpio_apb_gpio_toggpio_reg_c  toggpio; ///< Invert the output of GPIO[gpio_num]
-   rand uvme_cvmcu_chip_apb_gpio_apb_gpio_pin0_reg_c  pin0; ///< gpio_value[31:0] = GPIO[31:0]
-   rand uvme_cvmcu_chip_apb_gpio_apb_gpio_pin1_reg_c  pin1; ///< gpio_value[31:0] = GPIO[63:32]
-   rand uvme_cvmcu_chip_apb_gpio_apb_gpio_pin2_reg_c  pin2; ///< gpio_value[31:0] = GPIO[95:64]
-   rand uvme_cvmcu_chip_apb_gpio_apb_gpio_pin3_reg_c  pin3; ///< gpio_value[31:0] = GPIO[127:96]
-   rand uvme_cvmcu_chip_apb_gpio_apb_gpio_out0_reg_c  out0; ///< Drive value[31:0] onto GPIO[31:0]
-   rand uvme_cvmcu_chip_apb_gpio_apb_gpio_out1_reg_c  out1; ///< Drive value[31:0] onto GPIO[63:32]
-   rand uvme_cvmcu_chip_apb_gpio_apb_gpio_out2_reg_c  out2; ///< Drive value[31:0] onto GPIO[95:64]
-   rand uvme_cvmcu_chip_apb_gpio_apb_gpio_out3_reg_c  out3; ///< Drive value[31:0] onto GPIO[127:96]
-   rand uvme_cvmcu_chip_apb_gpio_apb_gpio_setsel_reg_c  setsel; ///< Set gpio_num for use by RDSTAT. Note: SETGPIO, CLRGPIO, TOGGPIO and SETINT set gpio_num
-   rand uvme_cvmcu_chip_apb_gpio_apb_gpio_rdstat_reg_c  rdstat; ///< Read the mode control for GPIO[gpio_num] (set gpio_num using SETSEL). 0x0: Input only (output is tri-stated). 0x1: Output active. 0x2: Open drain (value=0 drives 0, when value=1 tristated). 0x3: Open drain (value=0 drives 0, when value=1 tristated).
-   rand uvme_cvmcu_chip_apb_gpio_apb_gpio_setmode_reg_c  setmode; ///< mode control for GPIO[gpio_num}. 0x0: Input only (output is tri-stated). 0x1: Output active. 0x2: Open drain (value=0 drives 0, when value=1 tristated). 0x3: Open drain (value=0 drives 0, when value=1 tristated)
-   rand uvme_cvmcu_chip_apb_gpio_apb_gpio_setint_reg_c  setint; ///< Type of interrupt for GPIO[gpio_num]. 0x0: active low, level type interrupt. 0x1: rising edge type interupt. 0x2: falling edge type interrupt. 0x3: no interrupt. 0x4: active high, level type interrupt. 0x5 to 0x7: no interrupt.
-   rand uvme_cvmcu_chip_apb_gpio_apb_gpio_intack_reg_c  intack; ///< Input value reported by GPIO[gpio_num]
+   rand uvme_cvmcu_chip_apb_gpio_setgpio_reg_c  setgpio; ///< Set GPIO[gpio_num] = 1
+   rand uvme_cvmcu_chip_apb_gpio_clrgpio_reg_c  clrgpio; ///< Set GPIO[gpio_num] = 0
+   rand uvme_cvmcu_chip_apb_gpio_toggpio_reg_c  toggpio; ///< Invert the output of GPIO[gpio_num]
+   rand uvme_cvmcu_chip_apb_gpio_pin0_reg_c  pin0; ///< gpio_value[31:0] = GPIO[31:0]
+   rand uvme_cvmcu_chip_apb_gpio_pin1_reg_c  pin1; ///< gpio_value[31:0] = GPIO[63:32]
+   rand uvme_cvmcu_chip_apb_gpio_pin2_reg_c  pin2; ///< gpio_value[31:0] = GPIO[95:64]
+   rand uvme_cvmcu_chip_apb_gpio_pin3_reg_c  pin3; ///< gpio_value[31:0] = GPIO[127:96]
+   rand uvme_cvmcu_chip_apb_gpio_out0_reg_c  out0; ///< Drive value[31:0] onto GPIO[31:0]
+   rand uvme_cvmcu_chip_apb_gpio_out1_reg_c  out1; ///< Drive value[31:0] onto GPIO[63:32]
+   rand uvme_cvmcu_chip_apb_gpio_out2_reg_c  out2; ///< Drive value[31:0] onto GPIO[95:64]
+   rand uvme_cvmcu_chip_apb_gpio_out3_reg_c  out3; ///< Drive value[31:0] onto GPIO[127:96]
+   rand uvme_cvmcu_chip_apb_gpio_setsel_reg_c  setsel; ///< Set gpio_num for use by RDSTAT. Note: SETGPIO, CLRGPIO, TOGGPIO and SETINT set gpio_num
+   rand uvme_cvmcu_chip_apb_gpio_rdstat_reg_c  rdstat; ///< Read the mode control for GPIO[gpio_num] (set gpio_num using SETSEL). 0x0: Input only (output is tri-stated). 0x1: Output active. 0x2: Open drain (value=0 drives 0, when value=1 tristated). 0x3: Open drain (value=0 drives 0, when value=1 tristated).
+   rand uvme_cvmcu_chip_apb_gpio_setmode_reg_c  setmode; ///< mode control for GPIO[gpio_num}. 0x0: Input only (output is tri-stated). 0x1: Output active. 0x2: Open drain (value=0 drives 0, when value=1 tristated). 0x3: Open drain (value=0 drives 0, when value=1 tristated)
+   rand uvme_cvmcu_chip_apb_gpio_setint_reg_c  setint; ///< Type of interrupt for GPIO[gpio_num]. 0x0: active low, level type interrupt. 0x1: rising edge type interupt. 0x2: falling edge type interrupt. 0x3: no interrupt. 0x4: active high, level type interrupt. 0x5 to 0x7: no interrupt.
+   rand uvme_cvmcu_chip_apb_gpio_intack_reg_c  intack; ///< Input value reported by GPIO[gpio_num]
    /// @}
 
 
@@ -84,52 +84,52 @@ class uvme_cvmcu_chip_apb_gpio_reg_block_c extends uvmx_reg_block_c;
     * Creates register(s).
     */
    virtual function void create_regs();
-      setgpio = uvme_cvmcu_chip_apb_gpio_apb_gpio_setgpio_reg_c::type_id::create("setgpio");
+      setgpio = uvme_cvmcu_chip_apb_gpio_setgpio_reg_c::type_id::create("setgpio");
       setgpio.configure(this);
       setgpio.build();
-      clrgpio = uvme_cvmcu_chip_apb_gpio_apb_gpio_clrgpio_reg_c::type_id::create("clrgpio");
+      clrgpio = uvme_cvmcu_chip_apb_gpio_clrgpio_reg_c::type_id::create("clrgpio");
       clrgpio.configure(this);
       clrgpio.build();
-      toggpio = uvme_cvmcu_chip_apb_gpio_apb_gpio_toggpio_reg_c::type_id::create("toggpio");
+      toggpio = uvme_cvmcu_chip_apb_gpio_toggpio_reg_c::type_id::create("toggpio");
       toggpio.configure(this);
       toggpio.build();
-      pin0 = uvme_cvmcu_chip_apb_gpio_apb_gpio_pin0_reg_c::type_id::create("pin0");
+      pin0 = uvme_cvmcu_chip_apb_gpio_pin0_reg_c::type_id::create("pin0");
       pin0.configure(this);
       pin0.build();
-      pin1 = uvme_cvmcu_chip_apb_gpio_apb_gpio_pin1_reg_c::type_id::create("pin1");
+      pin1 = uvme_cvmcu_chip_apb_gpio_pin1_reg_c::type_id::create("pin1");
       pin1.configure(this);
       pin1.build();
-      pin2 = uvme_cvmcu_chip_apb_gpio_apb_gpio_pin2_reg_c::type_id::create("pin2");
+      pin2 = uvme_cvmcu_chip_apb_gpio_pin2_reg_c::type_id::create("pin2");
       pin2.configure(this);
       pin2.build();
-      pin3 = uvme_cvmcu_chip_apb_gpio_apb_gpio_pin3_reg_c::type_id::create("pin3");
+      pin3 = uvme_cvmcu_chip_apb_gpio_pin3_reg_c::type_id::create("pin3");
       pin3.configure(this);
       pin3.build();
-      out0 = uvme_cvmcu_chip_apb_gpio_apb_gpio_out0_reg_c::type_id::create("out0");
+      out0 = uvme_cvmcu_chip_apb_gpio_out0_reg_c::type_id::create("out0");
       out0.configure(this);
       out0.build();
-      out1 = uvme_cvmcu_chip_apb_gpio_apb_gpio_out1_reg_c::type_id::create("out1");
+      out1 = uvme_cvmcu_chip_apb_gpio_out1_reg_c::type_id::create("out1");
       out1.configure(this);
       out1.build();
-      out2 = uvme_cvmcu_chip_apb_gpio_apb_gpio_out2_reg_c::type_id::create("out2");
+      out2 = uvme_cvmcu_chip_apb_gpio_out2_reg_c::type_id::create("out2");
       out2.configure(this);
       out2.build();
-      out3 = uvme_cvmcu_chip_apb_gpio_apb_gpio_out3_reg_c::type_id::create("out3");
+      out3 = uvme_cvmcu_chip_apb_gpio_out3_reg_c::type_id::create("out3");
       out3.configure(this);
       out3.build();
-      setsel = uvme_cvmcu_chip_apb_gpio_apb_gpio_setsel_reg_c::type_id::create("setsel");
+      setsel = uvme_cvmcu_chip_apb_gpio_setsel_reg_c::type_id::create("setsel");
       setsel.configure(this);
       setsel.build();
-      rdstat = uvme_cvmcu_chip_apb_gpio_apb_gpio_rdstat_reg_c::type_id::create("rdstat");
+      rdstat = uvme_cvmcu_chip_apb_gpio_rdstat_reg_c::type_id::create("rdstat");
       rdstat.configure(this);
       rdstat.build();
-      setmode = uvme_cvmcu_chip_apb_gpio_apb_gpio_setmode_reg_c::type_id::create("setmode");
+      setmode = uvme_cvmcu_chip_apb_gpio_setmode_reg_c::type_id::create("setmode");
       setmode.configure(this);
       setmode.build();
-      setint = uvme_cvmcu_chip_apb_gpio_apb_gpio_setint_reg_c::type_id::create("setint");
+      setint = uvme_cvmcu_chip_apb_gpio_setint_reg_c::type_id::create("setint");
       setint.configure(this);
       setint.build();
-      intack = uvme_cvmcu_chip_apb_gpio_apb_gpio_intack_reg_c::type_id::create("intack");
+      intack = uvme_cvmcu_chip_apb_gpio_intack_reg_c::type_id::create("intack");
       intack.configure(this);
       intack.build();
    endfunction

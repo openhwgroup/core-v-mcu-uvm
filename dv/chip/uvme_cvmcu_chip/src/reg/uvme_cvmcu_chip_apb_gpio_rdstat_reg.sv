@@ -4,11 +4,11 @@
 // THE FOLLOWING IS GENERATED CODE: ANY CHANGES MADE WILL BE ERASED UPON THE NEXT ITERATION
 
 
-`ifndef __UVME_CVMCU_CHIP_APB_GPIO_APB_GPIO_RDSTAT_REG_SV__
-`define __UVME_CVMCU_CHIP_APB_GPIO_APB_GPIO_RDSTAT_REG_SV__
+`ifndef __UVME_CVMCU_CHIP_APB_GPIO_RDSTAT_REG_SV__
+`define __UVME_CVMCU_CHIP_APB_GPIO_RDSTAT_REG_SV__
 
 
-class uvme_cvmcu_chip_apb_gpio_apb_gpio_rdstat_reg_c extends uvmx_reg_c;
+class uvme_cvmcu_chip_apb_gpio_rdstat_reg_c extends uvmx_reg_c;
 
    rand uvmx_reg_field_c  mode; ///< Read the mode control for GPIO[gpio_num] (set gpio_num using SETSEL). 0x0: Input only (output is tri-stated). 0x1: Output active. 0x2: Open drain (value=0 drives 0, when value=1 tristated). 0x3: Open drain (value=0 drives 0, when value=1 tristated).
    rand uvmx_reg_field_c  inttype; ///< Type of interrupt for GPIO[gpio_num]. 0x0: active low, level type interrupt. 0x1: rising edge type interupt. 0x2: falling edge type interrupt. 0x3: no interrupt. 0x4: active high, level type interrupt. 0x5 to 0x7: no interrupt
@@ -18,7 +18,7 @@ class uvme_cvmcu_chip_apb_gpio_apb_gpio_rdstat_reg_c extends uvmx_reg_c;
    rand uvmx_reg_field_c  gpio_sel; ///< Selected gpio
 
 
-   `uvm_object_utils_begin(uvme_cvmcu_chip_apb_gpio_apb_gpio_rdstat_reg_c)
+   `uvm_object_utils_begin(uvme_cvmcu_chip_apb_gpio_rdstat_reg_c)
       `uvm_field_object(mode, UVM_DEFAULT)
       `uvm_field_object(inttype, UVM_DEFAULT)
       `uvm_field_object(inten, UVM_DEFAULT)
@@ -31,7 +31,7 @@ class uvme_cvmcu_chip_apb_gpio_apb_gpio_rdstat_reg_c extends uvmx_reg_c;
    /**
     * Default constructor.
     */
-   function new(string name="uvme_cvmcu_chip_apb_gpio_apb_gpio_rdstat_reg", int unsigned n_bits=32, int has_coverage=UVM_NO_COVERAGE);
+   function new(string name="uvme_cvmcu_chip_apb_gpio_rdstat_reg", int unsigned n_bits=32, int has_coverage=UVM_NO_COVERAGE);
       super.new(name, n_bits, has_coverage);
    endfunction
 
@@ -116,4 +116,4 @@ class uvme_cvmcu_chip_apb_gpio_apb_gpio_rdstat_reg_c extends uvmx_reg_c;
 endclass
 
 
-`endif // __UVME_CVMCU_CHIP_APB_GPIO_APB_GPIO_RDSTAT_REG_SV__
+`endif // __UVME_CVMCU_CHIP_APB_GPIO_RDSTAT_REG_SV__

@@ -92,9 +92,9 @@ class uvmt_apb_timer_ss_base_test_c extends uvmx_ss_test_c #(
    endfunction
 
    /**
-    * Creates init and cfg Sequences.
+    * Creates init Sequence.
     */
-   virtual function void create_init_cfg_sequences();
+   virtual function void create_init_sequence();
       init_seq = uvme_apb_timer_ss_init_seq_c::type_id::create("init_seq");
    endfunction
 

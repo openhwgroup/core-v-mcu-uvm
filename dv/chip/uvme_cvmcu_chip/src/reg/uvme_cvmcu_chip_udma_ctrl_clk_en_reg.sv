@@ -4,25 +4,25 @@
 // THE FOLLOWING IS GENERATED CODE: ANY CHANGES MADE WILL BE ERASED UPON THE NEXT ITERATION
 
 
-`ifndef __UVME_CVMCU_CHIP_UDMA_CTRL_PERIPH_RESET_REG_SV__
-`define __UVME_CVMCU_CHIP_UDMA_CTRL_PERIPH_RESET_REG_SV__
+`ifndef __UVME_CVMCU_CHIP_UDMA_CTRL_CLK_EN_REG_SV__
+`define __UVME_CVMCU_CHIP_UDMA_CTRL_CLK_EN_REG_SV__
 
 
-class uvme_cvmcu_chip_udma_ctrl_periph_reset_reg_c extends uvmx_reg_c;
+class uvme_cvmcu_chip_udma_ctrl_clk_en_reg_c extends uvmx_reg_c;
 
-   rand uvmx_reg_field_c  uart0; ///< Reset for UART0
-   rand uvmx_reg_field_c  uart1; ///< Reset for UART1
-   rand uvmx_reg_field_c  qspim0; ///< Reset for QSPIM0
-   rand uvmx_reg_field_c  qspim1; ///< Reset for QSPIM1
-   rand uvmx_reg_field_c  i2cm0; ///< Reset for I2CM0
-   rand uvmx_reg_field_c  i2cm1; ///< Reset for I2CM1
-   rand uvmx_reg_field_c  i2cs_csi_hyper_sdio; ///< Reset for I2SC0, CSI20, HYPER0 and SDIO0
-   rand uvmx_reg_field_c  cam0; ///< Reset for CAM0
-   rand uvmx_reg_field_c  jtag_mram_filter; ///< Reset for JTAG, MRAM and FILTER
-   rand uvmx_reg_field_c  fpga_ext_per; ///< Reset for FPGA and EXT_PER
+   rand uvmx_reg_field_c  uart0; ///< Enable for UART0 clock
+   rand uvmx_reg_field_c  uart1; ///< Enable for UART1 clock
+   rand uvmx_reg_field_c  qspim0; ///< Enable for QSPIM0 clock
+   rand uvmx_reg_field_c  qspim1; ///< Enable for QSPIM1 clock
+   rand uvmx_reg_field_c  i2cm0; ///< Enable for I2CM0 clock
+   rand uvmx_reg_field_c  i2cm1; ///< Enable for I2CM1 clock
+   rand uvmx_reg_field_c  i2cs_csi_hyper_sdio; ///< Enable for I2SC0, CSI20, HYPER0 and SDIO0 clock
+   rand uvmx_reg_field_c  cam0; ///< Enable for CAM0 clock
+   rand uvmx_reg_field_c  jtag_mram_filter; ///< Enable for JTAG, MRAM and FILTER clock
+   rand uvmx_reg_field_c  fpga_ext_per; ///< Enable for FPGA and EXT_PER clock
 
 
-   `uvm_object_utils_begin(uvme_cvmcu_chip_udma_ctrl_periph_reset_reg_c)
+   `uvm_object_utils_begin(uvme_cvmcu_chip_udma_ctrl_clk_en_reg_c)
       `uvm_field_object(uart0, UVM_DEFAULT)
       `uvm_field_object(uart1, UVM_DEFAULT)
       `uvm_field_object(qspim0, UVM_DEFAULT)
@@ -39,7 +39,7 @@ class uvme_cvmcu_chip_udma_ctrl_periph_reset_reg_c extends uvmx_reg_c;
    /**
     * Default constructor.
     */
-   function new(string name="uvme_cvmcu_chip_udma_ctrl_periph_reset_reg", int unsigned n_bits=32, int has_coverage=UVM_NO_COVERAGE);
+   function new(string name="uvme_cvmcu_chip_udma_ctrl_clk_en_reg", int unsigned n_bits=32, int has_coverage=UVM_NO_COVERAGE);
       super.new(name, n_bits, has_coverage);
    endfunction
 
@@ -172,4 +172,4 @@ class uvme_cvmcu_chip_udma_ctrl_periph_reset_reg_c extends uvmx_reg_c;
 endclass
 
 
-`endif // __UVME_CVMCU_CHIP_UDMA_CTRL_PERIPH_RESET_REG_SV__
+`endif // __UVME_CVMCU_CHIP_UDMA_CTRL_CLK_EN_REG_SV__

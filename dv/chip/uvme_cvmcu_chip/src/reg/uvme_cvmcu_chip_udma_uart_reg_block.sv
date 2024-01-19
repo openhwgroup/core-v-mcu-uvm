@@ -30,18 +30,18 @@ class uvme_cvmcu_chip_udma_uart_reg_block_c extends uvmx_reg_block_c;
 
    /// @name Registers
    /// @{
-   rand uvme_cvmcu_chip_udma_uart_udma_uart_rx_saddr_reg_c  rx_saddr; ///< Address of receive buffer on write; current address on read
-   rand uvme_cvmcu_chip_udma_uart_udma_uart_rx_size_reg_c  rx_size; ///< Size of receive buffer on write; bytes left on read
-   rand uvme_cvmcu_chip_udma_uart_udma_uart_rx_cfg_reg_c  rx_cfg; ///< Clear the receive channel
-   rand uvme_cvmcu_chip_udma_uart_udma_uart_tx_saddr_reg_c  tx_saddr; ///< Address of transmit buffer on write; current address on read
-   rand uvme_cvmcu_chip_udma_uart_udma_uart_tx_size_reg_c  tx_size; ///< Size of receive buffer on write; bytes left on read
-   rand uvme_cvmcu_chip_udma_uart_udma_uart_tx_cfg_reg_c  tx_cfg; ///< Clear the transmit channel
-   rand uvme_cvmcu_chip_udma_uart_udma_uart_status_reg_c  status; ///< 0x1: receiver is busy
-   rand uvme_cvmcu_chip_udma_uart_udma_uart_uart_setup_reg_c  uart_setup; ///< 
-   rand uvme_cvmcu_chip_udma_uart_udma_uart_error_reg_c  error; ///< 0x1 indicates parity error; read clears the bit
-   rand uvme_cvmcu_chip_udma_uart_udma_uart_irq_en_reg_c  irq_en; ///< Enable the error interrupt
-   rand uvme_cvmcu_chip_udma_uart_udma_uart_valid_reg_c  valid; ///< Cleared when RX_DATA is read
-   rand uvme_cvmcu_chip_udma_uart_udma_uart_data_reg_c  data; ///< Receive data; reading clears RX_DATA_VALID
+   rand uvme_cvmcu_chip_udma_uart_rx_saddr_reg_c  rx_saddr; ///< Address of receive buffer on write; current address on read
+   rand uvme_cvmcu_chip_udma_uart_rx_size_reg_c  rx_size; ///< Size of receive buffer on write; bytes left on read
+   rand uvme_cvmcu_chip_udma_uart_rx_cfg_reg_c  rx_cfg; ///< Clear the receive channel
+   rand uvme_cvmcu_chip_udma_uart_tx_saddr_reg_c  tx_saddr; ///< Address of transmit buffer on write; current address on read
+   rand uvme_cvmcu_chip_udma_uart_tx_size_reg_c  tx_size; ///< Size of receive buffer on write; bytes left on read
+   rand uvme_cvmcu_chip_udma_uart_tx_cfg_reg_c  tx_cfg; ///< Clear the transmit channel
+   rand uvme_cvmcu_chip_udma_uart_status_reg_c  status; ///< 0x1: receiver is busy
+   rand uvme_cvmcu_chip_udma_uart_uart_setup_reg_c  uart_setup; ///< 
+   rand uvme_cvmcu_chip_udma_uart_error_reg_c  error; ///< 0x1 indicates parity error; read clears the bit
+   rand uvme_cvmcu_chip_udma_uart_irq_en_reg_c  irq_en; ///< Enable the error interrupt
+   rand uvme_cvmcu_chip_udma_uart_valid_reg_c  valid; ///< Cleared when RX_DATA is read
+   rand uvme_cvmcu_chip_udma_uart_data_reg_c  data; ///< Receive data; reading clears RX_DATA_VALID
    /// @}
 
 
@@ -72,40 +72,40 @@ class uvme_cvmcu_chip_udma_uart_reg_block_c extends uvmx_reg_block_c;
     * Creates register(s).
     */
    virtual function void create_regs();
-      rx_saddr = uvme_cvmcu_chip_udma_uart_udma_uart_rx_saddr_reg_c::type_id::create("rx_saddr");
+      rx_saddr = uvme_cvmcu_chip_udma_uart_rx_saddr_reg_c::type_id::create("rx_saddr");
       rx_saddr.configure(this);
       rx_saddr.build();
-      rx_size = uvme_cvmcu_chip_udma_uart_udma_uart_rx_size_reg_c::type_id::create("rx_size");
+      rx_size = uvme_cvmcu_chip_udma_uart_rx_size_reg_c::type_id::create("rx_size");
       rx_size.configure(this);
       rx_size.build();
-      rx_cfg = uvme_cvmcu_chip_udma_uart_udma_uart_rx_cfg_reg_c::type_id::create("rx_cfg");
+      rx_cfg = uvme_cvmcu_chip_udma_uart_rx_cfg_reg_c::type_id::create("rx_cfg");
       rx_cfg.configure(this);
       rx_cfg.build();
-      tx_saddr = uvme_cvmcu_chip_udma_uart_udma_uart_tx_saddr_reg_c::type_id::create("tx_saddr");
+      tx_saddr = uvme_cvmcu_chip_udma_uart_tx_saddr_reg_c::type_id::create("tx_saddr");
       tx_saddr.configure(this);
       tx_saddr.build();
-      tx_size = uvme_cvmcu_chip_udma_uart_udma_uart_tx_size_reg_c::type_id::create("tx_size");
+      tx_size = uvme_cvmcu_chip_udma_uart_tx_size_reg_c::type_id::create("tx_size");
       tx_size.configure(this);
       tx_size.build();
-      tx_cfg = uvme_cvmcu_chip_udma_uart_udma_uart_tx_cfg_reg_c::type_id::create("tx_cfg");
+      tx_cfg = uvme_cvmcu_chip_udma_uart_tx_cfg_reg_c::type_id::create("tx_cfg");
       tx_cfg.configure(this);
       tx_cfg.build();
-      status = uvme_cvmcu_chip_udma_uart_udma_uart_status_reg_c::type_id::create("status");
+      status = uvme_cvmcu_chip_udma_uart_status_reg_c::type_id::create("status");
       status.configure(this);
       status.build();
-      uart_setup = uvme_cvmcu_chip_udma_uart_udma_uart_uart_setup_reg_c::type_id::create("uart_setup");
+      uart_setup = uvme_cvmcu_chip_udma_uart_uart_setup_reg_c::type_id::create("uart_setup");
       uart_setup.configure(this);
       uart_setup.build();
-      error = uvme_cvmcu_chip_udma_uart_udma_uart_error_reg_c::type_id::create("error");
+      error = uvme_cvmcu_chip_udma_uart_error_reg_c::type_id::create("error");
       error.configure(this);
       error.build();
-      irq_en = uvme_cvmcu_chip_udma_uart_udma_uart_irq_en_reg_c::type_id::create("irq_en");
+      irq_en = uvme_cvmcu_chip_udma_uart_irq_en_reg_c::type_id::create("irq_en");
       irq_en.configure(this);
       irq_en.build();
-      valid = uvme_cvmcu_chip_udma_uart_udma_uart_valid_reg_c::type_id::create("valid");
+      valid = uvme_cvmcu_chip_udma_uart_valid_reg_c::type_id::create("valid");
       valid.configure(this);
       valid.build();
-      data = uvme_cvmcu_chip_udma_uart_udma_uart_data_reg_c::type_id::create("data");
+      data = uvme_cvmcu_chip_udma_uart_data_reg_c::type_id::create("data");
       data.configure(this);
       data.build();
    endfunction

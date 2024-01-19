@@ -4,16 +4,16 @@
 // THE FOLLOWING IS GENERATED CODE: ANY CHANGES MADE WILL BE ERASED UPON THE NEXT ITERATION
 
 
-`ifndef __UVME_CVMCU_CHIP_APB_EVENT_CTRL_APB_EVENT_CTRL_EVENT_MASK0_REG_SV__
-`define __UVME_CVMCU_CHIP_APB_EVENT_CTRL_APB_EVENT_CTRL_EVENT_MASK0_REG_SV__
+`ifndef __UVME_CVMCU_CHIP_APB_EVENT_CTRL_EVENT_MASK0_REG_SV__
+`define __UVME_CVMCU_CHIP_APB_EVENT_CTRL_EVENT_MASK0_REG_SV__
 
 
-class uvme_cvmcu_chip_apb_event_ctrl_apb_event_ctrl_event_mask0_reg_c extends uvmx_reg_c;
+class uvme_cvmcu_chip_apb_event_ctrl_event_mask0_reg_c extends uvmx_reg_c;
 
    rand uvmx_reg_field_c  event_enable; ///< individual masks for events 0 - 31 1=mask event
 
 
-   `uvm_object_utils_begin(uvme_cvmcu_chip_apb_event_ctrl_apb_event_ctrl_event_mask0_reg_c)
+   `uvm_object_utils_begin(uvme_cvmcu_chip_apb_event_ctrl_event_mask0_reg_c)
       `uvm_field_object(event_enable, UVM_DEFAULT)
    `uvm_object_utils_end
 
@@ -21,7 +21,7 @@ class uvme_cvmcu_chip_apb_event_ctrl_apb_event_ctrl_event_mask0_reg_c extends uv
    /**
     * Default constructor.
     */
-   function new(string name="uvme_cvmcu_chip_apb_event_ctrl_apb_event_ctrl_event_mask0_reg", int unsigned n_bits=32, int has_coverage=UVM_NO_COVERAGE);
+   function new(string name="uvme_cvmcu_chip_apb_event_ctrl_event_mask0_reg", int unsigned n_bits=32, int has_coverage=UVM_NO_COVERAGE);
       super.new(name, n_bits, has_coverage);
    endfunction
 
@@ -46,4 +46,4 @@ class uvme_cvmcu_chip_apb_event_ctrl_apb_event_ctrl_event_mask0_reg_c extends uv
 endclass
 
 
-`endif // __UVME_CVMCU_CHIP_APB_EVENT_CTRL_APB_EVENT_CTRL_EVENT_MASK0_REG_SV__
+`endif // __UVME_CVMCU_CHIP_APB_EVENT_CTRL_EVENT_MASK0_REG_SV__

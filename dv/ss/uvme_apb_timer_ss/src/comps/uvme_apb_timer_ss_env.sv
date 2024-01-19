@@ -160,25 +160,32 @@ class uvme_apb_timer_ss_env_c extends uvmx_ss_env_c #(
     * Runs reset_seq to perform DUT software reset.
     */
    virtual task post_reset_phase(uvm_phase phase);
-      uvme_apb_timer_ss_reset_seq_c  reset_seq = uvme_apb_timer_ss_reset_seq_c::type_id::create("reset_seq" );
-      phase.raise_objection(this);
-      `uvm_info("ENV", $sformatf("Starting 'reset_seq':\n%s", reset_seq.sprint()), UVM_NONE)
-      reset_seq.start(sequencer);
-      `uvm_info("ENV", $sformatf("Finished 'reset_seq':\n%s", reset_seq.sprint()), UVM_NONE)
-      super.configure_phase(phase);
-      phase.drop_objection(this);
+      uvme_apb_timer_ss_reset_seq_c  reset_seq;
+      if (cfg.enabled) begin
+         reset_seq = uvme_apb_timer_ss_reset_seq_c::type_id::create("reset_seq");
+         phase.raise_objection(this);
+         `uvm_info("ENV", $sformatf("Starting 'reset_seq':\n%s", reset_seq.sprint()), UVM_NONE)
+         reset_seq.start(sequencer);
+         `uvm_info("ENV", $sformatf("Finished 'reset_seq':\n%s", reset_seq.sprint()), UVM_NONE)
+         super.configure_phase(phase);
+         phase.drop_objection(this);
+      end
    endtask
+
    /**
     * Runs cfg_seq to configure DUT registers.
     */
    virtual task pre_configure_phase(uvm_phase phase);
-      uvme_apb_timer_ss_cfg_seq_c  cfg_seq = uvme_apb_timer_ss_cfg_seq_c ::type_id::create("cfg_seq");
-      phase.raise_objection(this);
-      `uvm_info("ENV", $sformatf("Starting 'cfg_seq':\n%s", cfg_seq.sprint()), UVM_NONE)
-      cfg_seq.start(sequencer);
-      `uvm_info("ENV", $sformatf("Finished 'cfg_seq':\n%s", cfg_seq.sprint()), UVM_NONE)
-      super.configure_phase(phase);
-      phase.drop_objection(this);
+      uvme_apb_timer_ss_cfg_seq_c  cfg_seq;
+      if (cfg.enabled) begin
+         cfg_seq = uvme_apb_timer_ss_cfg_seq_c::type_id::create("cfg_seq");
+         phase.raise_objection(this);
+         `uvm_info("ENV", $sformatf("Starting 'cfg_seq':\n%s", cfg_seq.sprint()), UVM_NONE)
+         cfg_seq.start(sequencer);
+         `uvm_info("ENV", $sformatf("Finished 'cfg_seq':\n%s", cfg_seq.sprint()), UVM_NONE)
+         super.configure_phase(phase);
+         phase.drop_objection(this);
+      end
    endtask
 
 endclass

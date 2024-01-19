@@ -28,28 +28,41 @@ class uvme_cvmcu_chip_reset_seq_c extends uvme_cvmcu_chip_base_seq_c;
     * TODO Describe uvme_cvmcu_chip_reset_seq_c::body()
     */
    virtual task body();
+      pre_reset ();
       in_reset  ();
       post_reset();
+   endtask
+
+   /**
+    * TODO Describe uvme_cvmcu_chip_reset_seq_c::pre_reset()
+    */
+   virtual task pre_reset();
+      if (cfg.uart0_agent_cfg.enabled) begin
+         `uvmx_set_field(udma_ctrl.periph_reset.uart0, 1)
+      end
+      if (cfg.uart1_agent_cfg.enabled) begin
+         `uvmx_set_field(udma_ctrl.periph_reset.uart1, 1)
+      end
    endtask
 
    /**
     * TODO Describe uvme_cvmcu_chip_reset_seq_c::in_reset()
     */
    virtual task in_reset();
-      if (cfg.uart0_agent_cfg.enabled) begin
-         `uvmx_set_field(udma.periph_reset.uart0, 1)
-      end
-      if (cfg.uart1_agent_cfg.enabled) begin
-         `uvmx_set_field(udma.periph_reset.uart1, 1)
-      end
-      `uvmx_update_reg(udma.periph_reset)
+      `uvmx_update_reg(udma_ctrl.periph_reset)
    endtask
 
    /**
     * TODO Describe uvme_cvmcu_chip_reset_seq_c::post_reset()
     */
    virtual task post_reset();
-      `uvmx_write_reg(udma.periph_reset, 0)
+      if (cfg.uart0_agent_cfg.enabled) begin
+         `uvmx_set_field(udma_ctrl.periph_reset.uart0, 0)
+      end
+      if (cfg.uart1_agent_cfg.enabled) begin
+         `uvmx_set_field(udma_ctrl.periph_reset.uart1, 0)
+      end
+      `uvmx_update_reg(udma_ctrl.periph_reset)
    endtask
 
 endclass

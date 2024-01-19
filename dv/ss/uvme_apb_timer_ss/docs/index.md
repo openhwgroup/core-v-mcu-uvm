@@ -34,7 +34,7 @@ ID | Name | Version
 
 
 @section uvme_apb_timer_ss_release_history Release History
-@subsection uvme_apb_timer_ss_v1_0_0 2024/1/17 - 1.0.0
+@subsection uvme_apb_timer_ss_v1_0_0 2024/1/19 - 1.0.0
 - Initial release
 
 

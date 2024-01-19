@@ -4,17 +4,17 @@
 // THE FOLLOWING IS GENERATED CODE: ANY CHANGES MADE WILL BE ERASED UPON THE NEXT ITERATION
 
 
-`ifndef __UVME_CVMCU_CHIP_UDMA_UART_UDMA_UART_STATUS_REG_SV__
-`define __UVME_CVMCU_CHIP_UDMA_UART_UDMA_UART_STATUS_REG_SV__
+`ifndef __UVME_CVMCU_CHIP_UDMA_UART_STATUS_REG_SV__
+`define __UVME_CVMCU_CHIP_UDMA_UART_STATUS_REG_SV__
 
 
-class uvme_cvmcu_chip_udma_uart_udma_uart_status_reg_c extends uvmx_reg_c;
+class uvme_cvmcu_chip_udma_uart_status_reg_c extends uvmx_reg_c;
 
    rand uvmx_reg_field_c  rx_busy; ///< 0x1: receiver is busy
    rand uvmx_reg_field_c  tx_busy; ///< 0x1: transmitter is busy
 
 
-   `uvm_object_utils_begin(uvme_cvmcu_chip_udma_uart_udma_uart_status_reg_c)
+   `uvm_object_utils_begin(uvme_cvmcu_chip_udma_uart_status_reg_c)
       `uvm_field_object(rx_busy, UVM_DEFAULT)
       `uvm_field_object(tx_busy, UVM_DEFAULT)
    `uvm_object_utils_end
@@ -23,7 +23,7 @@ class uvme_cvmcu_chip_udma_uart_udma_uart_status_reg_c extends uvmx_reg_c;
    /**
     * Default constructor.
     */
-   function new(string name="uvme_cvmcu_chip_udma_uart_udma_uart_status_reg", int unsigned n_bits=32, int has_coverage=UVM_NO_COVERAGE);
+   function new(string name="uvme_cvmcu_chip_udma_uart_status_reg", int unsigned n_bits=32, int has_coverage=UVM_NO_COVERAGE);
       super.new(name, n_bits, has_coverage);
    endfunction
 
@@ -60,4 +60,4 @@ class uvme_cvmcu_chip_udma_uart_udma_uart_status_reg_c extends uvmx_reg_c;
 endclass
 
 
-`endif // __UVME_CVMCU_CHIP_UDMA_UART_UDMA_UART_STATUS_REG_SV__
+`endif // __UVME_CVMCU_CHIP_UDMA_UART_STATUS_REG_SV__
