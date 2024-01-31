@@ -69,6 +69,7 @@ class uvme_cvmcu_chip_uart_eg_seq_c extends uvme_cvmcu_chip_base_seq_c;
       uvma_uart_mon_trn_c   trn;
       byte unsigned  data[];
       int unsigned   num_bits, bit_count;
+      cntxt.probe_vif.assign_uart0();
       if (cfg.uart0_agent_cfg.enabled) begin
          for (int unsigned ii=0; ii<num_items; ii++) begin
             `uvm_info("CVMCU_CHIP_UART_EG_SEQ", $sformatf("Starting UART0 item #%0d of %0d", (ii+1), num_items), UVM_MEDIUM)
@@ -85,8 +86,8 @@ class uvme_cvmcu_chip_uart_eg_seq_c extends uvme_cvmcu_chip_base_seq_c;
             // 3. Write transaction to memory
             `uvmx_set_field(uart0.tx_size.size , data.size())
             `uvmx_update_reg_obj(uart0.tx_size, trn)
-            for (int unsigned ii=0; ii<data.size(); ii++) begin
-               `uvmx_write_mem_obj(ram, cntxt.uart0_tx_buffer_addr+ii, data[ii], trn)
+            for (int unsigned jj=0; jj<data.size(); jj++) begin
+               `uvmx_write_mem_obj(ram, cntxt.uart0_tx_buffer_addr+jj, data[jj], trn)
             end
             // 4. Enable UART0
             `uvmx_set_field(uart0.tx_cfg.en, 1)
@@ -109,6 +110,7 @@ class uvme_cvmcu_chip_uart_eg_seq_c extends uvme_cvmcu_chip_base_seq_c;
       uvma_uart_mon_trn_c   trn;
       byte unsigned  data[];
       int unsigned   num_bits, bit_count;
+      cntxt.probe_vif.assign_uart1();
       if (cfg.uart1_agent_cfg.enabled) begin
          for (int unsigned ii=0; ii<num_items; ii++) begin
             `uvm_info("CVMCU_CHIP_UART_EG_SEQ", $sformatf("Starting UART1 item #%0d of %0d", (ii+1), num_items), UVM_MEDIUM)
@@ -125,8 +127,8 @@ class uvme_cvmcu_chip_uart_eg_seq_c extends uvme_cvmcu_chip_base_seq_c;
             // 3. Write transaction to memory
             `uvmx_set_field(uart1.tx_size.size , data.size())
             `uvmx_update_reg_obj(uart1.tx_size, trn)
-            for (int unsigned ii=0; ii<data.size(); ii++) begin
-               `uvmx_write_mem_obj(ram, cntxt.uart1_tx_buffer_addr+ii, data[ii], trn)
+            for (int unsigned jj=0; jj<data.size(); jj++) begin
+               `uvmx_write_mem_obj(ram, cntxt.uart1_tx_buffer_addr+jj, data[jj], trn)
             end
             // 4. Enable UART1
             `uvmx_set_field(uart1.tx_cfg.en, 1)

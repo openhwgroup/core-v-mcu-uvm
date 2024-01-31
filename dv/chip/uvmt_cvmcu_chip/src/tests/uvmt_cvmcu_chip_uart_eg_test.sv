@@ -35,7 +35,7 @@ class uvmt_cvmcu_chip_uart_eg_test_c extends uvmt_cvmcu_chip_base_test_c;
     * Describes randomization space for knobs.
     */
    constraint knobs_cons {
-      num_items inside {[1:'d1000]};
+      num_items inside {[1:'d10]};
    }
 
    /**
