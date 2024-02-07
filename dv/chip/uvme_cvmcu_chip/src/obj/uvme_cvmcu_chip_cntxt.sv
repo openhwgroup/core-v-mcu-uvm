@@ -23,7 +23,7 @@ class uvme_cvmcu_chip_cntxt_c extends uvmx_chip_env_cntxt_c #(
    uvm_reg_addr_t  uart0_rx_buffer_addr; ///< Address of UART0 Rx buffer
    uvm_reg_addr_t  uart1_rx_buffer_addr; ///< Address of UART1 Rx buffer
    uvm_reg_addr_t  uart0_tx_buffer_addr; ///< Address of UART0 Tx buffer
-   uvm_reg_addr_t  uart1_tx_buffer_addr; ///< Address of UART1 Rx buffer
+   uvm_reg_addr_t  uart1_tx_buffer_addr; ///< Address of UART1 Tx buffer
    /// @}
 
    /// @name Agents

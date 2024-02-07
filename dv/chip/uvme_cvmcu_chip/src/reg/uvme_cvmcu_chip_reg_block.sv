@@ -160,10 +160,10 @@ class uvme_cvmcu_chip_reg_block_c extends uvmx_reg_block_c;
     * Creates memories.
     */
    virtual function void create_mems();
-      rom = new("rom", 4000, 32, "RO");
-      ram_b0 = new("ram_b0", 8000, 32, "RW");
-      ram_b1 = new("ram_b1", 8000, 32, "RW");
-      ram = new("ram", 448000, 32, "RW");
+      rom = new("rom", 'h4000, 8, "RO");
+      ram_b0 = new("ram_b0", 'h8000, 8, "RW");
+      ram_b1 = new("ram_b1", 'h8000, 8, "RW");
+      ram = new("ram", 'h448000, 8, "RW");
       rom.configure(this);
       ram_b0.configure(this);
       ram_b1.configure(this);

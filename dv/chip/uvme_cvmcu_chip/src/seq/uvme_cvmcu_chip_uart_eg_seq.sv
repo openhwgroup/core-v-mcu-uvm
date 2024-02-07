@@ -67,8 +67,9 @@ class uvme_cvmcu_chip_uart_eg_seq_c extends uvme_cvmcu_chip_base_seq_c;
    task uart0();
       uvma_uart_seq_item_c  item;
       uvma_uart_mon_trn_c   trn;
-      byte unsigned  data[];
+      bit  bits[];
       int unsigned   num_bits, bit_count;
+      uvm_reg_data_t  data;
       cntxt.probe_vif.assign_uart0();
       if (cfg.uart0_agent_cfg.enabled) begin
          for (int unsigned ii=0; ii<num_items; ii++) begin
@@ -81,14 +82,17 @@ class uvme_cvmcu_chip_uart_eg_seq_c extends uvme_cvmcu_chip_base_seq_c;
             if (!item.randomize()) begin
                `uvm_fatal("CVMCU_CHIP_UART_EG_SEQ", "Failed to randomize UART0 item")
             end
-            // 2. Serialize item into bytes
-            num_bits = item.pack_bytes(data);
-            // 3. Write transaction to memory
-            `uvmx_set_field(uart0.tx_size.size , data.size())
-            `uvmx_update_reg_obj(uart0.tx_size, trn)
-            for (int unsigned jj=0; jj<data.size(); jj++) begin
-               `uvmx_write_mem_obj(ram, cntxt.uart0_tx_buffer_addr+jj, data[jj], trn)
+            // 2. Serialize item
+            num_bits = item.pack(bits);
+            data = 0;
+            foreach (bits[jj]) begin
+               data[jj] = bits[jj];
             end
+            // 3. Write transaction to memory
+            `uvmx_set_field(uart0.tx_size.size , $ceil($itor(num_bits)/8.0))
+            `uvmx_update_reg_obj(uart0.tx_size, trn)
+            `uvm_info("CVMCU_CHIP_UART_EG_SEQ", $sformatf("UART0 item buffer at address x%h", cntxt.uart0_tx_buffer_addr), UVM_MEDIUM)
+            `uvmx_write_mem_obj(ram_b0, cntxt.uart0_tx_buffer_addr, data, trn)
             // 4. Enable UART0
             `uvmx_set_field(uart0.tx_cfg.en, 1)
             `uvmx_update_reg_obj(uart0.tx_cfg, trn)
@@ -108,8 +112,9 @@ class uvme_cvmcu_chip_uart_eg_seq_c extends uvme_cvmcu_chip_base_seq_c;
    task uart1();
       uvma_uart_seq_item_c  item;
       uvma_uart_mon_trn_c   trn;
-      byte unsigned  data[];
+      bit  bits[];
       int unsigned   num_bits, bit_count;
+      uvm_reg_data_t  data;
       cntxt.probe_vif.assign_uart1();
       if (cfg.uart1_agent_cfg.enabled) begin
          for (int unsigned ii=0; ii<num_items; ii++) begin
@@ -122,14 +127,17 @@ class uvme_cvmcu_chip_uart_eg_seq_c extends uvme_cvmcu_chip_base_seq_c;
             if (!item.randomize()) begin
                `uvm_fatal("CVMCU_CHIP_UART_EG_SEQ", "Failed to randomize UART1 item")
             end
-            // 2. Serialize item into bytes
-            num_bits = item.pack_bytes(data);
-            // 3. Write transaction to memory
-            `uvmx_set_field(uart1.tx_size.size , data.size())
-            `uvmx_update_reg_obj(uart1.tx_size, trn)
-            for (int unsigned jj=0; jj<data.size(); jj++) begin
-               `uvmx_write_mem_obj(ram, cntxt.uart1_tx_buffer_addr+jj, data[jj], trn)
+            // 2. Serialize item
+            num_bits = item.pack(bits);
+            data = 0;
+            foreach (bits[jj]) begin
+               data[jj] = bits[jj];
             end
+            // 3. Write transaction to memory
+            `uvmx_set_field(uart1.tx_size.size , $ceil($itor(num_bits)/8.0))
+            `uvmx_update_reg_obj(uart1.tx_size, trn)
+            `uvm_info("CVMCU_CHIP_UART_EG_SEQ", $sformatf("UART1 item buffer at address x%h", cntxt.uart1_tx_buffer_addr), UVM_MEDIUM)
+            `uvmx_write_mem_obj(ram_b0, cntxt.uart1_tx_buffer_addr, data, trn)
             // 4. Enable UART1
             `uvmx_set_field(uart1.tx_cfg.en, 1)
             `uvmx_update_reg_obj(uart1.tx_cfg, trn)

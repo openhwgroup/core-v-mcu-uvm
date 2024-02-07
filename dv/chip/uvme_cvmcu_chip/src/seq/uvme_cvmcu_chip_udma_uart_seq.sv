@@ -64,7 +64,7 @@ class uvme_cvmcu_chip_udma_uart_seq_c extends uvme_cvmcu_chip_base_seq_c;
             // 5. Read all the bytes from RAM and store the bits into a queue
             data_q.delete();
             for (int unsigned ii=0; ii<num_bytes; ii++) begin
-               `uvmx_read_mem_obj(r_data, ram, address+ii, trn)
+               `uvmx_read_mem_obj(r_data, ram_b0, address+ii, trn)
                for (int unsigned jj=0; jj<8; jj++) begin
                   if (data_q.size() < cfg.uart0_agent_cfg.frame_size) begin
                      data_q.push_back(r_data[jj]);
@@ -115,7 +115,7 @@ class uvme_cvmcu_chip_udma_uart_seq_c extends uvme_cvmcu_chip_base_seq_c;
             // 5. Read all the bytes from RAM and store the bits into a queue
             data_q.delete();
             for (int unsigned ii=0; ii<num_bytes; ii++) begin
-               `uvmx_read_mem_obj(r_data, ram, address+ii, trn)
+               `uvmx_read_mem_obj(r_data, ram_b0, address+ii, trn)
                for (int unsigned jj=0; jj<8; jj++) begin
                   if (data_q.size() < cfg.uart1_agent_cfg.frame_size) begin
                      data_q.push_back(r_data[jj]);
