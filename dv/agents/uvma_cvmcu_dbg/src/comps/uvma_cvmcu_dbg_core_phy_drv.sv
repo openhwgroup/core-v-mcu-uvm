@@ -28,15 +28,15 @@ class uvma_cvmcu_dbg_core_phy_drv_c extends uvmx_mp_drv_c #(
       super.new(name, parent);
    endfunction
 
-
    /**
-    * Drives CORE PHY Driver clocking block (core_phy_drv_cb) on each clock cycle.
+    * Drives CORE PHY Driver clocking block (core_phy_drv_cb) at the beginning of each clock cycle.
     */
    virtual task drive_item(ref uvma_cvmcu_dbg_core_phy_seq_item_c item);
       `uvmx_mp_drv_signal(item, stoptimer_o)
    endtask
 
-endclass : uvma_cvmcu_dbg_core_phy_drv_c
+
+endclass
 
 
 `endif // __UVMA_CVMCU_DBG_CORE_PHY_DRV_SV__

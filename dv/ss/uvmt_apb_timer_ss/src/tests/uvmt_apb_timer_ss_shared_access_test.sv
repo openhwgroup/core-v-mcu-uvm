@@ -1,4 +1,4 @@
-// Copyright 2023 Datum Technology Corporation
+// Copyright 2024 Datum Technology Corporation
 // All rights reserved.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -19,6 +19,25 @@ class uvmt_apb_timer_ss_shared_access_test_c extends uvmt_apb_timer_ss_base_test
    `uvm_component_utils(uvmt_apb_timer_ss_shared_access_test_c)
    `uvmx_test_reg(UVM_DO_SHARED_ACCESS)
 
+
+   /**
+    * Disables all agents not register-related.
+    */
+   constraint disable_agents_cons {
+      env_cfg.irq_events_agent_cfg.enabled == 0;
+   }
+
+   /**
+    * Disables all blocks.
+    */
+   constraint disable_blocks_cons {
+      env_cfg.counter_lo_b_env_cfg.enabled == 0;
+      env_cfg.counter_hi_b_env_cfg.enabled == 0;
+      env_cfg.prescaler_lo_b_env_cfg.enabled == 0;
+      env_cfg.prescaler_hi_b_env_cfg.enabled == 0;
+   }
+
+
    /**
     * Default constructor.
     */
@@ -26,7 +45,7 @@ class uvmt_apb_timer_ss_shared_access_test_c extends uvmt_apb_timer_ss_base_test
       super.new(name, parent);
    endfunction
 
-endclass : uvmt_apb_timer_ss_shared_access_test_c
+endclass
 
 
 `endif // __UVMT_APB_TIMER_SS_SHARED_ACCESS_TEST_SV__

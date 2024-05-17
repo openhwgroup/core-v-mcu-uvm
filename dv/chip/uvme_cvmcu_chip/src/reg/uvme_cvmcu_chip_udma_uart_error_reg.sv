@@ -1,20 +1,20 @@
-// Copyright 2023 Datum Technology Corporation
+// Copyright 2024 Datum Technology Corporation
 // All rights reserved.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // THE FOLLOWING IS GENERATED CODE: ANY CHANGES MADE WILL BE ERASED UPON THE NEXT ITERATION
 
 
-`ifndef __UVME_CVMCU_CHIP_UDMA_UART_UDMA_UART_ERROR_REG_SV__
-`define __UVME_CVMCU_CHIP_UDMA_UART_UDMA_UART_ERROR_REG_SV__
+`ifndef __UVME_CVMCU_CHIP_UDMA_UART_ERROR_REG_SV__
+`define __UVME_CVMCU_CHIP_UDMA_UART_ERROR_REG_SV__
 
 
-class uvme_cvmcu_chip_udma_uart_udma_uart_error_reg_c extends uvmx_reg_c;
+class uvme_cvmcu_chip_udma_uart_error_reg_c extends uvmx_reg_c;
 
    rand uvmx_reg_field_c  parity_err; ///< 0x1 indicates parity error; read clears the bit
    rand uvmx_reg_field_c  overflow_err; ///< 0x1 indicates overflow error; read clears the bit
 
 
-   `uvm_object_utils_begin(uvme_cvmcu_chip_udma_uart_udma_uart_error_reg_c)
+   `uvm_object_utils_begin(uvme_cvmcu_chip_udma_uart_error_reg_c)
       `uvm_field_object(parity_err, UVM_DEFAULT)
       `uvm_field_object(overflow_err, UVM_DEFAULT)
    `uvm_object_utils_end
@@ -23,7 +23,7 @@ class uvme_cvmcu_chip_udma_uart_udma_uart_error_reg_c extends uvmx_reg_c;
    /**
     * Default constructor.
     */
-   function new(string name="uvme_cvmcu_chip_udma_uart_udma_uart_error_reg", int unsigned n_bits=32, int has_coverage=UVM_NO_COVERAGE);
+   function new(string name="uvme_cvmcu_chip_udma_uart_error_reg", int unsigned n_bits=32, int has_coverage=UVM_NO_COVERAGE);
       super.new(name, n_bits, has_coverage);
    endfunction
 
@@ -57,7 +57,7 @@ class uvme_cvmcu_chip_udma_uart_udma_uart_error_reg_c extends uvmx_reg_c;
       );
    endfunction
 
-endclass : uvme_cvmcu_chip_udma_uart_udma_uart_error_reg_c
+endclass
 
 
-`endif // __UVME_CVMCU_CHIP_UDMA_UART_UDMA_UART_ERROR_REG_SV__
+`endif // __UVME_CVMCU_CHIP_UDMA_UART_ERROR_REG_SV__

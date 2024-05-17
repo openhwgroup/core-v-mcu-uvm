@@ -1,4 +1,4 @@
-// Copyright 2023 Datum Technology Corporation
+// Copyright 2024 Datum Technology Corporation
 // All rights reserved.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -24,7 +24,7 @@ module uvme_apb_timer_ss_chkr (
 
    // TODO Add assertions and/or functional coverage to uvme_apb_timer_ss_chkr
 
-endmodule : uvme_apb_timer_ss_chkr
+endmodule
 
 
 `endif // __UVME_APB_TIMER_SS_CHKR_SV__

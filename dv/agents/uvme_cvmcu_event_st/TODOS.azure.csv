@@ -1,8 +1,15 @@
-﻿Work Item Type,Title,Priority
-Issue,Fixed stimulus test,1
-Issue,Random stimulus test,1
-Issue,Functional regression,1
-Issue,Add error testing self-checking to base test,1
-Issue,Fixed illegal stimulus test,1
-Issue,Random illegal stimulus test,1
-Issue,Full regression,1
+Work Item Type,Title,Priority
+Issue,Describe CORE-V-MCU Event Interface UVM Agent Self-Test Environment",1
+Issue,Implement or remove uvme_cvmcu_event_st_cfg_c::rules_cons,1
+Issue,Complete uvme_cvmcu_event_st_cfg_c scoreboard logging configuration,1
+Issue,Implement uvme_cvmcu_event_st_cfg_c::post_randomize() or remove altogether,1
+Issue,Describe uvme_cvmcu_event_st_prd_c::predict_core(),1
+Issue,Describe uvme_cvmcu_event_st_prd_c::predict_sys(),1
+Issue,Describe uvme_cvmcu_event_st_prd_c::predict_c2s(),1
+Issue,Describe uvme_cvmcu_event_st_prd_c::predict_s2c(),1
+Issue,Implement cvmcu_event_st_seq_item_cg,1
+Issue,Implement cvmcu_event_st_c2s_mon_trn_cg,1
+Issue,Implement cvmcu_event_st_s2c_mon_trn_cg,1
+Issue,Implement cvmcu_event_st_core_phy_seq_item_cg,1
+Issue,Implement cvmcu_event_st_sys_phy_seq_item_cg,1
+Issue,Implement cvmcu_event_st_phy_mon_trn_cg,1

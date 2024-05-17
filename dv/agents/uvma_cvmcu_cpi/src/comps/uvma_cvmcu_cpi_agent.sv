@@ -16,7 +16,7 @@ class uvma_cvmcu_cpi_agent_c extends uvmx_agent_c #(
    .T_CFG      (uvma_cvmcu_cpi_cfg_c      ),
    .T_CNTXT    (uvma_cvmcu_cpi_cntxt_c    ),
    .T_SEQ_ITEM (uvma_cvmcu_cpi_seq_item_c ),
-   .T_VSQR     (uvma_cvmcu_cpi_vsqr_c     ),
+   .T_SQR      (uvma_cvmcu_cpi_sqr_c      ),
    .T_DRV      (uvma_cvmcu_cpi_drv_c      ),
    .T_MON      (uvma_cvmcu_cpi_mon_c      ),
    .T_LOGGER   (uvma_cvmcu_cpi_logger_c   ),
@@ -46,24 +46,24 @@ class uvma_cvmcu_cpi_agent_c extends uvmx_agent_c #(
     * Connects sequencer to driver's TLM ports.
     */
    virtual function void connect_drivers_sequencers();
-      driver.tx_phy_driver.seq_item_port.connect(vsequencer.tx_phy_sequencer.seq_item_export);
-      driver.rx_phy_driver.seq_item_port.connect(vsequencer.rx_phy_sequencer.seq_item_export);
+      driver.tx_phy_driver.seq_item_port.connect(sequencer.tx_phy_sequencer.seq_item_export);
+      driver.rx_phy_driver.seq_item_port.connect(sequencer.rx_phy_sequencer.seq_item_export);
    endfunction
 
    /**
     * Connects sequencer to monitor's TLM ports.
     */
-   virtual function void connect_monitor_vsequencer();
-      monitor.phy_monitor.ap.connect(vsequencer.phy_mon_trn_fifo.analysis_export);
+   virtual function void connect_monitor_sequencer();
+      monitor.phy_monitor.ap.connect(sequencer.phy_mon_trn_fifo.analysis_export);
    endfunction
 
    /**
     * Connects top-level ports to lower-level components'.
     */
    virtual function void connect_ports();
-      mon_trn_ap = vsequencer.mon_trn_fifo.put_ap;
-      tx_phy_seq_item_ap = vsequencer.tx_phy_sequencer.ap;
-      rx_phy_seq_item_ap = vsequencer.rx_phy_sequencer.ap;
+      mon_trn_ap = sequencer.mon_trn_fifo.put_ap;
+      tx_phy_seq_item_ap = sequencer.tx_phy_sequencer.ap;
+      rx_phy_seq_item_ap = sequencer.rx_phy_sequencer.ap;
       phy_mon_trn_ap = monitor.phy_monitor.ap;
    endfunction
 
@@ -94,8 +94,8 @@ class uvma_cvmcu_cpi_agent_c extends uvmx_agent_c #(
    virtual task start_sequences();
       if (cfg.is_active) begin
          case (cfg.drv_mode)
-            UVMA_CVMCU_CPI_DRV_MODE_TX: start_sequence(cfg.tx_drv_vseq_type, cntxt.tx_drv_vseq);
-            UVMA_CVMCU_CPI_DRV_MODE_RX: start_sequence(cfg.rx_drv_vseq_type, cntxt.rx_drv_vseq);
+            UVMA_CVMCU_CPI_DRV_MODE_TX: start_sequence(cfg.tx_drv_seq_type, cntxt.tx_drv_seq);
+            UVMA_CVMCU_CPI_DRV_MODE_RX: start_sequence(cfg.rx_drv_seq_type, cntxt.rx_drv_seq);
             default: begin
                `uvm_fatal("CVMCU_CPI_AGENT", $sformatf("Invalid cfg.drv_mode: %s", cfg.drv_mode.name()))
             end
@@ -103,7 +103,7 @@ class uvma_cvmcu_cpi_agent_c extends uvmx_agent_c #(
       end
    endtask
 
-endclass : uvma_cvmcu_cpi_agent_c
+endclass
 
 
 `endif // __UVMA_CVMCU_CPI_AGENT_SV__

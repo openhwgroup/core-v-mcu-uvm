@@ -62,18 +62,18 @@ package uvma_tcounter_b_pkg;
    `include "uvma_tcounter_b_cp_mon.sv"
    `include "uvma_tcounter_b_dpi_mon.sv"
    `include "uvma_tcounter_b_dpo_mon.sv"
-   `include "uvma_tcounter_b_vsqr.sv"
+   `include "uvma_tcounter_b_sqr.sv"
    `include "uvma_tcounter_b_drv.sv"
    `include "uvma_tcounter_b_mon.sv"
    `include "uvma_tcounter_b_logger.sv"
    `include "uvma_tcounter_b_agent.sv"
 
    // Sequences
-   `include "uvma_tcounter_b_base_vseq.sv"
-   `include "uvma_tcounter_b_mon_vseq.sv"
-   `include "uvma_tcounter_b_in_drv_vseq.sv"
-   `include "uvma_tcounter_b_out_drv_vseq.sv"
-   `include "uvma_tcounter_b_idle_vseq.sv"
+   `include "uvma_tcounter_b_base_seq.sv"
+   `include "uvma_tcounter_b_mon_seq.sv"
+   `include "uvma_tcounter_b_in_drv_seq.sv"
+   `include "uvma_tcounter_b_out_drv_seq.sv"
+   `include "uvma_tcounter_b_idle_seq.sv"
 
 endpackage : uvma_tcounter_b_pkg
 

@@ -1,4 +1,4 @@
-// Copyright 2023 Datum Technology Corporation
+// Copyright 2024 Datum Technology Corporation
 // All rights reserved.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // THE FOLLOWING IS GENERATED CODE: ANY CHANGES MADE WILL BE ERASED UPON THE NEXT ITERATION
@@ -99,7 +99,7 @@ class uvme_apb_adv_timer_ss_event_cfg_reg_c extends uvmx_reg_c;
       );
    endfunction
 
-endclass : uvme_apb_adv_timer_ss_event_cfg_reg_c
+endclass
 
 
 `endif // __UVME_APB_ADV_TIMER_SS_EVENT_CFG_REG_SV__

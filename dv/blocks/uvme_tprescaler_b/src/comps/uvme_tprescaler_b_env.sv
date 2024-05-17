@@ -14,7 +14,7 @@
 class uvme_tprescaler_b_env_c extends uvmx_block_env_c #(
    .T_CFG      (uvme_tprescaler_b_cfg_c      ),
    .T_CNTXT    (uvme_tprescaler_b_cntxt_c    ),
-   .T_VSQR     (uvme_tprescaler_b_vsqr_c     ),
+   .T_SQR      (uvme_tprescaler_b_sqr_c      ),
    .T_PRD      (uvme_tprescaler_b_prd_c      ),
    .T_SB       (uvme_tprescaler_b_sb_c       ),
    .T_COV_MODEL(uvme_tprescaler_b_cov_model_c)
@@ -90,13 +90,13 @@ class uvme_tprescaler_b_env_c extends uvmx_block_env_c #(
    endfunction
 
    /**
-    * Assembles virtual sequencer from agent sequencers.
+    * Assembles sequencer from agent sequencers.
     */
-   virtual function void assemble_vsequencer();
-      vsequencer.agent_vsequencer = agent.vsequencer;
+   virtual function void assemble_sequencer();
+      sequencer.agent_sequencer = agent.sequencer;
    endfunction
 
-endclass : uvme_tprescaler_b_env_c
+endclass
 
 
 `endif // __UVME_TPRESCALER_B_ENV_SV__

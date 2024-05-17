@@ -52,7 +52,7 @@ class uvma_tprescaler_b_dpo_seq_item_c extends uvmx_seq_item_c #(
       `uvmx_metadata_field("target_reached_o", target_reached_o_str)
    endfunction
 
-endclass : uvma_tprescaler_b_dpo_seq_item_c
+endclass
 
 
 `endif // __UVMA_TPRESCALER_B_DPO_SEQ_ITEM_SV__

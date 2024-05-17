@@ -65,7 +65,7 @@ class uvme_tprescaler_b_prd_c extends uvmx_block_prd_c #(
       `uvmx_prd_send(ap, out_trn)
    endtask
 
-endclass : uvme_tprescaler_b_prd_c
+endclass
 
 
 `endif // __UVME_TPRESCALER_B_PRD_SV__

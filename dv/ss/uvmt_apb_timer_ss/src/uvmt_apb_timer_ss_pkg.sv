@@ -1,4 +1,4 @@
-// Copyright 2023 Datum Technology Corporation
+// Copyright 2024 Datum Technology Corporation
 // All rights reserved.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -25,8 +25,6 @@
 `include "uvme_apb_timer_ss_macros.svh"
 `include "uvmt_apb_timer_ss_macros.svh"
 
-// Interface(s)
-
 
 /**
  * Encapsulates all the types of the APB simple timer unit Sub-System UVM Test Bench.
@@ -51,11 +49,9 @@ package uvmt_apb_timer_ss_pkg;
    `include "uvmt_apb_timer_ss_reg_hw_reset_test.sv"
    `include "uvmt_apb_timer_ss_reg_bit_bash_test.sv"
    `include "uvmt_apb_timer_ss_reg_access_test.sv"
-   `include "uvmt_apb_timer_ss_mem_access_test.sv"
    `include "uvmt_apb_timer_ss_shared_access_test.sv"
-   `include "uvmt_apb_timer_ss_mem_walk_test.sv"
 
-endpackage : uvmt_apb_timer_ss_pkg
+endpackage
 
 
 // Module(s) / Checker(s)

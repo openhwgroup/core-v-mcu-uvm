@@ -13,7 +13,11 @@
  * @defgroup uvme_tcounter_b_comps Components
  * @defgroup uvme_tcounter_b_misc  Miscellaneous
  * @defgroup uvme_tcounter_b_obj   Objects
- * @defgroup uvme_tcounter_b_seq   Sequences & Sequence Items
+ * @defgroup uvme_tcounter_b_seq   Sequences
+ * @{
+ * @defgroup uvme_tcounter_b_seq_functional   Functional
+ * @defgroup uvme_tcounter_b_seq_error   Error
+ * @}
  * @}
  */
 
@@ -23,8 +27,6 @@
 `include "uvmx_macros.svh"
 `include "uvma_tcounter_b_macros.svh"
 `include "uvme_tcounter_b_macros.svh"
-
-// Interface(s)
 
 
  /**
@@ -47,18 +49,15 @@ package uvme_tcounter_b_pkg;
    `include "uvme_tcounter_b_cntxt.sv"
 
    // Components
-   `include "uvme_tcounter_b_vsqr.sv"
+   `include "uvme_tcounter_b_sqr.sv"
    `include "uvme_tcounter_b_prd.sv"
    `include "uvme_tcounter_b_cov_model.sv"
    `include "uvme_tcounter_b_env.sv"
 
    // Sequences
-   `include "uvme_tcounter_b_vseq_lib.sv"
+   `include "uvme_tcounter_b_seq_lib.sv"
 
-endpackage : uvme_tcounter_b_pkg
-
-
-// Module(s) / Checker(s)
+endpackage
 
 
 `endif // __UVME_TCOUNTER_B_PKG_SV__

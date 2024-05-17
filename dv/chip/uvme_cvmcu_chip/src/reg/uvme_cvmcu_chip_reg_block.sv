@@ -1,4 +1,4 @@
-// Copyright 2023 Datum Technology Corporation
+// Copyright 2024 Datum Technology Corporation
 // All rights reserved.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // THE FOLLOWING IS GENERATED CODE: ANY CHANGES MADE WILL BE ERASED UPON THE NEXT ITERATION
@@ -41,7 +41,7 @@ class uvme_cvmcu_chip_reg_block_c extends uvmx_reg_block_c;
    rand uvme_cvmcu_chip_apb_fll_reg_block_c  fll; ///< Frequency-locked loop unit
    rand uvme_cvmcu_chip_apb_i2cs_reg_block_c  i2cs; ///< I2C Slave
    rand uvme_cvmcu_chip_apb_event_ctrl_reg_block_c  event_ctrl; ///< Event unit
-   rand uvme_cvmcu_chip_udma_ctrl_reg_block_c  udma; ///< UDMA control
+   rand uvme_cvmcu_chip_udma_ctrl_reg_block_c  udma_ctrl; ///< UDMA control
    rand uvme_cvmcu_chip_udma_uart_reg_block_c  uart0; ///< UART #0
    rand uvme_cvmcu_chip_udma_uart_reg_block_c  uart1; ///< UART #1
    rand uvme_cvmcu_chip_udma_qspi_reg_block_c  qspi0; ///< SPI Master #0
@@ -75,7 +75,7 @@ class uvme_cvmcu_chip_reg_block_c extends uvmx_reg_block_c;
       `uvm_field_object(fll, UVM_DEFAULT)
       `uvm_field_object(i2cs, UVM_DEFAULT)
       `uvm_field_object(event_ctrl, UVM_DEFAULT)
-      `uvm_field_object(udma, UVM_DEFAULT)
+      `uvm_field_object(udma_ctrl, UVM_DEFAULT)
       `uvm_field_object(uart0, UVM_DEFAULT)
       `uvm_field_object(uart1, UVM_DEFAULT)
       `uvm_field_object(qspi0, UVM_DEFAULT)
@@ -121,9 +121,9 @@ class uvme_cvmcu_chip_reg_block_c extends uvmx_reg_block_c;
       event_ctrl = uvme_cvmcu_chip_apb_event_ctrl_reg_block_c::type_id::create("event_ctrl");
       event_ctrl.configure(this);
       event_ctrl.build();
-      udma = uvme_cvmcu_chip_udma_ctrl_reg_block_c::type_id::create("udma");
-      udma.configure(this);
-      udma.build();
+      udma_ctrl = uvme_cvmcu_chip_udma_ctrl_reg_block_c::type_id::create("udma_ctrl");
+      udma_ctrl.configure(this);
+      udma_ctrl.build();
       uart0 = uvme_cvmcu_chip_udma_uart_reg_block_c::type_id::create("uart0");
       uart0.configure(this);
       uart0.build();
@@ -160,10 +160,10 @@ class uvme_cvmcu_chip_reg_block_c extends uvmx_reg_block_c;
     * Creates memories.
     */
    virtual function void create_mems();
-      rom = new("rom", 4000, 32, "RO");
-      ram_b0 = new("ram_b0", 8000, 32, "RW");
-      ram_b1 = new("ram_b1", 8000, 32, "RW");
-      ram = new("ram", 448000, 32, "RW");
+      rom = new("rom", 'h4000, 8, "RO");
+      ram_b0 = new("ram_b0", 'h8000, 8, "RW");
+      ram_b1 = new("ram_b1", 'h8000, 8, "RW");
+      ram = new("ram", 'h448000, 8, "RW");
       rom.configure(this);
       ram_b0.configure(this);
       ram_b1.configure(this);
@@ -194,7 +194,7 @@ class uvme_cvmcu_chip_reg_block_c extends uvmx_reg_block_c;
       default_map.add_submap(fll.default_map, `UVM_REG_ADDR_WIDTH'h1a100000);
       default_map.add_submap(i2cs.default_map, `UVM_REG_ADDR_WIDTH'h1a107000);
       default_map.add_submap(event_ctrl.default_map, `UVM_REG_ADDR_WIDTH'h1a106000);
-      default_map.add_submap(udma.default_map, `UVM_REG_ADDR_WIDTH'h1a102000);
+      default_map.add_submap(udma_ctrl.default_map, `UVM_REG_ADDR_WIDTH'h1a102000);
       default_map.add_submap(uart0.default_map, `UVM_REG_ADDR_WIDTH'h1a102080);
       default_map.add_submap(uart1.default_map, `UVM_REG_ADDR_WIDTH'h1a102100);
       default_map.add_submap(qspi0.default_map, `UVM_REG_ADDR_WIDTH'h1a102180);
@@ -217,7 +217,7 @@ class uvme_cvmcu_chip_reg_block_c extends uvmx_reg_block_c;
       default_map.add_mem(ram, `UVM_REG_ADDR_WIDTH'h1c010000);
    endfunction
 
-endclass : uvme_cvmcu_chip_reg_block_c
+endclass
 
 
 `endif // __UVME_CVMCU_CHIP_REG_BLOCK_SV__

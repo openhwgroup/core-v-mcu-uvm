@@ -1,20 +1,22 @@
-﻿IssueType,Issue ID,Parent ID,Status,Summary,Component,Description
-task,0,,To Do,Customize transaction logs for physical layer,uvma_cvmcu_event,Modify `get_metadata()` in generated code to make logs more useful for debugging
-Sub-task,,0,To Do,PHY monitor transaction,uvma_cvmcu_event,`src/obj/uvma_cvmcu_event_phy_mon_trn.sv`
-Sub-task,,0,To Do,CORE PHY sequence item,uvma_cvmcu_event,`src/seq/uvma_cvmcu_event_core_phy_seq_item.sv`
-Sub-task,,0,To Do,SYS PHY sequence item,uvma_cvmcu_event,`src/seq/uvma_cvmcu_event_sys_phy_seq_item.sv`
-task,1,,To Do,Implement logical transaction model,uvma_cvmcu_event,
-Sub-task,,1,To Do,Sequence item,uvma_cvmcu_event,`src/seq/uvma_cvmcu_event_seq_item.sv`
-Sub-task,,1,To Do,Monitor transaction,uvma_cvmcu_event,`src/obj/uvma_cvmcu_event_mon_trn.sv`
-task,2,,To Do,Protocol implementation,uvma_cvmcu_event,
-Sub-task,,2,To Do,Add configuration parameters if needed,uvma_cvmcu_event,`src/obj/uvma_cvmcu_event_cfg.sv`
-Sub-task,,2,To Do,Add state variables if needed,uvma_cvmcu_event,`src/obj/uvma_cvmcu_event_cntxt.sv`
-Sub-task,,2,To Do,'CORE' Driver Virtual Sequence,uvma_cvmcu_event,`src/seq/uvma_cvmcu_event_core_drv_vseq.sv`
-Sub-task,,2,To Do,'SYS' Driver Virtual Sequence,uvma_cvmcu_event,`src/seq/uvma_cvmcu_event_sys_drv_vseq.sv`
-Sub-task,,2,To Do,Idle virtual sequence,uvma_cvmcu_event,`src/seq/uvma_cvmcu_event_idle_vseq.sv`
-Sub-task,,2,To Do,Monitor virtual sequence,uvma_cvmcu_event,`src/seq/uvma_cvmcu_event_mon_vseq.sv`
-task,3,,To Do,Implement stimulus,uvma_cvmcu_event,Modify the sample code to form stimulus.
-Sub-task,,3,To Do,Fixed stimulus virtual sequence,uvma_cvmcu_event,`src/seq/uvma_cvmcu_event_fix_stim_vseq.sv`
-Sub-task,,3,To Do,Random stimulus virtual sequence,uvma_cvmcu_event,`src/seq/uvma_cvmcu_event_rand_stim_vseq.sv`
-Sub-task,,3,To Do,Fixed illegal stimulus virtual sequence,uvma_cvmcu_event,`src/seq/uvme_cvmcu_event_fix_ill_stim_vseq.sv`
-Sub-task,,3,To Do,Random illegal stimulus virtual sequence,uvma_cvmcu_event,`src/seq/uvme_cvmcu_event_rand_ill_stim_vseq.sv`
+IssueType,Issue ID,Parent ID,Status,Summary,Component,Description
+task,0,,To Do,Describe CORE-V-MCU Event Interface UVM Agent",uvma_cvmcu_event,ip.yml,
+task,1,,To Do,Add assertions and/or functional coverage to uvma_cvmcu_event_if_chkr,uvma_cvmcu_event,uvma_cvmcu_event_if_chkr.sv,
+task,2,,To Do,Implement uvma_cvmcu_event_rand_stim_seq_c sequence item generation,uvma_cvmcu_event,uvma_cvmcu_event_rand_stim_seq.sv,
+task,3,,To Do,Implement uvma_cvmcu_event_sys_drv_seq_c::drive(),uvma_cvmcu_event,uvma_cvmcu_event_sys_drv_seq.sv,
+task,4,,To Do,Describe uvma_cvmcu_event_mon_seq_c::monitor_phy(),uvma_cvmcu_event,uvma_cvmcu_event_mon_seq.sv,
+task,5,,To Do,Implement uvma_cvmcu_event_mon_seq_c::monitor_phy(),uvma_cvmcu_event,uvma_cvmcu_event_mon_seq.sv,
+task,6,,To Do,Describe uvma_cvmcu_event_fix_stim_seq_c::body(),uvma_cvmcu_event,uvma_cvmcu_event_fix_stim_seq.sv,
+task,7,,To Do,Implement uvma_cvmcu_event_fix_stim_seq_c::body(),uvma_cvmcu_event,uvma_cvmcu_event_fix_stim_seq.sv,
+task,8,,To Do,Describe uvma_cvmcu_event_fix_ill_stim_seq_c::body(),uvma_cvmcu_event,uvma_cvmcu_event_fix_ill_stim_seq.sv,
+task,9,,To Do,Implement uvma_cvmcu_event_fix_ill_stim_seq_c::body(),uvma_cvmcu_event,uvma_cvmcu_event_fix_ill_stim_seq.sv,
+task,10,,To Do,Implement random idles for CORE PHY,uvma_cvmcu_event,uvma_cvmcu_event_idle_seq.sv,
+task,11,,To Do,Implement zero'd idles for CORE PHY,uvma_cvmcu_event,uvma_cvmcu_event_idle_seq.sv,
+task,12,,To Do,Implement random idles for SYS PHY,uvma_cvmcu_event,uvma_cvmcu_event_idle_seq.sv,
+task,13,,To Do,Implement zero'd idles for SYS PHY,uvma_cvmcu_event,uvma_cvmcu_event_idle_seq.sv,
+task,14,,To Do,Implement uvma_cvmcu_event_rand_ill_stim_seq_c illegal sequence item generation,uvma_cvmcu_event,uvma_cvmcu_event_rand_ill_stim_seq.sv,
+task,15,,To Do,Implement uvma_cvmcu_event_rand_ill_stim_seq_c legal sequence item generation,uvma_cvmcu_event,uvma_cvmcu_event_rand_ill_stim_seq.sv,
+task,16,,To Do,Implement or remove uvma_cvmcu_event_seq_item_c::rules_cons,uvma_cvmcu_event,uvma_cvmcu_event_seq_item.sv,
+task,17,,To Do,Implement or remove uvma_cvmcu_event_seq_item_c::do_print(),uvma_cvmcu_event,uvma_cvmcu_event_seq_item.sv,
+task,18,,To Do,Implement uvma_cvmcu_event_core_drv_seq_c::drive(),uvma_cvmcu_event,uvma_cvmcu_event_core_drv_seq.sv,
+task,19,,To Do,Implement or remove uvma_cvmcu_event_mon_trn_c::do_compare(),uvma_cvmcu_event,uvma_cvmcu_event_mon_trn.sv,
+task,20,,To Do,Implement or remove uvma_cvmcu_event_mon_trn_c::do_print(),uvma_cvmcu_event,uvma_cvmcu_event_mon_trn.sv,

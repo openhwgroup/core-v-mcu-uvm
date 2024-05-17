@@ -1,13 +1,23 @@
-﻿IssueType,Issue ID,Parent ID,Status,Summary,Component,Description
-task,0,,To Do,Configuration and context,uvme_tcounter_b,Add knobs if needed and set up the agent's configurations. Add state variables needed by the Predictor and Virtual Sequences. Add scoreboards if needed and configure scoreboarding logging.
-Sub-task,,0,To Do,Add to configuration,uvme_tcounter_b,`src/obj/uvme_tcounter_b_cfg.sv`
-Sub-task,,0,To Do,Add to context,uvme_tcounter_b,`src/obj/uvme_tcounter_b_cntxt.sv`
-task,1,,To Do,Prediction and Scoreboarding,uvme_tcounter_b,Model DUT behavior by transforming input transactions into output transactions. Add and connect any additional scoreboards to predictor and agent.
-Sub-task,,1,To Do,Implement predictor,uvme_tcounter_b,`src/comps/uvme_tcounter_b_prd.sv`
-Sub-task,,1,To Do,Add to environment,uvme_tcounter_b,`src/comps/uvme_tcounter_b_env.sv`
-task,2,,To Do,Implement functional coverage model,uvme_tcounter_b,`src/comps/uvme_tcounter_b_cov_model.sv`
-task,3,,To Do,Implement stimulus,uvme_tcounter_b,Modify the sample stimulus to form valid stimulus for the DUT.
-Sub-task,,3,To Do,Fixed stimulus virtual sequence,uvme_tcounter_b,`src/seq/uvme_tcounter_b_fix_stim_vseq.sv`
-Sub-task,,3,To Do,Random stimulus virtual sequence,uvme_tcounter_b,`src/seq/uvme_tcounter_b_rand_stim_vseq.sv`
-Sub-task,,3,To Do,Fixed illegal stimulus virtual sequence,uvme_tcounter_b,`src/seq/uvme_tcounter_b_fix_ill_stim_vseq.sv`
-Sub-task,,3,To Do,Random illegal stimulus virtual sequence,uvme_tcounter_b,`src/seq/uvme_tcounter_b_rand_ill_stim_vseq.sv`
+IssueType,Issue ID,Parent ID,Status,Summary,Component,Description
+task,0,,To Do,Describe Timer unit counter Block UVM Environment",uvme_tcounter_b,ip.yml,
+task,1,,To Do,Describe uvme_tcounter_b_fix_stim_seq_c::body(),uvme_tcounter_b,uvme_tcounter_b_fix_stim_seq.sv,
+task,2,,To Do,Implement uvme_tcounter_b_fix_stim_seq_c::body(),uvme_tcounter_b,uvme_tcounter_b_fix_stim_seq.sv,
+task,3,,To Do,Describe uvme_tcounter_b_fix_ill_stim_seq_c::body(),uvme_tcounter_b,uvme_tcounter_b_fix_ill_stim_seq.sv,
+task,4,,To Do,Implement uvme_tcounter_b_fix_ill_stim_seq_c::body(),uvme_tcounter_b,uvme_tcounter_b_fix_ill_stim_seq.sv,
+task,5,,To Do,Implement illegal stimulus sequence item constraint for uvme_tcounter_b_rand_ill_stim_seq_c,uvme_tcounter_b,uvme_tcounter_b_rand_ill_stim_seq.sv,
+task,6,,To Do,Implement or remove uvme_tcounter_b_cfg_c::rules_cons,uvme_tcounter_b,uvme_tcounter_b_cfg.sv,
+task,7,,To Do,Complete uvme_tcounter_b_cfg_c scoreboard logging configuration,uvme_tcounter_b,uvme_tcounter_b_cfg.sv,
+task,8,,To Do,Implement uvme_tcounter_b_cfg_c::post_randomize() or remove altogether,uvme_tcounter_b,uvme_tcounter_b_cfg.sv,
+task,9,,To Do,Implement tcounter_b_cfg_cg,uvme_tcounter_b,uvme_tcounter_b_cov_model.sv,
+task,10,,To Do,Implement tcounter_b_cntxt_cg,uvme_tcounter_b,uvme_tcounter_b_cov_model.sv,
+task,11,,To Do,Implement tcounter_b_seq_item_cg,uvme_tcounter_b,uvme_tcounter_b_cov_model.sv,
+task,12,,To Do,Implement tcounter_b_in_mon_trn_cg,uvme_tcounter_b,uvme_tcounter_b_cov_model.sv,
+task,13,,To Do,Implement tcounter_b_out_mon_trn_cg,uvme_tcounter_b,uvme_tcounter_b_cov_model.sv,
+task,14,,To Do,Implement tcounter_b_cp_seq_item_cg,uvme_tcounter_b,uvme_tcounter_b_cov_model.sv,
+task,15,,To Do,Implement tcounter_b_dpi_seq_item_cg,uvme_tcounter_b,uvme_tcounter_b_cov_model.sv,
+task,16,,To Do,Implement tcounter_b_dpo_seq_item_cg,uvme_tcounter_b,uvme_tcounter_b_cov_model.sv,
+task,17,,To Do,Implement tcounter_b_cp_mon_trn_cg,uvme_tcounter_b,uvme_tcounter_b_cov_model.sv,
+task,18,,To Do,Implement tcounter_b_dpi_mon_trn_cg,uvme_tcounter_b,uvme_tcounter_b_cov_model.sv,
+task,19,,To Do,Implement tcounter_b_dpo_mon_trn_cg,uvme_tcounter_b,uvme_tcounter_b_cov_model.sv,
+task,20,,To Do,Describe uvme_tcounter_b_prd_c::predict(),uvme_tcounter_b,uvme_tcounter_b_prd.sv,
+task,21,,To Do,Implement uvme_tcounter_b_prd_c::predict(),uvme_tcounter_b,uvme_tcounter_b_prd.sv,

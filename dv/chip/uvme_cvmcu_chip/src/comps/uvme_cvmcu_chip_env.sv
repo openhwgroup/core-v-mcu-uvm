@@ -14,7 +14,7 @@
 class uvme_cvmcu_chip_env_c extends uvmx_chip_env_c #(
    .T_CFG      (uvme_cvmcu_chip_cfg_c           ),
    .T_CNTXT    (uvme_cvmcu_chip_cntxt_c         ),
-   .T_VSQR     (uvme_cvmcu_chip_vsqr_c          ),
+   .T_SQR      (uvme_cvmcu_chip_sqr_c           ),
    .T_PRD      (uvme_cvmcu_chip_prd_c           ),
    .T_SB       (uvme_cvmcu_chip_sb_c            ),
    .T_COV_MODEL(uvme_cvmcu_chip_cov_model_c     ),
@@ -33,7 +33,6 @@ class uvme_cvmcu_chip_env_c extends uvmx_chip_env_c #(
    uvma_uart_agent_c  uart1_agent; ///< UART 1 agent
    uvma_sdio_agent_c  sdio_agent; ///< Flash card agent
    uvma_i2c_agent_c  i2c_m_agent; ///< I2C master agent
-   uvma_cvmcu_io_agent_c  io_agent; ///< IO ports agent
    uvma_obi_agent_c  instr_obi_agent; ///< Instruction memory OBI agent
    uvma_obi_agent_c  data_obi_agent; ///< Data memory OBI agent
    uvma_cvmcu_event_agent_c  event_agent; ///< Event agent
@@ -79,7 +78,6 @@ class uvme_cvmcu_chip_env_c extends uvmx_chip_env_c #(
       uvm_config_db#(uvma_uart_cfg_c)::set(this, "uart1_agent", "cfg", cfg.uart1_agent_cfg);
       uvm_config_db#(uvma_sdio_cfg_c)::set(this, "sdio_agent", "cfg", cfg.sdio_agent_cfg);
       uvm_config_db#(uvma_i2c_cfg_c)::set(this, "i2c_m_agent", "cfg", cfg.i2c_m_agent_cfg);
-      uvm_config_db#(uvma_cvmcu_io_cfg_c)::set(this, "io_agent", "cfg", cfg.io_agent_cfg);
       uvm_config_db#(uvma_obi_cfg_c)::set(this, "instr_obi_agent", "cfg", cfg.instr_obi_agent_cfg);
       uvm_config_db#(uvma_obi_cfg_c)::set(this, "data_obi_agent", "cfg", cfg.data_obi_agent_cfg);
       uvm_config_db#(uvma_cvmcu_event_cfg_c)::set(this, "event_agent", "cfg", cfg.event_agent_cfg);
@@ -104,7 +102,6 @@ class uvme_cvmcu_chip_env_c extends uvmx_chip_env_c #(
       uvm_config_db#(uvma_uart_cntxt_c)::set(this, "uart1_agent", "cntxt", cntxt.uart1_agent_cntxt);
       uvm_config_db#(uvma_sdio_cntxt_c)::set(this, "sdio_agent", "cntxt", cntxt.sdio_agent_cntxt);
       uvm_config_db#(uvma_i2c_cntxt_c)::set(this, "i2c_m_agent", "cntxt", cntxt.i2c_m_agent_cntxt);
-      uvm_config_db#(uvma_cvmcu_io_cntxt_c)::set(this, "io_agent", "cntxt", cntxt.io_agent_cntxt);
       uvm_config_db#(uvma_obi_cntxt_c)::set(this, "instr_obi_agent", "cntxt", cntxt.instr_obi_agent_cntxt);
       uvm_config_db#(uvma_obi_cntxt_c)::set(this, "data_obi_agent", "cntxt", cntxt.data_obi_agent_cntxt);
       uvm_config_db#(uvma_cvmcu_event_cntxt_c)::set(this, "event_agent", "cntxt", cntxt.event_agent_cntxt);
@@ -137,7 +134,6 @@ class uvme_cvmcu_chip_env_c extends uvmx_chip_env_c #(
       uart1_agent = uvma_uart_agent_c::type_id::create("uart1_agent", this);
       sdio_agent = uvma_sdio_agent_c::type_id::create("sdio_agent", this);
       i2c_m_agent = uvma_i2c_agent_c::type_id::create("i2c_m_agent", this);
-      io_agent = uvma_cvmcu_io_agent_c::type_id::create("io_agent", this);
       instr_obi_agent = uvma_obi_agent_c::type_id::create("instr_obi_agent", this);
       data_obi_agent = uvma_obi_agent_c::type_id::create("data_obi_agent", this);
       event_agent = uvma_cvmcu_event_agent_c::type_id::create("event_agent", this);
@@ -174,7 +170,7 @@ class uvme_cvmcu_chip_env_c extends uvmx_chip_env_c #(
     * Connects register block to register adapters.
     */
    virtual function void connect_reg_block();
-      cntxt.reg_model.default_map.set_sequencer(data_obi_agent.vsequencer, data_obi_reg_adapter);
+      cntxt.reg_model.default_map.set_sequencer(data_obi_agent.sequencer, data_obi_reg_adapter);
    endfunction
 
    /**
@@ -196,57 +192,50 @@ class uvme_cvmcu_chip_env_c extends uvmx_chip_env_c #(
       camera_agent.mon_trn_ap.connect(predictor.udma_camera_fifo.analysis_export);
       i2c_s0_agent.s2m_mon_trn_ap.connect(predictor.udma_i2c0_ingress_fifo.analysis_export);
       i2c_s1_agent.s2m_mon_trn_ap.connect(predictor.udma_i2c1_ingress_fifo.analysis_export);
-      uart0_agent.ig_mon_trn_ap.connect(predictor.udma_uart0_ingress_fifo.analysis_export);
-      uart1_agent.ig_mon_trn_ap.connect(predictor.udma_uart1_ingress_fifo.analysis_export);
+      uart0_agent.eg_mon_trn_ap.connect(predictor.udma_uart0_ingress_fifo.analysis_export);
+      uart1_agent.eg_mon_trn_ap.connect(predictor.udma_uart1_ingress_fifo.analysis_export);
       i2c_m_agent.m2s_mon_trn_ap.connect(predictor.apb_i2c_ingress_fifo.analysis_export);
-      io_agent.ig_mon_trn_ap.connect(predictor.gpio_ingress_fifo.analysis_export);
-      event_agent.mon_trn_ap.connect(predictor.mon_event_fifo.analysis_export);
+      event_agent.c2s_mon_trn_ap.connect(predictor.core_event_fifo.analysis_export);
+      event_agent.s2c_mon_trn_ap.connect(predictor.sys_event_fifo.analysis_export);
       dbg_agent.mon_trn_ap.connect(predictor.mon_dbg_fifo.analysis_export);
-      vsequencer.udma_qspi0_egress_exp_ap.connect(predictor.udma_qspi0_egress_fifo.analysis_export);
-      vsequencer.udma_qspi1_egress_exp_ap.connect(predictor.udma_qspi1_egress_fifo.analysis_export);
-      vsequencer.udma_i2c0_egress_exp_ap.connect(predictor.udma_i2c0_egress_fifo.analysis_export);
-      vsequencer.udma_i2c1_egress_exp_ap.connect(predictor.udma_i2c1_egress_fifo.analysis_export);
-      vsequencer.udma_uart0_egress_exp_ap.connect(predictor.udma_uart0_egress_fifo.analysis_export);
-      vsequencer.udma_uart1_egress_exp_ap.connect(predictor.udma_uart1_egress_fifo.analysis_export);
-      vsequencer.apb_i2c_egress_exp_ap.connect(predictor.apb_i2c_egress_fifo.analysis_export);
-      vsequencer.gpio_egress_exp_ap.connect(predictor.gpio_egress_fifo.analysis_export);
-      vsequencer.event_exp_ap.connect(predictor.event_fifo.analysis_export);
-      vsequencer.dbg_exp_ap.connect(predictor.dbg_fifo.analysis_export);
+      sequencer.udma_qspi0_egress_exp_ap.connect(predictor.udma_qspi0_egress_fifo.analysis_export);
+      sequencer.udma_qspi1_egress_exp_ap.connect(predictor.udma_qspi1_egress_fifo.analysis_export);
+      sequencer.udma_i2c0_egress_exp_ap.connect(predictor.udma_i2c0_egress_fifo.analysis_export);
+      sequencer.udma_i2c1_egress_exp_ap.connect(predictor.udma_i2c1_egress_fifo.analysis_export);
+      sequencer.udma_uart0_egress_exp_ap.connect(predictor.udma_uart0_egress_fifo.analysis_export);
+      sequencer.udma_uart1_egress_exp_ap.connect(predictor.udma_uart1_egress_fifo.analysis_export);
+      sequencer.apb_i2c_egress_exp_ap.connect(predictor.apb_i2c_egress_fifo.analysis_export);
+      sequencer.dbg_exp_ap.connect(predictor.dbg_fifo.analysis_export);
    endfunction
 
    /**
     * Connects scoreboards components to agents/predictor.
     */
    virtual function void connect_scoreboard();
-      qspi_s0_agent.m2s_mon_trn_ap.connect(scoreboard.udma_qspi0_egress_sb.act_export);
-      qspi_s1_agent.m2s_mon_trn_ap.connect(scoreboard.udma_qspi1_egress_sb.act_export);
-      i2c_s0_agent.m2s_mon_trn_ap.connect(scoreboard.udma_i2c0_egress_sb.act_export);
-      i2c_s1_agent.m2s_mon_trn_ap.connect(scoreboard.udma_i2c1_egress_sb.act_export);
-      uart0_agent.eg_mon_trn_ap.connect(scoreboard.udma_uart0_egress_sb.act_export);
-      uart1_agent.eg_mon_trn_ap.connect(scoreboard.udma_uart1_egress_sb.act_export);
-      i2c_m_agent.s2m_mon_trn_ap.connect(scoreboard.apb_i2c_egress_sb.act_export);
-      io_agent.eg_mon_trn_ap.connect(scoreboard.gpio_egress_sb.act_export);
-      event_agent.mon_trn_ap.connect(scoreboard.event_sb.act_export);
-      dbg_agent.mon_trn_ap.connect(scoreboard.dbg_sb.act_export);
-      predictor.udma_qspi0_egress_ap.connect(scoreboard.udma_qspi0_egress_sb.exp_export);
-      predictor.udma_qspi1_egress_ap.connect(scoreboard.udma_qspi1_egress_sb.exp_export);
-      predictor.udma_i2c0_egress_ap.connect(scoreboard.udma_i2c0_egress_sb.exp_export);
-      predictor.udma_i2c1_egress_ap.connect(scoreboard.udma_i2c1_egress_sb.exp_export);
-      predictor.udma_uart0_egress_ap.connect(scoreboard.udma_uart0_egress_sb.exp_export);
-      predictor.udma_uart1_egress_ap.connect(scoreboard.udma_uart1_egress_sb.exp_export);
-      predictor.apb_i2c_egress_ap.connect(scoreboard.apb_i2c_egress_sb.exp_export);
-      predictor.gpio_egress_ap.connect(scoreboard.gpio_egress_sb.exp_export);
-      predictor.event_ap.connect(scoreboard.event_sb.exp_export);
-      predictor.dbg_ap.connect(scoreboard.dbg_sb.exp_export);
-      vsequencer.udma_qspi0_ingress_act_ap.connect(scoreboard.udma_qspi0_ingress_sb.act_export);
-      vsequencer.udma_qspi1_ingress_act_ap.connect(scoreboard.udma_qspi1_ingress_sb.act_export);
-      vsequencer.udma_camera_act_ap.connect(scoreboard.udma_camera_sb.act_export);
-      vsequencer.udma_i2c0_ingress_act_ap.connect(scoreboard.udma_i2c0_ingress_sb.act_export);
-      vsequencer.udma_i2c1_ingress_act_ap.connect(scoreboard.udma_i2c1_ingress_sb.act_export);
-      vsequencer.udma_uart0_ingress_act_ap.connect(scoreboard.udma_uart0_ingress_sb.act_export);
-      vsequencer.udma_uart1_ingress_act_ap.connect(scoreboard.udma_uart1_ingress_sb.act_export);
-      vsequencer.apb_i2c_ingress_act_ap.connect(scoreboard.apb_i2c_ingress_sb.act_export);
-      vsequencer.gpio_ingress_act_ap.connect(scoreboard.gpio_ingress_sb.act_export);
+      qspi_s0_agent.m2s_mon_trn_ap.connect(scoreboard.sb_udma_qspi0_egress.act_export);
+      qspi_s1_agent.m2s_mon_trn_ap.connect(scoreboard.sb_udma_qspi1_egress.act_export);
+      i2c_s0_agent.m2s_mon_trn_ap.connect(scoreboard.sb_udma_i2c0_egress.act_export);
+      i2c_s1_agent.m2s_mon_trn_ap.connect(scoreboard.sb_udma_i2c1_egress.act_export);
+      uart0_agent.ig_mon_trn_ap.connect(scoreboard.sb_udma_uart0_egress.act_export);
+      uart1_agent.ig_mon_trn_ap.connect(scoreboard.sb_udma_uart1_egress.act_export);
+      i2c_m_agent.s2m_mon_trn_ap.connect(scoreboard.sb_apb_i2c_egress.act_export);
+      dbg_agent.mon_trn_ap.connect(scoreboard.sb_dbg.act_export);
+      predictor.udma_qspi0_egress_ap.connect(scoreboard.sb_udma_qspi0_egress.exp_export);
+      predictor.udma_qspi1_egress_ap.connect(scoreboard.sb_udma_qspi1_egress.exp_export);
+      predictor.udma_i2c0_egress_ap.connect(scoreboard.sb_udma_i2c0_egress.exp_export);
+      predictor.udma_i2c1_egress_ap.connect(scoreboard.sb_udma_i2c1_egress.exp_export);
+      predictor.udma_uart0_egress_ap.connect(scoreboard.sb_udma_uart0_egress.exp_export);
+      predictor.udma_uart1_egress_ap.connect(scoreboard.sb_udma_uart1_egress.exp_export);
+      predictor.apb_i2c_egress_ap.connect(scoreboard.sb_apb_i2c_egress.exp_export);
+      predictor.dbg_ap.connect(scoreboard.sb_dbg.exp_export);
+      sequencer.udma_qspi0_ingress_act_ap.connect(scoreboard.sb_udma_qspi0_ingress.act_export);
+      sequencer.udma_qspi1_ingress_act_ap.connect(scoreboard.sb_udma_qspi1_ingress.act_export);
+      sequencer.udma_camera_act_ap.connect(scoreboard.sb_udma_camera.act_export);
+      sequencer.udma_i2c0_ingress_act_ap.connect(scoreboard.sb_udma_i2c0_ingress.act_export);
+      sequencer.udma_i2c1_ingress_act_ap.connect(scoreboard.sb_udma_i2c1_ingress.act_export);
+      sequencer.udma_uart0_ingress_act_ap.connect(scoreboard.sb_udma_uart0_ingress.act_export);
+      sequencer.udma_uart1_ingress_act_ap.connect(scoreboard.sb_udma_uart1_ingress.act_export);
+      sequencer.apb_i2c_ingress_act_ap.connect(scoreboard.sb_apb_i2c_ingress.act_export);
    endfunction
 
    /**
@@ -261,19 +250,17 @@ class uvme_cvmcu_chip_env_c extends uvmx_chip_env_c #(
       uart0_agent.ig_mon_trn_ap.connect(cov_model.udma_uart0_ingress_exp_fifo.analysis_export);
       uart1_agent.ig_mon_trn_ap.connect(cov_model.udma_uart1_ingress_exp_fifo.analysis_export);
       i2c_m_agent.m2s_mon_trn_ap.connect(cov_model.apb_i2c_ingress_exp_fifo.analysis_export);
-      io_agent.ig_mon_trn_ap.connect(cov_model.gpio_ingress_exp_fifo.analysis_export);
-      event_agent.mon_trn_ap.connect(cov_model.mon_event_exp_fifo.analysis_export);
+      event_agent.c2s_mon_trn_ap.connect(cov_model.core_event_exp_fifo.analysis_export);
+      event_agent.s2c_mon_trn_ap.connect(cov_model.sys_event_exp_fifo.analysis_export);
       dbg_agent.mon_trn_ap.connect(cov_model.mon_dbg_exp_fifo.analysis_export);
-      vsequencer.udma_qspi0_egress_exp_ap.connect(cov_model.udma_qspi0_egress_exp_fifo.analysis_export);
-      vsequencer.udma_qspi1_egress_exp_ap.connect(cov_model.udma_qspi1_egress_exp_fifo.analysis_export);
-      vsequencer.udma_i2c0_egress_exp_ap.connect(cov_model.udma_i2c0_egress_exp_fifo.analysis_export);
-      vsequencer.udma_i2c1_egress_exp_ap.connect(cov_model.udma_i2c1_egress_exp_fifo.analysis_export);
-      vsequencer.udma_uart0_egress_exp_ap.connect(cov_model.udma_uart0_egress_exp_fifo.analysis_export);
-      vsequencer.udma_uart1_egress_exp_ap.connect(cov_model.udma_uart1_egress_exp_fifo.analysis_export);
-      vsequencer.apb_i2c_egress_exp_ap.connect(cov_model.apb_i2c_egress_exp_fifo.analysis_export);
-      vsequencer.gpio_egress_exp_ap.connect(cov_model.gpio_egress_exp_fifo.analysis_export);
-      vsequencer.event_exp_ap.connect(cov_model.event_exp_fifo.analysis_export);
-      vsequencer.dbg_exp_ap.connect(cov_model.dbg_exp_fifo.analysis_export);
+      sequencer.udma_qspi0_egress_exp_ap.connect(cov_model.udma_qspi0_egress_exp_fifo.analysis_export);
+      sequencer.udma_qspi1_egress_exp_ap.connect(cov_model.udma_qspi1_egress_exp_fifo.analysis_export);
+      sequencer.udma_i2c0_egress_exp_ap.connect(cov_model.udma_i2c0_egress_exp_fifo.analysis_export);
+      sequencer.udma_i2c1_egress_exp_ap.connect(cov_model.udma_i2c1_egress_exp_fifo.analysis_export);
+      sequencer.udma_uart0_egress_exp_ap.connect(cov_model.udma_uart0_egress_exp_fifo.analysis_export);
+      sequencer.udma_uart1_egress_exp_ap.connect(cov_model.udma_uart1_egress_exp_fifo.analysis_export);
+      sequencer.apb_i2c_egress_exp_ap.connect(cov_model.apb_i2c_egress_exp_fifo.analysis_export);
+      sequencer.dbg_exp_ap.connect(cov_model.dbg_exp_fifo.analysis_export);
       predictor.udma_qspi0_egress_ap.connect(cov_model.udma_qspi0_egress_act_fifo.analysis_export);
       predictor.udma_qspi1_egress_ap.connect(cov_model.udma_qspi1_egress_act_fifo.analysis_export);
       predictor.udma_i2c0_egress_ap.connect(cov_model.udma_i2c0_egress_act_fifo.analysis_export);
@@ -281,56 +268,37 @@ class uvme_cvmcu_chip_env_c extends uvmx_chip_env_c #(
       predictor.udma_uart0_egress_ap.connect(cov_model.udma_uart0_egress_act_fifo.analysis_export);
       predictor.udma_uart1_egress_ap.connect(cov_model.udma_uart1_egress_act_fifo.analysis_export);
       predictor.apb_i2c_egress_ap.connect(cov_model.apb_i2c_egress_act_fifo.analysis_export);
-      predictor.gpio_egress_ap.connect(cov_model.gpio_egress_act_fifo.analysis_export);
-      predictor.event_ap.connect(cov_model.event_act_fifo.analysis_export);
       predictor.dbg_ap.connect(cov_model.dbg_act_fifo.analysis_export);
-      vsequencer.udma_qspi0_ingress_act_ap.connect(cov_model.udma_qspi0_ingress_act_fifo.analysis_export);
-      vsequencer.udma_qspi1_ingress_act_ap.connect(cov_model.udma_qspi1_ingress_act_fifo.analysis_export);
-      vsequencer.udma_camera_act_ap.connect(cov_model.udma_camera_act_fifo.analysis_export);
-      vsequencer.udma_i2c0_ingress_act_ap.connect(cov_model.udma_i2c0_ingress_act_fifo.analysis_export);
-      vsequencer.udma_i2c1_ingress_act_ap.connect(cov_model.udma_i2c1_ingress_act_fifo.analysis_export);
-      vsequencer.udma_uart0_ingress_act_ap.connect(cov_model.udma_uart0_ingress_act_fifo.analysis_export);
-      vsequencer.udma_uart1_ingress_act_ap.connect(cov_model.udma_uart1_ingress_act_fifo.analysis_export);
-      vsequencer.apb_i2c_ingress_act_ap.connect(cov_model.apb_i2c_ingress_act_fifo.analysis_export);
-      vsequencer.gpio_ingress_act_ap.connect(cov_model.gpio_ingress_act_fifo.analysis_export);
-   endfunction
-
-   /**
-    * Connects bypass agents to transport agents.
-    */
-   virtual function void connect_transport_agents();
-      `uvmx_connect_transport_agent(qspi_s0_agent, io_agent);
-      `uvmx_connect_transport_agent(qspi_s1_agent, io_agent);
-      `uvmx_connect_transport_agent(camera_agent, io_agent);
-      `uvmx_connect_transport_agent(i2c_s0_agent, io_agent);
-      `uvmx_connect_transport_agent(i2c_s1_agent, io_agent);
-      `uvmx_connect_transport_agent(uart0_agent, io_agent);
-      `uvmx_connect_transport_agent(uart1_agent, io_agent);
-      `uvmx_connect_transport_agent(sdio_agent, io_agent);
-      `uvmx_connect_transport_agent(i2c_m_agent, io_agent);
+      sequencer.udma_qspi0_ingress_act_ap.connect(cov_model.udma_qspi0_ingress_act_fifo.analysis_export);
+      sequencer.udma_qspi1_ingress_act_ap.connect(cov_model.udma_qspi1_ingress_act_fifo.analysis_export);
+      sequencer.udma_camera_act_ap.connect(cov_model.udma_camera_act_fifo.analysis_export);
+      sequencer.udma_i2c0_ingress_act_ap.connect(cov_model.udma_i2c0_ingress_act_fifo.analysis_export);
+      sequencer.udma_i2c1_ingress_act_ap.connect(cov_model.udma_i2c1_ingress_act_fifo.analysis_export);
+      sequencer.udma_uart0_ingress_act_ap.connect(cov_model.udma_uart0_ingress_act_fifo.analysis_export);
+      sequencer.udma_uart1_ingress_act_ap.connect(cov_model.udma_uart1_ingress_act_fifo.analysis_export);
+      sequencer.apb_i2c_ingress_act_ap.connect(cov_model.apb_i2c_ingress_act_fifo.analysis_export);
    endfunction
 
    /**
     * Assembles virtual sequencer from agent, sub-system and block sequencers.
     */
-   virtual function void assemble_vsequencer();
-      vsequencer.jtag_agent_vsequencer = jtag_agent.vsequencer;
-      vsequencer.qspi_s0_agent_vsequencer = qspi_s0_agent.vsequencer;
-      vsequencer.qspi_s1_agent_vsequencer = qspi_s1_agent.vsequencer;
-      vsequencer.camera_agent_vsequencer = camera_agent.vsequencer;
-      vsequencer.i2c_s0_agent_vsequencer = i2c_s0_agent.vsequencer;
-      vsequencer.i2c_s1_agent_vsequencer = i2c_s1_agent.vsequencer;
-      vsequencer.uart0_agent_vsequencer = uart0_agent.vsequencer;
-      vsequencer.uart1_agent_vsequencer = uart1_agent.vsequencer;
-      vsequencer.sdio_agent_vsequencer = sdio_agent.vsequencer;
-      vsequencer.i2c_m_agent_vsequencer = i2c_m_agent.vsequencer;
-      vsequencer.io_agent_vsequencer = io_agent.vsequencer;
-      vsequencer.instr_obi_agent_vsequencer = instr_obi_agent.vsequencer;
-      vsequencer.data_obi_agent_vsequencer = data_obi_agent.vsequencer;
-      vsequencer.event_agent_vsequencer = event_agent.vsequencer;
-      vsequencer.dbg_agent_vsequencer = dbg_agent.vsequencer;
-      vsequencer.apb_timer_ss_env_vsequencer = apb_timer_ss_env.vsequencer;
-      vsequencer.apb_adv_timer_ss_env_vsequencer = apb_adv_timer_ss_env.vsequencer;
+   virtual function void assemble_sequencer();
+      sequencer.jtag_agent_sequencer = jtag_agent.sequencer;
+      sequencer.qspi_s0_agent_sequencer = qspi_s0_agent.sequencer;
+      sequencer.qspi_s1_agent_sequencer = qspi_s1_agent.sequencer;
+      sequencer.camera_agent_sequencer = camera_agent.sequencer;
+      sequencer.i2c_s0_agent_sequencer = i2c_s0_agent.sequencer;
+      sequencer.i2c_s1_agent_sequencer = i2c_s1_agent.sequencer;
+      sequencer.uart0_agent_sequencer = uart0_agent.sequencer;
+      sequencer.uart1_agent_sequencer = uart1_agent.sequencer;
+      sequencer.sdio_agent_sequencer = sdio_agent.sequencer;
+      sequencer.i2c_m_agent_sequencer = i2c_m_agent.sequencer;
+      sequencer.instr_obi_agent_sequencer = instr_obi_agent.sequencer;
+      sequencer.data_obi_agent_sequencer = data_obi_agent.sequencer;
+      sequencer.event_agent_sequencer = event_agent.sequencer;
+      sequencer.dbg_agent_sequencer = dbg_agent.sequencer;
+      sequencer.apb_timer_ss_env_sequencer = apb_timer_ss_env.sequencer;
+      sequencer.apb_adv_timer_ss_env_sequencer = apb_adv_timer_ss_env.sequencer;
    endfunction
 
    /**
@@ -347,18 +315,55 @@ class uvme_cvmcu_chip_env_c extends uvmx_chip_env_c #(
    endfunction
 
    /**
-    * Creates and starts transport sequences.
+    * Runs reset_seq to reset DUT registers.
     */
-   virtual task run_phase(uvm_phase phase);
-      super.run_phase(phase);
+   virtual task post_reset_phase(uvm_phase phase);
+      uvme_cvmcu_chip_reset_seq_c  reset_seq;
       if (cfg.enabled) begin
-         fork
-            `uvmx_run_transport_vseq(uvme_cvmcu_chip_io_transport_vseq_c)
-         join_none
+         reset_seq = uvme_cvmcu_chip_reset_seq_c::type_id::create("reset_seq");
+         phase.raise_objection(this);
+         `uvm_info("CVMCU_ENV", $sformatf("Starting 'reset_seq':\n%s", reset_seq.sprint()), UVM_NONE)
+         reset_seq.start(sequencer);
+         `uvm_info("CVMCU_ENV", $sformatf("Finished 'reset_seq':\n%s", reset_seq.sprint()), UVM_NONE)
+         phase.drop_objection(this);
       end
    endtask
 
-endclass : uvme_cvmcu_chip_env_c
+   /**
+    * Runs cfg_seq to configure DUT registers.
+    */
+   virtual task pre_configure_phase(uvm_phase phase);
+      uvme_cvmcu_chip_cfg_seq_c  cfg_seq;
+      if (cfg.enabled) begin
+         cfg_seq = uvme_cvmcu_chip_cfg_seq_c::type_id::create("cfg_seq");
+         phase.raise_objection(this);
+         `uvm_info("CVMCU_ENV", $sformatf("Starting 'cfg_seq':\n%s", cfg_seq.sprint()), UVM_NONE)
+         cfg_seq.start(sequencer);
+         `uvm_info("CVMCU_ENV", $sformatf("Finished 'cfg_seq':\n%s", cfg_seq.sprint()), UVM_NONE)
+         phase.drop_objection(this);
+      end
+   endtask
+
+   /**
+    * Starts uDMA sequences.
+    */
+   virtual task pre_main_phase(uvm_phase phase);
+      uvme_cvmcu_chip_udma_uart_seq_c  udma_uart_seq;
+      if (cfg.enabled) begin
+         phase.raise_objection(this);
+         fork
+            begin
+               udma_uart_seq = uvme_cvmcu_chip_udma_uart_seq_c::type_id::create("udma_uart_seq");
+               `uvm_info("CVMCU_ENV", $sformatf("Starting 'udma_uart_seq':\n%s", udma_uart_seq.sprint()), UVM_NONE)
+               udma_uart_seq.start(sequencer);
+               `uvm_info("CVMCU_ENV", $sformatf("Finished 'udma_uart_seq':\n%s", udma_uart_seq.sprint()), UVM_NONE)
+            end
+         join_none
+         phase.drop_objection(this);
+      end
+   endtask
+
+endclass
 
 
 `endif // __UVME_CVMCU_CHIP_ENV_SV__

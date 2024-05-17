@@ -1,4 +1,4 @@
-// Copyright 2023 Datum Technology Corporation
+// Copyright 2024 Datum Technology Corporation
 // All rights reserved.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -29,7 +29,6 @@ interface uvme_apb_timer_ss_probe_if (
    wire  busy_o; ///< Busy output
    /// @}
 
-
    /// @name Signals clocked to 'HCLK'
    /// @{
    clocking sys_clk_cb @(posedge HCLK);
@@ -47,19 +46,18 @@ interface uvme_apb_timer_ss_probe_if (
    /// @}
 
 
-
    /// @name Accessors
    /// @{
    `uvmx_if_reset(HRESETn)
    `uvmx_if_cb(sys_clk_mp, sys_clk_cb)
    `uvmx_if_cb(ref_clk_mp, ref_clk_cb)
-   `uvmx_if_signal_probe_out(stoptimer_i, , sys_clk_mp.sys_clk_cb)
-   `uvmx_if_signal_probe_out(event_lo_i, , sys_clk_mp.sys_clk_cb)
-   `uvmx_if_signal_probe_out(event_hi_i, , sys_clk_mp.sys_clk_cb)
-   `uvmx_if_signal_probe_in(busy_o, , sys_clk_mp.sys_clk_cb)
+   `uvmx_if_signal_probe_out(stoptimer_i,  , sys_clk_mp.sys_clk_cb)
+   `uvmx_if_signal_probe_out(event_lo_i,  , sys_clk_mp.sys_clk_cb)
+   `uvmx_if_signal_probe_out(event_hi_i,  , sys_clk_mp.sys_clk_cb)
+   `uvmx_if_signal_probe_in(busy_o,  , sys_clk_mp.sys_clk_cb)
    /// @}
 
-endinterface : uvme_apb_timer_ss_probe_if
+endinterface
 
 
 `endif // __UVME_APB_TIMER_SS_PROBE_IF_SV__

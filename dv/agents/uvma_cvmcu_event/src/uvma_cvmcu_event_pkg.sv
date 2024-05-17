@@ -10,10 +10,12 @@
 /**
  * @defgroup uvma_cvmcu_event_pkg CORE-V-MCU Event Interface UVM Agent
  * @{
+ * @defgroup uvma_cvmcu_event_agent_seq   Agent Sequences
  * @defgroup uvma_cvmcu_event_comps Components
  * @defgroup uvma_cvmcu_event_misc  Miscellaneous
  * @defgroup uvma_cvmcu_event_obj   Objects
- * @defgroup uvma_cvmcu_event_seq   Sequences & Sequence Items
+ * @defgroup uvma_cvmcu_event_seq_stim   Stimulus Sequences
+ * @defgroup uvma_cvmcu_event_seq_item   Sequence Items
  * @}
  */
 
@@ -62,20 +64,20 @@ package uvma_cvmcu_event_pkg;
    // Agent-Level Components
    `include "uvma_cvmcu_event_mon.sv"
    `include "uvma_cvmcu_event_drv.sv"
-   `include "uvma_cvmcu_event_vsqr.sv"
+   `include "uvma_cvmcu_event_sqr.sv"
    `include "uvma_cvmcu_event_logger.sv"
    `include "uvma_cvmcu_event_cov_model.sv"
    `include "uvma_cvmcu_event_agent.sv"
 
    // Sequences
-   `include "uvma_cvmcu_event_base_vseq.sv"
-   `include "uvma_cvmcu_event_mon_vseq.sv"
-   `include "uvma_cvmcu_event_core_drv_vseq.sv"
-   `include "uvma_cvmcu_event_sys_drv_vseq.sv"
-   `include "uvma_cvmcu_event_idle_vseq.sv"
-   `include "uvma_cvmcu_event_vseq_lib.sv"
+   `include "uvma_cvmcu_event_base_seq.sv"
+   `include "uvma_cvmcu_event_mon_seq.sv"
+   `include "uvma_cvmcu_event_core_drv_seq.sv"
+   `include "uvma_cvmcu_event_sys_drv_seq.sv"
+   `include "uvma_cvmcu_event_idle_seq.sv"
+   `include "uvma_cvmcu_event_seq_lib.sv"
 
-endpackage : uvma_cvmcu_event_pkg
+endpackage
 
 
 // Module(s) / Checker(s)

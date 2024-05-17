@@ -142,7 +142,7 @@ class uvma_adv_timer_b_cp_mon_trn_c extends uvmx_mon_trn_c #(
       `uvmx_metadata_field("cfg_comp_op_ch3_i", cfg_comp_op_ch3_i_str)
    endfunction
 
-endclass : uvma_adv_timer_b_cp_mon_trn_c
+endclass
 
 
 `endif // __UVMA_ADV_TIMER_B_CP_MON_TRN_SV__

@@ -7,8 +7,10 @@
 `define __UVME_CVMCU_CHIP_FTDECS_SV__
 
 
-typedef class uvme_cvmcu_chip_io_transport_vseq_c;
-
+typedef class uvme_cvmcu_chip_init_seq_c;
+typedef class uvme_cvmcu_chip_reset_seq_c;
+typedef class uvme_cvmcu_chip_cfg_seq_c;
+typedef class uvme_cvmcu_chip_udma_uart_seq_c;
 
 
 `endif // __UVME_CVMCU_CHIP_FTDECS_SV__

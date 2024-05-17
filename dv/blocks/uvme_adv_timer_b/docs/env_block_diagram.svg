@@ -50,9 +50,9 @@
 			<text x="4" y="50" class="st2">&#60;uvme_adv_timer_b_env_c&#62;</text>		</g>
 		<g id="shape118-4" transform="translate(206.235,-112.373)">
 			<title>Sheet.118</title>
-			<desc>&#60;uvme_adv_timer_b_vsqr_c&#62; vsequencer</desc>
+			<desc>&#60;uvme_adv_timer_b_sqr_c&#62; sequencer</desc>
 			<rect x="0" y="223.414" width="165.321" height="59.6328" class="st3"/>
-			<text x="39" y="249.63" class="st4">&#60;uvme_adv_timer_b_vsqr_c&#62; <tspan x="58.83" dy="1.14em" class="st5">vsequencer</tspan></text>		</g>
+			<text x="40.81" y="249.63" class="st4">&#60;uvme_adv_timer_b_sqr_c&#62; <tspan x="61.2" dy="1.14em" class="st5">sequencer</tspan></text>		</g>
 		<g id="shape174-8" transform="translate(430.627,-215.606)">
 			<title>Sheet.174</title>
 			<desc>&#60;uvme_adv_timer_b_cfg_c&#62; cfg</desc>

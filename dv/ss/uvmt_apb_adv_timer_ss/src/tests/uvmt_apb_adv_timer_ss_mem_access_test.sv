@@ -1,4 +1,4 @@
-// Copyright 2023 Datum Technology Corporation
+// Copyright 2024 Datum Technology Corporation
 // All rights reserved.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -18,6 +18,25 @@ class uvmt_apb_adv_timer_ss_mem_access_test_c extends uvmt_apb_adv_timer_ss_base
    `uvm_component_utils(uvmt_apb_adv_timer_ss_mem_access_test_c)
    `uvmx_test_reg(UVM_DO_MEM_ACCESS)
 
+
+   /**
+    * Disables all agents not register-related.
+    */
+   constraint disable_agents_cons {
+      env_cfg.irq_events_agent_cfg.enabled == 0;
+   }
+
+   /**
+    * Disables all blocks.
+    */
+   constraint disable_blocks_cons {
+      env_cfg.adv_timer0_b_env_cfg.enabled == 0;
+      env_cfg.adv_timer1_b_env_cfg.enabled == 0;
+      env_cfg.adv_timer2_b_env_cfg.enabled == 0;
+      env_cfg.adv_timer3_b_env_cfg.enabled == 0;
+   }
+
+
    /**
     * Default constructor.
     */
@@ -25,7 +44,7 @@ class uvmt_apb_adv_timer_ss_mem_access_test_c extends uvmt_apb_adv_timer_ss_base
       super.new(name, parent);
    endfunction
 
-endclass : uvmt_apb_adv_timer_ss_mem_access_test_c
+endclass
 
 
 `endif // __UVMT_APB_ADV_TIMER_SS_MEM_ACCESS_TEST_SV__

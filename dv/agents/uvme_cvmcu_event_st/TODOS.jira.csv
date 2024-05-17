@@ -1,10 +1,15 @@
-﻿IssueType,Issue ID,Parent ID,Status,Summary,Component,Description
-task,0,,To Do,Functional testing,uvmt_cvmcu_event_st,Run and debug tests with legal stimulus only.
-Sub-task,,0,To Do,Fixed stimulus test,uvmt_cvmcu_event_st,`src/tests/uvmt_cvmcu_event_st_fix_stim_test.sv`
-Sub-task,,0,To Do,Random stimulus test,uvmt_cvmcu_event_st,`src/tests/uvmt_cvmcu_event_st_rand_stim_test.sv`
-Sub-task,,0,To Do,Functional regression,uvmt_cvmcu_event_st,Add tests to suite if needed. `src/tests/ts.yml`
-task,1,,To Do,Error testing,uvmt_cvmcu_event_st,"Add self-checking, run and debug tests with legal and illegal stimulus."
-Sub-task,,1,To Do,Add self-checking to base test,uvmt_cvmcu_event_st,`src/tests/uvmt_cvmcu_event_st_base_test.sv`
-Sub-task,,1,To Do,Fixed illegal stimulus test,uvmt_cvmcu_event_st,`src/tests/uvmt_cvmcu_event_st_fix_ill_stim_test.sv`
-Sub-task,,1,To Do,Random illegal stimulus test,uvmt_cvmcu_event_st,`src/tests/uvmt_cvmcu_event_st_rand_ill_stim_test.sv`
-Sub-task,,1,To Do,Full regression,uvmt_cvmcu_event_st,Add error tests to suite first. `src/tests/ts.yml`
+IssueType,Issue ID,Parent ID,Status,Summary,Component,Description
+task,0,,To Do,Describe CORE-V-MCU Event Interface UVM Agent Self-Test Environment",uvme_cvmcu_event_st,ip.yml,
+task,1,,To Do,Implement or remove uvme_cvmcu_event_st_cfg_c::rules_cons,uvme_cvmcu_event_st,uvme_cvmcu_event_st_cfg.sv,
+task,2,,To Do,Complete uvme_cvmcu_event_st_cfg_c scoreboard logging configuration,uvme_cvmcu_event_st,uvme_cvmcu_event_st_cfg.sv,
+task,3,,To Do,Implement uvme_cvmcu_event_st_cfg_c::post_randomize() or remove altogether,uvme_cvmcu_event_st,uvme_cvmcu_event_st_cfg.sv,
+task,4,,To Do,Describe uvme_cvmcu_event_st_prd_c::predict_core(),uvme_cvmcu_event_st,uvme_cvmcu_event_st_prd.sv,
+task,5,,To Do,Describe uvme_cvmcu_event_st_prd_c::predict_sys(),uvme_cvmcu_event_st,uvme_cvmcu_event_st_prd.sv,
+task,6,,To Do,Describe uvme_cvmcu_event_st_prd_c::predict_c2s(),uvme_cvmcu_event_st,uvme_cvmcu_event_st_prd.sv,
+task,7,,To Do,Describe uvme_cvmcu_event_st_prd_c::predict_s2c(),uvme_cvmcu_event_st,uvme_cvmcu_event_st_prd.sv,
+task,8,,To Do,Implement cvmcu_event_st_seq_item_cg,uvme_cvmcu_event_st,uvme_cvmcu_event_st_cov_model.sv,
+task,9,,To Do,Implement cvmcu_event_st_c2s_mon_trn_cg,uvme_cvmcu_event_st,uvme_cvmcu_event_st_cov_model.sv,
+task,10,,To Do,Implement cvmcu_event_st_s2c_mon_trn_cg,uvme_cvmcu_event_st,uvme_cvmcu_event_st_cov_model.sv,
+task,11,,To Do,Implement cvmcu_event_st_core_phy_seq_item_cg,uvme_cvmcu_event_st,uvme_cvmcu_event_st_cov_model.sv,
+task,12,,To Do,Implement cvmcu_event_st_sys_phy_seq_item_cg,uvme_cvmcu_event_st,uvme_cvmcu_event_st_cov_model.sv,
+task,13,,To Do,Implement cvmcu_event_st_phy_mon_trn_cg,uvme_cvmcu_event_st,uvme_cvmcu_event_st_cov_model.sv,

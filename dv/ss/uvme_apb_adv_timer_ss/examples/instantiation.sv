@@ -1,4 +1,4 @@
-// Copyright 2023 Datum Technology Corporation
+// Copyright 2024 Datum Technology Corporation
 // All rights reserved.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // This file contains sample code that demonstrates how to add an instance of the APB Advanced Timer Sub-System UVM Environment to another environment.
@@ -94,7 +94,7 @@ endclass : uvme_example_env_cntxt_c
 class uvme_example_env_c extends uvmx_env_c #(
    .T_CFG      (uvme_example_env_cfg_c      ),
    .T_CNTXT    (uvme_example_env_cntxt_c    ),
-   .T_VSQR     (uvme_example_env_vsqr_c     ),
+   .T_SQR      (uvme_example_env_sqr_c      ),
    .T_PRD      (uvme_example_env_prd_c      ),
    .T_SB       (uvme_example_env_sb_c       ),
    .T_COV_MODEL(uvme_example_env_cov_model_c)

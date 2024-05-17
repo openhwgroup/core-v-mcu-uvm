@@ -44,7 +44,7 @@ class uvma_adv_timer_b_mon_c extends uvmx_mon_c #(
       dpo_monitor = uvma_adv_timer_b_dpo_mon_c::type_id::create("dpo_monitor", this);
    endfunction
 
-endclass : uvma_adv_timer_b_mon_c
+endclass
 
 
 `endif // __UVMA_ADV_TIMER_B_MON_SV__

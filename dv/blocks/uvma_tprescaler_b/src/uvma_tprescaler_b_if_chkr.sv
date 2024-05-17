@@ -17,7 +17,7 @@ module uvma_tprescaler_b_if_chkr (
 
    // TODO Add assertions and/or functional coverage to uvme_tprescaler_b_chkr
 
-endmodule : uvma_tprescaler_b_if_chkr
+endmodule
 
 
 `endif // __UVMA_TPRESCALER_B_IF_CHKR_SV__

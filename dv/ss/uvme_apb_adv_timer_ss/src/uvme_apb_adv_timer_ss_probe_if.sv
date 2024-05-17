@@ -1,4 +1,4 @@
-// Copyright 2023 Datum Technology Corporation
+// Copyright 2024 Datum Technology Corporation
 // All rights reserved.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -20,13 +20,12 @@ interface uvme_apb_adv_timer_ss_probe_if (
    /// @name Inputs
    /// @{
    wire  dft_cg_enable_i; ///< Design-for-test enable
-   wire [31:0] ext_sig_i; ///< External signal
+   wire [31:0]  ext_sig_i; ///< External signal
    /// @}
 
    /// @name Outputs
    /// @{
    /// @}
-
 
    /// @name Signals clocked to 'HCLK'
    /// @{
@@ -44,17 +43,16 @@ interface uvme_apb_adv_timer_ss_probe_if (
    /// @}
 
 
-
    /// @name Accessors
    /// @{
    `uvmx_if_reset(HRESETn)
    `uvmx_if_cb(sys_clk_mp, sys_clk_cb)
    `uvmx_if_cb(low_speed_clk_mp, low_speed_clk_cb)
-   `uvmx_if_signal_probe_out(dft_cg_enable_i, , sys_clk_mp.sys_clk_cb)
-   `uvmx_if_signal_probe_out(ext_sig_i, , sys_clk_mp.sys_clk_cb)
+   `uvmx_if_signal_probe_out(dft_cg_enable_i,  , sys_clk_mp.sys_clk_cb)
+   `uvmx_if_signal_probe_out(ext_sig_i,  [31:0] , sys_clk_mp.sys_clk_cb)
    /// @}
 
-endinterface : uvme_apb_adv_timer_ss_probe_if
+endinterface
 
 
 `endif // __UVME_APB_ADV_TIMER_SS_PROBE_IF_SV__

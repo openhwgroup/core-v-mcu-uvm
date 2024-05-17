@@ -14,9 +14,19 @@
  */
 class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
 
-   // @name Integrals
+   // @name Settings
    /// @{
-   rand longint unsigned  reg_block_base_address; ///< Base address for #cvmcu_chip_reg_block
+   rand uvm_reg_addr_t  reg_block_base_address; ///< Base address for #cvmcu_chip_reg_block
+   rand int unsigned    sys_clk_frequency     ; ///< System clock frequency.
+   rand uvm_reg_addr_t  malloc_base_offset    ; ///< Address offset for memory allocation blocks.
+   rand bit [15:0]      uart0_rx_buffer_size  ; ///< UART0 Rx buffer size
+   rand bit [15:0]      uart1_rx_buffer_size  ; ///< UART1 Rx buffer size
+   rand bit [15:0]      uart0_tx_buffer_size  ; ///< UART0 Tx buffer size
+   rand bit [15:0]      uart1_tx_buffer_size  ; ///< UART1 Tx buffer size
+   /// @}
+
+   /// @name Bus Widths
+   /// @{
    rand bit use_cores; ///< Includes the Core Sub-System
    /// @}
 
@@ -32,7 +42,6 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
    rand uvma_uart_cfg_c  uart1_agent_cfg; ///< UART 1 agent configuration
    rand uvma_sdio_cfg_c  sdio_agent_cfg; ///< Flash card agent configuration
    rand uvma_i2c_cfg_c  i2c_m_agent_cfg; ///< I2C master agent configuration
-   rand uvma_cvmcu_io_cfg_c  io_agent_cfg; ///< IO ports agent configuration
    rand uvma_obi_cfg_c  instr_obi_agent_cfg; ///< Instruction memory OBI agent configuration
    rand uvma_obi_cfg_c  data_obi_agent_cfg; ///< Data memory OBI agent configuration
    rand uvma_cvmcu_event_cfg_c  event_agent_cfg; ///< Event agent configuration
@@ -49,35 +58,37 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
 
    /// @name Scoreboards
    /// @{
-   rand uvmx_sb_simplex_cfg_c  udma_qspi0_ingress_sb_cfg; ///< Udma_qspi0_ingress scoreboard configuration
-   rand uvmx_sb_simplex_cfg_c  udma_qspi1_ingress_sb_cfg; ///< Udma_qspi1_ingress scoreboard configuration
-   rand uvmx_sb_simplex_cfg_c  udma_camera_sb_cfg; ///< Udma_camera scoreboard configuration
-   rand uvmx_sb_simplex_cfg_c  udma_i2c0_ingress_sb_cfg; ///< Udma_i2c0_ingress scoreboard configuration
-   rand uvmx_sb_simplex_cfg_c  udma_i2c1_ingress_sb_cfg; ///< Udma_i2c1_ingress scoreboard configuration
-   rand uvmx_sb_simplex_cfg_c  udma_uart0_ingress_sb_cfg; ///< Udma_uart0_ingress scoreboard configuration
-   rand uvmx_sb_simplex_cfg_c  udma_uart1_ingress_sb_cfg; ///< Udma_uart1_ingress scoreboard configuration
-   rand uvmx_sb_simplex_cfg_c  apb_i2c_ingress_sb_cfg; ///< Apb_i2c_ingress scoreboard configuration
-   rand uvmx_sb_simplex_cfg_c  gpio_ingress_sb_cfg; ///< Gpio_ingress scoreboard configuration
-   rand uvmx_sb_simplex_cfg_c  udma_qspi0_egress_sb_cfg; ///< Udma_qspi0_egress scoreboard configuration
-   rand uvmx_sb_simplex_cfg_c  udma_qspi1_egress_sb_cfg; ///< Udma_qspi1_egress scoreboard configuration
-   rand uvmx_sb_simplex_cfg_c  udma_i2c0_egress_sb_cfg; ///< Udma_i2c0_egress scoreboard configuration
-   rand uvmx_sb_simplex_cfg_c  udma_i2c1_egress_sb_cfg; ///< Udma_i2c1_egress scoreboard configuration
-   rand uvmx_sb_simplex_cfg_c  udma_uart0_egress_sb_cfg; ///< Udma_uart0_egress scoreboard configuration
-   rand uvmx_sb_simplex_cfg_c  udma_uart1_egress_sb_cfg; ///< Udma_uart1_egress scoreboard configuration
-   rand uvmx_sb_simplex_cfg_c  apb_i2c_egress_sb_cfg; ///< Apb_i2c_egress scoreboard configuration
-   rand uvmx_sb_simplex_cfg_c  gpio_egress_sb_cfg; ///< Gpio_egress scoreboard configuration
-   rand uvmx_sb_simplex_cfg_c  event_sb_cfg; ///< Event scoreboard configuration
-   rand uvmx_sb_simplex_cfg_c  dbg_sb_cfg; ///< Dbg scoreboard configuration
+   rand uvmx_sb_simplex_cfg_c  sb_udma_qspi0_ingress_cfg; ///< Udma_qspi0_ingress scoreboard configuration
+   rand uvmx_sb_simplex_cfg_c  sb_udma_qspi1_ingress_cfg; ///< Udma_qspi1_ingress scoreboard configuration
+   rand uvmx_sb_simplex_cfg_c  sb_udma_camera_cfg; ///< Udma_camera scoreboard configuration
+   rand uvmx_sb_simplex_cfg_c  sb_udma_i2c0_ingress_cfg; ///< Udma_i2c0_ingress scoreboard configuration
+   rand uvmx_sb_simplex_cfg_c  sb_udma_i2c1_ingress_cfg; ///< Udma_i2c1_ingress scoreboard configuration
+   rand uvmx_sb_simplex_cfg_c  sb_udma_uart0_ingress_cfg; ///< Udma_uart0_ingress scoreboard configuration
+   rand uvmx_sb_simplex_cfg_c  sb_udma_uart1_ingress_cfg; ///< Udma_uart1_ingress scoreboard configuration
+   rand uvmx_sb_simplex_cfg_c  sb_apb_i2c_ingress_cfg; ///< Apb_i2c_ingress scoreboard configuration
+   rand uvmx_sb_simplex_cfg_c  sb_udma_qspi0_egress_cfg; ///< Udma_qspi0_egress scoreboard configuration
+   rand uvmx_sb_simplex_cfg_c  sb_udma_qspi1_egress_cfg; ///< Udma_qspi1_egress scoreboard configuration
+   rand uvmx_sb_simplex_cfg_c  sb_udma_i2c0_egress_cfg; ///< Udma_i2c0_egress scoreboard configuration
+   rand uvmx_sb_simplex_cfg_c  sb_udma_i2c1_egress_cfg; ///< Udma_i2c1_egress scoreboard configuration
+   rand uvmx_sb_simplex_cfg_c  sb_udma_uart0_egress_cfg; ///< Udma_uart0_egress scoreboard configuration
+   rand uvmx_sb_simplex_cfg_c  sb_udma_uart1_egress_cfg; ///< Udma_uart1_egress scoreboard configuration
+   rand uvmx_sb_simplex_cfg_c  sb_apb_i2c_egress_cfg; ///< Apb_i2c_egress scoreboard configuration
+   rand uvmx_sb_simplex_cfg_c  sb_dbg_cfg; ///< Dbg scoreboard configuration
    /// @}
 
 
    `uvm_object_utils_begin(uvme_cvmcu_chip_cfg_c)
-      `uvm_field_int (                         enabled              , UVM_DEFAULT)
-      `uvm_field_enum(uvm_active_passive_enum, is_active            , UVM_DEFAULT)
-      `uvm_field_int(use_cores, UVM_DEFAULT)
-      `uvm_field_enum(uvmx_reset_type_enum   , reset_type           , UVM_DEFAULT)
-      `uvm_field_int (                         scoreboarding_enabled, UVM_DEFAULT)
+      `uvm_field_int(enabled, UVM_DEFAULT)
+      `uvm_field_enum(uvm_active_passive_enum, is_active, UVM_DEFAULT)
+      `uvm_field_enum(uvmx_reset_type_enum, reset_type, UVM_DEFAULT)
+      `uvm_field_int(scoreboarding_enabled, UVM_DEFAULT)
       `uvm_field_int(reg_block_base_address, UVM_DEFAULT)
+      `uvm_field_int(malloc_base_offset, UVM_DEFAULT)
+      `uvm_field_int(uart0_rx_buffer_size, UVM_DEFAULT)
+      `uvm_field_int(uart1_rx_buffer_size, UVM_DEFAULT)
+      `uvm_field_int(uart0_tx_buffer_size, UVM_DEFAULT)
+      `uvm_field_int(uart1_tx_buffer_size, UVM_DEFAULT)
+      `uvm_field_int(use_cores, UVM_DEFAULT)
       `uvm_field_object(jtag_agent_cfg, UVM_DEFAULT)
       `uvm_field_object(qspi_s0_agent_cfg, UVM_DEFAULT)
       `uvm_field_object(qspi_s1_agent_cfg, UVM_DEFAULT)
@@ -88,7 +99,6 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
       `uvm_field_object(uart1_agent_cfg, UVM_DEFAULT)
       `uvm_field_object(sdio_agent_cfg, UVM_DEFAULT)
       `uvm_field_object(i2c_m_agent_cfg, UVM_DEFAULT)
-      `uvm_field_object(io_agent_cfg, UVM_DEFAULT)
       `uvm_field_object(instr_obi_agent_cfg, UVM_DEFAULT)
       `uvm_field_object(data_obi_agent_cfg, UVM_DEFAULT)
       `uvm_field_object(event_agent_cfg, UVM_DEFAULT)
@@ -97,41 +107,48 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
       `uvm_field_object(irq_l2_agent_cfg, UVM_DEFAULT)
       `uvm_field_object(apb_timer_ss_env_cfg, UVM_DEFAULT)
       `uvm_field_object(apb_adv_timer_ss_env_cfg, UVM_DEFAULT)
-      `uvm_field_object(udma_qspi0_ingress_sb_cfg, UVM_DEFAULT)
-      `uvm_field_object(udma_qspi1_ingress_sb_cfg, UVM_DEFAULT)
-      `uvm_field_object(udma_camera_sb_cfg, UVM_DEFAULT)
-      `uvm_field_object(udma_i2c0_ingress_sb_cfg, UVM_DEFAULT)
-      `uvm_field_object(udma_i2c1_ingress_sb_cfg, UVM_DEFAULT)
-      `uvm_field_object(udma_uart0_ingress_sb_cfg, UVM_DEFAULT)
-      `uvm_field_object(udma_uart1_ingress_sb_cfg, UVM_DEFAULT)
-      `uvm_field_object(apb_i2c_ingress_sb_cfg, UVM_DEFAULT)
-      `uvm_field_object(gpio_ingress_sb_cfg, UVM_DEFAULT)
-      `uvm_field_object(udma_qspi0_egress_sb_cfg, UVM_DEFAULT)
-      `uvm_field_object(udma_qspi1_egress_sb_cfg, UVM_DEFAULT)
-      `uvm_field_object(udma_i2c0_egress_sb_cfg, UVM_DEFAULT)
-      `uvm_field_object(udma_i2c1_egress_sb_cfg, UVM_DEFAULT)
-      `uvm_field_object(udma_uart0_egress_sb_cfg, UVM_DEFAULT)
-      `uvm_field_object(udma_uart1_egress_sb_cfg, UVM_DEFAULT)
-      `uvm_field_object(apb_i2c_egress_sb_cfg, UVM_DEFAULT)
-      `uvm_field_object(gpio_egress_sb_cfg, UVM_DEFAULT)
-      `uvm_field_object(event_sb_cfg, UVM_DEFAULT)
-      `uvm_field_object(dbg_sb_cfg, UVM_DEFAULT)
+      `uvm_field_object(sb_udma_qspi0_ingress_cfg, UVM_DEFAULT)
+      `uvm_field_object(sb_udma_qspi1_ingress_cfg, UVM_DEFAULT)
+      `uvm_field_object(sb_udma_camera_cfg, UVM_DEFAULT)
+      `uvm_field_object(sb_udma_i2c0_ingress_cfg, UVM_DEFAULT)
+      `uvm_field_object(sb_udma_i2c1_ingress_cfg, UVM_DEFAULT)
+      `uvm_field_object(sb_udma_uart0_ingress_cfg, UVM_DEFAULT)
+      `uvm_field_object(sb_udma_uart1_ingress_cfg, UVM_DEFAULT)
+      `uvm_field_object(sb_apb_i2c_ingress_cfg, UVM_DEFAULT)
+      `uvm_field_object(sb_udma_qspi0_egress_cfg, UVM_DEFAULT)
+      `uvm_field_object(sb_udma_qspi1_egress_cfg, UVM_DEFAULT)
+      `uvm_field_object(sb_udma_i2c0_egress_cfg, UVM_DEFAULT)
+      `uvm_field_object(sb_udma_i2c1_egress_cfg, UVM_DEFAULT)
+      `uvm_field_object(sb_udma_uart0_egress_cfg, UVM_DEFAULT)
+      `uvm_field_object(sb_udma_uart1_egress_cfg, UVM_DEFAULT)
+      `uvm_field_object(sb_apb_i2c_egress_cfg, UVM_DEFAULT)
+      `uvm_field_object(sb_dbg_cfg, UVM_DEFAULT)
    `uvm_object_utils_end
 
 
    /**
-    * Rules for safe default options: enabled, passive with scoreboarding and transaction logging enabled.
+    * Sets valid and default values for settings.
     */
-   constraint defaults_cons {
+   constraint settings_space_cons {
       soft reg_block_base_address == uvme_cvmcu_chip_default_reg_block_base_address;
+      soft malloc_base_offset     == 'h0000_0000;
+      soft uart0_rx_buffer_size   == 1_024;
+      soft uart1_rx_buffer_size   == 1_024;
+      soft uart0_tx_buffer_size   == 1_024;
+      soft uart1_tx_buffer_size   == 1_024;
+   }
+
+   /**
+    * Rules for parameters.
+    */
+   constraint bw_space_cons {
    }
 
    /**
     * Sets JTAG controller agent configuration.
     */
    constraint jtag_agent_cfg_cons {
-      jtag_agent_cfg.enabled == enabled;
-      jtag_agent_cfg.bypass_mode == 0;
+      soft jtag_agent_cfg.enabled == enabled;
       jtag_agent_cfg.drv_mode == UVMA_JTAG_DRV_MODE_CTRL;
       jtag_agent_cfg.is_active == is_active;
    }
@@ -140,8 +157,7 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
     * Sets QSPI slave 0 agent configuration.
     */
    constraint qspi_s0_agent_cfg_cons {
-      qspi_s0_agent_cfg.enabled == enabled;
-      qspi_s0_agent_cfg.bypass_mode == 1;
+      soft qspi_s0_agent_cfg.enabled == enabled;
       qspi_s0_agent_cfg.data_width == 4;
       qspi_s0_agent_cfg.drv_mode == UVMA_SPI_DRV_MODE_SLV;
       qspi_s0_agent_cfg.is_active == is_active;
@@ -151,8 +167,7 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
     * Sets QSPI slave 1 agent configuration.
     */
    constraint qspi_s1_agent_cfg_cons {
-      qspi_s1_agent_cfg.enabled == enabled;
-      qspi_s1_agent_cfg.bypass_mode == 1;
+      soft qspi_s1_agent_cfg.enabled == enabled;
       qspi_s1_agent_cfg.data_width == 4;
       qspi_s1_agent_cfg.drv_mode == UVMA_SPI_DRV_MODE_SLV;
       qspi_s1_agent_cfg.is_active == is_active;
@@ -162,8 +177,7 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
     * Sets Camera Parallel Interface transmitter agent configuration.
     */
    constraint camera_agent_cfg_cons {
-      camera_agent_cfg.enabled == enabled;
-      camera_agent_cfg.bypass_mode == 1;
+      soft camera_agent_cfg.enabled == enabled;
       camera_agent_cfg.drv_mode == UVMA_CVMCU_CPI_DRV_MODE_TX;
       camera_agent_cfg.is_active == is_active;
    }
@@ -172,8 +186,7 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
     * Sets I2C slave 0 agent configuration.
     */
    constraint i2c_s0_agent_cfg_cons {
-      i2c_s0_agent_cfg.enabled == enabled;
-      i2c_s0_agent_cfg.bypass_mode == 1;
+      soft i2c_s0_agent_cfg.enabled == enabled;
       i2c_s0_agent_cfg.drv_mode == UVMA_I2C_DRV_MODE_SLV;
       i2c_s0_agent_cfg.is_active == is_active;
    }
@@ -182,8 +195,7 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
     * Sets I2C slave 1 agent configuration.
     */
    constraint i2c_s1_agent_cfg_cons {
-      i2c_s1_agent_cfg.enabled == enabled;
-      i2c_s1_agent_cfg.bypass_mode == 1;
+      soft i2c_s1_agent_cfg.enabled == enabled;
       i2c_s1_agent_cfg.drv_mode == UVMA_I2C_DRV_MODE_SLV;
       i2c_s1_agent_cfg.is_active == is_active;
    }
@@ -192,28 +204,27 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
     * Sets UART 0 agent configuration.
     */
    constraint uart0_agent_cfg_cons {
-      uart0_agent_cfg.enabled == enabled;
-      uart0_agent_cfg.bypass_mode == 1;
+      soft uart0_agent_cfg.enabled == enabled;
       uart0_agent_cfg.drv_mode == UVMA_UART_DRV_MODE_TX;
       uart0_agent_cfg.is_active == is_active;
+      uart0_agent_cfg.frame_size inside {5,6,7,8};
    }
 
    /**
     * Sets UART 1 agent configuration.
     */
    constraint uart1_agent_cfg_cons {
-      uart1_agent_cfg.enabled == enabled;
-      uart1_agent_cfg.bypass_mode == 1;
+      soft uart1_agent_cfg.enabled == enabled;
       uart1_agent_cfg.drv_mode == UVMA_UART_DRV_MODE_TX;
       uart1_agent_cfg.is_active == is_active;
+      uart1_agent_cfg.frame_size inside {5,6,7,8};
    }
 
    /**
     * Sets Flash card agent configuration.
     */
    constraint sdio_agent_cfg_cons {
-      sdio_agent_cfg.enabled == enabled;
-      sdio_agent_cfg.bypass_mode == 1;
+      soft sdio_agent_cfg.enabled == enabled;
       sdio_agent_cfg.drv_mode == UVMA_SDIO_DRV_MODE_DEV;
       sdio_agent_cfg.is_active == is_active;
    }
@@ -222,28 +233,16 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
     * Sets I2C master agent configuration.
     */
    constraint i2c_m_agent_cfg_cons {
-      i2c_m_agent_cfg.enabled == enabled;
-      i2c_m_agent_cfg.bypass_mode == 1;
+      soft i2c_m_agent_cfg.enabled == enabled;
       i2c_m_agent_cfg.drv_mode == UVMA_I2C_DRV_MODE_MSTR;
       i2c_m_agent_cfg.is_active == is_active;
-   }
-
-   /**
-    * Sets IO ports agent configuration.
-    */
-   constraint io_agent_cfg_cons {
-      io_agent_cfg.enabled == enabled;
-      io_agent_cfg.bypass_mode == 0;
-      io_agent_cfg.drv_mode == UVMA_CVMCU_IO_DRV_MODE_BOARD;
-      io_agent_cfg.is_active == is_active;
    }
 
    /**
     * Sets Instruction memory OBI agent configuration.
     */
    constraint instr_obi_agent_cfg_cons {
-      instr_obi_agent_cfg.enabled == enabled;
-      instr_obi_agent_cfg.bypass_mode == 0;
+      soft instr_obi_agent_cfg.enabled == enabled;
       instr_obi_agent_cfg.data_width == 32;
       instr_obi_agent_cfg.addr_width == 32;
       instr_obi_agent_cfg.drv_mode == UVMA_OBI_DRV_MODE_MSTR;
@@ -254,8 +253,7 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
     * Sets Data memory OBI agent configuration.
     */
    constraint data_obi_agent_cfg_cons {
-      data_obi_agent_cfg.enabled == enabled;
-      data_obi_agent_cfg.bypass_mode == 0;
+      soft data_obi_agent_cfg.enabled == enabled;
       data_obi_agent_cfg.data_width == 32;
       data_obi_agent_cfg.addr_width == 32;
       data_obi_agent_cfg.drv_mode == UVMA_OBI_DRV_MODE_MSTR;
@@ -266,8 +264,7 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
     * Sets Event agent configuration.
     */
    constraint event_agent_cfg_cons {
-      event_agent_cfg.enabled == enabled;
-      event_agent_cfg.bypass_mode == 0;
+      soft event_agent_cfg.enabled == enabled;
       event_agent_cfg.is_active == UVM_PASSIVE;
    }
 
@@ -275,8 +272,7 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
     * Sets Debug agent configuration.
     */
    constraint dbg_agent_cfg_cons {
-      dbg_agent_cfg.enabled == enabled;
-      dbg_agent_cfg.bypass_mode == 0;
+      soft dbg_agent_cfg.enabled == enabled;
       dbg_agent_cfg.is_active == UVM_PASSIVE;
    }
 
@@ -284,7 +280,7 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
     * Sets First Level IRQ agent configuration.
     */
    constraint irq_l1_agent_cfg_cons {
-      irq_l1_agent_cfg.enabled == enabled;
+      soft irq_l1_agent_cfg.enabled == enabled;
       irq_l1_agent_cfg.num_lines == 32;
       irq_l1_agent_cfg.is_active == UVM_PASSIVE;
    }
@@ -293,7 +289,7 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
     * Sets Platform-Specific (Second Level) IRQ agent configuration.
     */
    constraint irq_l2_agent_cfg_cons {
-      irq_l2_agent_cfg.enabled == enabled;
+      soft irq_l2_agent_cfg.enabled == enabled;
       irq_l2_agent_cfg.num_lines == 256;
       irq_l2_agent_cfg.is_active == UVM_PASSIVE;
    }
@@ -302,7 +298,7 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
     * Sets Simple timer sub-system environment configuration.
     */
    constraint apb_timer_ss_env_cfg_cons {
-      apb_timer_ss_env_cfg.enabled == enabled;
+      soft apb_timer_ss_env_cfg.enabled == enabled;
       apb_timer_ss_env_cfg.is_active == UVM_PASSIVE;
       apb_timer_ss_env_cfg.scoreboarding_enabled == scoreboarding_enabled;
    }
@@ -311,7 +307,7 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
     * Sets Advanced timer (PWM) sub-system environment configuration.
     */
    constraint apb_adv_timer_ss_env_cfg_cons {
-      apb_adv_timer_ss_env_cfg.enabled == enabled;
+      soft apb_adv_timer_ss_env_cfg.enabled == enabled;
       apb_adv_timer_ss_env_cfg.is_active == UVM_PASSIVE;
       apb_adv_timer_ss_env_cfg.scoreboarding_enabled == scoreboarding_enabled;
    }
@@ -319,153 +315,135 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
    /**
     * Sets udma_qspi0_ingress scoreboard configuration.
     */
-   constraint udma_qspi0_ingress_sb_cfg_cons {
-      udma_qspi0_ingress_sb_cfg.enabled == scoreboarding_enabled;
-      udma_qspi0_ingress_sb_cfg.mode == UVMX_SB_MODE_IN_ORDER;
+   constraint sb_udma_qspi0_ingress_cfg_cons {
+      soft sb_udma_qspi0_ingress_cfg.enabled == scoreboarding_enabled;
+      sb_udma_qspi0_ingress_cfg.mode == UVMX_SB_MODE_IN_ORDER;
    }
 
    /**
     * Sets udma_qspi1_ingress scoreboard configuration.
     */
-   constraint udma_qspi1_ingress_sb_cfg_cons {
-      udma_qspi1_ingress_sb_cfg.enabled == scoreboarding_enabled;
-      udma_qspi1_ingress_sb_cfg.mode == UVMX_SB_MODE_IN_ORDER;
+   constraint sb_udma_qspi1_ingress_cfg_cons {
+      soft sb_udma_qspi1_ingress_cfg.enabled == scoreboarding_enabled;
+      sb_udma_qspi1_ingress_cfg.mode == UVMX_SB_MODE_IN_ORDER;
    }
 
    /**
     * Sets udma_camera scoreboard configuration.
     */
-   constraint udma_camera_sb_cfg_cons {
-      udma_camera_sb_cfg.enabled == scoreboarding_enabled;
-      udma_camera_sb_cfg.mode == UVMX_SB_MODE_IN_ORDER;
+   constraint sb_udma_camera_cfg_cons {
+      soft sb_udma_camera_cfg.enabled == scoreboarding_enabled;
+      sb_udma_camera_cfg.mode == UVMX_SB_MODE_IN_ORDER;
    }
 
    /**
     * Sets udma_i2c0_ingress scoreboard configuration.
     */
-   constraint udma_i2c0_ingress_sb_cfg_cons {
-      udma_i2c0_ingress_sb_cfg.enabled == scoreboarding_enabled;
-      udma_i2c0_ingress_sb_cfg.mode == UVMX_SB_MODE_IN_ORDER;
+   constraint sb_udma_i2c0_ingress_cfg_cons {
+      soft sb_udma_i2c0_ingress_cfg.enabled == scoreboarding_enabled;
+      sb_udma_i2c0_ingress_cfg.mode == UVMX_SB_MODE_IN_ORDER;
    }
 
    /**
     * Sets udma_i2c1_ingress scoreboard configuration.
     */
-   constraint udma_i2c1_ingress_sb_cfg_cons {
-      udma_i2c1_ingress_sb_cfg.enabled == scoreboarding_enabled;
-      udma_i2c1_ingress_sb_cfg.mode == UVMX_SB_MODE_IN_ORDER;
+   constraint sb_udma_i2c1_ingress_cfg_cons {
+      soft sb_udma_i2c1_ingress_cfg.enabled == scoreboarding_enabled;
+      sb_udma_i2c1_ingress_cfg.mode == UVMX_SB_MODE_IN_ORDER;
    }
 
    /**
     * Sets udma_uart0_ingress scoreboard configuration.
     */
-   constraint udma_uart0_ingress_sb_cfg_cons {
-      udma_uart0_ingress_sb_cfg.enabled == scoreboarding_enabled;
-      udma_uart0_ingress_sb_cfg.mode == UVMX_SB_MODE_IN_ORDER;
+   constraint sb_udma_uart0_ingress_cfg_cons {
+      soft sb_udma_uart0_ingress_cfg.enabled == scoreboarding_enabled;
+      sb_udma_uart0_ingress_cfg.mode == UVMX_SB_MODE_IN_ORDER;
    }
 
    /**
     * Sets udma_uart1_ingress scoreboard configuration.
     */
-   constraint udma_uart1_ingress_sb_cfg_cons {
-      udma_uart1_ingress_sb_cfg.enabled == scoreboarding_enabled;
-      udma_uart1_ingress_sb_cfg.mode == UVMX_SB_MODE_IN_ORDER;
+   constraint sb_udma_uart1_ingress_cfg_cons {
+      soft sb_udma_uart1_ingress_cfg.enabled == scoreboarding_enabled;
+      sb_udma_uart1_ingress_cfg.mode == UVMX_SB_MODE_IN_ORDER;
    }
 
    /**
     * Sets apb_i2c_ingress scoreboard configuration.
     */
-   constraint apb_i2c_ingress_sb_cfg_cons {
-      apb_i2c_ingress_sb_cfg.enabled == scoreboarding_enabled;
-      apb_i2c_ingress_sb_cfg.mode == UVMX_SB_MODE_IN_ORDER;
-   }
-
-   /**
-    * Sets gpio_ingress scoreboard configuration.
-    */
-   constraint gpio_ingress_sb_cfg_cons {
-      gpio_ingress_sb_cfg.enabled == scoreboarding_enabled;
-      gpio_ingress_sb_cfg.mode == UVMX_SB_MODE_IN_ORDER;
+   constraint sb_apb_i2c_ingress_cfg_cons {
+      soft sb_apb_i2c_ingress_cfg.enabled == scoreboarding_enabled;
+      sb_apb_i2c_ingress_cfg.mode == UVMX_SB_MODE_IN_ORDER;
    }
 
    /**
     * Sets udma_qspi0_egress scoreboard configuration.
     */
-   constraint udma_qspi0_egress_sb_cfg_cons {
-      udma_qspi0_egress_sb_cfg.enabled == scoreboarding_enabled;
-      udma_qspi0_egress_sb_cfg.mode == UVMX_SB_MODE_IN_ORDER;
+   constraint sb_udma_qspi0_egress_cfg_cons {
+      soft sb_udma_qspi0_egress_cfg.enabled == scoreboarding_enabled;
+      sb_udma_qspi0_egress_cfg.mode == UVMX_SB_MODE_IN_ORDER;
    }
 
    /**
     * Sets udma_qspi1_egress scoreboard configuration.
     */
-   constraint udma_qspi1_egress_sb_cfg_cons {
-      udma_qspi1_egress_sb_cfg.enabled == scoreboarding_enabled;
-      udma_qspi1_egress_sb_cfg.mode == UVMX_SB_MODE_IN_ORDER;
+   constraint sb_udma_qspi1_egress_cfg_cons {
+      soft sb_udma_qspi1_egress_cfg.enabled == scoreboarding_enabled;
+      sb_udma_qspi1_egress_cfg.mode == UVMX_SB_MODE_IN_ORDER;
    }
 
    /**
     * Sets udma_i2c0_egress scoreboard configuration.
     */
-   constraint udma_i2c0_egress_sb_cfg_cons {
-      udma_i2c0_egress_sb_cfg.enabled == scoreboarding_enabled;
-      udma_i2c0_egress_sb_cfg.mode == UVMX_SB_MODE_IN_ORDER;
+   constraint sb_udma_i2c0_egress_cfg_cons {
+      soft sb_udma_i2c0_egress_cfg.enabled == scoreboarding_enabled;
+      sb_udma_i2c0_egress_cfg.mode == UVMX_SB_MODE_IN_ORDER;
    }
 
    /**
     * Sets udma_i2c1_egress scoreboard configuration.
     */
-   constraint udma_i2c1_egress_sb_cfg_cons {
-      udma_i2c1_egress_sb_cfg.enabled == scoreboarding_enabled;
-      udma_i2c1_egress_sb_cfg.mode == UVMX_SB_MODE_IN_ORDER;
+   constraint sb_udma_i2c1_egress_cfg_cons {
+      soft sb_udma_i2c1_egress_cfg.enabled == scoreboarding_enabled;
+      sb_udma_i2c1_egress_cfg.mode == UVMX_SB_MODE_IN_ORDER;
    }
 
    /**
     * Sets udma_uart0_egress scoreboard configuration.
     */
-   constraint udma_uart0_egress_sb_cfg_cons {
-      udma_uart0_egress_sb_cfg.enabled == scoreboarding_enabled;
-      udma_uart0_egress_sb_cfg.mode == UVMX_SB_MODE_IN_ORDER;
+   constraint sb_udma_uart0_egress_cfg_cons {
+      soft sb_udma_uart0_egress_cfg.enabled == scoreboarding_enabled;
+      sb_udma_uart0_egress_cfg.mode == UVMX_SB_MODE_IN_ORDER;
    }
 
    /**
     * Sets udma_uart1_egress scoreboard configuration.
     */
-   constraint udma_uart1_egress_sb_cfg_cons {
-      udma_uart1_egress_sb_cfg.enabled == scoreboarding_enabled;
-      udma_uart1_egress_sb_cfg.mode == UVMX_SB_MODE_IN_ORDER;
+   constraint sb_udma_uart1_egress_cfg_cons {
+      soft sb_udma_uart1_egress_cfg.enabled == scoreboarding_enabled;
+      sb_udma_uart1_egress_cfg.mode == UVMX_SB_MODE_IN_ORDER;
    }
 
    /**
     * Sets apb_i2c_egress scoreboard configuration.
     */
-   constraint apb_i2c_egress_sb_cfg_cons {
-      apb_i2c_egress_sb_cfg.enabled == scoreboarding_enabled;
-      apb_i2c_egress_sb_cfg.mode == UVMX_SB_MODE_IN_ORDER;
-   }
-
-   /**
-    * Sets gpio_egress scoreboard configuration.
-    */
-   constraint gpio_egress_sb_cfg_cons {
-      gpio_egress_sb_cfg.enabled == scoreboarding_enabled;
-      gpio_egress_sb_cfg.mode == UVMX_SB_MODE_IN_ORDER;
-   }
-
-   /**
-    * Sets event scoreboard configuration.
-    */
-   constraint event_sb_cfg_cons {
-      event_sb_cfg.enabled == scoreboarding_enabled;
-      event_sb_cfg.mode == UVMX_SB_MODE_IN_ORDER;
+   constraint sb_apb_i2c_egress_cfg_cons {
+      soft sb_apb_i2c_egress_cfg.enabled == scoreboarding_enabled;
+      sb_apb_i2c_egress_cfg.mode == UVMX_SB_MODE_IN_ORDER;
    }
 
    /**
     * Sets dbg scoreboard configuration.
     */
-   constraint dbg_sb_cfg_cons {
-      dbg_sb_cfg.enabled == scoreboarding_enabled;
-      dbg_sb_cfg.mode == UVMX_SB_MODE_IN_ORDER;
+   constraint sb_dbg_cfg_cons {
+      soft sb_dbg_cfg.enabled == scoreboarding_enabled;
+      sb_dbg_cfg.mode == UVMX_SB_MODE_IN_ORDER;
+   }
+
+   /**
+    * TODO Implement or remove uvme_cvmcu_chip_cfg_c::rules_cons
+    */
+   constraint rules_cons {
    }
 
 
@@ -477,9 +455,9 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
    endfunction
 
    /**
-    * Creates agent, sub-system, block and scoreboard configuration objects.
+    * Initializes objects and arrays.
     */
-   virtual function void create_objects();
+   virtual function void build();
       jtag_agent_cfg = uvma_jtag_cfg_c::type_id::create("jtag_cfg");
       qspi_s0_agent_cfg = uvma_spi_cfg_c::type_id::create("qspi_s0_cfg");
       qspi_s1_agent_cfg = uvma_spi_cfg_c::type_id::create("qspi_s1_cfg");
@@ -490,7 +468,6 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
       uart1_agent_cfg = uvma_uart_cfg_c::type_id::create("uart1_cfg");
       sdio_agent_cfg = uvma_sdio_cfg_c::type_id::create("sdio_cfg");
       i2c_m_agent_cfg = uvma_i2c_cfg_c::type_id::create("i2c_m_cfg");
-      io_agent_cfg = uvma_cvmcu_io_cfg_c::type_id::create("io_cfg");
       instr_obi_agent_cfg = uvma_obi_cfg_c::type_id::create("instr_obi_cfg");
       data_obi_agent_cfg = uvma_obi_cfg_c::type_id::create("data_obi_cfg");
       event_agent_cfg = uvma_cvmcu_event_cfg_c::type_id::create("event_cfg");
@@ -499,25 +476,22 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
       irq_l2_agent_cfg = uvma_irq_cfg_c::type_id::create("irq_l2_cfg");
       apb_timer_ss_env_cfg = uvme_apb_timer_ss_cfg_c::type_id::create("apb_timer_ss_env_cfg");
       apb_adv_timer_ss_env_cfg = uvme_apb_adv_timer_ss_cfg_c::type_id::create("apb_adv_timer_ss_env_cfg");
-      udma_qspi0_ingress_sb_cfg = uvmx_sb_simplex_cfg_c::type_id::create("udma_qspi0_ingress_sb_cfg");
-      udma_qspi1_ingress_sb_cfg = uvmx_sb_simplex_cfg_c::type_id::create("udma_qspi1_ingress_sb_cfg");
-      udma_camera_sb_cfg = uvmx_sb_simplex_cfg_c::type_id::create("udma_camera_sb_cfg");
-      udma_i2c0_ingress_sb_cfg = uvmx_sb_simplex_cfg_c::type_id::create("udma_i2c0_ingress_sb_cfg");
-      udma_i2c1_ingress_sb_cfg = uvmx_sb_simplex_cfg_c::type_id::create("udma_i2c1_ingress_sb_cfg");
-      udma_uart0_ingress_sb_cfg = uvmx_sb_simplex_cfg_c::type_id::create("udma_uart0_ingress_sb_cfg");
-      udma_uart1_ingress_sb_cfg = uvmx_sb_simplex_cfg_c::type_id::create("udma_uart1_ingress_sb_cfg");
-      apb_i2c_ingress_sb_cfg = uvmx_sb_simplex_cfg_c::type_id::create("apb_i2c_ingress_sb_cfg");
-      gpio_ingress_sb_cfg = uvmx_sb_simplex_cfg_c::type_id::create("gpio_ingress_sb_cfg");
-      udma_qspi0_egress_sb_cfg = uvmx_sb_simplex_cfg_c::type_id::create("udma_qspi0_egress_sb_cfg");
-      udma_qspi1_egress_sb_cfg = uvmx_sb_simplex_cfg_c::type_id::create("udma_qspi1_egress_sb_cfg");
-      udma_i2c0_egress_sb_cfg = uvmx_sb_simplex_cfg_c::type_id::create("udma_i2c0_egress_sb_cfg");
-      udma_i2c1_egress_sb_cfg = uvmx_sb_simplex_cfg_c::type_id::create("udma_i2c1_egress_sb_cfg");
-      udma_uart0_egress_sb_cfg = uvmx_sb_simplex_cfg_c::type_id::create("udma_uart0_egress_sb_cfg");
-      udma_uart1_egress_sb_cfg = uvmx_sb_simplex_cfg_c::type_id::create("udma_uart1_egress_sb_cfg");
-      apb_i2c_egress_sb_cfg = uvmx_sb_simplex_cfg_c::type_id::create("apb_i2c_egress_sb_cfg");
-      gpio_egress_sb_cfg = uvmx_sb_simplex_cfg_c::type_id::create("gpio_egress_sb_cfg");
-      event_sb_cfg = uvmx_sb_simplex_cfg_c::type_id::create("event_sb_cfg");
-      dbg_sb_cfg = uvmx_sb_simplex_cfg_c::type_id::create("dbg_sb_cfg");
+      sb_udma_qspi0_ingress_cfg = uvmx_sb_simplex_cfg_c::type_id::create("sb_udma_qspi0_ingress_cfg");
+      sb_udma_qspi1_ingress_cfg = uvmx_sb_simplex_cfg_c::type_id::create("sb_udma_qspi1_ingress_cfg");
+      sb_udma_camera_cfg = uvmx_sb_simplex_cfg_c::type_id::create("sb_udma_camera_cfg");
+      sb_udma_i2c0_ingress_cfg = uvmx_sb_simplex_cfg_c::type_id::create("sb_udma_i2c0_ingress_cfg");
+      sb_udma_i2c1_ingress_cfg = uvmx_sb_simplex_cfg_c::type_id::create("sb_udma_i2c1_ingress_cfg");
+      sb_udma_uart0_ingress_cfg = uvmx_sb_simplex_cfg_c::type_id::create("sb_udma_uart0_ingress_cfg");
+      sb_udma_uart1_ingress_cfg = uvmx_sb_simplex_cfg_c::type_id::create("sb_udma_uart1_ingress_cfg");
+      sb_apb_i2c_ingress_cfg = uvmx_sb_simplex_cfg_c::type_id::create("sb_apb_i2c_ingress_cfg");
+      sb_udma_qspi0_egress_cfg = uvmx_sb_simplex_cfg_c::type_id::create("sb_udma_qspi0_egress_cfg");
+      sb_udma_qspi1_egress_cfg = uvmx_sb_simplex_cfg_c::type_id::create("sb_udma_qspi1_egress_cfg");
+      sb_udma_i2c0_egress_cfg = uvmx_sb_simplex_cfg_c::type_id::create("sb_udma_i2c0_egress_cfg");
+      sb_udma_i2c1_egress_cfg = uvmx_sb_simplex_cfg_c::type_id::create("sb_udma_i2c1_egress_cfg");
+      sb_udma_uart0_egress_cfg = uvmx_sb_simplex_cfg_c::type_id::create("sb_udma_uart0_egress_cfg");
+      sb_udma_uart1_egress_cfg = uvmx_sb_simplex_cfg_c::type_id::create("sb_udma_uart1_egress_cfg");
+      sb_apb_i2c_egress_cfg = uvmx_sb_simplex_cfg_c::type_id::create("sb_apb_i2c_egress_cfg");
+      sb_dbg_cfg = uvmx_sb_simplex_cfg_c::type_id::create("sb_dbg_cfg");
    endfunction
 
    /**
@@ -528,7 +502,13 @@ class uvme_cvmcu_chip_cfg_c extends uvmx_chip_env_cfg_c;
       irq_l2_agent_cfg.lines = uvme_cvmcu_chip_l2_irq_lines;
    endfunction
 
-endclass : uvme_cvmcu_chip_cfg_c
+   /**
+    * TODO Implement or remove uvme_cvmcu_chip_cfg_c::post_randomize()
+    */
+   virtual function void post_randomize_work();
+   endfunction
+
+endclass
 
 
 `endif // __UVME_CVMCU_CHIP_CFG_SV__

@@ -1,4 +1,4 @@
-// Copyright 2023 Datum Technology Corporation
+// Copyright 2024 Datum Technology Corporation
 // All rights reserved.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -16,10 +16,6 @@ class uvme_apb_timer_ss_cntxt_c extends uvmx_ss_env_cntxt_c #(
    .T_REG_MODEL(uvme_apb_timer_ss_reg_block_c     ),
    .T_PROBE_VIF(virtual uvme_apb_timer_ss_probe_if)
 );
-
-   /// @name Integrals
-   /// @{
-   /// @}
 
    /// @name Agents
    /// @{
@@ -55,34 +51,30 @@ class uvme_apb_timer_ss_cntxt_c extends uvmx_ss_env_cntxt_c #(
    endfunction
 
    /**
-    * Creates agent, sub-system, block and scoreboard context objects.
+    * Creates objects.
     */
-   virtual function void create_objects(uvme_apb_timer_ss_cfg_c cfg);
+   virtual function void build(uvme_apb_timer_ss_cfg_c cfg);
       proc_agent_cntxt = uvma_apb_cntxt_c::type_id::create("proc_cntxt");
       irq_events_agent_cntxt = uvma_irq_cntxt_c::type_id::create("irq_events_cntxt");
       counter_lo_b_env_cntxt = uvme_tcounter_b_cntxt_c::type_id::create("counter_lo_b_env_cntxt");
       counter_hi_b_env_cntxt = uvme_tcounter_b_cntxt_c::type_id::create("counter_hi_b_env_cntxt");
       prescaler_lo_b_env_cntxt = uvme_tprescaler_b_cntxt_c::type_id::create("prescaler_lo_b_env_cntxt");
       prescaler_hi_b_env_cntxt = uvme_tprescaler_b_cntxt_c::type_id::create("prescaler_hi_b_env_cntxt");
-      proc_agent_cntxt.create_objects(cfg.proc_agent_cfg);
-      irq_events_agent_cntxt.create_objects(cfg.irq_events_agent_cfg);
-      counter_lo_b_env_cntxt.create_objects(cfg.counter_lo_b_env_cfg);
-      counter_hi_b_env_cntxt.create_objects(cfg.counter_hi_b_env_cfg);
-      prescaler_lo_b_env_cntxt.create_objects(cfg.prescaler_lo_b_env_cfg);
-      prescaler_hi_b_env_cntxt.create_objects(cfg.prescaler_hi_b_env_cfg);
    endfunction
 
    /**
     * Returns all state variables to initial values.
     */
-   virtual function void reset();
+   virtual function void do_reset(uvme_apb_timer_ss_cfg_c cfg);
+      proc_agent_cntxt.reset();
+      irq_events_agent_cntxt.reset();
       counter_lo_b_env_cntxt.reset();
       counter_hi_b_env_cntxt.reset();
       prescaler_lo_b_env_cntxt.reset();
       prescaler_hi_b_env_cntxt.reset();
    endfunction
 
-endclass : uvme_apb_timer_ss_cntxt_c
+endclass
 
 
 `endif // __UVME_APB_TIMER_SS_CNTXT_SV__

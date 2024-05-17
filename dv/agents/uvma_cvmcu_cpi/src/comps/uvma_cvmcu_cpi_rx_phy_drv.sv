@@ -28,14 +28,14 @@ class uvma_cvmcu_cpi_rx_phy_drv_c extends uvmx_mp_drv_c #(
       super.new(name, parent);
    endfunction
 
-
    /**
-    * Drives RX PHY Driver clocking block (rx_phy_drv_cb) on each clock cycle.
+    * Drives RX PHY Driver clocking block (rx_phy_drv_cb) at the beginning of each clock cycle.
     */
    virtual task drive_item(ref uvma_cvmcu_cpi_rx_phy_seq_item_c item);
    endtask
 
-endclass : uvma_cvmcu_cpi_rx_phy_drv_c
+
+endclass
 
 
 `endif // __UVMA_CVMCU_CPI_RX_PHY_DRV_SV__

@@ -14,21 +14,6 @@ typedef enum {
    UVME_ADV_TIMER_B_FSM_INIT ///< State out of reset
 } uvme_adv_timer_b_fsm_enum;
 
-// Add enums and structs here
-// Ex: typedef bit [(`UVME_ADV_TIMER_B_ABC_MAX_WIDTH-1):0]  uvme_adv_timer_b_abc_b_t; ///< Describe me!
-// Ex: /*
-//      * Describe me!
-//      */
-//     typedef enum {
-//        UVME_ADV_TIMER_B_EX_ABC
-//     } uvme_adv_timer_b_ex_enum;
-// Ex: /*
-//      * Describe me!
-//      */
-//     typedef struct {
-//        bit [2:0]  abc;
-//        logic      xyz;
-//     } uvme_adv_timer_b_ex_struct;
 
 
 /**

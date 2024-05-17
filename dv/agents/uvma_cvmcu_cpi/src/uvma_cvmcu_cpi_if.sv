@@ -38,6 +38,7 @@ interface uvma_cvmcu_cpi_if #(
    /// @name Used by uvma_cvmcu_cpi_rx_phy_drv_c
    /// @{
    clocking rx_phy_drv_cb @(posedge clk_i);
+      input cam_data_i, cam_hsync_i, cam_vsync_i;
    endclocking
    modport rx_phy_drv_mp (clocking rx_phy_drv_cb);
    /// @}
@@ -62,7 +63,7 @@ interface uvma_cvmcu_cpi_if #(
    `uvmx_if_signal_out(cam_vsync_i, , phy_mon_mp.phy_mon_cb, tx_phy_drv_mp.tx_phy_drv_cb)
    /// @}
 
-endinterface : uvma_cvmcu_cpi_if
+endinterface
 
 
 `endif // __UVMA_CVMCU_CPI_IF_SV__

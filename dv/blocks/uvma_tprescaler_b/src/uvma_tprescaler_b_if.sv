@@ -105,7 +105,7 @@ interface uvma_tprescaler_b_if(
    `uvmx_if_signal_in(target_reached_o, , dpo_mon_mp.dpo_mon_cb)
    /// @}
 
-endinterface : uvma_tprescaler_b_if
+endinterface
 
 
 `endif // __UVMA_TPRESCALER_B_IF_SV__

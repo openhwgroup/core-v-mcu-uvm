@@ -8,21 +8,26 @@
 
 
 /**
- * Self-checking Test which runs Virtual Sequence 'fix_stim_vseq': reference stimulus for the DUT.
- * @ingroup uvmt_adv_timer_b_tests
+ * Checks basic functionality with fixed valid stimulus and scoreboarding.
+ * @ingroup uvmt_adv_timer_b_tests_functional
  */
 class uvmt_adv_timer_b_fix_stim_test_c extends uvmt_adv_timer_b_base_test_c;
 
-   rand uvme_adv_timer_b_fix_stim_vseq_c  fix_stim_vseq; ///< Virtual Sequence run during main_phase.
+   /// @name Sequences
+   /// @{
+   rand uvme_adv_timer_b_fix_stim_seq_c  fix_stim_seq; ///< Executes during 'main_phase()'
+   /// @}
 
 
-   `uvm_component_utils(uvmt_adv_timer_b_fix_stim_test_c)
+   `uvm_component_utils_begin(uvmt_adv_timer_b_fix_stim_test_c)
+      `uvm_utils_object(fix_stim_seq, UVM_DEFAULT)
+   `uvm_component_utils_end
 
 
    /**
-    * Rules for this test.
+    * Restricts randomization space.
     */
-   constraint fix_stim_cons {
+   constraint rules_cons {
       env_cfg.scoreboarding_enabled == 1;
    }
 
@@ -35,35 +40,42 @@ class uvmt_adv_timer_b_fix_stim_test_c extends uvmt_adv_timer_b_base_test_c;
    endfunction
 
    /**
-    * Creates fix_stim_vseq.
+    * Creates sequence fix_stim_seq.
     */
    virtual function void create_sequences();
-      super.create_sequences();
-      fix_stim_vseq = uvme_adv_timer_b_fix_stim_vseq_c::type_id::create("fix_stim_vseq");
+      fix_stim_seq = uvme_adv_timer_b_fix_stim_seq_c::type_id::create("fix_stim_seq");
    endfunction
 
    /**
-    * Runs fix_stim_vseq on vsequencer.
+    * Runs fix_stim_seq.
     */
    virtual task main_phase(uvm_phase phase);
       phase.raise_objection(this);
-      `uvm_info("TEST", $sformatf("Starting 'fix_stim_vseq' Virtual Sequence:\n%s", fix_stim_vseq.sprint()), UVM_NONE)
-      fix_stim_vseq.start(vsequencer);
-      `uvm_info("TEST", $sformatf("Finished 'fix_stim_vseq' Virtual Sequence:\n%s", fix_stim_vseq.sprint()), UVM_NONE)
+      `uvm_info("TEST", $sformatf("Starting 'fix_stim_seq':\n%s", fix_stim_seq.sprint()), UVM_NONE)
+      fix_stim_seq.start(sequencer);
+      `uvm_info("TEST", $sformatf("Finished 'fix_stim_seq':\n%s", fix_stim_seq.sprint()), UVM_NONE)
       phase.drop_objection(this);
    endtask
 
    /**
-    * Ensures that the scoreboard saw at least one match.
+    * Ensures that test goals were met.
     */
    virtual function void check_phase(uvm_phase phase);
-      super.check_phase(phase);
       if (env_cntxt.sb_cntxt.match_count == 0) begin
-         `uvm_error("TEST", "Scoreboard did not see any matches")
+         `uvm_error("TEST", "Scoreboard did not see any matches during simulation")
       end
    endfunction
 
-endclass : uvmt_adv_timer_b_fix_stim_test_c
+   /**
+    * Prints end-of-test goals report.
+    */
+   virtual function void report_phase(uvm_phase phase);
+      `uvmx_test_report({
+         $sformatf("Scoreboard saw %0d matches during simulation", env_cntxt.sb_cntxt.match_count)
+      })
+   endfunction
+
+endclass
 
 
 `endif // __UVMT_ADV_TIMER_B_FIX_STIM_TEST_SV__

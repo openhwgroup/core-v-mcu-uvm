@@ -38,7 +38,7 @@ class uvma_cvmcu_dbg_phy_mon_c extends uvmx_mp_mon_c #(
    endtask
 
 
-endclass : uvma_cvmcu_dbg_phy_mon_c
+endclass
 
 
 `endif // __UVMA_CVMCU_DBG_PHY_MON_SV__

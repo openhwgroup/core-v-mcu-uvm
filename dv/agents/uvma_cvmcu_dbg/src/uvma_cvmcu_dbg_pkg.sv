@@ -10,10 +10,12 @@
 /**
  * @defgroup uvma_cvmcu_dbg_pkg CORE-V-MCU Debug Interface UVM Agent
  * @{
+ * @defgroup uvma_cvmcu_dbg_agent_seq   Agent Sequences
  * @defgroup uvma_cvmcu_dbg_comps Components
  * @defgroup uvma_cvmcu_dbg_misc  Miscellaneous
  * @defgroup uvma_cvmcu_dbg_obj   Objects
- * @defgroup uvma_cvmcu_dbg_seq   Sequences & Sequence Items
+ * @defgroup uvma_cvmcu_dbg_seq_stim   Stimulus Sequences
+ * @defgroup uvma_cvmcu_dbg_seq_item   Sequence Items
  * @}
  */
 
@@ -62,20 +64,20 @@ package uvma_cvmcu_dbg_pkg;
    // Agent-Level Components
    `include "uvma_cvmcu_dbg_mon.sv"
    `include "uvma_cvmcu_dbg_drv.sv"
-   `include "uvma_cvmcu_dbg_vsqr.sv"
+   `include "uvma_cvmcu_dbg_sqr.sv"
    `include "uvma_cvmcu_dbg_logger.sv"
    `include "uvma_cvmcu_dbg_cov_model.sv"
    `include "uvma_cvmcu_dbg_agent.sv"
 
    // Sequences
-   `include "uvma_cvmcu_dbg_base_vseq.sv"
-   `include "uvma_cvmcu_dbg_mon_vseq.sv"
-   `include "uvma_cvmcu_dbg_core_drv_vseq.sv"
-   `include "uvma_cvmcu_dbg_sys_drv_vseq.sv"
-   `include "uvma_cvmcu_dbg_idle_vseq.sv"
-   `include "uvma_cvmcu_dbg_vseq_lib.sv"
+   `include "uvma_cvmcu_dbg_base_seq.sv"
+   `include "uvma_cvmcu_dbg_mon_seq.sv"
+   `include "uvma_cvmcu_dbg_core_drv_seq.sv"
+   `include "uvma_cvmcu_dbg_sys_drv_seq.sv"
+   `include "uvma_cvmcu_dbg_idle_seq.sv"
+   `include "uvma_cvmcu_dbg_seq_lib.sv"
 
-endpackage : uvma_cvmcu_dbg_pkg
+endpackage
 
 
 // Module(s) / Checker(s)

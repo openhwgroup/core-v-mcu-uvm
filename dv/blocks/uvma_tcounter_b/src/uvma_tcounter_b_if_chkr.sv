@@ -17,7 +17,7 @@ module uvma_tcounter_b_if_chkr (
 
    // TODO Add assertions and/or functional coverage to uvme_tcounter_b_chkr
 
-endmodule : uvma_tcounter_b_if_chkr
+endmodule
 
 
 `endif // __UVMA_TCOUNTER_B_IF_CHKR_SV__

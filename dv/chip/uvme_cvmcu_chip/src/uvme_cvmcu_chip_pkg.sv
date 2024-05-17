@@ -14,7 +14,10 @@
  * @defgroup uvme_cvmcu_chip_misc  Miscellaneous
  * @defgroup uvme_cvmcu_chip_obj   Objects
  * @defgroup uvme_cvmcu_chip_reg   Register Model
- * @defgroup uvme_cvmcu_chip_seq   Sequences & Sequence Items
+ * @defgroup uvme_cvmcu_chip_seq   Sequences
+ * @{
+ * @defgroup uvme_cvmcu_chip_seq_functional   Functional
+ * @}
  * @}
  */
 
@@ -31,7 +34,6 @@
 `include "uvma_i2c_macros.svh"
 `include "uvma_uart_macros.svh"
 `include "uvma_sdio_macros.svh"
-`include "uvma_cvmcu_io_macros.svh"
 `include "uvma_obi_macros.svh"
 `include "uvma_cvmcu_event_macros.svh"
 `include "uvma_cvmcu_dbg_macros.svh"
@@ -58,7 +60,6 @@ package uvme_cvmcu_chip_pkg;
    import uvma_i2c_pkg::*;
    import uvma_uart_pkg::*;
    import uvma_sdio_pkg::*;
-   import uvma_cvmcu_io_pkg::*;
    import uvma_obi_pkg::*;
    import uvma_cvmcu_event_pkg::*;
    import uvma_cvmcu_dbg_pkg::*;
@@ -77,20 +78,21 @@ package uvme_cvmcu_chip_pkg;
    `include "uvme_cvmcu_chip_cntxt.sv"
 
    // Components
-   `include "uvme_cvmcu_chip_vsqr.sv"
+   `include "uvme_cvmcu_chip_sqr.sv"
    `include "uvme_cvmcu_chip_prd.sv"
    `include "uvme_cvmcu_chip_sb.sv"
    `include "uvme_cvmcu_chip_cov_model.sv"
    `include "uvme_cvmcu_chip_env.sv"
 
    // Sequences
-   `include "uvme_cvmcu_chip_base_vseq.sv"
-   `include "uvme_cvmcu_chip_init_vseq.sv"
-   `include "uvme_cvmcu_chip_cfg_vseq.sv"
-   `include "uvme_cvmcu_chip_io_transport_vseq.sv"
-   `include "uvme_cvmcu_chip_vseq_lib.sv"
+   `include "uvme_cvmcu_chip_base_seq.sv"
+   `include "uvme_cvmcu_chip_init_seq.sv"
+   `include "uvme_cvmcu_chip_reset_seq.sv"
+   `include "uvme_cvmcu_chip_cfg_seq.sv"
+   `include "uvme_cvmcu_chip_udma_uart_seq.sv"
+   `include "uvme_cvmcu_chip_seq_lib.sv"
 
-endpackage : uvme_cvmcu_chip_pkg
+endpackage
 
 
 // Module(s) / Checker(s)

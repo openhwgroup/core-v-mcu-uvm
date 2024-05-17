@@ -8,28 +8,51 @@
 
 
 /**
- * Self-checking Test which runs Virtual Sequence 'rand_stim_vseq': fixed number of items of completely random stimulus.
- * @ingroup uvmt_tcounter_b_tests
+ * Ensures functionality with random valid stimulus and synchronized scoreboarding.
+ * @ingroup uvmt_tcounter_b_tests_functional
  */
 class uvmt_tcounter_b_rand_stim_test_c extends uvmt_tcounter_b_base_test_c;
 
-   rand uvme_tcounter_b_rand_stim_vseq_c  rand_stim_vseq; ///< Virtual Sequence run during main_phase.
+   /// @name Sequences
+   /// @{
+   rand uvme_tcounter_b_rand_stim_seq_c  rand_stim_seq; ///< Executes during 'main_phase()'
+   /// @}
 
 
-   `uvm_component_utils(uvmt_tcounter_b_rand_stim_test_c)
+   `uvm_component_utils_begin(uvmt_tcounter_b_rand_stim_test_c)
+      `uvm_utils_object(rand_stim_seq, UVM_DEFAULT)
+   `uvm_component_utils_end
 
 
    /**
-    * Rules for this test.
+    * Assigns Command Line Interface parsed values to knobs/sequences.
     */
-   constraint rand_stim_cons {
-      env_cfg.scoreboarding_enabled == 1;
+   constraint cli_cons {
       if (test_cfg.cli_num_items_override) {
-         rand_stim_vseq.num_items == test_cfg.cli_num_items;
+         rand_stim_seq.num_items == test_cfg.cli_num_items;
       }
       else {
-         rand_stim_vseq.num_items == uvme_tcounter_b_default_num_items_cons;
+         rand_stim_seq.num_items == test_cfg.num_items;
       }
+      if (test_cfg.cli_min_gap_override) {
+         rand_ill_stim_seq.min_gap == test_cfg.cli_min_gap;
+      }
+      else {
+         rand_ill_stim_seq.min_gap == test_cfg.min_gap;
+      }
+      if (test_cfg.cli_max_gap_override) {
+         rand_ill_stim_seq.max_gap == test_cfg.cli_max_gap;
+      }
+      else {
+         rand_ill_stim_seq.max_gap == test_cfg.max_gap;
+      }
+   }
+
+   /**
+    * Restricts randomization space.
+    */
+   constraint rules_cons {
+      env_cfg.scoreboarding_enabled == 1;
    }
 
 
@@ -41,38 +64,42 @@ class uvmt_tcounter_b_rand_stim_test_c extends uvmt_tcounter_b_base_test_c;
    endfunction
 
    /**
-    * Creates rand_stim_vseq.
+    * Creates sequence rand_stim_seq.
     */
    virtual function void create_sequences();
-      super.create_sequences();
-      rand_stim_vseq = uvme_tcounter_b_rand_stim_vseq_c::type_id::create("rand_stim_vseq");
+      rand_stim_seq = uvme_tcounter_b_rand_stim_seq_c::type_id::create("rand_stim_seq");
    endfunction
 
    /**
-    * Runs rand_stim_vseq on vsequencer.
+    * Runs rand_stim_seq.
     */
    virtual task main_phase(uvm_phase phase);
       phase.raise_objection(this);
-      `uvm_info("TEST", $sformatf("Starting 'rand_stim_vseq' Virtual Sequence:\n%s", rand_stim_vseq.sprint()), UVM_NONE)
-      rand_stim_vseq.start(vsequencer);
-      `uvm_info("TEST", $sformatf("Finished 'rand_stim_vseq' Virtual Sequence:\n%s", rand_stim_vseq.sprint()), UVM_NONE)
+      `uvm_info("TEST", $sformatf("Starting 'rand_stim_seq':\n%s", rand_stim_seq.sprint()), UVM_NONE)
+      rand_stim_seq.start(sequencer);
+      `uvm_info("TEST", $sformatf("Finished 'rand_stim_seq':\n%s", rand_stim_seq.sprint()), UVM_NONE)
       phase.drop_objection(this);
    endtask
 
    /**
-    * Ensures that items were generated and that the scoreboard saw the same number of matches.
+    * Ensures that test goals were met.
     */
    virtual function void check_phase(uvm_phase phase);
-      super.check_phase(phase);
-      if (rand_stim_vseq.num_items == 0) begin
-         `uvm_error("TEST", "No items were generated")
-      end
-      if (rand_stim_vseq.num_items != env_cntxt.sb_cntxt.match_count) begin
-         `uvm_error("TEST", $sformatf("Number of items driven in (%0d) and number of scoreboard matches (%0d) do not match", rand_stim_vseq.num_items, env_cntxt.sb_cntxt.match_count))
+      if (!(env_cntxt.sb_cntxt.match_count == num_items)) begin
+         `uvm_error("TEST", $sformatf("Scoreboard did not see %0d matches during simulation:  %0d matches", num_items, env_cntxt.sb_cntxt.match_count))
       end
    endfunction
 
-endclass : uvmt_tcounter_b_rand_stim_test_c
+   /**
+    * Prints end-of-test goals report.
+    */
+   virtual function void report_phase(uvm_phase phase);
+      `uvmx_test_report({
+         $sformatf("Scoreboard saw %0d matches during simulation", env_cntxt.sb_cntxt.match_count)
+      })
+   endfunction
+
+endclass
 
 
 `endif // __UVMT_TCOUNTER_B_RAND_STIM_TEST_SV__

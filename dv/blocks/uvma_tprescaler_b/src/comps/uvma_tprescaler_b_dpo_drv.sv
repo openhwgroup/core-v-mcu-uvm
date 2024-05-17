@@ -30,20 +30,20 @@ class uvma_tprescaler_b_dpo_drv_c extends uvmx_mp_drv_c #(
    endfunction
 
    /**
-    * Drives the Data Plane Output driver clocking block (dpo_drv_cb) on each clock cycle.
+    * Drives the Data Plane Output driver clocking block (dpo_drv_cb) at the beginning of each clock cycle.
     */
    virtual task drive_item(ref uvma_tprescaler_b_dpo_seq_item_c item);
    endtask
 
    /**
-    * Samples the Data Plane Output driver clocking block (dpo_drv_cb) after each clock cycle.
+    * Samples the Data Plane Output driver clocking block (dpo_drv_cb) at the end of each clock cycle.
     */
    virtual task sample_post_clk(ref uvma_tprescaler_b_dpo_seq_item_c item);
       `uvmx_mp_mon_signal(item, counter_value_o)
       `uvmx_mp_mon_signal(item, target_reached_o)
    endtask
 
-endclass : uvma_tprescaler_b_dpo_drv_c
+endclass
 
 
 `endif // __UVMA_TPRESCALER_B_DPO_DRV_SV__

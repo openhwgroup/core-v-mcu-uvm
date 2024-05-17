@@ -1,0 +1,3 @@
+title,description,assignee,state,milestone,labels
+Describe CORE-V-MCU Camera Parallel Interface UVM Agent Self-Test Bench",ip.yml,,open,,
+Implement or remove uvmt_cvmcu_cpi_st_test_cfg_c::post_randomize_work(),uvmt_cvmcu_cpi_st_test_cfg.sv,,open,,

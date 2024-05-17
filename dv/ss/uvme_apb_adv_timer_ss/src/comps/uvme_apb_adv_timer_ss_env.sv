@@ -1,4 +1,4 @@
-// Copyright 2023 Datum Technology Corporation
+// Copyright 2024 Datum Technology Corporation
 // All rights reserved.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -14,7 +14,7 @@
 class uvme_apb_adv_timer_ss_env_c extends uvmx_ss_env_c #(
    .T_CFG      (uvme_apb_adv_timer_ss_cfg_c           ),
    .T_CNTXT    (uvme_apb_adv_timer_ss_cntxt_c         ),
-   .T_VSQR     (uvme_apb_adv_timer_ss_vsqr_c          ),
+   .T_SQR      (uvme_apb_adv_timer_ss_sqr_c           ),
    .T_PRD      (uvme_apb_adv_timer_ss_prd_c           ),
    .T_SB       (uvme_apb_adv_timer_ss_sb_c            ),
    .T_COV_MODEL(uvme_apb_adv_timer_ss_cov_model_c     ),
@@ -114,7 +114,7 @@ class uvme_apb_adv_timer_ss_env_c extends uvmx_ss_env_c #(
     * Connects register block to register adapters.
     */
    virtual function void connect_reg_block();
-      cntxt.reg_model.default_map.set_sequencer(proc_agent.vsequencer, proc_reg_adapter);
+      cntxt.reg_model.default_map.set_sequencer(proc_agent.sequencer, proc_reg_adapter);
    endfunction
 
    /**
@@ -135,12 +135,12 @@ class uvme_apb_adv_timer_ss_env_c extends uvmx_ss_env_c #(
    /**
     * Assembles virtual sequencer from agent, sub-system and block sequencers.
     */
-   virtual function void assemble_vsequencer();
-      vsequencer.proc_agent_vsequencer = proc_agent.vsequencer;
-      vsequencer.adv_timer0_b_env_vsequencer = adv_timer0_b_env.vsequencer;
-      vsequencer.adv_timer1_b_env_vsequencer = adv_timer1_b_env.vsequencer;
-      vsequencer.adv_timer2_b_env_vsequencer = adv_timer2_b_env.vsequencer;
-      vsequencer.adv_timer3_b_env_vsequencer = adv_timer3_b_env.vsequencer;
+   virtual function void assemble_sequencer();
+      sequencer.proc_agent_sequencer = proc_agent.sequencer;
+      sequencer.adv_timer0_b_env_sequencer = adv_timer0_b_env.sequencer;
+      sequencer.adv_timer1_b_env_sequencer = adv_timer1_b_env.sequencer;
+      sequencer.adv_timer2_b_env_sequencer = adv_timer2_b_env.sequencer;
+      sequencer.adv_timer3_b_env_sequencer = adv_timer3_b_env.sequencer;
    endfunction
 
    /**
@@ -156,7 +156,39 @@ class uvme_apb_adv_timer_ss_env_c extends uvmx_ss_env_c #(
       add_reg_test_ignore_list(UVM_DO_MEM_WALK         , uvme_apb_adv_timer_ss_mem_walk_access_ignore_list);
    endfunction
 
-endclass : uvme_apb_adv_timer_ss_env_c
+   /**
+    * Runs reset_seq to perform DUT software reset.
+    */
+   virtual task post_reset_phase(uvm_phase phase);
+      uvme_apb_adv_timer_ss_reset_seq_c  reset_seq;
+      if (cfg.enabled) begin
+         reset_seq = uvme_apb_adv_timer_ss_reset_seq_c::type_id::create("reset_seq");
+         phase.raise_objection(this);
+         `uvm_info("ENV", $sformatf("Starting 'reset_seq':\n%s", reset_seq.sprint()), UVM_NONE)
+         reset_seq.start(sequencer);
+         `uvm_info("ENV", $sformatf("Finished 'reset_seq':\n%s", reset_seq.sprint()), UVM_NONE)
+         super.configure_phase(phase);
+         phase.drop_objection(this);
+      end
+   endtask
+
+   /**
+    * Runs cfg_seq to configure DUT registers.
+    */
+   virtual task pre_configure_phase(uvm_phase phase);
+      uvme_apb_adv_timer_ss_cfg_seq_c  cfg_seq;
+      if (cfg.enabled) begin
+         cfg_seq = uvme_apb_adv_timer_ss_cfg_seq_c::type_id::create("cfg_seq");
+         phase.raise_objection(this);
+         `uvm_info("ENV", $sformatf("Starting 'cfg_seq':\n%s", cfg_seq.sprint()), UVM_NONE)
+         cfg_seq.start(sequencer);
+         `uvm_info("ENV", $sformatf("Finished 'cfg_seq':\n%s", cfg_seq.sprint()), UVM_NONE)
+         super.configure_phase(phase);
+         phase.drop_objection(this);
+      end
+   endtask
+
+endclass
 
 
 `endif // __UVME_APB_ADV_TIMER_SS_ENV_SV__

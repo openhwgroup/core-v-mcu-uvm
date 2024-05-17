@@ -43,7 +43,7 @@ class uvma_tcounter_b_drv_c extends uvmx_drv_c #(
       dpo_driver = uvma_tcounter_b_dpo_drv_c::type_id::create("dpo_driver", this);
    endfunction
 
-endclass : uvma_tcounter_b_drv_c
+endclass
 
 
 `endif // __UVMA_TCOUNTER_B_DRV_SV__

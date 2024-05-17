@@ -1,4 +1,4 @@
-// Copyright 2023 Datum Technology Corporation
+// Copyright 2024 Datum Technology Corporation
 // All rights reserved.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -75,7 +75,7 @@ class uvme_apb_timer_ss_cov_model_c extends uvmx_ss_env_cov_model_c #(
    endtask
    /// @}
 
-endclass : uvme_apb_timer_ss_cov_model_c
+endclass
 
 
 `endif // __UVME_APB_TIMER_SS_COV_MODEL_SV__

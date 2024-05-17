@@ -15,10 +15,6 @@ class uvme_tprescaler_b_cntxt_c extends uvmx_block_env_cntxt_c #(
    .T_CFG(uvme_tprescaler_b_cfg_c)
 );
 
-   /// @name Integrals
-   /// @{
-   /// @}
-
    /// @name Objects
    /// @{
    uvma_tprescaler_b_cntxt_c  agent_cntxt; ///< Block Agent context.
@@ -29,7 +25,7 @@ class uvme_tprescaler_b_cntxt_c extends uvmx_block_env_cntxt_c #(
    `uvm_object_utils_begin(uvme_tprescaler_b_cntxt_c)
       `uvm_field_enum(uvmx_reset_state_enum, reset_state, UVM_DEFAULT)
       `uvm_field_object(agent_cntxt, UVM_DEFAULT)
-      `uvm_field_object(sb_cntxt   , UVM_DEFAULT)
+      `uvm_field_object(sb_cntxt, UVM_DEFAULT)
    `uvm_object_utils_end
 
 
@@ -43,20 +39,19 @@ class uvme_tprescaler_b_cntxt_c extends uvmx_block_env_cntxt_c #(
    /**
     * Creates objects.
     */
-   virtual function void create_objects(uvme_tprescaler_b_cfg_c cfg);
+   virtual function void build(uvme_tprescaler_b_cfg_c cfg);
       agent_cntxt = uvma_tprescaler_b_cntxt_c::type_id::create("agent_cntxt");
-      sb_cntxt    = uvmx_sb_simplex_cntxt_c::type_id::create("sb_cntxt");
-      agent_cntxt.create_objects(cfg.agent_cfg);
+      sb_cntxt = uvmx_sb_simplex_cntxt_c::type_id::create("sb_cntxt");
    endfunction
 
    /**
     * Returns all state variables to initial values.
     */
-   virtual function void reset();
+   virtual function void do_reset(uvme_tprescaler_b_cfg_c cfg);
       agent_cntxt.reset();
    endfunction
 
-endclass : uvme_tprescaler_b_cntxt_c
+endclass
 
 
 `endif // __UVME_TPRESCALER_B_CNTXT_SV__

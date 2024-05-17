@@ -93,9 +93,9 @@
 			<text x="14.36" y="596.71" class="st3">&#60;uvma_tprescaler_b_cfg_c&#62; <tspan x="39.44" dy="1.08em" class="st4">cfg</tspan></text>		</g>
 		<g id="shape3-8" transform="translate(120.969,-306.508)">
 			<title>Sheet.3</title>
-			<desc>&#60;uvma_tprescaler_b_vsqr_c&#62;</desc>
+			<desc>&#60;uvma_tprescaler_b_sqr_c&#62;</desc>
 			<rect x="0" y="424.988" width="215.433" height="192.839" class="st5"/>
-			<text x="4" y="434.39" class="st3">&#60;uvma_tprescaler_b_vsqr_c&#62;</text>		</g>
+			<text x="4" y="434.39" class="st3">&#60;uvma_tprescaler_b_sqr_c&#62;</text>		</g>
 		<g id="shape4-11" transform="translate(378.151,-306.508)">
 			<title>Sheet.4</title>
 			<desc>monitor &#60;uvma_tprescaler_b_mon_c&#62;</desc>
@@ -267,7 +267,7 @@
 		</g>
 		<g id="group45-143" transform="translate(831.12,482.284) rotate(120)">
 			<title>Line Outline Rotate left</title>
-			<desc>in_drv_vseq</desc>
+			<desc>in_drv_seq</desc>
 			<g id="shape46-144">
 				<title>Sheet.46</title>
 				<path d="M11.29 602.99 C14.67 602.99 17.72 605.11 18.95 608.36 C20.2 611.61 19.39 615.28 16.91 617.65 C16.64 617.9
@@ -279,11 +279,11 @@
 							 606.55 6.9 602.99 11.29 602.99 Z" class="st25"/>
 			</g>
 			<g id="shape45-146">
-				<text x="-554.62" y="-278.86" transform="rotate(-120)" class="st8">in_drv_vseq</text>			</g>
+				<text x="-552.82" y="-278.86" transform="rotate(-120)" class="st8">in_drv_seq</text>			</g>
 		</g>
 		<g id="group47-148" transform="translate(831.12,522.259) rotate(120)">
 			<title>Line Outline Rotate left.237</title>
-			<desc>out_drv_vseq</desc>
+			<desc>out_drv_seq</desc>
 			<g id="shape48-149">
 				<title>Sheet.48</title>
 				<path d="M11.29 602.99 C14.67 602.99 17.72 605.11 18.95 608.36 C20.2 611.61 19.39 615.28 16.91 617.65 C16.64 617.9
@@ -295,11 +295,11 @@
 							 606.55 6.9 602.99 11.29 602.99 Z" class="st25"/>
 			</g>
 			<g id="shape47-151">
-				<text x="-557.15" y="-278.86" transform="rotate(-120)" class="st8">out_drv_vseq</text>			</g>
+				<text x="-555.35" y="-278.86" transform="rotate(-120)" class="st8">out_drv_seq</text>			</g>
 		</g>
 		<g id="group49-153" transform="translate(831.12,561.566) rotate(120)">
 			<title>Line Outline Rotate left.240</title>
-			<desc>idle_vseq</desc>
+			<desc>idle_seq</desc>
 			<g id="shape50-154">
 				<title>Sheet.50</title>
 				<path d="M11.29 602.99 C14.67 602.99 17.72 605.11 18.95 608.36 C20.2 611.61 19.39 615.28 16.91 617.65 C16.64 617.9
@@ -311,11 +311,11 @@
 							 606.55 6.9 602.99 11.29 602.99 Z" class="st25"/>
 			</g>
 			<g id="shape49-156">
-				<text x="-550.24" y="-278.86" transform="rotate(-120)" class="st8">idle_vseq</text>			</g>
+				<text x="-548.43" y="-278.86" transform="rotate(-120)" class="st8">idle_seq</text>			</g>
 		</g>
 		<g id="group51-158" transform="translate(831.12,437.597) rotate(120)">
 			<title>Line Outline Rotate left.242</title>
-			<desc>mon_vseq</desc>
+			<desc>mon_seq</desc>
 			<g id="shape52-159">
 				<title>Sheet.52</title>
 				<path d="M11.29 602.99 C14.67 602.99 17.72 605.11 18.95 608.36 C20.2 611.61 19.39 615.28 16.91 617.65 C16.64 617.9
@@ -327,7 +327,7 @@
 							 606.55 6.9 602.99 11.29 602.99 Z" class="st25"/>
 			</g>
 			<g id="shape51-161">
-				<text x="-551.72" y="-278.86" transform="rotate(-120)" class="st8">mon_vseq</text>			</g>
+				<text x="-549.91" y="-278.86" transform="rotate(-120)" class="st8">mon_seq</text>			</g>
 		</g>
 		<g id="shape53-163" transform="translate(723.499,116.187) rotate(45)">
 			<title>Sheet.53</title>
@@ -554,8 +554,8 @@
 			<text x="4" y="608.5" class="st3">&#60;uvma_tprescaler_b_drv_c&#62;</text>		</g>
 		<g id="shape104-315" transform="translate(193.496,-465.556)">
 			<title>Sheet.104</title>
-			<desc>vsequencer</desc>
+			<desc>sequencer</desc>
 			<rect x="0" y="595.502" width="58.5337" height="22.3255" class="st35"/>
-			<text x="4" y="608.5" class="st2">vsequencer</text>		</g>
+			<text x="4" y="608.5" class="st2">sequencer</text>		</g>
 	</g>
 </svg>

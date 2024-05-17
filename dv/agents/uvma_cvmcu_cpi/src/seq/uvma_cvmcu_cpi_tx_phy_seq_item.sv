@@ -8,8 +8,8 @@
 
 
 /**
- * Sequence Item created by CORE-V-MCU Camera Parallel Interface Virtual Sequences for driving uvma_cvmcu_cpi_tx_phy_drv_c.
- * @ingroup uvma_cvmcu_cpi_seq
+ * Sequence Item created by CORE-V-MCU Camera Parallel Interface Sequences for driving uvma_cvmcu_cpi_tx_phy_drv_c.
+ * @ingroup uvma_cvmcu_cpi_seq_item
  */
 class uvma_cvmcu_cpi_tx_phy_seq_item_c extends uvmx_seq_item_c #(
    .T_CFG  (uvma_cvmcu_cpi_cfg_c  ),
@@ -43,21 +43,26 @@ class uvma_cvmcu_cpi_tx_phy_seq_item_c extends uvmx_seq_item_c #(
    endfunction
 
    /**
-    * Describes transaction as metadata for uvml_logs_metadata_logger_c.
+    * Trims data outside configured widths.
     */
-   virtual function uvmx_metadata_t get_metadata();
-      string cam_data_i_str;
-      string cam_hsync_i_str;
-      string cam_vsync_i_str;
-      cam_data_i_str = $sformatf("%h", cam_data_i);
-      cam_hsync_i_str = $sformatf("%b", cam_hsync_i);
-      cam_vsync_i_str = $sformatf("%b", cam_vsync_i);
-      `uvmx_metadata_field("cam_data_i", cam_data_i_str)
-      `uvmx_metadata_field("cam_hsync_i", cam_hsync_i_str)
-      `uvmx_metadata_field("cam_vsync_i", cam_vsync_i_str)
+   virtual function void trim();
+      `uvmx_trim(cam_data_i, cfg.data_width)
    endfunction
 
-endclass : uvma_cvmcu_cpi_tx_phy_seq_item_c
+   /**
+    * Describes sequence item for logger.
+    */
+   virtual function uvmx_metadata_t get_metadata();
+      string  val_str;
+      val_str = $sformatf("%h", cam_data_i);
+      `uvmx_metadata_field("cam_data_i", val_str)
+      val_str = $sformatf("%b", cam_hsync_i);
+      `uvmx_metadata_field("cam_hsync_i", val_str)
+      val_str = $sformatf("%b", cam_vsync_i);
+      `uvmx_metadata_field("cam_vsync_i", val_str)
+   endfunction
+
+endclass
 
 
 `endif // __UVMA_CVMCU_CPI_TX_PHY_SEQ_ITEM_SV__

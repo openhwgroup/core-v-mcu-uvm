@@ -1,4 +1,4 @@
-// Copyright 2023 Datum Technology Corporation
+// Copyright 2024 Datum Technology Corporation
 // All rights reserved.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -49,7 +49,7 @@ class uvme_apb_timer_ss_sb_c extends uvmx_ss_sb_c #(
    virtual function void create_components();
    endfunction
 
-endclass : uvme_apb_timer_ss_sb_c
+endclass
 
 
 `endif // __UVME_APB_TIMER_SS_SB_SV__

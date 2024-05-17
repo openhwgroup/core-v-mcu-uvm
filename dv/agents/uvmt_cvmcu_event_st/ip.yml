@@ -1,8 +1,3 @@
-## Copyright 2023 Datum Technology Corporation
-## All rights reserved.
-########################################################################################################################
-
-
 ip:
   name: "uvmt_cvmcu_event_st"
   vendor: "datum"
@@ -40,7 +35,7 @@ structure:
   src-path     : "src"
 
 hdl-src:
-  directories: [".", "tb", "tests"]
+  directories: [".", "tests"]
   top-files: ["uvmt_cvmcu_event_st_pkg.sv"]
   top-constructs: ["uvmt_cvmcu_event_st_tb", "uvmx_sim_summary"]
   so-libs: []

@@ -13,6 +13,9 @@
  * @defgroup uvmt_cvmcu_chip_misc   Miscellaneous
  * @defgroup uvmt_cvmcu_chip_tb     Test Bench
  * @defgroup uvmt_cvmcu_chip_tests  Tests
+ * @{
+ * @defgroup uvmt_cvmcu_chip_tests_functional   Functional
+ * @}
  * @}
  */
 
@@ -24,8 +27,6 @@
 `include "uvma_reset_macros.svh"
 `include "uvme_cvmcu_chip_macros.svh"
 `include "uvmt_cvmcu_chip_macros.svh"
-
-// Interface(s)
 
 
 /**
@@ -51,11 +52,11 @@ package uvmt_cvmcu_chip_pkg;
    `include "uvmt_cvmcu_chip_reg_hw_reset_test.sv"
    `include "uvmt_cvmcu_chip_reg_bit_bash_test.sv"
    `include "uvmt_cvmcu_chip_reg_access_test.sv"
-   `include "uvmt_cvmcu_chip_mem_access_test.sv"
    `include "uvmt_cvmcu_chip_shared_access_test.sv"
-   `include "uvmt_cvmcu_chip_mem_walk_test.sv"
+   `include "uvmt_cvmcu_chip_uart_eg_test.sv"
+   `include "uvmt_cvmcu_chip_uart_ig_test.sv"
 
-endpackage : uvmt_cvmcu_chip_pkg
+endpackage
 
 
 // Module(s) / Checker(s)

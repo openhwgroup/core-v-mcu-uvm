@@ -1,4 +1,4 @@
-// Copyright 2023 Datum Technology Corporation
+// Copyright 2024 Datum Technology Corporation
 // All rights reserved.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // THE FOLLOWING IS GENERATED CODE: ANY CHANGES MADE WILL BE ERASED UPON THE NEXT ITERATION
@@ -41,7 +41,7 @@ class uvme_cvmcu_chip_udma_qspi_reg_block_c extends uvmx_reg_block_c;
       );
    endfunction
 
-endclass : uvme_cvmcu_chip_udma_qspi_reg_block_c
+endclass
 
 
 `endif // __UVME_CVMCU_CHIP_UDMA_QSPI_REG_BLOCK_SV__

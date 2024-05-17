@@ -1,8 +1,3 @@
-# Copyright 2023 Datum Technology Corporation
-# All rights reserved.
-########################################################################################################################
-
-
 ip:
   name: "uvma_tprescaler_b"
   vendor: "datum"

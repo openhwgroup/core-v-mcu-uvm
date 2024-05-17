@@ -1,0 +1,90 @@
+test-suite:
+  ip: uvmt_cvmcu_cpi_st
+  name: CORE-V-MCU Camera Parallel Interface Test Suite
+  settings:
+    cov:
+    - nightly
+    - weekly
+    max-duration:
+      bugs: 1
+      nightly: 10
+      sanity: 1
+      weekly: 50
+    max-errors:
+      bugs: 1
+      nightly: 10
+      sanity: 1
+      weekly: 10
+    max-jobs:
+      bugs: 1
+      nightly: 10
+      sanity: 5
+      weekly: 20
+    verbosity:
+      bugs: debug
+      nightly: medium
+      sanity: high
+      weekly: medium
+    waves:
+    - bugs
+    - sanity
+    - nightly
+    - weekly
+  target: '*'
+
+functional:
+  fix:
+    fix_stim:
+      bugs: []
+      nightly:
+      - 1
+      sanity:
+      - 1
+      weekly:
+      - 1
+  rand:
+    rand_stim:
+      bugs: []
+      nightly:
+        args:
+          NITEMS: '100'
+        count: 10
+      sanity:
+        args:
+          NITEMS: '10'
+        seeds:
+        - 1
+      weekly:
+        args:
+          NITEMS: '1000'
+        count: 100
+
+error:
+  fix:
+    fix_ill_stim:
+      bugs: []
+      nightly:
+      - 1
+      sanity:
+      - 1
+      weekly:
+      - 1
+  rand:
+    rand_ill_stim:
+      bugs: []
+      nightly:
+        args:
+          NERRORS: '10'
+          NITEMS: '100'
+        count: 10
+      sanity:
+        args:
+          NERRORS: '1'
+          NITEMS: '10'
+        seeds:
+        - 1
+      weekly:
+        args:
+          NERRORS: '100'
+          NITEMS: '1000'
+        count: 100

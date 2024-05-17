@@ -45,7 +45,7 @@ class uvma_adv_timer_b_dpi_mon_c extends uvmx_mp_mon_c #(
 
    endfunction
 
-endclass : uvma_adv_timer_b_dpi_mon_c
+endclass
 
 
 `endif // __UVMA_ADV_TIMER_B_DPI_MON_SV__

@@ -1,8 +1,3 @@
-﻿Work Item Type,Title,Priority
-Issue,Fixed stimulus test,1
-Issue,Random stimulus test,1
-Issue,Functional regression,1
-Issue,Add error testing self-checking to base test,1
-Issue,Fixed illegal stimulus test,1
-Issue,Random illegal stimulus test,1
-Issue,Full regression,1
+Work Item Type,Title,Priority
+Issue,Describe Timer unit counter Block UVM Test Bench",1
+Issue,Implement or remove uvmt_tcounter_b_test_cfg_c::post_randomize_work(),1

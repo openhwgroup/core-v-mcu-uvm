@@ -16,14 +16,14 @@ class uvma_cvmcu_cpi_phy_mon_trn_c extends uvmx_mon_trn_c #(
    .T_CNTXT(uvma_cvmcu_cpi_cntxt_c)
 );
 
-   /// @name TX
+   /// @name Tx
    /// @{
    uvma_cvmcu_cpi_data_l_t  cam_data_i ; ///< Data signal
    logic                    cam_hsync_i; ///< Horizontal sync
    logic                    cam_vsync_i; ///< Vertical sync
    /// @}
 
-   /// @name RX
+   /// @name Rx
    /// @{
    /// @}
 
@@ -43,21 +43,19 @@ class uvma_cvmcu_cpi_phy_mon_trn_c extends uvmx_mon_trn_c #(
    endfunction
 
    /**
-    * Describes transaction as metadata for uvml_logs_metadata_logger_c.
+    * Describes sequence item for logger.
     */
    virtual function uvmx_metadata_t get_metadata();
-      string cam_data_i_str;
-      string cam_hsync_i_str;
-      string cam_vsync_i_str;
-      cam_data_i_str = $sformatf("%h", cam_data_i);
-      cam_hsync_i_str = $sformatf("%b", cam_hsync_i);
-      cam_vsync_i_str = $sformatf("%b", cam_vsync_i);
-      `uvmx_metadata_field("cam_data_i", cam_data_i_str)
-      `uvmx_metadata_field("cam_hsync_i", cam_hsync_i_str)
-      `uvmx_metadata_field("cam_vsync_i", cam_vsync_i_str)
+      string  val_str;
+      val_str = $sformatf("%h", cam_data_i);
+      `uvmx_metadata_field("cam_data_i", val_str)
+      val_str = $sformatf("%b", cam_hsync_i);
+      `uvmx_metadata_field("cam_hsync_i", val_str)
+      val_str = $sformatf("%b", cam_vsync_i);
+      `uvmx_metadata_field("cam_vsync_i", val_str)
    endfunction
 
-endclass : uvma_cvmcu_cpi_phy_mon_trn_c
+endclass
 
 
 `endif // __UVMA_CVMCU_CPI_PHY_MON_TRN_SV__

@@ -1,4 +1,4 @@
-// Copyright 2023 Datum Technology Corporation
+// Copyright 2024 Datum Technology Corporation
 // All rights reserved.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -96,7 +96,7 @@ class uvme_apb_timer_ss_prd_c extends uvmx_ss_prd_c #(
       endcase
    endtask
 
-endclass : uvme_apb_timer_ss_prd_c
+endclass
 
 
 `endif // __UVME_APB_TIMER_SS_PRD_SV__

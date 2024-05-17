@@ -15,25 +15,16 @@ class uvma_tprescaler_b_cntxt_c extends uvmx_block_agent_cntxt_c #(
    .T_CFG(uvma_tprescaler_b_cfg_c     ),
    .T_VIF(virtual uvma_tprescaler_b_if)
 );
-   /// @name Integrals
-   /// @{
-   /// @}
 
-   /// @name Objects
+   /// @name Sequences
    /// @{
-   /// @}
-
-   /// @name Virtual Sequences
-   /// @{
-   uvm_sequence_base  in_drv_vseq ; ///< Virtual Sequence driving data into the DUT.
-   uvm_sequence_base  out_drv_vseq; ///< Virtual Sequence driving data out of the DUT.
+   uvm_sequence_base  in_drv_seq ; ///< Sequence driving data into the DUT.
+   uvm_sequence_base  out_drv_seq; ///< Sequence driving data out of the DUT.
    /// @}
 
 
    `uvm_object_utils_begin(uvma_tprescaler_b_cntxt_c)
       `uvm_field_enum(uvmx_reset_state_enum, reset_state, UVM_DEFAULT)
-      `uvm_field_object(in_drv_vseq , UVM_DEFAULT)
-      `uvm_field_object(out_drv_vseq, UVM_DEFAULT)
    `uvm_object_utils_end
 
 
@@ -45,14 +36,12 @@ class uvma_tprescaler_b_cntxt_c extends uvmx_block_agent_cntxt_c #(
    endfunction
 
    /**
-    * Returns all state variables to initial values.
+    * Sets all state variables to initial values.
     */
-   virtual function void reset();
-      // TODO Implement uvma_tprescaler_b_cntxt_c::reset()
-      //      Ex: abc = 0;
+   virtual function void do_reset(uvma_tprescaler_b_cfg_c cfg);
    endfunction
 
-endclass : uvma_tprescaler_b_cntxt_c
+endclass
 
 
 `endif // __UVMA_TPRESCALER_B_CNTXT_SV__

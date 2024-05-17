@@ -28,20 +28,9 @@ class uvma_adv_timer_b_cp_drv_c extends uvmx_mp_drv_c #(
    function new(string name="uvma_adv_timer_b_cp_drv", uvm_component parent=null);
       super.new(name, parent);
    endfunction
-   /**
-    * Trims data outside configured widths.
-    */
-   virtual function void process_item(ref uvma_adv_timer_b_cp_seq_item_c item);
-      `uvmx_trim(item.cfg_cnt_start_i, cfg.num_bits)
-      `uvmx_trim(item.cfg_cnt_end_i, cfg.num_bits)
-      `uvmx_trim(item.cfg_comp_ch0_i, cfg.num_bits)
-      `uvmx_trim(item.cfg_comp_ch1_i, cfg.num_bits)
-      `uvmx_trim(item.cfg_comp_ch2_i, cfg.num_bits)
-      `uvmx_trim(item.cfg_comp_ch3_i, cfg.num_bits)
-   endfunction
 
    /**
-    * Drives Control Plane driver clocking block (cp_drv_cb) on each clock cycle.
+    * Drives Control Plane driver clocking block (cp_drv_cb) at the beginning of each clock cycle.
     */
    virtual task drive_item(ref uvma_adv_timer_b_cp_seq_item_c item);
       `uvmx_mp_drv_signal(item, cfg_start_i)
@@ -67,7 +56,7 @@ class uvma_adv_timer_b_cp_drv_c extends uvmx_mp_drv_c #(
    endtask
 
 
-endclass : uvma_adv_timer_b_cp_drv_c
+endclass
 
 
 `endif // __UVMA_ADV_TIMER_B_CP_DRV_SV__

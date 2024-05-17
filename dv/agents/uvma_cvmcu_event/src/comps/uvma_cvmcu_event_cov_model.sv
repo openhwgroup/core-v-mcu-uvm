@@ -18,7 +18,8 @@ class uvma_cvmcu_event_cov_model_c extends uvmx_agent_cov_model_c #(
 );
    /// @name Covergroup variables
    /// @{
-   uvma_cvmcu_event_mon_trn_c  mon_trn; ///< Monitor Transaction currently being sampled.
+   uvma_cvmcu_event_mon_trn_c  c2s_mon_trn; ///< C2s Monitor Transaction currently being sampled.
+   uvma_cvmcu_event_mon_trn_c  s2c_mon_trn; ///< S2c Monitor Transaction currently being sampled.
    uvma_cvmcu_event_core_phy_seq_item_c  core_phy_seq_item; ///< CORE PHY Sequence Item currently being sampled.
    uvma_cvmcu_event_sys_phy_seq_item_c  sys_phy_seq_item; ///< SYS PHY Sequence Item currently being sampled.
    uvma_cvmcu_event_phy_mon_trn_c  phy_mon_trn; ///< PHY Monitor Transaction currently being sampled.
@@ -26,7 +27,8 @@ class uvma_cvmcu_event_cov_model_c extends uvmx_agent_cov_model_c #(
 
    /// @name TLM FIFOs
    /// @{
-   uvm_tlm_analysis_fifo #(uvma_cvmcu_event_mon_trn_c)  mon_trn_fifo; ///< FIFO of Monitor Transactions to be sampled.
+   uvm_tlm_analysis_fifo #(uvma_cvmcu_event_mon_trn_c)  c2s_mon_trn_fifo; ///< FIFO of C2s Monitor Transactions to be sampled.
+   uvm_tlm_analysis_fifo #(uvma_cvmcu_event_mon_trn_c)  s2c_mon_trn_fifo; ///< FIFO of S2c Monitor Transactions to be sampled.
    uvm_tlm_analysis_fifo #(uvma_cvmcu_event_core_phy_seq_item_c)  core_phy_seq_item_fifo; ///< FIFO of CORE PHY Sequence Items to be sampled.
    uvm_tlm_analysis_fifo #(uvma_cvmcu_event_sys_phy_seq_item_c)  sys_phy_seq_item_fifo; ///< FIFO of SYS PHY Sequence Items to be sampled.
    uvm_tlm_analysis_fifo #(uvma_cvmcu_event_phy_mon_trn_c)  phy_mon_trn_fifo; ///< FIFO of PHY Monitor Transaction to be sampled.
@@ -47,7 +49,8 @@ class uvma_cvmcu_event_cov_model_c extends uvmx_agent_cov_model_c #(
     * Creates all input FIFOs.
     */
    virtual function void create_fifos();
-      mon_trn_fifo = new("mon_trn_fifo", this);
+      c2s_mon_trn_fifo = new("c2s_mon_trn_fifo", this);
+      s2c_mon_trn_fifo = new("s2c_mon_trn_fifo", this);
       phy_mon_trn_fifo = new("phy_mon_trn_fifo", this);
       core_phy_seq_item_fifo = new("core_phy_seq_item_fifo", this);
       sys_phy_seq_item_fifo = new("sys_phy_seq_item_fifo", this);
@@ -59,8 +62,12 @@ class uvma_cvmcu_event_cov_model_c extends uvmx_agent_cov_model_c #(
    virtual task sample_tlm();
       fork
          forever begin
-            mon_trn_fifo.get(mon_trn);
-            sample_mon_trn();
+            c2s_mon_trn_fifo.get(c2s_mon_trn);
+            sample_c2s_mon_trn();
+         end
+         forever begin
+            s2c_mon_trn_fifo.get(s2c_mon_trn);
+            sample_s2c_mon_trn();
          end
          forever begin
             core_phy_seq_item_fifo.get(core_phy_seq_item);
@@ -79,13 +86,15 @@ class uvma_cvmcu_event_cov_model_c extends uvmx_agent_cov_model_c #(
 
    /// @name Sampling Hooks
    /// @{
-   virtual function void sample_mon_trn(); endfunction
+   virtual function void sample_c2s_mon_trn(); endfunction
+   virtual function void sample_s2c_mon_trn(); endfunction
+   
    virtual function void sample_core_phy_seq_item(); endfunction
    virtual function void sample_sys_phy_seq_item(); endfunction
    virtual function void sample_phy_mon_trn (); endfunction
    /// @}
 
-endclass : uvma_cvmcu_event_cov_model_c
+endclass
 
 
 `endif // __UVMA_CVMCU_EVENT_COV_MODEL_SV__

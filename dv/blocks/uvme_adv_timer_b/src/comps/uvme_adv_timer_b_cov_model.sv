@@ -214,7 +214,7 @@ class uvme_adv_timer_b_cov_model_c extends uvmx_block_env_cov_model_c #(
    endtask
    /// @}
 
-endclass : uvme_adv_timer_b_cov_model_c
+endclass
 
 
 `endif // __UVME_ADV_TIMER_B_COV_MODEL_SV__

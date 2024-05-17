@@ -143,7 +143,7 @@ interface uvma_adv_timer_b_if #(
    `uvmx_if_signal_in(status_o, [7:0], dpo_mon_mp.dpo_mon_cb)
    /// @}
 
-endinterface : uvma_adv_timer_b_if
+endinterface
 
 
 `endif // __UVMA_ADV_TIMER_B_IF_SV__

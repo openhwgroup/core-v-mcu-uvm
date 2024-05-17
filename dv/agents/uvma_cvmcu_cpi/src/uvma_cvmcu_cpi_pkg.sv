@@ -10,10 +10,12 @@
 /**
  * @defgroup uvma_cvmcu_cpi_pkg CORE-V-MCU Camera Parallel Interface UVM Agent
  * @{
+ * @defgroup uvma_cvmcu_cpi_agent_seq   Agent Sequences
  * @defgroup uvma_cvmcu_cpi_comps Components
  * @defgroup uvma_cvmcu_cpi_misc  Miscellaneous
  * @defgroup uvma_cvmcu_cpi_obj   Objects
- * @defgroup uvma_cvmcu_cpi_seq   Sequences & Sequence Items
+ * @defgroup uvma_cvmcu_cpi_seq_stim   Stimulus Sequences
+ * @defgroup uvma_cvmcu_cpi_seq_item   Sequence Items
  * @}
  */
 
@@ -62,20 +64,20 @@ package uvma_cvmcu_cpi_pkg;
    // Agent-Level Components
    `include "uvma_cvmcu_cpi_mon.sv"
    `include "uvma_cvmcu_cpi_drv.sv"
-   `include "uvma_cvmcu_cpi_vsqr.sv"
+   `include "uvma_cvmcu_cpi_sqr.sv"
    `include "uvma_cvmcu_cpi_logger.sv"
    `include "uvma_cvmcu_cpi_cov_model.sv"
    `include "uvma_cvmcu_cpi_agent.sv"
 
    // Sequences
-   `include "uvma_cvmcu_cpi_base_vseq.sv"
-   `include "uvma_cvmcu_cpi_mon_vseq.sv"
-   `include "uvma_cvmcu_cpi_tx_drv_vseq.sv"
-   `include "uvma_cvmcu_cpi_rx_drv_vseq.sv"
-   `include "uvma_cvmcu_cpi_idle_vseq.sv"
-   `include "uvma_cvmcu_cpi_vseq_lib.sv"
+   `include "uvma_cvmcu_cpi_base_seq.sv"
+   `include "uvma_cvmcu_cpi_mon_seq.sv"
+   `include "uvma_cvmcu_cpi_tx_drv_seq.sv"
+   `include "uvma_cvmcu_cpi_rx_drv_seq.sv"
+   `include "uvma_cvmcu_cpi_idle_seq.sv"
+   `include "uvma_cvmcu_cpi_seq_lib.sv"
 
-endpackage : uvma_cvmcu_cpi_pkg
+endpackage
 
 
 // Module(s) / Checker(s)
